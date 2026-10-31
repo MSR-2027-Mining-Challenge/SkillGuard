@@ -48,3 +48,18 @@ shasum -a 256 data/sample/agent_skills_sample.db
 
 Open `notebooks/00_gitskills_exploration.ipynb` in VS Code, pick the `.venv` kernel, and run the cells top to
 bottom. Change the variables at the top of a cell (`keyword`, `skill_index`, `query`, ...) and re-run it.
+
+## Cisco Skill Scanner
+
+`notebooks/01_cisco_scanner_dataset_ready.ipynb` runs the [Cisco AI Defense Skill Scanner](https://github.com/cisco-ai-defense/skill-scanner)
+over skills exported from the database. The scanner is pinned in `requirements.txt` (`cisco-ai-skill-scanner==2.3.1`)
+so every team member produces comparable findings; `pip install -r requirements.txt` installs it into `.venv`.
+
+Verify the version before scanning (the notebook records it in every run):
+
+```bash
+.venv/bin/skill-scanner --version
+```
+
+Expected output: `skill-scanner 2.3.1`. Do not upgrade the scanner mid-study; a version change invalidates
+finding-level comparisons with earlier runs.
