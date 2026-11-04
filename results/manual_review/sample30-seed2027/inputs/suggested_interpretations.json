@@ -1,0 +1,252 @@
+{
+  "about": {
+    "purpose": "Draft analyst suggestions for the manual security review of the 11 distinct security finding locations in the sample30-seed2027 Cisco run. These are NOT human-reviewed labels and NOT ground truth. Human reviewers record their own labels in the worksheet columns reviewer_1_*, reviewer_2_* and final_*.",
+    "suggested_by": "AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",
+    "source_run": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+    "label_vocabulary": {
+      "intentional": "The flagged primitive is really present and serves the skill's stated purpose; no plausible attacker path was identified beyond what the agent can already do.",
+      "potentially_exploitable": "The flagged primitive is present and a plausible attacker-controlled input can reach it across a trust boundary under the stated threat model.",
+      "scanner_parser_issue": "The finding is produced by how Cisco parses or matches the skill (tokenisation, regex over-match, file-type classifier, location arithmetic) rather than by the behaviour the rule title describes.",
+      "uncertain": "The evidence does not support any of the above without more information."
+    },
+    "evidence_present_vocabulary": {
+      "yes": "the primitive the rule names is at (or next to) the reported location",
+      "partly": "the primitive exists but not in the form the rule title describes, or not at the reported location",
+      "no": "the primitive the rule names is not present"
+    },
+    "threat_model": "An agent (e.g. Claude Code) loads the skill and follows its instructions on a user's machine. Attackers may control (a) content the agent reads while using the skill (web pages, data files, user messages) or (b) the skill package itself (supply chain). Behaviour that only the skill author or the local user controls is not by itself an attacker path."
+  },
+  "findings": {
+    "4536303dec": {
+      "priority": 1,
+      "priority_reason": "CRITICAL finding and the only one where a general code-execution primitive is genuinely present; whether it is a risk depends on the threat model, which only a human reviewer should decide.",
+      "behavior_group": "SD-1 synthdata-compute: exec() of computation code",
+      "verified_evidence_line": 174,
+      "excerpts": [
+        {"file": "SKILL.md", "start": 1, "end": 12, "why": "frontmatter: the skill already grants Read, Bash, Glob, Write"},
+        {"file": "SKILL.md", "start": 77, "end": 101, "why": "instructions: the agent writes the computation code, then runs compute.py with --code or --expr"},
+        {"file": "scripts/compute.py", "start": 163, "end": 177, "why": "reported location: exec(code, namespace) with full builtins"},
+        {"file": "scripts/compute.py", "start": 198, "end": 207, "why": "where code comes from: a file path (--code) or a command-line string (--expr)"}
+      ],
+      "what_cisco_detected": "Static regex COMMAND_INJECTION_EVAL matched the token `exec(` on line 174. The rule fires on any exec/eval/compile call; it does not look at where the executed string comes from.",
+      "cisco_mechanism": "matched_pattern (?<!['\\\".])\\bexec\\s*\\( in the static analyzer signature pack (signature_context=code).",
+      "trust_boundary": "Agent-written Python (from the LLM) -> Python interpreter with full builtins. The tables loaded from xlsx/csv/json are passed as DataFrames and are not executed themselves.",
+      "data_flow": "--code <file> or --expr <string> (written by the agent following SKILL.md) -> exec(code, namespace) -> result tables written to disk.",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "medium",
+      "suggested_rationale": "exec is the documented core design: SKILL.md says 'Claude writes the computation logic; the script handles data I/O'. The skill already allows the Bash tool, so exec adds no capability the agent does not already have. It becomes a risk only if an attacker can steer the code the agent writes (for example through prompt injection in the dataset or user request), which is the same risk as Bash itself.",
+      "alternative_interpretation": "potentially_exploitable, if the reviewer's threat model counts prompt injection via data that the agent reads before writing the computation code.",
+      "open_questions": "Does the reviewer treat 'agent-generated code executed by a bundled script' as an attack surface separate from the Bash tool? Can dataset cell values reach the code string? (Reading suggests no: values are only in DataFrames.)",
+      "related_review_ids": [],
+      "observed_not_reported": "None beyond the reported primitive."
+    },
+    "e37db01d42": {
+      "priority": 2,
+      "priority_reason": "HIGH finding that sets is_safe=False for set-reminder; the reading below suggests it comes from Cisco's allowed-tools parsing, which would also affect other skills that use scoped tool patterns.",
+      "behavior_group": "SR-1 set-reminder: script runs crontab through subprocess",
+      "verified_evidence_line": null,
+      "excerpts": [
+        {"file": "SKILL.md", "start": 1, "end": 6, "why": "frontmatter: allowed-tools is 'Bash(python *)'"},
+        {"file": "scripts/set_reminder.py", "start": 128, "end": 133, "why": "what makes Cisco think the code 'executes bash': subprocess.run(['crontab', ...])"}
+      ],
+      "what_cisco_detected": "Cisco's manifest check reports that bundled code executes shell commands while 'Bash' is not in allowed-tools. Its description shows it parsed the declaration as ['Bash(python', '*)'].",
+      "cisco_mechanism": "skill_scanner/core/models.py splits a string allowed-tools value on commas or whitespace, giving ['Bash(python', '*)']; data/packs/core/python/allowed_tools_checks.py then requires the exact token 'bash' (lower-cased) and fires because any file contains 'subprocess.run'. A scoped declaration such as Bash(git:*) can never equal 'bash', so every scoped Bash declaration combined with subprocess code triggers this rule.",
+      "trust_boundary": "Skill permission declaration (allowed-tools) <-> agent tool runtime. The subprocess call runs inside a python process that the declaration does permit.",
+      "data_flow": "Agent runs `python scripts/set_reminder.py` (permitted by Bash(python *)) -> the script calls `crontab -l` and `crontab -` as child processes.",
+      "suggested_interpretation": "scanner_parser_issue",
+      "suggested_confidence": "high",
+      "suggested_rationale": "The skill does declare Bash, scoped to python commands, and the script is launched exactly that way. The finding exists because Cisco tokenises 'Bash(python *)' on the space and compares tokens to the bare word 'bash'. A separate, legitimate question is whether a scoped Bash(python *) permission should cover child processes such as crontab; Cisco does not reason about that.",
+      "alternative_interpretation": "uncertain, if the reviewer considers launching crontab from a python script to be outside the spirit of a python-only permission.",
+      "open_questions": "Confirm the tokenisation from the description field. Decide whether child processes of a permitted command count as 'executing bash' for this study.",
+      "related_review_ids": ["65f210f2dd", "78fa761fe9"],
+      "observed_not_reported": "The script edits the user's crontab (a persistence mechanism) and writes an executable, self-deleting reminder script into the repository's reminders/ folder. No Cisco rule reports crontab modification or persistence in this run."
+    },
+    "f0f315b409": {
+      "priority": 3,
+      "priority_reason": "CRITICAL finding (sets is_safe=False for skill-creator); the reading suggests a regex over-match, so it strongly affects how CRITICAL counts should be interpreted.",
+      "behavior_group": "SC-1 skill-creator: lsof port lookup before starting a local viewer",
+      "verified_evidence_line": 390,
+      "excerpts": [
+        {"file": "eval-viewer/generate_review.py", "start": 387, "end": 407, "why": "reported location: subprocess.run(['lsof', '-ti', f':{port}']) as a list, no shell"},
+        {"file": "eval-viewer/generate_review.py", "start": 488, "end": 490, "why": "port comes from argparse with type=int"},
+        {"file": "eval-viewer/generate_review.py", "start": 545, "end": 556, "why": "the viewer binds to 127.0.0.1 only"}
+      ],
+      "what_cisco_detected": "Static regex COMMAND_INJECTION_OS_SYSTEM ('Shell command execution with string formatting') matched a multi-line subprocess.run call that contains an f-string.",
+      "cisco_mechanism": "matched_pattern subprocess\\.(?:call|run|Popen)\\s*\\((?=[^)]*\\n)[^)]*[f\"'].*\\{.*\\} : any multi-line subprocess call containing a quote followed by braces. It does not check for shell=True or for a string (rather than list) command.",
+      "trust_boundary": "Command-line argument (--port, parsed as int) -> local process lookup and SIGTERM. No network input reaches the call.",
+      "data_flow": "argparse --port (int, default 3117) -> lsof -ti :<port> -> os.kill(pid, SIGTERM) for each PID listening on that port.",
+      "suggested_interpretation": "scanner_parser_issue",
+      "suggested_confidence": "high",
+      "suggested_rationale": "The command is an argument list without shell=True, and the only formatted value is an integer port, so shell injection is not possible here. The regex matches on formatting syntax, not on shell use. The real side effect, terminating whatever process listens on the chosen port, is intentional and documented in the function's docstring.",
+      "alternative_interpretation": "intentional, if the reviewer labels the underlying behaviour (killing processes on a port) rather than the rule's injection claim.",
+      "open_questions": "Should the label judge the rule's claim (injection) or the behaviour at the line (process termination)? The codebook should fix this before labelling.",
+      "related_review_ids": [],
+      "observed_not_reported": "scripts/run_eval.py and scripts/run_loop.py launch agent CLIs (claude -p, agent -p ... --trust, opencode run) with the parent environment copied except four variables. These list-form subprocess calls were not reported."
+    },
+    "9cbcff225f": {
+      "priority": 4,
+      "priority_reason": "HIGH finding that already appears with SKILL.md alone; it is the only security finding visible without supporting files, so its label matters for the context comparison.",
+      "behavior_group": "YT-1 youtube-content: example code that fetches a YouTube page with curl",
+      "verified_evidence_line": 169,
+      "excerpts": [
+        {"file": "SKILL.md", "start": 160, "end": 190, "why": "reported location: a fenced Python fallback the agent is told to use"},
+        {"file": "scripts/batch_unified.py", "start": 50, "end": 55, "why": "context, not reported by Cisco: the bundled script runs the same curl call"}
+      ],
+      "what_cisco_detected": "ACTIVE_DYNAMIC_EXECUTION: a syntax-confirmed process-execution call (python subprocess) inside a fenced code block in the active instructions of SKILL.md.",
+      "cisco_mechanism": "Static analyzer parses SKILL.md as CommonMark (analysis_basis=bounded_commonmark_syntax) and flags execution APIs in code blocks that are not in an explicit example section.",
+      "trust_boundary": "Untrusted web content (the YouTube watch page) -> regex and json.loads -> caption URL that the agent fetches next. The video_id is interpolated into a URL inside an argument list (no shell).",
+      "data_flow": "video_id -> curl https://www.youtube.com/watch?v=<id> -> regex extracts captionTracks -> baseUrl -> opener.open(baseUrl).",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "medium",
+      "suggested_rationale": "The code is an instructional fallback for fetching captions and matches the skill's purpose. curl is called with an argument list and a fixed https://www.youtube.com prefix, so option or shell injection through video_id is not apparent. The URL fetched in step 4 comes from page content, which is a minor server-side-request concern but limited to what YouTube returns.",
+      "alternative_interpretation": "uncertain, if the reviewer wants to assess whether the page-derived caption URL could point to an unintended host.",
+      "open_questions": "Is a page-derived URL that the agent then fetches in scope for this study? Is an instruction code block 'active' when the text presents it as a fallback?",
+      "related_review_ids": ["d1c1fe72fc", "018ac4e2f1"],
+      "observed_not_reported": "The same curl call in scripts/batch_unified.py (URL built in a variable first) and the subprocess calls in scripts/fetch_playlist.py and scripts/batch_transcripts.py were not reported."
+    },
+    "0d820447dc": {
+      "priority": 5,
+      "priority_reason": "MEDIUM data-exfiltration finding; needs a human to decide whether sending reminder text to a configurable gateway is a disclosure risk.",
+      "behavior_group": "SR-3 set-reminder: generated reminder script posts to a Telegram gateway",
+      "verified_evidence_line": 38,
+      "excerpts": [
+        {"file": "scripts/set_reminder.py", "start": 23, "end": 57, "why": "reported location is inside _SCRIPT_TEMPLATE, a string that becomes a separate script run later by cron"},
+        {"file": "scripts/set_reminder.py", "start": 143, "end": 145, "why": "gateway URL and Telegram ID come from the repository's .env (default http://localhost:3001)"}
+      ],
+      "what_cisco_detected": "DATA_EXFIL_NETWORK_REQUESTS: a regex match on `urllib.request.Request(`, an outbound network primitive.",
+      "cisco_mechanism": "matched_pattern urllib\\.request\\.(?:urlopen|Request)\\s*\\( with signature_context=code, although the match is inside a triple-quoted string template.",
+      "trust_boundary": "Local machine -> HTTP gateway (default localhost:3001, configurable through TELEGRAM_GATEWAY_URL in .env) -> Telegram. Data crosses to the network when cron runs the generated script.",
+      "data_flow": "reminder text (from the user's request) + MY_TELEGRAM_ID (.env) -> generated reminder_<id>.py -> POST <gateway>/send at the scheduled time.",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "medium",
+      "suggested_rationale": "Sending the reminder to Telegram is the skill's stated purpose, and the payload is the reminder text and the user's own Telegram ID. The destination is set by the local .env, not by content the agent reads. Note that the matched line is template text, not code executed by set_reminder.py itself.",
+      "alternative_interpretation": "uncertain, if the reviewer considers whether reminder text could carry sensitive data to a non-local gateway.",
+      "open_questions": "Does the study treat a user-configured endpoint as 'external'? Should matches inside string templates count as code?",
+      "related_review_ids": ["180a203e99", "78fa761fe9"],
+      "observed_not_reported": "See e37db01d42: crontab modification and a self-deleting executable script."
+    },
+    "180a203e99": {
+      "priority": 6,
+      "priority_reason": "Same behaviour as 0d820447dc (the urlopen call that sends the request built on line 38); review together.",
+      "behavior_group": "SR-3 set-reminder: generated reminder script posts to a Telegram gateway",
+      "verified_evidence_line": 41,
+      "excerpts": [
+        {"file": "scripts/set_reminder.py", "start": 36, "end": 44, "why": "reported location: urlopen(req, timeout=10) inside the template"}
+      ],
+      "what_cisco_detected": "DATA_EXFIL_NETWORK_REQUESTS: a regex match on `urllib.request.urlopen(`.",
+      "cisco_mechanism": "Same signature as 0d820447dc; Cisco reports one finding per matching line, so one request produces two findings.",
+      "trust_boundary": "Same as 0d820447dc.",
+      "data_flow": "Same as 0d820447dc.",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "medium",
+      "suggested_rationale": "This line sends the request built on line 38, so it is the same behaviour counted twice. Label it the same way as 0d820447dc unless the reviewer finds a difference.",
+      "alternative_interpretation": "uncertain (as for 0d820447dc).",
+      "open_questions": "Count at the behaviour level (one request) or the line level (two findings) in the paper?",
+      "related_review_ids": ["0d820447dc"],
+      "observed_not_reported": ""
+    },
+    "78fa761fe9": {
+      "priority": 7,
+      "priority_reason": "MEDIUM manifest-consistency finding that only appears with the full folder; its label decides whether this context effect is meaningful.",
+      "behavior_group": "SR-3 set-reminder: generated reminder script posts to a Telegram gateway",
+      "verified_evidence_line": null,
+      "excerpts": [
+        {"file": "SKILL.md", "start": 1, "end": 6, "why": "frontmatter: description says 'Set a one-off Telegram reminder'"},
+        {"file": "scripts/set_reminder.py", "start": 36, "end": 41, "why": "network code that triggered the check (inside the template)"}
+      ],
+      "what_cisco_detected": "ALLOWED_TOOLS_NETWORK_USAGE: bundled code makes network requests, and Cisco asks that network access be documented and justified in the skill description.",
+      "cisco_mechanism": "allowed_tools_checks.py fires when allowed-tools is non-empty and any script contains a substring such as 'urllib.request'. It does not read the description to see whether network use is mentioned.",
+      "trust_boundary": "Skill description (what the user is told) <-> actual network behaviour of the bundled code.",
+      "data_flow": "Same as 0d820447dc.",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "low",
+      "suggested_rationale": "The description says the skill sets a Telegram reminder, which implies network use, but it does not mention the gateway or the .env configuration. Whether that counts as 'documented' is a judgement call, and the check itself is a substring test that never reads the description.",
+      "alternative_interpretation": "uncertain (documentation gap rather than a security behaviour).",
+      "open_questions": "Is 'Telegram reminder' sufficient documentation of network use for the codebook?",
+      "related_review_ids": ["0d820447dc", "e37db01d42"],
+      "observed_not_reported": ""
+    },
+    "d1c1fe72fc": {
+      "priority": 8,
+      "priority_reason": "Same code as 9cbcff225f reported by a second (behavioral) rule with an off-by-several line number; mainly a location-accuracy and double-counting check.",
+      "behavior_group": "YT-1 youtube-content: example code that fetches a YouTube page with curl",
+      "verified_evidence_line": 169,
+      "excerpts": [
+        {"file": "SKILL.md", "start": 1, "end": 5, "why": "frontmatter (5 lines) that Cisco strips before counting MDBLOCK lines"},
+        {"file": "SKILL.md", "start": 164, "end": 173, "why": "the code block; the evidence is on line 169, Cisco reported 162"}
+      ],
+      "what_cisco_detected": "MDBLOCK_PYTHON_SUBPROCESS: the behavioral analyzer found subprocess use inside a Python code block in SKILL.md.",
+      "cisco_mechanism": "behavioral_analyzer.py _analyze_markdown_code_blocks counts lines from the code fence and, in SKILL.md, after removing the frontmatter, so the reported line (162) is above the evidence (169).",
+      "trust_boundary": "Same as 9cbcff225f.",
+      "data_flow": "Same as 9cbcff225f.",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "medium",
+      "suggested_rationale": "Same behaviour as 9cbcff225f, reported by a different rule and analyzer. The location mismatch is a known Cisco 2.3.1 line-counting quirk and does not change the behaviour. Label consistently with 9cbcff225f; note the location issue separately as evidence_present = partly.",
+      "alternative_interpretation": "scanner_parser_issue for the location only.",
+      "open_questions": "Should cross-rule duplicates be merged into one behaviour in the paper's counts?",
+      "related_review_ids": ["9cbcff225f", "018ac4e2f1"],
+      "observed_not_reported": ""
+    },
+    "018ac4e2f1": {
+      "priority": 9,
+      "priority_reason": "The same fallback code repeated in a reference document; only visible in the full-folder behavioral scan.",
+      "behavior_group": "YT-1 youtube-content: example code that fetches a YouTube page with curl",
+      "verified_evidence_line": 70,
+      "excerpts": [
+        {"file": "references/ytdlp-quirks.md", "start": 64, "end": 82, "why": "reported location: the same curl fallback in a reference file (evidence on line 70, reported 69)"}
+      ],
+      "what_cisco_detected": "MDBLOCK_PYTHON_SUBPROCESS in a Python code block of a supporting markdown file.",
+      "cisco_mechanism": "Same as d1c1fe72fc; in non-SKILL.md files the line is one too low (counted from the fence).",
+      "trust_boundary": "Same as 9cbcff225f; the reference file is loaded only if the agent follows the link.",
+      "data_flow": "Same as 9cbcff225f.",
+      "suggested_interpretation": "intentional",
+      "suggested_confidence": "medium",
+      "suggested_rationale": "Documentation that repeats the SKILL.md fallback. It is a real additional location found only with the full folder, but not a new behaviour.",
+      "alternative_interpretation": "uncertain (same open question as 9cbcff225f).",
+      "open_questions": "Does a repeated example in a reference file count as a new finding or as the same behaviour?",
+      "related_review_ids": ["9cbcff225f", "d1c1fe72fc"],
+      "observed_not_reported": ""
+    },
+    "65f210f2dd": {
+      "priority": 10,
+      "priority_reason": "LOW finding; quick to confirm from Cisco's source.",
+      "behavior_group": "SR-2 set-reminder: regular expressions used to parse a time string",
+      "verified_evidence_line": null,
+      "excerpts": [
+        {"file": "SKILL.md", "start": 5, "end": 5, "why": "allowed-tools declaration"},
+        {"file": "scripts/set_reminder.py", "start": 75, "end": 80, "why": "re.match used to parse '+45m' style times"}
+      ],
+      "what_cisco_detected": "ALLOWED_TOOLS_GREP_VIOLATION: code 'uses search/grep patterns' but Grep is not in allowed-tools.",
+      "cisco_mechanism": "data/packs/core/python/_helpers.py GREP_PATTERNS treats any re.search/re.match/re.findall/re.finditer/re.sub call, or the word 'grep', as use of the agent's Grep tool.",
+      "trust_boundary": "None identified: in-process string parsing of the --when argument.",
+      "data_flow": "--when argument -> re.match(r'^\\+(\\d+)([mhd])$') -> datetime.",
+      "suggested_interpretation": "scanner_parser_issue",
+      "suggested_confidence": "high",
+      "suggested_rationale": "Using Python's re module is not use of the agent's Grep tool. The finding combines that heuristic with the same allowed-tools tokenisation as e37db01d42.",
+      "alternative_interpretation": "",
+      "open_questions": "",
+      "related_review_ids": ["e37db01d42"],
+      "observed_not_reported": ""
+    },
+    "39cb711dfc": {
+      "priority": 11,
+      "priority_reason": "Quick check: the file is one comment line.",
+      "behavior_group": "SC-2 skill-creator: one-line package marker file",
+      "verified_evidence_line": 1,
+      "excerpts": [
+        {"file": "scripts/__init__.py", "start": 1, "end": 1, "why": "entire file (32 bytes)"}
+      ],
+      "what_cisco_detected": "FILE_MAGIC_MISMATCH: Magika classified the .py file as Markdown (confidence 0.95), which Cisco reports as possible obfuscation.",
+      "cisco_mechanism": "Static analyzer compares the file extension with Google's Magika content-type classifier; a single line starting with '#' looks like a Markdown heading.",
+      "trust_boundary": "None identified.",
+      "data_flow": "None: the file contains only a comment.",
+      "suggested_interpretation": "scanner_parser_issue",
+      "suggested_confidence": "high",
+      "suggested_rationale": "The file contains only the comment '# skill-creator scripts package'. A content classifier has too little text to tell a Python comment from a Markdown heading.",
+      "alternative_interpretation": "",
+      "open_questions": "",
+      "related_review_ids": [],
+      "observed_not_reported": ""
+    }
+  }
+}
