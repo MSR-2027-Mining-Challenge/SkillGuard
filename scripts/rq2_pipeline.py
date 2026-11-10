@@ -82,7 +82,7 @@ def sha256(path):
 def write_csv(path: Path, rows: list[dict], fields: list[str]):
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore')
+        writer = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore', lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 
@@ -403,7 +403,7 @@ def report(root: Path, csv_path: Path, run: Path, out: Path, taxonomy: Path, ori
        'and multi-location warnings may refer to the same underlying issue.\n\n'
        'Open `../02_DETAILED_ANALYSIS/candidate_review_queue.csv` for the review queue.\n')
     (d1/'START_HERE.md').write_text(d1_summary,encoding='utf-8')
-    (d1/'README.md').write_text('# Important results\n\nStart with `START_HERE.md` and `../dashboard.html`.\n',encoding='utf-8')
+    (d1/'README.md').write_text('# Important results\n\nStart with `START_HERE.md`. Generate `dashboard.html` locally using the pipeline.\n',encoding='utf-8')
     emit_html(out/'index.html', review, status_counter, rule_counts, metadata)
     # The screenshot uses a dashboard.html inside the important-results folder.
     emit_html(d1/'dashboard.html', review, status_counter, rule_counts, metadata)
@@ -417,10 +417,10 @@ def report(root: Path, csv_path: Path, run: Path, out: Path, taxonomy: Path, ori
        '# RQ2 — Reports and validation\n\n**Start here:** open `index.html` locally or read '
        '`01_IMPORTANT_RESULTS/START_HERE.md` on GitHub.\n\n'
        '| Folder | What you find there |\n|---|---|\n'
-       '| `01_IMPORTANT_RESULTS/` | Main summary, offline dashboard, rule counts |\n'
-       '| `02_DETAILED_ANALYSIS/` | Redacted source context, automated hints, review queue |\n'
-       '| `03_RAW_SCANNER_OUTPUT/` | Input checksums, per-skill manifest index, run metadata |\n'
-       '| `04_HUMAN_VALIDATION/` | Existing human assessments, unreviewed queue, orphaned labels |\n\n'
+       '| `01_IMPORTANT_RESULTS/` | Published summary and rule counts; dashboard generated locally |\n'
+       '| `02_DETAILED_ANALYSIS/` | Detailed evidence and review queues generated locally |\n'
+       '| `03_RAW_SCANNER_OUTPUT/` | Input provenance generated locally; raw skill data excluded |\n'
+       '| `04_HUMAN_VALIDATION/` | Published status summary; individual annotations remain local |\n\n'
        'The exported skill folders and raw scanner JSON remain local and are not packaged into this report.\n',encoding='utf-8')
     # Centralized LaTeX statistics. Output is user-regeneratable and safe to include.
     (d1/'rq2_auto_macros.tex').write_text(
