@@ -64,6 +64,21 @@ Verify the version before scanning (the notebook records it in every run):
 Expected output: `skill-scanner 2.3.1`. Do not upgrade the scanner mid-study; a version change invalidates
 finding-level comparisons with earlier runs.
 
+### LLM Analyzer and Meta-Analyzer
+
+`notebooks/06_cisco_llm_meta_experiment.ipynb` (code in `src/gitskills_cisco_llm`) reruns a finished notebook-01 scan
+with Cisco's LLM Analyzer and Meta-Analyzer on every skill. It reuses the baseline reports without modifying them, and
+it is checkpointed, resumable and budget-guarded. How Cisco's analyzers behave is documented in
+`docs/cisco_llm_meta_analyzers.md`. The local model needs [Ollama](https://ollama.com) and a one-time
+`ollama create skillscan-qwen3-4b-ctx64k -f configs/ollama/skillscan-qwen3-4b-ctx64k.Modelfile`. A hosted model also
+needs `SKILL_SCANNER_LLM_API_KEY` and an approved `--budget-usd`.
+
+```bash
+PYTHONPATH=src .venv/bin/python -m gitskills_cisco_llm prepare --source <notebook-01 scan run> --name <name> --model ollama/skillscan-qwen3-4b-ctx64k
+PYTHONPATH=src .venv/bin/python -m gitskills_cisco_llm run <run folder>
+PYTHONPATH=src .venv/bin/python -m gitskills_cisco_llm analyze <run folder>
+```
+
 ## Where to Look: Researcher Reports
 
 Every saved Cisco run gets a report in `results/reports/<database>/<run ID>/` (combined pilot reports from notebook 02:

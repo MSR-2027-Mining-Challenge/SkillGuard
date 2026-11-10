@@ -1,0 +1,6 @@
+# Local LLM used for the Cisco LLM/Meta experiment (no API cost). Same weights as qwen3:4b; only the context
+# window is raised so Cisco's prompt budgets (100k chars LLM, 300k chars Meta) are not silently truncated by Ollama.
+# Create:  ollama create skillscan-qwen3-4b-ctx64k -f configs/ollama/skillscan-qwen3-4b-ctx64k.Modelfile
+# Remove:  ollama rm skillscan-qwen3-4b-ctx64k
+FROM qwen3:4b
+PARAMETER num_ctx 65536
