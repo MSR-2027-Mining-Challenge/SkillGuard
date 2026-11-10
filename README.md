@@ -63,3 +63,32 @@ Verify the version before scanning (the notebook records it in every run):
 
 Expected output: `skill-scanner 2.3.1`. Do not upgrade the scanner mid-study; a version change invalidates
 finding-level comparisons with earlier runs.
+
+## Where to Look: Researcher Reports
+
+Every saved Cisco run gets a report in `results/reports/<database>/<run ID>/` (combined pilot reports from notebook 02:
+`results/reports/<database>/combined/<ID>/`). Open `results/reports/index.html` (or `results/reports/README.md`) to see
+all of them; ★ marks the report to open first for each experiment.
+
+| folder | open it for |
+|---|---|
+| `01_IMPORTANT_RESULTS/` | `START_HERE.md` and `dashboard.html` (self-contained, opens offline in any browser), headline tables |
+| `02_DETAILED_ANALYSIS/` | per-skill pages, rule / analyzer breakdowns, full finding tables, figures |
+| `03_RAW_SCANNER_OUTPUT/` | index of the raw Cisco reports with SHA-256 (the reports stay in the git-ignored run folder) |
+| `04_HUMAN_VALIDATION/` | what has been validated, worksheet snapshots |
+
+Reports keep **scanner alerts**, **provisional** (AI-assisted) labels and **human-validated** findings apart.
+Notebook 01 (Section 17) and notebook 02 build their report automatically; `notebooks/05_build_reports.ipynb`
+rebuilds any or all of them. From the command line:
+
+```bash
+PYTHONPATH=src .venv/bin/python -m gitskills_reports
+```
+
+The run folders are only read. Report text is redacted where it looks like a secret and uses repository-relative
+paths, and each report is audited for both before it is written, so `results/reports/` is safe to commit.
+Validation tests (the 30-skill pilot plus a synthetic hostile skill):
+
+```bash
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
+```
