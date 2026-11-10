@@ -1,0 +1,730 @@
+{
+  "title": "MSR 2027 SkillGuard RQ2 Defect Taxonomy",
+  "version": "0.1",
+  "created": "2026-11-09",
+  "method_note": "R1-R7 names/31 IDs reproduced from Zhang et al. Figure 1; operational rules are project implementations. P1-P5 and S1-S4 are explicitly our additions. Do not claim full equivalence with published detectors.",
+  "sources": [
+    {
+      "name": "Zhang et al., What Keeps Agent Skills from Being Reusable?",
+      "url": "https://arxiv.org/abs/2608.08453",
+      "loc": "Sec. 3.2, Fig. 1"
+    },
+    {
+      "name": "Hong et al., From Anatomy to Smells",
+      "url": "https://arxiv.org/abs/2607.01456",
+      "loc": "Table III"
+    },
+    {
+      "name": "Official Agent Skills specification",
+      "url": "https://agentskills.io/specification"
+    }
+  ],
+  "original_taxonomy": [
+    {
+      "id": "R1.1",
+      "name": "Missing description",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "spec",
+      "trigger": "Parsed YAML frontmatter has no description key or its trimmed value is empty.",
+      "exclusion": "Treat YAML parse failures separately under S02; do not treat an empty description as a missing trigger phrase.",
+      "verification": "Parse YAML and assert a nonempty string.",
+      "repair": "Add a description stating function and invocation context."
+    },
+    {
+      "id": "R1.2",
+      "name": "Description too short",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "heuristic",
+      "trigger": "Description length after trim is <30 Unicode characters.",
+      "exclusion": "This 30-character threshold comes from the study, not the official minimum of one character.",
+      "verification": "Count Unicode code points in the parsed description.",
+      "repair": "Add the action and suitable trigger wording."
+    },
+    {
+      "id": "R1.3",
+      "name": "Missing trigger guidance",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "heuristic",
+      "trigger": "Description conveys the action but never states a usage condition, triggering situation, or task type.",
+      "exclusion": "Do not require literal words \"Use when\"; equivalent language counts.",
+      "verification": "Researcher highlights actionable trigger span; if none, confirm candidate.",
+      "repair": "Add a specific when-to-use condition."
+    },
+    {
+      "id": "R1.4",
+      "name": "Non-functional description",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "heuristic",
+      "trigger": "Description fails to identify a concrete capability or differentiating outcome (e.g., \"helps with things\").",
+      "exclusion": "Short yet precise descriptions are not automatically nonfunctional.",
+      "verification": "Researcher states what task could be routed from description alone.",
+      "repair": "Name the action, target artifact, and distinguishing capability."
+    },
+    {
+      "id": "R1.5",
+      "name": "Overlong routing description",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "heuristic",
+      "trigger": "Description length after trim >300 characters (paper Figure 1 baseline).",
+      "exclusion": "301–1024 characters violates the paper heuristic but not the official 1024-character maximum; >1024 is S04.",
+      "verification": "Count exact characters and record both warning and spec-validity result.",
+      "repair": "Front-load the trigger; move detail to the body."
+    },
+    {
+      "id": "R1.6",
+      "name": "Routing guidance only in body",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "heuristic",
+      "trigger": "Body contains explicit when-to-use/trigger guidance missing from the description.",
+      "exclusion": "A trigger included in both locations is fine.",
+      "verification": "Compare frontmatter description to relevant body sentence(s).",
+      "repair": "Move or summarize trigger guidance into description."
+    },
+    {
+      "id": "R2.1",
+      "name": "Oversized body",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "recommendation",
+      "trigger": "SKILL.md Markdown body has >500 physical lines, excluding frontmatter.",
+      "exclusion": "The 500-line target is guidance, not an invalid SKILL.md format.",
+      "verification": "Count splitlines() of body with pinned parser settings.",
+      "repair": "Move optional details into referenced files."
+    },
+    {
+      "id": "R2.2",
+      "name": "Non-actionable body",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "heuristic",
+      "trigger": "Body does not give identifiable instructions, constraints, or executable decisions for its stated task.",
+      "exclusion": "An information-reference skill can be useful without numbered steps.",
+      "verification": "Researcher identifies at least one concrete agent action or decision; assess absence.",
+      "repair": "Add actionable procedure and expected output."
+    },
+    {
+      "id": "R2.3",
+      "name": "Explains obvious",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "heuristic",
+      "trigger": "Body spends substantive space defining generic concepts not needed to perform the advertised task.",
+      "exclusion": "Domain-specific prerequisites and safety explanations are not redundant.",
+      "verification": "Mark unnecessary span and explain why task success does not require it.",
+      "repair": "Remove or move elementary exposition."
+    },
+    {
+      "id": "R2.4",
+      "name": "Name repeated as H1",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "style",
+      "trigger": "First H1 of body is textually identical to frontmatter name after lowercasing, replacing hyphens/underscores with spaces and trimming punctuation.",
+      "exclusion": "A descriptive H1 that adds additional words does not trigger.",
+      "verification": "Normalize title and name with documented function; compare.",
+      "repair": "Use a descriptive title or remove duplicated heading."
+    },
+    {
+      "id": "R2.5",
+      "name": "Description duplicated in body",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "style",
+      "trigger": "First body paragraph repeats the full description verbatim after collapsing whitespace and case.",
+      "exclusion": "Partial elaboration or paraphrase is not a verbatim duplicate.",
+      "verification": "Compare exact normalized strings; store matching span.",
+      "repair": "Remove redundant introductory copy."
+    },
+    {
+      "id": "R3.1",
+      "name": "Excessive inline code",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "heuristic",
+      "trigger": "More than 60% of nonblank body lines lie inside fenced code blocks.",
+      "exclusion": "Ratio is our reproducible implementation of the paper threshold, not a claim about its original exact parser.",
+      "verification": "Use a Markdown fence parser, report numerator/denominator.",
+      "repair": "Move implementation to scripts and reference from SKILL.md."
+    },
+    {
+      "id": "R3.2",
+      "name": "Too many code examples",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "heuristic",
+      "trigger": "More than eight fenced code blocks occur in the SKILL.md body.",
+      "exclusion": "Code blocks are a proxy for examples; a block containing essential output syntax may not be an example.",
+      "verification": "Parse Markdown fences and count blocks.",
+      "repair": "Consolidate or move examples to references."
+    },
+    {
+      "id": "R3.3",
+      "name": "Monolithic skill without resources",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "project-threshold",
+      "trigger": "Body >300 lines AND the package has no scripts/ or references/ files that are actually referenced.",
+      "exclusion": "300 is an explicit project pilot threshold; tune in sensitivity analysis and do not attribute it to the paper.",
+      "verification": "Count body lines, inventory files, parse explicit links.",
+      "repair": "Externalize optional details and scripts while preserving entry point."
+    },
+    {
+      "id": "R4.1",
+      "name": "Installation instructions in body",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "heuristic",
+      "trigger": "SKILL.md contains explicit package/plugin installation steps unrelated to executing the skill.",
+      "exclusion": "Required runtime setup may be legitimate; do not classify all pip/npm commands as a defect.",
+      "verification": "Review command and whether it is necessary and documented.",
+      "repair": "Move optional installation guide to a setup reference."
+    },
+    {
+      "id": "R4.2",
+      "name": "Changelog in active instructions",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "style",
+      "trigger": "Body includes a CHANGELOG/Version History section with historical entries.",
+      "exclusion": "A version constraint for an API is not a changelog.",
+      "verification": "Locate heading and dated/versioned entries.",
+      "repair": "Move history to CHANGELOG.md."
+    },
+    {
+      "id": "R4.3",
+      "name": "License boilerplate in body",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "style",
+      "trigger": "Body reproduces a full copyright/license clause instead of referring to LICENSE.",
+      "exclusion": "A brief legally necessary usage restriction is not automatically problematic.",
+      "verification": "Identify license passage and its location.",
+      "repair": "Move full license into a dedicated file and reference it."
+    },
+    {
+      "id": "R4.4",
+      "name": "Unfinished markers",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "static",
+      "rule_type": "style",
+      "trigger": "Operational prose contains TODO, FIXME, TBD, or a placeholder requiring completion.",
+      "exclusion": "Do not count markers in explicitly labeled examples or code demonstrating how to find TODOs.",
+      "verification": "Record marker and its syntactic context.",
+      "repair": "Complete or remove placeholder."
+    },
+    {
+      "id": "R5.1",
+      "name": "Hardcoded credentials",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "risk",
+      "trigger": "Static content contains a plausible live API key, token, password, or private key intended for reuse.",
+      "exclusion": "Synthetic examples, placeholders, and public test vectors are not confirmed exposures. Never reproduce credential values in reports.",
+      "verification": "Run detector on redacted output; manual contextual review; do not validate keys against providers.",
+      "repair": "Remove/rotate credentials and load from secure runtime configuration."
+    },
+    {
+      "id": "R5.2",
+      "name": "Safety bypass instruction",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "risk",
+      "trigger": "Active instructions/scripts disable integrity or safety controls (e.g., --no-verify, disabled certificate verification).",
+      "exclusion": "A quotation in security-training documentation is not an active bypass.",
+      "verification": "Trace whether bypass executes as part of workflow.",
+      "repair": "Use safe defaults; document exceptional cases with justification."
+    },
+    {
+      "id": "R5.3",
+      "name": "Instruction hierarchy / injection pattern",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "risk",
+      "trigger": "Skill instructs the agent to ignore higher-priority instructions, or asks it to follow untrusted data as authoritative commands.",
+      "exclusion": "Legitimate defensive examples and quotations are not automatically attacks.",
+      "verification": "Identify attacker-controlled surface, instruction redirection, and trust boundary.",
+      "repair": "Separate data from commands; respect instruction hierarchy."
+    },
+    {
+      "id": "R5.4",
+      "name": "Unguarded destructive actions",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "risk",
+      "trigger": "Active steps can erase/overwrite data, change cron/jobs, or terminate unrelated processes without a stated scope check, preview, or user approval where material.",
+      "exclusion": "Expected, narrow, user-authorized operations with adequate scope guards are not automatically defects.",
+      "verification": "Identify exact side effect and safeguards in entire package.",
+      "repair": "Add confirmation, dry run, path/target constraints, and rollback where feasible."
+    },
+    {
+      "id": "R5.5",
+      "name": "Error suppression",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "risk",
+      "trigger": "Exceptions/nonzero exits that materially affect success are silently discarded and workflow reports success.",
+      "exclusion": "Best-effort cleanup with documented tolerable failure can be appropriate.",
+      "verification": "Trace error to caller and final user-visible status.",
+      "repair": "Handle and surface failure or narrow exception scope."
+    },
+    {
+      "id": "R5.6",
+      "name": "User-specific path leakage",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "risk",
+      "trigger": "Literal absolute path exposes an individual home directory/account/machine path not required by functionality.",
+      "exclusion": "Generic example paths and env-based path expansion are not user leakage.",
+      "verification": "Record redacted pattern, classify as leak vs portable placeholder.",
+      "repair": "Use relative paths, $HOME, Path.home(), or parametrization."
+    },
+    {
+      "id": "R6.1",
+      "name": "Hardcoded model name",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "portability",
+      "trigger": "Task is broadly advertised but requires a specific named LLM model with no supported alternative.",
+      "exclusion": "A skill explicitly intended for that model is not necessarily defective.",
+      "verification": "Compare description, compatibility, and actual invocation.",
+      "repair": "Parameterize model or specify dependency explicitly."
+    },
+    {
+      "id": "R6.2",
+      "name": "Platform-specific hardcoded paths",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "portability",
+      "trigger": "Hardcoded Windows drive or Unix absolute path is required for operation but not documented or parameterized.",
+      "exclusion": "Generic /tmp and user-supplied paths may be intentional; Windows backslash notation is not itself a defect.",
+      "verification": "Trace path through scripts and reference docs; check compatibility.",
+      "repair": "Use path libraries and configurable roots."
+    },
+    {
+      "id": "R6.3",
+      "name": "Platform-specific tool calls",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "portability",
+      "trigger": "Instructions require an agent-host-specific tool/API without stating platform compatibility or fallback.",
+      "exclusion": "Platform-scoped skill with explicit compatibility is acceptable.",
+      "verification": "Check tool references against declared host and adapter availability.",
+      "repair": "State platform requirement or provide fallback."
+    },
+    {
+      "id": "R6.4",
+      "name": "OS-specific commands",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "hybrid",
+      "rule_type": "portability",
+      "trigger": "Essential command is OS-specific (e.g., pbcopy, apt, crontab) but no OS requirement or alternative is documented.",
+      "exclusion": "Explicitly platform-scoped skills are not automatically defective.",
+      "verification": "Cross-check script commands and compatibility metadata.",
+      "repair": "Document OS dependency or offer alternative."
+    },
+    {
+      "id": "R7.1",
+      "name": "Persona redefinition",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "risk",
+      "trigger": "Skill orders agent to assume a conflicting primary identity or overarching role rather than a bounded task role.",
+      "exclusion": "Task personas (\"act as a code reviewer\") can be benign.",
+      "verification": "Compare claimed role to skill scope and host instruction hierarchy.",
+      "repair": "Limit role wording to task-specific expertise."
+    },
+    {
+      "id": "R7.2",
+      "name": "Overrides prior instructions",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "risk",
+      "trigger": "Active directive claims precedence over system/developer/user rules or instructs to ignore earlier constraints.",
+      "exclusion": "Quoting malicious prompts in defensive material is not an active override.",
+      "verification": "Locate imperative claim and determine whether it is active instruction.",
+      "repair": "Remove override; state bounded workflow requirements."
+    },
+    {
+      "id": "R7.3",
+      "name": "Scope mismatch",
+      "origin": "Zhang et al. (reproduced ID, project-operationalized criterion)",
+      "mode": "manual",
+      "rule_type": "risk",
+      "trigger": "Body/script performs an unrelated task or requests privileges/data not implied by description.",
+      "exclusion": "Necessary internal subtasks are not automatically out of scope.",
+      "verification": "Compare description, process behavior, and data flows; identify unrelated effect.",
+      "repair": "Revise description/permissions or remove unrelated behavior."
+    }
+  ],
+  "project_package_extensions": [
+    {
+      "id": "P1",
+      "name": "Broken supporting-file reference",
+      "origin": "SkillGuard proposed extension",
+      "mode": "static",
+      "rule_type": "package",
+      "trigger": "An explicit relative path or Markdown link in SKILL.md/reference points to a file absent from the complete skill package.",
+      "exclusion": "Ignore URLs, templated paths, documented generated files, or deliberately external paths.",
+      "verification": "Resolve relative to skill root with symlink containment checks; record broken path.",
+      "repair": "Fix link or include file."
+    },
+    {
+      "id": "P2",
+      "name": "Undocumented runtime dependency",
+      "origin": "SkillGuard proposed extension",
+      "mode": "hybrid",
+      "rule_type": "package",
+      "trigger": "Referenced executable script requires a nonstandard executable/library/service absent from documented prerequisites/compatibility.",
+      "exclusion": "A dependency bundled in repo or standard with declared platform is satisfied.",
+      "verification": "Parse imports and subprocess targets; compare requirements/config and docs.",
+      "repair": "Declare/install/replace dependency or provide fallback."
+    },
+    {
+      "id": "P3",
+      "name": "Instruction–implementation contradiction",
+      "origin": "SkillGuard proposed extension",
+      "mode": "manual",
+      "rule_type": "package",
+      "trigger": "Active SKILL.md instructions and actual script interface/behavior disagree (flags, file locations, returned fields, effect).",
+      "exclusion": "Multiple compatible usage modes are not contradictions.",
+      "verification": "Trace one claim to implementation/test and record both line ranges.",
+      "repair": "Update instruction or script and add regression test."
+    },
+    {
+      "id": "P4",
+      "name": "Unprotected side effect in supporting script",
+      "origin": "SkillGuard proposed extension",
+      "mode": "hybrid",
+      "rule_type": "package-risk",
+      "trigger": "Referenced script modifies persistent jobs, files, system state, or network targets beyond advertised behavior without adequate guardrails.",
+      "exclusion": "Normal user-requested side effects with safe target and scope are not defects.",
+      "verification": "Static data-flow and guard review; test in hermetic fixture if appropriate.",
+      "repair": "Add authorization, target constraints, preview/rollback."
+    },
+    {
+      "id": "P5",
+      "name": "Reproducible functional correctness failure",
+      "origin": "SkillGuard proposed extension",
+      "mode": "manual-test",
+      "rule_type": "package",
+      "trigger": "A normal documented use case produces wrong output, wrong timing, a crash, or incompatible artifact, verified with safe deterministic test.",
+      "exclusion": "Speculative possible errors without a demonstrable supported input do not count.",
+      "verification": "Create minimal expected-vs-actual fixture in sandbox, no untrusted execution on host.",
+      "repair": "Patch logic and prove regression passes."
+    }
+  ],
+  "spec_preflight": [
+    {
+      "id": "S1",
+      "name": "Missing SKILL.md",
+      "trigger": "skill folder does not contain SKILL.md exactly where required",
+      "repair": "Add SKILL.md",
+      "origin": "Official Agent Skills specification, operationalized by SkillGuard"
+    },
+    {
+      "id": "S2",
+      "name": "Invalid YAML frontmatter",
+      "trigger": "frontmatter missing delimiters or is not parseable as expected YAML mapping",
+      "repair": "Repair YAML",
+      "origin": "Official Agent Skills specification, operationalized by SkillGuard"
+    },
+    {
+      "id": "S3",
+      "name": "Invalid skill name",
+      "trigger": "name absent, malformed, >64, consecutive hyphens, or does not equal parent directory",
+      "repair": "Correct name and directory",
+      "origin": "Official Agent Skills specification, operationalized by SkillGuard"
+    },
+    {
+      "id": "S4",
+      "name": "Invalid description length",
+      "trigger": "description absent/empty or >1024 characters",
+      "repair": "Correct description",
+      "origin": "Official Agent Skills specification, operationalized by SkillGuard"
+    }
+  ],
+  "smell_crosswalk": [
+    {
+      "acronym": "TSW",
+      "name": "The Stepless Workflow",
+      "paper_category": "Under-Specified Guidance",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "Partial overlap; workflow quality"
+    },
+    {
+      "acronym": "TOB",
+      "name": "The Option Buffet",
+      "paper_category": "Under-Specified Guidance",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "Partial overlap; unclear default selection"
+    },
+    {
+      "acronym": "MUS",
+      "name": "Missing Utility Script",
+      "paper_category": "Under-Specified Guidance",
+      "mapped_codes": [],
+      "mapping_note": "No direct counterpart; track as separate skill-smell if relevant"
+    },
+    {
+      "acronym": "MDT",
+      "name": "Missing Decision Tree",
+      "paper_category": "Under-Specified Guidance",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "No strict equivalent"
+    },
+    {
+      "acronym": "SOC",
+      "name": "Series of Commands",
+      "paper_category": "Over-Prescribed Guidance",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "Potentially conflicts with a deliberately deterministic workflow"
+    },
+    {
+      "acronym": "NVS",
+      "name": "No Validation Step",
+      "paper_category": "Missing Verification & Feedback Loop",
+      "mapped_codes": [],
+      "mapping_note": "No direct counterpart; missing validation is not itself a reproduced P5 failure"
+    },
+    {
+      "acronym": "EWP",
+      "name": "Execute Without a Plan",
+      "paper_category": "Missing Verification & Feedback Loop",
+      "mapped_codes": [
+        "R5.4"
+      ],
+      "mapping_note": "Only overlapping for high-impact actions"
+    },
+    {
+      "acronym": "NAH",
+      "name": "Never Asks Human",
+      "paper_category": "Missing Verification & Feedback Loop",
+      "mapped_codes": [
+        "R5.4"
+      ],
+      "mapping_note": "Only overlapping when user approval is warranted"
+    },
+    {
+      "acronym": "RL",
+      "name": "Rationalization Loophole",
+      "paper_category": "Missing Follow-Through Guards",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "Weak conceptual link only; no exact equivalent"
+    },
+    {
+      "acronym": "NPT",
+      "name": "No Progress Tracking",
+      "paper_category": "Missing Follow-Through Guards",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "No exact equivalent; multi-step work only"
+    },
+    {
+      "acronym": "UD",
+      "name": "Undelegated Detail",
+      "paper_category": "Context Bloat",
+      "mapped_codes": [
+        "R3.1",
+        "R3.3"
+      ],
+      "mapping_note": "Close overlap"
+    },
+    {
+      "acronym": "LSB",
+      "name": "Lengthy Skill Body",
+      "paper_category": "Context Bloat",
+      "mapped_codes": [
+        "R2.1"
+      ],
+      "mapping_note": "Different thresholds: 5000 words vs 500 lines"
+    },
+    {
+      "acronym": "LSN",
+      "name": "Lengthy Skill Name",
+      "paper_category": "Context Bloat",
+      "mapped_codes": [
+        "S3"
+      ],
+      "mapping_note": "Same official 64-character maximum"
+    },
+    {
+      "acronym": "LSD",
+      "name": "Lengthy Skill Description",
+      "paper_category": "Context Bloat",
+      "mapped_codes": [
+        "S4",
+        "R1.5"
+      ],
+      "mapping_note": "1024 official chars vs 300 heuristic"
+    },
+    {
+      "acronym": "CSD",
+      "name": "Confusing Skill Description",
+      "paper_category": "Context Bloat",
+      "mapped_codes": [
+        "R1.3",
+        "R1.4"
+      ],
+      "mapping_note": "Close semantic overlap"
+    },
+    {
+      "acronym": "NG",
+      "name": "No Guardrails",
+      "paper_category": "Missing Safeguards",
+      "mapped_codes": [
+        "R5.4"
+      ],
+      "mapping_note": "Only when guarded action is relevant"
+    },
+    {
+      "acronym": "BG",
+      "name": "Buried Gotchas",
+      "paper_category": "Missing Safeguards",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "No exact equivalent; information placement"
+    },
+    {
+      "acronym": "MUR",
+      "name": "Missing Usage Rules",
+      "paper_category": "Missing Safeguards",
+      "mapped_codes": [
+        "R1.3"
+      ],
+      "mapping_note": "Partial overlap with trigger guidance"
+    },
+    {
+      "acronym": "MC",
+      "name": "Missing Caveats",
+      "paper_category": "Missing Safeguards",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "No exact equivalent"
+    },
+    {
+      "acronym": "ME",
+      "name": "Missing Example",
+      "paper_category": "Inadequate Contextual Grounding",
+      "mapped_codes": [
+        "R2.2"
+      ],
+      "mapping_note": "No exact equivalent; examples not mandatory"
+    },
+    {
+      "acronym": "TSS",
+      "name": "Time Sensitive Skill",
+      "paper_category": "Inadequate Contextual Grounding",
+      "mapped_codes": [
+        "P5"
+      ],
+      "mapping_note": "Only when stale time assumption causes demonstrable failure"
+    },
+    {
+      "acronym": "XID",
+      "name": "XML Included Description",
+      "paper_category": "Security Hazard",
+      "mapped_codes": [
+        "R5.3"
+      ],
+      "mapping_note": "Potential injection marker; no proof of actual exploit"
+    },
+    {
+      "acronym": "BP",
+      "name": "Backslash Path",
+      "paper_category": "Convention & Style Violations",
+      "mapped_codes": [
+        "R6.2"
+      ],
+      "mapping_note": "Not equivalent; Windows paths can be valid"
+    },
+    {
+      "acronym": "USN",
+      "name": "Unclear Skill Name",
+      "paper_category": "Convention & Style Violations",
+      "mapped_codes": [
+        "R1.4"
+      ],
+      "mapping_note": "Name quality vs description quality; only indirect overlap"
+    },
+    {
+      "acronym": "NTPD",
+      "name": "Non Third Person Description",
+      "paper_category": "Convention & Style Violations",
+      "mapped_codes": [
+        "R1.4"
+      ],
+      "mapping_note": "Stylistic; not a direct routing failure"
+    },
+    {
+      "acronym": "MT",
+      "name": "Missing Template",
+      "paper_category": "Unstructured Output",
+      "mapped_codes": [
+        "P3"
+      ],
+      "mapping_note": "Only when output format promised but implementation lacks it"
+    }
+  ],
+  "review_protocol": {
+    "unit": "finding instance identified by (skill content hash, rule ID, normalized affected file, evidence span); track higher-level behavior_id separately",
+    "candidate_status": [
+      "candidate",
+      "confirmed_defect",
+      "not_a_defect",
+      "uncertain",
+      "not_evaluable"
+    ],
+    "evidence_levels": [
+      "textual_only",
+      "source_verified",
+      "test_reproduced"
+    ],
+    "modes": [
+      "SKILL_md_only",
+      "full_folder"
+    ],
+    "rule_class": [
+      "mandatory_spec",
+      "recommendation",
+      "heuristic",
+      "risk",
+      "package"
+    ],
+    "required_fields": [
+      "skill_id",
+      "rule_id",
+      "file_path",
+      "line_number",
+      "signal",
+      "supporting_excerpt",
+      "rule_class",
+      "candidate_status",
+      "impact",
+      "recommended_fix",
+      "verification_level",
+      "investigation_notes"
+    ],
+    "deduplication": "Do not double count same rule+file+span across scanner configs; separately group correlated findings into one behavior_id; multiple R codes may apply per behavior.",
+    "safe_validation": "Never run untrusted scripts on host; only static review or isolated disposable sandbox with denied network and restricted permissions.",
+    "assessment_workflow": "One researcher records preliminary candidate_status, impact, recommended_fix, and investigation_notes. Do not treat scanner counts as confirmed defects or claim inter-rater agreement."
+  }
+}
