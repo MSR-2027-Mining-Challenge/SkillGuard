@@ -1,0 +1,10 @@
+rule_id,finding_kind,cisco_category,research_category,analyzers,max_severity,rows_primary,rows_all_readable_scans,skills_primary,skills_all,distinct_locations_primary,configurations
+DATA_EXFIL_NETWORK_REQUESTS,security,data_exfiltration,External network communication / data exfiltration,static,MEDIUM,6,12,1,1,6,Full folder | default; Full folder | behavioral
+MDBLOCK_PYTHON_HTTP_POST,security,data_exfiltration,External network communication / data exfiltration,behavioral,MEDIUM,4,12,1,1,4,SKILL.md only | behavioral; Full folder | behavioral
+DATA_EXFIL_HTTP_POST,security,data_exfiltration,External network communication / data exfiltration,static,CRITICAL,2,4,1,1,2,Full folder | default; Full folder | behavioral
+CORRELATED_SENSITIVE_NETWORK_FLOW,security,data_exfiltration,External network communication / data exfiltration,correlation,HIGH,1,2,1,1,1,Full folder | default; Full folder | behavioral
+DATA_EXFIL_SOCKET_CONNECT,security,data_exfiltration,External network communication / data exfiltration,static,CRITICAL,1,2,1,1,1,Full folder | default; Full folder | behavioral
+SECRET_CONNECTION_STRING,security,hardcoded_secrets,Credential / secret access or exposure,static,HIGH,1,2,1,1,1,Full folder | default; Full folder | behavioral
+TOOL_ABUSE_UNDECLARED_NETWORK,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,MEDIUM,1,2,1,1,1,Full folder | default; Full folder | behavioral
+BEHAVIOR_CROSSFILE_ENV_VAR_EXFILTRATION,security,data_exfiltration,External network communication / data exfiltration,behavioral,CRITICAL,0,1,0,1,0,Full folder | behavioral
+BEHAVIOR_ENV_VAR_EXFILTRATION,security,data_exfiltration,External network communication / data exfiltration,behavioral,CRITICAL,0,1,0,1,0,Full folder | behavioral

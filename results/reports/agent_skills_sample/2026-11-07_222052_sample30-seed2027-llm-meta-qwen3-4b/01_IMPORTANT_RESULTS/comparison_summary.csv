@@ -1,0 +1,31 @@
+comparison,kind,pair_status,change,rows,skills
+A_behavioral -> B_llm (Full folder),security,both primary,added by LLM: LLM-only,22,22
+A_behavioral -> B_llm (Full folder),security,both primary,added by LLM: corroborated: deterministic alert in same file and category,1,1
+A_behavioral -> B_llm (Full folder),security,both primary,"added by LLM: partly corroborated: same category, other file",3,2
+A_behavioral -> B_llm (SKILL.md only),security,both primary,added by LLM: LLM-only,29,28
+A_behavioral -> B_llm (SKILL.md only),security,both primary,added by LLM: corroborated: deterministic alert in same file and category,2,1
+"pre-Meta -> post-Meta, C_llm_meta (Full folder)",metadata / coverage,meta degraded,retained unreviewed: Meta response malformed (degraded),35,23
+"pre-Meta -> post-Meta, C_llm_meta (Full folder)",metadata / coverage,meta failed,retained unreviewed: Meta failed,1,1
+"pre-Meta -> post-Meta, C_llm_meta (Full folder)",metadata / coverage,meta ran,retained: validated by Meta,2,2
+"pre-Meta -> post-Meta, C_llm_meta (Full folder)",security,meta degraded,retained unreviewed: Meta response malformed (degraded),37,24
+"pre-Meta -> post-Meta, C_llm_meta (Full folder)",security,meta failed,retained unreviewed: Meta failed,1,1
+"pre-Meta -> post-Meta, C_llm_meta (Full folder)",security,meta ran,retained: validated by Meta,2,2
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",metadata / coverage,meta degraded,retained unreviewed: Meta response malformed (degraded),26,22
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",metadata / coverage,meta failed,retained unreviewed: Meta failed,1,1
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",metadata / coverage,meta ran,retained: validated by Meta,3,3
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",metadata / coverage,meta ran,suppressed as false positive,4,3
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",security,meta degraded,retained unreviewed: Meta response malformed (degraded),23,23
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",security,meta failed,retained unreviewed: Meta failed,1,1
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",security,meta ran,added by Meta (missed threat),2,2
+"pre-Meta -> post-Meta, C_llm_meta (SKILL.md only)",security,meta ran,retained: validated by Meta,9,6
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",metadata / coverage,meta degraded,retained unreviewed: Meta response malformed (degraded),2,2
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",metadata / coverage,meta failed,retained unreviewed: Meta failed,1,1
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",metadata / coverage,meta ran,retained: validated by Meta,2,2
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",metadata / coverage,meta skipped_clear_deterministic,"retained: routing skipped (clear deterministic evidence, no LLM call)",23,21
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",security,meta degraded,retained unreviewed: Meta response malformed (degraded),7,2
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",security,meta ran,added by Meta (missed threat),2,2
+"pre-Meta -> post-Meta, Cdet_meta (Full folder)",security,meta ran,retained: validated by Meta,4,2
+"pre-Meta -> post-Meta, Cdet_meta (SKILL.md only)",metadata / coverage,meta degraded,retained unreviewed: Meta response malformed (degraded),1,1
+"pre-Meta -> post-Meta, Cdet_meta (SKILL.md only)",metadata / coverage,meta failed,retained unreviewed: Meta failed,1,1
+"pre-Meta -> post-Meta, Cdet_meta (SKILL.md only)",metadata / coverage,meta skipped_clear_deterministic,"retained: routing skipped (clear deterministic evidence, no LLM call)",29,27
+"pre-Meta -> post-Meta, Cdet_meta (SKILL.md only)",security,meta degraded,retained unreviewed: Meta response malformed (degraded),2,1

@@ -1,0 +1,109 @@
+{
+  "sample_id": "agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10",
+  "created_at": "2026-11-04T00:12:06+00:00",
+  "random_seed": 2027,
+  "sampling_method": "stratified simple random sampling without replacement, equal allocation; unit = representative SKILL.md (one per file_sha); per stratum: frame ordered by file_sha, key = random.Random(2027).random(), smallest keys selected",
+  "random_number_generator": "Python 3.14.2 random.Random(2027).random(); one generator per stratum; Python guarantees this sequence for an integer seed across versions",
+  "database": {
+    "path": "data/sample/agent_skills_sample.db",
+    "sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "bytes": 290955264,
+    "identified_as": "official GitSkills sample database (sample-based methodological experiment; NOT representative of the full GitSkills population)"
+  },
+  "population": {
+    "skill_md_occurrences": 29786,
+    "distinct_content_hashes": 13000,
+    "representatives": 13000,
+    "representatives_with_text": 13000,
+    "repositories": 11841
+  },
+  "unit_of_sampling": "representative SKILL.md (artifacts.dedup_primary = 1), one per distinct content hash (file_sha)",
+  "inclusion_criteria": [
+    "representative row (dedup_primary = 1) with non-empty SKILL.md text",
+    "folder listing captured (composition_fetched = 1)",
+    "assigned to a stratum by the ordered rules in sampling_report.md",
+    "no selection by keyword, repository popularity, earlier pilots or security signals"
+  ],
+  "exclusions": {
+    "excluded: listing truncated, script presence unknown": 1670,
+    "excluded: program source but no executable script": 22,
+    "excluded: folder listing not captured": 10
+  },
+  "strata": {
+    "scripts": {
+      "description": "at least one executable script among the supporting files",
+      "population_N": 1404,
+      "sample_n": 10,
+      "sampling_fraction": 0.007122507122507123,
+      "design_weight": 140.4,
+      "complete_folders_in_population": 997,
+      "complete_folders_in_sample": 7
+    },
+    "supporting_no_scripts": {
+      "description": "supporting files, but no executable script and no program source",
+      "population_N": 2634,
+      "sample_n": 10,
+      "sampling_fraction": 0.0037965072133637054,
+      "design_weight": 263.4,
+      "complete_folders_in_population": 2399,
+      "complete_folders_in_sample": 10
+    },
+    "skill_md_only": {
+      "description": "complete listing with no file besides SKILL.md",
+      "population_N": 7260,
+      "sample_n": 10,
+      "sampling_fraction": 0.0013774104683195593,
+      "design_weight": 726.0,
+      "complete_folders_in_population": 7260,
+      "complete_folders_in_sample": 10
+    }
+  },
+  "script_extensions": [
+    "bash",
+    "bat",
+    "cjs",
+    "cmd",
+    "cts",
+    "exs",
+    "fish",
+    "js",
+    "lua",
+    "mjs",
+    "mts",
+    "php",
+    "pl",
+    "ps1",
+    "psm1",
+    "py",
+    "r",
+    "rb",
+    "sh",
+    "ts",
+    "zsh"
+  ],
+  "program_source_extensions": [
+    "c",
+    "cc",
+    "clj",
+    "cpp",
+    "cs",
+    "dart",
+    "ex",
+    "fs",
+    "go",
+    "h",
+    "hpp",
+    "java",
+    "jsx",
+    "kt",
+    "kts",
+    "m",
+    "rs",
+    "scala",
+    "swift",
+    "tsx",
+    "vb"
+  ],
+  "weighting_note": "Equal allocation: population-level estimates must weight each skill by design_weight = N_h / n_h.",
+  "overlap_with_previous_selections": []
+}

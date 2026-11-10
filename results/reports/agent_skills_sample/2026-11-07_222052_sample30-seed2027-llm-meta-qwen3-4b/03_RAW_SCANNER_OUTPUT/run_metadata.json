@@ -1,0 +1,761 @@
+{
+  "run_id": "2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b",
+  "run_mode": "scan",
+  "stage": "complete",
+  "run_started_at": "2026-11-08T06:20:53+00:00",
+  "written_at": "2026-11-08T11:03:18+00:00",
+  "source_run": {
+    "run_id": "2026-11-03_173516_sample30-seed2027",
+    "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+    "use": "sample manifest, exported skill folders and the four baseline reports (copied, SHA-256 checked)"
+  },
+  "database": {
+    "path": "data/sample/agent_skills_sample.db",
+    "tag": "agent_skills_sample",
+    "sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "available": true
+  },
+  "scanner": {
+    "installed_version": "skill-scanner 2.3.1",
+    "policy_setting": "balanced",
+    "common_args": [
+      "--format",
+      "json",
+      "--policy",
+      "balanced"
+    ],
+    "configurations": [
+      {
+        "configuration": "SKILL.md only | default",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "default",
+        "report_file": "skill_only_default.json",
+        "extra_args": [],
+        "required_analyzers": [
+          "static_analyzer"
+        ]
+      },
+      {
+        "configuration": "SKILL.md only | behavioral",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "behavioral",
+        "report_file": "skill_only_behavioral.json",
+        "extra_args": [
+          "--use-behavioral"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ]
+      },
+      {
+        "configuration": "Full folder | default",
+        "scope": "Full folder",
+        "analyzer_mode": "default",
+        "report_file": "full_folder_default.json",
+        "extra_args": [],
+        "required_analyzers": [
+          "static_analyzer"
+        ]
+      },
+      {
+        "configuration": "Full folder | behavioral",
+        "scope": "Full folder",
+        "analyzer_mode": "behavioral",
+        "report_file": "full_folder_behavioral.json",
+        "extra_args": [
+          "--use-behavioral"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ]
+      },
+      {
+        "configuration": "SKILL.md only | behavioral+llm",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "behavioral_llm",
+        "report_file": "skill_only_behavioral_llm.json",
+        "extra_args": [
+          "--use-behavioral",
+          "--use-llm",
+          "--verbose"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer",
+          "llm_analyzer"
+        ],
+        "uses_llm": true,
+        "uses_meta": false
+      },
+      {
+        "configuration": "SKILL.md only | behavioral+meta",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "behavioral_meta",
+        "report_file": "skill_only_behavioral_meta.json",
+        "extra_args": [
+          "--use-behavioral",
+          "--enable-meta",
+          "--verbose"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ],
+        "uses_llm": false,
+        "uses_meta": true
+      },
+      {
+        "configuration": "SKILL.md only | behavioral+llm+meta",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "behavioral_llm_meta",
+        "report_file": "skill_only_behavioral_llm_meta.json",
+        "extra_args": [
+          "--use-behavioral",
+          "--use-llm",
+          "--enable-meta",
+          "--verbose"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer",
+          "llm_analyzer"
+        ],
+        "uses_llm": true,
+        "uses_meta": true
+      },
+      {
+        "configuration": "Full folder | behavioral+llm",
+        "scope": "Full folder",
+        "analyzer_mode": "behavioral_llm",
+        "report_file": "full_folder_behavioral_llm.json",
+        "extra_args": [
+          "--use-behavioral",
+          "--use-llm",
+          "--verbose"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer",
+          "llm_analyzer"
+        ],
+        "uses_llm": true,
+        "uses_meta": false
+      },
+      {
+        "configuration": "Full folder | behavioral+meta",
+        "scope": "Full folder",
+        "analyzer_mode": "behavioral_meta",
+        "report_file": "full_folder_behavioral_meta.json",
+        "extra_args": [
+          "--use-behavioral",
+          "--enable-meta",
+          "--verbose"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ],
+        "uses_llm": false,
+        "uses_meta": true
+      },
+      {
+        "configuration": "Full folder | behavioral+llm+meta",
+        "scope": "Full folder",
+        "analyzer_mode": "behavioral_llm_meta",
+        "report_file": "full_folder_behavioral_llm_meta.json",
+        "extra_args": [
+          "--use-behavioral",
+          "--use-llm",
+          "--enable-meta",
+          "--verbose"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer",
+          "llm_analyzer"
+        ],
+        "uses_llm": true,
+        "uses_meta": true
+      }
+    ],
+    "policy_fingerprints_seen": [
+      "0a9679601478324b586b75767bfdae96ed9a7c568f912b18a3ecabd9f9ec5220",
+      "3f48e661bfbc54597f97bbf3dcf2c1cbae2f596ddc79c0b44784efea326b3d1d"
+    ]
+  },
+  "llm": {
+    "settings": {
+      "model": "ollama/skillscan-qwen3-4b-ctx64k",
+      "provider": null,
+      "base_url": null,
+      "temperature": null,
+      "meta_model": null,
+      "max_output_tokens": null,
+      "reasoning_effort": null,
+      "price_in_per_mtok": null,
+      "price_out_per_mtok": null
+    },
+    "request_settings": {
+      "llm_temperature": 0.0,
+      "meta_temperature": 0.1,
+      "model_rejects_temperature": false,
+      "max_output_tokens": 8192,
+      "llm_budgets_chars": {
+        "max_instruction_body_chars": 20000,
+        "max_code_file_chars": 15000,
+        "max_referenced_file_chars": 10000,
+        "max_total_prompt_chars": 100000,
+        "meta_budget_multiplier": 3.0
+      },
+      "cisco_retry_policy": {
+        "max_retries": 3,
+        "rate_limit_delay_seconds": 2.0,
+        "timeout_seconds": 120,
+        "note": "LLMRequestHandler/MetaAnalyzer defaults (not configurable from the CLI)"
+      },
+      "ollama_think": false
+    },
+    "ollama": {
+      "model": "skillscan-qwen3-4b-ctx64k",
+      "parameters": "temperature                    0.6\ntop_k                          20\ntop_p                          0.95\nnum_ctx                        65536\nrepeat_penalty                 1\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"",
+      "details": {
+        "parent_model": "qwen3:4b",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "4.0B",
+        "quantization_level": "Q4_K_M"
+      },
+      "num_ctx": 65536,
+      "digest": "9339d2711bf7dbb76864f9e9daa080870cdb5fb18a256e8d08c37203b8b4243b",
+      "ollama_version": "0.33.2"
+    },
+    "api_key_recorded": false,
+    "price_source": "local model: no API cost"
+  },
+  "experiment": {
+    "name": "sample30-seed2027-llm-meta-qwen3-4b",
+    "modes": [
+      "behavioral_llm",
+      "behavioral_meta",
+      "behavioral_llm_meta"
+    ],
+    "llm": {
+      "model": "ollama/skillscan-qwen3-4b-ctx64k",
+      "provider": null,
+      "base_url": null,
+      "temperature": null,
+      "meta_model": null,
+      "max_output_tokens": null,
+      "reasoning_effort": null,
+      "price_in_per_mtok": null,
+      "price_out_per_mtok": null
+    },
+    "timeout_seconds": 1800,
+    "max_attempts": 3,
+    "backoff_seconds": 30.0,
+    "workers": 1,
+    "budget_usd": null,
+    "extra": {}
+  },
+  "fingerprint": "cba599625fb6501ea57a3ff239c647029cbdfa6cda55b09a2c203a235f8f76d9",
+  "settings": {
+    "SELECTION_MODE": "manifest",
+    "LENIENT": false,
+    "ALLOW_INCOMPLETE_FOLDERS": false,
+    "SCAN_TIMEOUT_SECONDS": 1800,
+    "ENABLE_LLM_CONFIGS": true
+  },
+  "environment": {
+    "scanner_version": "skill-scanner 2.3.1",
+    "python": "3.14.10",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "cisco-ai-skill-scanner": "2.3.1",
+      "litellm": "1.106.6",
+      "pandas": "3.0.6"
+    }
+  },
+  "sample": {
+    "manifest": "results/samples/agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10/sample_manifest.csv",
+    "manifest_sha256": "b4c3c2125120f7f1c98c8fd7379a14bf81530e0693be68003e03c86bfadb3cfa",
+    "sample_id": "agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10",
+    "skills": 30,
+    "database_sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "strata": {
+      "scripts": 10,
+      "supporting_no_scripts": 10,
+      "skill_md_only": 10
+    }
+  },
+  "skills": [
+    {
+      "skill_id": "skill-558634268929",
+      "repo": "NimaChu/free-imagegen",
+      "skill_path": "SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 11,
+      "files_missing": 2,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "skill-creator-484c59f65787",
+      "repo": "niekbeckers/skills",
+      "skill_path": "skills/skill-creator/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 14,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "oat-brainstorm-89abd5dadad1",
+      "repo": "tkstang/open-agent-toolkit",
+      "skill_path": ".agents/skills/oat-brainstorm/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 8,
+      "files_missing": 1,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "json-visual-diff-53e233791f4c",
+      "repo": "doghelWang/amr_studio_v4",
+      "skill_path": "skills/json-visual-diff/json-visual-diff/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "cb-user-behavior-analytics-f905993b15c3",
+      "repo": "at-src/cold-box",
+      "skill_path": "cold-box-room/skills/library/cb-user-behavior-analytics/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "skill-24eda454b855",
+      "repo": "LauchnerMedia/nexus-bdr",
+      "skill_path": "SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 0,
+      "files_missing": 176,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "set-reminder-7652ed9105a8",
+      "repo": "Will-Barnard-WB/Personal-Knowledge-Bot",
+      "skill_path": ".claude/skills/set-reminder/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "youtube-content-7162d1c45997",
+      "repo": "theheavenlyd3mon/hermes-profiles",
+      "skill_path": "profiles/educate/skills/media/youtube-content/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 16,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "synthdata-compute-82db1d3c4db1",
+      "repo": "rappdw/synthdata",
+      "skill_path": "skills/synthdata-compute/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "spatial-domains-712e4a65bdd1",
+      "repo": "mdbabumiamssm/AI-Agentic-Skills-by-Dr.-Mia",
+      "skill_path": "Skills/Genomics/Spatial_Transcriptomics/bioSkills/spatial-domains/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 0,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "create-research-questions-7f1c9df74a9c",
+      "repo": "harivansh-afk/rpi",
+      "skill_path": ".claude/skills/create-research-questions/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "spdd-123721de2fa1",
+      "repo": "comandante4e/claude-skills",
+      "skill_path": "skills/spdd/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 0,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "bounty-hunting-c7d411d69db8",
+      "repo": "richard-devbot/SDLC-rstack",
+      "skill_path": "skills/bounty-hunting/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "admkrs-cs-performance-reporting-2290661edc90",
+      "repo": "Burakaz/admkrs-creative-suite",
+      "skill_path": "skills/admkrs-cs-performance-reporting/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "moonshot-teams-runner-b816482cad2c",
+      "repo": "munlucky/moonshot-relay",
+      "skill_path": "skills/moonshot-teams-runner/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "f-hypothesis-ledger-0b6cb775953e",
+      "repo": "FurtherBank/cpu-ai",
+      "skill_path": "skills/f-hypothesis-ledger/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "lxc-setup-dcc11cf17ae2",
+      "repo": "ssrjkk/claude-skills",
+      "skill_path": ".claude/skills/devops/lxc-setup/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "product-interviewer-888617f63ea3",
+      "repo": "joleques/northstar-ai",
+      "skill_path": ".codex/skills/product-interviewer/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "llama-cpp-9983d0524812",
+      "repo": "hiyenwong/ai_collection",
+      "skill_path": "collection/skills/nlp-llm/llama-cpp/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 3,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "python-f1868b2af2ee",
+      "repo": "alec-c4/agent_dev_kit",
+      "skill_path": "skills/stacks/python/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "virtualenv-setup-46ac173e49cb",
+      "repo": "openclaw-commons/openclaw-skill-commons",
+      "skill_path": "skills/virtualenv-setup/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 0,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "brainstorming-504e3faf47b9",
+      "repo": "jbro/pi-agent",
+      "skill_path": "skills/superpowers/brainstorming/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "scientific-reactome-pathways-b24c9a2b5a6b",
+      "repo": "nahisaho/satori",
+      "skill_path": "src/.github/skills/scientific-reactome-pathways/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "documentation-and-adrs-ac1413444c5f",
+      "repo": "abdtirtayasa24/myworkflows-skills",
+      "skill_path": "engineering/skills/documentation-and-adrs/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "fastapi-workflow-2ee766d75fbe",
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/fastapi-workflow/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "notion-content-91d9024c9adf",
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/notion-content/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "summarize_text_with_key_details-06e4bdda53f8",
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/summarize_text_with_key_details/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "slide-style-65f218b6102e",
+      "repo": "HaykTarkhanyan/python_math_ml_course",
+      "skill_path": ".claude/skills/slide-style/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "review-pr-1346c06d3855",
+      "repo": "Pranav-Conova/code-review-workflow-for-local-gitea",
+      "skill_path": ".claude/skills/review-pr/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "ship-9eb65676582d",
+      "repo": "everruns/everruns",
+      "skill_path": ".agents/skills/ship/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    }
+  ],
+  "execution": {
+    "attempts_started": 179,
+    "attempts_finished": 179,
+    "attempts_interrupted": 0,
+    "spent_usd": 0,
+    "pending": 0,
+    "stop_reason": null
+  },
+  "run_status_counts": {
+    "COMPLETE": 223,
+    "PARTIAL": 62,
+    "SKIPPED_INCOMPLETE_FOLDER": 15
+  },
+  "finding_rows": 506
+}

@@ -1,0 +1,681 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-10T09:15:40+00:00",
+  "kind": "run",
+  "report_id": "2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "sample30-seed2027-llm-meta-qwen3-4b",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 30,
+    "skills_exported": 30,
+    "export_errors": 0,
+    "skills_scanned": 30,
+    "skills_by_coverage": {
+      "complete": 1,
+      "complete_except_excluded": 0,
+      "partially_complete": 28,
+      "no_complete_scan": 1,
+      "not_scanned": 0
+    },
+    "configurations": 10,
+    "scans_planned": 300,
+    "scans_executed": 285,
+    "scans_by_outcome": {
+      "complete": 223,
+      "contract_only": 0,
+      "partial": 62,
+      "failed": 0,
+      "excluded_incomplete_folder": 15,
+      "missing": 0
+    },
+    "finding_rows": 506,
+    "finding_rows_by_kind": {
+      "metadata_quality": 285,
+      "security": 185,
+      "scan_coverage": 36
+    },
+    "skills_with_any_finding": 30,
+    "skills_with_security_alert_primary": 29,
+    "skills_with_security_alert_any": 30,
+    "security_rows_primary": 107,
+    "security_rows_any": 185,
+    "security_locations_primary": 51,
+    "security_locations_any": 55,
+    "security_rows_by_severity_primary": {
+      "CRITICAL": 10,
+      "HIGH": 39,
+      "MEDIUM": 22,
+      "LOW": 36
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 0,
+      "not_in_review": 55
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 0,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/run_metadata.json",
+      "sha256": "ba457022e102b759cd4528a69e848e640f6b92a13af7be814f82509a9191385b"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/scan_summary.csv",
+      "sha256": "d667151434c77451baa56f044c5d0b7a60aba4c85f2e905106cd71cb46b859fb"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/individual_findings.csv",
+      "sha256": "df04e873c7d1d298350d895cc45167a55e928764f121abc32890ea5d47c0ef35"
+    },
+    "llm_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_comparison.csv",
+      "sha256": "59c424ab1a59fdc13c23f4450041fc774a8e11cfdf8fc55521e460dc6c5772ca"
+    },
+    "meta_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/meta_comparison.csv",
+      "sha256": "b620c7eeb1c392e5efa73e3638d66ef6942d41af8bd921d57bb68fb7d80e6e34"
+    },
+    "sample/sample_manifest.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/sample/sample_manifest.csv",
+      "sha256": "b4c3c2125120f7f1c98c8fd7379a14bf81530e0693be68003e03c86bfadb3cfa"
+    },
+    "sample/sampling_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/sample/sampling_metadata.json",
+      "sha256": "11527752792de6b30c8bbe4f2db8fe3f8aa27efe24142ddd19326782d88052a3"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/results_summary.md",
+      "sha256": "bbc3c2cd80e4d6075b9dfc160413fb14a863a28fa8847272829227ed811d94d3"
+    },
+    "llm_meta_analysis/alert_groups.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/alert_groups.csv",
+      "sha256": "48a3b5883044588853a64891d4b655c46a2db6fdb071e1e5cb353a39bc79b8d6"
+    },
+    "llm_meta_analysis/case_studies.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/case_studies.csv",
+      "sha256": "4ca0309c4781ca5386825571196fc3b5a47b05cb44a99349d5b7921b384aab3b"
+    },
+    "llm_meta_analysis/category_by_configuration.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/category_by_configuration.csv",
+      "sha256": "7ed01484d525f1961472a1f5642e02c38a936b73c101f36574b7127a2a004359"
+    },
+    "llm_meta_analysis/cost_estimate_claude_sonnet_5_5.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/cost_estimate_claude_sonnet_5_5.csv",
+      "sha256": "469543910bfd5f2ea16893e8ae4e455022d8e925157b13b171e34deaf74149ea"
+    },
+    "llm_meta_analysis/coverage_by_configuration.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/coverage_by_configuration.csv",
+      "sha256": "4e77d9827f9ea565f10f97da937555742d64487f58fd4d4d48d7a801ff143970"
+    },
+    "llm_meta_analysis/deterministic_reproducibility.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/deterministic_reproducibility.csv",
+      "sha256": "51e0301c1f8a81ebb950fbcddb4494228a87e9c918372dc5671e25e5aa095325"
+    },
+    "llm_meta_analysis/findings_by_configuration.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/findings_by_configuration.csv",
+      "sha256": "de69536e00baefeaa20f7c7dad753c1746b9b3c493e871960036fb328e387289"
+    },
+    "llm_meta_analysis/gap_candidates.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/gap_candidates.csv",
+      "sha256": "f8adfc7059fa262abded69d360f7879b2c0b2e3ec2a1d3042baed0ef2a97dda0"
+    },
+    "llm_meta_analysis/gap_pattern_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/gap_pattern_summary.csv",
+      "sha256": "ca228efc8b55467a753b7769fee674804e04019c24c3ac63fc4f833fec75fb7b"
+    },
+    "llm_meta_analysis/llm_added_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/llm_added_findings.csv",
+      "sha256": "1918d4a0f5c82785fa08d455eb9035dfafa37f3bf7adcd89b1acaa28017607a2"
+    },
+    "llm_meta_analysis/llm_run_stability.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/llm_run_stability.csv",
+      "sha256": "a4cf530df6ea0e145e21b3dfff362903ebbaac6c73a7c12f4645a7d1cadbccd7"
+    },
+    "llm_meta_analysis/llm_view_of_deterministic_alerts.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/llm_view_of_deterministic_alerts.csv",
+      "sha256": "7e205db704a209139a44c6052fceab18864ba77fbb08d4583edbcb6c9702b95f"
+    },
+    "llm_meta_analysis/meta_decision_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/meta_decision_summary.csv",
+      "sha256": "6b12f166e2e429c28c82018de33f69f84e69a5ecd87c6acc648a7b2e7a79d83e"
+    },
+    "llm_meta_analysis/meta_decisions.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/meta_decisions.csv",
+      "sha256": "78d2581dd22129d823b7a58111d12a790fa00a82a141e2789cc85795252a312d"
+    },
+    "llm_meta_analysis/research_insights.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/research_insights.csv",
+      "sha256": "156f3124d507cac805791d26cb4f3e28b04244ac8e33f06aa2e7d5904a75e0e0"
+    },
+    "llm_meta_analysis/runtime_and_cost.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/runtime_and_cost.csv",
+      "sha256": "1529fe7f143f41fa02115e32ed181b618873c7d77fb96fda60eae22dd01da2f7"
+    },
+    "llm_meta_analysis/severity_changes.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/severity_changes.csv",
+      "sha256": "b54a0b2fea305d889b29320d1714453d2ec99b5977ace959342b4c167b08a121"
+    },
+    "llm_meta_analysis/triage_queue.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/triage_queue.csv",
+      "sha256": "97bae33feb6366ea3e6c6c6fd72694f97bfb49d31cf18d44ac56b2080023f576"
+    },
+    "llm_meta_analysis/unique_by_configuration.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/unique_by_configuration.csv",
+      "sha256": "4ff23fcad578560e0d6373256aa8667d0d65cd65de5957951e014469560cc41c"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "42884569c90221a7d1b7dc964f01b5b8e6395a4aa2e9b00f25e9f7c59320f246",
+      "bytes": 997
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2acef3a5775cbd83417a342d0f2acb1007d38b0e94b767be08d2f5bc2c80a4fb",
+      "bytes": 38943
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "184fe6e154669b5de935bba2550d296326de29025c8c5d4a013f2fc63cb63154",
+      "bytes": 714
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d4d57396bfc846175a60b9b6ea030bacdaa974959bcba88d18bbceeeea18ffc2",
+      "bytes": 3754
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/results_summary.md",
+      "sha256": "bbc3c2cd80e4d6075b9dfc160413fb14a863a28fa8847272829227ed811d94d3",
+      "bytes": 12937
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6f1de50a9d4dd398dbe2e5b483fbbf220e3e015f8f344d17d1bab689272b9eff",
+      "bytes": 7477
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8320d97546a1b43d8b409579fe405c3f4645869d5bdb145a9f2bc639d6b45931",
+      "bytes": 5950
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "444436a354a00a89f07b07ec7b0598970e0388cd69e2d98b6f9619a8bc30aabf",
+      "bytes": 830
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1abe54201844d51b8f57606b6c0a7be761a06f6b85aeaf959c99728e30f5bb40",
+      "bytes": 3077
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/individual_findings.csv",
+      "sha256": "8e061d9edf4787fe6e8f273bf08b0609dc0e3443cc536814b1477da1fa5e3500",
+      "bytes": 977577
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "64474da106bc85e8007be38a85427ca2b30e906d1d16d6fb3ba385b55d80a947",
+      "bytes": 414304
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_comparison.csv",
+      "sha256": "59c424ab1a59fdc13c23f4450041fc774a8e11cfdf8fc55521e460dc6c5772ca",
+      "bytes": 53495
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/meta_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/meta_comparison.csv",
+      "sha256": "b620c7eeb1c392e5efa73e3638d66ef6942d41af8bd921d57bb68fb7d80e6e34",
+      "bytes": 112276
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/alert_groups.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/alert_groups.csv",
+      "sha256": "48a3b5883044588853a64891d4b655c46a2db6fdb071e1e5cb353a39bc79b8d6",
+      "bytes": 9455
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/case_studies.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/case_studies.csv",
+      "sha256": "4ca0309c4781ca5386825571196fc3b5a47b05cb44a99349d5b7921b384aab3b",
+      "bytes": 4862
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/category_by_configuration.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/category_by_configuration.csv",
+      "sha256": "7ed01484d525f1961472a1f5642e02c38a936b73c101f36574b7127a2a004359",
+      "bytes": 737
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/cost_estimate_claude_sonnet_5_5.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/cost_estimate_claude_sonnet_5_5.csv",
+      "sha256": "469543910bfd5f2ea16893e8ae4e455022d8e925157b13b171e34deaf74149ea",
+      "bytes": 679
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/coverage_by_configuration.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/coverage_by_configuration.csv",
+      "sha256": "4e77d9827f9ea565f10f97da937555742d64487f58fd4d4d48d7a801ff143970",
+      "bytes": 1999
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/deterministic_reproducibility.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/deterministic_reproducibility.csv",
+      "sha256": "51e0301c1f8a81ebb950fbcddb4494228a87e9c918372dc5671e25e5aa095325",
+      "bytes": 12804
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/findings_by_configuration.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/findings_by_configuration.csv",
+      "sha256": "de69536e00baefeaa20f7c7dad753c1746b9b3c493e871960036fb328e387289",
+      "bytes": 1011
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/gap_candidates.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/gap_candidates.csv",
+      "sha256": "f8adfc7059fa262abded69d360f7879b2c0b2e3ec2a1d3042baed0ef2a97dda0",
+      "bytes": 12356
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/gap_pattern_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/gap_pattern_summary.csv",
+      "sha256": "ca228efc8b55467a753b7769fee674804e04019c24c3ac63fc4f833fec75fb7b",
+      "bytes": 1114
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/llm_added_findings.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/llm_added_findings.csv",
+      "sha256": "1918d4a0f5c82785fa08d455eb9035dfafa37f3bf7adcd89b1acaa28017607a2",
+      "bytes": 47631
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/llm_run_stability.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/llm_run_stability.csv",
+      "sha256": "a4cf530df6ea0e145e21b3dfff362903ebbaac6c73a7c12f4645a7d1cadbccd7",
+      "bytes": 4120
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/llm_view_of_deterministic_alerts.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/llm_view_of_deterministic_alerts.csv",
+      "sha256": "7e205db704a209139a44c6052fceab18864ba77fbb08d4583edbcb6c9702b95f",
+      "bytes": 2172
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/meta_decision_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/meta_decision_summary.csv",
+      "sha256": "6b12f166e2e429c28c82018de33f69f84e69a5ecd87c6acc648a7b2e7a79d83e",
+      "bytes": 1804
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/meta_decisions.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/meta_decisions.csv",
+      "sha256": "78d2581dd22129d823b7a58111d12a790fa00a82a141e2789cc85795252a312d",
+      "bytes": 84904
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/research_insights.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/research_insights.csv",
+      "sha256": "156f3124d507cac805791d26cb4f3e28b04244ac8e33f06aa2e7d5904a75e0e0",
+      "bytes": 3735
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/runtime_and_cost.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/runtime_and_cost.csv",
+      "sha256": "1529fe7f143f41fa02115e32ed181b618873c7d77fb96fda60eae22dd01da2f7",
+      "bytes": 1507
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/severity_changes.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/severity_changes.csv",
+      "sha256": "b54a0b2fea305d889b29320d1714453d2ec99b5977ace959342b4c167b08a121",
+      "bytes": 2333
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/triage_queue.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/triage_queue.csv",
+      "sha256": "97bae33feb6366ea3e6c6c6fd72694f97bfb49d31cf18d44ac56b2080023f576",
+      "bytes": 7374
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/llm_meta/unique_by_configuration.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/llm_meta_analysis/unique_by_configuration.csv",
+      "sha256": "4ff23fcad578560e0d6373256aa8667d0d65cd65de5957951e014469560cc41c",
+      "bytes": 300
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/admkrs-cs-performance-reporting-2290661edc90.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1a84622af9ce73f0289a6156a6e40532ff61109645d3f32d0758db47c02fad17",
+      "bytes": 3811
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-creator-484c59f65787.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "83e53eea8be8d7c021df59ff8bcde90e20790c52d34a0c2d5b8e5b8d92225415",
+      "bytes": 6520
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/synthdata-compute-82db1d3c4db1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ba755ec0243d12e3acc1f4a2078233f8fe22342950740b45c9149ec7223f32f9",
+      "bytes": 5787
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/youtube-content-7162d1c45997.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6f0cd5665d5e4458fed0de5da14b65fd1c241f76983ec227d465fd2921497a0f",
+      "bytes": 7489
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/bounty-hunting-c7d411d69db8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "699a1b5623ede1af3477c1418bf4e9334ce1b3e551d9aa678bbd66a431ce9ccd",
+      "bytes": 3973
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/cb-user-behavior-analytics-f905993b15c3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c717b8196d1d347d89266825ff237e3fe6093343ba9930c449e67b0c3b6724ff",
+      "bytes": 3949
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/create-research-questions-7f1c9df74a9c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "936e670e59a6063e6156704a34983fcd7a5cb4ac5053b4660c5521383240c237",
+      "bytes": 3747
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/documentation-and-adrs-ac1413444c5f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9527911a26f99f48c3e2768c8878471d21f7c62021cda2183461bfd174ff5fcf",
+      "bytes": 4147
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/f-hypothesis-ledger-0b6cb775953e.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6caf49fe78629825ed44dec68d7d7b323dd15c458f078dc4f67631ee0ff3c83a",
+      "bytes": 4506
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/llama-cpp-9983d0524812.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d4b97b5ff95256ebf313f1dfba246153ed9da5b8e8f8b0fb4d113a58e64a1197",
+      "bytes": 4613
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/notion-content-91d9024c9adf.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "bf88b8b311031aad841204512cb904e5b4bc9fefa23cbf2767a5e72056a75baa",
+      "bytes": 4104
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/product-interviewer-888617f63ea3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cc3c018931e4345b5652d75e22e1a7450d563b94125e16078de664b1ca39a8f2",
+      "bytes": 4073
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/review-pr-1346c06d3855.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ecaf05fb174e6a8ddf4d63dffece14f18cd25d65272ee606cc2f414fbbeb2639",
+      "bytes": 3942
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/scientific-reactome-pathways-b24c9a2b5a6b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "604cbcc8ceb68ed53711fbd6beaae84ec940bd6050ee2014414fa70cada5873f",
+      "bytes": 4084
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/set-reminder-7652ed9105a8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "da93476176500066b53df79a7127ae8088825a8994f4bdfc02ea597d375d4266",
+      "bytes": 9170
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ship-9eb65676582d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "203f980c4f106258790ba63c24c6341f1f4bd66338cf0700c93975a0cfb47e08",
+      "bytes": 4014
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-24eda454b855.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6eaa050208616f938c0d771719143a919f2fed42d429ec4144b5938c78ff9f31",
+      "bytes": 3488
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/spatial-domains-712e4a65bdd1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ab35509e2f403f57f725a54445087e7944d788b943a59d513e344f92bc3b27a9",
+      "bytes": 4074
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/spdd-123721de2fa1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c74530de40ba39cb0f12c2523bcc129c0f689d6843d0ab1a72b5045150476117",
+      "bytes": 4237
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/summarize_text_with_key_details-06e4bdda53f8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "78a85c4c580df92d1236bb6e70a01882ae451efc84c463777511c4c6b02a9956",
+      "bytes": 4056
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/brainstorming-504e3faf47b9.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3d0665b27a0336c105470f25233e31b1a5db21a9f45dca703b85de9b83e1ebdb",
+      "bytes": 3974
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/fastapi-workflow-2ee766d75fbe.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c05dd01c7cbc18d9747bc7271c39a386186b2f2d3375528c93434e3ae26945e5",
+      "bytes": 4007
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/json-visual-diff-53e233791f4c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "83fb225ac9d9a581e00d5d98fc821725f4e8272318ad4636b895e5ce752115d4",
+      "bytes": 3915
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/lxc-setup-dcc11cf17ae2.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b47e149a21893bb735ca74e145767fdb04194f83bfd6bac9cecc334d53498d63",
+      "bytes": 2822
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/moonshot-teams-runner-b816482cad2c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "57b36de876081eb27127e88614833544cd3cbb4e233430bbc8c6153542055077",
+      "bytes": 3894
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/oat-brainstorm-89abd5dadad1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "0ec0c333c6a6bd36be1d22b3389eab99a9646948a8d89f5c4fa90d66e2aeb7db",
+      "bytes": 3712
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/python-f1868b2af2ee.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "931de151e1a1d1d88267ae7df119e04a70bc71396eeb72eeacfff889c777460d",
+      "bytes": 3827
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-558634268929.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "49d8843c5b8ad90156e377715f062197f25d05ac5645dd40d7dde3a627c4dcbf",
+      "bytes": 3392
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/slide-style-65f218b6102e.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6b4df3706dcf3fc0c79b525443b6ec3e0bb03235c30e9e53b23f5a25e69e4633",
+      "bytes": 3558
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/virtualenv-setup-46ac173e49cb.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "11e5ac568b60225381e3a55f01783d3853197bd4843507873ac56d710c7a6340",
+      "bytes": 3407
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9d483d4d0f6a9f6b17df89749bdc5f44c1b3aadd198a9014f3cb09cb39f14ff1",
+      "bytes": 227584
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/scan_summary.csv",
+      "sha256": "f169a549ac7aa8a01260fce3a3f97dd8fca349d51bc1aec81c8e3f1df3bd5fff",
+      "bytes": 251244
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/run_metadata.json",
+      "sha256": "ba457022e102b759cd4528a69e848e640f6b92a13af7be814f82509a9191385b",
+      "bytes": 24508
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/sample_manifest.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/sample/sample_manifest.csv",
+      "sha256": "a4ce44d7ca66a415e93f11f4798f2b9fc4e671e71c6c28c96e6f14f2f42478d3",
+      "bytes": 26367
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/sampling_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-07_222052_sample30-seed2027-llm-meta-qwen3-4b/sample/sampling_metadata.json",
+      "sha256": "11527752792de6b30c8bbe4f2db8fe3f8aa27efe24142ddd19326782d88052a3",
+      "bytes": 3422
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7824557440a2166f53372c039c45194a0458a0058493c9442910bc326d598875",
+      "bytes": 1067
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5a2583c54d8907899d0446464d055c0720e91e981a047da1a24c29811b339c96",
+      "bytes": 773
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6e9094e95eaf05d20c660d58f0f349edd3c950def85f63e242a2e1ac60227743",
+      "bytes": 50355
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "99068384ab0ae66af7cd631ff0ad9f0055366ede2f150586fb06fe0431d4c8bc",
+      "bytes": 684460
+    }
+  ]
+}

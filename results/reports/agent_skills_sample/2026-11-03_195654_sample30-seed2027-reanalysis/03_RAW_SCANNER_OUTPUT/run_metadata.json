@@ -1,0 +1,744 @@
+{
+  "run_id": "2026-11-03_195654_sample30-seed2027-reanalysis",
+  "run_mode": "reanalyze",
+  "stage": "complete",
+  "run_started_at": "2026-11-04T03:56:54+00:00",
+  "written_at": "2026-11-04T03:56:57+00:00",
+  "source_run": {
+    "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+    "run_metadata_found": true,
+    "scanner_version": "skill-scanner 2.3.1",
+    "skills": [
+      "skill-558634268929",
+      "skill-creator-484c59f65787",
+      "oat-brainstorm-89abd5dadad1",
+      "json-visual-diff-53e233791f4c",
+      "cb-user-behavior-analytics-f905993b15c3",
+      "skill-24eda454b855",
+      "set-reminder-7652ed9105a8",
+      "youtube-content-7162d1c45997",
+      "synthdata-compute-82db1d3c4db1",
+      "spatial-domains-712e4a65bdd1",
+      "create-research-questions-7f1c9df74a9c",
+      "spdd-123721de2fa1",
+      "bounty-hunting-c7d411d69db8",
+      "admkrs-cs-performance-reporting-2290661edc90",
+      "moonshot-teams-runner-b816482cad2c",
+      "f-hypothesis-ledger-0b6cb775953e",
+      "lxc-setup-dcc11cf17ae2",
+      "product-interviewer-888617f63ea3",
+      "llama-cpp-9983d0524812",
+      "python-f1868b2af2ee",
+      "virtualenv-setup-46ac173e49cb",
+      "brainstorming-504e3faf47b9",
+      "scientific-reactome-pathways-b24c9a2b5a6b",
+      "documentation-and-adrs-ac1413444c5f",
+      "fastapi-workflow-2ee766d75fbe",
+      "notion-content-91d9024c9adf",
+      "summarize_text_with_key_details-06e4bdda53f8",
+      "slide-style-65f218b6102e",
+      "review-pr-1346c06d3855",
+      "ship-9eb65676582d"
+    ]
+  },
+  "database": {
+    "path": "data/sample/agent_skills_sample.db",
+    "tag": "agent_skills_sample",
+    "sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "available": true
+  },
+  "scanner": {
+    "installed_version": "skill-scanner 2.3.1",
+    "versions_that_produced_reports": [
+      "skill-scanner 2.3.1"
+    ],
+    "policy_setting": "balanced",
+    "common_args": [
+      "--format",
+      "json",
+      "--policy",
+      "balanced"
+    ],
+    "policy_fingerprints_seen": [
+      "3f48e661bfbc54597f97bbf3dcf2c1cbae2f596ddc79c0b44784efea326b3d1d"
+    ],
+    "configurations": [
+      {
+        "configuration": "SKILL.md only | default",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "default",
+        "report_file": "skill_only_default.json",
+        "extra_args": [],
+        "required_analyzers": [
+          "static_analyzer"
+        ]
+      },
+      {
+        "configuration": "SKILL.md only | behavioral",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "behavioral",
+        "report_file": "skill_only_behavioral.json",
+        "extra_args": [
+          "--use-behavioral"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ]
+      },
+      {
+        "configuration": "Full folder | default",
+        "scope": "Full folder",
+        "analyzer_mode": "default",
+        "report_file": "full_folder_default.json",
+        "extra_args": [],
+        "required_analyzers": [
+          "static_analyzer"
+        ]
+      },
+      {
+        "configuration": "Full folder | behavioral",
+        "scope": "Full folder",
+        "analyzer_mode": "behavioral",
+        "report_file": "full_folder_behavioral.json",
+        "extra_args": [
+          "--use-behavioral"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "SELECTION_MODE": "manifest",
+    "PILOT": "canary-tokens",
+    "EXACT_REPO": "AceDataCloud/Skills",
+    "EXACT_PATH": "skills/x/SKILL.md",
+    "SEARCH_KEYWORD": "API_KEY",
+    "MAX_SKILLS": 3,
+    "LENIENT": false,
+    "ALLOW_INCOMPLETE_FOLDERS": false,
+    "SCAN_TIMEOUT_SECONDS": 300,
+    "ENABLE_OSV": false,
+    "ENABLE_LLM_CONFIGS": false
+  },
+  "environment": {
+    "python": "3.14.2",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "sample": {
+    "manifest": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027/sample/sample_manifest.csv",
+    "manifest_sha256": "b4c3c2125120f7f1c98c8fd7379a14bf81530e0693be68003e03c86bfadb3cfa",
+    "sample_id": "agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10",
+    "skills": 30,
+    "database_sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "strata": {
+      "scripts": 10,
+      "supporting_no_scripts": 10,
+      "skill_md_only": 10
+    }
+  },
+  "selection": [
+    {
+      "repo": "NimaChu/free-imagegen",
+      "skill_path": "SKILL.md"
+    },
+    {
+      "repo": "niekbeckers/skills",
+      "skill_path": "skills/skill-creator/SKILL.md"
+    },
+    {
+      "repo": "tkstang/open-agent-toolkit",
+      "skill_path": ".agents/skills/oat-brainstorm/SKILL.md"
+    },
+    {
+      "repo": "doghelWang/amr_studio_v4",
+      "skill_path": "skills/json-visual-diff/json-visual-diff/SKILL.md"
+    },
+    {
+      "repo": "at-src/cold-box",
+      "skill_path": "cold-box-room/skills/library/cb-user-behavior-analytics/SKILL.md"
+    },
+    {
+      "repo": "LauchnerMedia/nexus-bdr",
+      "skill_path": "SKILL.md"
+    },
+    {
+      "repo": "Will-Barnard-WB/Personal-Knowledge-Bot",
+      "skill_path": ".claude/skills/set-reminder/SKILL.md"
+    },
+    {
+      "repo": "theheavenlyd3mon/hermes-profiles",
+      "skill_path": "profiles/educate/skills/media/youtube-content/SKILL.md"
+    },
+    {
+      "repo": "rappdw/synthdata",
+      "skill_path": "skills/synthdata-compute/SKILL.md"
+    },
+    {
+      "repo": "mdbabumiamssm/AI-Agentic-Skills-by-Dr.-Mia",
+      "skill_path": "Skills/Genomics/Spatial_Transcriptomics/bioSkills/spatial-domains/SKILL.md"
+    },
+    {
+      "repo": "harivansh-afk/rpi",
+      "skill_path": ".claude/skills/create-research-questions/SKILL.md"
+    },
+    {
+      "repo": "comandante4e/claude-skills",
+      "skill_path": "skills/spdd/SKILL.md"
+    },
+    {
+      "repo": "richard-devbot/SDLC-rstack",
+      "skill_path": "skills/bounty-hunting/SKILL.md"
+    },
+    {
+      "repo": "Burakaz/admkrs-creative-suite",
+      "skill_path": "skills/admkrs-cs-performance-reporting/SKILL.md"
+    },
+    {
+      "repo": "munlucky/moonshot-relay",
+      "skill_path": "skills/moonshot-teams-runner/SKILL.md"
+    },
+    {
+      "repo": "FurtherBank/cpu-ai",
+      "skill_path": "skills/f-hypothesis-ledger/SKILL.md"
+    },
+    {
+      "repo": "ssrjkk/claude-skills",
+      "skill_path": ".claude/skills/devops/lxc-setup/SKILL.md"
+    },
+    {
+      "repo": "joleques/northstar-ai",
+      "skill_path": ".codex/skills/product-interviewer/SKILL.md"
+    },
+    {
+      "repo": "hiyenwong/ai_collection",
+      "skill_path": "collection/skills/nlp-llm/llama-cpp/SKILL.md"
+    },
+    {
+      "repo": "alec-c4/agent_dev_kit",
+      "skill_path": "skills/stacks/python/SKILL.md"
+    },
+    {
+      "repo": "openclaw-commons/openclaw-skill-commons",
+      "skill_path": "skills/virtualenv-setup/SKILL.md"
+    },
+    {
+      "repo": "jbro/pi-agent",
+      "skill_path": "skills/superpowers/brainstorming/SKILL.md"
+    },
+    {
+      "repo": "nahisaho/satori",
+      "skill_path": "src/.github/skills/scientific-reactome-pathways/SKILL.md"
+    },
+    {
+      "repo": "abdtirtayasa24/myworkflows-skills",
+      "skill_path": "engineering/skills/documentation-and-adrs/SKILL.md"
+    },
+    {
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/fastapi-workflow/SKILL.md"
+    },
+    {
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/notion-content/SKILL.md"
+    },
+    {
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/summarize_text_with_key_details/SKILL.md"
+    },
+    {
+      "repo": "HaykTarkhanyan/python_math_ml_course",
+      "skill_path": ".claude/skills/slide-style/SKILL.md"
+    },
+    {
+      "repo": "Pranav-Conova/code-review-workflow-for-local-gitea",
+      "skill_path": ".claude/skills/review-pr/SKILL.md"
+    },
+    {
+      "repo": "everruns/everruns",
+      "skill_path": ".agents/skills/ship/SKILL.md"
+    }
+  ],
+  "skills": [
+    {
+      "skill_id": "skill-558634268929",
+      "repo": "NimaChu/free-imagegen",
+      "skill_path": "SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 11,
+      "files_missing": 2,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "skill-creator-484c59f65787",
+      "repo": "niekbeckers/skills",
+      "skill_path": "skills/skill-creator/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 14,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "oat-brainstorm-89abd5dadad1",
+      "repo": "tkstang/open-agent-toolkit",
+      "skill_path": ".agents/skills/oat-brainstorm/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 8,
+      "files_missing": 1,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "json-visual-diff-53e233791f4c",
+      "repo": "doghelWang/amr_studio_v4",
+      "skill_path": "skills/json-visual-diff/json-visual-diff/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "cb-user-behavior-analytics-f905993b15c3",
+      "repo": "at-src/cold-box",
+      "skill_path": "cold-box-room/skills/library/cb-user-behavior-analytics/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "skill-24eda454b855",
+      "repo": "LauchnerMedia/nexus-bdr",
+      "skill_path": "SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 0,
+      "files_missing": 176,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "set-reminder-7652ed9105a8",
+      "repo": "Will-Barnard-WB/Personal-Knowledge-Bot",
+      "skill_path": ".claude/skills/set-reminder/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "youtube-content-7162d1c45997",
+      "repo": "theheavenlyd3mon/hermes-profiles",
+      "skill_path": "profiles/educate/skills/media/youtube-content/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 16,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "synthdata-compute-82db1d3c4db1",
+      "repo": "rappdw/synthdata",
+      "skill_path": "skills/synthdata-compute/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "spatial-domains-712e4a65bdd1",
+      "repo": "mdbabumiamssm/AI-Agentic-Skills-by-Dr.-Mia",
+      "skill_path": "Skills/Genomics/Spatial_Transcriptomics/bioSkills/spatial-domains/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 0,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "create-research-questions-7f1c9df74a9c",
+      "repo": "harivansh-afk/rpi",
+      "skill_path": ".claude/skills/create-research-questions/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "spdd-123721de2fa1",
+      "repo": "comandante4e/claude-skills",
+      "skill_path": "skills/spdd/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 0,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "bounty-hunting-c7d411d69db8",
+      "repo": "richard-devbot/SDLC-rstack",
+      "skill_path": "skills/bounty-hunting/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "admkrs-cs-performance-reporting-2290661edc90",
+      "repo": "Burakaz/admkrs-creative-suite",
+      "skill_path": "skills/admkrs-cs-performance-reporting/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "moonshot-teams-runner-b816482cad2c",
+      "repo": "munlucky/moonshot-relay",
+      "skill_path": "skills/moonshot-teams-runner/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "f-hypothesis-ledger-0b6cb775953e",
+      "repo": "FurtherBank/cpu-ai",
+      "skill_path": "skills/f-hypothesis-ledger/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "lxc-setup-dcc11cf17ae2",
+      "repo": "ssrjkk/claude-skills",
+      "skill_path": ".claude/skills/devops/lxc-setup/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "product-interviewer-888617f63ea3",
+      "repo": "joleques/northstar-ai",
+      "skill_path": ".codex/skills/product-interviewer/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "llama-cpp-9983d0524812",
+      "repo": "hiyenwong/ai_collection",
+      "skill_path": "collection/skills/nlp-llm/llama-cpp/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 3,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "python-f1868b2af2ee",
+      "repo": "alec-c4/agent_dev_kit",
+      "skill_path": "skills/stacks/python/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 2,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "virtualenv-setup-46ac173e49cb",
+      "repo": "openclaw-commons/openclaw-skill-commons",
+      "skill_path": "skills/virtualenv-setup/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 0,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "brainstorming-504e3faf47b9",
+      "repo": "jbro/pi-agent",
+      "skill_path": "skills/superpowers/brainstorming/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "scientific-reactome-pathways-b24c9a2b5a6b",
+      "repo": "nahisaho/satori",
+      "skill_path": "src/.github/skills/scientific-reactome-pathways/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "documentation-and-adrs-ac1413444c5f",
+      "repo": "abdtirtayasa24/myworkflows-skills",
+      "skill_path": "engineering/skills/documentation-and-adrs/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "fastapi-workflow-2ee766d75fbe",
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/fastapi-workflow/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "notion-content-91d9024c9adf",
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/notion-content/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "summarize_text_with_key_details-06e4bdda53f8",
+      "repo": "MikeCheng1208/BattleTree",
+      "skill_path": ".agents/skills/summarize_text_with_key_details/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "slide-style-65f218b6102e",
+      "repo": "HaykTarkhanyan/python_math_ml_course",
+      "skill_path": ".claude/skills/slide-style/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "review-pr-1346c06d3855",
+      "repo": "Pranav-Conova/code-review-workflow-for-local-gitea",
+      "skill_path": ".claude/skills/review-pr/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "ship-9eb65676582d",
+      "repo": "everruns/everruns",
+      "skill_path": ".agents/skills/ship/SKILL.md",
+      "origin": "copied from results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+      "integrity": "ok: copy matches manifest hashes",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    }
+  ],
+  "export_errors": [],
+  "run_outcome_counts": {
+    "complete": 110,
+    "excluded_incomplete_folder": 6,
+    "partial": 4
+  },
+  "configuration_counts": {
+    "planned": 120,
+    "executed": 114,
+    "excluded_incomplete_folder": 6,
+    "missing": 0,
+    "not_run_export_error": 0,
+    "executed_outcomes": {
+      "complete": 110,
+      "contract_only": 0,
+      "partial": 4,
+      "failed": 0
+    }
+  },
+  "run_status_counts": {
+    "COMPLETE": 110,
+    "SKIPPED_INCOMPLETE_FOLDER": 6,
+    "PARTIAL": 4
+  },
+  "finding_rows": 141
+}

@@ -1,0 +1,11 @@
+configuration,label,scans_timed,origin,wall_seconds_median,wall_seconds_mean,wall_seconds_p90,wall_seconds_total,input_tokens_total,output_tokens_total,input_tokens_mean,output_tokens_mean,actual_cost_usd,same_tokens_at_claude-sonnet-5-5_usd,model
+SKILL.md only | default,A_static,30,baseline (copied),5.4,5.4,5.6,163.3,0,0,0.0,0.0,0.0,0.0,none
+SKILL.md only | behavioral,A_behavioral,30,baseline (copied),5.4,5.4,5.6,162.7,0,0,0.0,0.0,0.0,0.0,none
+SKILL.md only | behavioral+llm,B_llm,30,new scan,33.7,35.9,44.3,1077.0,146890,10221,4896.3,340.7,0.0,0.396,ollama/skillscan-qwen3-4b-ctx64k
+SKILL.md only | behavioral+meta,Cdet_meta,30,new scan,4.9,8.5,5.0,253.9,23741,1128,791.4,37.6,0.0,0.0588,ollama/skillscan-qwen3-4b-ctx64k
+SKILL.md only | behavioral+llm+meta,C_llm_meta,30,new scan,59.2,65.3,107.9,1958.0,412814,41280,13760.5,1376.0,0.0,1.2384,ollama/skillscan-qwen3-4b-ctx64k
+Full folder | default,A_static,27,baseline (copied),5.3,5.4,5.6,145.9,0,0,0.0,0.0,0.0,0.0,none
+Full folder | behavioral,A_behavioral,27,baseline (copied),5.4,5.4,5.8,147.1,0,0,0.0,0.0,0.0,0.0,none
+Full folder | behavioral+llm,B_llm,27,new scan,32.0,42.2,51.9,1138.8,127679,8313,4728.9,307.9,0.0,0.3385,ollama/skillscan-qwen3-4b-ctx64k
+Full folder | behavioral+meta,Cdet_meta,27,new scan,4.9,25.1,63.2,677.5,85986,4019,3184.7,148.9,0.0,0.2122,ollama/skillscan-qwen3-4b-ctx64k
+Full folder | behavioral+llm+meta,C_llm_meta,27,new scan,71.2,91.6,164.6,2472.3,437458,43608,16202.1,1615.1,0.0,1.311,ollama/skillscan-qwen3-4b-ctx64k

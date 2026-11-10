@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-11-04T04:04:55+00:00",
+  "generated_by": "notebooks/04_manual_review_worksheet.ipynb",
+  "source_run": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+  "source_run_id": "2026-11-03_173516_sample30-seed2027",
+  "inputs": {
+    "manual_review_template": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027/manual_review_template.csv",
+      "sha256": "2d6f9ce59399d966fad91f3ff28ec4dbfc15bd2e19c1b4a170a57d02695ce5d0"
+    },
+    "individual_findings": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027/individual_findings.csv",
+      "sha256": "25074c5abcecddca76fa4a7098e77042afb899dd02e02f82b928c78a2d5fd967"
+    },
+    "scan_summary": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027/scan_summary.csv",
+      "sha256": "6e5b049ddc46548f22369ee69c216be0fedbfe2e0a5cdad8fb0ec2aaa726970f"
+    },
+    "suggestions": {
+      "path": "results/manual_review/sample30-seed2027/inputs/suggested_interpretations.json",
+      "sha256": "3d842d4ca0b0d527732fa9b9ad430b03f0796bf1d3ef3a4bc2e65c4d26b83577"
+    }
+  },
+  "quoted_files": [
+    {
+      "skill_id": "set-reminder-7652ed9105a8",
+      "file": "SKILL.md",
+      "sha256": "6588bead1351728294b22b7843c4622447e1ad84482b853fee859bacdd7ff972"
+    },
+    {
+      "skill_id": "set-reminder-7652ed9105a8",
+      "file": "scripts/set_reminder.py",
+      "sha256": "f212a9a87b08a146d7593d52fd672289c91343468244c9ebfb3b1f91efd7be44"
+    },
+    {
+      "skill_id": "skill-creator-484c59f65787",
+      "file": "eval-viewer/generate_review.py",
+      "sha256": "17f6b893b2e1b20a8550a1002ea7aee1f1dda05be5e4e4f4dfcdb94333599460"
+    },
+    {
+      "skill_id": "skill-creator-484c59f65787",
+      "file": "scripts/__init__.py",
+      "sha256": "a1122830f93e01d1cbfb9699af2ad7dd1af62e9cda986c112e194468e4874f07"
+    },
+    {
+      "skill_id": "synthdata-compute-82db1d3c4db1",
+      "file": "SKILL.md",
+      "sha256": "b89fffbe168d06d6410d2953e992a68898e9ce6f796e80d4c8c3087b5c5e858a"
+    },
+    {
+      "skill_id": "synthdata-compute-82db1d3c4db1",
+      "file": "scripts/compute.py",
+      "sha256": "1ea6b3ad7b1fb96e7c3bc90c8555ccc7a90b66d8eef657cca8e3fb836b689960"
+    },
+    {
+      "skill_id": "youtube-content-7162d1c45997",
+      "file": "SKILL.md",
+      "sha256": "9643810f68c29fe5723db5550e7ca2cf86c16de45a2a5a1ede23a1862a471cba"
+    },
+    {
+      "skill_id": "youtube-content-7162d1c45997",
+      "file": "scripts/batch_unified.py",
+      "sha256": "f79f9e68127d216bb0bab0fa8601a9a2bd2fccc8060dd2f5c5a186489665770a"
+    },
+    {
+      "skill_id": "youtube-content-7162d1c45997",
+      "file": "references/ytdlp-quirks.md",
+      "sha256": "ff730899b1162184c4e2033ffa8dbd6f638c7a01bca6f866e0a7b16fb467a082"
+    }
+  ],
+  "locations": 11,
+  "behavior_groups": 7,
+  "suggestion_source": "AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",
+  "human_columns": [
+    "reviewer_1",
+    "reviewer_1_evidence_present",
+    "reviewer_1_label",
+    "reviewer_1_rationale",
+    "reviewer_2",
+    "reviewer_2_evidence_present",
+    "reviewer_2_label",
+    "reviewer_2_rationale",
+    "final_evidence_present",
+    "final_label",
+    "final_rationale",
+    "adjudicated_by",
+    "review_date"
+  ],
+  "label_vocabulary": [
+    "intentional",
+    "potentially_exploitable",
+    "scanner_parser_issue",
+    "uncertain"
+  ],
+  "evidence_present_vocabulary": [
+    "yes",
+    "partly",
+    "no"
+  ]
+}
