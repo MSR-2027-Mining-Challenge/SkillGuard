@@ -1,0 +1,13 @@
+rule_id,finding_kind,cisco_category,research_category,analyzers,max_severity,rows_primary,rows_all_readable_scans,skills_primary,skills_all,distinct_locations_primary,configurations
+ACTIVE_DYNAMIC_EXECUTION,security,command_injection,Command execution / dangerous shell operations,static,HIGH,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+DATA_EXFIL_NETWORK_REQUESTS,security,data_exfiltration,External network communication / data exfiltration,static,MEDIUM,4,4,1,1,2,Full folder | default; Full folder | behavioral
+MDBLOCK_PYTHON_SUBPROCESS,security,command_injection,Command execution / dangerous shell operations,behavioral,MEDIUM,3,3,1,1,2,SKILL.md only | behavioral; Full folder | behavioral
+ALLOWED_TOOLS_BASH_VIOLATION,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+ALLOWED_TOOLS_GREP_VIOLATION,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,LOW,2,2,1,1,1,Full folder | default; Full folder | behavioral
+ALLOWED_TOOLS_NETWORK_USAGE,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,MEDIUM,2,2,1,1,1,Full folder | default; Full folder | behavioral
+COMMAND_INJECTION_EVAL,security,command_injection,Command execution / dangerous shell operations,static,CRITICAL,2,2,1,1,1,Full folder | default; Full folder | behavioral
+COMMAND_INJECTION_OS_SYSTEM,security,command_injection,Command execution / dangerous shell operations,static,CRITICAL,2,2,1,1,1,Full folder | default; Full folder | behavioral
+FILE_MAGIC_MISMATCH,security,obfuscation,Other (obfuscation),static,MEDIUM,2,2,1,1,1,Full folder | default; Full folder | behavioral
+MANIFEST_MISSING_LICENSE,metadata_quality,policy_violation,Other (policy_violation),static,INFO,106,106,28,28,28,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+MANIFEST_INVALID_NAME,metadata_quality,policy_violation,Other (policy_violation),static,INFO,8,8,2,2,2,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+SKILL_LOAD_FALLBACK_USED,scan_coverage,policy_violation,Other (policy_violation),skill_loader,INFO,0,4,0,1,0,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral

@@ -1,0 +1,260 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-05T05:07:05+00:00",
+  "kind": "combined",
+  "report_id": "2026-11-03_153740_pilots-canary-x-loa",
+  "run_mode": "combined",
+  "db_tag": "agent_skills_sample",
+  "experiment": "pilots-canary-x-loa",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 3,
+    "skills_exported": 3,
+    "export_errors": 0,
+    "skills_scanned": 3,
+    "skills_by_coverage": {
+      "complete": 2,
+      "complete_except_excluded": 0,
+      "partially_complete": 1,
+      "no_complete_scan": 0,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 12,
+    "scans_executed": 12,
+    "scans_by_outcome": {
+      "complete": 11,
+      "contract_only": 1,
+      "partial": 0,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 50,
+    "finding_rows_by_kind": {
+      "security": 46,
+      "metadata_quality": 4
+    },
+    "skills_with_any_finding": 3,
+    "skills_with_security_alert_primary": 2,
+    "skills_with_security_alert_any": 2,
+    "security_rows_primary": 24,
+    "security_rows_any": 46,
+    "security_locations_primary": 20,
+    "security_locations_any": 26,
+    "security_rows_by_severity_primary": {
+      "CRITICAL": 3,
+      "HIGH": 2,
+      "MEDIUM": 15,
+      "LOW": 4
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 26,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 6,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --combined results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa",
+  "inputs": {
+    "combined_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_metadata.json",
+      "sha256": "b790d8691eee6255d7567bb6b24911068f5821b2b16fd2039ea0f7748ee0dce7"
+    },
+    "combined_scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_scan_summary.csv",
+      "sha256": "12d2adbecced599aa84ead2cb055dae95f8bcfd3dc7e612382b13335101b854c"
+    },
+    "combined_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_findings.csv",
+      "sha256": "d51da7ed78447f082119a167cf7de9f67253561d2ab046163c5fe8ea4d775e6a"
+    },
+    "combined_comparison_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_comparison_findings.csv",
+      "sha256": "f69f154f8438ff1aefdc4d78f4d34ec295d424b745c5a32203f8730f5762347a"
+    },
+    "combined_manual_review.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_manual_review.csv",
+      "sha256": "e745436abb5abeb64a0894f0e8f17128dea6978560d266d9ea1e2ba50047c76f"
+    },
+    "combined_report.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_report.md",
+      "sha256": "a6d13718d3a6f4058a41183f3b8dd912b0a72effef4042d80af17ecf634062a3"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "864e8da4db137e61dba62f5edb3b6f89a4f93d04f3107819b7904a46d647ebbc",
+      "bytes": 468
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "354ce96df693a4c05fc7455702971e4bb89e5e518358c80894bf39dde150f184",
+      "bytes": 15567
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "41358b7fc23e38d62e8caf81f22772bf952ef32ba272bf575d16f5365104806f",
+      "bytes": 312
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "95400ac77850f39df8f8fad3e137a49eeabd9f79ff0d66f0deef6a71516c340a",
+      "bytes": 707
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/combined_report.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_report.md",
+      "sha256": "ccbc0961a866919ceed604b1dbb0a80bba01763001c7a8c36698667819aa6711",
+      "bytes": 18044
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3a6dc26ea0e2ca0b3dd780a87be6e53bd3d39e6db879137763345cbc7a2c72e1",
+      "bytes": 881
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3c1887b776fa1d223b787a04299972e94752fc3b425607679743cc66fa50cc74",
+      "bytes": 2492
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f7683e89b66f2a0350c4b0bd3eebb6f656448d4b469ae1a6fc38be8be6c75956",
+      "bytes": 194
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_findings.csv",
+      "sha256": "8bb48e13205c25830c2ec284af2fb5abbb95da9fea6df5fc65f7790699beaaa2",
+      "bytes": 132582
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "da41c3bce7c759626594b7cd3fd916e5133b96227a763af57d4063ed03e893a7",
+      "bytes": 4681
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/combined_comparison_findings.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_comparison_findings.csv",
+      "sha256": "d5f7d82551bf4c074c0caf9363355b1ed0ba4a4571f6723ad06b5bdaf39c3326",
+      "bytes": 203355
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/comparisons_primary_vs_sensitivity.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/figures/comparisons_primary_vs_sensitivity.png",
+      "sha256": "e35bdea1189bea6ed60e5bb9aeeedd5479758d5902504f48756cdbba930ac0d5",
+      "bytes": 51789
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_pilot.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/figures/severity_by_pilot.png",
+      "sha256": "8ae013415446a277db21909a76b0c69be1e0dcfe9f83656b743502e413d9fc6c",
+      "bytes": 29467
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/implementing-canary-tokens-for-netw-460e0a897b56.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b77429e834eeddaaf0e404f845f5e17f566312e2919cbbee1a57d6742dd5d312",
+      "bytes": 13748
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/x-5b9136e54787.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fab62c18a385c844e7987821fdc9f001ac286ab38a3365d59f6bb732779bbeb0",
+      "bytes": 2956
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4d7d697724fbcc7b78449ab0a6f34523ea77a01354f80cf95cae29dd487ba9c4",
+      "bytes": 6577
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/combined_scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_scan_summary.csv",
+      "sha256": "12d2adbecced599aa84ead2cb055dae95f8bcfd3dc7e612382b13335101b854c",
+      "bytes": 9419
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/combined_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/combined/2026-11-03_153740_pilots-canary-x-loa/combined_metadata.json",
+      "sha256": "33a1f26c64d65567cb042235a67d840411087e3ec9b27e2a18ed8ac2c66ee11f",
+      "bytes": 2742
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9c8429560b3cbfe32d0727cff5ba40600669599258d485a8a853ab0914899471",
+      "bytes": 785
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b120b353c74538dbb70991d3bfb767751f6cfeb34c63b17122e0b855960be4a4",
+      "bytes": 773
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5c9546f0c6dab91032a88a9e195d9d47cfa7bc704d77a4c1c87bcdf9c029bb7d",
+      "bytes": 12821
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "396064dbe58e1b31dbe93a22bb7fa2658b072b5836098fd579b176b0659cca3b",
+      "bytes": 124247
+    }
+  ]
+}

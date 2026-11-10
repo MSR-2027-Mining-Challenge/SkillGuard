@@ -1,0 +1,11 @@
+configuration,analyzer_mode,label,planned,excluded_incomplete_folder,export_error,not_run_or_missing,executed,complete,contract_only,partial,failed,primary_core_complete,denominator_note,llm_ok,llm_failed,llm_not_queried,llm_prompt_budget_exceeded,meta_ran,meta_skipped_clear_deterministic,meta_not_invoked_no_findings,meta_degraded,meta_failed
+SKILL.md only | default,default,A_static,30,0,0,0,30,29,0,1,0,29,30 executed of 30 planned; 0 excluded by design (incomplete folder),,,,,,,,,
+SKILL.md only | behavioral,behavioral,A_behavioral,30,0,0,0,30,29,0,1,0,29,30 executed of 30 planned; 0 excluded by design (incomplete folder),,,,,,,,,
+Full folder | default,default,A_static,30,3,0,0,27,26,0,1,0,26,27 executed of 30 planned; 3 excluded by design (incomplete folder),,,,,,,,,
+Full folder | behavioral,behavioral,A_behavioral,30,3,0,0,27,26,0,1,0,26,27 executed of 30 planned; 3 excluded by design (incomplete folder),,,,,,,,,
+SKILL.md only | behavioral+llm,behavioral_llm,B_llm,30,0,0,0,30,29,0,1,0,29,30 executed of 30 planned; 0 excluded by design (incomplete folder),30.0,0.0,0.0,3.0,,,,,
+SKILL.md only | behavioral+meta,behavioral_meta,Cdet_meta,30,0,0,0,30,28,0,2,0,29,30 executed of 30 planned; 0 excluded by design (incomplete folder),,,,,0.0,27.0,1.0,1.0,1.0
+SKILL.md only | behavioral+llm+meta,behavioral_llm_meta,C_llm_meta,30,0,0,0,30,6,0,24,0,29,30 executed of 30 planned; 0 excluded by design (incomplete folder),30.0,0.0,0.0,3.0,6.0,0.0,0.0,23.0,1.0
+Full folder | behavioral+llm,behavioral_llm,B_llm,30,3,0,0,27,24,0,3,0,24,27 executed of 30 planned; 3 excluded by design (incomplete folder),25.0,2.0,0.0,3.0,,,,,
+Full folder | behavioral+meta,behavioral_meta,Cdet_meta,30,3,0,0,27,24,0,3,0,26,27 executed of 30 planned; 3 excluded by design (incomplete folder),,,,,2.0,21.0,1.0,2.0,1.0
+Full folder | behavioral+llm+meta,behavioral_llm_meta,C_llm_meta,30,3,0,0,27,2,0,25,0,24,27 executed of 30 planned; 3 excluded by design (incomplete folder),25.0,2.0,0.0,3.0,2.0,0.0,0.0,24.0,1.0

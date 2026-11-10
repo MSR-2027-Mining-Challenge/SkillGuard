@@ -1,0 +1,269 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-05T05:07:03+00:00",
+  "kind": "run",
+  "report_id": "2026-11-03_151814_pilot-canary-reanalysis",
+  "run_mode": "reanalyze",
+  "db_tag": "agent_skills_sample",
+  "experiment": "pilot-canary-reanalysis",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis",
+  "source_run": "results/cisco_dataset_runs/pilot_canary_backup",
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 1,
+    "skills_exported": 1,
+    "export_errors": 0,
+    "skills_scanned": 1,
+    "skills_by_coverage": {
+      "complete": 0,
+      "complete_except_excluded": 0,
+      "partially_complete": 1,
+      "no_complete_scan": 0,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 4,
+    "scans_executed": 4,
+    "scans_by_outcome": {
+      "complete": 3,
+      "contract_only": 0,
+      "partial": 1,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 38,
+    "finding_rows_by_kind": {
+      "security": 38
+    },
+    "skills_with_any_finding": 1,
+    "skills_with_security_alert_primary": 1,
+    "skills_with_security_alert_any": 1,
+    "security_rows_primary": 16,
+    "security_rows_any": 38,
+    "security_locations_primary": 16,
+    "security_locations_any": 22,
+    "security_rows_by_severity_primary": {
+      "CRITICAL": 3,
+      "HIGH": 2,
+      "MEDIUM": 11
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 22,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 6,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/run_metadata.json",
+      "sha256": "276771a3358ef8bce171ce7228fc5b2c401d9e0632834d26317fd35858051d1c"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/scan_summary.csv",
+      "sha256": "b739152999303c390f4b4b8012761824c622e3be406667df4960e1e32be6b845"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/individual_findings.csv",
+      "sha256": "b27177b0a38787f772b70c923972f4cd4a8cd99168ce845be9d1c4889bf46225"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/context_comparison.csv",
+      "sha256": "9a8151fb63ae49d95d0d0b8bb46cb9896ebebbcd14a2717ecd712585fbedb3c8"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/analyzer_comparison.csv",
+      "sha256": "165d291af48b22ea44e0dcc9558320c589ed8745fb97c57fc6119700366cb24a"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/manual_review_template.csv",
+      "sha256": "fe7cb9a2558f0c3ba5e99284da4a84284d9cabb94d6937292c034dd07b478a42"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/results_summary.md",
+      "sha256": "dc64460c4707e2cbf0014ab7799d7964502ff112feaefaf3a3599c131b79630a"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4f53be6c46f6f0a7ebcd83687c093cbfd94f571e32c70030cce30571b6c74de4",
+      "bytes": 464
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "55f033171fd8f08c54656d2cfbf528c4c5ecd75a9810b6abf9b9efd80ff16306",
+      "bytes": 13647
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "96bf15c83f52c1f82af6e816f1bc77ba314dc8da8b2d435b5df4d7bc2c8045e3",
+      "bytes": 312
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "bd6508a738ce2c1cbed574170145c0569f46c843e69ff0bb86fcc569d862c0a0",
+      "bytes": 542
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/results_summary.md",
+      "sha256": "4d12b2ca2dd5f9e4c4fb7c55dc5e46d54268da0f246af9f70324424ebf09ba21",
+      "bytes": 11609
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "dd21c7616ead24dde0625384e47dee9366ce94d0f61a3c8317b50b687315f3ff",
+      "bytes": 586
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "bf30cef8791bcee74c04fd13236dfe6db16417809f8806894f3d0d497bde42f3",
+      "bytes": 1759
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d36b6d16ed63e9e6d6e03e8b0f46d0233e2fd87f0bb196ac2ceae48ca7e61691",
+      "bytes": 158
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/individual_findings.csv",
+      "sha256": "922c388f066dc02b0a17bd2b6178e514ba68986466105162c7ba05123e133ad1",
+      "bytes": 109428
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6ea565d093de7fc52de7aa6f3d154d1fb9a9b59704de889dcdcdeb3154de5b97",
+      "bytes": 779
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/context_comparison.csv",
+      "sha256": "a566ec4ff3100fa62b5e27c4663b03ab64ee333cf52f1568472dcab2f0908c93",
+      "bytes": 101809
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/analyzer_comparison.csv",
+      "sha256": "c0e74af2734110fede46a5a83efafa8269e0142d2390d801f4c08e61b981fe6e",
+      "bytes": 72602
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/figures/configuration_comparisons.png",
+      "sha256": "d2cec6122057660a572bb0503c0da9a1371fd7e63d4e935ba1e2767f1b1ba81d",
+      "bytes": 24179
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/figures/findings_by_category.png",
+      "sha256": "40cf5ffc37e36771232fd97b4dc669aaaefc91e6ec152717ec66dc4dc551d962",
+      "bytes": 34456
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/figures/severity_by_configuration.png",
+      "sha256": "401a3cb162a6853c0d28f11c6065f7103fd26a713526a3fa5790014c0d142e03",
+      "bytes": 30868
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/implementing-canary-tokens-for-netw-460e0a897b56.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "35ef54e0af9e163430cbe64bf5ad883d76a65f596f07982af6ef2bdba0f6475e",
+      "bytes": 13610
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8a37061e71bca91a58be9c7113449f9a9eb190d278d4d71b033115862ccd9596",
+      "bytes": 1934
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/scan_summary.csv",
+      "sha256": "09012756ecb474b06e7204adcca960fbbb568fb43ef515198b5817790745acfa",
+      "bytes": 3991
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_151814_pilot-canary-reanalysis/run_metadata.json",
+      "sha256": "276771a3358ef8bce171ce7228fc5b2c401d9e0632834d26317fd35858051d1c",
+      "bytes": 3806
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8fd9a234ba6d5f00aaeffdce10be8aa9f2ed078f48d0ffaef1d32700282e31cd",
+      "bytes": 1049
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "696167f1e0f8b89d7b12f66c48945b8bd1b2fddd1d70e21def5cfe0d5ff86293",
+      "bytes": 773
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "deb9958d2bdb7a3925623f4cb9fe255164b2dbd5439ba9ce4900f07efc256f81",
+      "bytes": 12398
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "50891f6dfed427883b2c43837c2d5e3bc495dc593819a6eff8ea285bc52fadcb",
+      "bytes": 106776
+    }
+  ]
+}

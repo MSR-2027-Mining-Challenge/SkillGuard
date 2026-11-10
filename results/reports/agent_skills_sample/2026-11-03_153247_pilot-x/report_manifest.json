@@ -1,0 +1,268 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-05T05:07:03+00:00",
+  "kind": "run",
+  "report_id": "2026-11-03_153247_pilot-x",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "pilot-x",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 1,
+    "skills_exported": 1,
+    "export_errors": 0,
+    "skills_scanned": 1,
+    "skills_by_coverage": {
+      "complete": 1,
+      "complete_except_excluded": 0,
+      "partially_complete": 0,
+      "no_complete_scan": 0,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 4,
+    "scans_executed": 4,
+    "scans_by_outcome": {
+      "complete": 4,
+      "contract_only": 0,
+      "partial": 0,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 8,
+    "finding_rows_by_kind": {
+      "security": 8
+    },
+    "skills_with_any_finding": 1,
+    "skills_with_security_alert_primary": 1,
+    "skills_with_security_alert_any": 1,
+    "security_rows_primary": 8,
+    "security_rows_any": 8,
+    "security_locations_primary": 4,
+    "security_locations_any": 4,
+    "security_rows_by_severity_primary": {
+      "MEDIUM": 4,
+      "LOW": 4
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 4,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 0,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/run_metadata.json",
+      "sha256": "b9f8d6a8a527191bfb1dbf100c5ef54c5cab097e66de26ba6a3f89e77d7303dd"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/scan_summary.csv",
+      "sha256": "a5dc466ac1127c0617ca565767540b0844d463b4582d825de1087cb6c71e059c"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/individual_findings.csv",
+      "sha256": "ec292432d9a6bfe6eac40fc1e892c275c18a260c7c0af8514c0e3af157c4daed"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/context_comparison.csv",
+      "sha256": "3dd0daac61e631fc001a86f39228979af07ad5bdc63b10c972bc4e6c681d00f8"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/analyzer_comparison.csv",
+      "sha256": "1abf9a30e57110c2afefb67448115ee2358c7b3748e4b473f6cd169dd2c46a36"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/manual_review_template.csv",
+      "sha256": "7caab20015345cbfdca44c46a8156e3264cacb1bba98b7322505b71d021c0e3e"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/results_summary.md",
+      "sha256": "025687f5f4556ef7c9e016efa141d8650e919b03b1dc56771fcd529a2d9e55a6"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3af2a7410fcfa433face255bf7a197047e9bea05e14ccc78de1768b8320fcca5",
+      "bytes": 467
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c15db87f30eb3865c7cb53fba570de0713266a33572a10d8ddd244936a899c62",
+      "bytes": 2125
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1412502db2aafd2fd414e5d8407ef89c89444659af7b60daaaae491166f24642",
+      "bytes": 310
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "11bf08e04800326169fbe36b230b4b676320b72cac5dad2754834d6c8f0bf281",
+      "bytes": 259
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/results_summary.md",
+      "sha256": "ed4ff8cb8c90dd5fe8fe1b81d8106960516580e6ff092f0832d5a8be0f5db95e",
+      "bytes": 11524
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c4466726c8f2cf06734fa5ea2557d0b503b5f2a75efa62a85144c4dfe97ed5be",
+      "bytes": 437
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8c85590c395adeb3180c07905f37c25262f3ed3c5f80ac3c3be6e6fbace1260d",
+      "bytes": 886
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "a5cde33dcf2dfc4032c435b059b928b56d9565164abe5faa81728decfee5558a",
+      "bytes": 113
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/individual_findings.csv",
+      "sha256": "7e3d21d2362fa63a58dd5913230ce9d86bf71977a1c775f8a624eb348c97e0e4",
+      "bytes": 19219
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6ea565d093de7fc52de7aa6f3d154d1fb9a9b59704de889dcdcdeb3154de5b97",
+      "bytes": 779
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/context_comparison.csv",
+      "sha256": "3dd0daac61e631fc001a86f39228979af07ad5bdc63b10c972bc4e6c681d00f8",
+      "bytes": 19441
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/analyzer_comparison.csv",
+      "sha256": "1abf9a30e57110c2afefb67448115ee2358c7b3748e4b473f6cd169dd2c46a36",
+      "bytes": 10112
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/figures/configuration_comparisons.png",
+      "sha256": "9cba95a1ce79750c3c2130ac49f36867efda5eaa8d3f4b53127d4483b9f7b883",
+      "bytes": 36900
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/figures/findings_by_category.png",
+      "sha256": "f25bb8501201b62e1888418e6a79a02074c4f76dbf1b062a15a07d138c3fb7fa",
+      "bytes": 30036
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/figures/severity_by_configuration.png",
+      "sha256": "670026ead34a87521e866ea5f6c89a87959c6db1938f448e7a0c3063371db8d1",
+      "bytes": 35524
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/x-5b9136e54787.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fab62c18a385c844e7987821fdc9f001ac286ab38a3365d59f6bb732779bbeb0",
+      "bytes": 2956
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "54298fda42fa6bdf23e37d28ff92fa93235ded49176195941cedd190eb01a0a7",
+      "bytes": 2314
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/scan_summary.csv",
+      "sha256": "dd756b4041ac91d5ea0a9e3e8326ea8c83367351beb3edb8148a24b61d46124e",
+      "bytes": 2889
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153247_pilot-x/run_metadata.json",
+      "sha256": "b9f8d6a8a527191bfb1dbf100c5ef54c5cab097e66de26ba6a3f89e77d7303dd",
+      "bytes": 3323
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "17e27142580c2d26442d3ff61eeaf2900928805056d611b7c36a819737a08389",
+      "bytes": 1033
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4eb9abe3387dc0890180cb02739e202094209b1c3fb203190733a1c7eb9772f5",
+      "bytes": 772
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "dc4e0d2a909eaef9f315d278dc18a3fedb84c51cda92086aeaa58bcf7a2b2174",
+      "bytes": 8438
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f80d676d0f2e4826a913c7ac149f9b0706462623e8395f8966bd5abb22bd2270",
+      "bytes": 59111
+    }
+  ]
+}

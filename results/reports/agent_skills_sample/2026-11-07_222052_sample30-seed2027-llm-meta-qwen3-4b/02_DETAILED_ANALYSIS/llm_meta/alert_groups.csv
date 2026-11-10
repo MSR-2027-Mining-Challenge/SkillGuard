@@ -1,0 +1,50 @@
+group_id,skill_id,file,research_category,max_severity,raw_rows,configurations,scopes,analyzers,rules,lines,deterministic_rows,llm_rows,meta_suppressed_rows,support
+G001,admkrs-cs-performance-reporting-2290661edc90,(no file),Prompt injection / instruction manipulation,CRITICAL,1,C_llm_meta,SKILL.md only,meta,META_DETECTED_PROMPT_INJECTION,,0,0,0,LLM / Meta only
+G034,skill-creator-484c59f65787,eval-viewer/generate_review.py,Command execution / dangerous shell operations,CRITICAL,5,A_behavioral; A_static; B_llm; C_llm_meta; Cdet_meta,Full folder,static,COMMAND_INJECTION_OS_SYSTEM,390,5,0,0,deterministic only
+G041,synthdata-compute-82db1d3c4db1,(no file),Command execution / dangerous shell operations,CRITICAL,2,B_llm; C_llm_meta,Full folder,llm,LLM_COMMAND_INJECTION,,0,2,0,LLM / Meta only
+G042,synthdata-compute-82db1d3c4db1,(no file),Excessive permissions / privilege escalation,CRITICAL,1,Cdet_meta,Full folder,meta,META_DETECTED_UNAUTHORIZED_TOOL_USE,,0,0,0,LLM / Meta only
+G044,synthdata-compute-82db1d3c4db1,scripts/compute.py,Command execution / dangerous shell operations,CRITICAL,5,A_behavioral; A_static; B_llm; C_llm_meta; Cdet_meta,Full folder,static,COMMAND_INJECTION_EVAL,174,5,0,0,deterministic only
+G047,youtube-content-7162d1c45997,(no file),Prompt injection / instruction manipulation,CRITICAL,1,Cdet_meta,Full folder,meta,META_DETECTED_PROMPT_INJECTION,,0,0,0,LLM / Meta only
+G002,admkrs-cs-performance-reporting-2290661edc90,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G003,bounty-hunting-c7d411d69db8,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G006,cb-user-behavior-analytics-f905993b15c3,SKILL.md,Prompt injection / instruction manipulation,HIGH,5,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,5,0,LLM / Meta only
+G007,create-research-questions-7f1c9df74a9c,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G009,documentation-and-adrs-ac1413444c5f,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G011,f-hypothesis-ledger-0b6cb775953e,SKILL.md,Prompt injection / instruction manipulation,HIGH,3,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,3,0,LLM / Meta only
+G015,llama-cpp-9983d0524812,(no file),Prompt injection / instruction manipulation,HIGH,1,C_llm_meta,Full folder,llm,LLM_PROMPT_INJECTION,,0,1,0,LLM / Meta only
+G016,llama-cpp-9983d0524812,SKILL.md,Prompt injection / instruction manipulation,HIGH,3,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,3,0,LLM / Meta only
+G020,notion-content-91d9024c9adf,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G022,product-interviewer-888617f63ea3,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G024,review-pr-1346c06d3855,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G025,scientific-reactome-pathways-b24c9a2b5a6b,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G026,set-reminder-7652ed9105a8,SKILL.md,Excessive permissions / privilege escalation,HIGH,15,A_behavioral; A_static; B_llm; C_llm_meta; Cdet_meta,Full folder,static,ALLOWED_TOOLS_BASH_VIOLATION; ALLOWED_TOOLS_GREP_VIOLATION; ALLOWED_TOOLS_NETWORK_USAGE,,15,0,0,deterministic only
+G028,set-reminder-7652ed9105a8,scripts/set_reminder.py,Excessive permissions / privilege escalation,HIGH,4,B_llm; C_llm_meta,Full folder,llm,LLM_UNAUTHORIZED_TOOL_USE,,0,4,0,LLM / Meta only
+G030,ship-9eb65676582d,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G031,skill-24eda454b855,SKILL.md,Prompt injection / instruction manipulation,HIGH,2,B_llm; C_llm_meta,SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,2,0,LLM / Meta only
+G033,skill-creator-484c59f65787,SKILL.md,Prompt injection / instruction manipulation,HIGH,2,B_llm; C_llm_meta,SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,2,0,LLM / Meta only
+G038,spatial-domains-712e4a65bdd1,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G039,spdd-123721de2fa1,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G040,summarize_text_with_key_details-06e4bdda53f8,SKILL.md,Prompt injection / instruction manipulation,HIGH,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G043,synthdata-compute-82db1d3c4db1,SKILL.md,Prompt injection / instruction manipulation,HIGH,2,B_llm; C_llm_meta,SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,2,0,LLM / Meta only
+G048,youtube-content-7162d1c45997,SKILL.md,Command execution / dangerous shell operations,HIGH,22,A_behavioral; A_static; B_llm; C_llm_meta; Cdet_meta,Full folder; SKILL.md only,behavioral; llm; static,ACTIVE_DYNAMIC_EXECUTION; LLM_COMMAND_INJECTION; MDBLOCK_PYTHON_SUBPROCESS,"162, 169",18,4,0,deterministic + LLM
+G008,create-research-questions-7f1c9df74a9c,references/research_questions_template.md,Prompt injection / instruction manipulation,MEDIUM,1,C_llm_meta,Full folder,llm,LLM_PROMPT_INJECTION,,0,1,0,LLM / Meta only
+G029,set-reminder-7652ed9105a8,scripts/set_reminder.py,External network communication / data exfiltration,MEDIUM,12,A_behavioral; A_static; B_llm; C_llm_meta; Cdet_meta,Full folder,llm; static,DATA_EXFIL_NETWORK_REQUESTS; LLM_DATA_EXFILTRATION,"38, 41",10,2,0,deterministic + LLM
+G035,skill-creator-484c59f65787,scripts/__init__.py,Other (obfuscation),MEDIUM,5,A_behavioral; A_static; B_llm; C_llm_meta; Cdet_meta,Full folder,static,FILE_MAGIC_MISMATCH,,5,0,0,deterministic only
+G046,youtube-content-7162d1c45997,(no file),Excessive permissions / privilege escalation,MEDIUM,1,C_llm_meta,SKILL.md only,meta,META_DETECTED_UNAUTHORIZED_TOOL_USE,,0,0,0,LLM / Meta only
+G049,youtube-content-7162d1c45997,references/ytdlp-quirks.md,Command execution / dangerous shell operations,MEDIUM,4,A_behavioral; B_llm; C_llm_meta; Cdet_meta,Full folder,behavioral,MDBLOCK_PYTHON_SUBPROCESS,69,4,0,0,deterministic only
+G004,brainstorming-504e3faf47b9,(no file),Other (policy_violation),LOW,2,B_llm; C_llm_meta,Full folder,llm,LLM_POLICY_VIOLATION,,0,2,0,LLM / Meta only
+G005,brainstorming-504e3faf47b9,SKILL.md,Other (policy_violation),LOW,2,B_llm; C_llm_meta,SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,2,0,LLM / Meta only
+G010,f-hypothesis-ledger-0b6cb775953e,SKILL.md,Other (policy_violation),LOW,1,B_llm,SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,1,0,LLM / Meta only
+G012,fastapi-workflow-2ee766d75fbe,SKILL.md,Prompt injection / instruction manipulation,LOW,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G013,json-visual-diff-53e233791f4c,(no file),Other (policy_violation),LOW,3,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,3,0,LLM / Meta only
+G014,json-visual-diff-53e233791f4c,SKILL.md,Prompt injection / instruction manipulation,LOW,1,C_llm_meta,Full folder,llm,LLM_PROMPT_INJECTION,,0,1,0,LLM / Meta only
+G017,lxc-setup-dcc11cf17ae2,(no file),Other (policy_violation),LOW,3,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,3,0,LLM / Meta only
+G018,lxc-setup-dcc11cf17ae2,SKILL.md,Prompt injection / instruction manipulation,LOW,1,B_llm,Full folder,llm,LLM_PROMPT_INJECTION,,0,1,0,LLM / Meta only
+G019,moonshot-teams-runner-b816482cad2c,SKILL.md,Prompt injection / instruction manipulation,LOW,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only
+G021,oat-brainstorm-89abd5dadad1,SKILL.md,Prompt injection / instruction manipulation,LOW,3,B_llm; C_llm_meta,SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,3,0,LLM / Meta only
+G023,python-f1868b2af2ee,SKILL.md,Other (policy_violation),LOW,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,4,0,LLM / Meta only
+G027,set-reminder-7652ed9105a8,SKILL.md,Prompt injection / instruction manipulation,LOW,2,B_llm; C_llm_meta,SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,2,0,LLM / Meta only
+G032,skill-558634268929,SKILL.md,Prompt injection / instruction manipulation,LOW,2,B_llm; C_llm_meta,SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,2,0,LLM / Meta only
+G036,slide-style-65f218b6102e,(no file),Other (policy_violation),LOW,3,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,3,0,LLM / Meta only
+G037,slide-style-65f218b6102e,SKILL.md,Other (policy_violation),LOW,1,C_llm_meta,SKILL.md only,llm,LLM_POLICY_VIOLATION,,0,1,0,LLM / Meta only
+G045,virtualenv-setup-46ac173e49cb,SKILL.md,Prompt injection / instruction manipulation,LOW,4,B_llm; C_llm_meta,Full folder; SKILL.md only,llm,LLM_PROMPT_INJECTION,,0,4,0,LLM / Meta only

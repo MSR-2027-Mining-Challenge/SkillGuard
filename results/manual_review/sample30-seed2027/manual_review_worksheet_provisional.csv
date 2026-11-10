@@ -1,0 +1,283 @@
+review_id,priority,behavior_group,skill_id,repo,skill_path,sample_stratum,rule_id,severity_reported,cisco_category,analyzer,configurations,run_statuses,file_path,reported_line_number,verified_evidence_line,evidence_status_auto,cisco_snippet,cisco_snippet_was_redacted,cisco_description,cisco_matched_pattern,excerpts,what_cisco_detected,cisco_mechanism,trust_boundary,data_flow,suggested_interpretation,suggested_confidence,suggested_rationale,alternative_interpretation,open_questions,related_review_ids,observed_not_reported,suggestion_source,reviewer_1,reviewer_1_evidence_present,reviewer_1_label,reviewer_1_rationale,reviewer_2,reviewer_2_evidence_present,reviewer_2_label,reviewer_2_rationale,final_evidence_present,final_label,final_rationale,adjudicated_by,review_date,provisional_label,provisional_label_status,provisional_agrees_with_suggested,provisional_recorded_date
+4536303dec,1,SD-1 synthdata-compute: exec() of computation code,synthdata-compute-82db1d3c4db1,rappdw/synthdata,skills/synthdata-compute/SKILL.md,scripts,COMMAND_INJECTION_EVAL,CRITICAL,command_injection,static,Full folder | default; Full folder | behavioral,COMPLETE,scripts/compute.py,174.0,174.0,exact,"exec(code, namespace)",False,Pattern detected: exec(,"(?<!['\""\.])\bexec\s*\(","# SKILL.md lines 1-12: frontmatter: the skill already grants Read, Bash, Glob, Write
+      1 | ---
+      2 | name: synthdata-compute
+      3 | description: >
+      4 |   Compute derived, aggregated, or transformed tables from existing datasets. Use this skill when
+      5 |   the user needs to ""compute monthly scores"", ""aggregate by month"", ""create a summary table"",
+      6 |   ""derive risk scores"", ""compute percentile ranks"", ""roll up events"", ""create benchmarks from
+      7 |   raw data"", ""add a computed column"", or bridge the gap between raw generated tables and
+      8 |   downstream analytics. Works on xlsx, csv, or json input. Claude writes the computation logic;
+      9 |   the script handles data I/O.
+     10 | version: 0.1.0
+     11 | allowed-tools: Read Bash Glob Write
+     12 | ---
+
+# SKILL.md lines 77-101: instructions: the agent writes the computation code, then runs compute.py with --code or --expr
+     77 | Save the computation to a `.py` file, then execute it.
+     78 | 
+     79 | ### Step 4: Execute
+     80 | 
+     81 | ```bash
+     82 | python3 scripts/compute.py --input data.xlsx --code monthly_risk.py --output data_with_scores.xlsx
+     83 | ```
+     84 | 
+     85 | **CLI flags:**
+     86 | 
+     87 | | Flag | Description |
+     88 | |------|-------------|
+     89 | | `--input` | Source dataset (xlsx/csv-dir/json) |
+     90 | | `--output` | Output path (default: `<input>_computed.<ext>`) |
+     91 | | `--inspect` | Print table schemas and exit |
+     92 | | `--code` | Path to a Python file with computation logic |
+     93 | | `--expr` | Inline Python expression (for simple one-liners) |
+     94 | | `--append` | Add computed tables to a copy of the input file (xlsx only) |
+     95 | 
+     96 | **Inline mode** for simple computations:
+     97 | 
+     98 | ```bash
+     99 | python3 scripts/compute.py --input data.xlsx --output scored.xlsx \
+    100 |     --expr ""result['summary'] = tables['events'].groupby('category').size().reset_index(name='count')""
+    101 | ```
+
+# scripts/compute.py lines 163-177: reported location: exec(code, namespace) with full builtins
+    163 | # ── Execute computation ───────────────────────────────────────────────────
+    164 | 
+    165 | def execute_code(tables: dict[str, pd.DataFrame], code: str) -> dict[str, pd.DataFrame]:
+    166 |     """"""Execute computation code with tables in scope, return result dict.""""""
+    167 |     result: dict[str, pd.DataFrame] = {}
+    168 |     namespace = {
+    169 |         ""tables"": tables,
+    170 |         ""pd"": pd,
+    171 |         ""np"": np,
+    172 |         ""result"": result,
+    173 |     }
+>>  174 |     exec(code, namespace)
+    175 |     # Pull result back out (exec may have reassigned it)
+    176 |     return namespace.get(""result"", result)
+    177 | 
+
+# scripts/compute.py lines 198-207: where code comes from: a file path (--code) or a command-line string (--expr)
+    198 |     if not args.code and not args.expr:
+    199 |         print(""Error: provide --code <file.py> or --expr '<expression>'"", file=sys.stderr)
+    200 |         sys.exit(1)
+    201 | 
+    202 |     if args.code:
+    203 |         code = Path(args.code).read_text()
+    204 |     else:
+    205 |         code = args.expr
+    206 | 
+    207 |     result = execute_code(tables, code)",Static regex COMMAND_INJECTION_EVAL matched the token `exec(` on line 174. The rule fires on any exec/eval/compile call; it does not look at where the executed string comes from.,"matched_pattern (?<!['\"".])\bexec\s*\( in the static analyzer signature pack (signature_context=code).",Agent-written Python (from the LLM) -> Python interpreter with full builtins. The tables loaded from xlsx/csv/json are passed as DataFrames and are not executed themselves.,"--code <file> or --expr <string> (written by the agent following SKILL.md) -> exec(code, namespace) -> result tables written to disk.",intentional,medium,"exec is the documented core design: SKILL.md says 'Claude writes the computation logic; the script handles data I/O'. The skill already allows the Bash tool, so exec adds no capability the agent does not already have. It becomes a risk only if an attacker can steer the code the agent writes (for example through prompt injection in the dataset or user request), which is the same risk as Bash itself.","potentially_exploitable, if the reviewer's threat model counts prompt injection via data that the agent reads before writing the computation code.",Does the reviewer treat 'agent-generated code executed by a bundled script' as an attack surface separate from the Bash tool? Can dataset cell values reach the code string? (Reading suggests no: values are only in DataFrames.),,None beyond the reported primitive.,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,uncertain,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",no,2026-11-04
+e37db01d42,2,SR-1 set-reminder: script runs crontab through subprocess,set-reminder-7652ed9105a8,Will-Barnard-WB/Personal-Knowledge-Bot,.claude/skills/set-reminder/SKILL.md,scripts,ALLOWED_TOOLS_BASH_VIOLATION,HIGH,unauthorized_tool_use,static,Full folder | default; Full folder | behavioral,COMPLETE,SKILL.md,,,unavailable,,False,"Skill restricts tools to ['Bash(python', '*)'] but code executes bash commands",,"# SKILL.md lines 1-6: frontmatter: allowed-tools is 'Bash(python *)'
+      1 | ---
+      2 | name: set-reminder
+      3 | description: Set a one-off Telegram reminder at a specific time. Use when the user asks to be reminded about something at a given time.
+      4 | user-invocable: false
+      5 | allowed-tools: Bash(python *)
+      6 | ---
+
+# scripts/set_reminder.py lines 128-133: what makes Cisco think the code 'executes bash': subprocess.run(['crontab', ...])
+    128 | def _add_cron_entry(cron_expr: str, script_path: Path, reminder_id: str) -> None:
+    129 |     entry = f""{cron_expr} {script_path} # PKB_REMINDER_{reminder_id}""
+    130 |     result = subprocess.run([""crontab"", ""-l""], capture_output=True, text=True)
+    131 |     existing = result.stdout if result.returncode == 0 else """"
+    132 |     new_crontab = existing.rstrip(""\n"") + ""\n"" + entry + ""\n""
+    133 |     subprocess.run([""crontab"", ""-""], input=new_crontab, text=True, check=True)","Cisco's manifest check reports that bundled code executes shell commands while 'Bash' is not in allowed-tools. Its description shows it parsed the declaration as ['Bash(python', '*)'].","skill_scanner/core/models.py splits a string allowed-tools value on commas or whitespace, giving ['Bash(python', '*)']; data/packs/core/python/allowed_tools_checks.py then requires the exact token 'bash' (lower-cased) and fires because any file contains 'subprocess.run'. A scoped declaration such as Bash(git:*) can never equal 'bash', so every scoped Bash declaration combined with subprocess code triggers this rule.",Skill permission declaration (allowed-tools) <-> agent tool runtime. The subprocess call runs inside a python process that the declaration does permit.,Agent runs `python scripts/set_reminder.py` (permitted by Bash(python *)) -> the script calls `crontab -l` and `crontab -` as child processes.,scanner_parser_issue,high,"The skill does declare Bash, scoped to python commands, and the script is launched exactly that way. The finding exists because Cisco tokenises 'Bash(python *)' on the space and compares tokens to the bare word 'bash'. A separate, legitimate question is whether a scoped Bash(python *) permission should cover child processes such as crontab; Cisco does not reason about that.","uncertain, if the reviewer considers launching crontab from a python script to be outside the spirit of a python-only permission.",Confirm the tokenisation from the description field. Decide whether child processes of a permitted command count as 'executing bash' for this study.,65f210f2dd; 78fa761fe9,"The script edits the user's crontab (a persistence mechanism) and writes an executable, self-deleting reminder script into the repository's reminders/ folder. No Cisco rule reports crontab modification or persistence in this run.","AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,scanner_parser_issue,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+f0f315b409,3,SC-1 skill-creator: lsof port lookup before starting a local viewer,skill-creator-484c59f65787,niekbeckers/skills,skills/skill-creator/SKILL.md,scripts,COMMAND_INJECTION_OS_SYSTEM,CRITICAL,command_injection,static,Full folder | default; Full folder | behavioral,COMPLETE,eval-viewer/generate_review.py,390.0,390.0,exact,result = subprocess.run(,False,"Pattern detected: subprocess.run(
+            [""lsof"", ""-ti"", f"":{port}","subprocess\.(?:call|run|Popen)\s*\((?=[^)]*\n)[^)]*[f""'].*\{.*\}","# eval-viewer/generate_review.py lines 387-407: reported location: subprocess.run(['lsof', '-ti', f':{port}']) as a list, no shell
+    387 | def _kill_port(port: int) -> None:
+    388 |     """"""Kill any process listening on the given port.""""""
+    389 |     try:
+>>  390 |         result = subprocess.run(
+    391 |             [""lsof"", ""-ti"", f"":{port}""],
+    392 |             capture_output=True,
+    393 |             text=True,
+    394 |             timeout=5,
+    395 |         )
+    396 |         for pid_str in result.stdout.strip().split(""\n""):
+    397 |             if pid_str.strip():
+    398 |                 try:
+    399 |                     os.kill(int(pid_str.strip()), signal.SIGTERM)
+    400 |                 except (ProcessLookupError, ValueError):
+    401 |                     pass
+    402 |         if result.stdout.strip():
+    403 |             time.sleep(0.5)
+    404 |     except subprocess.TimeoutExpired:
+    405 |         pass
+    406 |     except FileNotFoundError:
+    407 |         print(""Note: lsof not found, cannot check if port is in use"", file=sys.stderr)
+
+# eval-viewer/generate_review.py lines 488-490: port comes from argparse with type=int
+    488 |     parser.add_argument(
+    489 |         ""--port"", ""-p"", type=int, default=3117, help=""Server port (default: 3117)""
+    490 |     )
+
+# eval-viewer/generate_review.py lines 545-556: the viewer binds to 127.0.0.1 only
+    545 |         sys.exit(0)
+    546 | 
+    547 |     # Kill any existing process on the target port
+    548 |     port = args.port
+    549 |     _kill_port(port)
+    550 |     handler = partial(
+    551 |         ReviewHandler, workspace, skill_name, feedback_path, previous, benchmark_path
+    552 |     )
+    553 |     try:
+    554 |         server = HTTPServer((""127.0.0.1"", port), handler)
+    555 |     except OSError:
+    556 |         server = HTTPServer((""127.0.0.1"", 0), handler)",Static regex COMMAND_INJECTION_OS_SYSTEM ('Shell command execution with string formatting') matched a multi-line subprocess.run call that contains an f-string.,"matched_pattern subprocess\.(?:call|run|Popen)\s*\((?=[^)]*\n)[^)]*[f""'].*\{.*\} : any multi-line subprocess call containing a quote followed by braces. It does not check for shell=True or for a string (rather than list) command.","Command-line argument (--port, parsed as int) -> local process lookup and SIGTERM. No network input reaches the call.","argparse --port (int, default 3117) -> lsof -ti :<port> -> os.kill(pid, SIGTERM) for each PID listening on that port.",scanner_parser_issue,high,"The command is an argument list without shell=True, and the only formatted value is an integer port, so shell injection is not possible here. The regex matches on formatting syntax, not on shell use. The real side effect, terminating whatever process listens on the chosen port, is intentional and documented in the function's docstring.","intentional, if the reviewer labels the underlying behaviour (killing processes on a port) rather than the rule's injection claim.",Should the label judge the rule's claim (injection) or the behaviour at the line (process termination)? The codebook should fix this before labelling.,,"scripts/run_eval.py and scripts/run_loop.py launch agent CLIs (claude -p, agent -p ... --trust, opencode run) with the parent environment copied except four variables. These list-form subprocess calls were not reported.","AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,scanner_parser_issue,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+9cbcff225f,4,YT-1 youtube-content: example code that fetches a YouTube page with curl,youtube-content-7162d1c45997,theheavenlyd3mon/hermes-profiles,profiles/educate/skills/media/youtube-content/SKILL.md,scripts,ACTIVE_DYNAMIC_EXECUTION,HIGH,command_injection,static,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral,COMPLETE,SKILL.md,169.0,169.0,exact,r = subprocess.run([,False,SKILL.md contains a syntax-confirmed dynamic code or process execution call in active instructions.,,"# SKILL.md lines 160-190: reported location: a fenced Python fallback the agent is told to use
+    160 | ## Fallback: Direct Caption URL Extraction
+    161 | 
+    162 | YouTube embeds caption track URLs in the video page source. Extract with curl + regex:
+    163 | 
+    164 | ```python
+    165 | import subprocess, json, re, html
+    166 | 
+    167 | def get_transcript_from_page(video_id):
+    168 |     # Step 1: Fetch page
+>>  169 |     r = subprocess.run([
+    170 |         'curl', '-s', '-L', '--max-time', '30',
+    171 |         '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+    172 |         f'https://www.youtube.com/watch?v={video_id}'
+    173 |     ], capture_output=True, text=True, timeout=45)
+    174 | 
+    175 |     # Step 2: Extract caption URL from page source
+    176 |     match = re.search(r'""captionTracks"":\[(.*?)\]', r.stdout)
+    177 |     if not match:
+    178 |         return None  # No captions available
+    179 |     tracks = json.loads('[' + match.group(1) + ']')
+    180 | 
+    181 |     # Step 3: Get caption URL (prefer English)
+    182 |     caption_url = None
+    183 |     for t in tracks:
+    184 |         if t.get('languageCode', '').startswith('en'):
+    185 |             caption_url = t['baseUrl']
+    186 |             break
+    187 |     if not caption_url and tracks:
+    188 |         caption_url = tracks[0]['baseUrl']
+    189 |     return caption_url
+    190 | 
+
+# scripts/batch_unified.py lines 50-55: context, not reported by Cisco: the bundled script runs the same curl call
+     50 | def fetch_summary_via_curl(video_id: str) -> Optional[str]:
+     51 |     try:
+     52 |         url = f""https://www.youtube.com/watch?v={video_id}""
+     53 |         r = subprocess.run(['curl', '-s', '-L', '--max-time', '30',
+     54 |             '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+     55 |             url], capture_output=True, text=True, timeout=45)",ACTIVE_DYNAMIC_EXECUTION: a syntax-confirmed process-execution call (python subprocess) inside a fenced code block in the active instructions of SKILL.md.,Static analyzer parses SKILL.md as CommonMark (analysis_basis=bounded_commonmark_syntax) and flags execution APIs in code blocks that are not in an explicit example section.,Untrusted web content (the YouTube watch page) -> regex and json.loads -> caption URL that the agent fetches next. The video_id is interpolated into a URL inside an argument list (no shell).,video_id -> curl https://www.youtube.com/watch?v=<id> -> regex extracts captionTracks -> baseUrl -> opener.open(baseUrl).,intentional,medium,"The code is an instructional fallback for fetching captions and matches the skill's purpose. curl is called with an argument list and a fixed https://www.youtube.com prefix, so option or shell injection through video_id is not apparent. The URL fetched in step 4 comes from page content, which is a minor server-side-request concern but limited to what YouTube returns.","uncertain, if the reviewer wants to assess whether the page-derived caption URL could point to an unintended host.",Is a page-derived URL that the agent then fetches in scope for this study? Is an instruction code block 'active' when the text presents it as a fallback?,d1c1fe72fc; 018ac4e2f1,The same curl call in scripts/batch_unified.py (URL built in a variable first) and the subprocess calls in scripts/fetch_playlist.py and scripts/batch_transcripts.py were not reported.,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,intentional,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+0d820447dc,5,SR-3 set-reminder: generated reminder script posts to a Telegram gateway,set-reminder-7652ed9105a8,Will-Barnard-WB/Personal-Knowledge-Bot,.claude/skills/set-reminder/SKILL.md,scripts,DATA_EXFIL_NETWORK_REQUESTS,MEDIUM,data_exfiltration,static,Full folder | default; Full folder | behavioral,COMPLETE,scripts/set_reminder.py,38.0,38.0,exact,req  = urllib.request.Request(,False,Pattern detected: urllib.request.Request(,urllib\.request\.(?:urlopen|Request)\s*\(,"# scripts/set_reminder.py lines 23-57: reported location is inside _SCRIPT_TEMPLATE, a string that becomes a separate script run later by cron
+     23 | # Template for the self-deleting reminder script.
+     24 | # Uses .format() — double braces {{ }} become literal { } in the output.
+     25 | _SCRIPT_TEMPLATE = """"""\
+     26 | #!/usr/bin/env python3
+     27 | # PKB_REMINDER_{reminder_id}
+     28 | import json, subprocess, sys, urllib.request
+     29 | from pathlib import Path
+     30 | 
+     31 | GATEWAY_URL = {gateway_url_repr}
+     32 | TELEGRAM_ID = {telegram_id_repr}
+     33 | MESSAGE     = {message_repr}
+     34 | REMINDER_ID = {reminder_id_repr}
+     35 | 
+     36 | try:
+     37 |     data = json.dumps({{""to"": TELEGRAM_ID, ""message"": MESSAGE}}).encode()
+>>   38 |     req  = urllib.request.Request(
+     39 |         GATEWAY_URL + ""/send"", data, {{""Content-Type"": ""application/json""}}
+     40 |     )
+     41 |     urllib.request.urlopen(req, timeout=10)
+     42 | except Exception as exc:
+     43 |     print(f""Reminder send failed: {{exc}}"", file=sys.stderr)
+     44 | 
+     45 | # Self-remove from crontab
+     46 | try:
+     47 |     result = subprocess.run([""crontab"", ""-l""], capture_output=True, text=True)
+     48 |     if result.returncode == 0:
+     49 |         lines = [l for l in result.stdout.splitlines() if REMINDER_ID not in l]
+     50 |         new_crontab = ""\\n"".join(lines) + ""\\n""
+     51 |         subprocess.run([""crontab"", ""-""], input=new_crontab, text=True)
+     52 | except Exception as exc:
+     53 |     print(f""Crontab cleanup failed: {{exc}}"", file=sys.stderr)
+     54 | 
+     55 | # Delete this script file
+     56 | Path(__file__).unlink(missing_ok=True)
+     57 | """"""
+
+# scripts/set_reminder.py lines 143-145: gateway URL and Telegram ID come from the repository's .env (default http://localhost:3001)
+    143 |     env = _load_env()
+    144 |     gateway_url = env.get(""TELEGRAM_GATEWAY_URL"", ""http://localhost:3001"")
+    145 |     telegram_id = env.get(""MY_TELEGRAM_ID"", """").strip()","DATA_EXFIL_NETWORK_REQUESTS: a regex match on `urllib.request.Request(`, an outbound network primitive.","matched_pattern urllib\.request\.(?:urlopen|Request)\s*\( with signature_context=code, although the match is inside a triple-quoted string template.","Local machine -> HTTP gateway (default localhost:3001, configurable through TELEGRAM_GATEWAY_URL in .env) -> Telegram. Data crosses to the network when cron runs the generated script.",reminder text (from the user's request) + MY_TELEGRAM_ID (.env) -> generated reminder_<id>.py -> POST <gateway>/send at the scheduled time.,intentional,medium,"Sending the reminder to Telegram is the skill's stated purpose, and the payload is the reminder text and the user's own Telegram ID. The destination is set by the local .env, not by content the agent reads. Note that the matched line is template text, not code executed by set_reminder.py itself.","uncertain, if the reviewer considers whether reminder text could carry sensitive data to a non-local gateway.",Does the study treat a user-configured endpoint as 'external'? Should matches inside string templates count as code?,180a203e99; 78fa761fe9,See e37db01d42: crontab modification and a self-deleting executable script.,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,intentional,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+180a203e99,6,SR-3 set-reminder: generated reminder script posts to a Telegram gateway,set-reminder-7652ed9105a8,Will-Barnard-WB/Personal-Knowledge-Bot,.claude/skills/set-reminder/SKILL.md,scripts,DATA_EXFIL_NETWORK_REQUESTS,MEDIUM,data_exfiltration,static,Full folder | default; Full folder | behavioral,COMPLETE,scripts/set_reminder.py,41.0,41.0,exact,"urllib.request.urlopen(req, timeout=10)",False,Pattern detected: urllib.request.urlopen(,urllib\.request\.(?:urlopen|Request)\s*\(,"# scripts/set_reminder.py lines 36-44: reported location: urlopen(req, timeout=10) inside the template
+     36 | try:
+     37 |     data = json.dumps({{""to"": TELEGRAM_ID, ""message"": MESSAGE}}).encode()
+     38 |     req  = urllib.request.Request(
+     39 |         GATEWAY_URL + ""/send"", data, {{""Content-Type"": ""application/json""}}
+     40 |     )
+>>   41 |     urllib.request.urlopen(req, timeout=10)
+     42 | except Exception as exc:
+     43 |     print(f""Reminder send failed: {{exc}}"", file=sys.stderr)
+     44 | ",DATA_EXFIL_NETWORK_REQUESTS: a regex match on `urllib.request.urlopen(`.,"Same signature as 0d820447dc; Cisco reports one finding per matching line, so one request produces two findings.",Same as 0d820447dc.,Same as 0d820447dc.,intentional,medium,"This line sends the request built on line 38, so it is the same behaviour counted twice. Label it the same way as 0d820447dc unless the reviewer finds a difference.",uncertain (as for 0d820447dc).,Count at the behaviour level (one request) or the line level (two findings) in the paper?,0d820447dc,,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,intentional,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+78fa761fe9,7,SR-3 set-reminder: generated reminder script posts to a Telegram gateway,set-reminder-7652ed9105a8,Will-Barnard-WB/Personal-Knowledge-Bot,.claude/skills/set-reminder/SKILL.md,scripts,ALLOWED_TOOLS_NETWORK_USAGE,MEDIUM,unauthorized_tool_use,static,Full folder | default; Full folder | behavioral,COMPLETE,SKILL.md,,,unavailable,,False,"Skill code makes network requests. While not controlled by allowed-tools, network access should be documented and justified in the skill description.",,"# SKILL.md lines 1-6: frontmatter: description says 'Set a one-off Telegram reminder'
+      1 | ---
+      2 | name: set-reminder
+      3 | description: Set a one-off Telegram reminder at a specific time. Use when the user asks to be reminded about something at a given time.
+      4 | user-invocable: false
+      5 | allowed-tools: Bash(python *)
+      6 | ---
+
+# scripts/set_reminder.py lines 36-41: network code that triggered the check (inside the template)
+     36 | try:
+     37 |     data = json.dumps({{""to"": TELEGRAM_ID, ""message"": MESSAGE}}).encode()
+     38 |     req  = urllib.request.Request(
+     39 |         GATEWAY_URL + ""/send"", data, {{""Content-Type"": ""application/json""}}
+     40 |     )
+     41 |     urllib.request.urlopen(req, timeout=10)","ALLOWED_TOOLS_NETWORK_USAGE: bundled code makes network requests, and Cisco asks that network access be documented and justified in the skill description.",allowed_tools_checks.py fires when allowed-tools is non-empty and any script contains a substring such as 'urllib.request'. It does not read the description to see whether network use is mentioned.,Skill description (what the user is told) <-> actual network behaviour of the bundled code.,Same as 0d820447dc.,intentional,low,"The description says the skill sets a Telegram reminder, which implies network use, but it does not mention the gateway or the .env configuration. Whether that counts as 'documented' is a judgement call, and the check itself is a substring test that never reads the description.",uncertain (documentation gap rather than a security behaviour).,Is 'Telegram reminder' sufficient documentation of network use for the codebook?,0d820447dc; e37db01d42,,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,uncertain,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",no,2026-11-04
+d1c1fe72fc,8,YT-1 youtube-content: example code that fetches a YouTube page with curl,youtube-content-7162d1c45997,theheavenlyd3mon/hermes-profiles,profiles/educate/skills/media/youtube-content/SKILL.md,scripts,MDBLOCK_PYTHON_SUBPROCESS,MEDIUM,command_injection,behavioral,SKILL.md only | behavioral; Full folder | behavioral,COMPLETE,SKILL.md,162.0,169.0,mismatch,r = subprocess.run([,False,Code block in SKILL.md at line 162 contains potentially dangerous Python code.,,"# SKILL.md lines 1-5: frontmatter (5 lines) that Cisco strips before counting MDBLOCK lines
+      1 | ---
+      2 | name: youtube-content
+      3 | description: ""YouTube transcripts to summaries, threads, blogs.""
+      4 | platforms: [linux, macos, windows]
+      5 | ---
+
+# SKILL.md lines 164-173: the code block; the evidence is on line 169, Cisco reported 162
+    164 | ```python
+    165 | import subprocess, json, re, html
+    166 | 
+    167 | def get_transcript_from_page(video_id):
+    168 |     # Step 1: Fetch page
+>>  169 |     r = subprocess.run([
+    170 |         'curl', '-s', '-L', '--max-time', '30',
+    171 |         '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+    172 |         f'https://www.youtube.com/watch?v={video_id}'
+    173 |     ], capture_output=True, text=True, timeout=45)",MDBLOCK_PYTHON_SUBPROCESS: the behavioral analyzer found subprocess use inside a Python code block in SKILL.md.,"behavioral_analyzer.py _analyze_markdown_code_blocks counts lines from the code fence and, in SKILL.md, after removing the frontmatter, so the reported line (162) is above the evidence (169).",Same as 9cbcff225f.,Same as 9cbcff225f.,intentional,medium,"Same behaviour as 9cbcff225f, reported by a different rule and analyzer. The location mismatch is a known Cisco 2.3.1 line-counting quirk and does not change the behaviour. Label consistently with 9cbcff225f; note the location issue separately as evidence_present = partly.",scanner_parser_issue for the location only.,Should cross-rule duplicates be merged into one behaviour in the paper's counts?,9cbcff225f; 018ac4e2f1,,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,intentional,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+018ac4e2f1,9,YT-1 youtube-content: example code that fetches a YouTube page with curl,youtube-content-7162d1c45997,theheavenlyd3mon/hermes-profiles,profiles/educate/skills/media/youtube-content/SKILL.md,scripts,MDBLOCK_PYTHON_SUBPROCESS,MEDIUM,command_injection,behavioral,Full folder | behavioral,COMPLETE,references/ytdlp-quirks.md,69.0,70.0,mismatch,"r = subprocess.run(['curl', '-s', '-L', '--max-time', '30',",False,Code block in references/ytdlp-quirks.md at line 69 contains potentially dangerous Python code.,,"# references/ytdlp-quirks.md lines 64-82: reported location: the same curl fallback in a reference file (evidence on line 70, reported 69)
+     64 | ## Workaround: Page source extraction
+     65 | 
+     66 | Extract caption track URLs from the video page HTML:
+     67 | 
+     68 | ```python
+     69 | import subprocess, json, re
+>>   70 | r = subprocess.run(['curl', '-s', '-L', '--max-time', '30',
+     71 |     '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+     72 |     f'https://www.youtube.com/watch?v={video_id}'],
+     73 |     capture_output=True, text=True, timeout=45)
+     74 | 
+     75 | match = re.search(r'""captionTracks"":\[(.*?)\]', r.stdout)
+     76 | if match:
+     77 |     tracks = json.loads('[' + match.group(1) + ']')
+     78 |     for t in tracks:
+     79 |         print(f'{t[""languageCode""]}: {t[""baseUrl""][:100]}')
+     80 | ```
+     81 | 
+     82 | **Important:** Caption URLs are session-bound. You must fetch them using the same HTTP session (cookies) that loaded the page. Using a separate curl call may return a Google ""Sorry..."" error page. Use `urllib` with `http.cookiejar.MozillaCookieJar` to maintain the session.",MDBLOCK_PYTHON_SUBPROCESS in a Python code block of a supporting markdown file.,Same as d1c1fe72fc; in non-SKILL.md files the line is one too low (counted from the fence).,Same as 9cbcff225f; the reference file is loaded only if the agent follows the link.,Same as 9cbcff225f.,intentional,medium,"Documentation that repeats the SKILL.md fallback. It is a real additional location found only with the full folder, but not a new behaviour.",uncertain (same open question as 9cbcff225f).,Does a repeated example in a reference file count as a new finding or as the same behaviour?,9cbcff225f; d1c1fe72fc,,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,intentional,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+65f210f2dd,10,SR-2 set-reminder: regular expressions used to parse a time string,set-reminder-7652ed9105a8,Will-Barnard-WB/Personal-Knowledge-Bot,.claude/skills/set-reminder/SKILL.md,scripts,ALLOWED_TOOLS_GREP_VIOLATION,LOW,unauthorized_tool_use,static,Full folder | default; Full folder | behavioral,COMPLETE,SKILL.md,,,unavailable,,False,"Skill restricts tools to ['Bash(python', '*)'] but code uses regex search patterns",,"# SKILL.md lines 5-5: allowed-tools declaration
+      5 | allowed-tools: Bash(python *)
+
+# scripts/set_reminder.py lines 75-80: re.match used to parse '+45m' style times
+     75 | def _parse_when(when_str: str) -> datetime:
+     76 |     """"""Parse ISO datetime or relative shorthand (+45m, +2h, +1d).""""""
+     77 |     when_str = when_str.strip()
+     78 |     m = re.match(r""^\+(\d+)([mhd])$"", when_str)
+     79 |     if m:
+     80 |         amount, unit = int(m.group(1)), m.group(2)",ALLOWED_TOOLS_GREP_VIOLATION: code 'uses search/grep patterns' but Grep is not in allowed-tools.,"data/packs/core/python/_helpers.py GREP_PATTERNS treats any re.search/re.match/re.findall/re.finditer/re.sub call, or the word 'grep', as use of the agent's Grep tool.",None identified: in-process string parsing of the --when argument.,--when argument -> re.match(r'^\+(\d+)([mhd])$') -> datetime.,scanner_parser_issue,high,Using Python's re module is not use of the agent's Grep tool. The finding combines that heuristic with the same allowed-tools tokenisation as e37db01d42.,,,e37db01d42,,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,scanner_parser_issue,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04
+39cb711dfc,11,SC-2 skill-creator: one-line package marker file,skill-creator-484c59f65787,niekbeckers/skills,skills/skill-creator/SKILL.md,scripts,FILE_MAGIC_MISMATCH,MEDIUM,obfuscation,static,Full folder | default; Full folder | behavioral,COMPLETE,scripts/__init__.py,,1.0,unavailable,,False,File '__init__.py' extension (.py) suggests one format but Magika detected a different text format: Markdown document (markdown). This may indicate content obfuscation or a misnamed file.,,"# scripts/__init__.py lines 1-1: entire file (32 bytes)
+>>    1 | # skill-creator scripts package","FILE_MAGIC_MISMATCH: Magika classified the .py file as Markdown (confidence 0.95), which Cisco reports as possible obfuscation.",Static analyzer compares the file extension with Google's Magika content-type classifier; a single line starting with '#' looks like a Markdown heading.,None identified.,None: the file contains only a comment.,scanner_parser_issue,high,The file contains only the comment '# skill-creator scripts package'. A content classifier has too little text to tell a Python comment from a Markdown heading.,,,,,"AI-assisted draft (Claude), written 2026-11-03 from a read-only inspection of the exported skill files, the raw Cisco JSON reports and the installed Cisco 2.3.1 source code. No skill script was executed.",,,,,,,,,,,,,,scanner_parser_issue,"researcher-approved, AI-assisted provisional decision; NOT an independent human-review result",yes,2026-11-04

@@ -1,0 +1,237 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-05T05:07:03+00:00",
+  "kind": "run",
+  "report_id": "2026-11-03_153301_pilot-loa-credentials",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "pilot-loa-credentials",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 1,
+    "skills_exported": 1,
+    "export_errors": 0,
+    "skills_scanned": 1,
+    "skills_by_coverage": {
+      "complete": 1,
+      "complete_except_excluded": 0,
+      "partially_complete": 0,
+      "no_complete_scan": 0,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 4,
+    "scans_executed": 4,
+    "scans_by_outcome": {
+      "complete": 4,
+      "contract_only": 0,
+      "partial": 0,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 4,
+    "finding_rows_by_kind": {
+      "metadata_quality": 4
+    },
+    "skills_with_any_finding": 1,
+    "skills_with_security_alert_primary": 0,
+    "skills_with_security_alert_any": 0,
+    "security_rows_primary": 0,
+    "security_rows_any": 0,
+    "security_locations_primary": 0,
+    "security_locations_any": 0,
+    "security_rows_by_severity_primary": {}
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 0,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 0,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/run_metadata.json",
+      "sha256": "5bbf5d38fc9a66698c7bc5197541e69f8f6f95b2580b2b5526a3b2385a222f64"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/scan_summary.csv",
+      "sha256": "1e1af4c1704d748ae95055e9f106238b671ecbac3480f92e98a9239f8f9ad74c"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/individual_findings.csv",
+      "sha256": "0d2927084920bab25f30045b84786bdb81720ba554fbb329d450d8d88cb26a17"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/context_comparison.csv",
+      "sha256": "293543145fb4adccf6c3cfcd143cb06d54aa734e82d3269edf0645844dc22c5a"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/analyzer_comparison.csv",
+      "sha256": "293543145fb4adccf6c3cfcd143cb06d54aa734e82d3269edf0645844dc22c5a"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/manual_review_template.csv",
+      "sha256": "369e7a98847e47478cdce257cdc9db43d0e4b6b696704a8b55a9d6f950761774"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/results_summary.md",
+      "sha256": "eb2285b93122e9092440fc69839faa27d81fe79a9bd0803cd582d06f8bdf6a22"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3af2a7410fcfa433face255bf7a197047e9bea05e14ccc78de1768b8320fcca5",
+      "bytes": 467
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2fe956f82c138a1f7a97c16a155bcb0fde761961b08412f2b0c5206a09e94125",
+      "bytes": 310
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/results_summary.md",
+      "sha256": "eb2285b93122e9092440fc69839faa27d81fe79a9bd0803cd582d06f8bdf6a22",
+      "bytes": 9003
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "63b1485e071e510b93539f148c90069eb46114cec348a88fd1d84c654dd6b75f",
+      "bytes": 433
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "97fb0972abcd4e09ed8dc6aa662e64a04010b34c83a5f403d24647514de94659",
+      "bytes": 389
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "064b0249ffff93faa67abebd09c125f714a87c6ac02a52c4f1fa51501c18fbaa",
+      "bytes": 44
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/individual_findings.csv",
+      "sha256": "667c0eb30af7d2bd2f7e8d625b569f52cce56c9ccec6a727160d71d61e00b5e1",
+      "bytes": 4611
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "667c0eb30af7d2bd2f7e8d625b569f52cce56c9ccec6a727160d71d61e00b5e1",
+      "bytes": 4611
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/context_comparison.csv",
+      "sha256": "293543145fb4adccf6c3cfcd143cb06d54aa734e82d3269edf0645844dc22c5a",
+      "bytes": 757
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/analyzer_comparison.csv",
+      "sha256": "293543145fb4adccf6c3cfcd143cb06d54aa734e82d3269edf0645844dc22c5a",
+      "bytes": 757
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c5d763383c6b768f3c37d1fc81f452ae161217cfaad2f66335fbfb2f1b0293b4",
+      "bytes": 2652
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/scan_summary.csv",
+      "sha256": "c110b26ba9de6282f7070878cbc773adb34198cd8031e2e13b90b2db1d62fa75",
+      "bytes": 3205
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_153301_pilot-loa-credentials/run_metadata.json",
+      "sha256": "5bbf5d38fc9a66698c7bc5197541e69f8f6f95b2580b2b5526a3b2385a222f64",
+      "bytes": 3426
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "94a70e16886339242f00ca4e8b45a7ef4b6be32f8f54dbbf0db3461676dd4b20",
+      "bytes": 1047
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f040c42545b78d0395298a1fcc0f8f1d5c5a5286bbb5cf3918db8aeb0cac063d",
+      "bytes": 772
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3361efca71457c54697fed8ef557544b21d49807d6b8372b46c0aff9b42d647c",
+      "bytes": 7443
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "577f73c476248928ed6e1fe86b7d152e378b9c016cdc6bd75fcca1c735b789b2",
+      "bytes": 47811
+    }
+  ]
+}
