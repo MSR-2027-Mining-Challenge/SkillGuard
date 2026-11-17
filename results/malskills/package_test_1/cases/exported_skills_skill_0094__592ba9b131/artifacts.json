@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: pre-publish-review\r\ndescription: Multi-pass pre-publish review for X for GitHub Copilot. Use before tagging or publishing when you want a structured release gate.\r\nlicense: See root LICENSE\r\n---\r\n\r\n# Pre-Publish Review\r\n\r\nThis is a faithful Copilot CLI adaptation of OMO's release-review workflow.\r\n\r\n## Goal\r\n\r\nReview unpublished changes before a release and surface correctness, compatibility, and release-risk findings.\r\n\r\n## Suggested flow\r\n\r\n1. Determine the comparison base:\r\n   - last version tag\r\n   - last release branch point\r\n   - or `origin/main` if there is no release tag yet\r\n2. Inspect:\r\n   - `git log`\r\n   - `git diff --stat`\r\n   - `git diff`\r\n   - package metadata\r\n3. Run a **review pass**:\r\n   - correctness\r\n   - public API and config changes\r\n   - testing gaps\r\n   - documentation gaps\r\n4. Call **Merge Gate** or **Required Check** for a second opinion if the release is high-risk.\r\n5. Write a go/no-go summary with explicit blocking issues.\r\n\r\n## Release questions\r\n\r\n- What changed?\r\n- What is user-facing?\r\n- What can break?\r\n- What still lacks tests or docs?\r\n- Is the proposed version bump justified?\r\n\r\n## Output\r\n\r\n- release scope\r\n- version-bump recommendation\r\n- blockers\r\n- non-blocking risks\r\n- publish recommendation\r\n",
+    "content_hash": "ceeb19a80f5d74d6ee324913d802a957fdf82045da7edbec47b136aeb7f1914e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 49,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1263,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

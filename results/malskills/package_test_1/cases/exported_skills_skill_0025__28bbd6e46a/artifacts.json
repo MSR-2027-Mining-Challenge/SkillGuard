@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: spok-archive\r\ndescription: \"Archive a completed Spok change. Applies any delta specs to the main specs unconditionally, then moves the change directory under changes/archive/.\"\r\nlicense: MIT\r\ncompatibility: Requires spok CLI.\r\nmetadata:\r\n  author: spok\r\n  version: \"2.0\"\r\n  generatedBy: \"1.3.1\"\r\n---\r\n\r\nArchive a completed Spok change.\r\n\r\nThis skill folds spec-sync into archive: any delta specs the change carries\r\nare applied to the main specs before the change directory moves into the\r\narchive. There is no separate sync step.\r\n\r\n**Input**: Optionally specify a change name. If omitted, infer from\r\nconversation context. If still ambiguous you MUST prompt the user.\r\n\r\n**Steps**\r\n\r\n1. **Select the change**\r\n\r\n   If a name is provided, use it. Otherwise:\r\n   - Infer from conversation context if the user mentioned a change.\r\n   - Otherwise run `spok list --json` and use **AskUserQuestion** to let the user pick.\r\n\r\n   Show only active changes (not already archived). Include the schema used for each change if available.\r\n\r\n   **IMPORTANT**: Do NOT guess or auto-select. Always let the user choose when ambiguous.\r\n\r\n2. **Check artifact completion status**\r\n\r\n   ```bash\r\n   spok status --change \"<name>\" --json\r\n   ```\r\n\r\n   Parse the JSON to understand:\r\n   - `schemaName`: The workflow being used.\r\n   - `planningHome`, `changeRoot`, `artifactPaths`, `actionContext`: path and scope context.\r\n   - `artifacts`: list of artifacts with their status (`done` or other).\r\n\r\n   If status reports `actionContext.mode: \"workspace-planning\"`, explain that workspace archive is not supported in this slice and STOP. Do not move workspace changes into repo-local archives or edit linked repos.\r\n\r\n   **If any artifacts are not `done`:**\r\n   - Display warning listing incomplete artifacts.\r\n   - Use **AskUserQuestion** to confirm.\r\n   - Proceed if user confirms.\r\n\r\n3. **Check chunk completion status**\r\n\r\n   Read `<changeRoot>/tasks.md` and count top-level checkboxes:\r\n   - `- [ ]` lines = incomplete chunks.\r\n   - `- [x]` lines = shipped chunks.\r\n\r\n   **If incomplete chunks found:**\r\n   - Display warning showing count of incomplete chunks (with titles).\r\n   - Use **AskUserQuestion** to confirm.\r\n   - Proceed if user confirms.\r\n\r\n   **If `tasks.md` is missing:** Proceed without a chunk-related warning.\r\n\r\n4. **Apply delta specs unconditionally**\r\n\r\n   Use `artifactPaths.specs.existingOutputPaths` from the status JSON to find delta spec files.\r\n\r\n   **If no delta specs exist:** Skip to step 5.\r\n\r\n   **If delta specs exist:**\r\n   - For each delta spec at `<changeRoot>/specs/<capability>/spec.md`:\r\n     - Locate the main spec at `spok/specs/<capability>/spec.md`.\r\n     - Apply each delta section to the main spec, in order:\r\n       - `## ADDED Requirements` \u2014 append new requirements.\r\n       - `## MODIFIED Requirements` \u2014 replace existing requirements whose `### Requirement:` header text matches (whitespace-insensitive). MODIFIED blocks contain the full updated requirement; copy verbatim.\r\n       - `## REMOVED Requirements` \u2014 delete the matching requirement block. Keep a `<!-- removed: <reason> -->` comment if the delta supplied a **Reason**.\r\n       - `## RENAMED Requirements` \u2014 rename per FROM:/TO: pairs without changing scenarios.\r\n     - If the main spec does not exist (new capability), copy the delta spec body to `spok/specs/<capability>/spec.md` (stripping the delta operation headers).\r\n   - Show a per-capability summary of what was applied (count of adds/mods/removes/renames).\r\n\r\n   Do NOT ask the user whether to sync. Sync is part of archive.\r\n\r\n5. **Perform the archive move**\r\n\r\n   Create the archive directory if needed:\r\n   ```bash\r\n   mkdir -p \"<planningHome.changesDir>/archive\"\r\n   ```\r\n\r\n   Generate the target name from today's date: `YYYY-MM-DD-<change-name>`.\r\n\r\n   **Check if the target exists already:**\r\n   - If yes: fail with a clear error. Suggest renaming the existing archive or using a different date.\r\n   - If no: move the change directory:\r\n     ```bash\r\n     mv \"<changeRoot>\" \"<planningHome.changesDir>/archive/YYYY-MM-DD-<name>\"\r\n     ```\r\n\r\n6. **Display summary**\r\n\r\n   ```\r\n   ## Archive Complete\r\n\r\n   **Change:** <change-name>\r\n   **Schema:** <schema-name>\r\n   **Archived to:** <planningHome.changesDir>/archive/YYYY-MM-DD-<name>/\r\n   **Specs:** <one of: \"Synced N capability spec(s)\", \"No delta specs\">\r\n   ```\r\n\r\n   If any warnings were acknowledged in steps 2\u20133, append a **Warnings** section listing them.\r\n\r\n**Guardrails**\r\n- Always prompt for change selection if not provided.\r\n- Use the artifact graph (`spok status --json`) for completion checking.\r\n- Don't block archive on warnings \u2014 just inform and confirm.\r\n- Sync delta specs unconditionally. Never ask whether to sync.\r\n- Preserve `.spok.yaml` when moving (it moves with the directory).\r\n- Show a clear summary of what happened.\r\n",
+    "content_hash": "7cedb5e49bd495ecfd9d4181512fb7aa189bc63c7e12283259be5fb960837557",
+    "generated": false,
+    "is_text": true,
+    "line_count": 119,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4879,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   spok status --change \"<name>\" --json",
+    "content_hash": "e9fe50c964ad638415b7fb13b7a16eb42ede3540158a6c09a1214c5ec20db086",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 39,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 37,
+    "source_start_line": 35
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "   mkdir -p \"<planningHome.changesDir>/archive\"",
+    "content_hash": "4d1319cb22e65b3bdad0b43227d1fcd8ff33de3303a9e1753754718288b358f4",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 47,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 88,
+    "source_start_line": 86
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "     mv \"<changeRoot>\" \"<planningHome.changesDir>/archive/YYYY-MM-DD-<name>\"",
+    "content_hash": "5d309a53223307ad412e19c6bdde815eaf65588667d5074d8724a4317d109b92",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 76,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 97,
+    "source_start_line": 95
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: sb-pack\r\ndescription: Generate a SecondBrain ContextPack for the given intent \u2014 a structured JSON bundle of relevant facts, decisions, open loops, and context from the 6-layer knowledge pyramid. Use before starting a complex task that benefits from pre-loaded domain knowledge.\r\nwhen_to_use: Use when starting a complex task involving multiple domains, when the user says \"give me context on X\", or when preparing for a planning session.\r\ncontext: fork\r\nagent: Explore\r\nallowed-tools: Bash(.venv/bin/sb pack *) Bash(.venv/bin/sb ask *)\r\nargument-hint: <intent>\r\n---\r\n\r\n# SecondBrain Context Pack\r\n\r\nGenerate and present a context pack for the given intent, then summarize the key\r\nknowledge Codex should carry forward.\r\n\r\n## Intent\r\n$ARGUMENTS\r\n\r\n## Live context pack\r\n```!\r\n.venv/bin/sb pack \"$ARGUMENTS\" --json 2>/dev/null | head -200\r\n```\r\n\r\n## Your task\r\n\r\n1. Parse the JSON context pack above\r\n2. Identify the 3-5 most relevant facts, decisions, and open loops for this intent\r\n3. Highlight any conflicts or gaps in the knowledge\r\n4. Produce a concise \"pre-task brief\" (\u2264 200 words) summarising what's known and unknown\r\n\r\nReturn the brief to the main conversation so it can inform the upcoming task.\r\n",
+    "content_hash": "9a91a81ab51e6de05b94efef7d3c3a5af8ccdc42b3b8a183973a6580bd9547f8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 32,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1222,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

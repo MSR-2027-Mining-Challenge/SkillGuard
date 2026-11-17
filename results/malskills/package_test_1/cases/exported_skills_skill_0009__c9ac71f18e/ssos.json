@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "[--eval \"{eval_cmd}\"] [--metric {metric}] [--direction {direction}] \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_command_execution::3": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_command_execution::3",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_1.sh:3:3:system_command_execution",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_command_execution::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  }
+]

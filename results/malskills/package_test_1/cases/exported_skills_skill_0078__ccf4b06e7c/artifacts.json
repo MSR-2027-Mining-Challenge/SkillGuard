@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: clojure-repl\r\ndescription: REPL-Driven Development Workflow in Clojure\r\n---\r\n\r\n# REPL-Driven Development Workflow in Clojure\r\n\r\n## 1. Check if REPL is running\r\n\r\nRun testing expression in the begining of a session JUST ONCE\r\n```clojure\r\nbrepl -e '(+ 1 2)'\r\n3\r\n```\r\n\r\nIf REPL is not running, that do not use this skill at all. \r\nRun tests via command line with `bb test`, and clojure code if needed via `clj -e`\r\n\r\n## 2. Run tests in REPL\r\n\r\n- In a Clojure project, after changes run all tests at once in REPL with: `brepl -e '(user/run-tests)'`\r\n- For small changes or isolated changes run subset of tests: \r\n  - run a specific test: `brepl -e \"(user/run-tests 'myproject.search-queries-test/test-preprocess-search-query-integration)\"` \r\n  - or a specific namespace: `brepl -e '(user/run-tests \"test/myproject/home_test.clj\")`\r\n\r\n## 3. Explore and Experiment\r\n\r\nStart by exploring small pieces of functionality in isolation:\r\n\r\n```clojure\r\n; Try out simple expressions\r\nbrepl -e '(+ 1 2 3)'\r\n6\r\n\r\n; Explore and define data structures\r\nbrepl -e '(def sample-data [{:name \"Alice\" :score 42} {:name \"Bob\" :score 27} {:name \"Charlie\" :score 35}])'\r\n#'user/sample-data\r\n\r\n; REPL keeps state and definitions between your commands\r\n; Try simple transformations\r\nbrepl -e '(map :score sample-data)'\r\n(42 27 35)\r\n```",
+    "content_hash": "a5bc03bcd191b43c3fa847d72ccaf9ada46eb1417fba95785f046b819c3f21d2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 43,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1318,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

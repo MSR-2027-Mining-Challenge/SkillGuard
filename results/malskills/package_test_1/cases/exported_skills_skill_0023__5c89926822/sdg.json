@@ -1,0 +1,841 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl --request POST \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl --request POST \\",
+      "target": "value::f9be675cc0de36a0f828",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::RESPONSE=$(curl -s --request POST \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::RESPONSE=$(curl -s --request POST \\",
+      "target": "value::6ea5e670d1c37ec1200c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::PROCESS_ID",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::PROCESS_ID",
+      "target": "value::2a3b9df38a4db070768d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::STATUS=$(curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::STATUS=$(curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "target": "value::341fe66f6ddd516dae2b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::16",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::16",
+      "target": "value::e9275b46c7b63b0e2eb7",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "target": "value::a454f8e86a6fee89d703",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_delete::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_delete::2",
+      "target": "value::f75707fd091d86874182",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0011",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_delete::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_delete::1",
+      "target": "value::9a3f1dcecd6b67c1c9be",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "target": "value::b45994598f06bb869191",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "target": "value::00759126076d01ac9bc4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "target": "value::a415fe27814360ad198e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00011",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "target": "value::239c310ba4ee1d82366b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0009",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "target": "value::74bddf1885805172f923",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00013",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "target": "value::df782c52b926c85a01a9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00014",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00015",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "target": "value::3338136986b33f6cf5c5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00016",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "target": "value::013e16340d02e5d3588b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00017",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "target": "value::4b583875cd212f9daa09",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00013",
+      "target": "sso_00014",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl --request POST \\",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::data_receive::curl --request POST \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::f9be675cc0de36a0f828",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::data_receive::curl --request POST \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::RESPONSE=$(curl -s --request POST \\",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::RESPONSE=$(curl -s --request POST \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::6ea5e670d1c37ec1200c",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::RESPONSE=$(curl -s --request POST \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::PROCESS_ID",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::PROCESS_ID",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::2a3b9df38a4db070768d",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::PROCESS_ID",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::STATUS=$(curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::STATUS=$(curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::341fe66f6ddd516dae2b",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::STATUS=$(curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::16",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::file_read::16",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e9275b46c7b63b0e2eb7",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::file_read::16",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a454f8e86a6fee89d703",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s --header \"X-API-Key: ${TOPAZ_API_KEY}\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_delete::2",
+      "identity_key": ".malskills_fences/SKILL__fence_10.sh::file_delete::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f75707fd091d86874182",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_10.sh::file_delete::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_delete::1",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::file_delete::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::9a3f1dcecd6b67c1c9be",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::file_delete::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "identity_key": ".malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::b45994598f06bb869191",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "identity_key": ".malskills_fences/SKILL__fence_6.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::00759126076d01ac9bc4",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_6.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "identity_key": ".malskills_fences/SKILL__fence_7.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a415fe27814360ad198e",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_7.sh::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::239c310ba4ee1d82366b",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "identity_key": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::74bddf1885805172f923",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "identity_key": "SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::df782c52b926c85a01a9",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "identity_key": "SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::3338136986b33f6cf5c5",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s -X POST \"https://graph.facebook.com/v21.0/${IG_USER}/media_publish\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "identity_key": "SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::013e16340d02e5d3588b",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${POST_ID}?fields=permalink&access_token=${IG_TOKEN}\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "identity_key": "SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::4b583875cd212f9daa09",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s \"https://graph.facebook.com/v21.0/${IG_USER}/media?fields=id,timestamp,permalink&limit=1&access_token=${IG_TOKEN}\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

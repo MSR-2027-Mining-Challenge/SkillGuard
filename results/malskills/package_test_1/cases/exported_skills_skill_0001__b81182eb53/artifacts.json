@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: xylem-drain\r\ndescription: Trigger a xylem drain cycle and report what moved through the queue. Use when the user asks to run pending work, kick the daemon manually, process queued vessels, or monitor a fresh drain.\r\ndisable-model-invocation: true\r\n---\r\n\r\nUse this for an operator-driven drain.\r\n\r\n1. If the user wants a preview first, run `cd cli && xylem drain --dry-run`.\r\n2. Otherwise run `cd cli && xylem drain`.\r\n3. Follow the drain with `cd cli && xylem status` so you can report state transitions, remaining blockers, and whether failures or waiting gates need intervention.\r\n4. Highlight completed, failed, skipped, and waiting counts, not just the final exit code.\r\n5. If a specific vessel becomes the focus, hand off to `/xylem-debug`, `/xylem-logs`, `/xylem-retry`, or `/xylem-cancel`.\r\n",
+    "content_hash": "25ffa8f05b7ddcf775a669bf5089e662def9af305fce359a56b24ecf0ba311ab",
+    "generated": false,
+    "is_text": true,
+    "line_count": 14,
+    "relative_path": "SKILL.md",
+    "size_bytes": 809,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

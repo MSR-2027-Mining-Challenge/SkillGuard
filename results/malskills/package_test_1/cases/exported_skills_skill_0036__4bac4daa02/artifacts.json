@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: python-playground\r\ndescription: Run and test Python code in a dedicated playground directory. Use when you need to execute Python scripts, test code snippets, investigate CPython behavior, or experiment with Python without affecting the main codebase.\r\n---\r\n\r\n# Python Playground\r\n\r\nRun Python code in an isolated playground directory for testing and experimentation.\r\n\r\n## Instructions\r\n\r\n1. First, ensure the playground directory exists: `mkdir -p playground`\r\n2. Use the Write tool to create the Python file at `playground/test.py`\r\n3. Run with: `uv run playground/test.py` to test cpython behavior or `cargo run -- playground/test.py` to test monty behavior\r\n\r\nIMPORTANT: Use separate tool calls for each step - do NOT chain commands with `&&` or use heredocs. This allows the pre-approved commands to work without prompting.\r\n\r\n## Example workflow\r\n\r\nStep 1 - Create directory (Bash, already allowed):\r\n```bash\r\nmkdir -p playground\r\n```\r\n\r\nStep 2 - Write code (use Write tool, not cat):\r\nWrite to `playground/test.py`:\r\n```python\r\ndef foo():\r\n    raise ValueError('test')\r\n\r\nfoo()\r\n```\r\n\r\nStep 3 - Run script (Bash, already allowed):\r\n```bash\r\nuv run playground/test.py\r\n```\r\n\r\n## Guidelines\r\n\r\n- The `playground/` directory is gitignored\r\n- Use a different file name for each test you want to run, give the files recognizable names like `test_value_error.py`\r\n- Use `uv run ...` to run scripts (uses project Python)\r\n- Or, `cargo run -- ...` to run scripts using Monty\r\n- Use Write tool for creating files (avoids permission prompts)\r\n- Run mkdir and uv as separate commands (not chained)\r\n- do NOT delete files from playground after you've finished testing\r\n",
+    "content_hash": "7718050c1cad9f91514983b4ad8ef67e79310b85f46f2afe8cf4fe386cfc296c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1676,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "mkdir -p playground",
+    "content_hash": "bb4339d8fbb80564f256add917000f3f94ec14f42546308d269a9b49e294ef5c",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 19,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 23,
+    "source_start_line": 21
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "def foo():\r\n    raise ValueError('test')\r\n\r\nfoo()",
+    "content_hash": "6e6f576e7c3547a911bf757e15430d7dec05e618a0b95c4e634eac8eb5bd2a7a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_1.py",
+    "size_bytes": 49,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 32,
+    "source_start_line": 27
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "uv run playground/test.py",
+    "content_hash": "214f12fe09c87d3b156fa32df338091842c2baaf8a83389fcf63d5452626ceb9",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 25,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 37,
+    "source_start_line": 35
+  }
+]

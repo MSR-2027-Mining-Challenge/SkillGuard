@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: dev-server-sandbox\r\ndescription: Run multiple isolated mux dev-server instances (temp MUX_ROOT + free ports)\r\n---\r\n\r\n# `dev-server` sandbox instances\r\n\r\n`make dev-server` starts the mux backend server, which uses a lockfile at:\r\n\r\n- `<MUX_ROOT>/server.lock` (defaults to `~/.mux-dev/server.lock` in development)\r\n\r\nThis means you can only run **one** dev server per mux root directory.\r\n\r\nThis skill documents the repo workflow for starting **multiple** dev-server instances in parallel (including from different git worktrees) by giving each instance its own temporary `MUX_ROOT`.\r\n\r\n## Quick start\r\n\r\n```bash\r\nmake dev-server-sandbox\r\n```\r\n\r\n## What it does\r\n\r\n- Creates a fresh temporary `MUX_ROOT` directory\r\n- Copies these files into the sandbox if present:\r\n  - `providers.jsonc` (provider config)\r\n  - `config.json` (project list)\r\n- Picks free ports (`BACKEND_PORT`, `VITE_PORT`)\r\n- Allows all hosts (`VITE_ALLOWED_HOSTS=all`) so it works behind port-forwarding domains\r\n- Runs `make dev-server` with those env overrides\r\n\r\n## Options\r\n\r\n```bash\r\n# Use a specific root to seed from (defaults to ~/.mux-dev then ~/.mux)\r\nSEED_MUX_ROOT=~/.mux-dev make dev-server-sandbox\r\n\r\n# Keep the sandbox root directory after exit (useful for debugging)\r\nKEEP_SANDBOX=1 make dev-server-sandbox\r\n\r\n# Pin ports (must be different)\r\nBACKEND_PORT=3001 VITE_PORT=5174 make dev-server-sandbox\r\n\r\n# Override which make binary to use\r\nMAKE=gmake make dev-server-sandbox\r\n```\r\n\r\n## Security notes\r\n\r\n- `providers.jsonc` may contain API keys.\r\n- The sandbox root directory is created on disk (usually under your system temp dir).\r\n- This flow intentionally **does not** copy `secrets.json`.\r\n",
+    "content_hash": "c80cd1489d28a62bfd44d2e2025b0cabe499d0b9f65eabbb31f8e584de8c85ca",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1687,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "make dev-server-sandbox",
+    "content_hash": "50de76faed09051f8582da177176bc6ba3e3550704e38d80cb768809aba82d2f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 23,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 20,
+    "source_start_line": 18
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# Use a specific root to seed from (defaults to ~/.mux-dev then ~/.mux)\r\nSEED_MUX_ROOT=~/.mux-dev make dev-server-sandbox\r\n\r\n# Keep the sandbox root directory after exit (useful for debugging)\r\nKEEP_SANDBOX=1 make dev-server-sandbox\r\n\r\n# Pin ports (must be different)\r\nBACKEND_PORT=3001 VITE_PORT=5174 make dev-server-sandbox\r\n\r\n# Override which make binary to use\r\nMAKE=gmake make dev-server-sandbox",
+    "content_hash": "426df8e9dccad53dd8f2b39231cafc00c0f7f6407c1ca0a5bd17498a9a9893f8",
+    "generated": true,
+    "is_text": true,
+    "line_count": 11,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 400,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 46,
+    "source_start_line": 34
+  }
+]

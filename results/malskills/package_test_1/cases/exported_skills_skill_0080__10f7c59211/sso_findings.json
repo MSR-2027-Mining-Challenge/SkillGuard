@@ -1,0 +1,1926 @@
+[
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00000",
+    "matched_text": "WEBHOOK_SECRET = os.getenv(\"WEBHOOK_SECRET\", \"\")  # Must match Pine Script alert body",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 49,
+        "start_line": 49
+      }
+    },
+    "span": {
+      "end_line": 49,
+      "start_line": 49
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00001",
+    "matched_text": "OLLAMA_URL = os.getenv(\"OLLAMA_URL\", \"http://localhost:11434\")  # Local Ollama (RTX 5070 Ti)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 50,
+        "start_line": 50
+      }
+    },
+    "span": {
+      "end_line": 50,
+      "start_line": 50
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00002",
+    "matched_text": "WEBHOOK_PORT = int(os.getenv(\"WEBHOOK_PORT\", \"9090\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 51,
+        "start_line": 51
+      }
+    },
+    "span": {
+      "end_line": 51,
+      "start_line": 51
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00003",
+    "matched_text": "LOG_FILE = os.getenv(\"WEBHOOK_LOG_FILE\", \"C:/sapphire/webhook.log\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 52,
+        "start_line": 52
+      }
+    },
+    "span": {
+      "end_line": 52,
+      "start_line": 52
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00004",
+    "matched_text": "ALERT_LOG_FILE = os.getenv(\"ALERT_LOG_FILE\", \"C:/sapphire/webhook/alerts.jsonl\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 53,
+        "start_line": 53
+      }
+    },
+    "span": {
+      "end_line": 53,
+      "start_line": 53
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00005",
+    "matched_text": "ALERT_LOG_MAX_BYTES = int(os.getenv(\"ALERT_LOG_MAX_BYTES\", \"10485760\"))  # 10 MiB",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 54,
+        "start_line": 54
+      }
+    },
+    "span": {
+      "end_line": 54,
+      "start_line": 54
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00006",
+    "matched_text": "ALERT_LOG_BACKUP_COUNT = int(os.getenv(\"ALERT_LOG_BACKUP_COUNT\", \"3\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 55,
+        "start_line": 55
+      }
+    },
+    "span": {
+      "end_line": 55,
+      "start_line": 55
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00007",
+    "matched_text": "os.getenv(\"WEBHOOK_MAX_BODY_BYTES\", os.getenv(\"MAX_WEBHOOK_BODY_BYTES\", \"8192\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 58,
+        "start_line": 58
+      }
+    },
+    "span": {
+      "end_line": 58,
+      "start_line": 58
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00009",
+    "matched_text": "ALPHA_ENGINE_RARI1 = os.getenv(\"ALPHA_ENGINE_RARI1\", \"\").strip()",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 67,
+        "start_line": 67
+      }
+    },
+    "span": {
+      "end_line": 67,
+      "start_line": 67
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00010",
+    "matched_text": "ALPHA_ENGINE_RARI2 = os.getenv(\"ALPHA_ENGINE_RARI2\", \"\").strip()",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 68,
+        "start_line": 68
+      }
+    },
+    "span": {
+      "end_line": 68,
+      "start_line": 68
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00011",
+    "matched_text": "SIGNAL_LOGGER_MAC = os.getenv(\"SIGNAL_LOGGER_MAC\", \"\").strip()",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 69,
+        "start_line": 69
+      }
+    },
+    "span": {
+      "end_line": 69,
+      "start_line": 69
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00012",
+    "matched_text": "SAPPHIRE_CONTROL_TOKEN = os.getenv(\"SAPPHIRE_CONTROL_API_TOKEN\", \"\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 70,
+        "start_line": 70
+      }
+    },
+    "span": {
+      "end_line": 70,
+      "start_line": 70
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00013",
+    "matched_text": "CAPABILITY_SYNC_INTERVAL_SECONDS = int(os.getenv(\"CAPABILITY_SYNC_INTERVAL_SECONDS\", \"180\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 75,
+        "start_line": 75
+      }
+    },
+    "span": {
+      "end_line": 75,
+      "start_line": 75
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00014",
+    "matched_text": "LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS = float(os.getenv(\"LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS\", \"5.0\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 76,
+        "start_line": 76
+      }
+    },
+    "span": {
+      "end_line": 76,
+      "start_line": 76
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00015",
+    "matched_text": "RESEARCH_WORKER_OUTPUT_ROOT = os.getenv(\n    \"RESEARCH_WORKER_OUTPUT_ROOT\",\n    os.getenv(\"WINDOWS_RESEARCH_WORKER_OUTPUT_ROOT\", \"E:/Sapphire/research-worker\"),\n)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 80,
+        "start_line": 77
+      }
+    },
+    "span": {
+      "end_line": 80,
+      "start_line": 77
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00016",
+    "matched_text": "os.getenv(\"WINDOWS_RESEARCH_WORKER_OUTPUT_ROOT\", \"E:/Sapphire/research-worker\"),",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 79,
+        "start_line": 79
+      }
+    },
+    "span": {
+      "end_line": 79,
+      "start_line": 79
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00017",
+    "matched_text": "RESEARCH_WORKER_MAX_AGE_SECONDS = int(os.getenv(\"RESEARCH_WORKER_MAX_AGE_SECONDS\", \"129600\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 81,
+        "start_line": 81
+      }
+    },
+    "span": {
+      "end_line": 81,
+      "start_line": 81
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00018",
+    "matched_text": "RESEARCH_WORKER_TASK_NAME = os.getenv(\"RESEARCH_WORKER_TASK_NAME\", \"SapphireResearchWorker\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 82,
+        "start_line": 82
+      }
+    },
+    "span": {
+      "end_line": 82,
+      "start_line": 82
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00019",
+    "matched_text": "IDEMPOTENCY_WINDOW_SECONDS = int(os.getenv(\"IDEMPOTENCY_WINDOW_SECONDS\", \"300\"))",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 87,
+        "start_line": 87
+      }
+    },
+    "span": {
+      "end_line": 87,
+      "start_line": 87
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using os.makedirs(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.makedirs()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00020",
+    "matched_text": "os.makedirs(_log_dir, exist_ok=True)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 162,
+        "start_line": 162
+      }
+    },
+    "span": {
+      "end_line": 162,
+      "start_line": 162
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using os.makedirs(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.makedirs()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00021",
+    "matched_text": "os.makedirs(log_dir, exist_ok=True)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 182,
+        "start_line": 182
+      }
+    },
+    "span": {
+      "end_line": 182,
+      "start_line": 182
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using os.replace(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0021.no-os-replace",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0021.no-os-replace"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.replace()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00022",
+    "matched_text": "os.replace(src, dst)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 203,
+        "start_line": 203
+      }
+    },
+    "span": {
+      "end_line": 203,
+      "start_line": 203
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using os.replace(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0021.no-os-replace",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0021.no-os-replace"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.replace()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00023",
+    "matched_text": "os.replace(ALERT_LOG_FILE, f\"{ALERT_LOG_FILE}.1\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 208,
+        "start_line": 208
+      }
+    },
+    "span": {
+      "end_line": 208,
+      "start_line": 208
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00024",
+    "matched_text": "with open(ALERT_LOG_FILE, \"a\", encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 228,
+        "start_line": 228
+      }
+    },
+    "span": {
+      "end_line": 228,
+      "start_line": 228
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00025",
+    "matched_text": "with open(ALERT_LOG_FILE, encoding=\"utf-8\", errors=\"ignore\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 242,
+        "start_line": 242
+      }
+    },
+    "span": {
+      "end_line": 242,
+      "start_line": 242
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using platform.system(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.platform.0005.no-platform-system",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.platform.0005.no-platform-system"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "platform.system()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00026",
+    "matched_text": "if platform.system().lower() != \"windows\":",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 465,
+        "start_line": 465
+      }
+    },
+    "span": {
+      "end_line": 465,
+      "start_line": 465
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using base64.b64encode(), as it can lead to potential issues with obfuscation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.obfuscation.sso.python.obfuscation.base64.0002.no-base64-b64encode",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.obfuscation.sso.python.obfuscation.base64.0002.no-base64-b64encode"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "base64.b64encode()",
+      "source_rule_category": "Obfuscation",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00027",
+    "matched_text": "encoded = base64.b64encode(script.encode(\"utf-16le\")).decode(\"ascii\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 492,
+        "start_line": 492
+      }
+    },
+    "span": {
+      "end_line": 492,
+      "start_line": 492
+    },
+    "subtype": "encoding"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00028",
+    "matched_text": "result = subprocess.run(\n            [\"powershell.exe\", \"-NoProfile\", \"-NonInteractive\", \"-EncodedCommand\", encoded],\n            capture_output=True,\n            check=False,\n            text=True,\n            timeout=5,\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 500,
+        "start_line": 494
+      }
+    },
+    "span": {
+      "end_line": 500,
+      "start_line": 494
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using aiohttp.client.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0003.no-aiohttp-client-get",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0003.no-aiohttp-client-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "aiohttp.client.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00029",
+    "matched_text": "response = await client.get(f\"{OLLAMA_URL}/api/tags\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 696,
+        "start_line": 696
+      }
+    },
+    "span": {
+      "end_line": 696,
+      "start_line": 696
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00030",
+    "matched_text": "result = subprocess.run(command, capture_output=True, text=True, check=True, timeout=4)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 729,
+        "start_line": 729
+      }
+    },
+    "span": {
+      "end_line": 729,
+      "start_line": 729
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using aiohttp.client.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0003.no-aiohttp-client-get",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0003.no-aiohttp-client-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "aiohttp.client.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00031",
+    "matched_text": "response = await client.get(url)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 756,
+        "start_line": 756
+      }
+    },
+    "span": {
+      "end_line": 756,
+      "start_line": 756
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using socket.gethostname(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.socket.0006.no-socket-gethostname",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.socket.0006.no-socket-gethostname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "socket.gethostname()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00032",
+    "matched_text": "\"hostname\": socket.gethostname(),",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 801,
+        "start_line": 801
+      }
+    },
+    "span": {
+      "end_line": 801,
+      "start_line": 801
+    },
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using platform.platform(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.platform.0003.no-platform-platform",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.platform.0003.no-platform-platform"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "platform.platform()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00033",
+    "matched_text": "\"os\": platform.platform(),",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 802,
+        "start_line": 802
+      }
+    },
+    "span": {
+      "end_line": 802,
+      "start_line": 802
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00034",
+    "matched_text": "raw = os.getenv(\"SIGNAL_TARGETS\", \"\").strip()",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 959,
+        "start_line": 959
+      }
+    },
+    "span": {
+      "end_line": 959,
+      "start_line": 959
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using aiohttp.client.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0006.no-aiohttp-client-post",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0006.no-aiohttp-client-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "aiohttp.client.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00035",
+    "matched_text": "r = await client.post(url, json=payload, headers=headers)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1009,
+        "start_line": 1009
+      }
+    },
+    "span": {
+      "end_line": 1009,
+      "start_line": 1009
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using aiohttp.client.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0006.no-aiohttp-client-post",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.aiohttp.0006.no-aiohttp-client-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "aiohttp.client.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00036",
+    "matched_text": "r = await client.post(\n                f\"{OLLAMA_URL}/api/generate\",\n                json={\"model\": \"gemma3:27b\", \"prompt\": prompt, \"stream\": False},\n            )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1058,
+        "start_line": 1055
+      }
+    },
+    "span": {
+      "end_line": 1058,
+      "start_line": 1055
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "src/receiver.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.ziyoo.Documents.year4.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00037",
+    "matched_text": "with open(ALERT_LOG_FILE, encoding=\"utf-8\", errors=\"ignore\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "src/receiver.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1287,
+        "start_line": 1287
+      }
+    },
+    "span": {
+      "end_line": 1287,
+      "start_line": 1287
+    },
+    "subtype": "file_access"
+  }
+]

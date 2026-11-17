@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: architecture-check\r\ndescription: \"Design and extend monorepo architecture invariants from AGENTS.md and .cursor/rules. Use when: defining new invariants, reviewing structural drift, or planning an automated architecture:check script.\"\r\n---\r\n\r\n# Architecture check\r\n\r\nThis repo documents architecture invariants in\r\n[AGENTS.md](../../../AGENTS.md) and [`.cursor/rules/architecture.mdc`](../../rules/architecture.mdc).\r\nThere is **no** `architecture:check` script in `package.json` yet \u2014 use this\r\nskill to enforce rules manually or to bootstrap automation.\r\n\r\n## When to use\r\n\r\n- Reviewing whether a new package follows monorepo invariants.\r\n- Adding a new invariant that AGENTS.md now requires.\r\n- Planning `scripts/architecture-check.mjs` (or similar) for CI.\r\n\r\n## Current invariants\r\n\r\nManually verify, at minimum:\r\n\r\n- Every feature package depends on `@ailuracode/alpine-core`.\r\n- No circular dependencies between packages.\r\n- Core does not depend on feature packages.\r\n- Package names match their folders (`@ailuracode/alpine-<name>`).\r\n- `sideEffects: false` is set on publishable packages.\r\n- Required exports exist in `src/index.ts`.\r\n- Peer dependencies are correct and not bundled.\r\n- No internal imports cross package boundaries.\r\n- `index.ts` is re-exports only \u2014 no heavy implementations.\r\n- Stateful packages expose a public controller class.\r\n\r\n## Manual check workflow\r\n\r\n```bash\r\npnpm run typecheck\r\npnpm run lint\r\npnpm test\r\npnpm run pack:check\r\npnpm run repo:check\r\n```\r\n\r\nCross-check the diff against `architecture.mdc` and `new-package.mdc`.\r\n\r\n## Adding a new invariant\r\n\r\n1. Express the rule in normative language in [AGENTS.md](../../../AGENTS.md)\r\n   (`MUST` / `MUST NOT` / `SHOULD` / `MAY`).\r\n2. Mirror it in `.cursor/rules/architecture.mdc` (or a scoped rule).\r\n3. When automating, add the check to `scripts/architecture-check.mjs` and wire\r\n   `pnpm run architecture:check` in root `package.json`.\r\n4. Document the invariant in this skill under _Current invariants_.\r\n\r\n## Anti-patterns to refuse\r\n\r\n- Lowering a check to make a contribution pass.\r\n- Skipping invariant review locally.\r\n- Adding a check that is not traceable to a rule in AGENTS.md or `.cursor/rules/`.\r\n",
+    "content_hash": "ebc4f45c3c0767ab911af90dc64ee9a038d48e50247eaf213ad7019a335d03b4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 60,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2215,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "pnpm run typecheck\r\npnpm run lint\r\npnpm test\r\npnpm run pack:check\r\npnpm run repo:check",
+    "content_hash": "d6a97470b280883ca4eeef2ea71a856d471f726e56317faa8f32184c9cd64fab",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 86,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 42,
+    "source_start_line": 36
+  }
+]

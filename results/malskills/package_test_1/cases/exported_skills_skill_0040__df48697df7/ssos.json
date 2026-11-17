@@ -1,0 +1,1113 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "--eval-set <path-to-trigger-eval.json> \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_13.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "nohup python <skill-creator-path>/eval-viewer/generate_review.py \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_9.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "b64 = base64.b64encode(raw).decode(\"ascii\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::encoding::167": "target"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::encoding::167",
+      "parameter_bindings": [],
+      "source_end_line": 167,
+      "source_start_line": 167
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::encoding::167"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "b64 = base64.b64encode(raw).decode(\"ascii\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::encoding::179": "target"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::encoding::179",
+      "parameter_bindings": [],
+      "source_end_line": 179,
+      "source_start_line": 179
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::encoding::179"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "b64 = base64.b64encode(raw).decode(\"ascii\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::encoding::190": "target"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::encoding::190",
+      "parameter_bindings": [],
+      "source_end_line": 190,
+      "source_start_line": 190
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::encoding::190"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "b64 = base64.b64encode(raw).decode(\"ascii\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::encoding::202": "target"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::encoding::202",
+      "parameter_bindings": [],
+      "source_end_line": 202,
+      "source_start_line": 202
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::encoding::202"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"lsof\", \"-ti\", f\":{port}\"],\n            capture_output=True, text=True, timeout=5,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::system_command_execution::291": "command"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::system_command_execution::291",
+      "parameter_bindings": [],
+      "sink_callsite_id": "eval-viewer/generate_review.py:291:294:subprocess.run()",
+      "source_end_line": 294,
+      "source_start_line": 291
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::system_command_execution::291"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::credential_data_access::409": "path"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::credential_data_access::409",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 409,
+      "source_start_line": 409
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::credential_data_access::409"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::credential_data_access::414": "path"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::credential_data_access::414",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 414,
+      "source_start_line": 414
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::credential_data_access::414"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(0)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::eval-viewer/generate_review.py::credential_data_access::436": "path"
+      },
+      "operation_object": "obj::operation::eval-viewer/generate_review.py::credential_data_access::436",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 436,
+      "source_start_line": 436
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::eval-viewer/generate_review.py::credential_data_access::436"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "eval-viewer/generate_review.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "webbrowser.open(url)",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::eval-viewer/generate_review.py::connection_create::webbrowser.open(url)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::eval-viewer/generate_review.py::connection_create::webbrowser.open(url)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "webbrowser.open()",
+      "sink_callsite_id": "eval-viewer/generate_review.py:461:461:webbrowser.open()",
+      "source_end_line": 461,
+      "source_start_line": 461
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::eval-viewer/generate_review.py::connection_create::webbrowser.open(url)"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/aggregate_benchmark.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(metadata_path) as mf:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aggregate_benchmark.py::file_access::90": "path"
+      },
+      "operation_object": "obj::operation::scripts/aggregate_benchmark.py::file_access::90",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 90,
+      "source_start_line": 90
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aggregate_benchmark.py::file_access::90"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/aggregate_benchmark.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(grading_file) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aggregate_benchmark.py::file_access::120": "path"
+      },
+      "operation_object": "obj::operation::scripts/aggregate_benchmark.py::file_access::120",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 120,
+      "source_start_line": 120
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aggregate_benchmark.py::file_access::120"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/aggregate_benchmark.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(timing_file) as tf:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aggregate_benchmark.py::file_access::142": "path"
+      },
+      "operation_object": "obj::operation::scripts/aggregate_benchmark.py::file_access::142",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 142,
+      "source_start_line": 142
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aggregate_benchmark.py::file_access::142"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/aggregate_benchmark.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aggregate_benchmark.py::credential_data_access::367": "path"
+      },
+      "operation_object": "obj::operation::scripts/aggregate_benchmark.py::credential_data_access::367",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 367,
+      "source_start_line": 367
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aggregate_benchmark.py::credential_data_access::367"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/aggregate_benchmark.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(output_json, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aggregate_benchmark.py::file_access::377": "path"
+      },
+      "operation_object": "obj::operation::scripts/aggregate_benchmark.py::file_access::377",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 377,
+      "source_start_line": 377
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aggregate_benchmark.py::file_access::377"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/aggregate_benchmark.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(output_md, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aggregate_benchmark.py::file_access::383": "path"
+      },
+      "operation_object": "obj::operation::scripts/aggregate_benchmark.py::file_access::383",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 383,
+      "source_start_line": 383
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aggregate_benchmark.py::file_access::383"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/api_client.py"
+    ],
+    "attributes": {
+      "matched_text": "api_url=os.environ.get(\"CLAW_API_URL\", cls.api_url),",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api_client.py::api_url": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api_client.py::api_url",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api_client.py::api_url"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/api_client.py"
+    ],
+    "attributes": {
+      "matched_text": "token=os.environ.get(\"CLAW_TOKEN\", cls.token),",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api_client.py::token": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api_client.py::token",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 30,
+      "source_start_line": 30
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api_client.py::token"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/api_client.py"
+    ],
+    "attributes": {
+      "matched_text": "model=os.environ.get(\"CLAW_MODEL\", cls.model),",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api_client.py::model": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api_client.py::model",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api_client.py::model"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/api_client.py"
+    ],
+    "attributes": {
+      "matched_text": "timeout=int(os.environ.get(\"CLAW_TIMEOUT\", cls.timeout)),",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api_client.py::timeout": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api_client.py::timeout",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 32,
+      "source_start_line": 32
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api_client.py::timeout"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      "scripts/improve_description.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/improve_description.py::credential_data_access::186": "path"
+      },
+      "operation_object": "obj::operation::scripts/improve_description.py::credential_data_access::186",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 186,
+      "source_start_line": 186
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/improve_description.py::credential_data_access::186"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/package_skill.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/package_skill.py::credential_data_access::117": "path"
+      },
+      "operation_object": "obj::operation::scripts/package_skill.py::credential_data_access::117",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 117,
+      "source_start_line": 117
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/package_skill.py::credential_data_access::117"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/package_skill.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(0)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/package_skill.py::credential_data_access::130": "path"
+      },
+      "operation_object": "obj::operation::scripts/package_skill.py::credential_data_access::130",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 130,
+      "source_start_line": 130
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/package_skill.py::credential_data_access::130"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/package_skill.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/package_skill.py::credential_data_access::132": "path"
+      },
+      "operation_object": "obj::operation::scripts/package_skill.py::credential_data_access::132",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 132,
+      "source_start_line": 132
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/package_skill.py::credential_data_access::132"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "scripts/quick_validate.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/quick_validate.py::credential_data_access::99": "path"
+      },
+      "operation_object": "obj::operation::scripts/quick_validate.py::credential_data_access::99",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 99,
+      "source_start_line": 99
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/quick_validate.py::credential_data_access::99"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "scripts/quick_validate.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(0 if valid else 1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/quick_validate.py::credential_data_access::103": "path"
+      },
+      "operation_object": "obj::operation::scripts/quick_validate.py::credential_data_access::103",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 103,
+      "source_start_line": 103
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/quick_validate.py::credential_data_access::103"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      "scripts/run_eval.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run_eval.py::credential_data_access::155": "path"
+      },
+      "operation_object": "obj::operation::scripts/run_eval.py::credential_data_access::155",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 155,
+      "source_start_line": 155
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run_eval.py::credential_data_access::155"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0023"
+    ],
+    "artifact_paths": [
+      "scripts/run_loop.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run_loop.py::credential_data_access::268": "path"
+      },
+      "operation_object": "obj::operation::scripts/run_loop.py::credential_data_access::268",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 268,
+      "source_start_line": 268
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run_loop.py::credential_data_access::268"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0023"
+    ],
+    "artifact_paths": [
+      "scripts/run_loop.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "webbrowser.open(str(live_report_path))",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "webbrowser.open()",
+      "sink_callsite_id": "scripts/run_loop.py:282:282:webbrowser.open()",
+      "source_end_line": 282,
+      "source_start_line": 282
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "if os.environ.get(\"CLAW_API_URL\"):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::64": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::64",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 64,
+      "source_start_line": 64
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::64"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "config[\"api_url\"] = os.environ[\"CLAW_API_URL\"]",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::65": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::65",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 65,
+      "source_start_line": 65
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::65"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "if os.environ.get(\"CLAW_TOKEN\"):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::66": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::66",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 66,
+      "source_start_line": 66
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::66"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "config[\"token\"] = os.environ[\"CLAW_TOKEN\"]",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::67": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::67",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 67,
+      "source_start_line": 67
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::67"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "if os.environ.get(\"CLAW_MODEL\"):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::68": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::68",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 68,
+      "source_start_line": 68
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::68"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "config[\"model\"] = os.environ[\"CLAW_MODEL\"]",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::69": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::69",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 69,
+      "source_start_line": 69
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::69"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "if os.environ.get(\"CLAW_TIMEOUT\"):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::70": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::70",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 70,
+      "source_start_line": 70
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::70"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0024"
+    ],
+    "artifact_paths": [
+      "scripts/utils.py"
+    ],
+    "attributes": {
+      "matched_text": "config[\"timeout\"] = int(os.environ[\"CLAW_TIMEOUT\"])",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/utils.py::environment_access::71": "path"
+      },
+      "operation_object": "obj::operation::scripts/utils.py::environment_access::71",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 71,
+      "source_start_line": 71
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00038"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/utils.py::environment_access::71"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "environment_access"
+  }
+]

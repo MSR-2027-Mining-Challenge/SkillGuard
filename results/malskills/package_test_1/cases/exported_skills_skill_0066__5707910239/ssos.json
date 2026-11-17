@@ -1,0 +1,361 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker compose -f docker-compose.yml -f docker-compose.override.yml -f ports-override.yml up -d",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:3:3:data_receive",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:4:4:data_receive",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker compose -p <project> down",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf data/postgres          # only if you seeded a throwaway cluster",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_delete::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_delete::2",
+      "path_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_delete::2"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:39:39:data_receive",
+      "source_end_line": 39,
+      "source_start_line": 39
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:40:40:data_receive",
+      "source_end_line": 40,
+      "source_start_line": 40
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:41:41:data_receive",
+      "source_end_line": 41,
+      "source_start_line": 41
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:42:42:data_receive",
+      "source_end_line": 42,
+      "source_start_line": 42
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "data_receive"
+  }
+]

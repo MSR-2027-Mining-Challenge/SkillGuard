@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: apply-practice\r\nmodel: sonnet\r\neffort: medium\r\ndescription: Apply a specific best practice from the BP knowledge base to a target repository. Use this whenever the user says \"apply a practice\", \"apply <slug> to this repo\", \"adopt the BP pattern for X\", \"bring this repo up to the BP standard\", or wants a proven convention/config/workflow from BP installed into the current project -- even if they don't say \"BP\" explicitly.\r\nuser-invocable: true\r\nargument-hint: (optional) the practice slug (e.g. testing/vitest-monorepo-config) and/or target repo path\r\nallowed-tools:\r\n  - Read\r\n  - Glob\r\n  - Grep\r\n  - Bash\r\n  - Edit\r\n  - Write\r\n  - WebFetch\r\n---\r\n\r\nYou are applying a specific best practice from the BP knowledge base to a target repository.\r\n\r\n**Repository:** `BoardPandas/BP` on GitHub\r\n**Raw URL base:** `https://raw.githubusercontent.com/BoardPandas/BP/main/`\r\n\r\n## Step 1: Identify inputs\r\n\r\nYou need two things:\r\n1. **Practice slug** -- e.g., `testing/vitest-monorepo-config` or `safety/read-only-first-rule`\r\n2. **Target repo** -- the local repository to apply the practice to (current working directory by default, or ask the user)\r\n\r\nAsk the user for any missing inputs.\r\n\r\n## Step 2: Load the practice from GitHub\r\n\r\nThis skill only reads from BP -- use `WebFetch` on the raw URL. Don't switch to the GitHub MCP server even if one is connected: a raw `WebFetch` is a plain read, and pulling in MCP tool schemas mid-skill bloats the context window for no benefit.\r\n\r\nFetch the practice entry:\r\n```\r\nWebFetch https://raw.githubusercontent.com/BoardPandas/BP/main/practices/<concern>/<slug>.md\r\n```\r\n\r\nIf the user doesn't know the exact slug, fetch the concern index first to show available practices:\r\n```\r\nWebFetch https://raw.githubusercontent.com/BoardPandas/BP/main/practices/<concern>/llms.txt\r\n```\r\n\r\nOr fetch the master index to show all concerns:\r\n```\r\nWebFetch https://raw.githubusercontent.com/BoardPandas/BP/main/llms.txt\r\n```\r\n\r\n## Step 3: Run CHECK steps\r\n\r\nExecute each CHECK item against the target repo to verify the practice isn't already applied.\r\n\r\n- If ALL checks pass: inform the user \"This practice is already applied to <repo-name>\" and stop.\r\n- If SOME checks pass: inform the user which parts are already in place and which are missing. Ask if they want to proceed with the missing parts only.\r\n- If NO checks pass: proceed to implementation.\r\n\r\n## Step 4: Follow IMPLEMENT steps\r\n\r\nExecute each step in the IMPLEMENT section against the target repo. For each step:\r\n1. Show what you're about to do\r\n2. Execute the change\r\n3. Verify the change was applied correctly\r\n\r\n## Step 5: Validate\r\n\r\nRe-run the CHECK steps to confirm all checks now pass.\r\n\r\n## Step 6: Report\r\n\r\nOutput:\r\n- Which steps were applied\r\n- Which checks now pass\r\n- Any manual follow-up needed (e.g., \"run tests to verify\", \"restart dev server\")\r\n",
+    "content_hash": "a6b98d2b2083c75602755bd77bbea021bad9d2a53e3419f23cefc4c69a8bbcc1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 75,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2864,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

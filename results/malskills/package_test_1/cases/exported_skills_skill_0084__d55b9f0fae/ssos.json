@@ -1,0 +1,61 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_48.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat .zig-cache/native-sdk-automation/snapshot.txt   # widgets with ids, roles, names, bounds, state",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_48.sh::file_read::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_48.sh::file_read::4",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_48.sh::file_read::4"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const dev = @import(\"builtin\").mode == .Debug;",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::53": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::53",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:53:53:dynamic_code_execution",
+      "source_end_line": 53,
+      "source_start_line": 53
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::53"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "dynamic_code_execution"
+  }
+]

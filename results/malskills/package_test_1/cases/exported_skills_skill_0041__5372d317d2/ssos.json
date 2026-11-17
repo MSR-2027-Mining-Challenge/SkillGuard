@@ -1,0 +1,58 @@
+[
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "AUTH_SECRET=\"generate-with-openssl-rand-base64-32\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::encoding::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::encoding::2",
+      "parameter_bindings": [],
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::encoding::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "openssl rand -base64 32",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.sh::encoding::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.sh::encoding::1",
+      "parameter_bindings": [],
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.sh::encoding::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "encoding"
+  }
+]

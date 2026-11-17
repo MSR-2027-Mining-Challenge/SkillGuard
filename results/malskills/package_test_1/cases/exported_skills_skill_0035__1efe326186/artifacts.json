@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: database-design\r\ndescription: Guidelines for designing, implementing, and maintaining high-quality data models, ensuring data integrity, performance, and scalability.\r\nversion: 1.0.0\r\n---\r\n\r\n# Data Modeling & Design Maintenance\r\n\r\n## \ud83c\udfaf Purpose\r\nTo design, implement, and maintain high-quality data models that ensure data integrity, performance, and ease of use for downstream analytics and machine learning.\r\n\r\n## \ud83c\udfd7\ufe0f Design Principles\r\n\r\n### 1. Architectural Standards\r\n- **Modular Design**: Use a layered approach (e.g., Bronze/Silver/Gold or Staging/Intermediate/Mart).\r\n- **Star Schema Preference**: For BI layers, prioritize Fact and Dimension tables to optimize join performance and readability.\r\n- **Idempotency**: Every transformation must be repeatable. If run multiple times with the same input, it must produce the same output.\r\n\r\n### 2. Technical Requirements\r\n- **Primary Keys**: Every table must have a defined Primary Key (composite or surrogate).\r\n- **Naming Conventions**: Use snake_case. Prefix tables based on layer (e.g., stg_, fct_, dim_).\r\n- **Data Types**: Use the most efficient types possible (e.g., INT vs BIGINT) and ensure consistent timestamp formats (UTC preferred).\r\n\r\n## \ud83d\udee0\ufe0f Implementation Workflow\r\n\r\n### Step 1: Requirements Gathering\r\n- Identify the grain of the table (e.g., \"One row per transaction\").\r\n- Define the business logic for every calculated field.\r\n\r\n### Step 2: DDL & Schema Design\r\n- Apply constraints where supported (NOT NULL, UNIQUE).\r\n- Document columns using descriptions within the code or yml files.\r\n\r\n### Step 3: Orchestration Integration (Airflow 3.x)\r\n- **Dynamic Task Mapping**: Use Airflow 3.x features to scale model processing across partitions.\r\n- **Task Flow API**: Use decorators for Python-based transformations to maintain clean, readable DAGs.\r\n- **Retries**: Configure sensible retry logic for transient failures during model builds.\r\n\r\n## \ud83e\uddf9 Maintenance & Governance\r\n\r\n### Quality Assurance\r\n- **Schema Tests**: Run tests for null values, uniqueness, and referential integrity (e.g., using dbt tests or Airflow SQL sensors).\r\n- **Volume Monitoring**: Alert if row counts deviate significantly from historical averages.\r\n\r\n### Refactoring Logic\r\n- **Impact Analysis**: Use lineage tools to identify which downstream reports will be affected by a schema change.\r\n\r\n## \ud83d\udcdd Quality Checklist\r\n- [ ] Is the grain clearly defined?\r\n- [ ] Are all columns documented?\r\n- [ ] Does the model handle incremental loads correctly?\r\n- [ ] Have you verified the join logic doesn't cause fan-out (duplicate rows)?\r\n",
+    "content_hash": "a5c8cba598e5f122048aca25f43e5bfdea32019d655a454aae30bd50cd9ed20d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2599,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

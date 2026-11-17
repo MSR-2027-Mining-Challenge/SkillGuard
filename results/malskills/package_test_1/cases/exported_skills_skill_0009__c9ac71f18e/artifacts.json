@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: \"init\"\r\ndescription: \"Criar uma nova sess\u00e3o de colabora\u00e7\u00e3o do AgentHub com tarefa, n\u00famero de agentes e crit\u00e9rios de avalia\u00e7\u00e3o.\"\r\ncommand: /hub:init\r\nagents:\r\n  - claude-code\r\n---\r\n\r\n# /hub:init \u2014 Criar Nova Sess\u00e3o\r\n\r\nInicializar uma sess\u00e3o de colabora\u00e7\u00e3o do AgentHub. Cria a estrutura de diret\u00f3rios `.agenthub/`, gera um ID de sess\u00e3o e configura os crit\u00e9rios de avalia\u00e7\u00e3o.\r\n\r\n## Uso\r\n\r\n```\r\n/hub:init                                                    # Modo interativo\r\n/hub:init --task \"Optimize API\" --agents 3 --eval \"pytest bench.py\" --metric p50_ms --direction lower\r\n/hub:init --task \"Refactor auth\" --agents 2                  # Sem eval (modo juiz LLM)\r\n```\r\n\r\n## O Que Faz\r\n\r\n### Se argumentos fornecidos\r\n\r\nPass\u00e1-los ao script de init:\r\n\r\n```bash\r\npython {skill_path}/scripts/hub_init.py \\\r\n  --task \"{task}\" --agents {N} \\\r\n  [--eval \"{eval_cmd}\"] [--metric {metric}] [--direction {direction}] \\\r\n  [--base-branch {branch}]\r\n```\r\n\r\n### Se sem argumentos (modo interativo)\r\n\r\nColetar cada par\u00e2metro:\r\n\r\n1. **Tarefa** \u2014 O que os agentes devem fazer? (obrigat\u00f3rio)\r\n2. **N\u00famero de agentes** \u2014 Quantos agentes paralelos? (padr\u00e3o: 3)\r\n3. **Comando de avalia\u00e7\u00e3o** \u2014 Comando para medir resultados (opcional \u2014 pular para modo juiz LLM)\r\n4. **Nome da m\u00e9trica** \u2014 Qual m\u00e9trica extrair da sa\u00edda do eval (obrigat\u00f3rio se comando de eval fornecido)\r\n5. **Dire\u00e7\u00e3o** \u2014 Menor ou maior \u00e9 melhor? (obrigat\u00f3rio se m\u00e9trica fornecida)\r\n6. **Branch base** \u2014 Branch de origem (padr\u00e3o: branch atual)\r\n\r\n### Sa\u00edda\r\n\r\n```\r\nSess\u00e3o AgentHub inicializada\r\n  Session ID: 20260317-143022\r\n  Tarefa: Optimize API response time below 100ms\r\n  Agentes: 3\r\n  Eval: pytest bench.py --json\r\n  M\u00e9trica: p50_ms (menor \u00e9 melhor)\r\n  Branch base: dev\r\n  Estado: init\r\n\r\nPr\u00f3ximo passo: Execute /hub:spawn para lan\u00e7ar 3 agentes\r\n```\r\n\r\nPara tarefas de conte\u00fado ou pesquisa (sem comando de eval \u2192 modo juiz LLM):\r\n\r\n```\r\nSess\u00e3o AgentHub inicializada\r\n  Session ID: 20260317-151200\r\n  Tarefa: Draft 3 competing taglines for product launch\r\n  Agentes: 3\r\n  Eval: Juiz LLM (sem comando de eval)\r\n  Branch base: dev\r\n  Estado: init\r\n\r\nPr\u00f3ximo passo: Execute /hub:spawn para lan\u00e7ar 3 agentes\r\n```\r\n\r\n## Captura de Baseline\r\n\r\nSe `--eval` foi fornecido, capturar uma medi\u00e7\u00e3o de baseline ap\u00f3s a cria\u00e7\u00e3o da sess\u00e3o:\r\n\r\n1. Executar o comando de eval no diret\u00f3rio de trabalho atual\r\n2. Extrair o valor da m\u00e9trica do stdout\r\n3. Adicionar `baseline: {value}` a `.agenthub/sessions/{session-id}/config.yaml`\r\n4. Exibir: `Baseline capturado: {metric} = {value}`\r\n\r\nEste baseline \u00e9 usado por `result_ranker.py --baseline` durante a avalia\u00e7\u00e3o para mostrar deltas. Se o comando de eval falhar nesta etapa, avisar o usu\u00e1rio mas continuar \u2014 o baseline \u00e9 opcional.\r\n\r\n## Ap\u00f3s o Init\r\n\r\nInformar ao usu\u00e1rio:\r\n- Sess\u00e3o criada com ID `{session-id}`\r\n- M\u00e9trica de baseline (se capturada)\r\n- Pr\u00f3ximo passo: `/hub:spawn` para lan\u00e7ar os agentes\r\n- Ou `/hub:spawn {session-id}` se existirem m\u00faltiplas sess\u00f5es\r\n",
+    "content_hash": "1d6bff58dbc17af8fb29da03896955c0e3918d50908bc637a520b23a13b5787f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 92,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3042,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "python {skill_path}/scripts/hub_init.py \\\r\n  --task \"{task}\" --agents {N} \\\r\n  [--eval \"{eval_cmd}\"] [--metric {metric}] [--direction {direction}] \\\r\n  [--base-branch {branch}]",
+    "content_hash": "9f99aad4b512c158a0b80b7f0ada317b0037939ae752edd61080c77fa305bcdb",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 176,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 32,
+    "source_start_line": 27
+  }
+]

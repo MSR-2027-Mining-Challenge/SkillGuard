@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: monitor-db\r\ndescription: \"Workflow for monitor-db\"\r\nmetadata: {\"clawdbot\":{\"emoji\":\"\ud83e\udd16\",\"always\":false}}\r\n---\r\n\r\n# monitor-db\r\n\r\nThis skill executes the **monitor-db** workflow from .agent/workflows/monitor-db.md.\r\n\r\n## Usage\r\n\r\n```\r\n\"Run monitor-db\"\r\n```\r\n\r\nOr via Discord slash command:\r\n```\r\n/skill monitor-db\r\n```\r\n\r\n## Implementation\r\n\r\nThis skill reads and executes the workflow file:\r\n\r\n```bash\r\ncat .agent/workflows/monitor-db.md\r\n```\r\n\r\nThen follows the steps defined in that file.\r\n",
+    "content_hash": "9c72e9fcb35b4af0e70389b6b3349bf6cf826b99a56e7b23169bf789ffbc2c8a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 31,
+    "relative_path": "SKILL.md",
+    "size_bytes": 505,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "cat .agent/workflows/monitor-db.md",
+    "content_hash": "f56a05ef93ade86ef7e5d7e59313b0078dbd5d225126245bb7e5dbc7173d6f1b",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 34,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 28,
+    "source_start_line": 26
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"monitor-db\",\r\n  \"description\": \"Workflow for monitor-db\",\r\n  \"category\": \"data-ai\",\r\n  \"canonical_category\": \"data-ai\",\r\n  \"repository\": \"Techlemariam/IronForge\",\r\n  \"repository_url\": \"https://github.com/Techlemariam/IronForge\",\r\n  \"author\": \"Techlemariam\",\r\n  \"author_avatar\": \"https://github.com/Techlemariam.png\",\r\n  \"file_path\": \"skills/monitor-db/SKILL.md\",\r\n  \"source\": \"github_code_search\",\r\n  \"stars\": 0,\r\n  \"quality_score\": 19,\r\n  \"best_practices_score\": 70,\r\n  \"skill_level\": 2,\r\n  \"skill_level_label\": \"instructions\",\r\n  \"has_scripts\": true,\r\n  \"has_extra_files\": false,\r\n  \"downloads\": 0,\r\n  \"content_hash\": \"67fe8f706a960c5767a0f26caa0fb76dfe5a98800fbbb6d124989dc46ce4f0c8\",\r\n  \"indexed_at\": \"2026-02-26T19:10:54.821Z\",\r\n  \"synced_at\": \"2026-02-28T04:23:52.921Z\",\r\n  \"omni_registry_url\": \"https://omni-skill-registry.omniroute.online/#/skill/94d76927fe7d019f6c6c16cd0a30637897b239aad19ea6db7836d639b353b62d\",\r\n  \"install_command\": \"mkdir -p .claude/skills/monitor-db && curl -sL \\\"https://raw.githubusercontent.com/Techlemariam/IronForge/main/skills/monitor-db/SKILL.md\\\" > .claude/skills/monitor-db/SKILL.md\",\r\n  \"raw_url\": \"https://raw.githubusercontent.com/Techlemariam/IronForge/main/skills/monitor-db/SKILL.md\"\r\n}\r\n",
+    "content_hash": "4a07d3ffa97d14cbbcfd9927de61b70cd960c2bc72742af14ff43f8f35a5d5b2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "metadata.json",
+    "size_bytes": 1247,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

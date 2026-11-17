@@ -1,0 +1,1101 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "WEBHOOK_SECRET = os.getenv(\"WEBHOOK_SECRET\", \"\")  # Must match Pine Script alert body",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::WEBHOOK_SECRET": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::WEBHOOK_SECRET",
+      "secret_class": "generic_secret",
+      "sensitivity_class": "contextual",
+      "source_end_line": 49,
+      "source_start_line": 49
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::WEBHOOK_SECRET"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "OLLAMA_URL = os.getenv(\"OLLAMA_URL\", \"http://localhost:11434\")  # Local Ollama (RTX 5070 Ti)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::OLLAMA_URL": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::OLLAMA_URL",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 50,
+      "source_start_line": 50
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::OLLAMA_URL"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "WEBHOOK_PORT = int(os.getenv(\"WEBHOOK_PORT\", \"9090\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::WEBHOOK_PORT": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::WEBHOOK_PORT",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 51,
+      "source_start_line": 51
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::WEBHOOK_PORT"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "LOG_FILE = os.getenv(\"WEBHOOK_LOG_FILE\", \"C:/sapphire/webhook.log\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::LOG_FILE": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::LOG_FILE",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 52,
+      "source_start_line": 52
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::LOG_FILE"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "ALERT_LOG_FILE = os.getenv(\"ALERT_LOG_FILE\", \"C:/sapphire/webhook/alerts.jsonl\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::ALERT_LOG_FILE": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::ALERT_LOG_FILE",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 53,
+      "source_start_line": 53
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::ALERT_LOG_FILE"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "ALERT_LOG_MAX_BYTES = int(os.getenv(\"ALERT_LOG_MAX_BYTES\", \"10485760\"))  # 10 MiB",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::ALERT_LOG_MAX_BYTES": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::ALERT_LOG_MAX_BYTES",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 54,
+      "source_start_line": 54
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::ALERT_LOG_MAX_BYTES"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "ALERT_LOG_BACKUP_COUNT = int(os.getenv(\"ALERT_LOG_BACKUP_COUNT\", \"3\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::ALERT_LOG_BACKUP_COUNT": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::ALERT_LOG_BACKUP_COUNT",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 55,
+      "source_start_line": 55
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::ALERT_LOG_BACKUP_COUNT"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "os.getenv(\"WEBHOOK_MAX_BODY_BYTES\", os.getenv(\"MAX_WEBHOOK_BODY_BYTES\", \"8192\"))",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::environment_access::58": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::environment_access::58",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 58,
+      "source_start_line": 58
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::environment_access::58"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "ALPHA_ENGINE_RARI1 = os.getenv(\"ALPHA_ENGINE_RARI1\", \"\").strip()",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::ALPHA_ENGINE_RARI1": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::ALPHA_ENGINE_RARI1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 67,
+      "source_start_line": 67
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::ALPHA_ENGINE_RARI1"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "ALPHA_ENGINE_RARI2 = os.getenv(\"ALPHA_ENGINE_RARI2\", \"\").strip()",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::ALPHA_ENGINE_RARI2": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::ALPHA_ENGINE_RARI2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 68,
+      "source_start_line": 68
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::ALPHA_ENGINE_RARI2"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "SIGNAL_LOGGER_MAC = os.getenv(\"SIGNAL_LOGGER_MAC\", \"\").strip()",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::SIGNAL_LOGGER_MAC": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::SIGNAL_LOGGER_MAC",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 69,
+      "source_start_line": 69
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::SIGNAL_LOGGER_MAC"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "SAPPHIRE_CONTROL_TOKEN = os.getenv(\"SAPPHIRE_CONTROL_API_TOKEN\", \"\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::SAPPHIRE_CONTROL_TOKEN": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::SAPPHIRE_CONTROL_TOKEN",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 70,
+      "source_start_line": 70
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::SAPPHIRE_CONTROL_TOKEN"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "CAPABILITY_SYNC_INTERVAL_SECONDS = int(os.getenv(\"CAPABILITY_SYNC_INTERVAL_SECONDS\", \"180\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::CAPABILITY_SYNC_INTERVAL_SECONDS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::CAPABILITY_SYNC_INTERVAL_SECONDS",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 75,
+      "source_start_line": 75
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::CAPABILITY_SYNC_INTERVAL_SECONDS"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS = float(os.getenv(\"LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS\", \"5.0\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 76,
+      "source_start_line": 76
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::LOCAL_SERVICE_PROBE_TIMEOUT_SECONDS"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "RESEARCH_WORKER_OUTPUT_ROOT = os.getenv(\n    \"RESEARCH_WORKER_OUTPUT_ROOT\",\n    os.getenv(\"WINDOWS_RESEARCH_WORKER_OUTPUT_ROOT\", \"E:/Sapphire/research-worker\"),\n)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_OUTPUT_ROOT": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_OUTPUT_ROOT",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 80,
+      "source_start_line": 77
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_OUTPUT_ROOT"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "os.getenv(\"WINDOWS_RESEARCH_WORKER_OUTPUT_ROOT\", \"E:/Sapphire/research-worker\"),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::environment_access::79": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::environment_access::79",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 79,
+      "source_start_line": 79
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::environment_access::79"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "RESEARCH_WORKER_MAX_AGE_SECONDS = int(os.getenv(\"RESEARCH_WORKER_MAX_AGE_SECONDS\", \"129600\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_MAX_AGE_SECONDS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_MAX_AGE_SECONDS",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 81,
+      "source_start_line": 81
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_MAX_AGE_SECONDS"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "RESEARCH_WORKER_TASK_NAME = os.getenv(\"RESEARCH_WORKER_TASK_NAME\", \"SapphireResearchWorker\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_TASK_NAME": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_TASK_NAME",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 82,
+      "source_start_line": 82
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::RESEARCH_WORKER_TASK_NAME"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "IDEMPOTENCY_WINDOW_SECONDS = int(os.getenv(\"IDEMPOTENCY_WINDOW_SECONDS\", \"300\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::IDEMPOTENCY_WINDOW_SECONDS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::IDEMPOTENCY_WINDOW_SECONDS",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 87,
+      "source_start_line": 87
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::IDEMPOTENCY_WINDOW_SECONDS"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(_log_dir, exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::file_create::162": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::file_create::162",
+      "path_class": "ordinary",
+      "source_end_line": 162,
+      "source_start_line": 162,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::file_create::162"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(log_dir, exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::file_create::182": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::file_create::182",
+      "path_class": "ordinary",
+      "source_end_line": 182,
+      "source_start_line": 182,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::file_create::182"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "os.replace(src, dst)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::file_write::203": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::file_write::203",
+      "path_class": "ordinary",
+      "source_end_line": 203,
+      "source_start_line": 203,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::file_write::203"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "os.replace(ALERT_LOG_FILE, f\"{ALERT_LOG_FILE}.1\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::file_write::208": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::file_write::208",
+      "path_class": "ordinary",
+      "source_end_line": 208,
+      "source_start_line": 208,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::file_write::208"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(ALERT_LOG_FILE, \"a\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 228,
+      "source_start_line": 228
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::encoding"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(ALERT_LOG_FILE, encoding=\"utf-8\", errors=\"ignore\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 242,
+      "source_start_line": 242
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::encoding"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "if platform.system().lower() != \"windows\":",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::system_information_access::465": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::system_information_access::465",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 465,
+      "source_start_line": 465
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::system_information_access::465"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "encoded = base64.b64encode(script.encode(\"utf-16le\")).decode(\"ascii\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::encoding::492": "target"
+      },
+      "operation_object": "obj::operation::src/receiver.py::encoding::492",
+      "parameter_bindings": [],
+      "source_end_line": 492,
+      "source_start_line": 492
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::encoding::492"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"powershell.exe\", \"-NoProfile\", \"-NonInteractive\", \"-EncodedCommand\", encoded],\n            capture_output=True,\n            check=False,\n            text=True,\n            timeout=5,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::system_command_execution::494": "command"
+      },
+      "operation_object": "obj::operation::src/receiver.py::system_command_execution::494",
+      "parameter_bindings": [],
+      "sink_callsite_id": "src/receiver.py:494:500:subprocess.run()",
+      "source_end_line": 500,
+      "source_start_line": 494
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::system_command_execution::494"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "response = await client.get(f\"{OLLAMA_URL}/api/tags\")",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::data_receive::response = await client.get(f\"{OLLAMA_URL}/api/tags\")": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::data_receive::response = await client.get(f\"{OLLAMA_URL}/api/tags\")",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "aiohttp.client.get()",
+      "sink_callsite_id": "src/receiver.py:696:696:aiohttp.client.get()",
+      "source_end_line": 696,
+      "source_start_line": 696
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::data_receive::response = await client.get(f\"{OLLAMA_URL}/api/tags\")"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(command, capture_output=True, text=True, check=True, timeout=4)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::command": "command"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::command",
+      "parameter_bindings": [],
+      "sink_callsite_id": "src/receiver.py:729:729:subprocess.run()",
+      "source_end_line": 729,
+      "source_start_line": 729
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::command"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "response = await client.get(url)",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::data_receive::response = await client.get(url)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::data_receive::response = await client.get(url)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "aiohttp.client.get()",
+      "sink_callsite_id": "src/receiver.py:756:756:aiohttp.client.get()",
+      "source_end_line": 756,
+      "source_start_line": 756
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::data_receive::response = await client.get(url)"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "\"hostname\": socket.gethostname(),",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::connection_create::\"hostname\": socket.gethostname(),": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::connection_create::\"hostname\": socket.gethostname(),",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "socket.gethostname()",
+      "sink_callsite_id": "src/receiver.py:801:801:socket.gethostname()",
+      "source_end_line": 801,
+      "source_start_line": 801
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::connection_create::\"hostname\": socket.gethostname(),"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "\"os\": platform.platform(),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/receiver.py::system_information_access::802": "path"
+      },
+      "operation_object": "obj::operation::src/receiver.py::system_information_access::802",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 802,
+      "source_start_line": 802
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::operation::src/receiver.py::system_information_access::802"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "raw = os.getenv(\"SIGNAL_TARGETS\", \"\").strip()",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::raw": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::raw",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 959,
+      "source_start_line": 959
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::raw"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "r = await client.post(url, json=payload, headers=headers)",
+      "endpoint_class": "unknown",
+      "network_role": "send",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::data_send::r = await client.post(url, json=payload, headers=headers)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::data_send::r = await client.post(url, json=payload, headers=headers)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "aiohttp.client.post()",
+      "sink_callsite_id": "src/receiver.py:1009:1009:aiohttp.client.post()",
+      "source_end_line": 1009,
+      "source_start_line": 1009
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::data_send::r = await client.post(url, json=payload, headers=headers)"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "data_send"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "r = await client.post(\n                f\"{OLLAMA_URL}/api/generate\",\n                json={\"model\": \"gemma3:27b\", \"prompt\": prompt, \"stream\": False},\n            )",
+      "endpoint_class": "unknown",
+      "network_role": "send",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::data_send::r = await client.post(\n                f\"{OLLAMA_URL}/api/generate\",\n                json={\"model\": \"gemma3:27b\", \"prompt\": prompt, \"stream\": False},\n            )": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::data_send::r = await client.post(\n                f\"{OLLAMA_URL}/api/generate\",\n                json={\"model\": \"gemma3:27b\", \"prompt\": prompt, \"stream\": False},\n            )",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "aiohttp.client.post()",
+      "sink_callsite_id": "src/receiver.py:1055:1058:aiohttp.client.post()",
+      "source_end_line": 1058,
+      "source_start_line": 1055
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::data_send::r = await client.post(\n                f\"{OLLAMA_URL}/api/generate\",\n                json={\"model\": \"gemma3:27b\", \"prompt\": prompt, \"stream\": False},\n            )"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "data_send"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "src/receiver.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(ALERT_LOG_FILE, encoding=\"utf-8\", errors=\"ignore\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/receiver.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/receiver.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1287,
+      "source_start_line": 1287
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/receiver.py::encoding"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "file_access"
+  }
+]

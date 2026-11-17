@@ -1,0 +1,673 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "DEPENDENCIES.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/play-tts.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "tts/tts_sample.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0000",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::DEPENDENCIES.md::package_installation::24",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::DEPENDENCIES.md::package_installation::24",
+      "target": "value::64cbc49a09fb84bbf74d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00001",
+      "target": "obj::operation::DEPENDENCIES.md::package_installation::25",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::DEPENDENCIES.md::package_installation::25",
+      "target": "value::7d772674142d2b89ac3c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00002",
+      "target": "obj::operation::DEPENDENCIES.md::package_installation::26",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::DEPENDENCIES.md::package_installation::26",
+      "target": "value::19b304a336125fa368c1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00003",
+      "target": "obj::operation::DEPENDENCIES.md::package_installation::27",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::DEPENDENCIES.md::package_installation::27",
+      "target": "value::aa8b103ecd21727b1f25",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00004",
+      "target": "obj::operation::README.md::package_installation::31",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::README.md::package_installation::31",
+      "target": "value::1cd4cfc8f4b122c4ea3b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00005",
+      "target": "obj::operation::README.md::package_installation::32",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::README.md::package_installation::32",
+      "target": "value::b4e2cb812ed39376821b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00006",
+      "target": "obj::operation::README.md::package_installation::33",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::README.md::package_installation::33",
+      "target": "value::46530fef79161850290d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::scripts/play-tts.sh::DEFAULT_CONDA_ENV",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/play-tts.sh::DEFAULT_CONDA_ENV",
+      "target": "value::dd67468f02580639619d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::scripts/play-tts.sh::data_receive::",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/play-tts.sh::data_receive::",
+      "target": "value::a9d5b021be4dc32260f0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::operation::scripts/play-tts.sh::credential_data_access::101",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/play-tts.sh::credential_data_access::101",
+      "target": "value::8f2f8876de1ae7ddc1cd",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::scripts/play-tts.sh::data_receive::",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/play-tts.sh::credential_data_access::107",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/play-tts.sh::credential_data_access::107",
+      "target": "value::188cbc12a7ca4534258e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::scripts/play-tts.sh::data_receive::",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::scripts/play-tts.sh::credential_data_access::115",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/play-tts.sh::credential_data_access::115",
+      "target": "value::f5763b999e46ff02bac8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00014",
+      "target": "obj::symbolic_reference::scripts/play-tts.sh::data_receive::",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00015",
+      "target": "obj::operation::scripts/play-tts.sh::credential_data_access::129",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/play-tts.sh::credential_data_access::129",
+      "target": "value::ed27ae4633278f811aeb",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00008",
+      "target": "sso_00010",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00008",
+      "target": "sso_00012",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00008",
+      "target": "sso_00014",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00010",
+      "target": "sso_00012",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00010",
+      "target": "sso_00014",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00012",
+      "target": "sso_00014",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "DEPENDENCIES.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/play-tts.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "tts/tts_sample.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::DEPENDENCIES.md::package_installation::24",
+      "identity_key": "DEPENDENCIES.md::package_installation::24",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::64cbc49a09fb84bbf74d",
+      "kind": "value",
+      "value": "DEPENDENCIES.md::package_installation::24",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::DEPENDENCIES.md::package_installation::25",
+      "identity_key": "DEPENDENCIES.md::package_installation::25",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::7d772674142d2b89ac3c",
+      "kind": "value",
+      "value": "DEPENDENCIES.md::package_installation::25",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::DEPENDENCIES.md::package_installation::26",
+      "identity_key": "DEPENDENCIES.md::package_installation::26",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::19b304a336125fa368c1",
+      "kind": "value",
+      "value": "DEPENDENCIES.md::package_installation::26",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::DEPENDENCIES.md::package_installation::27",
+      "identity_key": "DEPENDENCIES.md::package_installation::27",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::aa8b103ecd21727b1f25",
+      "kind": "value",
+      "value": "DEPENDENCIES.md::package_installation::27",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::README.md::package_installation::31",
+      "identity_key": "README.md::package_installation::31",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::1cd4cfc8f4b122c4ea3b",
+      "kind": "value",
+      "value": "README.md::package_installation::31",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::README.md::package_installation::32",
+      "identity_key": "README.md::package_installation::32",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::b4e2cb812ed39376821b",
+      "kind": "value",
+      "value": "README.md::package_installation::32",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::README.md::package_installation::33",
+      "identity_key": "README.md::package_installation::33",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::46530fef79161850290d",
+      "kind": "value",
+      "value": "README.md::package_installation::33",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/play-tts.sh::DEFAULT_CONDA_ENV",
+      "identity_key": "scripts/play-tts.sh::DEFAULT_CONDA_ENV",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::dd67468f02580639619d",
+      "kind": "value",
+      "value": "scripts/play-tts.sh::DEFAULT_CONDA_ENV",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/play-tts.sh::data_receive::",
+      "identity_key": "scripts/play-tts.sh::data_receive::",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a9d5b021be4dc32260f0",
+      "kind": "value",
+      "value": "scripts/play-tts.sh::data_receive::",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/play-tts.sh::credential_data_access::101",
+      "identity_key": "scripts/play-tts.sh::credential_data_access::101",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::8f2f8876de1ae7ddc1cd",
+      "kind": "value",
+      "value": "scripts/play-tts.sh::credential_data_access::101",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/play-tts.sh::credential_data_access::107",
+      "identity_key": "scripts/play-tts.sh::credential_data_access::107",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::188cbc12a7ca4534258e",
+      "kind": "value",
+      "value": "scripts/play-tts.sh::credential_data_access::107",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/play-tts.sh::credential_data_access::115",
+      "identity_key": "scripts/play-tts.sh::credential_data_access::115",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f5763b999e46ff02bac8",
+      "kind": "value",
+      "value": "scripts/play-tts.sh::credential_data_access::115",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/play-tts.sh::credential_data_access::129",
+      "identity_key": "scripts/play-tts.sh::credential_data_access::129",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ed27ae4633278f811aeb",
+      "kind": "value",
+      "value": "scripts/play-tts.sh::credential_data_access::129",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

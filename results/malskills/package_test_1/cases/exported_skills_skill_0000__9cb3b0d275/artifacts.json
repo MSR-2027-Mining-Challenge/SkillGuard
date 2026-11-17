@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: theme-wind-gradient-background\r\ndescription: Implements nexusSSO-style CSS grid app background with radial fade from top. Uses --grid-color and sits beneath sidebar/header with glass overlays. Use when adding or updating AppShellBackground or transparent sidebar/header over a global background.\r\n---\r\n\r\n# App Shell Grid Background (nexusSSO pattern)\r\n\r\nReference: `nexusSSO/components/Layout.tsx`\r\n\r\nProject implementation:\r\n\r\n- `components/app-shell-background.tsx`\r\n- `app/globals.css` (`.app-shell-bg`, `.app-shell-bg__grid`, `--grid-color`, glass rules)\r\n- `app/layout.tsx` (`<AppShellBackground />` in body)\r\n- `lib/theme-local.ts` (`applyThemeAccentProperties` sets `--grid-color`)\r\n\r\nQuick rules:\r\n\r\n1. Mount `AppShellBackground` at shell root (body level)\r\n2. CSS grid only \u2014 `linear-gradient` 40\u00d740px, no SVG, no animation\r\n3. Radial mask fade from top: `ellipse 100% 80% at 50% 0%`\r\n4. `--grid-color` from theme accent (`color-mix(in oklch, themeColor 14%, transparent)`)\r\n5. Dark mode: grid layer `opacity: 0.5`\r\n6. Sidebar + header use glass (`backdrop-filter`) so grid shows underneath\r\n",
+    "content_hash": "9d079a4ba8287b82e2e8f46f3426ca6cdec6d68a35b203706df546b5ec37819c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 25,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1115,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,18 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_0.py"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_1.py"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_2.py"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_4.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_5.py"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "value::120ddbca3f1b9fda8aca" [label="value::120ddbca3f1b9fda8aca\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password" -> "value::120ddbca3f1b9fda8aca" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password" [label="has_operand"];
+}

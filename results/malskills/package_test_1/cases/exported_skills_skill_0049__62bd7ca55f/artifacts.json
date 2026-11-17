@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: sic-overlap-stark-units-number-theory\r\ncategory: quantum-math\r\ndescription: Quantum SIC-POVM overlap analysis via algebraic number theory \u2014 Stark units, ray class fields, and Galois theory for exact quantum state characterization. Use when analyzing SIC-POVM overlaps, quantum state tomography, algebraic number theory in quantum information, or Stark units.\r\ntrigger_words: [\"SIC-POVM\", \"Stark units\", \"quantum overlap\", \"ray class field\", \"SIC overlap\", \"quantum state algebraic\", \"algebraic number theory quantum\"]\r\nsource: arxiv:2606.23535\r\n---\r\n\r\n# SIC-POVM Overlaps via Stark Units\r\n\r\n## Overview\r\n\r\nMethodology connecting Symmetric Informationally Complete Positive Operator-Valued Measures (SIC-POVMs) in quantum information theory with deep algebraic number theory through Stark units from ray class fields.\r\n\r\n**arXiv**: 2606.23535 (2026-06-22)  \r\n**Authors**: Ingemar Bengtsson, Gary McConnell\r\n\r\n## Core Methodology\r\n\r\n### SIC-POVM Overlap Structure\r\n\r\n1. **SIC-POVM Definition**: A set of d\u00b2 equiangular lines in \u2102\u1d48 where mutual inner products have constant magnitude\r\n2. **Overlap Algebraicity**: The mutual scalar products (overlaps) of SIC-POVM vectors are algebraic numbers\r\n3. **Stark Unit Connection**: Overlap units are products of integral powers of square roots of Stark units from ray class fields\r\n\r\n### Key Steps\r\n\r\n1. **Identify the base field**: For a given dimension d, identify the associated imaginary quadratic field\r\n2. **Construct ray class fields**: Build ray class fields attached to the maximal ring of integers\r\n3. **Extract Stark units**: Compute Stark units from these ray class fields using analytic class number formulas\r\n4. **Map to overlaps**: Express SIC-POVM overlap values as products of powers of square roots of these Stark units\r\n5. **Handle non-minimal cases**: For non-minimal SIC-POVMs, the structure involves multiple ray class fields\r\n\r\n### Mathematical Framework\r\n\r\n- **Ray class fields**: Abelian extensions of number fields classified by ideal classes\r\n- **Stark conjectures**: Relate special values of L-functions to units in number fields\r\n- **Galois action**: The Galois group acts on SIC-POVM overlaps, revealing arithmetic structure\r\n\r\n## Application Patterns\r\n\r\n### Quantum State Characterization\r\n```python\r\n# Pattern: Using number theory to characterize quantum states\r\n# 1. Identify the algebraic structure of state overlaps\r\n# 2. Map to known number-theoretic objects (Stark units, class fields)\r\n# 3. Use Galois theory to understand symmetry properties\r\n```\r\n\r\n### Exact Quantum Computation\r\n- Stark units provide exact algebraic representations of quantum state overlaps\r\n- Enables exact computation without floating-point approximations\r\n- Critical for quantum algorithms requiring precise state preparation\r\n\r\n### SIC-POVM Construction\r\n1. Start with the associated imaginary quadratic order\r\n2. Compute the relevant ray class field\r\n3. Extract Stark units analytically\r\n4. Construct SIC-POVM vectors from these algebraic numbers\r\n5. Verify equiangularity through algebraic identities\r\n\r\n## Reusable Patterns\r\n\r\n### Pattern 1: Algebraic Quantum State Analysis\r\n- **Problem**: Characterize quantum states with algebraic precision\r\n- **Approach**: Map state overlaps to algebraic number theory objects\r\n- **Benefit**: Exact computation, symmetry analysis, classification\r\n\r\n### Pattern 2: Ray Class Field Construction\r\n- **Problem**: Build appropriate number field extensions for quantum states\r\n- **Approach**: Use class field theory to construct minimal extensions\r\n- **Benefit**: Systematic construction, provable correctness\r\n\r\n### Pattern 3: Stark Unit Extraction\r\n- **Problem**: Compute special units needed for state characterization\r\n- **Approach**: Use analytic class number formulas and L-function values\r\n- **Benefit**: Efficient computation, connection to deep number theory\r\n\r\n## Pitfalls\r\n\r\n1. **Non-minimal SIC-POVMs**: The overlap structure becomes more complex, involving multiple ray class fields\r\n2. **Numerical precision**: Exact algebraic computation is essential; floating-point approximations miss the structure\r\n3. **Dimension dependence**: Different dimensions may require different algebraic approaches\r\n4. **Galois group complexity**: For large dimensions, the Galois group structure can be computationally intensive\r\n\r\n## Verification\r\n\r\n- Check that computed overlaps satisfy the SIC-POVM equiangularity condition\r\n- Verify that overlap values are indeed algebraic units\r\n- Confirm Galois action preserves the SIC structure\r\n- Cross-validate with numerical SIC-POVM constructions\r\n\r\n## Related Concepts\r\n\r\n- Class field theory\r\n- Stark conjectures\r\n- SIC-POVM existence conjecture (Zauner's conjecture)\r\n- Hilbert's 12th problem\r\n- Quantum state tomography\r\n- Algebraic quantum information theory\r\n",
+    "content_hash": "0e395baf7ba3817b0effdfb6fac6412c96265692b02acf95d84a642460f98764",
+    "generated": false,
+    "is_text": true,
+    "line_count": 101,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4814,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "# Pattern: Using number theory to characterize quantum states\r\n# 1. Identify the algebraic structure of state overlaps\r\n# 2. Map to known number-theoretic objects (Stark units, class fields)\r\n# 3. Use Galois theory to understand symmetry properties",
+    "content_hash": "05b68a42c73b5916725dc5d5217cc78cd8c6b152a3c287f3186271ab3714ace3",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_0.py",
+    "size_bytes": 248,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 48,
+    "source_start_line": 43
+  }
+]

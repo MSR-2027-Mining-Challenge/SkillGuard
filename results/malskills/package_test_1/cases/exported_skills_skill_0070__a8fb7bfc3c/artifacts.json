@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: test-invariants\r\ndescription: >\r\n  Use when editing, generating, reviewing, or debugging migrated dbt unit test\r\n  specs and review artifacts that must stay consistent across paired test\r\n  skills.\r\nuser-invocable: false\r\nargument-hint: \"<schema.object> \u2014 optional object context\"\r\n---\r\n\r\n# Test Invariants\r\n\r\nShared contract for `generating-tests` and `reviewing-tests`. Keep these rules stable so the pair can evolve without drifting.\r\n\r\n## When to Use\r\n\r\n- shared test-generation and test-review rules are repeated in multiple docs\r\n- a spec, review artifact, or repair pass looks self-contradictory\r\n- you are editing either test skill and need the pair-level contract\r\n\r\nDo not use this skill for command orchestration, readiness checks, or fixture-quality heuristics that belong only to review.\r\n\r\n## Quick Reference\r\n\r\n| Invariant | Rule |\r\n|---|---|\r\n| Source of truth | Re-derive branches from current SQL; stored manifests may be stale |\r\n| Artifact ownership | Generator owns `TestSpec`; reviewer owns `TestReviewOutput` |\r\n| Cross-artifact IDs | Branch, scenario, uncovered, and feedback IDs must resolve within the owning artifact |\r\n| Repair scope | On reviewer-driven reruns, repair named gaps first and preserve non-targeted approved scenarios and `expect` blocks |\r\n| Evidence standard | Coverage and verdict claims must be derivable from artifact content, not prose |\r\n\r\n## Common Mistakes\r\n\r\n- Treating an older `branch_manifest` as authoritative.\r\n- Letting reviewer feedback expand into broad regeneration without an explicit request.\r\n- Filling review coverage fields from generator-owned branches instead of reviewer-owned evidence.\r\n- Reporting complete coverage while unresolved uncovered or untestable branches still exist in the artifact.\r\n",
+    "content_hash": "7eea85e40d56e19e9cd12fc3019a9d700c1cfa9ec200e8fa4eb9af220a6d8bda",
+    "generated": false,
+    "is_text": true,
+    "line_count": 39,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1780,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

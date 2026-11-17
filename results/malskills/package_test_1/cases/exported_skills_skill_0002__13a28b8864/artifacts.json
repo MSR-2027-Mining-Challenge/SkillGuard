@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: fschlatt-ner-eval\r\ndescription: Compute fschlatt/ner_eval via the HuggingFace `evaluate` library. Use when the user has predictions + references and wants the canonical implementation of fschlatt/ner_eval.\r\nmetadata:\r\n  skill_kind: metric\r\n  source_lib: huggingface-evaluate\r\n  hf_module: fschlatt/ner_eval\r\n  source: library_introspection\r\n---\r\n\r\n# fschlatt-ner-eval\r\n\r\n> Metric `fschlatt/ner_eval` from the HuggingFace `evaluate` library.\r\n\r\n## When to invoke\r\n\r\nUser asks to compute `fschlatt/ner_eval` or wants HF evaluate's canonical version.\r\n\r\n## Recipe\r\n\r\n```python\r\nimport evaluate\r\nmetric = evaluate.load(\"fschlatt/ner_eval\")\r\nresult = metric.compute(predictions=preds, references=refs)\r\nprint(result)\r\n```\r\n\r\n## Don'ts\r\n\r\n- Don't assume your in-house `fschlatt/ner_eval` matches HF \u2014 version conventions vary.\r\n- Many evaluate metrics have task-specific arguments (`average=`, `lang=`, `model_type=`); read the metric card before reporting numbers.\r\n",
+    "content_hash": "2cdc07f13ab6edc005e8039995381bc92b522798f04e98445c411b31d30b61d4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 32,
+    "relative_path": "SKILL.md",
+    "size_bytes": 974,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "import evaluate\r\nmetric = evaluate.load(\"fschlatt/ner_eval\")\r\nresult = metric.compute(predictions=preds, references=refs)\r\nprint(result)",
+    "content_hash": "5511b72a521c76dd83756a31da1465f9a6b57e018e4caf8bc1ef2c668b264eaf",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_0.py",
+    "size_bytes": 136,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 26,
+    "source_start_line": 21
+  }
+]

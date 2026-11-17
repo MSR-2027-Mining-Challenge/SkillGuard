@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "output = subprocess.check_output([\"git\", \"log\", \"--oneline\", \"-5\"], text=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.py::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.py::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.py:5:5:subprocess.check_output()",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.py::system_command_execution::5"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  }
+]

@@ -1,0 +1,1347 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "path": ".malskills_fences/SKILL__fence_12.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "path": ".malskills_fences/SKILL__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "path": "references/surfaces.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0013",
+      "path": "references/.malskills_fences/surfaces__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0014",
+      "path": "references/.malskills_fences/surfaces__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0015",
+      "path": "references/.malskills_fences/surfaces__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0016",
+      "path": "scripts/deploy-analyze.mjs",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0017",
+      "path": "scripts/deploy-execute.mjs",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0018",
+      "path": "scripts/deploy-preflight.mjs",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0004",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "target": "value::efa04899e25b300fc2c9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::scripts/deploy-analyze.mjs::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/deploy-analyze.mjs::cmd",
+      "target": "value::a63982a87e767d699164",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::36",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::36",
+      "target": "value::b665a1d9947f51f8fe9f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::102",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::102",
+      "target": "value::3f92a89d0196d740ec1d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::114",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::114",
+      "target": "value::8867137be5bcbb2f776c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::61",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::61",
+      "target": "value::bf65ef12e70473f10d87",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::67",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::67",
+      "target": "value::654b3c566b083a637c49",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00007",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::72",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::72",
+      "target": "value::a376cdbd435949e0966a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00008",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::78",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::78",
+      "target": "value::2370fa89b0a7f5afb8ca",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd",
+      "target": "value::4eae2432ee77982b00b3",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::99",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::99",
+      "target": "value::e7e2966d1902164d0eba",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00012",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::112",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::112",
+      "target": "value::de2c808e34e6e3251415",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00013",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::119",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::119",
+      "target": "value::ec0759917f4c9a760864",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00014",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::172",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::172",
+      "target": "value::5d27b7f0aa413bdc6300",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00015",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::341",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::341",
+      "target": "value::bb855689bdaefc02c560",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00016",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::353",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::353",
+      "target": "value::f59b2d0178f91dbd6f78",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00017",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::398",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::398",
+      "target": "value::867e7ff348fc94af7a90",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00018",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::409",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::409",
+      "target": "value::ff1137d417460a112496",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00019",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::419",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::419",
+      "target": "value::fca85b2782f53d78f2ca",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00020",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::427",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::427",
+      "target": "value::89c37ae059ea8f15c531",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00021",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::434",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::434",
+      "target": "value::dacc6ce9c342abdef227",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00022",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::442",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::442",
+      "target": "value::859e0c44ab58db1cfec6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00023",
+      "target": "obj::symbolic_reference::scripts/deploy-execute.mjs::ghCmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/deploy-execute.mjs::ghCmd",
+      "target": "value::c9335920ed9d3c0be5aa",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00024",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::503",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::503",
+      "target": "value::4b59c87970150de4901f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00025",
+      "target": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::508",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::508",
+      "target": "value::72a20682b95335239b9b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00026",
+      "target": "obj::symbolic_reference::scripts/deploy-preflight.mjs::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/deploy-preflight.mjs::cmd",
+      "target": "value::a90af9370fab61c65f76",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00027",
+      "target": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::51",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::51",
+      "target": "value::7951e18545a66e4c4351",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00028",
+      "target": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::301",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::301",
+      "target": "value::4ef9e292c38fb814f78c",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00009",
+      "target": "sso_00010",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_12.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": "references/surfaces.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0013",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/surfaces__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0014",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/surfaces__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0015",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/surfaces__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0016",
+      "kind": "artifact",
+      "path": "scripts/deploy-analyze.mjs",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0017",
+      "kind": "artifact",
+      "path": "scripts/deploy-execute.mjs",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0018",
+      "kind": "artifact",
+      "path": "scripts/deploy-preflight.mjs",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "identity_key": ".malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::efa04899e25b300fc2c9",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/deploy-analyze.mjs::cmd",
+      "identity_key": "scripts/deploy-analyze.mjs::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::a63982a87e767d699164",
+      "kind": "value",
+      "value": "scripts/deploy-analyze.mjs::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::36",
+      "identity_key": "scripts/deploy-analyze.mjs::system_command_execution::36",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::b665a1d9947f51f8fe9f",
+      "kind": "value",
+      "value": "scripts/deploy-analyze.mjs::system_command_execution::36",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::102",
+      "identity_key": "scripts/deploy-analyze.mjs::system_command_execution::102",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::3f92a89d0196d740ec1d",
+      "kind": "value",
+      "value": "scripts/deploy-analyze.mjs::system_command_execution::102",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::114",
+      "identity_key": "scripts/deploy-analyze.mjs::system_command_execution::114",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::8867137be5bcbb2f776c",
+      "kind": "value",
+      "value": "scripts/deploy-analyze.mjs::system_command_execution::114",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::61",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::61",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::bf65ef12e70473f10d87",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::61",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::67",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::67",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::654b3c566b083a637c49",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::67",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::72",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::72",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::a376cdbd435949e0966a",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::72",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::78",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::78",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::2370fa89b0a7f5afb8ca",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::78",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd",
+      "identity_key": "scripts/deploy-execute.mjs::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::4eae2432ee77982b00b3",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::99",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::99",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::e7e2966d1902164d0eba",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::99",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::112",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::112",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::de2c808e34e6e3251415",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::112",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::119",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::119",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::ec0759917f4c9a760864",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::119",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::172",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::172",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::5d27b7f0aa413bdc6300",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::172",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::341",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::341",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::bb855689bdaefc02c560",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::341",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::353",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::353",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::f59b2d0178f91dbd6f78",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::353",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::398",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::398",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::867e7ff348fc94af7a90",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::398",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::409",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::409",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::ff1137d417460a112496",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::409",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::419",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::419",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::fca85b2782f53d78f2ca",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::419",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::427",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::427",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::89c37ae059ea8f15c531",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::427",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::434",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::434",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::dacc6ce9c342abdef227",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::434",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::442",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::442",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::859e0c44ab58db1cfec6",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::442",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/deploy-execute.mjs::ghCmd",
+      "identity_key": "scripts/deploy-execute.mjs::ghCmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::c9335920ed9d3c0be5aa",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::ghCmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::503",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::503",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::4b59c87970150de4901f",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::503",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::508",
+      "identity_key": "scripts/deploy-execute.mjs::system_command_execution::508",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::72a20682b95335239b9b",
+      "kind": "value",
+      "value": "scripts/deploy-execute.mjs::system_command_execution::508",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/deploy-preflight.mjs::cmd",
+      "identity_key": "scripts/deploy-preflight.mjs::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::a90af9370fab61c65f76",
+      "kind": "value",
+      "value": "scripts/deploy-preflight.mjs::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::51",
+      "identity_key": "scripts/deploy-preflight.mjs::system_command_execution::51",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::7951e18545a66e4c4351",
+      "kind": "value",
+      "value": "scripts/deploy-preflight.mjs::system_command_execution::51",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::301",
+      "identity_key": "scripts/deploy-preflight.mjs::system_command_execution::301",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::4ef9e292c38fb814f78c",
+      "kind": "value",
+      "value": "scripts/deploy-preflight.mjs::system_command_execution::301",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

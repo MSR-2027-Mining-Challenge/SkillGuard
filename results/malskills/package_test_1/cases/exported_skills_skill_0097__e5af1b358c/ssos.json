@@ -1,0 +1,871 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "git diff v{{PREVIOUS}}..HEAD -- skills/{{SKILL_NAME}}/",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-analyze.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return execSync(cmd, { encoding: \"utf8\", stdio: [\"pipe\", \"pipe\", \"pipe\"] }).trim();",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy-analyze.mjs::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy-analyze.mjs::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-analyze.mjs:26:26:child_process.execSync()",
+      "source_end_line": 26,
+      "source_start_line": 26
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy-analyze.mjs::cmd"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-analyze.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::36": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::36",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-analyze.mjs:36:36:process.exit()",
+      "source_end_line": 36,
+      "source_start_line": 36
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::36"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-analyze.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::102": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::102",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-analyze.mjs:102:102:process.exit()",
+      "source_end_line": 102,
+      "source_start_line": 102
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::102"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-analyze.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::114": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::114",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-analyze.mjs:114:114:process.exit()",
+      "source_end_line": 114,
+      "source_start_line": 114
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-analyze.mjs::system_command_execution::114"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::61": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::61",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:61:61:process.exit()",
+      "source_end_line": 61,
+      "source_start_line": 61
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::61"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::67": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::67",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:67:67:process.exit()",
+      "source_end_line": 67,
+      "source_start_line": 67
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::67"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::72": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::72",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:72:72:process.exit()",
+      "source_end_line": 72,
+      "source_start_line": 72
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::72"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::78": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::78",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:78:78:process.exit()",
+      "source_end_line": 78,
+      "source_start_line": 78
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::78"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return execSync(cmd, { encoding: \"utf8\", stdio: [\"pipe\", \"pipe\", \"pipe\"] }).trim();",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:87:87:child_process.execSync()",
+      "source_end_line": 87,
+      "source_start_line": 87
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return execSync(cmd, { encoding: \"utf8\", stdio: [\"pipe\", \"pipe\", \"pipe\"] }).trim();",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:95:95:child_process.execSync()",
+      "source_end_line": 95,
+      "source_start_line": 95
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy-execute.mjs::cmd"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::99": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::99",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:99:99:process.exit()",
+      "source_end_line": 99,
+      "source_start_line": 99
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::99"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::112": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::112",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:112:112:process.exit()",
+      "source_end_line": 112,
+      "source_start_line": 112
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::112"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::119": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::119",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:119:119:process.exit()",
+      "source_end_line": 119,
+      "source_start_line": 119
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::119"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::172": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::172",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:172:172:process.exit()",
+      "source_end_line": 172,
+      "source_start_line": 172
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::172"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::341": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::341",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:341:341:process.exit()",
+      "source_end_line": 341,
+      "source_start_line": 341
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::341"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::353": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::353",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:353:353:process.exit()",
+      "source_end_line": 353,
+      "source_start_line": 353
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::353"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::398": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::398",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:398:398:process.exit()",
+      "source_end_line": 398,
+      "source_start_line": 398
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::398"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::409": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::409",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:409:409:process.exit()",
+      "source_end_line": 409,
+      "source_start_line": 409
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::409"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "execSync(`git push ${remote} HEAD`, { encoding: \"utf8\", stdio: \"pipe\" });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::419": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::419",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:419:419:child_process.execSync()",
+      "source_end_line": 419,
+      "source_start_line": 419
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::419"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::427": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::427",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:427:427:process.exit()",
+      "source_end_line": 427,
+      "source_start_line": 427
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::427"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "execSync(`git push ${remote} --tags`, { encoding: \"utf8\", stdio: \"pipe\" });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::434": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::434",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:434:434:child_process.execSync()",
+      "source_end_line": 434,
+      "source_start_line": 434
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::434"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::442": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::442",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:442:442:process.exit()",
+      "source_end_line": 442,
+      "source_start_line": 442
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::442"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "execSync(ghCmd, { encoding: \"utf8\", stdio: \"pipe\" });",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy-execute.mjs::ghCmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy-execute.mjs::ghCmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:463:463:child_process.execSync()",
+      "source_end_line": 463,
+      "source_start_line": 463
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy-execute.mjs::ghCmd"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::503": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::503",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:503:503:process.exit()",
+      "source_end_line": 503,
+      "source_start_line": 503
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::503"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-execute.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-execute.mjs::system_command_execution::508": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-execute.mjs::system_command_execution::508",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-execute.mjs:508:508:process.exit()",
+      "source_end_line": 508,
+      "source_start_line": 508
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-execute.mjs::system_command_execution::508"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-preflight.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return execSync(cmd, { encoding: \"utf8\", stdio: [\"pipe\", \"pipe\", \"pipe\"] }).trim();",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy-preflight.mjs::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy-preflight.mjs::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-preflight.mjs:28:28:child_process.execSync()",
+      "source_end_line": 28,
+      "source_start_line": 28
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy-preflight.mjs::cmd"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-preflight.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::51": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::51",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-preflight.mjs:51:51:process.exit()",
+      "source_end_line": 51,
+      "source_start_line": 51
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::51"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      "scripts/deploy-preflight.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(exitCode);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::301": "command"
+      },
+      "operation_object": "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::301",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/deploy-preflight.mjs:301:301:process.exit()",
+      "source_end_line": 301,
+      "source_start_line": 301
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy-preflight.mjs::system_command_execution::301"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "system_command_execution"
+  }
+]

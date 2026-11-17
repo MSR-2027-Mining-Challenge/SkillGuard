@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: statusbar\r\ndescription: \"\u26c1 Manage your statusbar: the persistent gauge showing model, rate limits, context %, directory and git branch at the bottom of Claude Code\"\r\n---\r\n\r\n# Statusbar\r\n\r\nA single command to manage the Claude Code statusbar. Detect current state and act accordingly.\r\n\r\n## Step 1: Detect current state\r\n\r\nCheck if the statusbar is installed:\r\n- Does `~/.claude/statusbar-command.sh` exist?\r\n- Does `~/.claude/settings.json` contain a `statusLine` key?\r\n- Does `~/.claude/statusbar-config.json` exist?\r\n\r\n## Step 2: Route based on state\r\n\r\n### If NOT installed\r\n\r\nTell the user the statusbar is not installed and show what it looks like:\r\n\r\n```\r\nOpus 4.6  5hr:\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 12%  ctx:\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591 24%  Code/myproject  main\r\n```\r\n\r\nAsk: **Install now?**\r\n\r\nIf yes, follow the install steps from `/statusbar-install`.\r\n\r\n### If already installed\r\n\r\nShow current configuration and a live preview of what the statusbar looks like.\r\n\r\nThen ask what they'd like to do:\r\n\r\n1. **Configure** \u2014 change segments, order, bar style, labels, display mode, thresholds\r\n2. **Reset** \u2014 delete config and restore defaults\r\n3. **Uninstall** \u2014 remove statusbar and restore previous config\r\n\r\n#### Configure\r\n\r\nWalk through options interactively. Only ask about what the user wants to change \u2014 don't force them through every option.\r\n\r\nAvailable settings:\r\n\r\n| Setting | Default | Options |\r\n|---------|---------|---------|\r\n| Segments | model, rate, context, directory, branch | Pick which to show and reorder |\r\n| Display mode | used | `used` (24% consumed) or `remaining` (76% available) |\r\n| Color ramp | same | `same` (brightens in gauge color) or `red` (shifts to yellow/red) |\r\n| Bar style | `\u2588\u2588\u2591\u2591` | `\u25a0\u25a0\u25a1\u25a1`, `\u25cf\u25cf\u25cb\u25cb`, `##--`, or custom characters |\r\n| Bar width | 10 | Any number |\r\n| Labels | rate: auto, context: ctx | Custom strings (e.g. ctx \u2192 window) |\r\n| Thresholds | 50% / 80% | When colors shift |\r\n| Directory | relative to ~/ | Absolute, or strip custom prefix |\r\n\r\nSave changes to `~/.claude/statusbar-config.json`. Only include keys the user customized.\r\n\r\n#### Reset\r\n\r\nDelete `~/.claude/statusbar-config.json`. The statusbar script falls back to built-in defaults.\r\n\r\n#### Uninstall\r\n\r\nFollow the steps from `/statusbar-uninstall`. Restore any backed-up configuration.\r\n\r\n## Important\r\n\r\n- The statusbar script is installed at `~/.claude/statusbar-command.sh` (Claude's expected filename)\r\n- The config is at `~/.claude/statusbar-config.json` (our config)\r\n- The settings.json key is `statusLine` (Claude's key name)\r\n- After any changes, remind the user to restart Claude Code\r\n- `jq` is required at runtime for the statusbar script\r\n",
+    "content_hash": "0b5a8da2194d5ae25b8cc9d4760618072c33ebd2801d18759c272cff58fcc7e1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 75,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2731,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

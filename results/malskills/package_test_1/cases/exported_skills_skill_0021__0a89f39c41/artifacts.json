@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: programming-language-youtube\r\ndescription: |\r\n  Trigger when the user wants to learn, implement, debug, or extend \"\u5236\u4f5c\u4f60\u81ea\u5df1\u7684\u7b80\u5355\u89e3\u91ca\u578b\u7f16\u7a0b\u8bed\u8a00\" or a \u7f16\u7a0b\u8bed\u8a00 build-your-own project using Python. Use this skill for staged Claude Code guidance, milestone planning, minimal implementation, and troubleshooting.\r\n---\r\n\r\n# \u5236\u4f5c\u4f60\u81ea\u5df1\u7684\u7b80\u5355\u89e3\u91ca\u578b\u7f16\u7a0b\u8bed\u8a00\r\n\r\nUse this skill as a project coach for the original build-your-own tutorial.\r\n\r\n## Source\r\n\r\n- **Category**: \u7f16\u7a0b\u8bed\u8a00\r\n- **Language / stack**: Python\r\n- **Original resource**: https://www.youtube.com/watch?v=dj9CBS3ikGA&list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD&index=1\r\n\r\n- Source is marked as video/PDF-like material; first create a transcript or structured outline before implementation.\r\n\r\n## Workflow\r\n\r\n1. Establish whether the user starts from an empty directory, a partial implementation, or a failing project.\r\n2. Default to `Python` unless the user chooses another stack.\r\n3. Read `references/tutorial-map.md` and convert the source into 4-8 implementation milestones.\r\n4. Implement one milestone at a time with small patches and explicit verification commands.\r\n5. Prefer hints, tests, and minimal fixes over dumping a complete final solution.\r\n6. Preserve the user's existing files and style.\r\n\r\n## Milestone template\r\n\r\n1. Project skeleton and first runnable command.\r\n2. Core data model and invariants.\r\n3. Input/parser/protocol/UI boundary.\r\n4. Main algorithm or runtime engine.\r\n5. Integration and end-to-end behavior.\r\n6. Diagnostics, tests, and extensions.\r\n\r\n## Expected outputs\r\n\r\n- A staged implementation plan.\r\n- A minimal project scaffold.\r\n- A focused code patch for the current milestone.\r\n- A debugging explanation and regression test.\r\n",
+    "content_hash": "f526f2b9fd5fb61dfacf75b0369565d5e743bbc95c72e220aaf1e564653a036b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 43,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1765,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"skill_name\": \"programming-language-youtube\",\r\n  \"evals\": [\r\n    {\r\n      \"id\": 1,\r\n      \"prompt\": \"\u6211\u60f3\u7528 Python \u4ece\u96f6\u5b9e\u73b0\u300c\u5236\u4f5c\u4f60\u81ea\u5df1\u7684\u7b80\u5355\u89e3\u91ca\u578b\u7f16\u7a0b\u8bed\u8a00\u300d\uff0c\u8bf7\u89c4\u5212\u91cc\u7a0b\u7891\u5e76\u53ea\u5b8c\u6210\u7b2c\u4e00\u9636\u6bb5\u3002\",\r\n      \"expected_output\": \"Staged plan plus first milestone guidance.\",\r\n      \"files\": []\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"prompt\": \"\u6211\u5728\u5b9e\u73b0\u300c\u5236\u4f5c\u4f60\u81ea\u5df1\u7684\u7b80\u5355\u89e3\u91ca\u578b\u7f16\u7a0b\u8bed\u8a00\u300d\u65f6\u6d4b\u8bd5\u5931\u8d25\uff0c\u8bf7\u9605\u8bfb\u9879\u76ee\u5e76\u505a\u6700\u5c0f\u4fee\u590d\u3002\",\r\n      \"expected_output\": \"Diagnosis, minimal fix, and verification.\",\r\n      \"files\": []\r\n    },\r\n    {\r\n      \"id\": 3,\r\n      \"prompt\": \"\u8bf7\u57fa\u4e8e https://www.youtube.com/watch?v=dj9CBS3ikGA&list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD&index=1 \u8f6c\u6362\u6210 Claude Code \u5b66\u4e60\u4efb\u52a1\u6e05\u5355\u3002\",\r\n      \"expected_output\": \"Milestone task list with deliverables and checks.\",\r\n      \"files\": []\r\n    }\r\n  ]\r\n}\r\n",
+    "content_hash": "66d2f198355542569fedb2170af6600ea71fcee4e5c21e6774220687450f70ec",
+    "generated": false,
+    "is_text": true,
+    "line_count": 24,
+    "relative_path": "evals/evals.json",
+    "size_bytes": 898,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "markdown",
+    "content": "# Concepts checklist: \u5236\u4f5c\u4f60\u81ea\u5df1\u7684\u7b80\u5355\u89e3\u91ca\u578b\u7f16\u7a0b\u8bed\u8a00\r\n\r\n- Confirm target stack: `Python`.\r\n- Identify the smallest observable behavior.\r\n- Define core state and invariants before adding features.\r\n- Add verification after every milestone.\r\n- Explain tradeoffs and failure modes while coding.\r\n",
+    "content_hash": "432a5e1830806ed78f97c154670d561da094f18cad1193e7cf72578932aecd73",
+    "generated": false,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": "references/concepts.md",
+    "size_bytes": 308,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "markdown",
+    "content": "# Tutorial map: \u5236\u4f5c\u4f60\u81ea\u5df1\u7684\u7b80\u5355\u89e3\u91ca\u578b\u7f16\u7a0b\u8bed\u8a00\r\n\r\n- Source: https://www.youtube.com/watch?v=dj9CBS3ikGA&list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD&index=1\r\n- Category: \u7f16\u7a0b\u8bed\u8a00\r\n- Language / stack: Python\r\n\r\n## Suggested milestones\r\n\r\n| Milestone | Deliverable | Verification |\r\n|---|---|---|\r\n| Skeleton | Minimal runnable project | Build/run command succeeds |\r\n| Core model | Main types and invariants | Unit tests or assertions |\r\n| Input layer | Parser/loader/protocol/UI input | Fixture or sample input test |\r\n| Engine | Main algorithm/runtime behavior | Golden output or demo |\r\n| Integration | End-to-end flow | Integration command |\r\n| Hardening | Errors, edge cases, docs | Regression tests |\r\n",
+    "content_hash": "3414892c7560d20347c978e63aa480deefaa58d8b1cb71e6ce69e41b855bdde1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 17,
+    "relative_path": "references/tutorial-map.md",
+    "size_bytes": 721,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

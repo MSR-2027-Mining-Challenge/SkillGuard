@@ -1,0 +1,31 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "password = os.getenv(\"DB_PASSWORD\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password",
+      "secret_class": "generic_secret",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::password"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "environment_access"
+  }
+]

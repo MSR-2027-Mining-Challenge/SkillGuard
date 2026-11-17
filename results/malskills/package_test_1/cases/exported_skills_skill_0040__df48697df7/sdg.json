@@ -1,0 +1,1778 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "LICENSE.txt",
+      "type": "text"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": "agents/analyzer.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0008",
+      "path": "agents/comparator.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0009",
+      "path": "agents/grader.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0010",
+      "path": "assets/eval_review.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0011",
+      "path": "claw-config.example.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0012",
+      "path": "eval-viewer/generate_review.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0013",
+      "path": "eval-viewer/viewer.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0014",
+      "path": "references/schemas.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0015",
+      "path": "scripts/__init__.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0016",
+      "path": "scripts/aggregate_benchmark.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0017",
+      "path": "scripts/api_client.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0018",
+      "path": "scripts/generate_report.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0019",
+      "path": "scripts/improve_description.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0020",
+      "path": "scripts/package_skill.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0021",
+      "path": "scripts/quick_validate.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0022",
+      "path": "scripts/run_eval.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0023",
+      "path": "scripts/run_loop.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0024",
+      "path": "scripts/utils.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0005",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "target": "value::4f9d593c078f10a28333",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "target": "value::cc46bd757350a436250a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00002",
+      "target": "obj::operation::eval-viewer/generate_review.py::encoding::167",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::encoding::167",
+      "target": "value::23ea070cf954a65d529f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00003",
+      "target": "obj::operation::eval-viewer/generate_review.py::encoding::179",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::encoding::179",
+      "target": "value::95a7b05101d230835a23",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00004",
+      "target": "obj::operation::eval-viewer/generate_review.py::encoding::190",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::encoding::190",
+      "target": "value::8028fff02089bcbfd7a0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00005",
+      "target": "obj::operation::eval-viewer/generate_review.py::encoding::202",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::encoding::202",
+      "target": "value::19f8aeb4f0d253a82efd",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00006",
+      "target": "obj::operation::eval-viewer/generate_review.py::system_command_execution::291",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::system_command_execution::291",
+      "target": "value::fb9d2cda3cc85c64432a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::eval-viewer/generate_review.py::credential_data_access::409",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::credential_data_access::409",
+      "target": "value::328191a8eca4161b7fec",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::operation::eval-viewer/generate_review.py::credential_data_access::414",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::credential_data_access::414",
+      "target": "value::48d2dcae9b1b7e08f4fe",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::operation::eval-viewer/generate_review.py::credential_data_access::436",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::eval-viewer/generate_review.py::credential_data_access::436",
+      "target": "value::fbb6e1b70e3e4445240e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0012",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::eval-viewer/generate_review.py::connection_create::webbrowser.open(url)",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::eval-viewer/generate_review.py::connection_create::webbrowser.open(url)",
+      "target": "value::131ed3d3ab2dd2ab6056",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/aggregate_benchmark.py::file_access::90",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/aggregate_benchmark.py::file_access::90",
+      "target": "value::54e19166d70e160c0c42",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::operation::scripts/aggregate_benchmark.py::file_access::120",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/aggregate_benchmark.py::file_access::120",
+      "target": "value::0c3a277d6e1f8a172a72",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::scripts/aggregate_benchmark.py::file_access::142",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/aggregate_benchmark.py::file_access::142",
+      "target": "value::d05e8bd7e3afc3124234",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::operation::scripts/aggregate_benchmark.py::credential_data_access::367",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/aggregate_benchmark.py::credential_data_access::367",
+      "target": "value::e07b23447ac7e4b37b7c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00015",
+      "target": "obj::operation::scripts/aggregate_benchmark.py::file_access::377",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/aggregate_benchmark.py::file_access::377",
+      "target": "value::25ccc757d2f8cde566c3",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00016",
+      "target": "obj::operation::scripts/aggregate_benchmark.py::file_access::383",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/aggregate_benchmark.py::file_access::383",
+      "target": "value::d2499b305d0429e29b85",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00017",
+      "target": "obj::symbolic_reference::scripts/api_client.py::api_url",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/api_client.py::api_url",
+      "target": "value::8729f6ecc0db9f46b95d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00018",
+      "target": "obj::symbolic_reference::scripts/api_client.py::token",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/api_client.py::token",
+      "target": "value::ecd9e1c3e2841303e0e0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00019",
+      "target": "obj::symbolic_reference::scripts/api_client.py::model",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/api_client.py::model",
+      "target": "value::f031b71a8a98872fca4f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0017",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00020",
+      "target": "obj::symbolic_reference::scripts/api_client.py::timeout",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/api_client.py::timeout",
+      "target": "value::a2187296961ce4fdb13e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0019",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00021",
+      "target": "obj::operation::scripts/improve_description.py::credential_data_access::186",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/improve_description.py::credential_data_access::186",
+      "target": "value::f4a27ebe92bfe732223c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00022",
+      "target": "obj::operation::scripts/package_skill.py::credential_data_access::117",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/package_skill.py::credential_data_access::117",
+      "target": "value::490adf32932b32835de5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00023",
+      "target": "obj::operation::scripts/package_skill.py::credential_data_access::130",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/package_skill.py::credential_data_access::130",
+      "target": "value::c5a48d745d06efbf6f04",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00024",
+      "target": "obj::operation::scripts/package_skill.py::credential_data_access::132",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/package_skill.py::credential_data_access::132",
+      "target": "value::a547207a7e4b27e3cbcb",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0021",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00025",
+      "target": "obj::operation::scripts/quick_validate.py::credential_data_access::99",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/quick_validate.py::credential_data_access::99",
+      "target": "value::4f7ff21d6443d29de734",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0021",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00026",
+      "target": "obj::operation::scripts/quick_validate.py::credential_data_access::103",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/quick_validate.py::credential_data_access::103",
+      "target": "value::a6d6597dffb751e163ab",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0022",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00027",
+      "target": "obj::operation::scripts/run_eval.py::credential_data_access::155",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/run_eval.py::credential_data_access::155",
+      "target": "value::762001ab52a12ccd70ca",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0023",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00028",
+      "target": "obj::operation::scripts/run_loop.py::credential_data_access::268",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/run_loop.py::credential_data_access::268",
+      "target": "value::2c526825584d885a2403",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0023",
+      "target": "sso_00029",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00029",
+      "target": "obj::symbolic_reference::scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))",
+      "target": "value::8b034ab5145575251a48",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00030",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00030",
+      "target": "obj::operation::scripts/utils.py::environment_access::64",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::64",
+      "target": "value::794f59093f0932fc0531",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00031",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00031",
+      "target": "obj::operation::scripts/utils.py::environment_access::65",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::65",
+      "target": "value::007da971b886a87e6d15",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00032",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00032",
+      "target": "obj::operation::scripts/utils.py::environment_access::66",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::66",
+      "target": "value::588a7f376833dd9a4334",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00033",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00033",
+      "target": "obj::operation::scripts/utils.py::environment_access::67",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::67",
+      "target": "value::181b8d91e4b1b44f6638",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00034",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00034",
+      "target": "obj::operation::scripts/utils.py::environment_access::68",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::68",
+      "target": "value::65830033e93aaa52e33c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00035",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00035",
+      "target": "obj::operation::scripts/utils.py::environment_access::69",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::69",
+      "target": "value::3fc6ce6338a8d06a450b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00036",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00036",
+      "target": "obj::operation::scripts/utils.py::environment_access::70",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::70",
+      "target": "value::ac1024acb03418434bcf",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0024",
+      "target": "sso_00037",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00037",
+      "target": "obj::operation::scripts/utils.py::environment_access::71",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/utils.py::environment_access::71",
+      "target": "value::a1083197b6d483e15cd9",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "LICENSE.txt",
+      "type": "text"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "agents/analyzer.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "agents/comparator.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": "agents/grader.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": "assets/eval_review.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": "claw-config.example.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": "eval-viewer/generate_review.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0013",
+      "kind": "artifact",
+      "path": "eval-viewer/viewer.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0014",
+      "kind": "artifact",
+      "path": "references/schemas.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0015",
+      "kind": "artifact",
+      "path": "scripts/__init__.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0016",
+      "kind": "artifact",
+      "path": "scripts/aggregate_benchmark.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0017",
+      "kind": "artifact",
+      "path": "scripts/api_client.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0018",
+      "kind": "artifact",
+      "path": "scripts/generate_report.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0019",
+      "kind": "artifact",
+      "path": "scripts/improve_description.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0020",
+      "kind": "artifact",
+      "path": "scripts/package_skill.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0021",
+      "kind": "artifact",
+      "path": "scripts/quick_validate.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0022",
+      "kind": "artifact",
+      "path": "scripts/run_eval.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0023",
+      "kind": "artifact",
+      "path": "scripts/run_loop.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0024",
+      "kind": "artifact",
+      "path": "scripts/utils.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "identity_key": ".malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::4f9d593c078f10a28333",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "identity_key": ".malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::cc46bd757350a436250a",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "encoding",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::encoding::167",
+      "identity_key": "eval-viewer/generate_review.py::encoding::167",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::23ea070cf954a65d529f",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::encoding::167",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "encoding",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::encoding::179",
+      "identity_key": "eval-viewer/generate_review.py::encoding::179",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::95a7b05101d230835a23",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::encoding::179",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "encoding",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::encoding::190",
+      "identity_key": "eval-viewer/generate_review.py::encoding::190",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::8028fff02089bcbfd7a0",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::encoding::190",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "encoding",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::encoding::202",
+      "identity_key": "eval-viewer/generate_review.py::encoding::202",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::19f8aeb4f0d253a82efd",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::encoding::202",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::system_command_execution::291",
+      "identity_key": "eval-viewer/generate_review.py::system_command_execution::291",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::fb9d2cda3cc85c64432a",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::system_command_execution::291",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::credential_data_access::409",
+      "identity_key": "eval-viewer/generate_review.py::credential_data_access::409",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::328191a8eca4161b7fec",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::credential_data_access::409",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::credential_data_access::414",
+      "identity_key": "eval-viewer/generate_review.py::credential_data_access::414",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::48d2dcae9b1b7e08f4fe",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::credential_data_access::414",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::eval-viewer/generate_review.py::credential_data_access::436",
+      "identity_key": "eval-viewer/generate_review.py::credential_data_access::436",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::fbb6e1b70e3e4445240e",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::credential_data_access::436",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::eval-viewer/generate_review.py::connection_create::webbrowser.open(url)",
+      "identity_key": "eval-viewer/generate_review.py::connection_create::webbrowser.open(url)",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::131ed3d3ab2dd2ab6056",
+      "kind": "value",
+      "value": "eval-viewer/generate_review.py::connection_create::webbrowser.open(url)",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/aggregate_benchmark.py::file_access::90",
+      "identity_key": "scripts/aggregate_benchmark.py::file_access::90",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::54e19166d70e160c0c42",
+      "kind": "value",
+      "value": "scripts/aggregate_benchmark.py::file_access::90",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/aggregate_benchmark.py::file_access::120",
+      "identity_key": "scripts/aggregate_benchmark.py::file_access::120",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::0c3a277d6e1f8a172a72",
+      "kind": "value",
+      "value": "scripts/aggregate_benchmark.py::file_access::120",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/aggregate_benchmark.py::file_access::142",
+      "identity_key": "scripts/aggregate_benchmark.py::file_access::142",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::d05e8bd7e3afc3124234",
+      "kind": "value",
+      "value": "scripts/aggregate_benchmark.py::file_access::142",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/aggregate_benchmark.py::credential_data_access::367",
+      "identity_key": "scripts/aggregate_benchmark.py::credential_data_access::367",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e07b23447ac7e4b37b7c",
+      "kind": "value",
+      "value": "scripts/aggregate_benchmark.py::credential_data_access::367",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/aggregate_benchmark.py::file_access::377",
+      "identity_key": "scripts/aggregate_benchmark.py::file_access::377",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::25ccc757d2f8cde566c3",
+      "kind": "value",
+      "value": "scripts/aggregate_benchmark.py::file_access::377",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/aggregate_benchmark.py::file_access::383",
+      "identity_key": "scripts/aggregate_benchmark.py::file_access::383",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::d2499b305d0429e29b85",
+      "kind": "value",
+      "value": "scripts/aggregate_benchmark.py::file_access::383",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/api_client.py::api_url",
+      "identity_key": "scripts/api_client.py::api_url",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::8729f6ecc0db9f46b95d",
+      "kind": "value",
+      "value": "scripts/api_client.py::api_url",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/api_client.py::token",
+      "identity_key": "scripts/api_client.py::token",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::ecd9e1c3e2841303e0e0",
+      "kind": "value",
+      "value": "scripts/api_client.py::token",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/api_client.py::model",
+      "identity_key": "scripts/api_client.py::model",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::f031b71a8a98872fca4f",
+      "kind": "value",
+      "value": "scripts/api_client.py::model",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/api_client.py::timeout",
+      "identity_key": "scripts/api_client.py::timeout",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::a2187296961ce4fdb13e",
+      "kind": "value",
+      "value": "scripts/api_client.py::timeout",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/improve_description.py::credential_data_access::186",
+      "identity_key": "scripts/improve_description.py::credential_data_access::186",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f4a27ebe92bfe732223c",
+      "kind": "value",
+      "value": "scripts/improve_description.py::credential_data_access::186",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/package_skill.py::credential_data_access::117",
+      "identity_key": "scripts/package_skill.py::credential_data_access::117",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::490adf32932b32835de5",
+      "kind": "value",
+      "value": "scripts/package_skill.py::credential_data_access::117",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/package_skill.py::credential_data_access::130",
+      "identity_key": "scripts/package_skill.py::credential_data_access::130",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::c5a48d745d06efbf6f04",
+      "kind": "value",
+      "value": "scripts/package_skill.py::credential_data_access::130",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/package_skill.py::credential_data_access::132",
+      "identity_key": "scripts/package_skill.py::credential_data_access::132",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a547207a7e4b27e3cbcb",
+      "kind": "value",
+      "value": "scripts/package_skill.py::credential_data_access::132",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/quick_validate.py::credential_data_access::99",
+      "identity_key": "scripts/quick_validate.py::credential_data_access::99",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4f7ff21d6443d29de734",
+      "kind": "value",
+      "value": "scripts/quick_validate.py::credential_data_access::99",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/quick_validate.py::credential_data_access::103",
+      "identity_key": "scripts/quick_validate.py::credential_data_access::103",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a6d6597dffb751e163ab",
+      "kind": "value",
+      "value": "scripts/quick_validate.py::credential_data_access::103",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/run_eval.py::credential_data_access::155",
+      "identity_key": "scripts/run_eval.py::credential_data_access::155",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::762001ab52a12ccd70ca",
+      "kind": "value",
+      "value": "scripts/run_eval.py::credential_data_access::155",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00029"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/run_loop.py::credential_data_access::268",
+      "identity_key": "scripts/run_loop.py::credential_data_access::268",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2c526825584d885a2403",
+      "kind": "value",
+      "value": "scripts/run_loop.py::credential_data_access::268",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00030"
+      ],
+      "id": "sso_00029",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))",
+      "identity_key": "scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::8b034ab5145575251a48",
+      "kind": "value",
+      "value": "scripts/run_loop.py::connection_create::webbrowser.open(str(live_report_path))",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00031"
+      ],
+      "id": "sso_00030",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::64",
+      "identity_key": "scripts/utils.py::environment_access::64",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::794f59093f0932fc0531",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::64",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00032"
+      ],
+      "id": "sso_00031",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::65",
+      "identity_key": "scripts/utils.py::environment_access::65",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::007da971b886a87e6d15",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::65",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00033"
+      ],
+      "id": "sso_00032",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::66",
+      "identity_key": "scripts/utils.py::environment_access::66",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::588a7f376833dd9a4334",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::66",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00034"
+      ],
+      "id": "sso_00033",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::67",
+      "identity_key": "scripts/utils.py::environment_access::67",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::181b8d91e4b1b44f6638",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::67",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00035"
+      ],
+      "id": "sso_00034",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::68",
+      "identity_key": "scripts/utils.py::environment_access::68",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::65830033e93aaa52e33c",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::68",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00036"
+      ],
+      "id": "sso_00035",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::69",
+      "identity_key": "scripts/utils.py::environment_access::69",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::3fc6ce6338a8d06a450b",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::69",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00037"
+      ],
+      "id": "sso_00036",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::70",
+      "identity_key": "scripts/utils.py::environment_access::70",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ac1024acb03418434bcf",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::70",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00038"
+      ],
+      "id": "sso_00037",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/utils.py::environment_access::71",
+      "identity_key": "scripts/utils.py::environment_access::71",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a1083197b6d483e15cd9",
+      "kind": "value",
+      "value": "scripts/utils.py::environment_access::71",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

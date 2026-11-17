@@ -1,0 +1,565 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_4.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_5.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_6.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0008",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "path": ".malskills_fences/SKILL__fence_14.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0013",
+      "path": ".malskills_fences/SKILL__fence_15.js",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::2",
+      "target": "value::fd0e3eeea63d30da4b78",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_2.js::system_command_execution::9",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_2.js::system_command_execution::9",
+      "target": "value::1671542b9decc1b9f913",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0009",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "target": "value::335a54ace8cf3a58859d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0009",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "target": "value::a76726ecb5da13346b77",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0009",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00004",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "target": "value::e33c673a89257c8564f1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00005",
+      "target": "obj::operation::SKILL.md::package_installation::9",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::package_installation::9",
+      "target": "value::311546fdea4388b6df45",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00006",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::158",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::158",
+      "target": "value::a3779dcff831ad1d0ab4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "target": "value::bb1a757d9360a0136d46",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "target": "value::d379830acbd86126d06b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "target": "value::264bddb1c7d52ba36cdf",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_5.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_14.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0013",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_15.js",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::2",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::package_installation::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::fd0e3eeea63d30da4b78",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::package_installation::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_2.js::system_command_execution::9",
+      "identity_key": ".malskills_fences/SKILL__fence_2.js::system_command_execution::9",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::1671542b9decc1b9f913",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_2.js::system_command_execution::9",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "identity_key": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::335a54ace8cf3a58859d",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "identity_key": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a76726ecb5da13346b77",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "identity_key": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::e33c673a89257c8564f1",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::SKILL.md::package_installation::9",
+      "identity_key": "SKILL.md::package_installation::9",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::311546fdea4388b6df45",
+      "kind": "value",
+      "value": "SKILL.md::package_installation::9",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::158",
+      "identity_key": "SKILL.md::dynamic_code_execution::158",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::a3779dcff831ad1d0ab4",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::158",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "identity_key": "SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::bb1a757d9360a0136d46",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/profile?seconds=30 > cpu.prof",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "identity_key": "SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::d379830acbd86126d06b",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/heap > heap.prof",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "identity_key": "SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::264bddb1c7d52ba36cdf",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl http://localhost:6060/debug/pprof/goroutine > goroutine.prof",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

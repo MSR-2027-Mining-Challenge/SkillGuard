@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: manage-okf-memory\r\ndescription: Manage this repository's OKF project memory bundle. Use at the start and end of work in flutter-agentic-starter, when maintaining okf-memory daily logs, rolling daily logs into base knowledge, or recording durable agent knowledge such as coding patterns, human style, requirements, decisions, major changes, and roadmap changes.\r\n---\r\n\r\n# Manage OKF Memory\r\n\r\nUse `okf-memory/` as the source of truth. Keep it OKF v0.1 compatible: markdown files, YAML frontmatter on concept files, `index.md` and `log.md` reserved.\r\n\r\n## Start Of Work\r\n\r\n1. Run `date +%F`.\r\n2. Read `okf-memory/index.md`, relevant `okf-memory/base/*.md`, and today's `okf-memory/daily/YYYY-MM-DD.md` if it exists.\r\n3. Create today's daily file if no daily file exists.\r\n4. If the latest `okf-memory/daily/*.md` file is not today, roll over before other edits.\r\n\r\n## Rollover\r\n\r\nFor each prior daily file with `merged: false`:\r\n\r\n1. Move durable entries into the matching base file:\r\n   `coding-patterns`, `human-style`, `project-requirements`, `decision-changes`, `major-changes`, `roadmap`.\r\n2. Deduplicate against existing base facts. Do not preserve transient debugging notes.\r\n3. Set the daily file to `merged: true`.\r\n4. Update changed base files with `timestamp` and `merged_through`.\r\n5. Append a dated entry to `okf-memory/log.md`.\r\n6. Create today's daily file with the same sections and `merged: false` if it does not exist.\r\n\r\n## End Of Work\r\n\r\nUpdate today's daily file only when there are new durable facts:\r\n\r\n* Coding patterns agents should repeat.\r\n* Human communication or report style preferences.\r\n* Stable project requirements or verification rules.\r\n* Accepted, rejected, or superseded decisions.\r\n* Major repository changes.\r\n* Roadmap changes.\r\n\r\nSkip repeated facts, speculative ideas, temporary build logs, local paths with private values, secrets, tokens, credentials, and environment values. Put unresolved questions last.\r\n",
+    "content_hash": "ab82d83337b037c00f021c2bd87ecf9b7a24b33aa054e8dc86cc9449a1e5fd33",
+    "generated": false,
+    "is_text": true,
+    "line_count": 41,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1962,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

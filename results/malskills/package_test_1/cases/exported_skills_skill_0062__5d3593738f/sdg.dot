@@ -1,0 +1,22 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_5.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_18.js"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_21.js"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::package_installation::2" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::package_installation::2\nkind=operand"];
+  "obj::operation::SKILL.md::package_installation::176" [label="obj::operation::SKILL.md::package_installation::176\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "value::5df371840a4659d0f24e" [label="value::5df371840a4659d0f24e\nkind=value"];
+  "value::6ed3288aa6f70aa6c944" [label="value::6ed3288aa6f70aa6c944\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00001" [label="contains"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::package_installation::2" -> "value::5df371840a4659d0f24e" [label="value_flow"];
+  "obj::operation::SKILL.md::package_installation::176" -> "value::6ed3288aa6f70aa6c944" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::package_installation::2" [label="has_operand"];
+  "sso_00001" -> "obj::operation::SKILL.md::package_installation::176" [label="has_operand"];
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: advanced-financial-ml\r\ndescription: |-\r\n  MlFinLab \u63d0\u4f9b\u91d1\u878d\u673a\u5668\u5b66\u4e60\u9ad8\u7ea7\u5b9e\u73b0\uff0c\u5305\u62ec\u4fe1\u606f\u9a71\u52a8 bars\uff08tick/volume/dollar/imbalance bars\uff09\u3001\u5206\u6570\u9636\u5dee\u5206\u548c\u56de\u6d4b\u5de5\u5177\uff0c\u652f\u6301\u591a\u5e02\u573a\u56e0\u5b50\u7814\u7a76\u4e0e\u7b56\u7565\u9a8c\u8bc1\u3002\u89e6\u53d1\u573a\u666f\uff1a(1) \u7528\u6237\u8981\u4ece\u539f\u59cb Tick \u6570\u636e\u63d0\u53d6\u7a33\u5065\u7684\u4ef7\u683c\u7279\u5f81\u6784\u5efa\u56e0\u5b50\uff1b(2) \u7528\u6237\u8981\u5c06\u65f6\u95f4\u5e8f\u5217\u5dee\u5206\u81f3\u5e73\u7a33\u6001\u540c\u65f6\u4fdd\u7559\u8bb0\u5fc6\u6027\uff1b(3) \u7528\u6237\u8981\u5bf9\u9ad8\u9891\u4ea4\u6613\u7b56\u7565\u8fdb\u884c\u56de\u6d4b\u4e0e\u6837\u672c\u5916\u8bc4\u4f30\u3002\r\nlicense: Proprietary. See LICENSE.txt in project root.\r\ncompatibility: Designed for Doramagic-host ecosystem (Claude Code / openclaw / Cursor). Requires Python 3.12+ with uv package manager.\r\nmetadata:\r\n  version: \"v6.1\"\r\n  blueprint_id: \"finance-bp-115\"\r\n  compiled_at: \"2026-04-22T13:00:55.567727+00:00\"\r\n  capability_markets: \"multi-market\"\r\n  capability_activities: \"backtesting, factor-research\"\r\n  sop_version: \"crystal-compilation-v6.1\"\r\n---\r\n# advanced-financial-ml\r\n\r\n> I help you build quant strategies on A-share with ZVT \u2014 from data fetch to backtest, one flow. Just tell me what you want; I'll write the code, you don't have to dig docs. (Heads up: ZVT natively supports A-share, HK, and crypto. US stocks \u2014 stockus_nasdaq_AAPL \u2014 are half-baked; don't bother for serious work.)\r\n\r\n## Pipeline\r\n\r\n`data_collection -> data_storage -> factor_computation -> target_selection -> trading_execution -> visualization`\r\n\r\n## Top Use Cases (1 total)\r\n\r\n### Sphinx Documentation Configuration (`UC-101`)\r\nHow to configure and generate project documentation using Sphinx autodoc and extensions for API documentation coverage\r\n**Triggers**: documentation, sphinx, autodoc\r\n\r\n## Install\r\n\r\n```bash\r\n# One-time setup before first use\r\nbash scripts/install.sh\r\n```\r\n\r\n**Execute trigger**: `When user intent matches intent_router.uc_entries[].positive_terms AND user uses action verb (run/execute/\u8dd1/\u6267\u884c/backtest/fetch/collect)`\r\n\r\n## What I'll Ask You\r\n\r\n- Target market: A-share (default), HK, or crypto? (US stocks in ZVT are half-baked \u2014 stockus_nasdaq_AAPL exists but coverage is thin)\r\n- Data source / provider: eastmoney (free, no account), joinquant (account+paid), baostock (free, good history), akshare, or qmt (broker)?\r\n- Strategy type: MACD golden-cross, MA crossover, volume breakout, fundamental screen, or custom factor?\r\n- Time range: start_timestamp and end_timestamp for backtest period\r\n- Target entity IDs: specific stocks (stock_sh_600000) or index components (SZ1000)?\r\n\r\n## Semantic Locks (Fatal)\r\n\r\n| ID | Rule | On Violation |\r\n|---|---|---|\r\n| `SL-01` | Execute sell orders before buy orders in every trading cycle | halt |\r\n| `SL-02` | Trading signals MUST use next-bar execution (no look-ahead) | halt |\r\n| `SL-03` | Entity IDs MUST follow format entity_type_exchange_code | halt |\r\n| `SL-04` | DataFrame index MUST be MultiIndex (entity_id, timestamp) | halt |\r\n| `SL-05` | TradingSignal MUST have EXACTLY ONE of: position_pct, order_money, order_amount | halt |\r\n| `SL-06` | filter_result column semantics: True=BUY, False=SELL, None/NaN=NO ACTION | halt |\r\n| `SL-07` | Transformer MUST run BEFORE Accumulator in factor pipeline | halt |\r\n| `SL-08` | MACD parameters locked: fast=12, slow=26, signal=9 | halt |\r\n\r\nFull lock definitions: [references/LOCKS.md](references/LOCKS.md)\r\n\r\n## Top Anti-Patterns (25 total)\r\n\r\n- **`AP-ZVT-183`**: \u9664\u6743\u56e0\u5b50\u4e3a inf/NaN \u65f6\u76f4\u63a5\u53c2\u4e0e\u4e58\u6cd5\u5bfc\u81f4\u590d\u6743\u9759\u9ed8\u5931\u8d25\r\n- **`AP-ZVT-179`**: \u7b2c\u4e09\u65b9\u6570\u636e\u63a5\u53e3\u8d85\u9650\u540e\u5f02\u5e38\u88ab\u541e\u566c\uff0c\u6570\u636e\u9759\u9ed8\u7f3a\u5931\r\n- **`AP-ZVT-183B`**: HFQ\uff08\u540e\u590d\u6743\uff09\u4e0e QFQ\uff08\u524d\u590d\u6743\uff09K \u7ebf\u8868\u4f7f\u7528\u9519\u8bef\u5bfc\u81f4\u56e0\u5b50\u8ba1\u7b97\u6f02\u79fb\r\n\r\nAll 25 anti-patterns: [references/ANTI_PATTERNS.md](references/ANTI_PATTERNS.md)\r\n\r\n## Evidence Quality Notice\r\n\r\n> [QUALITY NOTICE] This crystal was compiled from blueprint finance-bp-115. Evidence verify ratio = 43.7% and audit fail total = 34. Generated results may have uncaptured requirement gaps. Verify critical decisions against source files (LATEST.yaml / LATEST.jsonl).\r\n\r\n## Reference Files\r\n\r\n| File | Contents | When to Load |\r\n|---|---|---|\r\n| [references/seed.yaml](references/seed.yaml) | V6+ \u5168\u91cf\u6743\u5a01 (source-of-truth) | \u6709\u884c\u4e3a/\u51b3\u7b56\u4e89\u8bae\u65f6\u5fc5\u8bfb |\r\n| [references/ANTI_PATTERNS.md](references/ANTI_PATTERNS.md) | 25 \u6761\u8de8\u9879\u76ee\u53cd\u6a21\u5f0f | \u5f00\u59cb\u5b9e\u73b0\u524d |\r\n| [references/WISDOM.md](references/WISDOM.md) | \u8de8\u9879\u76ee\u7cbe\u534e\u501f\u9274 | \u67b6\u6784\u51b3\u7b56\u65f6 |\r\n| [references/CONSTRAINTS.md](references/CONSTRAINTS.md) | domain + fatal \u7ea6\u675f | \u89c4\u5219\u51b2\u7a81\u65f6 |\r\n| [references/USE_CASES.md](references/USE_CASES.md) | \u5168\u91cf KUC-* \u4e1a\u52a1\u573a\u666f | \u9700\u8981\u5b8c\u6574\u793a\u4f8b\u65f6 |\r\n| [references/LOCKS.md](references/LOCKS.md) | SL-* + preconditions + hints | \u751f\u6210\u56de\u6d4b/\u4ea4\u6613\u4ee3\u7801\u524d |\r\n| [references/COMPONENTS.md](references/COMPONENTS.md) | AST \u7ec4\u4ef6\u5730\u56fe\uff08\u6309 module \u62c6\u5206\uff09| \u67e5 API \u65f6 |\r\n\r\n---\r\n\r\n*Compiled by Doramagic crystal-compilation-v6.1 from `finance-bp-115` blueprint at 2026-04-22T13:00:55.567727+00:00.*\r\n*See [human_summary.md](human_summary.md) for non-technical overview.*\r\n",
+    "content_hash": "0c7274c180d4fadbfcb853c1b2149f5669749f072dc683c1bc701e2add26dbe5",
+    "generated": false,
+    "is_text": true,
+    "line_count": 89,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5030,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# One-time setup before first use\r\nbash scripts/install.sh",
+    "content_hash": "df2529606cfd6f1b0aa38c31e3ab14af29ad1503a1aa8ea63e38d37c49f96e80",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 58,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 34,
+    "source_start_line": 31
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "installer",
+    "content": "#!/usr/bin/env bash\r\n# Auto-generated install script from Doramagic seed resources.packages\r\nset -e\r\n\r\necho 'Installing Doramagic skill dependencies...'\r\n\r\npython3 -m pip install numpy\r\npython3 -m pip install pandas\r\npython3 -m pip install scikit-learn\r\npython3 -m pip install scipy\r\npython3 -m pip install statsmodels\r\npython3 -m pip install cython\r\npython3 -m pip install numba\r\npython3 -m pip install POT\r\npython3 -m pip install networkx\r\npython3 -m pip install joblib\r\n\r\necho 'Done. Skill ready to use.'",
+    "content_hash": "33d0c54f272a2c7b3bdfb2f5f359f1f5d4f388c20d9c4c1ae3bd394b9faa1072",
+    "generated": false,
+    "is_text": true,
+    "line_count": 18,
+    "relative_path": "scripts/install.sh",
+    "size_bytes": 507,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::system_information_access::1",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::system_information_access::1",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+    "identity_key": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+    "identity_key": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+    "identity_key": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+    "identity_key": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::system_information_access::1",
+    "identity_key": ".malskills_fences/SKILL__fence_4.sh::system_information_access::1",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::file_delete::2",
+    "identity_key": ".malskills_fences/SKILL__fence_4.sh::file_delete::2",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_delete::2",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+    "identity_key": "SKILL.md::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -H \"Content-Type: application/json\" -d '{\"email\":\"verify@test.local\",\"password\":\"verify-password-123\"}' http://localhost:1072/api/setup",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+    "identity_key": "SKILL.md::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -c jar.txt -H \"Content-Type: application/json\" -d '{...same...}' http://localhost:1072/api/auth/login",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+    "identity_key": "SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -H \"Content-Type: application/json\" -d '{\"name\":\"Verifier\",\"kind\":\"standard\"}' http://localhost:1072/api/profiles",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+    "identity_key": "SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -b jar.txt -c jar.txt -X POST -H \"Content-Type: application/json\" -d '{}' http://localhost:1072/api/profiles/<id>/select",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  }
+]
