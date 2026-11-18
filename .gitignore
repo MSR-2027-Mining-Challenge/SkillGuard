@@ -234,3 +234,26 @@ data/sample/*.zip
 
 # Cisco scanner runs: exported (untrusted) skill files and reports, never commit
 results/cisco_dataset_runs/
+
+# Local archives (e.g. zipped copies of result folders); never commit
+*.zip
+
+# SkillGuard runs: only derived tables, reports, manifests and scripts are tracked.
+# Kept local: raw untrusted skill exports and raw Cisco reports of the held-out sets,
+# per-skill raw JSON (contains absolute local paths; every value is in the run's CSV tables),
+# executed-notebook copies (local paths; settings are recorded in run_main1000.py and the run log),
+# and the blind-review answer key.
+results/skillguard_runs/heldout/*/H1_random/
+results/skillguard_runs/heldout/*/H2_enriched/
+results/skillguard_runs/heldout/*/R100/
+results/skillguard_runs/heldout/*/cisco/
+results/skillguard_runs/heldout/*/cisco_scan.log
+results/skillguard_runs/**/raw/
+results/skillguard_runs/**/raw_v2/
+results/skillguard_runs/**/raw_v3/
+results/skillguard_runs/main1000/provenance/
+results/skillguard_runs/main1000/main_run_stdout.txt
+results/skillguard_runs/**/review_key_DO_NOT_OPEN_BEFORE_LABELING.csv
+
+# Unredacted originals of files whose absolute local paths were made repo-relative
+results/skillguard_runs/**/local_unredacted/
