@@ -1,0 +1,55 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit scheduler or cron command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "startup_configuration",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.persistence_and_startup_control.crontab_or_scheduler_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.persistence_and_startup_control.crontab_or_scheduler_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_id": "semgrep_00000",
+    "matched_text": "at 3am when this dies on row 47,000?\" should have an answer.",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0000",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 161,
+        "start_line": 161
+      }
+    },
+    "span": {
+      "end_line": 161,
+      "start_line": 161
+    },
+    "subtype": "system_configuration_modify"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: plan\r\ndescription: Plan mode for clawg \u2014 inspect context, write a markdown plan into the active workspace's `.clawg/plans/` directory, and do not execute the work.\r\nversion: 1.0.0\r\nauthor: CLAWG\r\nlicense: MIT\r\nmetadata:\r\n  clawg:\r\n    tags: [planning, plan-mode, implementation, workflow]\r\n    related_skills: [writing-plans, subagent-driven-development]\r\n---\r\n\r\n# Plan Mode\r\n\r\nUse this skill when the user wants a plan instead of execution.\r\n\r\n## Core behavior\r\n\r\nFor this turn, you are planning only.\r\n\r\n- Do not implement code.\r\n- Do not edit project files except the plan markdown file.\r\n- Do not run mutating terminal commands, commit, push, or perform external actions.\r\n- You may inspect the repo or other context with read-only commands/tools when needed.\r\n- Your deliverable is a markdown plan saved inside the active workspace under `.clawg/plans/`.\r\n\r\n## Output requirements\r\n\r\nWrite a markdown plan that is concrete and actionable.\r\n\r\nInclude, when relevant:\r\n- Goal\r\n- Current context / assumptions\r\n- Proposed approach\r\n- Step-by-step plan\r\n- Files likely to change\r\n- Tests / validation\r\n- Risks, tradeoffs, and open questions\r\n\r\nIf the task is code-related, include exact file paths, likely test targets, and verification steps.\r\n\r\n## Save location\r\n\r\nSave the plan with `write_file` under:\r\n- `.clawg/plans/YYYY-MM-DD_HHMMSS-<slug>.md`\r\n\r\nTreat that as relative to the active working directory / backend workspace. clawg file tools are backend-aware, so using this relative path keeps the plan with the workspace on local, docker, ssh, modal, and daytona backends.\r\n\r\nIf the runtime provides a specific target path, use that exact path.\r\nIf not, create a sensible timestamped filename yourself under `.clawg/plans/`.\r\n\r\n## Interaction style\r\n\r\n- If the request is clear enough, write the plan directly.\r\n- If no explicit instruction accompanies `/plan`, infer the task from the current conversation context.\r\n- If it is genuinely underspecified, ask a brief clarifying question instead of guessing.\r\n- After saving the plan, reply briefly with what you planned and the saved path.\r\n",
+    "content_hash": "1cafd8b833d4fa317c75c412d9beec4cdb3addd2f8c3b9424ebba4351191709d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 58,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2112,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

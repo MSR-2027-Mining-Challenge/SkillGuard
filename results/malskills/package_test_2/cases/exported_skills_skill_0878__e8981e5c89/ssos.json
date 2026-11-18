@@ -1,0 +1,152 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd, capture_output=True, text=True, timeout=15)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:31:31:subprocess.run()",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::cmd"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"powershell\", \"-Command\",\n             \"Get-LocalGroupMember -Group Administrators | Select-Object Name,ObjectClass,PrincipalSource | ConvertTo-Json\"],\n            capture_output=True, text=True, timeout=15)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::system_command_execution::50": "command"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::system_command_execution::50",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:50:53:subprocess.run()",
+      "source_end_line": 53,
+      "source_start_line": 50
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::system_command_execution::50"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"powershell\", \"-Command\",\n             \"Get-ItemProperty HKLM:\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\* | \"\n             \"Select-Object DisplayName,Publisher,InstallDate | Where-Object {$_.DisplayName -ne $null} | \"\n             \"ConvertTo-Json -Depth 2\"],\n            capture_output=True, text=True, timeout=30)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::system_command_execution::73": "command"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::system_command_execution::73",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:73:78:subprocess.run()",
+      "source_end_line": 78,
+      "source_start_line": 73
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::system_command_execution::73"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"powershell\", \"-Command\",\n             \"Get-NetFirewallRule | Where-Object {$_.Enabled -eq 'True' -and $_.Direction -eq 'Outbound' -and $_.Action -eq 'Block'} | \"\n             \"Measure-Object | Select-Object -ExpandProperty Count\"],\n            capture_output=True, text=True, timeout=15)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::system_command_execution::105": "command"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::system_command_execution::105",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:105:109:subprocess.run()",
+      "source_end_line": 109,
+      "source_start_line": 105
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::system_command_execution::105"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run([\"powershell\", \"-Command\",\n            \"Test-NetConnection -ComputerName google.com -Port 80 -WarningAction SilentlyContinue | Select-Object TcpTestSucceeded | ConvertTo-Json\"],\n            capture_output=True, text=True, timeout=15)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::system_command_execution::114": "command"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::system_command_execution::114",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:114:116:subprocess.run()",
+      "source_end_line": 116,
+      "source_start_line": 114
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::system_command_execution::114"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  }
+]

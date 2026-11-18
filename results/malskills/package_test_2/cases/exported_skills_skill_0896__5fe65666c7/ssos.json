@@ -1,0 +1,1076 @@
+[
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/dispatcher.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(session_file, \"r\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/dispatcher.py::file_access::122": "path"
+      },
+      "operation_object": "obj::operation::scripts/dispatcher.py::file_access::122",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 122,
+      "source_start_line": 122
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/dispatcher.py::file_access::122"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/dispatcher.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(session_file, \"r\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/dispatcher.py::file_access::157": "path"
+      },
+      "operation_object": "obj::operation::scripts/dispatcher.py::file_access::157",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 157,
+      "source_start_line": 157
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/dispatcher.py::file_access::157"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/dispatcher.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(st_path, \"r\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/dispatcher.py::file_access::182": "path"
+      },
+      "operation_object": "obj::operation::scripts/dispatcher.py::file_access::182",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 182,
+      "source_start_line": 182
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/dispatcher.py::file_access::182"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/dispatcher.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(mt_path, \"r\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/dispatcher.py::file_access::233": "path"
+      },
+      "operation_object": "obj::operation::scripts/dispatcher.py::file_access::233",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 233,
+      "source_start_line": 233
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/dispatcher.py::file_access::233"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/dispatcher.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(lt_path, \"r\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/dispatcher.py::file_access::258": "path"
+      },
+      "operation_object": "obj::operation::scripts/dispatcher.py::file_access::258",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 258,
+      "source_start_line": 258
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/dispatcher.py::file_access::258"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/dispatcher.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "r = subprocess.run(cmd, capture_output=True, text=True, timeout=15)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/dispatcher.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/dispatcher.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/dispatcher.py:427:427:subprocess.run()",
+      "source_end_line": 427,
+      "source_start_line": 427
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/dispatcher.py::cmd"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(memory_dir, exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memory-consolidator.py::file_create::61": "path"
+      },
+      "operation_object": "obj::operation::scripts/memory-consolidator.py::file_create::61",
+      "path_class": "ordinary",
+      "source_end_line": 61,
+      "source_start_line": 61,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memory-consolidator.py::file_create::61"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(st_path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 66,
+      "source_start_line": 66
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(mt_path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 72,
+      "source_start_line": 72
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(lt_path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 78,
+      "source_start_line": 78
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 98,
+      "source_start_line": 98
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(memory_dir, exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memory-consolidator.py::file_create::121": "path"
+      },
+      "operation_object": "obj::operation::scripts/memory-consolidator.py::file_create::121",
+      "path_class": "ordinary",
+      "source_end_line": 121,
+      "source_start_line": 121,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memory-consolidator.py::file_create::121"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 124,
+      "source_start_line": 124
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 167,
+      "source_start_line": 167
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 191,
+      "source_start_line": 191
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 209,
+      "source_start_line": 209
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 231,
+      "source_start_line": 231
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 238,
+      "source_start_line": 238
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 255,
+      "source_start_line": 255
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 297,
+      "source_start_line": 297
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 343,
+      "source_start_line": 343
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 455,
+      "source_start_line": 455
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 467,
+      "source_start_line": 467
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 480,
+      "source_start_line": 480
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 526,
+      "source_start_line": 526
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 546,
+      "source_start_line": 546
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 605,
+      "source_start_line": 605
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 622,
+      "source_start_line": 622
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"a\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 650,
+      "source_start_line": 650
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 664,
+      "source_start_line": 664
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, \"w\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 696,
+      "source_start_line": 696
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(full, \"r\", encoding=\"utf-8\") as peek:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 725,
+      "source_start_line": 725
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(session_file, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memory-consolidator.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memory-consolidator.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 755,
+      "source_start_line": 755
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memory-consolidator.py::encoding"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memory-consolidator.py::credential_data_access::980": "path"
+      },
+      "operation_object": "obj::operation::scripts/memory-consolidator.py::credential_data_access::980",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 980,
+      "source_start_line": 980
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memory-consolidator.py::credential_data_access::980"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memory-consolidator.py::credential_data_access::998": "path"
+      },
+      "operation_object": "obj::operation::scripts/memory-consolidator.py::credential_data_access::998",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 998,
+      "source_start_line": 998
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memory-consolidator.py::credential_data_access::998"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memory-consolidator.py::credential_data_access::1011": "path"
+      },
+      "operation_object": "obj::operation::scripts/memory-consolidator.py::credential_data_access::1011",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1011,
+      "source_start_line": 1011
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memory-consolidator.py::credential_data_access::1011"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memory-consolidator.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memory-consolidator.py::credential_data_access::1026": "path"
+      },
+      "operation_object": "obj::operation::scripts/memory-consolidator.py::credential_data_access::1026",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1026,
+      "source_start_line": 1026
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memory-consolidator.py::credential_data_access::1026"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "credential_data_access"
+  }
+]

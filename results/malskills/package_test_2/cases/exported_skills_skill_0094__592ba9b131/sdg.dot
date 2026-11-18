@@ -1,0 +1,38 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=config\npath=agents/openai.yaml"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/frontmatter-metadata.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=references/legacy-examples.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=references/.malskills_fences/legacy-examples__fence_0.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=references/.malskills_fences/legacy-examples__fence_2.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=references/.malskills_fences/legacy-examples__fence_3.sh"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=shell\npath=references/.malskills_fences/legacy-examples__fence_4.sh"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=markdown\npath=references/legacy-reference.md"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=markdown\npath=references/quality-checklist.md"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=markdown\npath=references/senior-master-standard.md"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=markdown\npath=references/usage-routing.md"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=shell\npath=scripts/check-complete.sh"];
+  "art_0013" [label="art_0013\nkind=artifact\ntype=shell\npath=scripts/init-session.sh"];
+  "obj::operation::scripts/init-session.sh::file_read::14" [label="obj::operation::scripts/init-session.sh::file_read::14\nkind=operand"];
+  "obj::operation::scripts/init-session.sh::file_read::66" [label="obj::operation::scripts/init-session.sh::file_read::66\nkind=operand"];
+  "obj::operation::scripts/init-session.sh::file_read::93" [label="obj::operation::scripts/init-session.sh::file_read::93\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::3f0e938ece388463d1d1" [label="value::3f0e938ece388463d1d1\nkind=value"];
+  "value::bf230b3eac679c4c729b" [label="value::bf230b3eac679c4c729b\nkind=value"];
+  "value::c73ca22b47d559c18ef0" [label="value::c73ca22b47d559c18ef0\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0013" -> "sso_00000" [label="contains"];
+  "art_0013" -> "sso_00001" [label="contains"];
+  "art_0013" -> "sso_00002" [label="contains"];
+  "obj::operation::scripts/init-session.sh::file_read::14" -> "value::3f0e938ece388463d1d1" [label="value_flow"];
+  "obj::operation::scripts/init-session.sh::file_read::66" -> "value::bf230b3eac679c4c729b" [label="value_flow"];
+  "obj::operation::scripts/init-session.sh::file_read::93" -> "value::c73ca22b47d559c18ef0" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/init-session.sh::file_read::14" [label="has_operand"];
+  "sso_00001" -> "obj::operation::scripts/init-session.sh::file_read::66" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/init-session.sh::file_read::93" [label="has_operand"];
+}

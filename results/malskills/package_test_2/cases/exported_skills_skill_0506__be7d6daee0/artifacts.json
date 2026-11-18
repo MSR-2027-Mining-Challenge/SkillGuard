@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: updatefirstmate\r\ndescription: Self-update a running firstmate and its secondmates to the latest from origin. Use when the captain invokes /updatefirstmate (e.g. \"/updatefirstmate\", \"update firstmate\", \"pull the latest firstmate\"). Fast-forwards this firstmate repo's default branch and every secondmate home from origin (fast-forward only, never forced, never disruptive), then re-reads AGENTS.md and nudges each updated secondmate to do the same, so the whole tree runs the latest bin/ and instructions.\r\nuser-invocable: true\r\nmetadata:\r\n  internal: true\r\n---\r\n\r\n# updatefirstmate\r\n\r\nSelf-update firstmate in place.\r\nFirstmate is its own repo, behind the same no-mistakes gate as any project, so new tracked material (`AGENTS.md`, `bin/`, `.agents/skills/`, and public `skills/`) reaches `main` and then sits there until each running firstmate pulls it.\r\nOnly `AGENTS.md`, `bin/`, and `.agents/skills/` are a running firstmate instruction surface; public `skills/` is installer-facing and is not loaded by firstmate.\r\nThis skill performs that pull for the running main firstmate and every secondmate, without disturbing any in-flight work.\r\n\r\nThe update is **fast-forward only** - the same sanctioned self-write as the fleet sync firstmate already runs.\r\nIt never forces, never creates a merge commit, never stashes, and advances a target only on a clean fast-forward; anything dirty, diverged, offline, or on the wrong branch is skipped and reported.\r\nA tracked-files fast-forward leaves the gitignored operational dirs (data/, state/, config/, projects/, .no-mistakes/) untouched, so a secondmate's in-flight work is never disrupted.\r\nThis touches only the firstmate repo and its own worktrees, never anything under `projects/`.\r\n\r\n## What it does\r\n\r\n1. **Run the updater:**\r\n   ```sh\r\n   bin/fm-update.sh\r\n   ```\r\n   It fast-forwards this firstmate repo's default branch from origin, then fast-forwards every registered secondmate home (each a treehouse worktree of this same repo, leased at a detached HEAD on the default branch) the same way.\r\n   It prints one status line per target (`updated <old>..<new>` / `already current` / `skipped: <reason>`), followed by two action lines that tell you exactly what to do next:\r\n   - `reread-firstmate: yes|no`\r\n   - `nudge-secondmates: fm-<id>...|none`\r\n\r\n2. **Re-read AGENTS.md if your own instructions changed.**\r\n   When the updater printed `reread-firstmate: yes`, the tracked instruction surface (`AGENTS.md`, `bin/`, or `.agents/skills/`) just advanced under you.\r\n   **Read `AGENTS.md` now** (CLAUDE.md is a symlink to it) to refresh your operating instructions before doing anything else, so you are acting on the new instructions rather than the stale ones you were started with.\r\n   When it printed `reread-firstmate: no`, nothing changed for you - skip the re-read.\r\n\r\n3. **Nudge each updated live secondmate.**\r\n   For every target listed on the `nudge-secondmates:` line (do nothing when it says `none`), send a one-line re-read nudge so that secondmate picks up its new instructions too:\r\n   ```sh\r\n   FM_HOME=<this-firstmate-home> bin/fm-send.sh <id> 'firstmate was updated to the latest - please re-read your AGENTS.md to pick up the new instructions.'\r\n   ```\r\n   Include `FM_HOME=<this-firstmate-home>` unless `FM_HOME` is already set to the active firstmate home.\r\n   This is a gentle steer, not an interruption: the secondmate already got a safe tracked-files fast-forward, and the nudge never forces, tears down, or discards its work.\r\n   A secondmate that was skipped, already current, or has no live metadata is not on the list and needs no nudge.\r\n\r\n4. **Report to the captain in plain outcomes.**\r\n   Summarize what landed without firstmate's internal vocabulary: which parts of the fleet are now on the latest, and which were left as-is and why.\r\n   For example: \"Captain, firstmate and both domain supervisors are now on the latest.\"\r\n   Surface any skipped target whose reason needs the captain's attention - for instance a home with its own un-landed changes (diverged) or local edits (dirty), which were left untouched on purpose.\r\n\r\n## Safety\r\n\r\n- **Fast-forward only.**\r\n  A target that has diverged, is dirty, is offline, or is on a non-default branch is skipped and reported, never forced or stashed.\r\n  Nothing with unlanded work is ever discarded - this is prime directive #3.\r\n- **Only the firstmate repo and its worktrees** are touched, never `projects/`.\r\n  It is the same sanctioned self-write as the fleet sync.\r\n- **Secondmates are never disrupted.**\r\n  A secondmate gets a tracked-files fast-forward (safe while it is mid-task, since its work lives in gitignored operational dirs and separate project worktrees) plus a gentle re-read nudge.\r\n  It is never torn down, interrupted, or forced.\r\n",
+    "content_hash": "1225dfc7008f4422b658c7df7dc2fffa46f80ba6ca5732fd5affe5ef738706a1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 61,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4795,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   bin/fm-update.sh",
+    "content_hash": "dff30df8fbe5d8fad54dbb11cf7120618f501180590ac5f1d4b483fed6a039de",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 19,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 26,
+    "source_start_line": 24
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "   FM_HOME=<this-firstmate-home> bin/fm-send.sh <id> 'firstmate was updated to the latest - please re-read your AGENTS.md to pick up the new instructions.'",
+    "content_hash": "54c924600d1c395263e6beb7a72aa811e11aea82462ae75a6076f1e2960daa0b",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 155,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 41,
+    "source_start_line": 39
+  }
+]

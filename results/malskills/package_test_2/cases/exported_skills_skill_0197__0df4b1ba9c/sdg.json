@@ -1,0 +1,182 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": "scripts/notify.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/pyproject.toml",
+      "type": "config"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "target": "value::b11d0316af5c27fc36a0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/notify.py::environment_access::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/notify.py::environment_access::15",
+      "target": "value::14d6811f38864d8f5464",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/notify.py::environment_access::16",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/notify.py::environment_access::16",
+      "target": "value::85f9c8b6dc88d0fca9ae",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "scripts/notify.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/pyproject.toml",
+      "type": "config"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_send",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "identity_key": "scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::b11d0316af5c27fc36a0",
+      "kind": "value",
+      "value": "scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/notify.py::environment_access::15",
+      "identity_key": "scripts/notify.py::environment_access::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::14d6811f38864d8f5464",
+      "kind": "value",
+      "value": "scripts/notify.py::environment_access::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/notify.py::environment_access::16",
+      "identity_key": "scripts/notify.py::environment_access::16",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::85f9c8b6dc88d0fca9ae",
+      "kind": "value",
+      "value": "scripts/notify.py::environment_access::16",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

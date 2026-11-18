@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: openspec-apply\r\ndescription: Implement tasks from the change. Use when the user says \"implement\", \"apply the change\", or \"start coding from tasks\".\r\n---\r\n\r\n# OpenSpec Apply Skill\r\n\r\nUse this skill to implement tasks from a change. The agent reads `tasks.md`, works through tasks one by one, writes code, creates files, runs tests as needed, and checks off completed items with `[x]`.\r\n\r\n## When to Use\r\n\r\n- All planning artifacts are complete and the user wants to implement.\r\n- The user says \"implement\", \"apply\", \"start coding\", \"execute tasks\".\r\n- Resuming implementation after an interruption.\r\n\r\n## Prerequisites\r\n\r\n- **Planning artifacts complete** \u2014 at minimum `tasks.md` exists (created via **openspec-ff** or **openspec-continue**).\r\n\r\n## Workflow\r\n\r\n1. **Check status**\r\n   - Run: `openspec status --change <name>`\r\n   - Confirm all planning artifacts are done.\r\n\r\n2. **Read tasks**\r\n   - Read `openspec/changes/<name>/tasks.md` and identify incomplete tasks (unchecked `[ ]` items).\r\n\r\n3. **Work through tasks**\r\n   - For each task: read relevant specs, design, and existing code; write code; create/modify files; run tests.\r\n   - Mark each task complete with `[x]` in `tasks.md`.\r\n\r\n4. **Handle issues**\r\n   - If a task reveals that the design was wrong, edit the artifact (e.g. `design.md`) and continue.\r\n   - OpenSpec is fluid \u2014 updating artifacts during implementation is expected and encouraged.\r\n\r\n5. **Resume if interrupted**\r\n   - Run the apply flow again; it picks up where it left off based on checkbox state.\r\n\r\n## Outputs\r\n\r\n- Code changes (new files, modified files) implementing the tasks.\r\n- `tasks.md` updated with `[x]` for completed tasks.\r\n\r\n## Next Steps\r\n\r\n- Use **openspec-verify** to validate implementation matches artifacts.\r\n- Use **openspec-archive** to archive the completed change.\r\n\r\n## Troubleshooting\r\n\r\n- **\"Change not found\"**: Specify the change name: check with `openspec list`.\r\n- **Tasks seem wrong**: Edit `tasks.md` before applying.\r\n- **Implementation diverges from design**: Edit `design.md` or `specs/` as needed; OpenSpec is iterative.\r\n\r\n## References\r\n\r\n- Status: `openspec status --change <name>`\r\n- Tasks file: `openspec/changes/<name>/tasks.md`\r\n",
+    "content_hash": "b2b722976dd4c9fb99a1e3963bca1ec28f551567f57ee1ed12599dc645b5d55a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 60,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2222,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,126 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0005",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_configuration_modify::12",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_configuration_modify::12",
+      "target": "value::075105a8348631956eba",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_configuration_modify::12",
+      "identity_key": ".malskills_fences/SKILL__fence_4.sh::system_configuration_modify::12",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::075105a8348631956eba",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_4.sh::system_configuration_modify::12",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

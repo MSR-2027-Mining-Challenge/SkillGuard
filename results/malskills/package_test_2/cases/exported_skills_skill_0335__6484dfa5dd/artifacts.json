@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: stack-chan-skill\r\ndescription: Use when starting, maintaining, flashing, running, or troubleshooting a StackChan remote-agent project, including StackChan architecture, ESP-IDF under this skill's vendor/esp-idf, vendoring m5stack/StackChan under this skill's vendor/StackChan, maintaining app_remote_agent firmware, linking it into the StackChan firmware tree, building/flashing/monitoring with idf.py, running the Bun brain server, and debugging the WebSocket protocol between StackChan and the server.\r\n---\r\n\r\n# StackChan Skill\r\n\r\nUse this skill to start, operate, maintain, flash, and troubleshoot a complete StackChan remote-agent system. Treat StackChan as a thin Wi-Fi body and the local server as the agent brain.\r\n\r\n## First Decisions\r\n\r\n| If you need to... | Read |\r\n|---|---|\r\n| Understand what StackChan is and what hardware is available | `references/stackchan-overview.md` |\r\n| Choose the repo architecture and split firmware from brain code | `references/starter-architecture.md` |\r\n| Install ESP-IDF locally for the project | `references/esp-idf-install.md` |\r\n| Vendor the upstream StackChan source | `references/vendor-stackchan.md` |\r\n| Add the reusable remote-agent firmware app | `references/firmware-integration.md` |\r\n| Build, flash, or monitor the firmware | `references/firmware-build-flash.md` |\r\n| Implement compatible server/device messages | `references/device-protocol.md` |\r\n| Create, run, or maintain the Bun TypeScript brain server | `references/bun-brain-starter.md` |\r\n| Build a full voice agent server with Deepgram, TypeScript, and tools | `references/full-stack-voice-agent.md` |\r\n| Bridge a remote brain through Tailscale without firmware changes | `references/tailscale-lan-proxy.md` |\r\n| Add server-selected wake-word standby with microWakeWord | `references/wake-word-standby.md` |\r\n| Add custom server-driven avatar scenes or use the local render simulator | `references/server-driven-rendering.md` |\r\n| Diagnose build, flash, link, or runtime failures | `references/troubleshooting.md` |\r\n\r\n## Common Workflows\r\n\r\n| If the user asks to... | Do this |\r\n|---|---|\r\n| Start from a blank repo | Follow `Default Setup Path`, then verify the completion checklist. |\r\n| Maintain existing firmware | Inspect `vendor/StackChan` status, app symlinks/files, `apps.h`, `main.cpp`, and HTTPD WebSocket support before editing. |\r\n| Build or flash | From this skill root, source `vendor/esp-idf/export.sh`, work from `vendor/StackChan/firmware`, and use `references/firmware-build-flash.md`. |\r\n| Run the remote agent | Open `REMOTE.AGENT` on StackChan, set the brain server `STACKY_DEVICE_WS_URL` to `ws://STACKCHAN_HOST:6001/stacky/device`, start the Bun brain server, then verify `/health`. |\r\n| Debug a disconnected robot | Check StackChan Wi-Fi, the device-hosted WebSocket URL, brain outbound connection logs, and device telemetry. |\r\n| Debug `Streaming mic...` after wake word or speech | Read `references/troubleshooting.md`; inspect firmware audio restart logs before changing server STT/TTS code. |\r\n| Change protocol or commands | Update firmware, server `device/protocol`, command helpers, and docs together. |\r\n| Add wake-word standby | Keep the server as policy owner, send `standby` with an optional `wakeWord`, and make firmware advertise `wakeWord` only after a real local detector is integrated. |\r\n| Bridge a remote brain over Tailscale | Run `bun run proxy:stacky` on a LAN machine that can reach StackChan and is on the tailnet; point the remote brain at the proxy's Tailscale URL. |\r\n\r\n## Default Setup Path\r\n\r\n1. Use this skill repo's `vendor/` directory for firmware dependencies.\r\n2. Install ESP-IDF v5.5.4 into `vendor/esp-idf`; source `vendor/esp-idf/export.sh` before using `idf.py`.\r\n3. Clone upstream StackChan from `https://github.com/m5stack/StackChan` into `vendor/StackChan`. This upstream repo contains the official StackChan open-source resources; its ESP-IDF project lives under `vendor/StackChan/firmware/`.\r\n4. Run `scripts/patch-stackchan.sh` to add `esp_http_server` and HTTPD WebSocket support to the vendored firmware build.\r\n5. Copy or link `assets/app_remote_agent/` into this skill repo's `vendor/StackChan/firmware/main/apps/app_remote_agent/`.\r\n6. Register `AppRemoteAgent` in the vendored firmware app list and `main.cpp`.\r\n7. Run `assets/app_remote_agent/boot-into-remote-agent.sh` so StackChan opens `REMOTE.AGENT` on boot while preserving launcher/home access.\r\n8. Build from `vendor/StackChan/firmware`, never from the repo root.\r\n9. Flash only after choosing the correct serial port or confirming ESP-IDF auto-detect is safe.\r\n10. Implement the brain server against the protocol in `references/device-protocol.md`.\r\n\r\n## Run Path\r\n\r\n1. Ensure the brain server has `STACKY_DEVICE_WS_URL` configured.\r\n2. Start the Bun server from the target app repo, usually with `bun run dev` or `bun run start`.\r\n3. Open `/health` and verify the server is reachable on the LAN address used by firmware.\r\n4. Flash or run firmware; it hosts `ws://<stackchan>:6001/stacky/device`.\r\n5. Open the `REMOTE.AGENT` app on StackChan.\r\n6. Use the browser debug UI or `/stacky/debug` stream to verify `hello`, telemetry, commands, acks, and errors.\r\n\r\n## Non-Negotiable Constraints\r\n\r\n- Keep reusable firmware and firmware vendors in this skill repo, not in a downstream custom brain repo.\r\n- Do not hard-code private LAN IPs, tokens, Wi-Fi credentials, API keys, or host-specific absolute paths into reusable files.\r\n- Treat `vendor/.gitkeep` as a placeholder only; `vendor/esp-idf` and `vendor/StackChan` live in this skill working tree but remain ignored local checkouts.\r\n- Do not edit vendored StackChan code blindly; prefer documented patches or small explicit registration edits.\r\n- Do not run `idf.py` until `vendor/esp-idf/export.sh` has been sourced in the same shell.\r\n- Do not claim firmware build/flash success without running the command and reporting the actual result.\r\n- Do not claim the remote agent is running until both server health and device WebSocket connection are verified.\r\n- Do not force StackChan motors by hand while powered or under control.\r\n\r\n## Reusable Assets\r\n\r\n| Asset | Use |\r\n|---|---|\r\n| `assets/app_remote_agent/app_remote_agent.cpp` | Thin StackChan terminal app implementation. |\r\n| `assets/app_remote_agent/app_remote_agent.h` | `AppRemoteAgent` declaration. |\r\n| `assets/app_remote_agent/link-into-stackchan.sh` | Symlink helper that links this skill's firmware asset into this skill's vendored StackChan tree. |\r\n| `assets/app_remote_agent/boot-into-remote-agent.sh` | Patches the vendored launcher to open `REMOTE.AGENT` on boot while preserving launcher/home access. |\r\n| `assets/stacky-websocket-client.ts` | Bun TypeScript brain-client example covering the full WebSocket JSON and binary protocol. |\r\n| `assets/fullstack-agent/src/render/` | Server render protocol, emotion presets, local simulator, and tests. |\r\n| `assets/fullstack-agent/scripts/stacky-ws-proxy.ts` | Tailscale/LAN WebSocket frame proxy for remote brain servers. |\r\n| `scripts/patch-stackchan.sh` | Patches vendored firmware build files for device-hosted HTTPD WebSocket support. |\r\n| `scripts/create-wake-word-workspace.sh` | Creates a project-local OHF microWakeWord + Piper training workspace for a requested phrase. |\r\n| `.env.example` | Minimal brain server env vars, including the StackChan-hosted WebSocket URL. |\r\n\r\n## Completion Checklist\r\n\r\n- ESP-IDF is installed in this skill repo at `vendor/esp-idf` and `. vendor/esp-idf/export.sh` makes `idf.py` available.\r\n- Upstream StackChan is present in this skill repo at `vendor/StackChan`.\r\n- `vendor/StackChan/firmware/main/apps/app_remote_agent/` contains the remote-agent app files or symlinks.\r\n- `apps.h` includes `app_remote_agent/app_remote_agent.h`.\r\n- `main.cpp` installs `std::make_unique<AppRemoteAgent>()`.\r\n- `AppLauncher` auto-opens `REMOTE.AGENT` on boot if `assets/app_remote_agent/boot-into-remote-agent.sh` was requested.\r\n- Firmware builds from `vendor/StackChan/firmware`.\r\n- Firmware exposes `/stacky/device` WebSocket and the brain server connects to it.\r\n- Server exposes `/render/simulator` when using the fullstack starter render assets.\r\n- Server can choose tap-only standby or wake-word standby; firmware advertises `wakeWord` only when local detection is actually available.\r\n- Running system shows device `hello` and telemetry after the brain connects to `REMOTE.AGENT`.\r\n",
+    "content_hash": "031d4e903a6e03049c9acc352f374805ee32d9adfb9a3b6e363b048611608253",
+    "generated": false,
+    "is_text": true,
+    "line_count": 103,
+    "relative_path": "SKILL.md",
+    "size_bytes": 8443,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "binary",
+    "content": null,
+    "content_hash": "a35ca88cef0ce57d3da59b9dbe532bb7f51da3faf590290a6a9828d8aef742f4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": "assets",
+    "size_bytes": 12,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "binary",
+    "content": null,
+    "content_hash": "d84a57d48c4cba98ffbc1be656c61626ab6c8fb6bbe0642f63903f48eec1f8b5",
+    "generated": false,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": "references",
+    "size_bytes": 16,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "binary",
+    "content": null,
+    "content_hash": "106724143148002d3018ed210ff08ab785809c98748cb4984ea5abb268a315a1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": "scripts",
+    "size_bytes": 13,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

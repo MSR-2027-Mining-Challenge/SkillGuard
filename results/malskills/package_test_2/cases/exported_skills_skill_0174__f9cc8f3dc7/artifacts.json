@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: avatar\r\ndescription: Control the VTuber avatar system \u2014 speak through it with lip sync, change expressions, manage the avatar renderer and control server. Use when interacting with the avatar, making it speak, changing expressions, or troubleshooting avatar connection issues.\r\n---\r\n\r\n# Avatar \u2014 VTuber Control\r\n\r\n## Quick Start\r\n\r\n- Start system: ~/openclaw/scripts/start-avatar.sh\r\n- Stop system: ~/openclaw/scripts/stop-avatar.sh\r\n- Check health: curl -s http://localhost:8766/health\r\n\r\n## Speaking\r\n\r\n~/openclaw/scripts/avatar-speak.sh \"text\" [emotion] [output]\r\n\r\nOutput controls where audio plays:\r\n- speakers \u2014 default system sink, people in the room hear it\r\n- mic \u2014 AvatarMic sink, people in Meet/calls hear it\r\n- both \u2014 both simultaneously\r\n\r\nDefault output is speakers.\r\n\r\n## Emotions\r\n\r\nneutral (default, eyes open), happy, sad, angry, relaxed, surprised\r\n\r\nUse neutral by default. happy closes the eyes (anime smile) \u2014 only use for genuine excitement.\r\n\r\n## Infrastructure\r\n\r\nWhen avatar system is started, these are always available:\r\n- Virtual mic: AvatarMic.monitor (set as default source for Meet)\r\n- Virtual camera: /dev/video10 (captures renderer via CDP)\r\n- Virtual speaker sink: AvatarSpeaker (available for routing)\r\n\r\nThe bot chooses per-speak where audio goes. Virtual mic and camera are always-on pipes.\r\n\r\n## Service Control\r\n\r\nsystemctl --user {start|stop|status|restart} avatar-control-server\r\nRenderer: cd ~/openclaw/avatar/renderer && npm run dev\r\n\r\n## WebSocket API (Advanced)\r\n\r\nPort 8765 \u2014 must send identify first:\r\n{ type: \"identify\", role: \"agent\", name: \"@agentName@\" }\r\n\r\nCommands after identify:\r\n- speak: { type: \"speak\", text: \"Hello\", emotion: \"neutral\", output: \"mic\" }\r\n- setExpression: { type: \"setExpression\", name: \"happy\", intensity: 1 }\r\n- setIdle: { type: \"setIdle\", mode: \"breathing\" }\r\n- getStatus: { type: \"getStatus\" }\r\n\r\nWait ~1s after identify before sending commands.\r\nWait for speakAck duration + 2s buffer before closing WebSocket.\r\n\r\nSee server.js in ~/openclaw/avatar/control-server/ for full protocol.\r\n\r\n## Ports\r\n\r\n- 8765: WebSocket (control)\r\n- 8766: HTTP (audio serving + health)\r\n- 3000: Renderer (browser, visual only)\r\n- /dev/video10: Virtual camera\r\n\r\n## Audio Flow\r\n\r\nAgent sends speak with output target -> control server runs edge-tts -> generates MP3 -> ffmpeg plays to chosen PulseAudio sink(s) -> renderer gets lip sync data only (visual animation, no browser audio).\r\n\r\n## Troubleshooting\r\n\r\n- \"Control Server Disconnected\" in browser: check systemctl --user status avatar-control-server\r\n- No audio in Meet: verify AvatarMic sink exists (pactl list sinks short | grep AvatarMic), check output is \"mic\" or \"both\"\r\n- No audio in room: check output is \"speakers\" or \"both\", check default system sink volume\r\n- Speak command hangs: must send identify before any other command\r\n- Virtual camera not in Meet: restart Meet after starting avatar (Chrome enumerates devices at join time)\r\n- Renderer won't start: check ~/openclaw/avatar/renderer/node_modules exists, run npm install if needed\r\n",
+    "content_hash": "6df467de840078655183356ca17752f7feac5b7ca6e18750356adf8d8431669b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 80,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3088,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"avatar\",\r\n  \"description\": \"Control the VTuber avatar system \u2014 speak through it with lip sync, change expressions, manage the avatar renderer and control server. Use when interacting with the avatar, making it speak, changing expressions, or troubleshooting avatar connection issues.\",\r\n  \"category\": \"development\",\r\n  \"canonical_category\": \"development\",\r\n  \"repository\": \"majiayu000/claude-skill-registry\",\r\n  \"repository_url\": \"https://github.com/majiayu000/claude-skill-registry\",\r\n  \"author\": \"majiayu000\",\r\n  \"author_avatar\": \"https://github.com/majiayu000.png\",\r\n  \"file_path\": \"skills/data/avatar/SKILL.md\",\r\n  \"source\": \"github_code_search\",\r\n  \"stars\": 0,\r\n  \"quality_score\": 45,\r\n  \"best_practices_score\": 55,\r\n  \"skill_level\": 3,\r\n  \"skill_level_label\": \"resources\",\r\n  \"has_scripts\": true,\r\n  \"has_extra_files\": true,\r\n  \"downloads\": 0,\r\n  \"content_hash\": \"c295b2687af03b3d8d28f8a9efe993765b415dff5b88677e435bb1bbaa0f4e79\",\r\n  \"indexed_at\": \"2026-02-26T04:25:44.621Z\",\r\n  \"synced_at\": \"2026-02-28T03:54:50.575Z\",\r\n  \"omni_registry_url\": \"https://omni-skill-registry.omniroute.online/#/skill/2a26f8ce77ea3f00a36b1a04941eed43d07d190095adfe4cc63f9ae5df077aae\",\r\n  \"install_command\": \"mkdir -p .claude/skills/avatar && curl -sL \\\"https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/data/avatar/SKILL.md\\\" > .claude/skills/avatar/SKILL.md\",\r\n  \"raw_url\": \"https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/data/avatar/SKILL.md\"\r\n}\r\n",
+    "content_hash": "807a86c8c2013d305e4be005fb1fe7c7f689b7998a5edcd214c386c32990daeb",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "metadata.json",
+    "size_bytes": 1512,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

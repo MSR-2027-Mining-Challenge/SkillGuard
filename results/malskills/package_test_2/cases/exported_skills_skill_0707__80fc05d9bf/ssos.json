@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "git diff --name-only <prev_checkpoint_ref>..HEAD > /tmp/hawk-implement-plan-audited-files-<ckpt>.log",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "git diff <prev_checkpoint_ref>..HEAD -- <path> > /tmp/hawk-implement-plan-audited-diff-<ckpt>-<file-slug>.patch 2>&1",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::3": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::3"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  }
+]

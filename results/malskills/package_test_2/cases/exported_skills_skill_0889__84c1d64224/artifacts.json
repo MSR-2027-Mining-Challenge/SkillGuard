@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# /screenshot \u2014 Capture a Screenshot with Playwright\r\n\r\nTake a screenshot of any URL or local HTML file using Playwright CLI.\r\n\r\n## Usage\r\n\r\n```\r\n/screenshot <target>                    # Desktop viewport (1440x900)\r\n/screenshot <target> mobile             # Mobile viewport (390x844)\r\n/screenshot <target> full               # Full-page capture\r\n/screenshot <target> mobile full        # Mobile + full-page\r\n```\r\n\r\n## Instructions\r\n\r\nWhen invoked, run the appropriate Playwright command:\r\n\r\n### 1. Determine the target\r\n- If the target is a URL (starts with `http`), use it directly\r\n- If the target is a file path, convert to `file://` URL (encode spaces as `%20`)\r\n- If no target given, look for the most recently discussed HTML file in the conversation\r\n\r\n### 2. Determine the viewport\r\n- Default: `--viewport-size=\"1440,900\"` (desktop)\r\n- If `mobile` is specified: `--viewport-size=\"390,844\"`\r\n\r\n### 3. Determine capture mode\r\n- Default: above-the-fold only (no `--full-page`)\r\n- If `full` is specified: add `--full-page`\r\n\r\n### 4. Take the screenshot\r\n\r\n```bash\r\nnpx playwright screenshot [--viewport-size=\"WxH\"] [--full-page] \"<target>\" /tmp/screenshot.png\r\n```\r\n\r\n### 5. Show the result\r\n\r\nRead the screenshot file using the Read tool so it displays visually in the conversation.\r\n\r\n### 6. Review\r\n\r\nAfter showing the screenshot, provide a brief visual review noting any obvious layout issues (spacing, overflow, alignment, text wrapping, orphaned words).\r\n\r\n## Examples\r\n\r\n```\r\n/screenshot docs/index.html\r\n/screenshot https://automate-s.com full\r\n/screenshot Landing_Page_Sunrise.html mobile\r\n```\r\n\r\n## Notes\r\n- Playwright must be installed (`npx playwright install` if needed)\r\n- Screenshots are saved to `/tmp/screenshot.png` (overwritten each time)\r\n- The Read tool can display PNG files visually\r\n- Works with any agent \u2014 designed for visual QA during brand, UI, and landing page work\r\n",
+    "content_hash": "1a0cf0ef428767ddb286437ec70413200d5a972d73354d9331e3d1040387bdee",
+    "generated": false,
+    "is_text": true,
+    "line_count": 58,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1904,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "npx playwright screenshot [--viewport-size=\"WxH\"] [--full-page] \"<target>\" /tmp/screenshot.png",
+    "content_hash": "43feeb1fde406e0186a16f61c0dd2589db38c4fb98e56a833e240bb8e51c2118",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 94,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 35,
+    "source_start_line": 33
+  }
+]

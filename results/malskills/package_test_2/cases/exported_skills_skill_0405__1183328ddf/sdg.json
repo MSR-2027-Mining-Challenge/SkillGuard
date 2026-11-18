@@ -1,0 +1,203 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "atomic-git-commits.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/atomic-git-commits__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/atomic-git-commits__fence_12.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/atomic-git-commits__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/atomic-git-commits__fence_15.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/atomic-git-commits__fence_16.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/atomic-git-commits__fence_17.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": ".malskills_fences/atomic-git-commits__fence_18.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "path": ".malskills_fences/atomic-git-commits__fence_19.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "path": ".malskills_fences/atomic-git-commits__fence_20.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "path": ".malskills_fences/atomic-git-commits__fence_23.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "path": ".malskills_fences/atomic-git-commits__fence_24.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/atomic-git-commits__fence_7.sh::file_read::6",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/atomic-git-commits__fence_7.sh::file_read::6",
+      "target": "value::125889411a23cb079cb0",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "atomic-git-commits.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_12.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_15.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_16.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_17.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_18.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_19.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_20.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_23.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": ".malskills_fences/atomic-git-commits__fence_24.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/atomic-git-commits__fence_7.sh::file_read::6",
+      "identity_key": ".malskills_fences/atomic-git-commits__fence_7.sh::file_read::6",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::125889411a23cb079cb0",
+      "kind": "value",
+      "value": ".malskills_fences/atomic-git-commits__fence_7.sh::file_read::6",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

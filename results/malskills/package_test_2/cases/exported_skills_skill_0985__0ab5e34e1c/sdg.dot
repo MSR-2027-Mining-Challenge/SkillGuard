@@ -1,0 +1,20 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38" [label="obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43" [label="obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_write"];
+  "value::0e25e9374088e99207e8" [label="value::0e25e9374088e99207e8\nkind=value"];
+  "value::8dd468894fa4614b0643" [label="value::8dd468894fa4614b0643\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0001" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38" -> "value::0e25e9374088e99207e8" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43" -> "value::8dd468894fa4614b0643" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43" [label="has_operand"];
+}

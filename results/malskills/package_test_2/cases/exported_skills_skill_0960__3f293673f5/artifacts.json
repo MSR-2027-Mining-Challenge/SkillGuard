@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: internal-devops-core-principles\r\ndescription: Use when the task is about delivery-system strategy, release safety, operational readiness, or incident learning across the software-delivery lifecycle, not one-off workflow syntax or provider commands.\r\n---\r\n\r\n# Internal DevOps Core Principles\r\n\r\n## Referenced skills\r\n\r\n- None.\r\n\r\nUse this skill for end-to-end delivery-system thinking, not for one-off YAML syntax questions or provider-specific command lookup.\r\n\r\n## When to use\r\n\r\n- The task is about delivery-system strategy, release safety, operational readiness, or incident learning across the software-delivery lifecycle.\r\n- The main need is DevOps tradeoff framing rather than one-off workflow syntax or provider commands.\r\n- A repository or platform decision must be evaluated through CALMS, DORA, rollout safety, or operational controls.\r\n\r\n## Core Lens\r\n\r\nApply CALMS in this order:\r\n\r\n1. Culture: shared ownership, blameless learning, clear handoffs.\r\n2. Automation: remove repetitive human gates.\r\n3. Lean: reduce queue time, handoffs, and batch size.\r\n4. Measurement: use DORA and operational metrics.\r\n5. Sharing: document runbooks, incidents, and patterns.\r\n\r\n## Infinity Loop Scope\r\n\r\nAlways identify which parts of the DevOps loop are actually in play:\r\n\r\n- Plan: requirements, acceptance criteria, risks, success metrics, and infrastructure or deployment needs.\r\n- Code: reviewable change size, team conventions, dependency discipline, and tests written with the change.\r\n- Build: reproducible builds, locked dependencies, artifact versioning, build speed, and vulnerability scanning.\r\n- Test: automated unit, integration, end-to-end, performance, and security checks with clear pass or fail gates.\r\n- Release: release contents, versioning, changelog or release-note hygiene, approvals proportional to risk, and rollback readiness.\r\n- Deploy: infrastructure as code, progressive rollout strategy, deployment verification, blast-radius control, and rollback automation.\r\n- Operate: incident response, runbooks, SLO ownership, capacity planning, configuration hygiene, patching, backups, and disaster recovery.\r\n- Monitor: actionable metrics, logs, traces, alerts, DORA, SLI and SLO signals, plus business feedback that loops back into planning.\r\n\r\n## Delivery Rules\r\n\r\n- Prefer small, frequent, reversible changes.\r\n- Optimize for lead time and mean time to recovery, not ceremony.\r\n- Use automated checks as the default quality gate.\r\n- Keep code, infrastructure, environments, builds, tests, releases, and deployments reproducible.\r\n- Design rollouts for rollback, not just for first success.\r\n- Prefer progressive delivery, feature flags, or other blast-radius controls over all-at-once production changes.\r\n- Treat observability and incident readiness as delivery requirements, not as post-deploy chores.\r\n- Use approvals only when they reduce measurable risk that automation cannot already cover.\r\n\r\n## DORA Focus\r\n\r\nAlways consider:\r\n\r\n- Deployment frequency\r\n- Lead time for changes\r\n- Change failure rate\r\n- Mean time to recovery\r\n\r\nIf a workflow harms one of these, call it out explicitly.\r\n\r\n## Minimum Operational Controls\r\n\r\nGood DevOps guidance should usually account for these controls when relevant:\r\n\r\n- CI that gives fast, actionable feedback on every meaningful change.\r\n- Test layers that are automated, repeatable, and not flaky by default.\r\n- Security scanning and dependency hygiene inside the delivery path.\r\n- Release discipline with clear contents, auditability, and rollback preparation.\r\n- Deployment verification instead of assuming success after the pipeline turns green.\r\n- Runbooks, alert ownership, and an incident path that people can actually execute.\r\n- SLI, SLO, and DORA visibility that influences the next planning cycle.\r\n\r\n## What Good Looks Like\r\n\r\n- Fast feedback in pull requests and CI.\r\n- Clear ownership from commit to production.\r\n- Builds that work from a clean checkout and produce versioned artifacts.\r\n- Observable systems with actionable alerts, useful logs, and correlatable traces.\r\n- Release pipelines that are testable, repeatable, and reversible.\r\n- Post-incident learning that changes the system, not only the document.\r\n\r\n## Anti-Patterns\r\n\r\n- Large release trains as the default.\r\n- Manual copy-paste deployments.\r\n- Green pipelines with no deployment verification or rollback rehearsal.\r\n- Monitoring that creates noisy alerts with no operator action tied to them.\r\n- Hidden release knowledge, on-call knowledge, or recovery steps.\r\n- Approval chains with no measurable risk reduction.\r\n- Treating DevOps as a team name instead of an operating model.\r\n\r\n## Output Expectations\r\n\r\nWhen giving guidance:\r\n\r\n- State which Infinity Loop phases plus CALMS and DORA concerns apply.\r\n- Identify the current bottleneck.\r\n- Identify missing controls in testing, release safety, deployment safety, operations, or observability when they matter.\r\n- Recommend the minimum process and automation changes that improve flow.\r\n",
+    "content_hash": "9e50d08738de2e6fed95c4c207828faf973a6b6e466af8bc5df1c211cc08c67e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 104,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4999,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Internal DevOps Core Principles\"\r\n  short_description: \"DevOps lifecycle guidance for delivery health\"\r\n  default_prompt: \"Use $internal-devops-core-principles for this task and follow the repository-owned workflow in the skill.\"\r\n",
+    "content_hash": "3f6ac9fbb3800598647d197716251b3a8ccfedc0ca47514f3851abb9df03699e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 260,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

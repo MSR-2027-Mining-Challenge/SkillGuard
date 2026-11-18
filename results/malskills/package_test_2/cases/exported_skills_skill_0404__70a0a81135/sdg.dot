@@ -1,0 +1,13 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "obj::symbolic_reference::SKILL.md::data_receive::> **Get your Apify API key here:** [https://www.apify.com?fpr=dx06p](https://www.apify.com?fpr=dx06p)" [label="obj::symbolic_reference::SKILL.md::data_receive::> **Get your Apify API key here:** [https://www.apify.com?fpr=dx06p](https://www.apify.com?fpr=dx06p)\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::1aa2f58c548c6cc339ab" [label="value::1aa2f58c548c6cc339ab\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00000" [label="contains"];
+  "obj::symbolic_reference::SKILL.md::data_receive::> **Get your Apify API key here:** [https://www.apify.com?fpr=dx06p](https://www.apify.com?fpr=dx06p)" -> "value::1aa2f58c548c6cc339ab" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::SKILL.md::data_receive::> **Get your Apify API key here:** [https://www.apify.com?fpr=dx06p](https://www.apify.com?fpr=dx06p)" [label="has_operand"];
+}

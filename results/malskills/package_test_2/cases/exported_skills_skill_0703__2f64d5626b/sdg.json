@@ -1,0 +1,71 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0000",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::SKILL.md::package_installation::24",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::package_installation::24",
+      "target": "value::d52e6c5c0ae139bdca60",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::SKILL.md::package_installation::24",
+      "identity_key": "SKILL.md::package_installation::24",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::d52e6c5c0ae139bdca60",
+      "kind": "value",
+      "value": "SKILL.md::package_installation::24",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

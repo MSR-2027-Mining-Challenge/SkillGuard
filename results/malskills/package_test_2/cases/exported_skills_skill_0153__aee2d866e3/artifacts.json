@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: skill-creator\r\ndescription: Meta-skill that teaches AI how to create new skills. Covers directory structure, YAML frontmatter format, INDEX.md authoring, and chapter file conventions.\r\n---\r\n\r\n# Skill Creator \u2014 Meta-Skill\r\n\r\nThis skill defines the standard for creating new AI skills in the `ai-system/.skills/` directory.\r\n\r\n---\r\n\r\n## Skill Directory Structure\r\n\r\nEvery skill must follow this layout:\r\n\r\n```\r\nai-system/.skills/<skill-name>/\r\n\u251c\u2500\u2500 SKILL.md              # Skill definition (YAML frontmatter + body)\r\n\u251c\u2500\u2500 INDEX.md              # Table of contents \u2014 lists all chapters\r\n\u2514\u2500\u2500 chapters/             # Detailed guide files\r\n    \u251c\u2500\u2500 chapter-1.md\r\n    \u251c\u2500\u2500 chapter-2.md\r\n    \u2514\u2500\u2500 ...\r\n```\r\n\r\n---\r\n\r\n## SKILL.md Format\r\n\r\n### YAML Frontmatter (Required)\r\n\r\n```yaml\r\n---\r\nname: <skill-name>\r\ndescription: <one-line description of what this skill does>\r\n---\r\n```\r\n\r\n- **name**: Lowercase with hyphens (e.g., `frontend`, `backend`, `quality-gate`)\r\n- **description**: Concise, English, max ~100 tokens. This is **always loaded** by Antigravity (L1).\r\n\r\n### Body (Markdown)\r\n\r\nThe body is loaded when the skill triggers (L2, < 5k tokens). Include:\r\n\r\n1. **Purpose**: What this skill covers\r\n2. **When to use**: Which scenarios activate this skill\r\n3. **Key rules**: Critical conventions to follow\r\n4. **Chapter references**: Point to `chapters/` files for detailed content\r\n\r\n---\r\n\r\n## INDEX.md Format\r\n\r\n```markdown\r\n# <Skill Name> \u2014 Table of Contents\r\n\r\n## Chapters\r\n\r\n| #   | File                 | Topic               |\r\n| --- | -------------------- | ------------------- |\r\n| 1   | `chapters/<file>.md` | <brief description> |\r\n| 2   | `chapters/<file>.md` | <brief description> |\r\n```\r\n\r\n- Purpose: Let the AI scan the TOC and load only the chapter it needs (L3)\r\n- Keep descriptions concise \u2014 one line per chapter\r\n\r\n---\r\n\r\n## Chapter File Conventions\r\n\r\n- **Language**: English\r\n- **Filename**: Lowercase with hyphens (e.g., `nextjs-app-router.md`)\r\n- **Structure**: Each chapter should be self-contained\r\n  - Start with a heading (`# Topic Name`)\r\n  - Include code examples where applicable\r\n  - Reference `ai-system/file/project.md` for tech stack details\r\n- **Length**: No strict limit, but aim for focused, scannable content\r\n\r\n---\r\n\r\n## How to Create a New Skill\r\n\r\n1. Create directory: `ai-system/.skills/<skill-name>/`\r\n2. Write `SKILL.md` with YAML frontmatter + body\r\n3. Write `INDEX.md` with table of contents\r\n4. Create `chapters/` directory and add chapter files\r\n5. Verify: Start a new conversation and test if the skill auto-loads when relevant keywords or file patterns are detected\r\n",
+    "content_hash": "5b38d50b73844a00bc30c7a19bc110be778b3daf6483df0bd6852b0c7cdf1bf9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 90,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2661,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

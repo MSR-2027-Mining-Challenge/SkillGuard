@@ -1,0 +1,158 @@
+[
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": ".malskills_fences/SKILL__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell enumerates files or directories",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "find logseq/pages -name \"*.md\" -type f -exec grep -l \"technical-area\\|domain-category\\|Official Documentation Comprehensive\" {} \\; | \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": ".malskills_fences/SKILL__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": ".malskills_fences/SKILL__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell modifies file content or timestamps",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_write_or_timestamp_modify",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_write_or_timestamp_modify"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "sed -i.bak '/technical-area/d; /domain-category/d; /Official Documentation Comprehensive/d' \"$file\" && rm \"${file}.bak\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": ".malskills_fences/SKILL__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 4,
+        "start_line": 4
+      }
+    },
+    "span": {
+      "end_line": 4,
+      "start_line": 4
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": ".malskills_fences/SKILL__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell deletes or overwrites data",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00002",
+    "matched_text": "sed -i.bak '/technical-area/d; /domain-category/d; /Official Documentation Comprehensive/d' \"$file\" && rm \"${file}.bak\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": ".malskills_fences/SKILL__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 4,
+        "start_line": 4
+      }
+    },
+    "span": {
+      "end_line": 4,
+      "start_line": 4
+    },
+    "subtype": "file_delete"
+  }
+]

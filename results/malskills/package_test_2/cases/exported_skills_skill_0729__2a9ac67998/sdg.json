@@ -1,0 +1,254 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": "scripts/codex-web.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0006",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/codex-web.sh::file_delete::9",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/codex-web.sh::file_delete::9",
+      "target": "value::1c6eed98b0beffed9b34",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/codex-web.sh::file_read::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/codex-web.sh::file_read::15",
+      "target": "value::e3782f4f7b0b49c371e9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/codex-web.sh::file_read::22",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/codex-web.sh::file_read::22",
+      "target": "value::a112c6dd2d65f80a671b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/codex-web.sh::file_read::26",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/codex-web.sh::file_read::26",
+      "target": "value::05741ca9def0a8cd2c6c",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "scripts/codex-web.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/codex-web.sh::file_delete::9",
+      "identity_key": "scripts/codex-web.sh::file_delete::9",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1c6eed98b0beffed9b34",
+      "kind": "value",
+      "value": "scripts/codex-web.sh::file_delete::9",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/codex-web.sh::file_read::15",
+      "identity_key": "scripts/codex-web.sh::file_read::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e3782f4f7b0b49c371e9",
+      "kind": "value",
+      "value": "scripts/codex-web.sh::file_read::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/codex-web.sh::file_read::22",
+      "identity_key": "scripts/codex-web.sh::file_read::22",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a112c6dd2d65f80a671b",
+      "kind": "value",
+      "value": "scripts/codex-web.sh::file_read::22",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/codex-web.sh::file_read::26",
+      "identity_key": "scripts/codex-web.sh::file_read::26",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::05741ca9def0a8cd2c6c",
+      "kind": "value",
+      "value": "scripts/codex-web.sh::file_read::26",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

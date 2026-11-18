@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: backend-builder\r\ndescription: Build API routes, server actions, data adapters, and validation logic in web/. Use when creating or editing backend web code, API endpoints, or data-loading functions.\r\n---\r\n\r\n# Backend Builder\r\n\r\n## Scope\r\nAPI routes (`web/app/api/`), server actions, and data adapters (`web/lib/data/`).\r\n\r\n## Workflow\r\n1. Read `ops/CURRENT.md` and the assigned task file.\r\n2. Define or update the data adapter that reads from `data/` CSVs or JSON.\r\n3. Validate inputs with Zod schemas in `web/lib/schemas/`.\r\n4. Return typed responses. Use standard HTTP status codes for API routes.\r\n5. Cache expensive reads with `unstable_cache` or `revalidateTag`.\r\n6. Update task status and append a change entry.\r\n\r\n## Conventions\r\n- API routes: `web/app/api/<resource>/route.ts`.\r\n- Server actions: co-located with the page or form that calls them.\r\n- Shared types: `web/lib/types.ts`.\r\n- Data adapters: `web/lib/data/<domain>.ts` (e.g., `matches.ts`, `players.ts`).\r\n- Parse CSVs at build/request time, not at the client.\r\n\r\n## Token Discipline\r\n- Use `.head()` or schema summaries when inspecting data files.\r\n- Keep route handlers thin: delegate logic to adapter/service functions.\r\n",
+    "content_hash": "a0a5191b5a89e340f99a80c85ca943374f82a7a1b383ad3102394aa9000f805c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 29,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1202,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

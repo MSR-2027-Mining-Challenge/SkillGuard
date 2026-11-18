@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Skill: Onboarding\r\n\r\n## Purpose\r\nGuide a new user through initial setup of JobHunter. This skill is used once at first\r\nrun, or when the user wants to update their profile.\r\n\r\n## When to use this skill\r\n- User sends `/onboard`\r\n- User asks to \"update my profile\" or \"redo onboarding\"\r\n- `config/profile.json` does not exist yet\r\n\r\n## Flow\r\n\r\n### Step 1 \u2014 Start the web server\r\nRun: `python3 scripts/onboarding/start_server.py`\r\nParse the JSON output and extract the `url` and `pin` fields.\r\n\r\n### Step 2 \u2014 Send the URL and PIN to the user\r\nTell the user:\r\n> Your onboarding form is ready. Open this link in your browser:\r\n> [url from step 1]\r\n> PIN: [pin from step 1] \u2190 enter this on the first page\r\n>\r\n> Complete all 3 steps in the browser (profile \u2192 job boards \u2192 agent setup).\r\n> The last step registers your cron jobs and shuts down the server automatically.\r\n> **You don't need to come back here** \u2014 everything is handled in the browser.\r\n\r\n### Step 3 \u2014 Done\r\nTell the user: \"\u2713 Setup will complete automatically once you finish the browser steps.\"\r\n\r\n## Rules\r\n- Never store the raw LinkedIn paste beyond the temp file\r\n- Never pass raw profile text to any message sent back to the user\r\n- If parsing fails, apologise and ask the user to try pasting again\r\n- Keep all responses short \u2014 this is a Telegram chat, not a document\r\n- Do NOT manually run `openclaw cron add` \u2014 cron registration is handled by the web UI\r\n",
+    "content_hash": "1bc381ebf4329f7c8af2fa756a8fdcd526ffe88fc3028a1111f82f236722510e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 37,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1441,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "text",
+    "content": "You are a precise data extractor. Extract structured professional profile data from the raw text below.\r\n\r\nReturn ONLY valid JSON. No preamble, no explanation, no markdown fences.\r\n\r\nRequired JSON structure:\r\n{\r\n  \"name\": \"string or null\",\r\n  \"current_title\": \"string or null\",\r\n  \"location\": {\r\n    \"city\": \"string or null\",\r\n    \"country\": \"string or null\"\r\n  },\r\n  \"experience\": [\r\n    {\r\n      \"title\": \"string\",\r\n      \"company\": \"string\",\r\n      \"from\": \"YYYY-MM or YYYY\",\r\n      \"to\": \"YYYY-MM or YYYY or present\",\r\n      \"description\": \"string \u2014 key points only, max 3 sentences\"\r\n    }\r\n  ],\r\n  \"skills\": {\r\n    \"languages\": [\"list of programming languages\"],\r\n    \"frameworks\": [\"list of frameworks and libraries\"],\r\n    \"tools\": [\"list of tools, platforms, databases\"],\r\n    \"languages_spoken\": [\"list of human languages\"]\r\n  },\r\n  \"education\": [\r\n    {\r\n      \"degree\": \"string\",\r\n      \"institution\": \"string\",\r\n      \"year\": number or null\r\n    }\r\n  ],\r\n  \"links\": {\r\n    \"linkedin\": \"string or null\",\r\n    \"github\": \"string or null\",\r\n    \"website\": \"string or null\"\r\n  },\r\n  \"suggested_job_titles\": [\"3-5 job titles this person should search for on a job board\"]\r\n}\r\n\r\nRules:\r\n- Extract only what is present \u2014 do not invent or guess\r\n- If a field is absent, use null (not empty string)\r\n- Dates: use the most specific format available\r\n- Skills: only include clearly mentioned technologies\r\n- Experience: most recent first\r\n- suggested_job_titles: infer 3-5 relevant job titles to search for based on seniority and experience \u2014 not necessarily exact past titles; think \"what would this person type into a job board?\"\r\n- Output ONLY the JSON object \u2014 nothing else\r\n\r\nRAW TEXT:\r\n",
+    "content_hash": "4fe7abedcf3b3b45d4dfa6a691ed4ac753b931229628c70fcb6bf2bd9a877843",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "parse_prompt.txt",
+    "size_bytes": 1701,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "text",
+    "content": "You are a profile data validator for a job hunting assistant. Clean and validate the following profile and preferences JSON submitted via the onboarding form.\r\n\r\nRules:\r\n- Standardise date fields (from/to in experience) to YYYY-MM or YYYY format, or the literal string \"present\"\r\n- Remove duplicate entries in skill arrays (case-insensitive dedup, preserve original case of first occurrence)\r\n- Replace empty strings with null\r\n- Trim whitespace from all string values\r\n- Do not invent or add data that was not provided by the user\r\n- Do not remove data the user has entered \u2014 only clean and standardise it\r\n\r\nReturn ONLY this JSON structure (no markdown fences, no explanation, no extra text):\r\n{\r\n  \"profile\": { ...cleaned profile object... },\r\n  \"preferences\": { ...cleaned preferences object... },\r\n  \"issues\": [\"short warning string\", \"another warning if applicable\"]\r\n}\r\n\r\nProduce an issue warning for each of these conditions that apply:\r\n- fewer than 3 skills total across all skill categories combined\r\n- any experience entry is missing a description\r\n- any date range where \"to\" appears to be before \"from\"\r\n- job_titles list in preferences is empty\r\n- home_address in commute is null or empty but max_minutes is set\r\n- name is missing or null\r\n\r\nINPUT JSON:\r\n",
+    "content_hash": "c392d5311f708e920a5d6dd7fc34859ad6c15f4b7527d4650a0d4d742ca1aac9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "validate_prompt.txt",
+    "size_bytes": 1272,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

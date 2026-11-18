@@ -1,0 +1,315 @@
+[
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/.malskills_fences/README__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell copies or archives data in bulk",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "cp $(which just) .agents/skills/just/scripts/just",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/.malskills_fences/README__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/.malskills_fences/README__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell modifies file ownership or permissions",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.permission_modify",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.permission_modify"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "chmod +x .agents/skills/just/scripts/just",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/.malskills_fences/README__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "file_permission_modify"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/.malskills_fences/README__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00002",
+    "matched_text": "curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/.malskills_fences/README__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/.malskills_fences/README__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell copies or archives data in bulk",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/.malskills_fences/README__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/.malskills_fences/README__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell modifies file ownership or permissions",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.permission_modify",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.permission_modify"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "chmod +x .agents/skills/just/scripts/just",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/.malskills_fences/README__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 4,
+        "start_line": 4
+      }
+    },
+    "span": {
+      "end_line": 4,
+      "start_line": 4
+    },
+    "subtype": "file_permission_modify"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": "scripts/README.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00007",
+    "matched_text": "curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": "scripts/README.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 27,
+        "start_line": 27
+      }
+    },
+    "span": {
+      "end_line": 27,
+      "start_line": 27
+    },
+    "subtype": "data_receive"
+  }
+]

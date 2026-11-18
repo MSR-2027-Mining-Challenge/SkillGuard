@@ -1,0 +1,30 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_2.js"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_4.js"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_5.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"" [label="obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=system_configuration\nsubtype=system_configuration_modify"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::4663e0a67333aa9d254c" [label="value::4663e0a67333aa9d254c\nkind=value"];
+  "value::cf85431654b016f39e2f" [label="value::cf85431654b016f39e2f\nkind=value"];
+  "value::d3ff8d76828d455579c8" [label="value::d3ff8d76828d455579c8\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00002" [label="contains"];
+  "art_0005" -> "sso_00000" [label="contains"];
+  "art_0005" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1" -> "value::d3ff8d76828d455579c8" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"" -> "value::4663e0a67333aa9d254c" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"" -> "value::cf85431654b016f39e2f" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"" [label="has_operand"];
+  "sso_00002" -> "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"" [label="has_operand"];
+}

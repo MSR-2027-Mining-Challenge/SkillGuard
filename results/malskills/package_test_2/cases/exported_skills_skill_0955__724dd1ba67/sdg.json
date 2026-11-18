@@ -1,0 +1,249 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": "scripts/jax_modal_analysis.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::scripts/jax_modal_analysis.py::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/jax_modal_analysis.py::cmd",
+      "target": "value::10afdfc1191276999b61",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::scripts/jax_modal_analysis.py::newline",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/jax_modal_analysis.py::newline",
+      "target": "value::a282ca2534670c2551c8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::217",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::217",
+      "target": "value::80f4c26c2315035d6cc4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::223",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::223",
+      "target": "value::ea736c77c1d396068c1b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::238",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::238",
+      "target": "value::b05979b3c1741b5fb776",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "scripts/jax_modal_analysis.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/jax_modal_analysis.py::cmd",
+      "identity_key": "scripts/jax_modal_analysis.py::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::10afdfc1191276999b61",
+      "kind": "value",
+      "value": "scripts/jax_modal_analysis.py::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/jax_modal_analysis.py::newline",
+      "identity_key": "scripts/jax_modal_analysis.py::newline",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::a282ca2534670c2551c8",
+      "kind": "value",
+      "value": "scripts/jax_modal_analysis.py::newline",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::217",
+      "identity_key": "scripts/jax_modal_analysis.py::credential_data_access::217",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::80f4c26c2315035d6cc4",
+      "kind": "value",
+      "value": "scripts/jax_modal_analysis.py::credential_data_access::217",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::223",
+      "identity_key": "scripts/jax_modal_analysis.py::credential_data_access::223",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ea736c77c1d396068c1b",
+      "kind": "value",
+      "value": "scripts/jax_modal_analysis.py::credential_data_access::223",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::238",
+      "identity_key": "scripts/jax_modal_analysis.py::credential_data_access::238",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b05979b3c1741b5fb776",
+      "kind": "value",
+      "value": "scripts/jax_modal_analysis.py::credential_data_access::238",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

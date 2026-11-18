@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: create-commit\r\ndescription: Stage files and create one or more commits in a single pass\r\nuser-invocable: false\r\nmodel: haiku\r\nallowed-tools: Bash\r\n---\r\n\r\n# create-commit\r\n\r\nModel-invocable skill for creating commits. The grouping and the messages are decided\r\n**before** this skill runs (by `analyze-changes`); this skill only **executes** that\r\nplan. git is the tool and it is already known \u2014 so run it directly, in one pass. Do not\r\nreason between commits, do not re-decide grouping, do not invoke a sub-agent per commit.\r\n\r\n## Purpose\r\n\r\nStage the decided files and create the decided commits. Pure execution, no\r\ndecision-making. When handed several groups, commit **all of them in this one\r\ninvocation** \u2014 never one call per group.\r\n\r\n## Input\r\n\r\nReceive from the caller a **commit plan** \u2014 one or more groups, each:\r\n- `files`: list of files to stage for this group\r\n- `type`: conventional type (feat, fix, refactor, docs, chore, \u2026)\r\n- `scope`: component/area\r\n- `subject`: imperative, present tense\r\n- `body`: optional description\r\n- `issue`: optional issue number\r\n\r\nThe plan may arrive inline or as a path to the analysis/groups file (e.g.\r\n`analysis.yaml`); read the file if a path is given. Either way, treat it as the final\r\nplan \u2014 execute, don't revise.\r\n\r\n## Process\r\n\r\nLoop over the groups **in order**, in this single invocation. For each group, run the\r\ntwo git commands directly \u2014 no thinking step in between:\r\n\r\n1. **Stage that group's files** (only the files listed \u2014 never `git add .` / `-A`)\r\n   ```bash\r\n   git add \"file1\" \"file2\" \"file3\"\r\n   ```\r\n\r\n2. **Commit** with the conventional message\r\n   ```bash\r\n   git commit -m \"type(scope): subject\r\n\r\n   body\r\n\r\n   Issue: #123\"\r\n   ```\r\n\r\n3. **Record the hash**\r\n   ```bash\r\n   git rev-parse --short HEAD\r\n   ```\r\n\r\nAfter the last group, confirm the tree is clean (`git status --porcelain`). Do **not**\r\npush \u2014 pushing is the caller's separate step.\r\n\r\n## Output\r\n\r\nReturn using template: `templates/commit-output.md` \u2014 one entry per commit (hash +\r\nmessage), and the final clean-tree confirmation.\r\n\r\n## Constraints\r\n\r\n- ONLY stage files explicitly listed for each group.\r\n- NEVER use `git add .` or `git add -A`.\r\n- ALWAYS use conventional commit format.\r\n- Commit every group in ONE invocation \u2014 never a separate call (or sub-agent) per group.\r\n- NEVER push.\r\n\r\n## Version\r\n\r\n| Field | Value |\r\n|-------|-------|\r\n| Version | 2.0.0 |\r\n| Category | operations |\r\n",
+    "content_hash": "2ec54c04d38bf3ec5d0b4145515b717c5805dca5aa31301e4c2619277d37d803",
+    "generated": false,
+    "is_text": true,
+    "line_count": 82,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2467,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   git add \"file1\" \"file2\" \"file3\"",
+    "content_hash": "c0f60ec4d20827ea4a779317a20ae5fd92bb7f2ee00abf6891c2911eb7fa5bfd",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 34,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 44,
+    "source_start_line": 42
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "   git commit -m \"type(scope): subject\r\n\r\n   body\r\n\r\n   Issue: #123\"",
+    "content_hash": "4a478c2d5b26f35c9e9ce82bbb4e2a7ca134ed8d72ed93b9bde198cb50f4f551",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 68,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 53,
+    "source_start_line": 47
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "   git rev-parse --short HEAD",
+    "content_hash": "dd6eb2ba7f03a2c242bb191a4386b8317c9b05759cc76c08073a5f5b451dba2a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 29,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 58,
+    "source_start_line": 56
+  }
+]

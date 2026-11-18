@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: market-monitor\r\ndescription: Background market monitor \u2014 checks for regime changes and unusual moves on held positions. Run with /loop for continuous monitoring.\r\nuser-invocable: true\r\n---\r\n\r\n# Market Monitor\r\n\r\nLightweight background check for regime changes and unusual price moves. Designed for use with `/loop /market-monitor` during market hours.\r\n\r\n## What to Check\r\n\r\n1. **Regime change** \u2014 Call `get_market_regime`. Compare with the regime in `memory/market_regime.md`. If regime changed (e.g., risk_on -> risk_off), this is a significant event.\r\n2. **Position moves** \u2014 Call `get_portfolio`. For each held position, check if unrealized P&L moved more than 3% since last check (compare with `memory/portfolio_state.md`).\r\n3. **Kill switch** \u2014 Verify the kill switch has not been tripped.\r\n\r\n## Actions\r\n\r\n- **Regime change detected**: Update `memory/market_regime.md`. Send PushNotification. Suggest running `/trading-council`.\r\n- **Large position move (>3%)**: Send PushNotification with ticker and move. Suggest review.\r\n- **Kill switch tripped**: Send PushNotification immediately.\r\n- **Nothing notable**: Update `memory/portfolio_state.md` silently with current values.\r\n\r\n## Output\r\n\r\nKeep output minimal. One line if nothing happened:\r\n> Monitor 2:15 PM: All quiet. Regime: risk_on (VIX 15.2). Largest move: NVDA +1.2%.\r\n\r\nMulti-line if something notable:\r\n> ALERT: Regime changed risk_on -> volatile (VIX spiked to 22.1). Consider running /trading-council.\r\n> ALERT: XOM down -4.2% since last check ($155 -> $148). Review position.\r\n\r\n## Pacing\r\n\r\nWhen used with `/loop` (self-pacing mode), check more frequently during volatile regimes:\r\n- **Risk-on, calm**: every 20-30 minutes\r\n- **Transition**: every 10-15 minutes\r\n- **Risk-off / volatile**: every 5-10 minutes\r\n- **Outside market hours (before 9:30 AM or after 4 PM EDT)**: stop the loop\r\n",
+    "content_hash": "69518c99534252ab89e0b78e21a695cbc0bb9e127572f1f2155e3c94695fc97a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1879,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

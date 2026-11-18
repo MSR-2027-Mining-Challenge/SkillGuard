@@ -1,0 +1,28 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_2.ts"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_3.ts"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_4.ts"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_5.ts"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_6.tsx"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_7.sh"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_8.ts"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_9.ts"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74" [label="obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69" [label="obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=cryptography\nsubtype=hashing"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=cryptography\nsubtype=cryptographic_operation"];
+  "value::dabf345cc08204644812" [label="value::dabf345cc08204644812\nkind=value"];
+  "value::f427508ce2aeae45233a" [label="value::f427508ce2aeae45233a\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "art_0004" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74" -> "value::f427508ce2aeae45233a" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69" -> "value::dabf345cc08204644812" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74" [label="has_operand"];
+}

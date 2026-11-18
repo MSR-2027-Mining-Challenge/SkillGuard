@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: tasks-code-review\r\ndescription: Use for QUICK PR reviews with structured checklists (architecture, patterns, security, performance). Provides step-by-step review process, git diff commands, and review report templates. Best for pull request reviews and pre-commit checks. NOT for deep refactoring analysis (use code-review instead).\r\n---\r\n\r\n# Code Review Workflow\r\n\r\n## When to Use This Skill\r\n\r\n- Reviewing pull requests\r\n- Analyzing code for refactoring\r\n- Pre-commit code quality check\r\n- Security and performance audit\r\n\r\n## Review Dimensions\r\n\r\n### 1. Architecture Compliance\r\n\r\n- [ ] Follows Clean Architecture layers\r\n- [ ] Uses correct repository pattern\r\n- [ ] No cross-service boundary violations\r\n- [ ] Proper separation of concerns\r\n\r\n### 2. Pattern Adherence\r\n\r\n- [ ] CQRS patterns followed (Command/Query/Handler in ONE file)\r\n- [ ] Entity patterns correct (expressions, computed properties)\r\n- [ ] Frontend component hierarchy respected\r\n- [ ] Platform base classes used correctly\r\n\r\n### 3. Code Quality\r\n\r\n- [ ] Single Responsibility Principle\r\n- [ ] No code duplication\r\n- [ ] Meaningful naming\r\n- [ ] Appropriate abstractions\r\n\r\n### 4. Security\r\n\r\n- [ ] No SQL injection vulnerabilities\r\n- [ ] Authorization checks present\r\n- [ ] Sensitive data handling\r\n- [ ] Input validation\r\n\r\n### 5. Performance\r\n\r\n- [ ] N+1 query prevention (eager loading)\r\n- [ ] Proper paging for large datasets\r\n- [ ] Parallel operations where applicable\r\n- [ ] Caching considerations\r\n\r\n## Review Process\r\n\r\n### Step 1: Understand Context\r\n\r\n```bash\r\n# Get changed files\r\ngit diff --name-only main...HEAD\r\n\r\n# Get full diff\r\ngit diff main...HEAD\r\n\r\n# Check commit messages\r\ngit log main...HEAD --oneline\r\n```\r\n\r\n### Step 2: Categorize Changes\r\n\r\n```markdown\r\n## Files Changed\r\n\r\n### Domain Layer\r\n\r\n- `Entity.cs` - New entity\r\n\r\n### Application Layer\r\n\r\n- `SaveEntityCommand.cs` - New command\r\n\r\n### Persistence Layer\r\n\r\n- `EntityConfiguration.cs` - EF configuration\r\n\r\n### Frontend\r\n\r\n- `entity-list.component.ts` - List component\r\n```\r\n\r\n### Step 3: Review Each Category\r\n\r\n#### Backend Review Checklist\r\n\r\n```markdown\r\n## Entity Review\r\n\r\n- [ ] Inherits from correct base (RootEntity/RootAuditedEntity)\r\n- [ ] Static expressions for queries\r\n- [ ] Computed properties have empty `set { }`\r\n- [ ] Navigation properties have `[JsonIgnore]`\r\n- [ ] `[TrackFieldUpdatedDomainEvent]` on tracked fields\r\n\r\n## Command/Query Review\r\n\r\n- [ ] Command + Handler + Result in ONE file\r\n- [ ] Uses service-specific repository\r\n- [ ] Validation uses fluent API\r\n- [ ] No side effects in command handler\r\n- [ ] DTO mapping in DTO class, not handler\r\n\r\n## Repository Usage Review\r\n\r\n- [ ] Uses `GetQueryBuilder` for reusable queries\r\n- [ ] Uses `WhereIf` for optional filters\r\n- [ ] Parallel tuple queries for count + data\r\n- [ ] Proper eager loading\r\n\r\n## Event Handler Review\r\n\r\n- [ ] In `UseCaseEvents/` folder\r\n- [ ] Uses `PlatformCqrsEntityEventApplicationHandler<T>`\r\n- [ ] `HandleWhen` is `public override async Task<bool>`\r\n- [ ] Filters by `CrudAction` appropriately\r\n```\r\n\r\n#### Frontend Review Checklist\r\n\r\n```markdown\r\n## Component Review\r\n\r\n- [ ] Correct base class for use case\r\n- [ ] Store provided at component level\r\n- [ ] Loading/error states handled\r\n- [ ] `untilDestroyed()` on subscriptions\r\n- [ ] Track-by in `@for` loops\r\n\r\n## Store Review\r\n\r\n- [ ] State interface defined\r\n- [ ] `vmConstructor` provides defaults\r\n- [ ] Effects use `observerLoadingErrorState`\r\n- [ ] Immutable state updates\r\n\r\n## Form Review\r\n\r\n- [ ] `validateForm()` before submit\r\n- [ ] Async validators conditional\r\n- [ ] Dependent validations configured\r\n- [ ] Error messages for all rules\r\n\r\n## API Service Review\r\n\r\n- [ ] Extends `PlatformApiService`\r\n- [ ] Typed responses\r\n- [ ] Caching where appropriate\r\n```\r\n\r\n### Step 4: Security Review\r\n\r\n```markdown\r\n## Security Checklist\r\n\r\n### Authorization\r\n\r\n- [ ] `[PlatformAuthorize]` on controllers\r\n- [ ] Role checks in handlers\r\n- [ ] Data filtered by company/user context\r\n\r\n### Input Validation\r\n\r\n- [ ] All inputs validated\r\n- [ ] No raw SQL strings\r\n- [ ] File upload validation\r\n\r\n### Sensitive Data\r\n\r\n- [ ] No secrets in code\r\n- [ ] Passwords hashed\r\n- [ ] PII handled correctly\r\n```\r\n\r\n### Step 5: Performance Review\r\n\r\n```markdown\r\n## Performance Checklist\r\n\r\n### Database\r\n\r\n- [ ] Indexes on filtered columns\r\n- [ ] Eager loading for N+1 prevention\r\n- [ ] Paging for large datasets\r\n\r\n### API\r\n\r\n- [ ] Response size reasonable\r\n- [ ] Parallel operations used\r\n- [ ] Caching for static data\r\n\r\n### Frontend\r\n\r\n- [ ] Lazy loading for routes\r\n- [ ] Track-by for lists\r\n- [ ] OnPush change detection\r\n```\r\n\r\n## Common Issues to Flag\r\n\r\n### :x: Anti-Patterns\r\n\r\n```csharp\r\n// Issue: Side effect in command handler\r\nawait notificationService.SendAsync(...);\r\n\r\n// Issue: Wrong repository type\r\nIPlatformRootRepository<Entity>  // Should be service-specific\r\n\r\n// Issue: DTO mapping in handler\r\nvar entity = new Entity { Name = request.Name };  // Should use DTO.MapToEntity()\r\n\r\n// Issue: Missing eager loading\r\nvar items = await repo.GetAllAsync(...);  // Missing relations\r\nitems.ForEach(i => Console.WriteLine(i.Related.Name));  // N+1!\r\n```\r\n\r\n```typescript\r\n// Issue: No loading state\r\nthis.api.getItems().subscribe(items => this.items = items);\r\n\r\n// Issue: Direct mutation\r\nthis.state.items.push(newItem);\r\n\r\n// Issue: Missing cleanup\r\nthis.data$.subscribe(...);  // Missing untilDestroyed()\r\n```\r\n\r\n## Review Report Template\r\n\r\n```markdown\r\n# Code Review Report\r\n\r\n## Summary\r\n\r\n- **PR/Changes**: [Description]\r\n- **Reviewer**: AI\r\n- **Date**: [Date]\r\n\r\n## Overall Assessment\r\n\r\n[APPROVED | APPROVED WITH COMMENTS | CHANGES REQUESTED]\r\n\r\n## Strengths\r\n\r\n1. [Positive point 1]\r\n2. [Positive point 2]\r\n\r\n## Issues Found\r\n\r\n### Critical (Must Fix)\r\n\r\n1. **[File:Line]**: [Description]\r\n    - Problem: [Explanation]\r\n    - Suggestion: [Fix]\r\n\r\n### Major (Should Fix)\r\n\r\n1. **[File:Line]**: [Description]\r\n\r\n### Minor (Consider Fixing)\r\n\r\n1. **[File:Line]**: [Description]\r\n\r\n## Recommendations\r\n\r\n1. [Recommendation 1]\r\n2. [Recommendation 2]\r\n```\r\n\r\n## Review Commands\r\n\r\n```bash\r\n# Find potential issues\r\ngrep -r \"new Entity {\" --include=\"*.cs\"  # DTO mapping in handler\r\ngrep -r \"SendAsync\\|NotifyAsync\" --include=\"*CommandHandler.cs\"  # Side effects\r\ngrep -r \"IPlatformRootRepository\" --include=\"*.cs\"  # Generic repository\r\n\r\n# Check patterns\r\ngrep -r \"observerLoadingErrorState\" --include=\"*.ts\"  # Loading tracking\r\ngrep -r \"untilDestroyed\" --include=\"*.ts\"  # Subscription cleanup\r\n```\r\n\r\n## Verification Checklist\r\n\r\n- [ ] All changed files reviewed\r\n- [ ] Architecture compliance verified\r\n- [ ] Platform patterns followed\r\n- [ ] Security concerns addressed\r\n- [ ] Performance considered\r\n- [ ] Review report generated\r\n",
+    "content_hash": "a3d0f33a75a3a358ae5a1d2e465c2ff07821738e9850a0b6a5b298c0bd276e56",
+    "generated": false,
+    "is_text": true,
+    "line_count": 298,
+    "relative_path": "SKILL.md",
+    "size_bytes": 6775,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Get changed files\r\ngit diff --name-only main...HEAD\r\n\r\n# Get full diff\r\ngit diff main...HEAD\r\n\r\n# Check commit messages\r\ngit log main...HEAD --oneline",
+    "content_hash": "c65950c39ab4c3c53bbc7bc09581fad6eeae63534f359f80aaa3eb4317297968",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 152,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 65,
+    "source_start_line": 56
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "javascript",
+    "content": "// Issue: No loading state\r\nthis.api.getItems().subscribe(items => this.items = items);\r\n\r\n// Issue: Direct mutation\r\nthis.state.items.push(newItem);\r\n\r\n// Issue: Missing cleanup\r\nthis.data$.subscribe(...);  // Missing untilDestroyed()",
+    "content_hash": "cb4260ea9cd3423fd2ccad824c27aa1d5e888205439ac566e3d688d17ab97bfd",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_7.ts",
+    "size_bytes": 235,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 233,
+    "source_start_line": 224
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "# Find potential issues\r\ngrep -r \"new Entity {\" --include=\"*.cs\"  # DTO mapping in handler\r\ngrep -r \"SendAsync\\|NotifyAsync\" --include=\"*CommandHandler.cs\"  # Side effects\r\ngrep -r \"IPlatformRootRepository\" --include=\"*.cs\"  # Generic repository\r\n\r\n# Check patterns\r\ngrep -r \"observerLoadingErrorState\" --include=\"*.ts\"  # Loading tracking\r\ngrep -r \"untilDestroyed\" --include=\"*.ts\"  # Subscription cleanup",
+    "content_hash": "4707bb0fd6893e9d6528d5bd0ef92a21dc050a51ce722e6138ee7098e19ee8e2",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_9.sh",
+    "size_bytes": 406,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 288,
+    "source_start_line": 279
+  }
+]

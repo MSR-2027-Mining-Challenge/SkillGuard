@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: webapp-operations-logging\r\ndescription: \"Nikto/2.1.6, sqlmap/1.7, DirBuster-1.0-RC1, gobuster/3.\"\r\ndomain: cybersecurity\r\n---\r\n\r\n# Analyzing Web Server Logs for Intrusion\r\n\r\n## When to Use\r\n\r\n- When investigating security incidents that require analyzing web server logs for intrusion\r\n- When building detection rules or threat hunting queries for this domain\r\n- When SOC analysts need structured procedures for this analysis type\r\n- When validating security monitoring coverage for related attack techniques\r\n\r\n## Prerequisites\r\n\r\n- Familiarity with security operations concepts and tools\r\n- Access to a test or lab environment for safe execution\r\n- Python 3.8+ with required dependencies installed\r\n- Appropriate authorization for any testing activities\r\n\r\n## Instructions\r\n\r\n1. Install dependencies: `pip install geoip2 user-agents`\r\n2. Collect web server access logs in Combined Log Format (Apache) or Nginx default format.\r\n3. Parse each log entry extracting: IP, timestamp, method, URI, status code, response size, user-agent, referer.\r\n4. Apply detection rules:\r\n   - SQL injection: `UNION SELECT`, `OR 1=1`, `' OR '`, hex encoding patterns\r\n   - LFI/Path traversal: `../`, `/etc/passwd`, `/proc/self`, `php://filter`\r\n   - XSS: `<script>`, `javascript:`, `onerror=`, `onload=`\r\n   - Scanner signatures: nikto, sqlmap, dirbuster, gobuster, wfuzz user-agents\r\n   - Brute force: >50 POST requests to login endpoints from same IP in 5 minutes\r\n5. Enrich with GeoIP data and generate a prioritized findings report.\r\n\r\n```bash\r\npython scripts/agent.py --log-file /var/log/nginx/access.log --geoip-db GeoLite2-City.mmdb --output web_intrusion_report.json\r\n```\r\n\r\n## Examples\r\n\r\n### Detect SQLi in URI\r\n```\r\n192.168.1.100 - - [15/Jan/2024:10:30:45 +0000] \"GET /products?id=1' UNION SELECT username,password FROM users-- HTTP/1.1\" 200 4532\r\n```\r\n\r\n### Scanner User-Agent Detection\r\n```\r\nNikto/2.1.6, sqlmap/1.7, DirBuster-1.0-RC1, gobuster/3.1.0\r\n```\r\n",
+    "content_hash": "8e3de81bcedf6efd02f83eaf8cd803a5c9e623b1ba6442f8b0ae671786c28623",
+    "generated": false,
+    "is_text": true,
+    "line_count": 51,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1962,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "python scripts/agent.py --log-file /var/log/nginx/access.log --geoip-db GeoLite2-City.mmdb --output web_intrusion_report.json",
+    "content_hash": "9bf55234f4a37512e5c60876fa49053353ad587e23b0ae2964adaa6ff3fee3fc",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 125,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 38,
+    "source_start_line": 36
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "{\r\n  \"version\": \"1.0.0\",\r\n  \"updated\": \"2026-06-02\",\r\n  \"agents\": [],\r\n  \"skills\": [\r\n    {\r\n      \"name\": \"webapp-operations-logging\",\r\n      \"path\": \"webapp-operations-logging\",\r\n      \"description\": \"Nikto/2.1.6, sqlmap/1.7, DirBuster-1.0-RC1, gobuster/3.\",\r\n      \"domain\": \"cybersecurity\",\r\n      \"model\": \"sonnet\",\r\n      \"sha512\": \"2e6da05fd53e0f44d0c967cec8513f140cfa8cf7401962fca10697e2829e852b277076e3d6c73be3ebdc2a446dcc000e0089e7f5bb30028ed53e7ae4c7817203\",\r\n      \"file\": \"skills/webapp-operations-logging/SKILL.md\"\r\n    }\r\n  ]\r\n}\r\n",
+    "content_hash": "07cbca5035c2cd7e0fe556b002c8bd09a067f0ef42fa5fb29884dfe23e59e521",
+    "generated": false,
+    "is_text": true,
+    "line_count": 17,
+    "relative_path": "index.json",
+    "size_bytes": 545,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: terraform-hygiene\r\ndescription: Validate Terraform changes against current docs and block deprecated settings in this repo. Use when tasks touch infra/*.tf, .terraform.lock.hcl, Terraform CI validation, or Terraform workflow/docs changes.\r\n---\r\n\r\n# Terraform Hygiene\r\n\r\n## Overview\r\n\r\nUse this skill when work touches Terraform in this repository. The goal is to keep provider syntax current and make deprecations fail locally and in CI instead of slipping through as warnings.\r\n\r\n## Workflow\r\n\r\n1. Identify the touched Terraform surface first:\r\n   - provider resources and data sources under `infra/*.tf`\r\n   - Terraform workflows under `.github/workflows/**`\r\n   - lockfile changes in `infra/.terraform.lock.hcl`\r\n\r\n2. Fetch current docs before editing:\r\n   - For provider resources or data sources, use Terraform MCP `search_providers` then `get_provider_details`.\r\n   - For Terraform Registry modules, use Terraform MCP `search_modules` then `get_module_details`.\r\n   - Prefer the exact provider version already pinned by the repo when the docs allow version targeting.\r\n\r\n3. If the docs are ambiguous:\r\n   - Run backendless `terraform init` with a dedicated `TF_DATA_DIR`.\r\n   - Inspect `terraform providers schema -json` instead of guessing block or attribute names.\r\n\r\n4. After edits:\r\n   - Run `python3 scripts/terraform_validate_strict.py`.\r\n   - Do not stop at plain `terraform validate` success if deprecated arguments or blocks are still reported.\r\n\r\n5. If a deprecation cannot be resolved cleanly:\r\n   - Stop and surface the exact warning and the doc or schema conflict instead of guessing.\r\n\r\n## Repo Notes\r\n\r\n- The strict local command is `python3 scripts/terraform_validate_strict.py`.\r\n- Shared CI uses the same command through `.github/workflows/_terraform-validate-shared.yml`.\r\n- Deprecation warnings are blocking in this repo even when Terraform itself exits with success.\r\n",
+    "content_hash": "d274b357e5ba43e06723000db0e86d1ba484124012f2775610976acc6999b1f3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1906,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

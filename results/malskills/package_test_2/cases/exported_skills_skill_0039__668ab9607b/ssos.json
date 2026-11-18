@@ -1,0 +1,466 @@
+[
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/gh-cli-guide__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh pr create --base main --head feature-branch --title \"feat: add login\" --body \"Summary\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/gh-cli-guide__fence_1.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/gh-cli-guide__fence_1.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/gh-cli-guide__fence_1.sh::file_read::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/gh-cli-guide__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh pr create --base main --title \"feat(auth): add OAuth\" --body \"$(cat <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/gh-cli-guide__fence_1.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/gh-cli-guide__fence_1.sh::file_read::5",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/gh-cli-guide__fence_1.sh::file_read::5"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/gh-cli-guide__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh browse path/to/file:42     # Open file at line",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/gh-cli-guide__fence_6.sh::system_configuration_modify::4": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/gh-cli-guide__fence_6.sh::system_configuration_modify::4",
+      "resource_class": "startup_configuration",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/gh-cli-guide__fence_6.sh::system_configuration_modify::4"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/gh-cli-guide__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh issue list --json number,title --jq '.[].title'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/gh-cli-guide__fence_8.sh::file_read::3": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/gh-cli-guide__fence_8.sh::file_read::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/gh-cli-guide__fence_8.sh::file_read::3"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0025"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/safety-protocols__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "git reset --soft HEAD~1  # Keep changes staged",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/safety-protocols__fence_2.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/safety-protocols__fence_2.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/safety-protocols__fence_2.sh::file_read::1"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0025"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/safety-protocols__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "git reset HEAD~1         # Keep changes unstaged",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/safety-protocols__fence_2.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/safety-protocols__fence_2.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/safety-protocols__fence_2.sh::file_read::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0027"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/safety-protocols__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "git reset --hard HEAD    # All files (DANGER)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/safety-protocols__fence_4.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/safety-protocols__fence_4.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/safety-protocols__fence_4.sh::file_read::2"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0038"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-pr__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "git push -u origin HEAD 2>/dev/null || true && \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::2"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0038"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-pr__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "HEAD=$(git rev-parse --abbrev-ref HEAD) && \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/workflow-pr__fence_0.sh::HEAD": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/workflow-pr__fence_0.sh::HEAD",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/workflow-pr__fence_0.sh::HEAD"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0038"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-pr__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"=== PR: $HEAD \u2192 $BASE ===\" && \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/workflow-pr__fence_0.sh::BASE": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/workflow-pr__fence_0.sh::BASE",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/workflow-pr__fence_0.sh::BASE"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0038"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-pr__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "git log origin/$BASE...origin/$HEAD --oneline && \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::7": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::7",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::7"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0038"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-pr__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "git diff origin/$BASE...origin/$HEAD --stat",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::9": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::9",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-pr__fence_0.sh::file_read::9"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0039"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-pr__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh pr create --base $BASE --head $HEAD --title \"...\" --body \"$(cat <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-pr__fence_1.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-pr__fence_1.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-pr__fence_1.sh::file_read::1"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0041"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-push__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "git log origin/$(git rev-parse --abbrev-ref HEAD)..HEAD --oneline 2>/dev/null || echo \"NO_UPSTREAM\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-push__fence_0.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-push__fence_0.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-push__fence_0.sh::file_read::2"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0042"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-push__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "git push origin HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-push__fence_1.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-push__fence_1.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-push__fence_1.sh::file_read::1"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0043"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/workflow-push__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "git push -f origin HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/workflow-push__fence_2.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/workflow-push__fence_2.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/workflow-push__fence_2.sh::file_read::1"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_read"
+  }
+]

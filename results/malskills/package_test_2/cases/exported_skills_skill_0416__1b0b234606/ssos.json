@@ -1,0 +1,90 @@
+[
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/cloud_run_service_evidence.py"
+    ],
+    "attributes": {
+      "matched_text": "return os.environ.get(\"GCLOUD_BIN\") or shutil.which(\"gcloud\") or \"/Users/ankitkumarsingh/google-cloud-sdk/bin/gcloud\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27": "path"
+      },
+      "operation_object": "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/cloud_run_service_evidence.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(args, check=False, text=True, capture_output=True)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/cloud_run_service_evidence.py:31:31:subprocess.run()",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/cloud_run_service_evidence.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140": "path"
+      },
+      "operation_object": "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 140,
+      "source_start_line": 140
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  }
+]

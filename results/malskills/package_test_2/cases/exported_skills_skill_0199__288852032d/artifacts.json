@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: common-sprint-autopilot\r\ndescription: Plan and execute a named sprint or development stage across multiple requirements. Use when Codex is asked to run a sprint, execute an MVP/stage plan step by step, convert stage requirements plus technical design into a development plan, or repeatedly implement requirements with dev-pattern, changelog updates, and git commits until the stage is complete.\r\n---\r\n\r\n# Common Sprint Autopilot\r\n\r\n## Purpose\r\n\r\nUse this skill to coordinate a sprint-like development stage from planning through repeated implementation steps. It does not replace implementation, changelog, or commit skills; it orchestrates them in a strict loop.\r\n\r\n## Required Inputs\r\n\r\nBefore planning or executing, require:\r\n\r\n- Stage name, such as `MVP Step 3`, `v0.1 Usage Tracker`, or `Sprint 2026-05-12`.\r\n- Stage requirements from user prompt or project files.\r\n- Technical guidance files relevant to the stage.\r\n\r\nIf the stage name is missing, ask for it. If requirement or technical files are referenced but missing, stop and report exactly what is missing. Do not invent requirements, file contents, or technical decisions.\r\n\r\n## Stage File Check\r\n\r\nInspect the smallest useful set of files:\r\n\r\n- Existing sprint/stage plan, if any.\r\n- Product or requirement docs, such as `docs/blueprint.md`, issue specs, tickets, or user-provided notes.\r\n- Technical design docs, such as `docs/technical-design.md`, `docs/mvp/technical-plan.md`, or module-level docs.\r\n- Existing progress docs, such as `docs/mvp/development-plan.md`.\r\n- `AGENTS.md` and `docs/codex/repo-map.md` when available.\r\n- `CHANGELOG.md`.\r\n- Current `git status --short`.\r\n\r\nOnly proceed when the required files for the requested stage are present or the user explicitly provides enough content in the prompt.\r\n\r\n## Phase 1: Build The Development Plan\r\n\r\nCreate or update a stage development plan before implementation.\r\n\r\nThe plan must include:\r\n\r\n- Stage name.\r\n- Source files or user-provided requirements used.\r\n- Step list with stable IDs.\r\n- For each step:\r\n  - goal\r\n  - scope\r\n  - main files or modules\r\n  - dependencies\r\n  - validation commands\r\n  - acceptance criteria\r\n  - status\r\n- Known blockers or missing inputs.\r\n\r\nUse existing project planning conventions when present. For this repository, prefer `docs/mvp/development-plan.md` for MVP progress.\r\n\r\nDo not mark a step complete until code/docs are implemented, validation is run or explicitly skipped with reason, changelog is updated when needed, and the work is committed.\r\n\r\n## Phase 2: Execute One Step At A Time\r\n\r\nFor each incomplete step, run this loop.\r\n\r\n### 1. Select The Next Step\r\n\r\n- Pick the first unblocked incomplete step.\r\n- Re-read its requirements and acceptance criteria.\r\n- Check `git status --short` before editing.\r\n- If unrelated dirty changes exist, avoid touching them. If they block the step, ask the user.\r\n\r\n### 2. Implement With Dev Pattern\r\n\r\nUse `common-dev-pattern` for implementation work.\r\n\r\nImplementation rules:\r\n\r\n- Read nearby code and tests first.\r\n- Follow existing repository conventions.\r\n- Keep edits scoped to the selected step.\r\n- Add or update tests based on risk.\r\n- Run the narrowest reliable validation, then broaden if the change touches shared contracts.\r\n- Update the development plan status after implementation and validation.\r\n\r\n### 3. Update Changelog\r\n\r\nUse `common-project-changelog` after implementation and before committing when the step changes user-visible behavior, CLI/API behavior, release notes, package version metadata, developer-facing workflow, or project capability.\r\n\r\nRules:\r\n\r\n- If `CHANGELOG.md` is missing, initialize it through the changelog skill.\r\n- Add entries under `## [Unreleased]`.\r\n- Do not place new work under an older dated release.\r\n- Keep entries concise and user/developer visible.\r\n\r\n### 4. Commit The Step\r\n\r\nUse `common-git-commit` after implementation, validation, changelog update, and plan status update.\r\n\r\nRules:\r\n\r\n- Commit only files belonging to the completed step.\r\n- Use Conventional Commits.\r\n- Do not push unless the user explicitly asks.\r\n- If a step naturally splits into independent commits, use separate commits.\r\n\r\n### 5. Continue Or Stop\r\n\r\nAfter committing:\r\n\r\n- Re-check the development plan.\r\n- Move to the next incomplete unblocked step.\r\n- Stop and report when all steps are complete.\r\n- Stop and ask when a step requires missing requirements, missing files, failed validation needing judgment, secrets, credentials, or destructive actions.\r\n\r\n## Progress Status Rules\r\n\r\nUse these statuses:\r\n\r\n- `pending`: not started.\r\n- `in_progress`: currently being implemented.\r\n- `blocked`: waiting on missing input or external dependency.\r\n- `completed`: implemented, validated or skipped with reason, changelog updated if needed, and committed.\r\n\r\nOnly one step should be `in_progress` at a time.\r\n\r\n## Final Response\r\n\r\nWhen stopping, report:\r\n\r\n- Current stage name.\r\n- Completed steps.\r\n- Current/next step.\r\n- Commits created.\r\n- Checks run and results.\r\n- Blockers, if any.\r\n\r\nKeep the response concise and point to the plan file for details.\r\n",
+    "content_hash": "1c55dfe10b4ad3029b88ed16078f5224ef14102c9fbd8f96fa177f5f79103848",
+    "generated": false,
+    "is_text": true,
+    "line_count": 137,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5112,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Sprint Autopilot\"\r\n  short_description: \"Plan and execute sprint steps\"\r\n  default_prompt: \"Use $common-sprint-autopilot to plan and execute a sprint from requirements through commits.\"\r\n",
+    "content_hash": "ec8ff4edad00225b8bd442b9259a4ed2f4ca877f8d04371b5a19820617df277e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 216,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "name: common-sprint-autopilot\r\ntype: skill\r\nversion: 0.0.1\r\nentry: SKILL.md\r\ndescription: Plan and execute a named sprint or development stage across\r\n  multiple requirements. Use when Codex is asked to run a sprint, execute an\r\n  MVP/stage plan step by step, convert stage requirements plus technical design\r\n  into a development plan, or repeatedly implement requirements with\r\n  dev-pattern, changelog updates, and git commits until the stage is complete.\r\nagents:\r\n  - codex\r\nanalysis:\r\n  content:\r\n    tokenizer: approx-char-v1\r\n    tokenEstimator: ceil(chars/4)\r\n    entryTokens: 1244\r\n    packageTokens: 1298\r\n    contentHash: sha256:cde42998b0bfbbfe2e25c28b514b404a28a12f1b7848c217e8ebb22f768ef49c\r\n    measuredAt: 2026-05-14T07:52:32.914Z\r\n    measuredBy: codex\r\n  dependencies:\r\n    skills:\r\n      - common-dev-pattern\r\n      - common-git-commit\r\n      - common-project-changelog\r\n    scripts: []\r\n    mcpTools: []\r\n  generation:\r\n    generatedBy: codex\r\n    generatedAt: 2026-05-14T07:52:32.914Z\r\n    model: gpt-5\r\n    promptRef: himan-skill-metadata\r\n",
+    "content_hash": "0b4cda6e134097e2b3934da9eec7e2e128fa536f4ebcb541e2e8a00c25547853",
+    "generated": false,
+    "is_text": true,
+    "line_count": 33,
+    "relative_path": "himan.yaml",
+    "size_bytes": 1063,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

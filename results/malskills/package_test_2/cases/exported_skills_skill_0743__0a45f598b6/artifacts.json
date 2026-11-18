@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# OSS Promoter Skill\r\n\r\nBatch promote open source projects to tech weeklies and communities.\r\n\r\n## What this skill does\r\n\r\n1. **Search for weeklies**: Use WebSearch to find new tech weeklies that accept submissions\r\n2. **Extract project info**: Use `gh` to get repo description, README, stars, etc.\r\n3. **Generate submissions**: Create tailored issue content for each weekly\r\n4. **Batch submit**: Use `gh issue create` or `gh issue comment` to submit\r\n\r\n## Usage\r\n\r\nWhen the user wants to promote an open source project:\r\n\r\n1. First, ask for the GitHub repo URL if not provided\r\n2. Load the weeklies config from `${CLAUDE_PLUGIN_ROOT}/config/weeklies.json`\r\n3. Use `gh repo view <repo> --json name,description,url,stargazerCount,readme` to get project info\r\n4. For each enabled weekly in the config:\r\n   - Generate title using the `title_template`\r\n   - Generate body using the project info\r\n   - If `type` is \"issue\": use `gh issue create --repo <weekly_repo> --title \"<title>\" --body \"<body>\"`\r\n   - If `type` is \"comment\": use `gh issue comment <issue_number> --repo <weekly_repo> --body \"<body>\"`\r\n5. Track submissions and report results\r\n\r\n## Commands\r\n\r\n- `/oss-promoter:promote <repo-url>` - Promote a project to all enabled weeklies\r\n- `/oss-promoter:search` - Search for new weeklies to add to config\r\n- `/oss-promoter:list` - List all configured weeklies and their status\r\n\r\n## Submission Template\r\n\r\nFor Chinese weeklies, use this template:\r\n\r\n```markdown\r\n## \u9879\u76ee\u4ecb\u7ecd\r\n\r\n[{name}]({url}) - {description}\r\n\r\n## \u6838\u5fc3\u529f\u80fd\r\n\r\n{features_from_readme}\r\n\r\n## \u4f7f\u7528\u793a\u4f8b\r\n\r\n{usage_example}\r\n\r\n## \u94fe\u63a5\r\n\r\n- GitHub: {url}\r\n- Stars: {stars}\r\n```\r\n\r\n## Tools Available\r\n\r\n- `WebSearch` - Search for new weeklies\r\n- `Bash` with `gh` - GitHub CLI for repo info and issue creation\r\n- `Read` - Read config files\r\n\r\n## Important Notes\r\n\r\n- Always check if an issue already exists before creating a new one\r\n- Respect rate limits - add delays between submissions if needed\r\n- Some weeklies require specific formats - check their README first\r\n- Set `enabled: false` for weeklies that are language/topic specific and don't match the project\r\n",
+    "content_hash": "36e2bc1912cc50e2b8c1fe7a092a605fe6fa5b91bfcddb22854ea3ef1f80478a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 67,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2145,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

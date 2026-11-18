@@ -1,0 +1,142 @@
+[
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::file_read::6",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_read::6",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+    "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+    "identity_key": ".malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+    "identity_key": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+    "identity_key": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+    "identity_key": "SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+    "identity_key": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  }
+]

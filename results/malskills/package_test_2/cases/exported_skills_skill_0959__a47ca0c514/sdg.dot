@@ -1,0 +1,26 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_1.py"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_11.py"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_12.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_13.py"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_14.py"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_15.py"];
+  "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2" [label="obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5" [label="obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::4372ae2407d42b1e5f38" [label="value::4372ae2407d42b1e5f38\nkind=value"];
+  "value::74c8475a8f6a261a47f2" [label="value::74c8475a8f6a261a47f2\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2" -> "value::4372ae2407d42b1e5f38" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5" -> "value::74c8475a8f6a261a47f2" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5" [label="has_operand"];
+}

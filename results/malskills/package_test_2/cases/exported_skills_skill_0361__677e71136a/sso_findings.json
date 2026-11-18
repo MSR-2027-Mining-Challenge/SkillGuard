@@ -1,0 +1,210 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell reads file, config, or database contents",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "cat > /tmp/cert.cfg <<CERT_EOF",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 10,
+        "start_line": 10
+      }
+    },
+    "span": {
+      "end_line": 10,
+      "start_line": 10
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell deletes or overwrites data",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "rm -f /tmp/cert.cfg /tmp/dev.key /tmp/dev.crt",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 30,
+        "start_line": 30
+      }
+    },
+    "span": {
+      "end_line": 30,
+      "start_line": 30
+    },
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell launches LOLBin or trusted proxy utility",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.proxy_execution_or_lolbin_abuse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.proxy_execution_or_lolbin_abuse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00002",
+    "matched_text": "osascript -e 'tell application \"{AppName}\" to quit'",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 6,
+        "start_line": 6
+      }
+    },
+    "span": {
+      "end_line": 6,
+      "start_line": 6
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0000",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit LOLBin or proxy-execution command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.lolbin_or_proxy_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.lolbin_or_proxy_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00003",
+    "matched_text": "osascript -e 'tell application \"{AppName}\" to quit'",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0000",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 186,
+        "start_line": 186
+      }
+    },
+    "span": {
+      "end_line": 186,
+      "start_line": 186
+    },
+    "subtype": "system_command_execution"
+  }
+]

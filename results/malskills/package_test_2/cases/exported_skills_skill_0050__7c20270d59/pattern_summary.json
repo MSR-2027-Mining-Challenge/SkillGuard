@@ -1,0 +1,110 @@
+[
+  {
+    "explanation": "Received content flows directly into execution or is executed through the same resolved payload object.",
+    "explanation_chain": [
+      {
+        "finding_ids": [
+          "semgrep_00000",
+          "semgrep_00001"
+        ],
+        "stage": "sso_finding"
+      },
+      {
+        "sso_ids": [
+          "sso_00000",
+          "sso_00001"
+        ],
+        "stage": "sso"
+      },
+      {
+        "rule_ids": [
+          "formal.graph.malware_delivery_memory"
+        ],
+        "stage": "rule"
+      },
+      {
+        "source": "formal",
+        "stage": "reasoning_source"
+      },
+      {
+        "pattern_id": "formal_pat_00000",
+        "pattern_name": "Malware_Delivery",
+        "severity": "high",
+        "stage": "pattern"
+      },
+      {
+        "label": "malicious",
+        "stage": "verdict"
+      }
+    ],
+    "finding_ids": [
+      "semgrep_00000",
+      "semgrep_00001"
+    ],
+    "match_count": 1,
+    "name": "Malware_Delivery",
+    "rule_ids": [
+      "formal.graph.malware_delivery_memory"
+    ],
+    "severity": "high",
+    "source": "formal",
+    "sso_ids": [
+      "sso_00000",
+      "sso_00001"
+    ]
+  },
+  {
+    "explanation": "Network-controlled input flows into an execution-capable operation.",
+    "explanation_chain": [
+      {
+        "finding_ids": [
+          "semgrep_00000",
+          "semgrep_00001"
+        ],
+        "stage": "sso_finding"
+      },
+      {
+        "sso_ids": [
+          "sso_00000",
+          "sso_00001"
+        ],
+        "stage": "sso"
+      },
+      {
+        "rule_ids": [
+          "formal.graph.remote_code_execution"
+        ],
+        "stage": "rule"
+      },
+      {
+        "source": "formal",
+        "stage": "reasoning_source"
+      },
+      {
+        "pattern_id": "formal_pat_00001",
+        "pattern_name": "Remote_Code_Execution",
+        "severity": "high",
+        "stage": "pattern"
+      },
+      {
+        "label": "malicious",
+        "stage": "verdict"
+      }
+    ],
+    "finding_ids": [
+      "semgrep_00000",
+      "semgrep_00001"
+    ],
+    "match_count": 1,
+    "name": "Remote_Code_Execution",
+    "rule_ids": [
+      "formal.graph.remote_code_execution"
+    ],
+    "severity": "high",
+    "source": "formal",
+    "sso_ids": [
+      "sso_00000",
+      "sso_00001"
+    ]
+  }
+]

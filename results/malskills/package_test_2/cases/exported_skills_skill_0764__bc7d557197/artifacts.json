@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: access-control-test\r\ndescription: >-\r\n  Test a web app's authorization: IDOR/BOLA, missing function-level access control,\r\n  privilege escalation (horizontal and vertical), and forced browsing. Use to\r\n  validate OWASP A01 on an authorized target \u2014 the most prevalent web risk.\r\n---\r\n\r\n# Goal\r\n\r\nEvidence on whether the app enforces authorization server-side on every object and\r\nfunction, tied to the authenticated user \u2014 or whether a user can reach data/actions\r\nthey shouldn't.\r\n\r\n# Prerequisites\r\n\r\n- Authorization to test, ideally two accounts at different privilege levels (User\r\n  A, User B, and an admin) with identifiable resources.\r\n\r\n# Test cases\r\n\r\n1. **IDOR / BOLA (horizontal)** \u2014 as User A, manipulate object identifiers (IDs,\r\n   UUIDs, filenames, GUIDs in URLs/bodies/JWT) to access User B's resources.\r\n2. **Function-level (vertical)** \u2014 call admin/privileged endpoints as a normal\r\n   user; check hidden/undocumented functions and HTTP-method overrides.\r\n3. **Forced browsing** \u2014 request resources/pages not linked for your role.\r\n4. **Privilege escalation** \u2014 tamper with role/tenant claims (JWT, cookies, hidden\r\n   fields, mass-assignment) to elevate.\r\n5. **Missing ownership checks on writes** \u2014 update/delete another user's object.\r\n\r\n# Steps\r\n\r\n1. Map roles and sensitive objects/functions.\r\n2. Run cases as the lower-privilege identity; never use the higher account's\r\n   session to \"prove\" access.\r\n3. Record per case: enforced / leaked / action-performed, with request+response\r\n   evidence (redact secrets).\r\n4. Identify the gap: client-side-only checks, IDs trusted from the request, missing\r\n   server-side ownership/role enforcement.\r\n\r\n# Output\r\n\r\nA results table: case \u00b7 object/function \u00b7 result \u00b7 evidence \u00b7 remediation\r\n(deny-by-default, server-side authz tied to identity). Confirmed issues \u2192\r\n`security-reporting:finding` (rate high+ for cross-user data access).\r\n\r\n# Notes\r\n\r\nAuthorization must be enforced on the **server**, per object and per function,\r\nagainst the authenticated identity \u2014 never trust IDs, roles, or tenant hints from\r\nthe client. This is the same class as API `BOLA/BFLA` \u2014 see `api-security`.\r\n",
+    "content_hash": "e586d21dfdffef75d2b05966083ac2f11d76a9460a3d456d33d9b7216c63799a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 52,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2190,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

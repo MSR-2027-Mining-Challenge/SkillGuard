@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: construction-architecture\r\ndescription: Hexagonal architecture rules for the AML + FX system \u2014 domain purity, one-DB-per-service, circuit breaker, and API design\r\n---\r\n\r\n## Hexagonal architecture\r\n\r\nDomain \u2192 Application \u2192 Infrastructure \u2192 API\r\nInner layers NEVER depend on outer layers.\r\n\r\n- Domain: pure C# \u2014 no framework, no DB, no HTTP\r\n- Application: use cases via domain interfaces only\r\n- Infrastructure: MySQL repo, Redis cache, RabbitMQ publisher\r\n- API: ASP.NET Core controllers \u2014 HTTP adapter only\r\n\r\n## One DB per service\r\n\r\nCustomerService / RiskService / AMLService \u2192 own MySQL schema each\r\nCross-service data: REST API or RabbitMQ only \u2014 never direct DB reads\r\n\r\n## API design\r\n\r\n- OpenAPI spec written BEFORE implementation\r\n- All routes: /api/v1/\r\n- Idempotency-Key on all POST and PUT\r\n- DTOs separate from domain entities\r\n\r\n## Circuit breaker\r\n\r\n- Timeout: 5s DB, 2s Redis\r\n- Retry: exponential backoff, max 3\r\n- Open after 5 failures, half-open after 30s\r\n- AML fallback: FAIL-CLOSED (BLOCK)\r\n\r\n## Decision protocol\r\n\r\nPresent A/B/C options and WAIT for developer decision before implementing.\r\n",
+    "content_hash": "fc00033ae1fb5ff9239a2045941a3e70b54799cb08ffc25b75757e3d809939fb",
+    "generated": false,
+    "is_text": true,
+    "line_count": 38,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1142,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

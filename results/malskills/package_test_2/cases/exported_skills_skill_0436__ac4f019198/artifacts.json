@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: pdf-rendering\r\ndescription: Use when rendering tailored resume data into a polished PDF that matches the original resume length.\r\n---\r\n\r\n# PDF Rendering\r\n\r\nRender with the per-resume template captured by the style-capture skill\r\n(`applications/<company>-<role>/resume_template.html.j2`), so the output matches\r\nthe original resume's formatting, colors, and layout. Fall back to the shared\r\n`templates/resume.html.j2` only if no captured template exists.\r\n\r\n1. Render: `python scripts/render_pdf.py \\\r\n   applications/<company>-<role>/resume_template.html.j2 \\\r\n   applications/<company>-<role>/tailored_resume.pdf \\\r\n   --data applications/<company>-<role>/resume_data.json \\\r\n   --target-pages <original_page_count>`\r\n2. Exit code 2 = the PDF overflowed the target page count. Tighten\r\n   `resume_data.json` \u2014 shorten bullets, drop the least-relevant bullets (never\r\n   whole sections), trim the summary \u2014 then re-render. Repeat until exit 0.\r\n3. Exit 0 = success. The polished, length-matched PDF and its `.html` source are\r\n   written next to the data file.\r\n\r\nNever relax `--target-pages`; the length constraint is non-negotiable.\r\n",
+    "content_hash": "85696b45d7b36a6edbcefe366ee0754ed49dd5e191caa0abde970bacf389a14d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 25,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1151,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

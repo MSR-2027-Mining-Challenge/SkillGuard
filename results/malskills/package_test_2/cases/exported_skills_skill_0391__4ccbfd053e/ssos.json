@@ -1,0 +1,1945 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --legacy-peer-deps",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::4": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::4",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::4"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Check if file is ZIP",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_write::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_write::1",
+      "path_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_write::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "xxd -l 4 YourFile.make",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::encoding::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::encoding::2",
+      "parameter_bindings": [],
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::encoding::2"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "xxd -l 20 canvas.fig",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::encoding::7": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::encoding::7",
+      "parameter_bindings": [],
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::encoding::7"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::fs"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::path": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::path",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::path"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(imagesTargetDir, { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.js::file_create::8": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.js::file_create::8",
+      "path_class": "ordinary",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.js::file_create::8"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.readdirSync(imagesSourceDir).forEach(hash => {",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::hash": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::hash",
+      "path_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::hash"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "const sourceFile = path.join(imagesSourceDir, hash);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::sourceFile": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::sourceFile",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::sourceFile"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "const targetFile = path.join(imagesTargetDir, `${hash}.png`);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::targetFile": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::targetFile",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 12,
+      "source_start_line": 12
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.js::targetFile"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.copyFileSync(sourceFile, targetFile);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.js::file_write::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.js::file_write::13",
+      "path_class": "ordinary",
+      "source_end_line": 13,
+      "source_start_line": 13,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.js::file_write::13"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install fzstd",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_18.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --legacy-peer-deps",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_18.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_18.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_18.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.js::fs"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.js"
+    ],
+    "attributes": {
+      "matched_text": "const buffer = fs.readFileSync('output/extracted/canvas.fig');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.js::buffer": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.js::buffer",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.js::buffer"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync('decoded-message.json', json);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::34": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::34",
+      "path_class": "ordinary",
+      "source_end_line": 34,
+      "source_start_line": 34,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::34"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.js::fs"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.js"
+    ],
+    "attributes": {
+      "matched_text": "const decoded = JSON.parse(fs.readFileSync('decoded-message.json', 'utf8'));",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.js::decoded": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.js::decoded",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.js::decoded"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(outputDir, { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.js::file_create::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.js::file_create::5",
+      "path_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.js::file_create::5"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(filePath, node.sourceCode, 'utf8');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.js::file_write::16": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.js::file_write::16",
+      "path_class": "ordinary",
+      "source_end_line": 16,
+      "source_start_line": 16,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.js::file_write::16"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::fs"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::path": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::path",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::path"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.readdirSync(sourceDir).forEach(file => {",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::file": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::file",
+      "path_class": "ordinary",
+      "source_end_line": 19,
+      "source_start_line": 19
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::file"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "const content = fs.readFileSync(path.join(sourceDir, file), 'utf8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::content": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::content",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::content"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "const content = fs.readFileSync(path.join(sourceDir, file), 'utf8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::content": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::content",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.js::content"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync('design-tokens.json', JSON.stringify(result, null, 2));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.js::file_write::45": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.js::file_write::45",
+      "path_class": "sensitive",
+      "source_end_line": 45,
+      "source_start_line": 45,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.js::file_write::45"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::fs"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::path": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::path",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::path"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const srcDir = path.join(appDir, 'src');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::srcDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::srcDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::srcDir"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'components/ui'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::9",
+      "path_class": "ordinary",
+      "source_end_line": 9,
+      "source_start_line": 9,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::9"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'components/ui'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::9",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::9"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'hooks'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::10": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::10",
+      "path_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::10"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'hooks'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::10": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::10",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::10"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'lib'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::11": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::11",
+      "path_class": "ordinary",
+      "source_end_line": 11,
+      "source_start_line": 11,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::11"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'lib'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::11": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::11",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::11"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'data'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::12",
+      "path_class": "ordinary",
+      "source_end_line": 12,
+      "source_start_line": 12,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::12"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'data'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::12",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 12,
+      "source_start_line": 12
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::12"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'styles'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::13",
+      "path_class": "ordinary",
+      "source_end_line": 13,
+      "source_start_line": 13,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::13"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(srcDir, 'styles'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::13",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00038"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::13"
+    ],
+    "sso_id": "sso_00038",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(appDir, 'public'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::14": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::14",
+      "path_class": "ordinary",
+      "source_end_line": 14,
+      "source_start_line": 14,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00039"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_create::14"
+    ],
+    "sso_id": "sso_00039",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.join(appDir, 'public'), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::14": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::14",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00040"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::14"
+    ],
+    "sso_id": "sso_00040",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.readdirSync(sourceDir).forEach(file => {",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::file": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::file",
+      "path_class": "ordinary",
+      "source_end_line": 17,
+      "source_start_line": 17
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00041"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::file"
+    ],
+    "sso_id": "sso_00041",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const content = fs.readFileSync(path.join(sourceDir, file), 'utf8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::content": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::content",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 19,
+      "source_start_line": 19
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00042"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::content"
+    ],
+    "sso_id": "sso_00042",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const content = fs.readFileSync(path.join(sourceDir, file), 'utf8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::content": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::content",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 19,
+      "source_start_line": 19
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00043"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::content"
+    ],
+    "sso_id": "sso_00043",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "targetDir = path.join(srcDir, 'hooks');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 23,
+      "source_start_line": 23
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00044"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir"
+    ],
+    "sso_id": "sso_00044",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "targetDir = path.join(srcDir, 'lib');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 25,
+      "source_start_line": 25
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00045"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir"
+    ],
+    "sso_id": "sso_00045",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "targetDir = path.join(srcDir, 'components/ui');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00046"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir"
+    ],
+    "sso_id": "sso_00046",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "targetDir = path.join(srcDir, 'components');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00047"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir"
+    ],
+    "sso_id": "sso_00047",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "targetDir = path.join(srcDir, 'styles');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00048"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.js::targetDir"
+    ],
+    "sso_id": "sso_00048",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(path.join(targetDir, file), fixedContent, 'utf8');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_write::42": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_write::42",
+      "path_class": "ordinary",
+      "source_end_line": 42,
+      "source_start_line": 42,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00049"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_write::42"
+    ],
+    "sso_id": "sso_00049",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(path.join(targetDir, file), fixedContent, 'utf8');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::42": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::42",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 42,
+      "source_start_line": 42
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00050"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.js::file_access::42"
+    ],
+    "sso_id": "sso_00050",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(\n  path.join(appDir, 'package.json'),\n  JSON.stringify(packageJson, null, 2)\n);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.js::file_write::26": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.js::file_write::26",
+      "path_class": "ordinary",
+      "source_end_line": 29,
+      "source_start_line": 26,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00051"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.js::file_write::26"
+    ],
+    "sso_id": "sso_00051",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.js"
+    ],
+    "attributes": {
+      "matched_text": "path.join(appDir, 'package.json'),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.js::file_access::27": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.js::file_access::27",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00052"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.js::file_access::27"
+    ],
+    "sso_id": "sso_00052",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --legacy-peer-deps",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::38": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::38",
+      "source_end_line": 38,
+      "source_start_line": 38,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00053"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::38"
+    ],
+    "sso_id": "sso_00053",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::100": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::100",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:100:100:dynamic_code_execution",
+      "source_end_line": 100,
+      "source_start_line": 100
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00054"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::100"
+    ],
+    "sso_id": "sso_00054",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const pako = require('pako');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::101": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::101",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:101:101:dynamic_code_execution",
+      "source_end_line": 101,
+      "source_start_line": 101
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00055"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::101"
+    ],
+    "sso_id": "sso_00055",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const { decompress } = require('fzstd');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::102": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::102",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:102:102:dynamic_code_execution",
+      "source_end_line": 102,
+      "source_start_line": 102
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00056"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::102"
+    ],
+    "sso_id": "sso_00056",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const kiwi = require('kiwi-schema');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::103": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::103",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:103:103:dynamic_code_execution",
+      "source_end_line": 103,
+      "source_start_line": 103
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00057"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::103"
+    ],
+    "sso_id": "sso_00057",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::139": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::139",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:139:139:dynamic_code_execution",
+      "source_end_line": 139,
+      "source_start_line": 139
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00058"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::139"
+    ],
+    "sso_id": "sso_00058",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::170": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::170",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:170:170:dynamic_code_execution",
+      "source_end_line": 170,
+      "source_start_line": 170
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00059"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::170"
+    ],
+    "sso_id": "sso_00059",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::171": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::171",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:171:171:dynamic_code_execution",
+      "source_end_line": 171,
+      "source_start_line": 171
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00060"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::171"
+    ],
+    "sso_id": "sso_00060",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::220": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::220",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:220:220:dynamic_code_execution",
+      "source_end_line": 220,
+      "source_start_line": 220
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00061"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::220"
+    ],
+    "sso_id": "sso_00061",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::221": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::221",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:221:221:dynamic_code_execution",
+      "source_end_line": 221,
+      "source_start_line": 221
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00062"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::221"
+    ],
+    "sso_id": "sso_00062",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::333": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::333",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:333:333:dynamic_code_execution",
+      "source_end_line": 333,
+      "source_start_line": 333
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00063"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::333"
+    ],
+    "sso_id": "sso_00063",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::334": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::334",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:334:334:dynamic_code_execution",
+      "source_end_line": 334,
+      "source_start_line": 334
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00064"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::334"
+    ],
+    "sso_id": "sso_00064",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install fzstd",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::388": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::388",
+      "source_end_line": 388,
+      "source_start_line": 388,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00065"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::388"
+    ],
+    "sso_id": "sso_00065",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --legacy-peer-deps",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::435": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::435",
+      "source_end_line": 435,
+      "source_start_line": 435,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00066"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::435"
+    ],
+    "sso_id": "sso_00066",
+    "subtype": "package_installation"
+  }
+]

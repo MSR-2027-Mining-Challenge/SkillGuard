@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\ndescription: Fix figures in a LaTeX paper by ensuring every figure has a label, caption, and is referenced in the text\r\nmodel: haiku\r\n---\r\n\r\n# Check References\r\n- Make sure every picture and table has a label and caption and it's referenced\r\n  in the text\r\n- Captions should only contain a reference to what is done and comments and more\r\n  content should be in the text\r\n\r\n# Add Captions and Labels\r\n\r\n- For all the figures in the latex files in the passed directory convert the\r\n  figure adding the caption and label to the commented section.\r\n\r\n- For instance convert\r\n\r\n  ````latex\r\n  %     ```\r\n  % rendered_images:end\r\n  % render_images:begin\r\n  \\begin{figure}[!ht]\r\n    \\centering\r\n    \\includegraphics[width=\\linewidth]{figs/02_architecture.1.png}\r\n    \\caption{Confounding adjustment in causal inference}\r\n    \\label{fig:confounding_adjustment}\r\n  \\end{figure}\r\n  % render_images:end\r\n  ````\r\n\r\n  to\r\n\r\n  ````latex\r\n  %     ```\r\n  % caption=Confounding adjustment in causal inference\r\n  % label=fig:confounding_adjustment\r\n  % rendered_images:end\r\n  % render_images:begin\r\n  \\begin{figure}[!ht]\r\n    \\centering\r\n    \\includegraphics[width=\\linewidth]{figs/02_architecture.1.png}\r\n    \\caption{Confounding adjustment in causal inference}\r\n    \\label{fig:confounding_adjustment}\r\n  \\end{figure}\r\n  % render_images:end\r\n  ````\r\n\r\n# Create Labels and Captions From Scratch\r\n\r\n- If a figure has no caption or label, infer them from the filename and\r\n  surrounding context\r\n  - E.g., `figs/02_architecture.1.png` \u2192 `label=fig:architecture`,\r\n    `caption=System architecture overview`\r\n- Choose label names that are short, lowercase, and use underscores\r\n\r\n# Add References in the Text\r\n\r\n- If a figure has a label but is not cited anywhere in the text, add a\r\n  parenthetical reference near the most relevant paragraph:\r\n  ```latex\r\n  (see Fig.~\\ref{fig:confounding_adjustment})\r\n  ```\r\n\r\n# Verify No Orphaned References\r\n\r\n- Scan the text for `\\ref{fig:xxx}` or `\\ref{tab:xxx}` that have no matching\r\n  `\\label{fig:xxx}` or `\\label{tab:xxx}` in any figure or table environment\r\n- Report orphaned references as warnings; do not silently delete them\r\n",
+    "content_hash": "f0ce056a6922ab313ce7b0a17463b14d2faffa8ad9907f170a735b7d6486b465",
+    "generated": false,
+    "is_text": true,
+    "line_count": 70,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2161,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

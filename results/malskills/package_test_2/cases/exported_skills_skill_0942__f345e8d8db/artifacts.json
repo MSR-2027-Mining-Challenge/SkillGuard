@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\n# VERSION: 2.87.0\r\nname: glm5\r\ndescription: GLM-5 Agent Teams skill for spawning teammates with thinking mode\r\nallowed-tools:\r\n  - Bash\r\n  - Read\r\n  - Write\r\n---\r\n\r\n# GLM-5 Agent Teams Skill\r\n\r\nSpawn GLM-5 powered teammates with native thinking mode.\r\n\r\n## Quick Usage\r\n\r\n```\r\n# Spawn single teammate\r\n/glm5 coder \"Implement auth\"\r\n\r\n# Spawn for review\r\n/glm5 reviewer \"Review this code\"\r\n\r\n# Spawn for testing\r\n/glm5 tester \"Generate tests\"\r\n```\r\n\r\n## Integration with Other Commands\r\n\r\nThis skill integrates with:\r\n- `/orchestrator` - GLM-5 as teammate option\r\n- `/parallel` - GLM-5 for parallel review\r\n- `/loop` - GLM-5 for iterative tasks\r\n\r\n## Agent Types\r\n\r\n| Type | Role | Best For |\r\n|------|------|----------|\r\n| `coder` | Implementation | Features, refactoring, bugs |\r\n| `reviewer` | Code Review | Security, quality, patterns |\r\n| `tester` | Test Generation | Unit tests, coverage |\r\n| `planner` | Architecture | Design, planning |\r\n| `researcher` | Documentation | Docs, exploration |\r\n\r\n## Execution\r\n\r\nWhen this skill is invoked:\r\n\r\n1. **Parse Arguments**: Extract role and task from `$ARGUMENTS`\r\n2. **Generate Task ID**: `task-{timestamp}`\r\n3. **Call GLM-5 API**: With thinking mode enabled\r\n4. **Capture Output**: Reasoning + result\r\n5. **Fire Hooks**: SubagentStop (native Claude Code hook)\r\n\r\n## Bash Commands\r\n\r\n### Spawn Teammate\r\n```bash\r\n.claude/scripts/glm5-teammate.sh <role> \"<task>\" \"<task_id>\"\r\n```\r\n\r\n### Check Status\r\n```bash\r\ncat .ralph/team-status.json\r\n```\r\n\r\n### View Logs\r\n```bash\r\ntail -f .ralph/logs/teammates.log\r\n```\r\n\r\n## Output Files\r\n\r\n| File | Content |\r\n|------|---------|\r\n| `.ralph/teammates/{id}/status.json` | Task status & metadata |\r\n| `.ralph/reasoning/{id}.txt` | GLM-5 reasoning |\r\n| `.ralph/logs/teammates.log` | Activity log |\r\n\r\n## Example Session\r\n\r\n```\r\nUser: /glm5 coder \"Implement factorial in TypeScript\"\r\n\r\n[GLM-5 thinking...]\r\nReasoning: The user wants a TypeScript factorial function...\r\nOutput: function factorial(n: number): number { ... }\r\n\r\n\u2705 Task completed\r\n\ud83d\udcc1 Status: .ralph/teammates/task-123/status.json\r\n\ud83e\udde0 Reasoning: .ralph/reasoning/task-123.txt\r\n```\r\n",
+    "content_hash": "eaa40c50a5379daf7aa3476ed6b91f168a32e0f72c662855bf1ab44d3423c140",
+    "generated": false,
+    "is_text": true,
+    "line_count": 93,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2139,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": ".claude/scripts/glm5-teammate.sh <role> \"<task>\" \"<task_id>\"",
+    "content_hash": "44d9b86d35cb66eacbd79f248597f33bafaa04e8e73decb84faa2999462af118",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 60,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 60,
+    "source_start_line": 58
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "cat .ralph/team-status.json",
+    "content_hash": "9d23dbbd741e965e74d79c71ce0cda7e0efd3812864328b2f609aa2acbcb45fa",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 27,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 65,
+    "source_start_line": 63
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "tail -f .ralph/logs/teammates.log",
+    "content_hash": "cf8055342dba9de95c4f45c87305104c328268c63e66adc52377e200f89f00ef",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 33,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 70,
+    "source_start_line": 68
+  }
+]

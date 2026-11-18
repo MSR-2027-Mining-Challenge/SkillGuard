@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: triatu-architecture\r\ndescription: \"Clean Architecture guidance for Triatu: layering, dependencies, and where code belongs. Use when adding new modules, moving code across layers, or updating architecture decisions and docs.\"\r\n---\r\n\r\n# Triatu Architecture\r\n\r\n## Quick start\r\n\r\n- Follow dependency direction: UI -> Application -> Domain <- Infrastructure.\r\n- Keep use cases framework-agnostic (no Next.js or Supabase types in core use cases).\r\n- Validate inputs with Zod before touching infrastructure.\r\n- Update architecture docs on any structural change.\r\n\r\n## Workflow\r\n\r\n1) Read `arquitectura_triatu.md` for the current model.\r\n2) Identify the layer for new logic (Domain, Application, Infrastructure, UI).\r\n3) Add interfaces/ports in Domain when infrastructure is involved.\r\n4) Implement adapters in Infrastructure and wire them in Application.\r\n5) Keep UI thin: call Application use cases and map view models.\r\n6) Add tests first (TDD), then code.\r\n7) Update docs: `guia.md`, `arquitectura_triatu.md`, `docs/PROJECT_AUDIT.md`.\r\n\r\n## Guardrails\r\n\r\n- No direct infrastructure access from Domain.\r\n- Avoid global state unless justified (Zustand only for ephemeral UI).\r\n- Avoid logs with PII; use `lib/logger` and `debug` in dev only.\r\n\r\n## References\r\n\r\n- `arquitectura_triatu.md`\r\n- `docs/CORE.md`\r\n- `guia.md`\r\n- `docs/DEVELOPMENT.md`\r\n- `docs/PROJECT_AUDIT.md`\r\n\r\n",
+    "content_hash": "9cab7a880c8b214efd4dc37810207a96ea5d7bc0acc4aba2f829dc41385030d1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 39,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1380,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

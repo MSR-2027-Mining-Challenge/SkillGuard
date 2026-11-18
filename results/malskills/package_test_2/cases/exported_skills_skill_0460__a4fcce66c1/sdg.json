@@ -1,0 +1,1201 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/.malskills_fences/api-reference__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "references/.malskills_fences/api-reference__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": "references/.malskills_fences/api-reference__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": "scripts/agent.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "target": "value::c90b7258950256437678",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "target": "value::bc939dcea1bb4747562b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "target": "value::d5e8d400020581eb57ef",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "target": "value::68c01593aeb267fe0561",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00004",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "target": "value::14b77114be22500d84c2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "target": "value::000400da4dafa6163bf2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8",
+      "target": "value::1f5011867668c6ed08de",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "target": "value::fffb9a9d9aa39a1c7093",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "target": "value::94a94bc7f760999c2188",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "target": "value::95145ae15d9d37db010c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "target": "value::e42a32e50e61e1dfbaf2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00011",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "target": "value::2b133e106a08096f9ebb",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "target": "value::197d7e217adbdbb00817",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00013",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "target": "value::0ee976236b0e29b429f0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00014",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "target": "value::5a599295704ab89faa7e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00015",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "target": "value::b35e003d1e95913e411a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00016",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "target": "value::03c65530c5e925a9aec4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00017",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "target": "value::7e09f0785fd1aa00f2ad",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00018",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "target": "value::51316c765ef17db77679",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00019",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "target": "value::dc41c2aae6a3473f09cc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00020",
+      "target": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "target": "value::e2df44cb0c1d73616e61",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00021",
+      "target": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "target": "value::cfe65fb35415248595f9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00022",
+      "target": "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "target": "value::b41de5658ac02e3d931d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00023",
+      "target": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "target": "value::2019ffab35f718b27b61",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00024",
+      "target": "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00025",
+      "target": "obj::symbolic_reference::scripts/agent.py::url",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::url",
+      "target": "value::8255e54ad4a9f6ceced1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00026",
+      "target": "obj::symbolic_reference::scripts/agent.py::key",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::key",
+      "target": "value::a06d59401fb724710aad",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00027",
+      "target": "obj::symbolic_reference::scripts/agent.py::url",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00028",
+      "target": "obj::symbolic_reference::scripts/agent.py::token",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::token",
+      "target": "value::681ef0bc3ad7f3d738ef",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00022",
+      "target": "sso_00024",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00025",
+      "target": "sso_00027",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/api-reference__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/api-reference__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/api-reference__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "scripts/agent.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::c90b7258950256437678",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::bc939dcea1bb4747562b",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::d5e8d400020581eb57ef",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::68c01593aeb267fe0561",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "identity_key": "references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::14b77114be22500d84c2",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "identity_key": "references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::000400da4dafa6163bf2",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8",
+      "identity_key": "references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1f5011867668c6ed08de",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "identity_key": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::fffb9a9d9aa39a1c7093",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "identity_key": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::94a94bc7f760999c2188",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "identity_key": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::95145ae15d9d37db010c",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "identity_key": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::e42a32e50e61e1dfbaf2",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "identity_key": "references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::2b133e106a08096f9ebb",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "identity_key": "references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::197d7e217adbdbb00817",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "identity_key": "references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::0ee976236b0e29b429f0",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "identity_key": "references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::5a599295704ab89faa7e",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "identity_key": "references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::b35e003d1e95913e411a",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "identity_key": "references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::03c65530c5e925a9aec4",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "identity_key": "references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::7e09f0785fd1aa00f2ad",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "identity_key": "references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::51316c765ef17db77679",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "identity_key": "references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::dc41c2aae6a3473f09cc",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "identity_key": "references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::e2df44cb0c1d73616e61",
+      "kind": "value",
+      "value": "references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "identity_key": "scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::cfe65fb35415248595f9",
+      "kind": "value",
+      "value": "scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "identity_key": "scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::b41de5658ac02e3d931d",
+      "kind": "value",
+      "value": "scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "identity_key": "scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::2019ffab35f718b27b61",
+      "kind": "value",
+      "value": "scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::url",
+      "identity_key": "scripts/agent.py::url",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::8255e54ad4a9f6ceced1",
+      "kind": "value",
+      "value": "scripts/agent.py::url",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::key",
+      "identity_key": "scripts/agent.py::key",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::a06d59401fb724710aad",
+      "kind": "value",
+      "value": "scripts/agent.py::key",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::token",
+      "identity_key": "scripts/agent.py::token",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::681ef0bc3ad7f3d738ef",
+      "kind": "value",
+      "value": "scripts/agent.py::token",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

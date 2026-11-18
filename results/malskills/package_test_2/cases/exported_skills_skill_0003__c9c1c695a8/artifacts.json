@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: v117-trinity-eureka-report-density-gate-skill-19\r\ndescription: Operate v117_19_eureka_report_density_gate as a guarded v117 Trinity phase skill.\r\n---\r\n\r\n# v117-trinity-eureka-report-density-gate-skill-19\r\n\r\n- phase: `v117`\r\n- candidate_id: `v117_19_eureka_report_density_gate`\r\n- pillar: `mind`\r\n- authority: `repo_first_guarded_receipt_only`\r\n- provider_policy: `no_external_write_without_action_time_confirmation`\r\n\r\n## Use\r\n\r\n1. Start from the current phase receipt and suite statuses.\r\n2. Keep Google Drive and personal accounts on operator hold unless explicitly confirmed for a narrow action.\r\n3. Generate evidence as repo artifacts before claiming live-write success.\r\n4. Preserve forward-only Git publication and curated allowlist staging.\r\n\r\n## Purpose\r\n\r\nkeep at least twenty actionable recommendations per stage\r\n",
+    "content_hash": "0e39456050bc89cba7c93112dc05e8aca5b333d1027c7c20392a2c5040900ac7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 24,
+    "relative_path": "SKILL.md",
+    "size_bytes": 835,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "version: 1\r\nname: openai\r\nentrypoint: SKILL.md\r\nmetadata:\r\n  phase: v117\r\n  candidate_id: v117_19_eureka_report_density_gate\r\n  pillar: mind\r\n",
+    "content_hash": "4721c0d4b18de02222a3b2c3e0f5be911b2a423dafe1786f57cb2021552703e0",
+    "generated": false,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 142,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

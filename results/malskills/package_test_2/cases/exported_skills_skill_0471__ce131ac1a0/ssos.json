@@ -1,0 +1,90 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "bin/check-freeze.sh"
+    ],
+    "attributes": {
+      "matched_text": "INPUT=$(cat)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::bin/check-freeze.sh::INPUT": "path"
+      },
+      "operation_object": "obj::symbolic_reference::bin/check-freeze.sh::INPUT",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::bin/check-freeze.sh::INPUT"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "bin/check-freeze.sh"
+    ],
+    "attributes": {
+      "matched_text": "FILE_PATH=$(printf '%s' \"$INPUT\" | grep -o '\"file_path\"[[:space:]]*:[[:space:]]*\"[^\"]*\"' | head -1 | sed 's/.*:[[:space:]]*\"//;s/\"$//' || true)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH": "path"
+      },
+      "operation_object": "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 30,
+      "source_start_line": 30
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "bin/check-freeze.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "FILE_PATH=$(printf '%s' \"$INPUT\" | python3 -c 'import sys,json; print(json.loads(sys.stdin.read()).get(\"tool_input\",{}).get(\"file_path\",\"\"))' 2>/dev/null || true)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34": "command"
+      },
+      "operation_object": "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34",
+      "parameter_bindings": [],
+      "sink_callsite_id": "bin/check-freeze.sh:34:34:dynamic_code_execution",
+      "source_end_line": 34,
+      "source_start_line": 34
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "dynamic_code_execution"
+  }
+]

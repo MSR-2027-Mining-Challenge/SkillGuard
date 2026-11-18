@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: coach\r\ndescription: The self-learning brain of Career Copilot. Reads outcome history across the pipeline, computes what's actually working (reply rate by message pattern, conversion by fit tier and framing, referral vs cold), and rewrites the active strategy playbook so future research/tailor/outreach runs reason better. Use when the user says \"what's working\", \"update my strategy\", \"coach me\", \"learn from my results\", after recording outcomes, or on a weekly schedule.\r\n---\r\n\r\n# Coach \u2014 turn outcomes into strategy\r\n\r\nThis is the meta-loop. Every other skill acts and records; `coach` reads the record and\r\nrewrites the playbook the others read.\r\n\r\n## Inputs\r\n\r\n- All `outcomes.md` event logs across the pipeline (+ each record's stage/status).\r\n- The current strategy at `~/Career Copilot/strategy.md` (create it if absent).\r\n\r\n## How to run (the loop)\r\n\r\n1. **Gather outcomes.** Collect every recorded event: outreach sent \u2192 reply / no reply;\r\n   application \u2192 response / interview / reject \u2014 noting which message pattern, fit tier, and\r\n   referral path was used each time.\r\n2. **Compute what works** (be honest about small samples \u2014 see `references/metrics.md`):\r\n   - Reply rate by outreach pattern (warm vs intro vs cold) and opener type.\r\n   - Conversion by fit tier (strong/possible/stretch) and referral vs cold-apply.\r\n   - Which companies / role-types actually advance.\r\n   - Where time is wasted (stages where roles stall or die).\r\n3. **Update the strategy** at `~/Career Copilot/strategy.md` \u2014 a short, current playbook: what\r\n   to do more of, what to stop, target adjustments, and the default outreach pattern. This is\r\n   exactly what the SessionStart hook injects into every future session.\r\n4. **Optionally update Cowork personal memory** with durable, cross-search lessons (e.g.,\r\n   \"warm intros convert ~3x cold for me\").\r\n5. **Report** a tight \"what changed and why\" so the user sees the learning.\r\n\r\n## Principles\r\n\r\n- **Evidence over vibes** \u2014 tie every recommendation to recorded outcomes; flag thin samples\r\n  rather than over-fitting to two data points.\r\n- **Small, current playbook** \u2014 `strategy.md` is a living one-pager, not an archive.\r\n- **Close the loop** \u2014 the point is that the next `workup` / `outreach`\r\n  run is measurably better because of what was learned.\r\n",
+    "content_hash": "09f2df8aadb030036fd2a7e6266c367ac1377ab9c08166ecebaf61ccbdefb864",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2332,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "# Coaching metrics\r\n\r\nKeep it simple and honest. With small samples, report direction, not false precision.\r\n\r\n## Core metrics\r\n\r\n- **Outreach reply rate** = replies / sent, split by pattern (warm ask \u00b7 intro request \u00b7 cold)\r\n  and by opener. Want ~5 sends in a bucket before trusting a split.\r\n- **Referral lift** = reply/advance rate with a warm path vs cold-apply.\r\n- **Application response rate** = responses / applications, split by fit tier.\r\n- **Stage conversion** = how many roles move stage \u2192 stage; find the leakiest stage.\r\n- **Time-in-stage** = where roles stall (a stall is a signal too).\r\n\r\n## Reading them\r\n\r\n- Prefer **rates over counts**; always show the denominator.\r\n- With n < 5 in a bucket, label it **provisional** \u2014 suggest, don't conclude.\r\n- Look for **one or two high-leverage changes**, not a dashboard of micro-tweaks.\r\n\r\n## Output \u2192 strategy.md\r\n\r\nA living one-pager:\r\n\r\n```\r\n# Active strategy (updated <date>)\r\nDo more of:        ...\r\nStop / fix:        ...\r\nDefault outreach:  ...   # the pattern with the best reply rate so far\r\nTarget focus:      ...   # role types / companies that actually advance\r\nProvisional (low n): ...\r\n```\r\n",
+    "content_hash": "5b943ddf17132c6825b79dca3c4982fb5fd3310695aadecdb131dbdae3106a91",
+    "generated": false,
+    "is_text": true,
+    "line_count": 32,
+    "relative_path": "references/metrics.md",
+    "size_bytes": 1173,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

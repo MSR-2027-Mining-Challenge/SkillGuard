@@ -1,0 +1,535 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "evals/evals.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0005",
+      "path": "references/best-practices.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0006",
+      "path": "scripts/collect.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0007",
+      "path": "scripts/digest.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0008",
+      "path": "scripts/render_report.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0006",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::scripts/collect.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/collect.py::encoding",
+      "target": "value::60cf09f8b7c2a9aa7090",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::scripts/digest.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/digest.py::encoding",
+      "target": "value::564917108ef3e127ba0c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::scripts/digest.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/digest.py::file_create::282",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/digest.py::file_create::282",
+      "target": "value::473440a603ae8fd30414",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/digest.py::link_operation::287",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/digest.py::link_operation::287",
+      "target": "value::481d670c41ad0759a2e7",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/digest.py::credential_data_access::316",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/digest.py::credential_data_access::316",
+      "target": "value::f5e2b0f4913f4b251178",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/digest.py::credential_data_access::320",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/digest.py::credential_data_access::320",
+      "target": "value::8df7763b69d34195f1c1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::scripts/render_report.py::stats",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/render_report.py::stats",
+      "target": "value::9427a487cff0c5db35c8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::scripts/render_report.py::an",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/render_report.py::an",
+      "target": "value::db3f8c5d24b39265a2e0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::operation::scripts/render_report.py::file_create::359",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/render_report.py::file_create::359",
+      "target": "value::c628a34695ec524ea062",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::scripts/render_report.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/render_report.py::encoding",
+      "target": "value::9abe56be5fa426b98aa3",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00001",
+      "target": "sso_00002",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "evals/evals.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "references/best-practices.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "scripts/collect.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "scripts/digest.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "scripts/render_report.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/collect.py::encoding",
+      "identity_key": "scripts/collect.py::encoding",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::60cf09f8b7c2a9aa7090",
+      "kind": "value",
+      "value": "scripts/collect.py::encoding",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/digest.py::encoding",
+      "identity_key": "scripts/digest.py::encoding",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::564917108ef3e127ba0c",
+      "kind": "value",
+      "value": "scripts/digest.py::encoding",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/digest.py::file_create::282",
+      "identity_key": "scripts/digest.py::file_create::282",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::473440a603ae8fd30414",
+      "kind": "value",
+      "value": "scripts/digest.py::file_create::282",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "link_operation",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/digest.py::link_operation::287",
+      "identity_key": "scripts/digest.py::link_operation::287",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::481d670c41ad0759a2e7",
+      "kind": "value",
+      "value": "scripts/digest.py::link_operation::287",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/digest.py::credential_data_access::316",
+      "identity_key": "scripts/digest.py::credential_data_access::316",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f5e2b0f4913f4b251178",
+      "kind": "value",
+      "value": "scripts/digest.py::credential_data_access::316",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/digest.py::credential_data_access::320",
+      "identity_key": "scripts/digest.py::credential_data_access::320",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::8df7763b69d34195f1c1",
+      "kind": "value",
+      "value": "scripts/digest.py::credential_data_access::320",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/render_report.py::stats",
+      "identity_key": "scripts/render_report.py::stats",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::9427a487cff0c5db35c8",
+      "kind": "value",
+      "value": "scripts/render_report.py::stats",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/render_report.py::an",
+      "identity_key": "scripts/render_report.py::an",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::db3f8c5d24b39265a2e0",
+      "kind": "value",
+      "value": "scripts/render_report.py::an",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/render_report.py::file_create::359",
+      "identity_key": "scripts/render_report.py::file_create::359",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::c628a34695ec524ea062",
+      "kind": "value",
+      "value": "scripts/render_report.py::file_create::359",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/render_report.py::encoding",
+      "identity_key": "scripts/render_report.py::encoding",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::9abe56be5fa426b98aa3",
+      "kind": "value",
+      "value": "scripts/render_report.py::encoding",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

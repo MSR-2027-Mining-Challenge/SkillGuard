@@ -1,0 +1,31 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/create_vault.py"
+    ],
+    "attributes": {
+      "matched_text": "shutil.copytree(config_source, vault_path / \".obsidian\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/create_vault.py::file_access::174": "path"
+      },
+      "operation_object": "obj::operation::scripts/create_vault.py::file_access::174",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 174,
+      "source_start_line": 174
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/create_vault.py::file_access::174"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  }
+]

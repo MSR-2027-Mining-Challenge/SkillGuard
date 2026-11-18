@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "rules/08-surrealdb-multimodel.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "line \u2014 it disables events/side effects on import (required for\n  `surreal import` on current versions); that's correct for restores, but",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209": "command"
+      },
+      "operation_object": "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209",
+      "parameter_bindings": [],
+      "sink_callsite_id": "rules/08-surrealdb-multimodel.md:209:210:dynamic_code_execution",
+      "source_end_line": 210,
+      "source_start_line": 209
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "dynamic_code_execution"
+  }
+]

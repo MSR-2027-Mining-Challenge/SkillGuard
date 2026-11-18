@@ -1,0 +1,1147 @@
+[
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "references/.malskills_fences/api-parameters__fence_17.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00000",
+    "matched_text": "curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "references/.malskills_fences/api-parameters__fence_17.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "references/.malskills_fences/api-parameters__fence_17.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell access to secrets in environment or key files",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00001",
+    "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "references/.malskills_fences/api-parameters__fence_17.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0053",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_12.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00002",
+    "matched_text": "getattr(usage, \"completion_tokens_details\", None)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0053",
+        "path": "references/.malskills_fences/reasoning-models__fence_12.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0053",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_12.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00003",
+    "matched_text": "and getattr(usage.completion_tokens_details, \"reasoning_tokens\", 0)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0053",
+        "path": "references/.malskills_fences/reasoning-models__fence_12.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 4,
+        "start_line": 4
+      }
+    },
+    "span": {
+      "end_line": 4,
+      "start_line": 4
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0053",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_12.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00004",
+    "matched_text": "getattr(usage, \"prompt_tokens_details\", None)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0053",
+        "path": "references/.malskills_fences/reasoning-models__fence_12.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 8,
+        "start_line": 8
+      }
+    },
+    "span": {
+      "end_line": 8,
+      "start_line": 8
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0053",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_12.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00005",
+    "matched_text": "and getattr(usage.prompt_tokens_details, \"cached_tokens\", 0)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0053",
+        "path": "references/.malskills_fences/reasoning-models__fence_12.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 9,
+        "start_line": 9
+      }
+    },
+    "span": {
+      "end_line": 9,
+      "start_line": 9
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0053",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_12.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00006",
+    "matched_text": ") or getattr(usage, \"cached_tokens\", 0)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0053",
+        "path": "references/.malskills_fences/reasoning-models__fence_12.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 10,
+        "start_line": 10
+      }
+    },
+    "span": {
+      "end_line": 10,
+      "start_line": 10
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0043",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00007",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0043",
+        "path": "references/.malskills_fences/reasoning-models__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0043",
+    "artifact_path": "references/.malskills_fences/reasoning-models__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell access to secrets in environment or key files",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00008",
+    "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0043",
+        "path": "references/.malskills_fences/reasoning-models__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0067",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_10.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00009",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0067",
+        "path": "references/.malskills_fences/structured-outputs__fence_10.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0067",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_10.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell access to secrets in environment or key files",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00010",
+    "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0067",
+        "path": "references/.malskills_fences/structured-outputs__fence_10.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0060",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_3.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00011",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0060",
+        "path": "references/.malskills_fences/structured-outputs__fence_3.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0060",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_3.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell access to secrets in environment or key files",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00012",
+    "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0060",
+        "path": "references/.malskills_fences/structured-outputs__fence_3.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0061",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_4.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00013",
+    "matched_text": "api_key=os.environ.get(\"TOGETHER_API_KEY\"),",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0061",
+        "path": "references/.malskills_fences/structured-outputs__fence_4.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 6,
+        "start_line": 6
+      }
+    },
+    "span": {
+      "end_line": 6,
+      "start_line": 6
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0064",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_7.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00014",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0064",
+        "path": "references/.malskills_fences/structured-outputs__fence_7.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0064",
+    "artifact_path": "references/.malskills_fences/structured-outputs__fence_7.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell access to secrets in environment or key files",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.credential_and_secret_access.private_key_or_api_key_access"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00015",
+    "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0064",
+        "path": "references/.malskills_fences/structured-outputs__fence_7.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": "references/api-parameters.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00016",
+    "matched_text": "curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": "references/api-parameters.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 441,
+        "start_line": 441
+      }
+    },
+    "span": {
+      "end_line": 441,
+      "start_line": 441
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0040",
+    "artifact_path": "references/reasoning-models.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00017",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0040",
+        "path": "references/reasoning-models.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 86,
+        "start_line": 86
+      }
+    },
+    "span": {
+      "end_line": 86,
+      "start_line": 86
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0057",
+    "artifact_path": "references/structured-outputs.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00018",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0057",
+        "path": "references/structured-outputs.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 130,
+        "start_line": 130
+      }
+    },
+    "span": {
+      "end_line": 130,
+      "start_line": 130
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0057",
+    "artifact_path": "references/structured-outputs.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00019",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0057",
+        "path": "references/structured-outputs.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 242,
+        "start_line": 242
+      }
+    },
+    "span": {
+      "end_line": 242,
+      "start_line": 242
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0057",
+    "artifact_path": "references/structured-outputs.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00020",
+    "matched_text": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0057",
+        "path": "references/structured-outputs.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 321,
+        "start_line": 321
+      }
+    },
+    "span": {
+      "end_line": 321,
+      "start_line": 321
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0076",
+    "artifact_path": "scripts/debug_headers.ts",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using process.exit(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0021.no-process-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0021.no-process-exit",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.typescript.command_execution.sso.typescript.command_execution.process.0021.no-process-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "process.exit()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00021",
+    "matched_text": "process.exit(1);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0076",
+        "path": "scripts/debug_headers.ts"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 63,
+        "start_line": 63
+      }
+    },
+    "span": {
+      "end_line": 63,
+      "start_line": 63
+    },
+    "subtype": "system_command_execution"
+  }
+]

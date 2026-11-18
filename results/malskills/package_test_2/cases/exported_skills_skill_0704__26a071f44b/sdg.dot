@@ -1,0 +1,22 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_5.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::12" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::12\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_search::11" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::file_search::11\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_search"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::576fa03bf3c581975f95" [label="value::576fa03bf3c581975f95\nkind=value"];
+  "value::ebbe9a8c87ea6449cfcf" [label="value::ebbe9a8c87ea6449cfcf\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0003" -> "sso_00000" [label="contains"];
+  "art_0003" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::12" -> "value::ebbe9a8c87ea6449cfcf" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_search::11" -> "value::576fa03bf3c581975f95" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_search::11" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::12" [label="has_operand"];
+}

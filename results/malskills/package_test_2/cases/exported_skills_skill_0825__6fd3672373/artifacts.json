@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\r\nname: claude-get-session-info\r\r\ndescription: Shared utility script for getting Claude PID and Session ID. Source this in other scripts to access CLAUDE_PID and SESSION_ID variables.\r\r\n---\r\r\n\r\r\n# Get Session Info\r\r\n\r\r\nShared utility for session management - not directly invoked.\r\r\n\r\r\n**Usage (source in scripts):**\r\r\n\r\r\n```bash\r\r\nsource .claude/skills/claude-get-session-info/scripts/get-session-info.sh\r\r\necho \"Claude PID: $CLAUDE_PID\"\r\r\necho \"Session ID: $SESSION_ID\"\r\r\n```\r\r\n\r\r\nExports `CLAUDE_PID` and `SESSION_ID` environment variables.\r\r\n",
+    "content_hash": "38a54c9dd5158c1182807ebbef394f2f2086773d3a1c3d683211545edd7cdad8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "SKILL.md",
+    "size_bytes": 550,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "#!/usr/bin/env bash\r\n# get-session-info.sh - Utility to get Claude PID and Session ID\r\n# Source this file in other scripts to access:\r\n#   - CLAUDE_PID variable\r\n#   - SESSION_ID variable\r\n#\r\n# Uses environment variables set by SessionStart hook.\r\n\r\n# Use environment variables exported by SessionStart hook\r\nSESSION_ID=\"${CLAUDE_SESSION_ID:-}\"\r\nCLAUDE_PID=\"${CLAUDE_PID:-}\"\r\n\r\n# Export for use by sourcing script\r\nexport CLAUDE_PID\r\nexport SESSION_ID\r\n",
+    "content_hash": "7e0b0b9e7be922f4ba270e49ab3d737f8bf0a0bbe31942ceb36f1bdb8f33abe9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 16,
+    "relative_path": "scripts/get-session-info.sh",
+    "size_bytes": 453,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

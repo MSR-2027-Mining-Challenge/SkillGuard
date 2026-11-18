@@ -1,0 +1,145 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/doc-inventory.py"
+    ],
+    "attributes": {
+      "matched_text": "for dirpath, dirnames, filenames in os.walk(root):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/doc-inventory.py::file_search::22": "path"
+      },
+      "operation_object": "obj::operation::scripts/doc-inventory.py::file_search::22",
+      "path_class": "ordinary",
+      "source_end_line": 22,
+      "source_start_line": 22
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/doc-inventory.py::file_search::22"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/doc-inventory.py"
+    ],
+    "attributes": {
+      "matched_text": "for dirpath, dirnames, filenames in os.walk(docs_dir):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/doc-inventory.py::file_search::40": "path"
+      },
+      "operation_object": "obj::operation::scripts/doc-inventory.py::file_search::40",
+      "path_class": "ordinary",
+      "source_end_line": 40,
+      "source_start_line": 40
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/doc-inventory.py::file_search::40"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/doc-inventory.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, 'r', errors='replace') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/doc-inventory.py::errors": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/doc-inventory.py::errors",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 53,
+      "source_start_line": 53
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/doc-inventory.py::errors"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/doc-inventory.py"
+    ],
+    "attributes": {
+      "matched_text": "root = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.getcwd()",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/doc-inventory.py::root": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/doc-inventory.py::root",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 129,
+      "source_start_line": 129
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/doc-inventory.py::root"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/doc-inventory.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/doc-inventory.py::credential_data_access::132": "path"
+      },
+      "operation_object": "obj::operation::scripts/doc-inventory.py::credential_data_access::132",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 132,
+      "source_start_line": 132
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/doc-inventory.py::credential_data_access::132"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  }
+]

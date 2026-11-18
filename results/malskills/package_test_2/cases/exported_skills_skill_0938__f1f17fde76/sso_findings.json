@@ -1,0 +1,54 @@
+[
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/data_adapter_reference.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00000",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/data_adapter_reference.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 47,
+        "start_line": 47
+      }
+    },
+    "span": {
+      "end_line": 47,
+      "start_line": 47
+    },
+    "subtype": "credential_data_access"
+  }
+]

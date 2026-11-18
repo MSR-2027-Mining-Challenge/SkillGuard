@@ -1,0 +1,14 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=python\npath=scripts/validate_domain_harness.py"];
+  "obj::operation::scripts/validate_domain_harness.py::credential_data_access::386" [label="obj::operation::scripts/validate_domain_harness.py::credential_data_access::386\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::46f218980bec01247338" [label="value::46f218980bec01247338\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::operation::scripts/validate_domain_harness.py::credential_data_access::386" -> "value::46f218980bec01247338" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/validate_domain_harness.py::credential_data_access::386" [label="has_operand"];
+}

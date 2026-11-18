@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: flutter-secure-storage-pattern\r\ndescription: Pattern sicuro per salvare dati sensibili (Token, Seed) su device.\r\n---\r\n\r\n# Secure Storage & Cryptography\r\n\r\nUsa questa skill quando devi salvare dati sensibili come token API, seed crypto o PIN.\r\nIl progetto usa `flutter_secure_storage` e `cryptography`.\r\n\r\n## Regole di Sicurezza\r\n\r\n1. **Mai SharedPreferences**: Non usare `shared_preferences` per dati sensibili. Sono salvati in chiaro.\r\n2. **Usa Secure Storage**: Usa sempre `FlutterSecureStorage` per piccole stringhe segrete.\r\n3. **Biometria**: Se richiesto, proteggi l'accesso con `local_auth` prima di leggere dallo storage.\r\n\r\n## Pattern di Utilizzo\r\n\r\n### Inizializzazione\r\nDefinisci le opzioni per garantire la crittografia massima su ogni piattaforma.\r\n\r\n```dart\r\nfinal _storage = const FlutterSecureStorage(\r\n  aOptions: AndroidOptions(\r\n    encryptedSharedPreferences: true,\r\n  ),\r\n  iOptions: IOSOptions(\r\n    accessibility: KeychainAccessibility.first_unlock,\r\n  ),\r\n);\r\n```\r\n\r\n### Lettura/Scrittura Asincrona\r\nRicorda che l'accesso al keychain \u00e8 lento e asincrono.\r\n\r\n```dart\r\n// Scrittura\r\nawait _storage.write(key: 'auth_token', value: token);\r\n\r\n// Lettura\r\nString? token = await _storage.read(key: 'auth_token');\r\n\r\n// Cancellazione (es. Logout)\r\nawait _storage.delete(key: 'auth_token');\r\n```\r\n\r\n## Gestione Errori\r\nL'accesso al Secure Storage pu\u00f2 fallire (device bloccato, corruzione dati). Gestisci sempre le eccezioni `PlatformException`.\r\n\r\n```dart\r\ntry {\r\n  await _storage.read(key: 'secret');\r\n} catch (e) {\r\n  // Logga l'errore e gestisci il caso (es. richiedi login)\r\n  print('Errore SecureStorage: $e');\r\n}\r\n```\r\n",
+    "content_hash": "701329ceb7ec37fbeff4e34cf61a6ccc4d287a3849cf7a757065da19dfba6a2a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 58,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1653,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

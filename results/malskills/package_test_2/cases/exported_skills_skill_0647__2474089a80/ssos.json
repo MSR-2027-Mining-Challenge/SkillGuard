@@ -1,0 +1,438 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -f -- \"${HEADER_FILE:-}\" \"${WORKFLOW_FILE:-}\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::12",
+      "path_class": "ordinary",
+      "source_end_line": 12,
+      "source_start_line": 12,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::12"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "CURL_VERSION=\"$(curl --version 2>/dev/null)\"",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"$(curl --version 2>/dev/null)\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"$(curl --version 2>/dev/null)\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:38:38:data_receive",
+      "source_end_line": 38,
+      "source_start_line": 38
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"$(curl --version 2>/dev/null)\""
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "CURL_VERSION=\"${CURL_VERSION#curl }\"",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"${CURL_VERSION#curl }\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"${CURL_VERSION#curl }\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:39:39:data_receive",
+      "source_end_line": 39,
+      "source_start_line": 39
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"${CURL_VERSION#curl }\""
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo \"Could not parse curl version: $CURL_VERSION\" >&2",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"Could not parse curl version: $CURL_VERSION\" >&2": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"Could not parse curl version: $CURL_VERSION\" >&2",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:42:42:data_receive",
+      "source_end_line": 42,
+      "source_start_line": 42
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"Could not parse curl version: $CURL_VERSION\" >&2"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:48:48:data_receive",
+      "source_end_line": 48,
+      "source_start_line": 48
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "if ! curl --fail --show-error --location \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::if ! curl --fail --show-error --location \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::if ! curl --fail --show-error --location \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:52:52:data_receive",
+      "source_end_line": 52,
+      "source_start_line": 52
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::if ! curl --fail --show-error --location \\"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq empty \"$WORKFLOW_FILE\" || {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::69": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::69",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 69,
+      "source_start_line": 69
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::69"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "if ! \"${PAGER:-less}\" -- \"$WORKFLOW_FILE\"; then",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::75": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::75",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 75,
+      "source_start_line": 75
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::75"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "chmod 600 \"$HEADER_FILE\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_permission_modify::100": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_permission_modify::100",
+      "path_class": "ordinary",
+      "source_end_line": 100,
+      "source_start_line": 100,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_permission_modify::100"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_permission_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "printf 'X-N8N-API-KEY: %s\\n' \"$N8N_API_KEY\" > \"$HEADER_FILE\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::101": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::101",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 101,
+      "source_start_line": 101
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::101"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl --fail --show-error --max-time 30 \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl --fail --show-error --max-time 30 \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl --fail --show-error --max-time 30 \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:103:103:data_receive",
+      "source_end_line": 103,
+      "source_start_line": 103
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl --fail --show-error --max-time 30 \\"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "export FLY_API_TOKEN=$(grep \"^access_token:\" ~/.fly/config.yml | awk '{print $2}' | head -1)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::FLY_API_TOKEN": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::FLY_API_TOKEN",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::FLY_API_TOKEN"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Docker example:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::5",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::5"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker compose up -d --build",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::6",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::6"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_information_access"
+  }
+]

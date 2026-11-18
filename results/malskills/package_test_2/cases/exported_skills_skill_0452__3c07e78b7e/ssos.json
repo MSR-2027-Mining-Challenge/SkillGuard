@@ -1,0 +1,591 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -LsSf https://astral.sh/uv/install.sh | sh": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -LsSf https://astral.sh/uv/install.sh | sh"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::external_component_installation::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::external_component_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::external_component_installation::2"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "# Windows (PowerShell)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::4": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::4",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:4:4:system_command_execution",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::4"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:5:5:system_command_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::5"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:5:5:dynamic_code_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::5"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "pip install uv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::8": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::8",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::8"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "brew install uv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::11": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::11",
+      "source_end_line": 11,
+      "source_start_line": 11,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::11"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_23.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo 'export PATH=\"$HOME/.cargo/bin:$PATH\"' >> ~/.bashrc",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_configuration_modify::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_configuration_modify::2",
+      "resource_class": "startup_configuration",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_configuration_modify::2"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_24.sh"
+    ],
+    "attributes": {
+      "matched_text": "uv pip install -r requirements.txt",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_24.sh::package_installation::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_24.sh::package_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_24.sh::package_installation::2"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_27.sh"
+    ],
+    "attributes": {
+      "matched_text": "uv pip install PACKAGE",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_27.sh::package_installation::11": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_27.sh::package_installation::11",
+      "source_end_line": 11,
+      "source_start_line": 11,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_27.sh::package_installation::11"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "uv pip install -r requirements.txt",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::package_installation::3": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::package_installation::3",
+      "source_end_line": 3,
+      "source_start_line": 3,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::package_installation::3"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "source .venv/bin/activate",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "# Windows PowerShell",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::7": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::7",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:7:7:system_command_execution",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::7"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -LsSf https://astral.sh/uv/install.sh | sh": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:47:47:data_receive",
+      "source_end_line": 47,
+      "source_start_line": 47
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -LsSf https://astral.sh/uv/install.sh | sh"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::system_command_execution::47": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::system_command_execution::47",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:47:47:system_command_execution",
+      "source_end_line": 47,
+      "source_start_line": 47
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::system_command_execution::47"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::external_component_installation::47": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::external_component_installation::47",
+      "source_end_line": 47,
+      "source_start_line": 47,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::external_component_installation::47"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::50": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::50",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:50:50:dynamic_code_execution",
+      "source_end_line": 50,
+      "source_start_line": 50
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::50"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install uv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::53": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::53",
+      "source_end_line": 53,
+      "source_start_line": 53,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::53"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "brew install uv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::56": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::56",
+      "source_end_line": 56,
+      "source_start_line": 56,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::56"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "package_installation"
+  }
+]

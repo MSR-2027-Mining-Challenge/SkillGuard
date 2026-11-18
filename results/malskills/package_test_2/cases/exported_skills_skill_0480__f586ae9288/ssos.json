@@ -1,0 +1,1399 @@
+[
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "const __dirname = path.dirname(__filename);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::__dirname": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::__dirname",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::__dirname"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "const staticRoot = path.join(__dirname, \"ui\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::staticRoot": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::staticRoot",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 17,
+      "source_start_line": 17
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::staticRoot"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const repoRoot = process.cwd();",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::server.js::system_command_execution::18": "command"
+      },
+      "operation_object": "obj::operation::server.js::system_command_execution::18",
+      "parameter_bindings": [],
+      "sink_callsite_id": "server.js:18:18:process.cwd()",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::server.js::system_command_execution::18"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "const repoName = path.basename(path.resolve(repoRoot));",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::repoName": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::repoName",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 21,
+      "source_start_line": 21
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::repoName"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "const normalized = path.normalize(requestedPath).replace(/^([.][.][/\\\\])+/, \"\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::normalized": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::normalized",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 62,
+      "source_start_line": 62
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::normalized"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "const resolved = path.join(staticRoot, normalized);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::resolved": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::resolved",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 63,
+      "source_start_line": 63
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::resolved"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "if (!resolved.startsWith(staticBase) && resolved !== path.join(staticRoot, \"index.html\")) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::server.js::file_access::66": "path"
+      },
+      "operation_object": "obj::operation::server.js::file_access::66",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 66,
+      "source_start_line": 66
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::server.js::file_access::66"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "file = await fs.readFile(filePath, \"utf8\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::file": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::file",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 171,
+      "source_start_line": 171
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::file"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "matched_text": "const extension = path.extname(filePath);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::extension": "path"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::extension",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 180,
+      "source_start_line": 180
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::extension"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "server.js"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "const server = http.createServer(requestListener);",
+      "endpoint_class": "unknown",
+      "network_role": "listen",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::server.js::server_listen::const server = http.createServer(requestListener);": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::server.js::server_listen::const server = http.createServer(requestListener);",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "http.createServer()",
+      "sink_callsite_id": "server.js:248:248:http.createServer()",
+      "source_end_line": 248,
+      "source_start_line": 248
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::server.js::server_listen::const server = http.createServer(requestListener);"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "server_listen"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const __dirname = path.dirname(__filename);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::__dirname": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::__dirname",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::__dirname"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const TEMPLATE_ROADMAP_ROOT = path.join(__dirname, \"..\", \"templates\", \"roadmap\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::TEMPLATE_ROADMAP_ROOT": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::TEMPLATE_ROADMAP_ROOT",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 19,
+      "source_start_line": 19
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::TEMPLATE_ROADMAP_ROOT"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.access(filePath);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::744": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::744",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 744,
+      "source_start_line": 744
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::744"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "return await fs.stat(targetPath);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::753": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::753",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 753,
+      "source_start_line": 753
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::753"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "return path.relative(path.resolve(repoRoot), path.resolve(targetPath)).replaceAll('\\\\', '/');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::764": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::764",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 764,
+      "source_start_line": 764
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::764"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const resolvedRepoRoot = path.resolve(repoRoot);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::resolvedRepoRoot": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::resolvedRepoRoot",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 805,
+      "source_start_line": 805
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::resolvedRepoRoot"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const configPath = path.join(resolvedRepoRoot, \"roadmap.config.json\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::configPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::configPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 806,
+      "source_start_line": 806
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::configPath"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "rawConfig = await fs.readFile(configPath, \"utf8\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::rawConfig": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::rawConfig",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 815,
+      "source_start_line": 815
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::rawConfig"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const resolvedPath = path.resolve(resolvedRepoRoot, configuredPath);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::resolvedPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::resolvedPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 833,
+      "source_start_line": 833
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::resolvedPath"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const relative = path.relative(resolvedRepoRoot, resolvedPath);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::relative": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::relative",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 834,
+      "source_start_line": 834
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::relative"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "if (relative.startsWith(\"..\") || path.isAbsolute(relative)) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::836": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::836",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 836,
+      "source_start_line": 836
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::836"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const targetPath = path.join(workspace.resolvedPath, directoryName);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::targetPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::targetPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 872,
+      "source_start_line": 872
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::targetPath"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const targetPath = path.join(workspace.resolvedPath, fileName);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::targetPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::targetPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 890,
+      "source_start_line": 890
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::targetPath"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const templatePath = path.join(TEMPLATE_ROADMAP_ROOT, templateName);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::templatePath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::templatePath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 920,
+      "source_start_line": 920
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::templatePath"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const templateText = await fs.readFile(templatePath, \"utf8\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::templateText": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::templateText",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 921,
+      "source_start_line": 921
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::templateText"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.writeFile(targetPath, templateText, \"utf8\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_write::922": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_write::922",
+      "path_class": "ordinary",
+      "source_end_line": 922,
+      "source_start_line": 922,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_write::922"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "return await fs.readFile(filePath, \"utf8\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_read::965": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_read::965",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 965,
+      "source_start_line": 965
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_read::965"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const entries = await fs.readdir(directoryPath, { withFileTypes: true });",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::entries": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::entries",
+      "path_class": "ordinary",
+      "source_end_line": 976,
+      "source_start_line": 976
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::entries"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": ".map((entry) => path.join(directoryPath, entry.name));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::979": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::979",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 979,
+      "source_start_line": 979
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::979"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const featuresDir = path.join(roadmapRoot, \"features\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::featuresDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::featuresDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 983,
+      "source_start_line": 983
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::featuresDir"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const ideasDir = path.join(roadmapRoot, \"ideas\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::ideasDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::ideasDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 984,
+      "source_start_line": 984
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::ideasDir"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const text = await fs.readFile(entry.filePath, \"utf8\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::text": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::text",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 997,
+      "source_start_line": 997
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::text"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const boardPath = path.join(workspace.resolvedPath, \"board.md\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::boardPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::boardPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1019,
+      "source_start_line": 1019
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::boardPath"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const scopePath = path.join(workspace.resolvedPath, \"scope.md\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::scopePath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::scopePath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1020,
+      "source_start_line": 1020
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::scopePath"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "repoName: path.basename(path.resolve(repoRoot)),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::1048": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::1048",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1048,
+      "source_start_line": 1048
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::1048"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.mkdir(workspace.resolvedPath, { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_create::1070": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_create::1070",
+      "path_class": "ordinary",
+      "source_end_line": 1070,
+      "source_start_line": 1070,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00039"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_create::1070"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.mkdir(path.join(workspace.resolvedPath, directoryName), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_create::1073": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_create::1073",
+      "path_class": "ordinary",
+      "source_end_line": 1073,
+      "source_start_line": 1073,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00040"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_create::1073"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.mkdir(path.join(workspace.resolvedPath, directoryName), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::1073": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::1073",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1073,
+      "source_start_line": 1073
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00041"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::1073"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await ensureStarterFile(fileName, path.join(workspace.resolvedPath, fileName));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::1077": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::1077",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1077,
+      "source_start_line": 1077
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00042"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::1077"
+    ],
+    "sso_id": "sso_00038",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "filePath: path.relative(repoRoot, item.filePath),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_access::1102": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_access::1102",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1102,
+      "source_start_line": 1102
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00043"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_access::1102"
+    ],
+    "sso_id": "sso_00039",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.writeFile(item.filePath, payload.rawText, \"utf8\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_write::1131": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_write::1131",
+      "path_class": "ordinary",
+      "source_end_line": 1131,
+      "source_start_line": 1131,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00044"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_write::1131"
+    ],
+    "sso_id": "sso_00040",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": ": path.join(workspace.resolvedPath, nextKind === \"feature\" ? \"features\" : \"ideas\", path.basename(item.filePath));",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::nextKind": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::nextKind",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1168,
+      "source_start_line": 1168
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00045"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::nextKind"
+    ],
+    "sso_id": "sso_00041",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.writeFile(item.filePath, serialized, \"utf8\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_write::1174": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_write::1174",
+      "path_class": "ordinary",
+      "source_end_line": 1174,
+      "source_start_line": 1174,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00047"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_write::1174"
+    ],
+    "sso_id": "sso_00042",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.rename(item.filePath, destinationPath);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_write::1177": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_write::1177",
+      "path_class": "ordinary",
+      "source_end_line": 1177,
+      "source_start_line": 1177,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00048"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_write::1177"
+    ],
+    "sso_id": "sso_00043",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const scopePath = path.join(workspace.resolvedPath, \"scope.md\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::scopePath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::scopePath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1185,
+      "source_start_line": 1185
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00049"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::scopePath"
+    ],
+    "sso_id": "sso_00044",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.writeFile(scopePath, nextText.replace(/\\n/g, eol), \"utf8\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_write::1191": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_write::1191",
+      "path_class": "ordinary",
+      "source_end_line": 1191,
+      "source_start_line": 1191,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00050"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_write::1191"
+    ],
+    "sso_id": "sso_00045",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "const boardPath = path.join(workspace.resolvedPath, \"board.md\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/roadmap.js::boardPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/roadmap.js::boardPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1197,
+      "source_start_line": 1197
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00051"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/roadmap.js::boardPath"
+    ],
+    "sso_id": "sso_00046",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "src/roadmap.js"
+    ],
+    "attributes": {
+      "matched_text": "await fs.writeFile(boardPath, serialized, \"utf8\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/roadmap.js::file_write::1240": "path"
+      },
+      "operation_object": "obj::operation::src/roadmap.js::file_write::1240",
+      "path_class": "ordinary",
+      "source_end_line": 1240,
+      "source_start_line": 1240,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00052"
+    ],
+    "operand_ids": [
+      "obj::operation::src/roadmap.js::file_write::1240"
+    ],
+    "sso_id": "sso_00047",
+    "subtype": "file_write"
+  }
+]

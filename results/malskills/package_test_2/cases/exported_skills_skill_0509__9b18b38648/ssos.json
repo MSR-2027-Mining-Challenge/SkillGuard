@@ -1,0 +1,234 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "git merge-base HEAD origin/branch-a",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Look at the reflog to find when you created the branch",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "git reflog show branch-b | tail -5",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::2"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "git rebase --onto origin/branch-a $(git merge-base HEAD origin/branch-a) HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "git rebase --onto origin/branch-a <old-base-commit> HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "# On branch-b, which was based on branch-a at commit abc123",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "$ git rebase --onto origin/branch-a abc123 HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::5"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "git log --oneline --graph HEAD~20..HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  }
+]

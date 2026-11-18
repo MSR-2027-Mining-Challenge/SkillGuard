@@ -1,0 +1,31 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/legal_term_lookup.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392": "path"
+      },
+      "operation_object": "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 392,
+      "source_start_line": 392
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  }
+]

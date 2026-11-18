@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: mcp-pool-http-proxy-for-subprocess-sdks\r\ndescription: Expose a pool of MCP sources (Linear, GitHub, Notion, ...) to Codex/Copilot SDK subprocesses through a single Streamable-HTTP MCP endpoint, instead of having each subprocess open independent connections.\r\ncategory: mcp-integration\r\nversion: 1.0.0\r\nversion_origin: extracted\r\ntags: [mcp, streamable-http, subprocess, connection-pool]\r\nconfidence: high\r\nsource_type: extracted-from-git\r\nsource_url: https://github.com/lukilabs/craft-agents-oss.git\r\nsource_ref: main\r\nsource_commit: 61f7d48a5b4fd0a8094f002c9e3aea5f3824dcfb\r\nsource_project: craft-agents-oss\r\nsource_path: packages/shared/src/mcp/pool-server.ts\r\nimported_at: 2026-04-18T00:00:00Z\r\n---\r\n\r\n# MCP pool HTTP proxy for subprocess SDKs\r\n\r\n## When to use\r\n- Host process already manages MCP connections to many sources (Linear, GitHub, Notion, ...).\r\n- You spawn LLM SDK subprocesses (Codex, Copilot) that themselves consume MCP tools.\r\n- You do NOT want each subprocess re-establishing stateful stdio/SSE connections to every source.\r\n- Want stateless HTTP so multiple subprocesses can share the pool with no session tracking.\r\n\r\n## How it works\r\n1. In the host (e.g. Electron main), keep an `McpClientPool` of `PoolClient` instances \u2014 one per source, each holding the real `@modelcontextprotocol/sdk` client.\r\n2. Stand up a local HTTP server on `127.0.0.1:0` (random port).\r\n3. Wrap it with `StreamableHTTPServerTransport({ sessionIdGenerator: undefined })` \u2014 **stateless mode**, no session affinity.\r\n4. Connect an `@modelcontextprotocol/sdk/server` `Server` to the transport; register `ListToolsRequestSchema` (fan-out to the pool, namespaced tool names) and `CallToolRequestSchema` (dispatch back).\r\n5. Route every incoming request at `/mcp` to `transport.handleRequest(req, res)` regardless of HTTP method.\r\n6. Return the URL `http://127.0.0.1:<port>/mcp` to each spawned SDK subprocess as its MCP endpoint.\r\n7. Subprocess uses `StreamableHTTPClientTransport(new URL(url))` to talk to the pool.\r\n\r\n## Example\r\n```ts\r\nimport { Server } from '@modelcontextprotocol/sdk/server/index.js';\r\nimport { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';\r\n\r\nthis.transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });\r\nthis.mcpServer = new Server({ name: 'pool', version: '1.0.0' }, { capabilities: { tools: {} } });\r\nthis.mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {\r\n  const tools = [];\r\n  for (const [slug, client] of this.pool.entries()) {\r\n    const list = await client.listTools();\r\n    tools.push(...list.map(t => ({ ...t, name: `mcp__${slug}__${t.name}` })));\r\n  }\r\n  return { tools };\r\n});\r\nthis.mcpServer.setRequestHandler(CallToolRequestSchema, async (req) => {\r\n  const [, slug, tool] = req.params.name.split('__');\r\n  return this.pool.get(slug).callTool(tool, req.params.arguments);\r\n});\r\nawait this.mcpServer.connect(this.transport);\r\nhttp.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');\r\n```\r\n\r\n## Gotchas\r\n- Stateless mode means DO NOT use `session/notifications` or resource subscriptions - they all need a session ID.\r\n- Bind to `127.0.0.1` only - the SDK subprocess shares your localhost so no need to open a port publicly.\r\n- Namespace tool names aggressively (`mcp__<source>__<tool>`) so collisions between sources don't silently shadow each other.\r\n- `transport.handleRequest` covers POST, GET, DELETE - route them all to it; don't try to branch on method.\r\n",
+    "content_hash": "fcdeb28c2ee97d4711117896c2897676df1bec5df8fe238f800fce9163088b92",
+    "generated": false,
+    "is_text": true,
+    "line_count": 63,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3533,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "import { Server } from '@modelcontextprotocol/sdk/server/index.js';\r\nimport { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';\r\n\r\nthis.transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });\r\nthis.mcpServer = new Server({ name: 'pool', version: '1.0.0' }, { capabilities: { tools: {} } });\r\nthis.mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {\r\n  const tools = [];\r\n  for (const [slug, client] of this.pool.entries()) {\r\n    const list = await client.listTools();\r\n    tools.push(...list.map(t => ({ ...t, name: `mcp__${slug}__${t.name}` })));\r\n  }\r\n  return { tools };\r\n});\r\nthis.mcpServer.setRequestHandler(CallToolRequestSchema, async (req) => {\r\n  const [, slug, tool] = req.params.name.split('__');\r\n  return this.pool.get(slug).callTool(tool, req.params.arguments);\r\n});\r\nawait this.mcpServer.connect(this.transport);\r\nhttp.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+    "content_hash": "ae0e45e7feda687cf39e37cc7d7cc5385a659bb31d2aa7b15eba03b140662ebe",
+    "generated": true,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": ".malskills_fences/SKILL__fence_0.ts",
+    "size_bytes": 1006,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 56,
+    "source_start_line": 36
+  }
+]

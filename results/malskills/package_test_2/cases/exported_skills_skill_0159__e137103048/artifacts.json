@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Eval Skill\r\n\r\nRun evaluation on a trained ReconDrive checkpoint and report results.\r\n\r\n## Steps\r\n\r\n1. Check that `./checkpoints/recondrive_stage2.ckpt` exists (or a user-specified checkpoint).\r\n2. Run inference using `scripts/inference.sh` (or construct the command with any overrides the user specified).\r\n3. After inference completes, read `./work_dirs/recondrive_stage2_eval_output/metrics.json` and display the results in a formatted table (PSNR, SSIM, LPIPS per scene and overall average).\r\n4. If novel-view renders were saved, list the output directory contents so the user can locate the images.\r\n\r\n## Usage\r\n\r\n```\r\n/eval\r\n/eval --ckpt ./checkpoints/my_checkpoint.ckpt\r\n/eval --ckpt ./checkpoints/my_checkpoint.ckpt --output_dir ./work_dirs/my_eval\r\n/eval --novel_distances 1.0,2.0,3.0 --save_renders\r\n```\r\n\r\n## Arguments (all optional)\r\n\r\n| Argument | Default | Description |\r\n|----------|---------|-------------|\r\n| `--ckpt` | `./checkpoints/recondrive_stage2.ckpt` | Path to checkpoint to evaluate |\r\n| `--output_dir` | `./work_dirs/recondrive_stage2_eval_output` | Directory for outputs |\r\n| `--device` | `0` | GPU device id |\r\n| `--novel_distances` | `1.0,2.0,3.0` | Lateral offset distances (meters) for novel-view synthesis |\r\n| `--save_renders` | false | Save novel-view rendered images |\r\n| `--resolution` | `280x518` | Evaluation resolution (HxW) |\r\n\r\n## Implementation Notes\r\n\r\n- Inference only supports single-GPU mode.\r\n- Config is always `./configs/nuscenes/recondrive.yaml`.\r\n- Default test scenes: scene-0014, 0018, 0906, 0098, 0100, 0103, 0270, 0271, 0278, 0553, 0558, 0802, 0968, 1065.\r\n- Pass `--no_renders` flag when `--save_renders` is not set to skip writing images.\r\n",
+    "content_hash": "f41d91e04cca253dc14d02da6d556a8354622b19690e128f5bff25bcb1972cab",
+    "generated": false,
+    "is_text": true,
+    "line_count": 38,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1699,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,1591 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_36.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_38.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_51.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_52.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_53.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_61.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_65.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "target": "value::96fe0bb5442aa54712ff",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::2",
+      "target": "value::66e89b07d55582cd97e4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "target": "value::e81c557d698f73980b4d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::5",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::5",
+      "target": "value::17be8cd18c7277084fbf",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00004",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "target": "value::f2e2cee06db82224f30f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "target": "value::09dcf28f14e61a4d8e3f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::14",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::14",
+      "target": "value::79159d6aa55c71d4b3f4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "target": "value::47533b88deed61c75395",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "target": "value::74722ce77410c044d98f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::scope",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::scope",
+      "target": "value::17f23bb548d3380a09fb",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_51.sh::file_search::13",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_51.sh::file_search::13",
+      "target": "value::759d027da007d034e98b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_51.sh::file_read::13",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_51.sh::file_read::13",
+      "target": "value::b6a1aa15a4b4bd38be60",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00012",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_61.sh::encoding::9",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_61.sh::encoding::9",
+      "target": "value::c8982b4176897cd4a074",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00013",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "target": "value::34559d3dcac22d81f611",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::4",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::4",
+      "target": "value::14b41ae6a65004f7ae81",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00015",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "target": "value::ed1d81cb182f9ee7f0e2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00016",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::7",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::7",
+      "target": "value::86c3298bd740be1e95fe",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00017",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "target": "value::920ecd98c7f87245b3ee",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00018",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "target": "value::5185a5b5d5ef5107d171",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00019",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::16",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::16",
+      "target": "value::70e7b2e420d64bbf29d1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00020",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "target": "value::9629fe00188d12df7e6e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00021",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "target": "value::3d3ff912c53431813f32",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00022",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::scope",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::scope",
+      "target": "value::678e352426cc1f926c1d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00023",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "target": "value::020c632a6cf74b809b2f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00024",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::185",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::185",
+      "target": "value::47d9ce1f3ca7b8e5640f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00025",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "target": "value::21084b66c74c225aca4d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00026",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "target": "value::f477bb8990f2e56e83e7",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00027",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "target": "value::ca514b8b585b0617603f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00028",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "target": "value::44a4deb296e794f7f968",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00029",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00029",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "target": "value::e69245f9148f35b080b0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00030",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00030",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "target": "value::0e319f4bf52ce6ec7cb3",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00031",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00031",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "target": "value::23fac89c273d8045ffb8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00032",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00032",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "target": "value::a06c667febc095f852e9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00033",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00033",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "target": "value::df5f9ebbaec3ba2f2785",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00034",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00034",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "target": "value::53464f44de7dc38260e1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00035",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00035",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "target": "value::ba7ce455ec64b855251d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00036",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00036",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "target": "value::58b262cbff67ccef4253",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00037",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00037",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "target": "value::0e8609c83f30c48fac1e",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_36.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_38.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_51.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_52.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_53.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_61.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_65.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::96fe0bb5442aa54712ff",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::2",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::file_read::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::66e89b07d55582cd97e4",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::file_read::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::e81c557d698f73980b4d",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::5",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::file_read::5",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::17be8cd18c7277084fbf",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::file_read::5",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::f2e2cee06db82224f30f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::09dcf28f14e61a4d8e3f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_38.sh::file_read::14",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::file_read::14",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::79159d6aa55c71d4b3f4",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::file_read::14",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::47533b88deed61c75395",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::74722ce77410c044d98f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_38.sh::scope",
+      "identity_key": ".malskills_fences/SKILL__fence_38.sh::scope",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::17f23bb548d3380a09fb",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_38.sh::scope",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_51.sh::file_search::13",
+      "identity_key": ".malskills_fences/SKILL__fence_51.sh::file_search::13",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::759d027da007d034e98b",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_51.sh::file_search::13",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_51.sh::file_read::13",
+      "identity_key": ".malskills_fences/SKILL__fence_51.sh::file_read::13",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b6a1aa15a4b4bd38be60",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_51.sh::file_read::13",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "encoding",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_61.sh::encoding::9",
+      "identity_key": ".malskills_fences/SKILL__fence_61.sh::encoding::9",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::c8982b4176897cd4a074",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_61.sh::encoding::9",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::34559d3dcac22d81f611",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::4",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::file_read::4",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::14b41ae6a65004f7ae81",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::file_read::4",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::ed1d81cb182f9ee7f0e2",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::7",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::file_read::7",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::86c3298bd740be1e95fe",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::file_read::7",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::920ecd98c7f87245b3ee",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::5185a5b5d5ef5107d171",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_65.sh::file_read::16",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::file_read::16",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::70e7b2e420d64bbf29d1",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::file_read::16",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::9629fe00188d12df7e6e",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::3d3ff912c53431813f32",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::scope",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::scope",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::678e352426cc1f926c1d",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::scope",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "identity_key": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::020c632a6cf74b809b2f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_65.sh::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::185",
+      "identity_key": "SKILL.md::dynamic_code_execution::185",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::47d9ce1f3ca7b8e5640f",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::185",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::21084b66c74c225aca4d",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::f477bb8990f2e56e83e7",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/schema | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "identity_key": "SKILL.md::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::ca514b8b585b0617603f",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -X PATCH http://localhost:{port}/v1/system/configs \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::44a4deb296e794f7f968",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/configs/history | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00029"
+      ],
+      "id": "sso_00029",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "identity_key": "SKILL.md::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::e69245f9148f35b080b0",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -X POST http://localhost:{port}/v1/system/configs/reload",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00030"
+      ],
+      "id": "sso_00030",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::0e319f4bf52ce6ec7cb3",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:{port}/v1/system/settings?scope=global | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00031"
+      ],
+      "id": "sso_00031",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::23fac89c273d8045ffb8",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00032"
+      ],
+      "id": "sso_00032",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a06c667febc095f852e9",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/schema | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00033"
+      ],
+      "id": "sso_00033",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "identity_key": "SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::df5f9ebbaec3ba2f2785",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/configs \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00034"
+      ],
+      "id": "sso_00034",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::53464f44de7dc38260e1",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/configs/history | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00035"
+      ],
+      "id": "sso_00035",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "identity_key": "SKILL.md::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::ba7ce455ec64b855251d",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -X POST http://localhost:4018/v1/system/configs/reload",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00036"
+      ],
+      "id": "sso_00036",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "identity_key": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::58b262cbff67ccef4253",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://localhost:4018/v1/system/settings?scope=global | jq",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00037"
+      ],
+      "id": "sso_00037",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "identity_key": "SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::0e8609c83f30c48fac1e",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -X PATCH http://localhost:4018/v1/system/settings \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

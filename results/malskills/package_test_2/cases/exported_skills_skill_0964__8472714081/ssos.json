@@ -1,0 +1,307 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::external_component_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::external_component_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::external_component_installation::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp -r skills/discord-nitro ~/.canifi/skills/",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::1",
+      "path_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "# curl -sSL https://canifi.com/install.sh | bash",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::# curl -sSL https://canifi.com/install.sh | bash": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::# curl -sSL https://canifi.com/install.sh | bash",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::# curl -sSL https://canifi.com/install.sh | bash"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "# curl -sSL https://canifi.com/install.sh | bash",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "# curl -sSL https://canifi.com/install.sh | bash",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::external_component_installation::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::external_component_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::external_component_installation::2"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:15:15:data_receive",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::system_command_execution::15": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::system_command_execution::15",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:15:15:system_command_execution",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::system_command_execution::15"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "curl -sSL https://canifi.com/skills/discord-nitro/install.sh | bash",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::external_component_installation::15": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::external_component_installation::15",
+      "source_end_line": 15,
+      "source_start_line": 15,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::external_component_installation::15"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "external_component_installation"
+  }
+]

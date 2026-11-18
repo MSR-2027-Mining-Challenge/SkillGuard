@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: spec-tasks\r\ndescription: \uc124\uacc4\ub97c \uc21c\uc11c\uac00 \uc788\uace0 \uc6d0\uc790\uc801\uc774\uba70 \ub3c5\ub9bd\uc801\uc73c\ub85c \uac80\uc99d \uac00\ub2a5\ud55c \ud0dc\uc2a4\ud06c \ub2e8\uc704\ub85c \ubd84\ud574\ud569\ub2c8\ub2e4.\r\nuser-invocable: true\r\ntools: [Read, Write, Task]\r\n---\r\n\r\n# Spec: Tasks \ub2e8\uacc4\r\n\r\n\uc804\uc81c \uc870\uac74: design.md \uac00 \uc2b9\uc778\ub418\uc5c8\uc744 \uac83.\r\n\r\n\uc0b0\ucd9c\ubb3c: `.claude/specs/<id>/tasks.md`\r\n\r\n## \uc720\ud6a8\ud55c \ud0dc\uc2a4\ud06c\uc758 \uaddc\uce59\r\n\r\n- \ud558\ub098\uc758 \uc11c\ube0c\uc5d0\uc774\uc804\ud2b8 \ucee8\ud14d\uc2a4\ud2b8 \uc548\uc5d0\uc11c \uad6c\ud604 \uac00\ub2a5 (\uc804\uccb4 < 50K \ud1a0\ud070)\r\n- \ub2e8\uc77c \uc774\uc9c4(binary) \uc218\uc6a9 \ud14c\uc2a4\ud2b8\uac00 \uc788\uc5b4\uc57c \ud55c\ub2e4\r\n- \uc758\uc874\uc131\uc774 \uba85\uc2dc\ub418\uc5b4 \uc788\uc5b4\uc57c \ud55c\ub2e4 (\ub2e4\ub978 \ud0dc\uc2a4\ud06c ID \ucc38\uc870)\r\n- \uac74\ub4dc\ub9b4 \ud30c\uc77c\uc744 \uc815\ud655\ud788 \ub098\uc5f4\ud55c\ub2e4\r\n- \ud1a0\ud070 \uc608\uc0b0\uacfc \ud0c0\uc784\uc544\uc6c3\uc774 \ucd94\uc815\ub418\uc5b4 \uc788\ub2e4\r\n- \uae68\ub057\ud558\uac8c \ucef4\ud30c\uc77c\ub418\uac70\ub098 OR `[scaffold]` \ud0dc\uadf8\uac00 \ubd99\uc5b4 \uc788\uc5b4\uc57c \ud55c\ub2e4 (\uc758\ub3c4\uc801\uc73c\ub85c \ubbf8\uc644\uc131)\r\n\r\n## \ud0dc\uc2a4\ud06c \ud15c\ud50c\ub9bf\r\n\r\n```markdown\r\n### Task N: <\uc9e7\uc740 \uc81c\ubaa9>\r\n\r\n- **Status**: `- [ ]` (\ubbf8\uccb4\ud06c; \uc644\ub8cc \uc2dc `- [x]`)\r\n- **Dependencies**: [T1, T3]\r\n- **Files touched**:\r\n  - `src/modules/auth/auth.service.ts`\r\n  - `src/modules/auth/auth.service.test.ts`\r\n- **Acceptance**:\r\n  - Command: `npm test -- auth.service`\r\n  - Expected: \uc804\ubd80 \ud1b5\uacfc, \ucee4\ubc84\ub9ac\uc9c0 \ub378\ud0c0 \u2265 0\r\n- **Rollback**: `git revert <commit>`\r\n- **Budget**: 20K tokens / 10 min wall time\r\n```\r\n\r\n## \ud504\ub85c\uc138\uc2a4\r\n\r\n1. design.md \ub97c \ub05d\uae4c\uc9c0 \uc77d\ub294\ub2e4\r\n2. \uc758\uc874\uc131 \uc21c\uc11c\ub85c \ud0dc\uc2a4\ud06c \ubaa9\ub85d \ucd08\uc548\uc744 \uc791\uc131\ud55c\ub2e4\r\n3. \uac01 \ud0dc\uc2a4\ud06c\uc5d0 \ub300\ud574 6\uac1c \uaddc\uce59 \ud56d\ubaa9\uc744 \ubaa8\ub450 \ucda9\uc871\ud558\ub294\uc9c0 \ud655\uc778\ud55c\ub2e4\r\n4. \ud558\ub098\uc758 \ud0dc\uc2a4\ud06c\uac00 \ud30c\uc77c 5\uac1c \ucd08\uacfc \ub610\ub294 300 LOC \ucd08\uacfc\ub97c \uac74\ub4dc\ub9ac\uba74 \ubd84\ud560\ud55c\ub2e4\r\n5. \ubcd1\ub82c\ud654 \uac00\ub2a5\ud55c \ud0dc\uc2a4\ud06c\ub97c \uc2dd\ubcc4\ud55c\ub2e4 (\uacf5\uc720 \ud30c\uc77c \uc5c6\uc74c, \uc758\uc874\uc131 \uc5e3\uc9c0 \uc5c6\uc74c)\r\n6. \uc791\uc131 \ud6c4 STOP. \uc0ac\uc6a9\uc790\uac00 `/spec-implement` \ub97c \uc785\ub825\ud574\uc57c \uc9c4\ud589\ud55c\ub2e4.\r\n",
+    "content_hash": "1adfbe65ad60f6aa0974113b03c1bd4d6b82075125cb60511e3d318465c7a1b9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1763,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

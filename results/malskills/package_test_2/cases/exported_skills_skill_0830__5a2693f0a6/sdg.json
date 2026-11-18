@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.tsx",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0000",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "target": "value::208e8ee425e96f2fad4f",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.tsx",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "identity_key": "SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::208e8ee425e96f2fad4f",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

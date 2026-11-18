@@ -1,0 +1,367 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "pnpm install",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": ".malskills_fences/SKILL__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell copies or archives data in bulk",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "cp .env.example .env.local",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": ".malskills_fences/SKILL__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0009",
+    "artifact_path": ".malskills_fences/SKILL__fence_10.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell copies or archives data in bulk",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00002",
+    "matched_text": "cp -R /path/to/OpenMAIC/skills/openmaic ~/.openclaw/skills/openmaic",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0009",
+        "path": ".malskills_fences/SKILL__fence_10.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 6,
+        "start_line": 6
+      }
+    },
+    "span": {
+      "end_line": 6,
+      "start_line": 6
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_5.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell copies or archives data in bulk",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "cp .env.example .env.local",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_5.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_5.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00004",
+    "matched_text": "docker compose up --build",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_5.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 4,
+        "start_line": 4
+      }
+    },
+    "span": {
+      "end_line": 4,
+      "start_line": 4
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_6.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell scheduled persistence",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "startup_configuration",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.scheduled_persistence",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.scheduled_persistence"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_id": "semgrep_00005",
+    "matched_text": "# Fork the repo, then import at https://vercel.com/new",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_6.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_id": "art_0000",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "pnpm install",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0000",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 41,
+        "start_line": 41
+      }
+    },
+    "span": {
+      "end_line": 41,
+      "start_line": 41
+    },
+    "subtype": "package_installation"
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "Single node capture uses $NAME syntax. For example, pattern const $NAME = require($PATH) captures the variable name and path.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::142": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::142",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:142:143:dynamic_code_execution",
+      "source_end_line": 143,
+      "source_start_line": 142
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::142"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "modules/.malskills_fences/refactoring-patterns__fence_18.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat changes.json | jq '.[] | {file: .path, line: .range.start.line, fix: .fix}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::modules/.malskills_fences/refactoring-patterns__fence_18.sh::file_read::3": "path"
+      },
+      "operation_object": "obj::operation::modules/.malskills_fences/refactoring-patterns__fence_18.sh::file_read::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::modules/.malskills_fences/refactoring-patterns__fence_18.sh::file_read::3"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "modules/.malskills_fences/security-rules__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "sg scan --config sgconfig.yml --json | jq '.[] | select(.severity == \"error\")'",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::modules/.malskills_fences/security-rules__fence_15.sh::severity": "path"
+      },
+      "operation_object": "obj::symbolic_reference::modules/.malskills_fences/security-rules__fence_15.sh::severity",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::modules/.malskills_fences/security-rules__fence_15.sh::severity"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/examples__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "brew install ast-grep",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/examples__fence_0.sh::package_installation::2": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/examples__fence_0.sh::package_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/examples__fence_0.sh::package_installation::2"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/examples__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g @ast-grep/cli",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/examples__fence_0.sh::package_installation::5": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/examples__fence_0.sh::package_installation::5",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/examples__fence_0.sh::package_installation::5"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0047"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reference__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "brew install ast-grep",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reference__fence_0.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reference__fence_0.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reference__fence_0.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0048"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reference__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g @ast-grep/cli",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reference__fence_1.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reference__fence_1.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reference__fence_1.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "references/examples.md"
+    ],
+    "attributes": {
+      "matched_text": "brew install ast-grep",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/examples.md::package_installation::11": "target"
+      },
+      "operation_object": "obj::operation::references/examples.md::package_installation::11",
+      "source_end_line": 11,
+      "source_start_line": 11,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::references/examples.md::package_installation::11"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "references/examples.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g @ast-grep/cli",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/examples.md::package_installation::14": "target"
+      },
+      "operation_object": "obj::operation::references/examples.md::package_installation::14",
+      "source_end_line": 14,
+      "source_start_line": 14,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::references/examples.md::package_installation::14"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "references/examples.md"
+    ],
+    "attributes": {
+      "matched_text": "- npm install -g @ast-grep/cli",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/examples.md::package_installation::822": "target"
+      },
+      "operation_object": "obj::operation::references/examples.md::package_installation::822",
+      "source_end_line": 822,
+      "source_start_line": 822,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::references/examples.md::package_installation::822"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0046"
+    ],
+    "artifact_paths": [
+      "references/reference.md"
+    ],
+    "attributes": {
+      "matched_text": "brew install ast-grep",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/reference.md::package_installation::27": "target"
+      },
+      "operation_object": "obj::operation::references/reference.md::package_installation::27",
+      "source_end_line": 27,
+      "source_start_line": 27,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::references/reference.md::package_installation::27"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0046"
+    ],
+    "artifact_paths": [
+      "references/reference.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g @ast-grep/cli",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/reference.md::package_installation::32": "target"
+      },
+      "operation_object": "obj::operation::references/reference.md::package_installation::32",
+      "source_end_line": 32,
+      "source_start_line": 32,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::references/reference.md::package_installation::32"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "package_installation"
+  }
+]

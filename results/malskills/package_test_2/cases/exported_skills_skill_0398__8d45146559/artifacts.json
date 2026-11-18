@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: list-fretum-bundles\r\ndescription: List composed workflows (bundles) on the Fretum marketplace. A bundle chains multiple x402 endpoints into a single callable unit \u2014 e.g. \"scrape company \u2192 enrich \u2192 draft outreach email\". Use when the user or agent wants a multi-step workflow rather than a single endpoint, or says \"find me a pipeline for X on Fretum\", \"what bundles are available\", \"browse workflows on Fretum\".\r\nuser-invocable: true\r\ndisable-model-invocation: false\r\nallowed-tools: [\"Bash(curl *)\"]\r\n---\r\n\r\n# List Fretum Bundles\r\n\r\nBundles are pre-composed multi-endpoint workflows. One payment, one call \u2014 Fretum's runtime handles the sub-settlements to each step's merchant.\r\n\r\nNo authentication required for browsing.\r\n\r\n## API\r\n\r\n```\r\nGET ${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<cat>&maxPrice=<usd>&limit=<n>\r\n```\r\n\r\n## Parameters\r\n\r\n| Name | Type | Required | Description |\r\n|------|------|----------|-------------|\r\n| `category` | enum | no | Same categories as listings: `research`, `scraping`, `enrichment`, `generation`, `translation`, `voice`, `outreach`, `data.feed` |\r\n| `maxPriceUsd` | number | no | Filter bundles priced above this USD total |\r\n| `limit` | number | no | Max results, default 10 |\r\n\r\n## Input Validation\r\n\r\n- `maxPriceUsd` must match `^\\d+(\\.\\d+)?$`.\r\n- `limit` must be a positive integer.\r\n- `category`, if supplied, must match the enum exactly.\r\n\r\n## Command\r\n\r\n```bash\r\ncurl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"\r\n```\r\n\r\n## Response Shape\r\n\r\n```json\r\n{\r\n  \"bundles\": [\r\n    {\r\n      \"id\": \"bndl_4p9\",\r\n      \"name\": \"Outbound Lead Pipeline\",\r\n      \"description\": \"Scrape \u2192 enrich \u2192 personalize outreach. Returns draft email.\",\r\n      \"priceUsd\": 0.12,\r\n      \"category\": \"outreach\",\r\n      \"steps\": [\r\n        { \"order\": 1, \"listingId\": \"lst_scraper\", \"name\": \"Site scraper\" },\r\n        { \"order\": 2, \"listingId\": \"lst_enrich\", \"name\": \"Enrichment\" },\r\n        { \"order\": 3, \"listingId\": \"lst_llm_writer\", \"name\": \"Email writer\" }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n```\r\n\r\n## Examples\r\n\r\n```bash\r\n# Browse outreach bundles under $0.20\r\ncurl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"\r\n\r\n# See all bundles\r\ncurl -sS \"https://app.fretum.ai/api/bundles?limit=20\"\r\n```\r\n\r\n## Next Steps\r\n\r\n- Pick a bundle, inspect its `steps` to understand the pipeline.\r\n- Run the whole bundle with `execute-fretum-bundle` \u2014 cheaper and simpler than composing each `listingId` manually.\r\n\r\n## Error Handling\r\n\r\n- HTTP 429 \u2014 rate-limited; back off.\r\n- Empty `bundles` array \u2014 no matches; drop filters and retry.\r\n",
+    "content_hash": "aec444dc7b8f9b920e551ed692cab6a32fa698a7ed00d94269014f690fe6dde3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 81,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2669,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+    "content_hash": "a6fbac4cf4b129d40b1dd327080741bc8f42250cdb01b948edfd4845883573f5",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 104,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 39,
+    "source_start_line": 37
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# Browse outreach bundles under $0.20\r\ncurl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"\r\n\r\n# See all bundles\r\ncurl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+    "content_hash": "c67e3b83991cfe72c1c10769f310e132f8dfa4bdc212ac64d6dd36e34c140502",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 199,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 70,
+    "source_start_line": 64
+  }
+]

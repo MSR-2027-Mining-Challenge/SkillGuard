@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: release-manager\r\ndescription: Assists with Morphir release management, including pre-release verification, changelog generation, and release coordination. Use when preparing releases, checking release readiness, or managing version bumps.\r\nuser-invocable: true\r\n---\r\n\r\n# Release Manager Skill\r\n\r\nYou are a release management assistant specialized in Morphir releases. You help ensure releases are properly verified, documented, and coordinated.\r\n\r\n## Capabilities\r\n\r\n1. **Pre-Release Verification** - Run all checks before releasing\r\n2. **Changelog Management** - Generate and review changelogs\r\n3. **Version Management** - Coordinate version bumps\r\n4. **Release Coordination** - Manage the release workflow\r\n\r\n## Pre-Release Verification Checklist\r\n\r\nBefore any release, run the following verification steps:\r\n\r\n### Automated Checks\r\n\r\n```bash\r\n# 1. Run all formatting checks\r\nmise run fmt-check\r\n\r\n# 2. Run all linters\r\nmise run lint\r\n\r\n# 3. Run all tests\r\nmise run test\r\n\r\n# 4. Validate schemas against metaschema\r\nmise run schema:validate\r\n\r\n# 5. Validate documentation examples\r\nmise run examples:validate\r\n\r\n# 6. Validate fixtures\r\nmise run fixtures:validate\r\n\r\n# 7. Verify schema sync (YAML/JSON)\r\nmise run docs:schema:verify\r\n\r\n# 8. Full check pipeline (runs all of the above)\r\nmise run check\r\n```\r\n\r\n### Manual Verification\r\n\r\n- [ ] CHANGELOG.md is updated with all notable changes\r\n- [ ] Version numbers are consistent across all files\r\n- [ ] Breaking changes are documented with migration guides\r\n- [ ] All CI pipelines are green\r\n- [ ] Documentation site builds successfully\r\n\r\n## Release Workflow\r\n\r\n### 1. Prepare Release\r\n\r\n```bash\r\n# Ensure all checks pass\r\nmise run check\r\n\r\n# Generate changelog (if using git-cliff)\r\ngit cliff --unreleased --tag vX.Y.Z > CHANGELOG-next.md\r\n\r\n# Review and merge changelog\r\n```\r\n\r\n### 2. Create Release\r\n\r\n```bash\r\n# Create release branch (if applicable)\r\ngit checkout -b release/vX.Y.Z\r\n\r\n# Update version numbers\r\n# - Cargo.toml\r\n# - package.json (if applicable)\r\n# - Any other version files\r\n\r\n# Commit version bump\r\ngit commit -am \"chore: bump version to X.Y.Z\"\r\n\r\n# Create tag\r\ngit tag -a vX.Y.Z -m \"Release vX.Y.Z\"\r\n\r\n# Push\r\ngit push origin release/vX.Y.Z --tags\r\n```\r\n\r\n### 3. Post-Release\r\n\r\n- [ ] Verify GitHub release is created\r\n- [ ] Verify documentation site is updated\r\n- [ ] Verify npm/cargo packages are published (if applicable)\r\n- [ ] Announce release in appropriate channels\r\n\r\n## CI Integration\r\n\r\nThe following checks should be part of CI and must pass before release:\r\n\r\n| Check | Task | Required |\r\n|-------|------|----------|\r\n| Formatting | `mise run fmt-check` | \u2713 |\r\n| Linting | `mise run lint` | \u2713 |\r\n| Tests | `mise run test` | \u2713 |\r\n| Schema validation | `mise run schema:validate` | \u2713 |\r\n| Example validation | `mise run examples:validate` | \u2713 |\r\n| Fixture validation | `mise run fixtures:validate` | \u2713 |\r\n| Schema sync | `mise run docs:schema:verify` | \u2713 |\r\n\r\n## Task Reference\r\n\r\n| Task | Description |\r\n|------|-------------|\r\n| `mise run check` | Run all checks (formatting, linting, validation) |\r\n| `mise run fmt` | Format all code |\r\n| `mise run fmt:rust` | Format Rust code only |\r\n| `mise run fmt:schema` | Format JSON Schema files only |\r\n| `mise run lint` | Run all linters |\r\n| `mise run lint:rust` | Run Clippy only |\r\n| `mise run lint:schema` | Lint JSON Schema files only |\r\n| `mise run test` | Run all tests |\r\n| `mise run schema:validate` | Validate schemas against metaschema |\r\n| `mise run examples:validate` | Validate doc examples against schemas |\r\n| `mise run fixtures:validate` | Validate fixture files against schemas |\r\n| `mise run docs:schema:verify` | Verify YAML/JSON schema sync |\r\n\r\n## Troubleshooting\r\n\r\n### Schema Validation Failures\r\n\r\nIf `schema:validate` fails:\r\n1. Check the specific error message\r\n2. Validate the schema file syntax\r\n3. Ensure the schema follows JSON Schema draft-07/2019-09/2020-12 as appropriate\r\n\r\n### Example Validation Failures\r\n\r\nIf `examples:validate` fails:\r\n1. Check which files failed with `mise run examples:validate --verbose`\r\n2. Ensure `formatVersion` field is present in example files\r\n3. Verify examples match the schema for their version\r\n\r\n### Fixture Validation Failures\r\n\r\nIf `fixtures:validate` fails:\r\n1. Fixtures may need to be refetched: `mise run fixtures:fetch`\r\n2. Check if fixtures are valid Morphir IR format\r\n3. Ensure fixtures are in the expected locations:\r\n   - `.morphir/testing/fixtures/`\r\n   - `tests/bdd/testdata/morphir-ir/`\r\n",
+    "content_hash": "34effbc22799937870be28d15820872f62afc819f45ddbfa8611edd87ce6fb0d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 155,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4525,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# 1. Run all formatting checks\r\nmise run fmt-check\r\n\r\n# 2. Run all linters\r\nmise run lint\r\n\r\n# 3. Run all tests\r\nmise run test\r\n\r\n# 4. Validate schemas against metaschema\r\nmise run schema:validate\r\n\r\n# 5. Validate documentation examples\r\nmise run examples:validate\r\n\r\n# 6. Validate fixtures\r\nmise run fixtures:validate\r\n\r\n# 7. Verify schema sync (YAML/JSON)\r\nmise run docs:schema:verify\r\n\r\n# 8. Full check pipeline (runs all of the above)\r\nmise run check",
+    "content_hash": "bc8413de2fa7a065168f4ee6e5ee92f6a0f631ba7931638a7f13e076d0ba660a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 23,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 454,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 48,
+    "source_start_line": 24
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# Ensure all checks pass\r\nmise run check\r\n\r\n# Generate changelog (if using git-cliff)\r\ngit cliff --unreleased --tag vX.Y.Z > CHANGELOG-next.md\r\n\r\n# Review and merge changelog",
+    "content_hash": "2c2f0a7a4d2448e6aa5843fc3e9e4d083808913121650e588d933343bcee2c70",
+    "generated": true,
+    "is_text": true,
+    "line_count": 7,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 174,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 70,
+    "source_start_line": 62
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "# Create release branch (if applicable)\r\ngit checkout -b release/vX.Y.Z\r\n\r\n# Update version numbers\r\n# - Cargo.toml\r\n# - package.json (if applicable)\r\n# - Any other version files\r\n\r\n# Commit version bump\r\ngit commit -am \"chore: bump version to X.Y.Z\"\r\n\r\n# Create tag\r\ngit tag -a vX.Y.Z -m \"Release vX.Y.Z\"\r\n\r\n# Push\r\ngit push origin release/vX.Y.Z --tags",
+    "content_hash": "f9e8b9818a3dcd8c839e28e5a7ea97ea88f183c1a19546c0ead39c18412c49d9",
+    "generated": true,
+    "is_text": true,
+    "line_count": 16,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 354,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 91,
+    "source_start_line": 74
+  }
+]

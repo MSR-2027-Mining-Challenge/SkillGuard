@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# just\r\n\r\n## Overview\r\njust is a command runner \u2014 like make but without the build system baggage. Define commands in a justfile, run with just <command>.\r\n\r\n## Instructions\r\n\r\n### Step 1: Install\r\n```bash\r\nbrew install just\r\n```\r\n\r\n### Step 2: Justfile\r\n```makefile\r\n# justfile \u2014 Project commands\r\nset dotenv-load\r\n\r\ndefault: dev\r\n\r\ndev:\r\n    npm run dev\r\n\r\ntest *args:\r\n    npm test {{args}}\r\n\r\nbuild:\r\n    npm run build\r\n\r\ndb-reset: && db-migrate db-seed\r\n    npx prisma migrate reset --force\r\n\r\ndb-migrate:\r\n    npx prisma migrate deploy\r\n\r\ndb-seed:\r\n    npx prisma db seed\r\n\r\ndeploy env=\"staging\":\r\n    echo \"Deploying to {{env}}...\"\r\n    npx vercel deploy\r\n\r\nup:\r\n    docker compose up -d\r\n\r\ndown:\r\n    docker compose down\r\n\r\nlogs service=\"app\":\r\n    docker compose logs -f {{service}}\r\n```\r\n\r\n## Guidelines\r\n- Unlike make, just doesn't track file dependencies \u2014 purely a command runner.\r\n- Supports arguments with defaults: deploy env=\"staging\".\r\n- just --list shows all available commands.\r\n",
+    "content_hash": "963ac88e6ed14aef4ebcfdc4def97d2a9ae5b85d69f5352b1eca39c5d470cff8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 56,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1004,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "brew install just",
+    "content_hash": "5c1cd21e15f62b3430b2d988317b63ca8589ca90eada5cb533ae17810d9d77de",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 17,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 11,
+    "source_start_line": 9
+  }
+]

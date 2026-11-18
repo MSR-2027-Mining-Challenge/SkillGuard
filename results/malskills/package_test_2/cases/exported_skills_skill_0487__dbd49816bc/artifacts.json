@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: Bun Escape an HTML string\r\ndescription: Escape an HTML string\r\n---\r\n\r\n# Escape an HTML string\r\n\r\nThe `Bun.escapeHTML()` utility can be used to escape HTML characters in a string. The following replacements are made.\r\n\r\n* `\"` becomes `\"&quot;\"`\r\n* `&` becomes `\"&amp;\"`\r\n* `'` becomes `\"&#x27;\"`\r\n* `<` becomes `\"&lt;\"`\r\n* `>` becomes `\"&gt;\"`\r\n\r\nThis function is optimized for large input. Non-string types will be converted to a string before escaping.\r\n\r\n```ts  theme={\"theme\":{\"light\":\"github-light\",\"dark\":\"dracula\"}}\r\nBun.escapeHTML(\"<script>alert('Hello World!')</script>\");\r\n// &lt;script&gt;alert(&#x27;Hello World!&#x27;)&lt;&#x2F;script&gt;\r\n```\r\n\r\n***\r\n\r\nSee [Docs > API > Utils](/runtime/utils) for more useful utilities.\r\n",
+    "content_hash": "ee05407bbf580700966d4e7b72923d0438d5641d5d0ffab6a5e716d4978582eb",
+    "generated": false,
+    "is_text": true,
+    "line_count": 26,
+    "relative_path": "SKILL.md",
+    "size_bytes": 746,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

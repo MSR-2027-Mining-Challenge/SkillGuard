@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: focus-problem\r\ndescription: Problem analysis using Explore agents\r\nuser-invocable: true\r\n---\r\n\r\n# Focus Problem Analysis\r\n\r\nAnalyze: $ARGUMENTS\r\n\r\n## Explore Codebase First\r\n\r\nBefore diving in, use the Explore agent to understand the context:\r\n\r\n```markdown\r\nTask(subagent_type=\"Explore\", model=\"haiku\", prompt=\"\"\"\r\nExplore the codebase for: $ARGUMENTS (thoroughness: medium)\r\nFocus on:\r\n1. Relevant files and modules\r\n2. Existing similar features\r\n3. Test patterns\r\n4. Architecture patterns\r\n\"\"\")\r\n```\r\n\r\n## Analysis Framework\r\n\r\n### 1. Core Problem Identification\r\n- **What is the real problem?**\r\n- **Why does it need to be solved?**\r\n- **What happens if we don't solve it?**\r\n\r\n### 2. Minimal Solution Scope\r\n- **What's the minimum change needed?**\r\n- **Which features are essential?**\r\n- **What can be deferred or omitted?**\r\n\r\n### 3. Solution Evaluation\r\n- **Option A (Simplest):**\r\n- **Option B (Balanced):**\r\n- **Option C (Complete):**\r\n- **Recommendation:** Choose the simplest viable option\r\n\r\n### 4. Implementation Plan\r\n- **Step 1:** Write tests\r\n- **Step 2:** Minimal implementation\r\n- **Step 3:** Update documentation\r\n- **Step 4:** Commit changes\r\n\r\n## Output Template\r\n\r\n```markdown\r\n## Problem Definition\r\n\r\n### Summary\r\n[One sentence description]\r\n\r\n### User Need\r\n[Who needs this? What do they want to achieve?]\r\n\r\n### Success Criteria\r\n[How do we know it's done?]\r\n\r\n### Scope\r\n- In scope: [List]\r\n- Out of scope: [List]\r\n\r\n### Affected Files\r\n- [file1.ts] - [why]\r\n- [file2.ts] - [why]\r\n\r\n### Risk Assessment\r\n- [Potential risks and mitigations]\r\n```\r\n\r\n---\r\n\r\nFollow this process strictly. Don't skip steps.\r\n",
+    "content_hash": "1f10329392d419b3b7203f55bb02813dc470676b4260c16086fdbc7f073c0f09",
+    "generated": false,
+    "is_text": true,
+    "line_count": 79,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1642,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"focus-problem\",\r\n  \"repo\": \"claude-world/director-mode-lite\",\r\n  \"path\": \"skills/focus-problem/SKILL.md\",\r\n  \"github_branch\": \"main\",\r\n  \"category\": \"analysis\",\r\n  \"source\": \"github.com/claude-world/director-mode-lite\",\r\n  \"dir_name\": \"focus-problem\",\r\n  \"downloaded_at\": \"2026-05-20T03:52:55.405584Z\",\r\n  \"author\": \"claude-world\",\r\n  \"source_url\": \"https://github.com/claude-world/director-mode-lite/blob/main/skills/focus-problem/SKILL.md\",\r\n  \"license\": \"NOASSERTION\",\r\n  \"copyright\": \"Copyright belongs to upstream author(s); see https://github.com/claude-world/director-mode-lite/blob/main/skills/focus-problem/SKILL.md\",\r\n  \"permission_note\": \"Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.\",\r\n  \"distribution\": \"restricted\",\r\n  \"license_class\": \"restricted\"\r\n}",
+    "content_hash": "943ac96cf1d46b234ea82cc9bb7d57d4319ae42bebb0fadbcbd186934ace0ebb",
+    "generated": false,
+    "is_text": true,
+    "line_count": 17,
+    "relative_path": "metadata.json",
+    "size_bytes": 827,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

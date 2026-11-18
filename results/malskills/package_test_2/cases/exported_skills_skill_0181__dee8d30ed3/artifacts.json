@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Changelog\r\n\r\n## [1.3.1] - 2026-03-23\r\n- Publish script audit updates that defer balancing to the orchestrator\r\n\r\n\r\n## [1.3.0] - 2026-03-23\r\n- Taught the script audit to route through `subagent-balancer-orchestrator` and to distinguish CLI quota balancing from API cost balancing.\r\n\r\n## [1.0.1] - 2026-03-22\r\n- Initial changelog creation and version bump for testing.\r\n",
+    "content_hash": "6a2aa02c5a6fe87551b202dd880f4f97d5319774d9de24e0e60b0279abea3642",
+    "generated": false,
+    "is_text": true,
+    "line_count": 12,
+    "relative_path": "CHANGELOG.md",
+    "size_bytes": 370,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "# Conductor Compliance Audit Skill (Scripts)\r\n\r\nA specialized skill for the **Gemini CLI** to enforce engineering standards and best practices during the development of automation and scripting projects (PowerShell, Python, Bash).\r\n\r\n## Overview\r\n\r\nThis skill automates the \"Sub-Agent Compliance Audit\" step of the **Conductor** workflow for script-based environments. When invoked, it first applies quota-aware routing and explicit model-selection guardrails, then delegates only if that route is justified. If the user selected Pro or rejected Flash or preview models, the skill must preserve that choice or keep the audit local.\r\n\r\n## Audit Criteria\r\n\r\nThe skill performs a holistic review based on 11 key principles:\r\n\r\n1.  **Automation & Scripting Standards:** Enforces PowerShell 7 (Core) syntax and Python PEP 8 guidelines.\r\n2.  **Cross-Platform Compatibility:** Mandatory platform-agnostic file path handling (`Join-Path` or `pathlib`).\r\n3.  **Dependency Injection:** Prohibits hidden dependencies; mandates constructor or parameter injection.\r\n4.  **TDD & Coverage:** Enforces 80% Line Coverage (Pester/Pytest).\r\n5.  **Static Logic & Global State:** Prohibits business logic in the global script scope; mandates focused functions/classes.\r\n6.  **SOLID Principles:** Validates single responsibility and decoupling from side effects.\r\n7.  **Idempotency:** Ensures scripts are safe for multiple executions without state corruption.\r\n8.  **Logging & Observability:** Mandatory use of standard logging frameworks instead of raw `print()` or `Write-Host`.\r\n9.  **Fail-Fast Configuration:** Early validation of environment variables and secrets.\r\n10. **Documentation:** Mandatory docstrings or comment-based help for all functions.\r\n11. **Static Analysis & Linting:** Code must pass standard linters (PSScriptAnalyzer, Flake8) without warnings.\r\n\r\n## Reporting Format\r\n\r\nViolations are reported using a strict, machine-readable format to facilitate quick remediation:\r\n\r\n> * **[File Path:Line Number]**\r\n>   * **Violation:** Description of the issue.\r\n>   * **Suggested Fix:** How to fix it.\r\n\r\n## Installation & Integration\r\n\r\n### Recommended Strategy\r\nThe **[Compliance Audit Orchestrator](../compliance-audit-orchestrator/)** is the primary way to use this skill. It automatically detects script changes and invokes this audit.\r\n\r\n### Manual Usage\r\nTo trigger this specific audit manually:\r\n> \"Use the compliance-audit-scripts skill.\"\r\n",
+    "content_hash": "456df4468a7e8ab035c0b2954b30db2b6b55b63a38d580b0739dbce7441c3929",
+    "generated": false,
+    "is_text": true,
+    "line_count": 41,
+    "relative_path": "README.md",
+    "size_bytes": 2441,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: compliance-audit-scripts\r\ndescription: A specialized compliance audit for automation and scripting (PowerShell, Python, Bash). Enforces best practices for cross-platform safety, idempotency, and TDD in script files.\r\n---\r\n\r\n# Conductor Compliance Audit (Scripts)\r\n\r\nWhen you invoke this skill, you must perform a strict, holistic audit of the scripting/automation code you just wrote.\r\n\r\n## Subagent Delegation\r\n\r\nYou MUST resolve delegation through the balancer layer before delegating review work.\r\n\r\nUse this order:\r\n\r\n1. If `subagent-balancer-orchestrator` is available, use it first.\r\n2. If the orchestrator is unavailable but the correct direct balancer is already explicit from task context, you may use that balancer directly.\r\n3. If no balancer layer is available, prefer a local audit instead of re-implementing balancing policy here.\r\n4. Only if the audit is still too broad or risky to keep local should you delegate directly, using one bounded generalist review subagent and avoiding chained review agents.\r\n\r\nIf you choose delegation, provide the sub-agent with the following prompt:\r\n\r\n```text\r\nPlease review the recently modified files in this project and verify strict compliance with the following Engineering Principles:\r\n\r\n1. **Automation & Scripting Standards:** \r\n   - **PowerShell:** Use PowerShell 7 (Core) syntax. Follow best practices for error handling (`Try/Catch`), parameter validation, and avoid using aliases in scripts.\r\n   - **Python:** Follow PEP 8 guidelines strictly (e.g., two blank lines between top-level definitions, module-level docstrings). Use type hints for all method signatures (`-> None`, `-> str`, etc.) and complex local variables.\r\n2. **Cross-Platform Compatibility:** Ensure that file paths are handled using platform-agnostic methods (e.g., `Join-Path` in PowerShell, `os.path.join` or `pathlib` in Python).\r\n3. **Dependency Injection & Collaborators:** Runtime collaborators must come from constructor injection or be passed as parameters. No hidden `new Object()` or hardcoded dependency construction inside logic-heavy functions.\r\n4. **TDD & Coverage:** Ensure there are adequate automated tests for the new logic (e.g., Pester for PowerShell, Pytest for Python). Tests must be deterministic. The codebase MUST maintain a minimum baseline of 80% Line Coverage.\r\n5. **Static Logic & Global State:** Avoid global variables. Business rules and orchestration must live in focused functions or classes, not in the global script scope.\r\n6. **SOLID Principles:** Verify that functions and modules have a single responsibility. Use abstractions to decouple logic from external side effects (like API calls or file system access).\r\n7. **Idempotency:** Scripts must be safe to run multiple times. Verify that state is checked before mutating actions occur to prevent duplication or corruption.\r\n8. **Logging & Observability:** Avoid raw `print()` or `Write-Host` for business logic tracking. Ensure a standard logging framework/mechanism is used.\r\n9. **Fail-Fast Configuration:** Ensure all required environment variables, secrets, and file paths are validated at the very beginning of the script.\r\n10. **Documentation:** Verify that all modules, classes, and functions include standard docstrings or comment-based help (PEP 8 compliant for Python).\r\n11. **Static Analysis & Linting:** Code must pass standard static analysis tools without warnings before being considered compliant.\r\n\r\nIf you find ANY violations, you MUST return a detailed bulleted list of the violations found.\r\nFor each violation, you must specify:\r\n* **[File Path:Line Number]**\r\n  * **Violation:** <Description of which principle was violated and why>\r\n  * **Suggested Fix:** <General text description of how to fix the violation>\r\n\r\nOtherwise, state \"NO violations\".\r\n```\r\n\r\n## Remediation\r\n\r\n1. If the sub-agent reports **NO violations**, you may proceed with the \"User Manual Verification\" step.\r\n2. If the sub-agent reports **ANY violations**, you MUST fix the code yourself to adhere to the principles before asking the user for verification. You must loop this audit until it reports \"NO violations\".\r\n",
+    "content_hash": "3c66d80b944ad520f62d7714cfa73d63ddd3855d5d9f40db022bc3b189109df3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4138,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"compliance-audit-scripts\",\r\n  \"version\": \"1.3.1\",\r\n  \"description\": \"A specialized compliance audit for automation and scripting (PowerShell, Python, Bash). Enforces best practices for cross-platform safety, idempotency, and TDD in script files.\"\r\n}\r\n",
+    "content_hash": "328529984f5f51e62fccc7779ce0ee5ffee7d3041897c42ff3c3599a981898ea",
+    "generated": false,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": "metadata.json",
+    "size_bytes": 265,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

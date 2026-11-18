@@ -1,0 +1,388 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/.malskills_fences/api-reference__fence_0.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0004",
+      "path": "scripts/agent.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "target": "value::58c704647d6af148695c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "target": "value::49c919ddab4795690154",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "target": "value::6f4abf2e0471ced2e945",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/agent.py::file_access::104",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::file_access::104",
+      "target": "value::e593ed0fe25de7fb0a38",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/agent.py::file_access::165",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::file_access::165",
+      "target": "value::edbf89562434f206a4b7",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/agent.py::file_access::172",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::file_access::172",
+      "target": "value::abf261b32df7f3046649",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/agent.py::file_access::179",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::file_access::179",
+      "target": "value::3e8e4c47d8f2244931da",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::scripts/agent.py::file_access::195",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::file_access::195",
+      "target": "value::2bbbe1f02da83efd90c6",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/api-reference__fence_0.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "scripts/agent.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::58c704647d6af148695c",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::49c919ddab4795690154",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::6f4abf2e0471ced2e945",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::file_access::104",
+      "identity_key": "scripts/agent.py::file_access::104",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e593ed0fe25de7fb0a38",
+      "kind": "value",
+      "value": "scripts/agent.py::file_access::104",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::file_access::165",
+      "identity_key": "scripts/agent.py::file_access::165",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::edbf89562434f206a4b7",
+      "kind": "value",
+      "value": "scripts/agent.py::file_access::165",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::file_access::172",
+      "identity_key": "scripts/agent.py::file_access::172",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::abf261b32df7f3046649",
+      "kind": "value",
+      "value": "scripts/agent.py::file_access::172",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::file_access::179",
+      "identity_key": "scripts/agent.py::file_access::179",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::3e8e4c47d8f2244931da",
+      "kind": "value",
+      "value": "scripts/agent.py::file_access::179",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::file_access::195",
+      "identity_key": "scripts/agent.py::file_access::195",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2bbbe1f02da83efd90c6",
+      "kind": "value",
+      "value": "scripts/agent.py::file_access::195",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

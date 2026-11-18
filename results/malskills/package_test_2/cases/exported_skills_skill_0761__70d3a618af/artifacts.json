@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: verify\r\ndescription: Build/launch/drive recipe for verifying triage-verse changes end-to-end (review app, CLI). Use when verifying a code change actually works at its runtime surface.\r\n---\r\n\r\n# Verifying triage-verse changes\r\n\r\nEverything runs under `uv run` \u2014 the system Python's sqlite3 lacks extension\r\nloading, so `db.connect` raises outside the uv-managed interpreter.\r\n\r\n## Review app (Shiny)\r\n\r\nSeed a throwaway `.data` tree, then launch on a fixed port and drive with a\r\nbrowser (Playwright MCP works well):\r\n\r\n```bash\r\nSEED=$(mktemp -d)\r\n# seed with a small python script: db.connect(f\"{SEED}/mirror.sqlite\"), then\r\n# db.upsert_issue / upsert_comment / upsert_pr rows, con.commit(), and write\r\n# proposal records ({id, repo, issue, action, params, rationale, confidence,\r\n# evidence}) to $SEED/proposals/2026/W27.jsonl. Only SUPPORTED_ACTIONS on OPEN\r\n# issues appear in the queue; proposal ids must be [A-Za-z0-9_] only (they\r\n# become Shiny module ids \u2014 hyphens crash the queue render).\r\nTRIAGE_VERSE_DB=$SEED/mirror.sqlite \\\r\nTRIAGE_VERSE_PROPOSALS=$SEED/proposals \\\r\nTRIAGE_VERSE_DECISIONS=$SEED/decisions \\\r\n  uv run shiny run src/triage_verse/review_app/app.py --port 8321\r\n```\r\n\r\nFlows worth driving: queue renders sorted by confidence; row title opens the\r\nslide-over drawer (`#drawer-panel`); Close button and backdrop dismiss it;\r\nApprove/Reject/Skip append to `$SEED/decisions/YYYY/Www.jsonl` and remove the\r\nrow; a proposal whose issue is missing from the mirror shows \"(not found in\r\nmirror)\"; PR items show \"PR \u00b7 MERGED\" and deep-link to `/pull/N`.\r\n\r\nGotchas:\r\n\r\n- The drawer backdrop intercepts pointer events \u2014 Playwright clicks on queue\r\n  elements behind it time out. Dismiss first (`document.getElementById('drawer_close').click()`)\r\n  or dispatch the click via `browser_evaluate`.\r\n- A favicon.ico 404 in the console is pre-existing noise, not a finding.\r\n- Kill the server with `pkill -f \"shiny run src/triage_verse/review_app/app.py\"`.\r\n\r\n## CLI\r\n\r\n`uv run triage-verse --help` lists subcommands; they default to `.data/` paths\r\nand take the same env overrides as the app.\r\n",
+    "content_hash": "33866f85e3b3ddd9ae746b13d4854e7c27996c556107ac06a4e1db602b2c03d2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2124,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "SEED=$(mktemp -d)\r\n# seed with a small python script: db.connect(f\"{SEED}/mirror.sqlite\"), then\r\n# db.upsert_issue / upsert_comment / upsert_pr rows, con.commit(), and write\r\n# proposal records ({id, repo, issue, action, params, rationale, confidence,\r\n# evidence}) to $SEED/proposals/2026/W27.jsonl. Only SUPPORTED_ACTIONS on OPEN\r\n# issues appear in the queue; proposal ids must be [A-Za-z0-9_] only (they\r\n# become Shiny module ids \u2014 hyphens crash the queue render).\r\nTRIAGE_VERSE_DB=$SEED/mirror.sqlite \\\r\nTRIAGE_VERSE_PROPOSALS=$SEED/proposals \\\r\nTRIAGE_VERSE_DECISIONS=$SEED/decisions \\\r\n  uv run shiny run src/triage_verse/review_app/app.py --port 8321",
+    "content_hash": "4991fe2b1d2f689a1b5d2f9f46b391d5d82c1eab3dd7d62213d9216b6defc6b3",
+    "generated": true,
+    "is_text": true,
+    "line_count": 11,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 661,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 28,
+    "source_start_line": 16
+  }
+]

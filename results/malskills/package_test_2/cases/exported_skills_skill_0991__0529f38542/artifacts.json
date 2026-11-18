@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: wr3-post-assembler\r\ndescription: WR3 post-assembler skill cortex \u2014 operational heuristics, on-tone examples, lessons growth surface. Loaded by wr3-post-assembler agent at every dispatch.\r\nmodel: sonnet\r\nlifecycle_tier: core\r\ncost_class: text_planning\r\nceiling: $0.1\r\ncontract_version: 1.0.0\r\n---\r\n\r\n# WR3 post-assembler \u2014 Skill Cortex\r\n\r\n## Role (one-line)\r\n\r\nPython-first ffmpeg pipeline (zero LLM cost for deterministic concat) + Sonnet diagnostic ONLY for resolve_audio_video_mismatch + generate_caption_and_sources_per_platform. Concatenates clips via /tmp/ffmpeg-full/ffmpeg, VO/video sync, renders ASS subtitles, exports 4 platform variants (TikTok 60s 9:16, IG Reels, YT Shorts, FB), builds episode_manifest.json (18 mandatory fields).\r\n\r\n## Primary I/O\r\n\r\n- **Inputs**: clips/ + audio/vo.wav + audio/music.wav + license-report.json + brief.json + script.json\r\n- **Outputs**: master.mp4 + variants/{tiktok,ig-reels,yt-shorts,fb}.mp4 + episode_manifest.json (18 fields)\r\n\r\n## Symbiosis law emphasis\r\n\r\nLaw 4 (Graceful degradation) \u2014 variant ffmpeg failure DEGRADES (deliver master + 3/4 variants), master failure HARD-FAILS\r\n\r\n## On-tone examples\r\n\r\n> _(seeded empty \u2014 populated by wr3-reflexion-synth weekly after first 3 episodes pass critic gate)_\r\n\r\n```\r\nTBD-2026-05-18 \u2014 first 3 pilot episodes feed examples here.\r\n```\r\n\r\n## Lessons (operational heuristics)\r\n\r\n> _(growth surface \u2014 wr3-reflexion-synth appends max 10 lessons/week here)_\r\n\r\n### 2026-05-18 \u2014 Foundation seeded\r\n\r\nSkill cortex created at S7.3 step of WR3 genesis. No operational lessons yet.\r\n\r\n## Anti-patterns (banned)\r\n\r\n- _(seeded empty \u2014 anti-patterns added as critic gate FAILS produce lessons)_\r\n\r\n## Cost ceiling discipline\r\n\r\n- `ceiling_usd`: $0.1 (declared in `docs/wr3/contracts/post-assembler.yaml`)\r\n- `BudgetExceededError` \u2192 cascade decision per `Law 7 (Numeri prima)`:\r\n  - If agent is GATE (design-architect, pre-render-gatekeeper) \u2192 HARD HALT + Telegram P0\r\n  - If agent is HOT PATH (lifecycle_tier=core) \u2192 cascade to Gemini fallback\r\n  - Otherwise \u2192 mark FAIL, retry next cycle\r\n\r\n## Resources\r\n\r\n- Agent definition: `~/.claude/agents/wr3-post-assembler.md`\r\n- I/O contract: `~/Desktop/nuzantara/docs/wr3/contracts/post-assembler.yaml`\r\n- Brand cortex (shared): `~/.claude/skills/bali-zero-brand/`\r\n- Symbiosis precedence: `~/Desktop/nuzantara/docs/wr3/symbiosis-precedence.md`\r\n",
+    "content_hash": "d7292462565dda6704b64c8d3af6435045b166d64e803f7d98cafb571f0b186e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 60,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2407,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: write-tests\r\ndescription: Test implementation skill for HypermediaEngine. Takes a confirmed test plan from design-test-cases and produces compilable, runnable xUnit tests following project conventions. Validates coverage quality through mutation testing. Invoked by the sqa-engineer agent after the test plan is approved.\r\n---\r\n\r\n# Write Tests\r\n\r\nYou are executing the `write-tests` skill on behalf of the sqa-engineer agent. Your job is to implement the confirmed test plan as working, convention-compliant xUnit test code. This skill expects a confirmed test plan as input \u2014 test case design is handled by the `design-test-cases` skill. Do not redesign test strategy here; implement what the plan specifies.\r\n\r\n## Input\r\n\r\nThe calling agent will pass:\r\n- A confirmed test plan produced by the `design-test-cases` skill\r\n- The component under test (file path and class name)\r\n\r\n## Process\r\n\r\n### Phase 0 \u2014 Context Load (silent, no user interaction)\r\n\r\nBefore writing any code:\r\n\r\n1. Read `CLAUDE.md` to internalize conventions.\r\n2. Invoke `Skill(\"manage-memory\", args: \"sqa-engineer\")` to load prior knowledge about test fixtures and patterns.\r\n3. Read the confirmed test plan in full \u2014 every TC specification is a work item.\r\n4. Locate the test project using Glob. Read several existing test files to internalize:\r\n   - Test framework (xUnit)\r\n   - Assertion library in use\r\n   - Test double approach (NSubstitute, hand-rolled, etc.)\r\n   - Naming convention\r\n   - Fixture and setup patterns (`IClassFixture`, constructors, `[ClassFixture]`)\r\n5. Add every TC from the plan as a `TodoWrite` item before writing a single line of code.\r\n\r\n---\r\n\r\n### Phase 1 \u2014 Test Implementation\r\n\r\nImplement each TC from the confirmed plan in order. For every test file written:\r\n\r\n#### Structure\r\n\r\nUse Arrange / Act / Assert in every test method:\r\n\r\n```csharp\r\n[Fact]\r\npublic async Task MethodName_StateUnderTest_ExpectedBehavior()\r\n{\r\n    // Arrange\r\n    ...\r\n\r\n    // Act\r\n    ResultType result = await sut.MethodNameAsync(input, ct);\r\n\r\n    // Assert\r\n    ...\r\n}\r\n```\r\n\r\n#### Naming\r\n\r\nThree-part names that read as a specification: `MethodName_StateUnderTest_ExpectedBehavior`\r\n\r\n- `Validate_WhenAuthHeaderIsMissing_ReturnsErrorResult`\r\n- `Dispatch_WhenHandlerSucceeds_ReturnsPopulatedData`\r\n- `Process_WhenTokenIsCancelled_ThrowsOperationCanceledException`\r\n\r\n#### Convention checklist (apply to every test file)\r\n\r\n- [ ] Explicit type declarations: `MyService sut = new(mockDep);` not `var sut = ...`\r\n- [ ] `await using` for any disposable test fixtures\r\n- [ ] Assert **both** `data` and `error` fields for every `{ data, error }` result \u2014 never assert only one side\r\n- [ ] Each `[Fact]` tests exactly one behavior from the TC specification\r\n- [ ] Use `[Theory]` with `[InlineData]` or `[MemberData]` for parameterized edge cases listed in the plan\r\n- [ ] No `Thread.Sleep` or arbitrary delays \u2014 use `CancellationToken` properly\r\n- [ ] Mock only the dependencies the TC exercises \u2014 minimal mock configuration\r\n- [ ] Never mock the system under test itself\r\n- [ ] No shared mutable state between test cases\r\n\r\n#### Integration tests\r\n\r\nFor TCs marked as integration type in the plan:\r\n\r\n- Use `WebApplicationFactory<T>` or an in-memory `IHost`\r\n- Register test doubles in the test host's DI \u2014 do not modify production registrations\r\n- Each test must leave shared infrastructure in a clean state\r\n\r\nMark each `TodoWrite` TC item complete immediately after its test is written and compiling.\r\n\r\n---\r\n\r\n### Phase 2 \u2014 Run and Verify\r\n\r\n```shell\r\ndotnet test\r\n```\r\n\r\n- All new tests must pass\r\n- No previously passing test may fail \u2014 a test that breaks existing tests is itself a defect; report it to the software-engineer rather than modifying production code\r\n- If a test fails because the implementation has a bug: stop, report the bug to the software-engineer, do not modify production code yourself\r\n- If a test fails because the test setup is wrong: fix the test setup only\r\n\r\n---\r\n\r\n### Phase 3 \u2014 Mutation Testing\r\n\r\n```shell\r\ndotnet stryker\r\n```\r\n\r\nFor each surviving mutant in code covered by the new tests:\r\n\r\n1. Map the mutant back to the TC that should have caught it\r\n2. Strengthen or add a test case that produces observably different output when the mutation is present\r\n3. Re-run `dotnet stryker` to confirm the mutant is killed\r\n\r\nAcceptable reasons to leave a mutant alive (add a comment in the test file):\r\n\r\n- The mutant is in logging-only code with no observable output difference\r\n- The code path is architecturally unreachable without breaking DI or middleware contracts\r\n\r\nDo not mark work complete with unresolved surviving mutants unless each one is explicitly justified.\r\n\r\n---\r\n\r\n## Quality Gate\r\n\r\nDo not mark the test suite complete until:\r\n\r\n- [ ] Every TC from the confirmed plan has a corresponding test method\r\n- [ ] Every AC listed in the plan maps to at least one passing test\r\n- [ ] `dotnet test` exits with 0 failures\r\n- [ ] `dotnet stryker` produces no surviving mutants on new code paths (or each survivor is commented and justified)\r\n- [ ] Both `data` and `error` are asserted in every `{ data, error }` result test\r\n- [ ] No previously passing test was broken\r\n- [ ] No production code was modified\r\n\r\n## Output\r\n\r\nReport completion with:\r\n\r\n> **Tests implemented for**: [component name] \u2014 [N tests written, dotnet test: pass, dotnet stryker: N survivors / all killed]\r\n",
+    "content_hash": "e85953fe712b7e2db7dd1dabc92b221b8cef69f85d82b553d4b903ee67a61317",
+    "generated": false,
+    "is_text": true,
+    "line_count": 141,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5433,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "dotnet test",
+    "content_hash": "b81c569ee0c49fafce36d54502207243ccef58104109233f8647be7f4b54574b",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 11,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 94,
+    "source_start_line": 92
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "dotnet stryker",
+    "content_hash": "ad3040432edb289b22a7d634384d4d6c73ef24772bb96fb9f5e3bad44023d98d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 14,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 107,
+    "source_start_line": 105
+  }
+]

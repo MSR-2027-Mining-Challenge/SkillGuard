@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: agentuity-cli-cloud-apikey-get\r\ndescription: Get a specific API key by id. Requires authentication. Use for Agentuity cloud platform operations\r\nversion: \"0.1.2\"\r\nlicense: Apache-2.0\r\nallowed-tools: \"Bash(agentuity:*)\"\r\nargument-hint: \"<id>\"\r\nmetadata:\r\n  command: \"agentuity cloud apikey get\"\r\n  tags: \"read-only fast requires-auth\"\r\n---\r\n\r\n# Cloud Apikey Get\r\n\r\nGet a specific API key by id\r\n\r\n## Prerequisites\r\n\r\n- Authenticated with `agentuity auth login`\r\n\r\n## Usage\r\n\r\n```bash\r\nagentuity cloud apikey get <id>\r\n```\r\n\r\n## Arguments\r\n\r\n| Argument | Type | Required | Description |\r\n|----------|------|----------|-------------|\r\n| `<id>` | string | Yes | - |\r\n\r\n## Examples\r\n\r\nGet item details:\r\n\r\n```bash\r\nbunx @agentuity/cli cloud apikey get <id>\r\n```\r\n",
+    "content_hash": "1940f8e86ff27c20a697f5be89724ac72e731e5f55820dc368ca02f8fe3d1749",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 769,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "agentuity cloud apikey get <id>",
+    "content_hash": "0fa50aeb5a1524279ab194d46444bf89a913c23ab954d27adf2c21f4372d7511",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 31,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 25,
+    "source_start_line": 23
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "bunx @agentuity/cli cloud apikey get <id>",
+    "content_hash": "3f61077bde713b9bbdc129308ac97b2057f3f4328af7f494e97bf4a95fb98548",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 41,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 39,
+    "source_start_line": 37
+  }
+]

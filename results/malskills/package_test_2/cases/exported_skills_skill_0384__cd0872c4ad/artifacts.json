@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: pseudo-simulation-eval\r\ndescription: This evaluation probes the closed-loop planning robustness and causal reasoning of autonomous vehicle controllers by measuring their ability to handle compounding errors and distribution shifts. It combines real-world driving observations with pseudo-synthetic future scenarios generated via neural rendering to approximate interactive simulation without requiring a full physics engine. Use when the user wants to benchmark on nuPlan (navhard subset), or asks about evaluating this task. Reports EPDMS.\r\nmetadata:\r\n  skill_kind: dataset_eval\r\n  source_arxiv: 2506.04218\r\n  bibtex_key: cao2025pseudosimulation\r\n  confidence: high\r\n---\r\n\r\n# pseudo-simulation-eval\r\n\r\n> Pseudo-Simulation for Autonomous Driving \u2014 Cao et al. (2025) (arXiv:2506.04218, 2025)\r\n\r\n## What this evaluates\r\n\r\nThis evaluation probes the closed-loop planning robustness and causal reasoning of autonomous vehicle controllers by measuring their ability to handle compounding errors and distribution shifts. It combines real-world driving observations with pseudo-synthetic future scenarios generated via neural rendering to approximate interactive simulation without requiring a full physics engine.\r\n\r\n## Datasets\r\n\r\n- **nuPlan (navhard subset)** \u2014 total 5912; splits: Stage 1 (450), Stage 2 (5462); repo https://github.com/autonomousvision/navsim\r\n\r\n## Metrics\r\n\r\n- `EPDMS` **(primary)** \u2014 range: [0, 1]\r\n  - Composite planning score aggregating binary/continuous subscores (NC, DAC, DDC, TLC, EP, TTC, LK, HC, EC) using multiplicative aggregation across two 4-second stages to approximate an 8-second closed-loop score.\r\n- `CLS` \u2014 range: [0, 1]\r\n  - Closed-loop score computed by the nuPlan simulator for fully reactive rollouts with privileged perception and HD map access.\r\n- `mIoU` \u2014 range: [0, 1]\r\n  - Mean Intersection over Union for Bird\u2019s Eye View segmentation over drivable area, walkway, and vehicle classes.\r\n- `LPIPS` \u2014 range: [0, 1]\r\n  - Learned perceptual image patch similarity measuring novel view synthesis fidelity against ground-truth frames.\r\n\r\n## Input / output format\r\n\r\n**Input**: Per instance, the model receives a sequence of real-world sensor observations (Stage 1) and pseudo-synthetic observations generated via 3D Gaussian Splatting (Stage 2), including BEV images, HD maps, and privileged ground-truth perception data for privileged planners.\r\n\r\n**Output**: A planned trajectory or control actions over a 4-second horizon per stage (total 8 seconds), typically at 10Hz frequency.\r\n\r\n## Scoring recipe\r\n\r\n```python\r\ndef compute_epdms(subscores_s1, subscores_s2):\r\n    # subscores: NC, DAC, DDC, TLC, EP, TTC, LK, HC, EC\r\n    # Multiplicative aggregation across stages\r\n    score_s1 = 1.0\r\n    score_s2 = 1.0\r\n    for metric in subscores_s1:\r\n        score_s1 *= metric\r\n    for metric in subscores_s2:\r\n        score_s2 *= metric\r\n    # Hybrid strategy: multiply penalty metrics, average others\r\n    # Paper defaults to multiplicative aggregation for binary-heavy subscores\r\n    epdms = score_s1 * score_s2\r\n    return epdms\r\n```\r\n\r\n## Common pitfalls\r\n\r\n- Assuming EPDMS is a simple arithmetic mean; the paper explicitly uses multiplicative aggregation to better handle binary penalty metrics.\r\n- Comparing EPDMS directly to nuPlan's CLS without accounting for missing subscores (TLC, LK, EC) in the closed-loop simulator, which biases correlation analysis.\r\n- Treating Stage 2 synthetic observations as independent test cases rather than distribution-shifted variants of Stage 1 real observations.\r\n\r\n## Evidence (verbatim from paper)\r\n\r\n> We measure the alignment between EPDMS and nuPlan\u2019s closed-loop score (CLS) using Pearson\u2019s linear (r) and Spearman\u2019s rank (\u03c1) correlation coefficients, as well as the coefficient of determination (R2). Since R2 is calculated by fitting a linear model between EPDMS and CLS, it is equivalent to the square of Pearson\u2019s correlation coefficient here (R2=r2). This assumes that an ideal pseudo-simulation metric should show a linear relationship with closed-loop scores, requiring no adjustments for scale or bias.\r\n\r\n## Citation\r\n\r\n```bibtex\r\n@misc{cao2025pseudosimulation,\r\n  title={Pseudo-Simulation for Autonomous Driving},\r\n  author={Cao et al. (2025)},\r\n  year={2025},\r\n  note={arXiv:2506.04218}\r\n}\r\n```\r\n\r\n- arXiv: 2506.04218\r\n",
+    "content_hash": "7efe0577a6cb7d099d36984f35434b20866053f35d1617d88b820936961238ea",
+    "generated": false,
+    "is_text": true,
+    "line_count": 80,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4346,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "def compute_epdms(subscores_s1, subscores_s2):\r\n    # subscores: NC, DAC, DDC, TLC, EP, TTC, LK, HC, EC\r\n    # Multiplicative aggregation across stages\r\n    score_s1 = 1.0\r\n    score_s2 = 1.0\r\n    for metric in subscores_s1:\r\n        score_s1 *= metric\r\n    for metric in subscores_s2:\r\n        score_s2 *= metric\r\n    # Hybrid strategy: multiply penalty metrics, average others\r\n    # Paper defaults to multiplicative aggregation for binary-heavy subscores\r\n    epdms = score_s1 * score_s2\r\n    return epdms",
+    "content_hash": "d9e826fc705db19f061305250b5cc3ecb0ca2adc987329e4eb59478b1fd4912d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 13,
+    "relative_path": ".malskills_fences/SKILL__fence_0.py",
+    "size_bytes": 508,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 56,
+    "source_start_line": 42
+  }
+]

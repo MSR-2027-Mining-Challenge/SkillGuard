@@ -1,0 +1,760 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox create --name my-sandbox claude /path/to/project",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec -e \"CLAUDE_CODE_OAUTH_TOKEN=...\" -w /path/to/project my-sandbox \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::CLAUDE_CODE_OAUTH_TOKEN": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::CLAUDE_CODE_OAUTH_TOKEN",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::CLAUDE_CODE_OAUTH_TOKEN"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox ls",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::9",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::9"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox rm my-sandbox",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::12",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 12,
+      "source_start_line": 12
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::12"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox rm my-sandbox",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::12",
+      "path_class": "ordinary",
+      "source_end_line": 12,
+      "source_start_line": 12,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::12"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker info >/dev/null 2>&1 || echo \"Docker not available\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'npm i -g @anthropic-ai/claude-code @openai/codex'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'npm i -g @anthropic-ai/claude-code @openai/codex'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_11.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox save my-sandbox my-agent-template:v1",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::5",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::5"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox create --name fast-sandbox -t my-agent-template:v1 claude /path/to/project",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::8": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::8",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_information_access::8"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'claude auth status'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'claude auth status'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_13.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'cat ~/.codex/auth.json | head -3'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'cat ~/.codex/auth.json | head -3'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_13.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec my-sandbox bash -c 'cat ~/.codex/auth.json | head -3'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_read::2",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_read::2"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec -e \"CLAUDE_CODE_OAUTH_TOKEN=$TOKEN\" my-sandbox claude auth status",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::CLAUDE_CODE_OAUTH_TOKEN": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::CLAUDE_CODE_OAUTH_TOKEN",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::CLAUDE_CODE_OAUTH_TOKEN"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec -e \"CLAUDE_CODE_OAUTH_TOKEN=$TOKEN\" my-sandbox claude auth status",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::CLAUDE_CODE_OAUTH_TOKEN": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::CLAUDE_CODE_OAUTH_TOKEN",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::CLAUDE_CODE_OAUTH_TOKEN"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "secrets add codex_auth_json --value \"$(cat ~/.codex/auth.json)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::1"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec my-sandbox bash -c \"mkdir -p ~/.codex && cat > ~/.codex/auth.json << 'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "docker sandbox exec my-sandbox bash -c \"mkdir -p ~/.codex && cat > ~/.codex/auth.json << 'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_6.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec my-sandbox bash -c \"mkdir -p ~/.codex && cat > ~/.codex/auth.json << 'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_read::2",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_read::2"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox exec \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "-e \"CLAUDE_CODE_OAUTH_TOKEN=$TOKEN\" \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::CLAUDE_CODE_OAUTH_TOKEN": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::CLAUDE_CODE_OAUTH_TOKEN",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::CLAUDE_CODE_OAUTH_TOKEN"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox network proxy my-sandbox --policy deny",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox network proxy my-sandbox --allow-host api.anthropic.com",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::3": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::3",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::3"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker sandbox network proxy my-sandbox --allow-host api.openai.com",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::4",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::4"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "system_information_access"
+  }
+]

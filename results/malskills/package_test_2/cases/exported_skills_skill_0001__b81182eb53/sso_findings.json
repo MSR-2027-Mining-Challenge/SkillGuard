@@ -1,0 +1,314 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "| $50-150 | 8-16GB | 256GB+ | Docker host, 5-10 services | Used SFF PC (Dell Optiplex, Lenovo Tiny) |",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 95,
+        "start_line": 95
+      }
+    },
+    "span": {
+      "end_line": 95,
+      "start_line": 95
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-data receive command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.network_and_remote_communication.fetch_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00001",
+    "matched_text": "",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 96,
+        "start_line": 96
+      }
+    },
+    "span": {
+      "end_line": 96,
+      "start_line": 96
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit remote-script execution pipeline",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.remote_script_pipeline",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.remote_script_pipeline"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00002",
+    "matched_text": "",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 96,
+        "start_line": 96
+      }
+    },
+    "span": {
+      "end_line": 96,
+      "start_line": 96
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit external component bootstrap command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.external_component_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.external_component_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 96,
+        "start_line": 96
+      }
+    },
+    "span": {
+      "end_line": 96,
+      "start_line": 96
+    },
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 608,
+        "start_line": 608
+      }
+    },
+    "span": {
+      "end_line": 608,
+      "start_line": 608
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 612,
+        "start_line": 612
+      }
+    },
+    "span": {
+      "end_line": 612,
+      "start_line": 612
+    },
+    "subtype": "package_installation"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "text",
+    "content": "Apache License\r\nVersion 2.0, January 2004\r\nhttp://www.apache.org/licenses/\r\n\r\nCopyright 2025 SnowConvert Assessment Skills\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\");\r\nyou may not use this file except in compliance with the License.\r\nYou may obtain a copy of the License at\r\n\r\n    http://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software\r\ndistributed under the License is distributed on an \"AS IS\" BASIS,\r\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\nSee the License for the specific language governing permissions and\r\nlimitations under the License.\r\n\r\n",
+    "content_hash": "fa7895161fdc477bace7641684110d82aac6ab27d80f2bfda7ec8a0ba2ed741a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "LICENSE.txt",
+    "size_bytes": 663,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: object-exclusion-detection\r\ndescription: Identify database objects that can be excluded from migration (temporary/staging, deprecated/legacy, testing, duplicates, version conflicts) by running the SCAI assessment object-exclusion command.\r\nparent_skill: assessment\r\nlicense: Proprietary. See License-Skills for complete terms\r\n---\r\n\r\n# Object Exclusion Detection\r\n\r\nThis skill is a thin wrapper over the SCAI CLI command `scai assessment object-exclusion`. SCAI does the analysis directly from SnowConvert outputs (registry preferred, CSV fallback) and writes a JSON file the parent assessment skill consumes for the multi-tab HTML report.\r\n\r\n## Sub-Agent Mode\r\n\r\nWhen invoked from a parent skill (e.g., `assessment/SKILL.md`) as a sub-agent, the parent provides a context block with the fields below. This sub-skill takes no user prompts in either mode, so the only behavioral change in sub-agent mode is the JSON return contract.\r\n\r\n| Field | Required | Notes |\r\n|---|---|---|\r\n| `project_dir` | yes | absolute path to the SCAI project root |\r\n| `output_dir` | yes | typically `<project_dir>/assessment` |\r\n\r\n**On entry:** call the `configure` MCP tool with `project_dir` from the context block. Snowflake credentials are not required \u2014 `scai assessment object-exclusion` reads only local SnowConvert outputs.\r\n\r\nRun the SCAI command exactly as documented in [Workflow Step 1](#step-1-run-scai), preferring `--project-dir`.\r\n\r\n**On completion**, return **JSON only**:\r\n\r\n```json\r\n{\r\n  \"sub_skill\": \"object-exclusion-detection\",\r\n  \"status\": \"ok\",\r\n  \"output_json\": \"<abs path to object_exclusion_analysis_*.json>\",\r\n  \"summary\": \"<one-line: temp/staging, deprecated, testing, duplicates counts>\",\r\n  \"error\": null\r\n}\r\n```\r\n\r\nOn failure: `\"status\": \"error\"`, `\"output_json\": null`, `\"error\": \"<message>\"`.\r\n\r\n## Critical Rules\r\n\r\n- **Use ONLY the SCAI CLI.** No inline parsing, no custom analyzers. `scai assessment object-exclusion` is the single source of truth.\r\n- **Inputs come from the parent.** The parent `assessment` skill resolves all inputs from `project_dir` and passes the project directory and a desired output directory to this skill, which runs SCAI.\r\n- **One artifact per run.** SCAI writes a single timestamped JSON: `object_exclusion_analysis_YYYYMMDD_HHMMSS.json`. Hand that file's path back to the parent skill via its `--exclusion-json` input.\r\n\r\n## Inputs (auto-detected by parent)\r\n\r\nThe parent `assessment` skill provides these:\r\n\r\n| Input | Resolution under `project_dir` |\r\n|-------|--------------------------------|\r\n| Project directory (preferred) | `<project_dir>` \u2014 SCAI auto-detects registry vs CSV |\r\n| CSV reports directory (explicit) | `<project_dir>/reports/SnowConvert/` |\r\n| Output directory | `<project_dir>/assessment/` (create if missing) |\r\n\r\n## Workflow\r\n\r\n### Step 1: Run SCAI\r\n\r\nPrefer `--project-dir` so SCAI auto-selects registry mode when a registry is present and falls back to CSV otherwise:\r\n\r\n```bash\r\nscai assessment object-exclusion \\\r\n  --project-dir <project_dir> \\\r\n  -o <output_dir>\r\n```\r\n\r\nIf the project layout is non-standard and SCAI can't find the reports, fall back to explicit CSV mode:\r\n\r\n```bash\r\nscai assessment object-exclusion \\\r\n  --csv-dir <project_dir>/reports/SnowConvert \\\r\n  -o <output_dir>\r\n```\r\n\r\nSCAI prints a summary table to stdout and writes one file:\r\n\r\n```\r\n<output_dir>/object_exclusion_analysis_YYYYMMDD_HHMMSS.json\r\n```\r\n\r\n### Step 2: Locate the latest output\r\n\r\nAfter the command completes, capture the path of the newest `object_exclusion_analysis_*.json` in `<output_dir>` and pass it back to the parent skill. Do not parse or re-write the file.\r\n\r\n### Step 3: Hand off to the parent\r\n\r\nReturn the artifact path to the parent `assessment` skill. The parent feeds it into the multi-tab report as `--exclusion-json <output_dir>/object_exclusion_analysis_YYYYMMDD_HHMMSS.json`. This skill never generates HTML directly.\r\n\r\n## SCAI Command Reference\r\n\r\n| Option | Description |\r\n|--------|-------------|\r\n| `--project-dir <PATH>` | SnowConvert project directory. Auto-detects registry (`<dir>/registry/`) or falls back to CSVs in `<dir>/reports/SnowConvert/`. |\r\n| `--csv-dir <PATH>` | Explicit path to a SnowConvert reports directory containing `TopLevelCodeUnits.*.csv` and `ObjectReferences.*.csv`. Use only when project layout is non-standard. |\r\n| `-o`, `--output-dir <PATH>` | Output directory for the analysis JSON. Defaults to current working directory. |\r\n\r\nExactly one of `--project-dir` or `--csv-dir` is required.\r\n\r\n## Output Schema\r\n\r\nSCAI writes a single JSON file with this structure (fields shown are the canonical SCAI schema):\r\n\r\n```json\r\n{\r\n  \"summary\": {\r\n    \"report_directory\": \"...\",\r\n    \"total_objects_found\": 0,\r\n    \"temp_staging_objects_count\": 0,\r\n    \"deprecated_legacy_objects_count\": 0,\r\n    \"testing_objects_count\": 0,\r\n    \"duplicate_objects_count\": 0,\r\n    \"unique_duplicate_objects_count\": 0,\r\n    \"objects_by_schema\": [{\"schema\": \"dbo\", \"object_count\": 0}],\r\n    \"objects_with_multiple_versions\": 0,\r\n    \"potentially_normal_objects_count\": 0,\r\n    \"has_dependency_data\": true\r\n  },\r\n  \"temp_staging_objects\": [],\r\n  \"deprecated_legacy_objects\": [],\r\n  \"testing_objects\": [],\r\n  \"duplicates\": [],\r\n  \"version_analysis\": {\r\n    \"version_groups\": [],\r\n    \"total_version_conflicts\": 0\r\n  },\r\n  \"potentially_misclassified_objects\": {},\r\n  \"has_dependency_data\": true\r\n}\r\n```\r\n\r\nThe parent skill's multi-tab report reads these keys directly. Do not transform or rewrite the file.\r\n\r\n## What SCAI Detects\r\n\r\n(Documented for skill operators \u2014 SCAI handles all of this; no configuration is exposed to this skill.)\r\n\r\n- **Temporary / staging:** `tmp_`, `temp_`, `staging_`, `stg_`, `work_`, `#`, `##`, plus all objects in dedicated `STAGING|STG|TEMP|TMP|WORK|WRK` schemas.\r\n- **Deprecated / legacy:** `_old`, `_bak`, `_backup`, `_archive`, `_deprecated`, date-stamped backups (`_bak_YYYYMMDD`), version suffixes (`_v1`, `_v2`, \u2026), copy patterns (`_copy`, `_copyN`).\r\n- **Testing:** `_test`, `_fake`, `_demo`, `_sample`, `_dummy`, `_mock` (prefix, suffix, and infix forms).\r\n- **Duplicates:** Same `full_name` defined in multiple source files; primary/recommended version selected automatically.\r\n- **Version conflicts:** Multiple variants of the same base object (e.g., `MyProc`, `MyProc_v2`, `MyProc_bak`); production version selected automatically.\r\n- **Potentially misclassified:** Deprecated-looking objects referenced by N+ normal objects \u2014 surfaced for manual review.\r\n\r\nDependency-aware analysis is automatic when the registry is available or `ObjectReferences.*.csv` is present.\r\n\r\n## Failure Modes\r\n\r\n| Symptom | Likely cause | Action |\r\n|---------|--------------|--------|\r\n| `Error: Object exclusion analysis failed: \u2026` | Reports/registry not found at expected path | Verify the parent ran `scai code convert` successfully; re-resolve `--csv-dir` to the actual SnowConvert reports directory |\r\n| Empty arrays in output | No matching patterns in this workload | Normal \u2014 proceed to multi-report generation |\r\n| `summary.has_dependency_data` is false | No `ObjectReferences.*.csv` in CSV mode | Re-run with `--project-dir` so SCAI can find the registry, or include the references CSV |\r\n\r\n## Related\r\n\r\n- Parent: `../SKILL.md` (consumes the SCAI artifact via `--exclusion-json`)\r\n- SCAI built-in help: `scai assessment object-exclusion --help`\r\n",
+    "content_hash": "4e051ba2695bbdd69dae788a1ae15e4b65f8e070fa54567dcce053d213a8ea7f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 158,
+    "relative_path": "SKILL.md",
+    "size_bytes": 7395,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "scai assessment object-exclusion \\\r\n  --project-dir <project_dir> \\\r\n  -o <output_dir>",
+    "content_hash": "0e8a3050f66f5177ecef43332121aa8b2bc57174520501b3a486bde9026f69ee",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 86,
+    "source_artifact_id": "art_0001",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 65,
+    "source_start_line": 61
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "scai assessment object-exclusion \\\r\n  --csv-dir <project_dir>/reports/SnowConvert \\\r\n  -o <output_dir>",
+    "content_hash": "2831e7612f43ba4e96122f2dcddd1d7a602dd93cc19b6c9ea606f129e44c0d94",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 102,
+    "source_artifact_id": "art_0001",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 73,
+    "source_start_line": 69
+  }
+]

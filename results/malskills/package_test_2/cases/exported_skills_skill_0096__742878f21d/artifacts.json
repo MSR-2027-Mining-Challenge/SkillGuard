@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: generate-readme\r\ndescription: Generate or update the project README.md from source code analysis\r\ndisable-model-invocation: true\r\nallowed-tools: Read, Write, Edit, Glob, Grep, Bash(npm *), Bash(node *)\r\n---\r\n\r\n# README Generation\r\n\r\n## Project Info\r\n- package.json: !`cat package.json 2>/dev/null || echo \"None\"`\r\n- Structure: !`ls -la src/ 2>/dev/null || ls -la`\r\n\r\n## README Structure\r\n\r\n    # Project Name\r\n\r\n    Description (2-3 lines)\r\n\r\n    ## Prerequisites\r\n    - Required runtimes and tools\r\n\r\n    ## Setup\r\n    1. Installation steps\r\n    2. Environment variables\r\n    3. How to start\r\n\r\n    ## Usage\r\n    Key usage instructions\r\n\r\n    ## Project Structure\r\n    Directory layout explanation\r\n\r\n    ## License\r\n\r\n## Rules\r\n- If README.md exists, preserve and supplement\r\n- Only document what the code confirms\r\n- Setup steps must use accurate, working commands\r\n",
+    "content_hash": "05e3631445a1345476d35701c8bbf44b785685dc4c96a2cbe40de84ea8bc0a2f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 880,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

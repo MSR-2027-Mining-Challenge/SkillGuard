@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "git merge-base HEAD main 2>/dev/null || git merge-base HEAD master 2>/dev/null",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh pr create --title \"<title>\" --body \"$(cat <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::5"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  }
+]

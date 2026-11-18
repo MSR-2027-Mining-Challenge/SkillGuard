@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: data-analysis\r\ndescription: End-to-end data analysis in R or Stata \u2014 exploration through regression to publication-ready output\r\ndisable-model-invocation: true\r\nargument-hint: \"[dataset path, analysis goal, or 'stata' / 'R' preference]\"\r\nallowed-tools: [\"Read\", \"Grep\", \"Glob\", \"Write\", \"Edit\", \"Bash\", \"Task\"]\r\n---\r\n\r\n# Data Analysis Workflow\r\n\r\nRun an end-to-end data analysis: load, explore, analyze, and produce publication-ready output.\r\n\r\n**Input:** `$ARGUMENTS` \u2014 a dataset path, analysis goal, or language preference.\r\n\r\n## Language Selection\r\n\r\n- If user says \"stata\" or \"do-file\" \u2192 write a .do file\r\n- If user says \"R\" or \"Rscript\" \u2192 write an .R file\r\n- If ambiguous \u2192 ask. Default to **Stata for regressions**, **R for visualization**.\r\n\r\n## Project Data\r\n\r\n| Dataset | Path | Contents |\r\n|---------|------|----------|\r\n| Panel A | `data_final/{{panel_A}}.dta` | {{description}} |\r\n| Panel B | `data_final/{{panel_B}}.dta` | {{description}} |\r\n| Panel C | `data_final/{{panel_C}}.dta` | {{description}} |\r\n| Results CSV | `output/results/{{regression_results}}.csv` | {{description}} |\r\n| Elections | `data_final/{{elections_panel}}.dta` | {{description}} |\r\n\r\n## Workflow Phases\r\n\r\n### Phase 1: Setup\r\n- Follow conventions in `.claude/rules/stata-r-conventions.md`\r\n- Create script with proper header\r\n- Load data and inspect\r\n\r\n### Phase 2: Exploratory Analysis\r\n- Summary statistics, distributions, missingness\r\n- Treatment/control comparisons\r\n- Time trends\r\n\r\n### Phase 3: Main Analysis\r\n- **Stata:** `areg` or `reghdfe` with county+year FE, `vce(cluster {{cluster_var}})`\r\n- **R:** `fixest::feols()` with `cluster = ~{{cluster_var}}`\r\n- Start simple, progressively add controls\r\n- Report standardized effects (\u03b2/\u0233 and \u03b2/\u03c3_w)\r\n\r\n### Phase 4: Publication-Ready Output\r\n- **Stata:** `esttab` \u2192 `.tex` tables\r\n- **R:** `modelsummary` \u2192 `.tex` and `.html` tables\r\n- Figures: `ggplot2` with explicit dimensions, export PDF+PNG\r\n\r\n### Phase 5: Verify\r\n- Run the code and check for errors\r\n- Cross-check against `{{regression_results}}.csv` if applicable\r\n- Save all outputs to `output/`\r\n\r\n## Important\r\n\r\n- **New analysis \u2192 new numbered do-file (09+)** or script in `scripts/`\r\n- **Never modify 01\u201308 do-files** without explicit permission\r\n- **All paths relative** to `$RB/`\r\n- **Match existing specifications** before extending\r\n",
+    "content_hash": "7661c24eabba008198b921be8ae2e008b0dadd75d678364e02fdde917a8a04e2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 65,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2375,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

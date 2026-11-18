@@ -1,0 +1,705 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/generate_image.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "target": "value::e88edc7781c4b63ca841",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "target": "value::9af9048907d26c04a46a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/generate_image.py::file_create::86",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::file_create::86",
+      "target": "value::4b22f7500c7f1529b706",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/generate_image.py::system_command_execution::88",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::system_command_execution::88",
+      "target": "value::074620fd977f8f15a8fc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::scripts/generate_image.py::api_key",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/generate_image.py::api_key",
+      "target": "value::2fec17aa7657b43b3087",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/generate_image.py::dynamic_code_execution::146",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::dynamic_code_execution::146",
+      "target": "value::da625cb1349211302f48",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00007",
+      "target": "obj::operation::scripts/generate_image.py::dynamic_code_execution::147",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::dynamic_code_execution::147",
+      "target": "value::3cdc75adb6d157bb2487",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00008",
+      "target": "obj::operation::scripts/generate_image.py::dynamic_code_execution::149",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::dynamic_code_execution::149",
+      "target": "value::1d93ddfeaac87fbc8299",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00009",
+      "target": "obj::operation::scripts/generate_image.py::dynamic_code_execution::150",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::dynamic_code_execution::150",
+      "target": "value::f749b1b1c1640be13700",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00010",
+      "target": "obj::operation::scripts/generate_image.py::decoding::152",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::decoding::152",
+      "target": "value::7da41836eaa847039b42",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/generate_image.py::file_create::153",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::file_create::153",
+      "target": "value::5243bb8d93e4cc4aa98f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::operation::scripts/generate_image.py::file_access::154",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::file_access::154",
+      "target": "value::0d2d371512f9175d693e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::scripts/generate_image.py::credential_data_access::194",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::credential_data_access::194",
+      "target": "value::5bc3409448056eb838c8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00015",
+      "target": "obj::operation::scripts/generate_image.py::environment_access::225",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::environment_access::225",
+      "target": "value::bc2b751bd97c0d11deda",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00016",
+      "target": "obj::operation::scripts/generate_image.py::credential_data_access::244",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate_image.py::credential_data_access::244",
+      "target": "value::95575351155eb6441b03",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00001",
+      "target": "sso_00002",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00001",
+      "target": "sso_00014",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00002",
+      "target": "sso_00014",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/generate_image.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e88edc7781c4b63ca841",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "identity_key": "scripts/generate_image.py::encoding",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::9af9048907d26c04a46a",
+      "kind": "value",
+      "value": "scripts/generate_image.py::encoding",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::file_create::86",
+      "identity_key": "scripts/generate_image.py::file_create::86",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4b22f7500c7f1529b706",
+      "kind": "value",
+      "value": "scripts/generate_image.py::file_create::86",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::system_command_execution::88",
+      "identity_key": "scripts/generate_image.py::system_command_execution::88",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::074620fd977f8f15a8fc",
+      "kind": "value",
+      "value": "scripts/generate_image.py::system_command_execution::88",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/generate_image.py::api_key",
+      "identity_key": "scripts/generate_image.py::api_key",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::2fec17aa7657b43b3087",
+      "kind": "value",
+      "value": "scripts/generate_image.py::api_key",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::dynamic_code_execution::146",
+      "identity_key": "scripts/generate_image.py::dynamic_code_execution::146",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::da625cb1349211302f48",
+      "kind": "value",
+      "value": "scripts/generate_image.py::dynamic_code_execution::146",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::dynamic_code_execution::147",
+      "identity_key": "scripts/generate_image.py::dynamic_code_execution::147",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::3cdc75adb6d157bb2487",
+      "kind": "value",
+      "value": "scripts/generate_image.py::dynamic_code_execution::147",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::dynamic_code_execution::149",
+      "identity_key": "scripts/generate_image.py::dynamic_code_execution::149",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::1d93ddfeaac87fbc8299",
+      "kind": "value",
+      "value": "scripts/generate_image.py::dynamic_code_execution::149",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::dynamic_code_execution::150",
+      "identity_key": "scripts/generate_image.py::dynamic_code_execution::150",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::f749b1b1c1640be13700",
+      "kind": "value",
+      "value": "scripts/generate_image.py::dynamic_code_execution::150",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "decoding",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::decoding::152",
+      "identity_key": "scripts/generate_image.py::decoding::152",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::7da41836eaa847039b42",
+      "kind": "value",
+      "value": "scripts/generate_image.py::decoding::152",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::file_create::153",
+      "identity_key": "scripts/generate_image.py::file_create::153",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::5243bb8d93e4cc4aa98f",
+      "kind": "value",
+      "value": "scripts/generate_image.py::file_create::153",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::file_access::154",
+      "identity_key": "scripts/generate_image.py::file_access::154",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::0d2d371512f9175d693e",
+      "kind": "value",
+      "value": "scripts/generate_image.py::file_access::154",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::credential_data_access::194",
+      "identity_key": "scripts/generate_image.py::credential_data_access::194",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::5bc3409448056eb838c8",
+      "kind": "value",
+      "value": "scripts/generate_image.py::credential_data_access::194",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::environment_access::225",
+      "identity_key": "scripts/generate_image.py::environment_access::225",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::bc2b751bd97c0d11deda",
+      "kind": "value",
+      "value": "scripts/generate_image.py::environment_access::225",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/generate_image.py::credential_data_access::244",
+      "identity_key": "scripts/generate_image.py::credential_data_access::244",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::95575351155eb6441b03",
+      "kind": "value",
+      "value": "scripts/generate_image.py::credential_data_access::244",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_write::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_write::2",
+      "target": "value::4d5b0f549aa2b287196c",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_write::2",
+      "identity_key": ".malskills_fences/SKILL__fence_6.sh::file_write::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4d5b0f549aa2b287196c",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_6.sh::file_write::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

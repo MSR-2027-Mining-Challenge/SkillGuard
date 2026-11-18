@@ -1,0 +1,267 @@
+[
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "whoami                         # Current user",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.sh::user_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.sh::user_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.sh::user_information_access::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "user_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "shell net localgroup administrators",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_permission_modify::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_permission_modify::12",
+      "path_class": "ordinary",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 12,
+      "source_start_line": 12,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_permission_modify::12"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_permission_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "shell tasklist /v",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.sh::process_information_access::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.sh::process_information_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.sh::process_information_access::13"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "process_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_search::18": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_search::18",
+      "path_class": "ordinary",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_search::18"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls C:\\\\Users\\\\<USER>\\\\Desktop\\\\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_search::8": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_search::8",
+      "path_class": "ordinary",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_search::8"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_19.sh"
+    ],
+    "attributes": {
+      "matched_text": "portfwd rm -i <ID>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_19.sh::file_delete::8": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_19.sh::file_delete::8",
+      "path_class": "ordinary",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_19.sh::file_delete::8"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "dig @c2-sliver test.c2.<TARGET> TXT +short",
+      "endpoint_class": "unknown",
+      "network_role": "resolve",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::dns_resolution::dig @c2-sliver test.c2.<TARGET> TXT +short": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::dns_resolution::dig @c2-sliver test.c2.<TARGET> TXT +short",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:68:68:dns_resolution",
+      "source_end_line": 68,
+      "source_start_line": 68
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::dns_resolution::dig @c2-sliver test.c2.<TARGET> TXT +short"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "dns_resolution"
+  },
+  {
+    "artifact_ids": [
+      "art_0023"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/sliver-quickstart__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "#   docker compose up -d",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/sliver-quickstart__fence_1.sh::system_information_access::3": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/sliver-quickstart__fence_1.sh::system_information_access::3",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/sliver-quickstart__fence_1.sh::system_information_access::3"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0023"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/sliver-quickstart__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "# On first boot, the entrypoint auto-generates an operator config at:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/sliver-quickstart__fence_1.sh::system_configuration_modify::5": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/sliver-quickstart__fence_1.sh::system_configuration_modify::5",
+      "resource_class": "startup_configuration",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/sliver-quickstart__fence_1.sh::system_configuration_modify::5"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_configuration_modify"
+  }
+]

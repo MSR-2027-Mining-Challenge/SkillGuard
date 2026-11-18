@@ -1,0 +1,142 @@
+[
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::file_delete::12",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::file_delete::12",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::12",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"$(curl --version 2>/dev/null)\"",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"$(curl --version 2>/dev/null)\"",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"$(curl --version 2>/dev/null)\"",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"${CURL_VERSION#curl }\"",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"${CURL_VERSION#curl }\"",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::CURL_VERSION=\"${CURL_VERSION#curl }\"",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::echo \"Could not parse curl version: $CURL_VERSION\" >&2",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::echo \"Could not parse curl version: $CURL_VERSION\" >&2",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"Could not parse curl version: $CURL_VERSION\" >&2",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::echo \"curl >= 8.4 is required for a strict unknown-length --max-filesize cap\" >&2",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::if ! curl --fail --show-error --location \\",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::if ! curl --fail --show-error --location \\",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::if ! curl --fail --show-error --location \\",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::file_read::69",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::file_read::69",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::69",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::file_read::75",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::file_read::75",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::75",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::file_permission_modify::100",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::file_permission_modify::100",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_permission_modify::100",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::credential_data_access::101",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::credential_data_access::101",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::101",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl --fail --show-error --max-time 30 \\",
+    "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl --fail --show-error --max-time 30 \\",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl --fail --show-error --max-time 30 \\",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::FLY_API_TOKEN",
+    "identity_key": ".malskills_fences/SKILL__fence_4.sh::FLY_API_TOKEN",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::FLY_API_TOKEN",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::system_information_access::5",
+    "identity_key": ".malskills_fences/SKILL__fence_4.sh::system_information_access::5",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::5",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::system_information_access::6",
+    "identity_key": ".malskills_fences/SKILL__fence_4.sh::system_information_access::6",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::6",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  }
+]

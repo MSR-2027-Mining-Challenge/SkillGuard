@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: nepal-vat\r\ndescription: Nepal VAT rules for SMB bookkeeping \u2014 rate, inclusive/exclusive math, input tax\r\n  credit eligibility and 1-year limit, Rule 17 vs 17Ka invoices, carry-forward, monthly return,\r\n  nil return. Use whenever computing VAT or preparing a VAT return.\r\n---\r\n# Nepal VAT (FY 2082/83)\r\n- Rate 13% on taxable supplies. Monthly; file+pay by 25th of following BS month. Nil return mandatory.\r\n- Inclusive X: excl=round(X/1.13); vat=X-excl. Integer paisa, half-up.\r\n- Output VAT = sales(excl) \u00d7 0.13.\r\n- Input credit ONLY if: vendor VAT-registered AND full Rule 17 invoice AND invoice \u2264 1 year old\r\n  AND purchase for taxable business use AND VAT paid. Else input credit = 0 (explain why).\r\n- Rule 17Ka abbreviated invoice (OTC retail \u2264 Rs 10,000): NOT valid for input credit. Warn the owner.\r\n- Net payable = max(output \u2212 input, 0). If input > output: carry forward the excess (don't pay negative).\r\n- Schedule 1 = exempt (no VAT, no credit). Schedule 2 = zero-rated (0%, full credit / refund).\r\n- Mixed taxable+exempt purchases \u2192 proportionate credit; flag for an accountant, don't assume a split.\r\n- Missed/wrong prior-month entries \u2192 adjust in the next return.\r\n- NEVER file with the government. Prepare numbers; the owner files on the IRD portal.\r\n- If unsure of a current deadline/rule, web_fetch the IRD calendar; if still unsure, say so.\r\n- Never hand-compute money: use the ledger MCP tools (compute_vat, validate_entry,\r\n  generate_return_summary) so every figure is validated and audited.\r\n",
+    "content_hash": "b63472e832ca333fa1ecda6f89408c3028b5ad493762a269ca8f8ce665586004",
+    "generated": false,
+    "is_text": true,
+    "line_count": 22,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1537,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

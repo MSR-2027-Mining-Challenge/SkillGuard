@@ -1,0 +1,61 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "detect_infrastructure.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"git\", \"diff\", \"--cached\", \"--name-only\"],\n            capture_output=True,\n            text=True,\n            timeout=30,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::detect_infrastructure.py::system_command_execution::83": "command"
+      },
+      "operation_object": "obj::operation::detect_infrastructure.py::system_command_execution::83",
+      "parameter_bindings": [],
+      "sink_callsite_id": "detect_infrastructure.py:83:88:subprocess.run()",
+      "source_end_line": 88,
+      "source_start_line": 83
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::detect_infrastructure.py::system_command_execution::83"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "detect_infrastructure.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::detect_infrastructure.py::credential_data_access::199": "path"
+      },
+      "operation_object": "obj::operation::detect_infrastructure.py::credential_data_access::199",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 199,
+      "source_start_line": 199
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::detect_infrastructure.py::credential_data_access::199"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  }
+]

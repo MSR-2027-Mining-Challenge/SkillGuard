@@ -1,0 +1,177 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat *_SJ.out.tab > combined_SJ.out.tab",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::14": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::14",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::14"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "subprocess.run([\n        'junction_saturation.py',\n        '-i', bam_file,\n        '-r', bed_file,\n        '-o', output_prefix\n    ], check=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.py::system_command_execution::8": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.py::system_command_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.py:8:13:subprocess.run()",
+      "source_end_line": 13,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.py::system_command_execution::8"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "lambda x: __import__('numpy').log10(x)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.py::dynamic_code_execution::25": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.py::dynamic_code_execution::25",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.py:25:25:__import__()",
+      "source_end_line": 25,
+      "source_start_line": 25
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.py::dynamic_code_execution::25"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "subprocess.run([\n                'ggsashimi.py',\n                '-b', grouping_file,\n                '-c', f'{chrom}:{start}-{end}',\n                '-o', f'{output_dir}/{event_type}_{gene}',\n                '-g', gtf_file,\n                '--shrink',\n                '--fix-y-scale',\n                '-M', '5'\n            ], check=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.py::system_command_execution::21": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.py::system_command_execution::21",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_7.py:21:30:subprocess.run()",
+      "source_end_line": 30,
+      "source_start_line": 21
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.py::system_command_execution::21"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/usage-guide__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "pip install pandas numpy matplotlib",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/usage-guide__fence_0.sh::package_installation::5": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/usage-guide__fence_0.sh::package_installation::5",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/usage-guide__fence_0.sh::package_installation::5"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "usage-guide.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install pandas numpy matplotlib",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::usage-guide.md::package_installation::12": "target"
+      },
+      "operation_object": "obj::operation::usage-guide.md::package_installation::12",
+      "source_end_line": 12,
+      "source_start_line": 12,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::usage-guide.md::package_installation::12"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  }
+]

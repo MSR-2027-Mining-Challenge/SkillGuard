@@ -1,0 +1,115 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "brew install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt update && sudo apt install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt update && sudo apt install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "brew install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::18": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::18",
+      "source_end_line": 18,
+      "source_start_line": 18,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::18"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "package_installation"
+  }
+]

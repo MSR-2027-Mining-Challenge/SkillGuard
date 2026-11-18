@@ -1,0 +1,666 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "path": "assets/README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "path": "assets/report_template.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0006",
+      "path": "assets/test_template.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0007",
+      "path": "references/README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0008",
+      "path": "scripts/README.md",
+      "type": "markdown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+      "target": "value::52178aee0d3f9a17da25",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "target": "value::139774ada800d4642e01",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+      "target": "value::56c2315121658cd09cb7",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "target": "value::5a8b99060e41aefa461a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00004",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "target": "value::9704fcc417583f946d28",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+      "target": "value::37dd1b2e30fcf217d85a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00006",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "target": "value::56cd17af9b8e7d5d2625",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+      "target": "value::19f1b7297893a4dffd03",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "target": "value::a36d14e7c40505512ec2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+      "target": "value::38c068f7967e05dfe8db",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "target": "value::a3a7e0f95012d8b3652a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00011",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "target": "value::76bb4f4be80ea9f0f481",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "target": "value::fa9433dfdd99f4741b71",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00013",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "target": "value::3dd869f0d29e49f0e77d",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "assets/README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "assets/report_template.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "assets/test_template.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "references/README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "scripts/README.md",
+      "type": "markdown"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::52178aee0d3f9a17da25",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::data_receive::backend=$(curl -s -H \"Host: app.test.com\" http://lb.test.com/health \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::139774ada800d4642e01",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::56c2315121658cd09cb7",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_information_access::6",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::5a8b99060e41aefa461a",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::9704fcc417583f946d28",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::37dd1b2e30fcf217d85a",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::system_information_access::7",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::56cd17af9b8e7d5d2625",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::19f1b7297893a4dffd03",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a36d14e7c40505512ec2",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+      "identity_key": ".malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::38c068f7967e05dfe8db",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_2.js::data_receive::const res = http.get('http://lb.test.com/api/data');",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "identity_key": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a3a7e0f95012d8b3652a",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend A",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "identity_key": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::76bb4f4be80ea9f0f481",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Backend B",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "identity_key": "SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::fa9433dfdd99f4741b71",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -sf http://lb.test.com/health || echo \"FAIL: request $i\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "identity_key": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::3dd869f0d29e49f0e77d",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s http://lb.test.com/health  # Should see Backend A again",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

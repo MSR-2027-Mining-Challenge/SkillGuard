@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: publish-dataset\r\ndescription: Publish a mined eval dataset version (artifacts/<repo>-eval/<tag>-<hash>/) to the forall-git-evals DigitalOcean Space using s3cmd \u2014 sync the bulk challenges.jsonl + manifest, optionally make it world-readable, and verify the published blob's sha256 against the manifest. Use when shipping a dataset version to Spaces / HuggingFace.\r\n---\r\n\r\n# Publish a dataset version to DigitalOcean Spaces\r\n\r\nUpload a mined eval dataset version directory to the `forall-git-evals` Space\r\n(nyc3). The bucket key **mirrors the `artifacts/` layout minus the `artifacts/`\r\nprefix**, so the console stays browsable (see `artifacts/MANIFEST_SCHEMA.md`).\r\n\r\n## Prerequisites\r\n- `s3cmd` installed and `~/.s3cfg` configured for DO Spaces nyc3\r\n  (`access_key`/`secret_key`, `host_base = nyc3.digitaloceanspaces.com`). Verify\r\n  access with `s3cmd ls s3://forall-git-evals/`.\r\n- Run from the repo root. The version dir must exist locally (produced by\r\n  `scaffold profile \u2026 --tag \u2026` or `scaffold materialize \u2026 --tag \u2026`). Note the\r\n  bulk `challenges.jsonl` is gitignored, so Spaces is its only home.\r\n\r\n## Procedure\r\n\r\n```bash\r\n# --- pick the version to publish ---\r\nREPO=fiat-crypto                  # source repo => artifacts/<REPO>-eval/\r\nVER=v1-handcrafted-0152ee12       # the <tag>-<short_hash> version dir\r\nSRC=\"artifacts/${REPO}-eval/${VER}\"\r\nDST=\"s3://forall-git-evals/${REPO}-eval/${VER}/\"   # mirrors artifacts/ (no 'artifacts/' prefix)\r\n\r\n# 1. Upload (idempotent \u2014 re-runnable; uploads challenges.jsonl + manifest.json + miner/profile.json)\r\ns3cmd sync --no-progress \"$SRC/\" \"$DST\"\r\n\r\n# 2. Make world-readable \u2014 ONLY if this dataset is meant to be public.\r\n#    Publishing to the world is hard to reverse; skip this step to keep it private.\r\ns3cmd setacl --acl-public --recursive \"$DST\"\r\n\r\n# 3. Verify integrity: the published blob's sha256 must equal the manifest's declared hash.\r\nBASE=\"https://forall-git-evals.nyc3.digitaloceanspaces.com/${REPO}-eval/${VER}\"\r\necho \"manifest-declared:\"; python3 -c \"import json; print(json.load(open('$SRC/manifest.json'))['blobs'][0]['hash'])\"\r\necho \"published object: \"; curl -s \"$BASE/challenges.jsonl\" | sha256sum | cut -d' ' -f1\r\ncurl -sI \"$BASE/challenges.jsonl\" | grep -iE '^HTTP|content-length'   # expect 200 + matching size\r\n```\r\n\r\nThe three hashes (manifest-declared, local `sha256sum \"$SRC/challenges.jsonl\"`,\r\nand the published object) must all match.\r\n\r\n## Public URL pattern\r\n`https://forall-git-evals.nyc3.digitaloceanspaces.com/<repo>-eval/<tag>-<hash>/{challenges.jsonl,manifest.json,miner/profile.json}`\r\n\r\n## Notes\r\n- Integrity is the sha256 in `manifest.json` \u2192 `blobs[0].hash`, not the URL.\r\n- The manifest's `blobs[].url` is currently left `null`: in `scaffold/dataset.py`\r\n  the `url` field is part of the manifest content hash, so writing it would\r\n  change the version's `<short_hash>` (and the dir name). The download location\r\n  is derivable by the path convention above. (Fix would be to exclude `url` from\r\n  the content-addressing, then backfill it.)\r\n- `setacl --acl-public` is reversible (`s3cmd setacl --acl-private --recursive \"$DST\"`),\r\n  but objects may be cached/indexed once public \u2014 make the public call deliberately.\r\n",
+    "content_hash": "e4e25fcf938b475855c5a831a6babfc43ebb7d5ce2c53d2ea83d99c177bf4d7a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 58,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3242,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# --- pick the version to publish ---\r\nREPO=fiat-crypto                  # source repo => artifacts/<REPO>-eval/\r\nVER=v1-handcrafted-0152ee12       # the <tag>-<short_hash> version dir\r\nSRC=\"artifacts/${REPO}-eval/${VER}\"\r\nDST=\"s3://forall-git-evals/${REPO}-eval/${VER}/\"   # mirrors artifacts/ (no 'artifacts/' prefix)\r\n\r\n# 1. Upload (idempotent \u2014 re-runnable; uploads challenges.jsonl + manifest.json + miner/profile.json)\r\ns3cmd sync --no-progress \"$SRC/\" \"$DST\"\r\n\r\n# 2. Make world-readable \u2014 ONLY if this dataset is meant to be public.\r\n#    Publishing to the world is hard to reverse; skip this step to keep it private.\r\ns3cmd setacl --acl-public --recursive \"$DST\"\r\n\r\n# 3. Verify integrity: the published blob's sha256 must equal the manifest's declared hash.\r\nBASE=\"https://forall-git-evals.nyc3.digitaloceanspaces.com/${REPO}-eval/${VER}\"\r\necho \"manifest-declared:\"; python3 -c \"import json; print(json.load(open('$SRC/manifest.json'))['blobs'][0]['hash'])\"\r\necho \"published object: \"; curl -s \"$BASE/challenges.jsonl\" | sha256sum | cut -d' ' -f1\r\ncurl -sI \"$BASE/challenges.jsonl\" | grep -iE '^HTTP|content-length'   # expect 200 + matching size",
+    "content_hash": "e24ed79dd1cf514dc56d9cc4f3932aea87727f44da299955958d5107247d640d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 18,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 1158,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 41,
+    "source_start_line": 22
+  }
+]

@@ -1,0 +1,394 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "nc -z -G 3 <host> <port>",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:2:2:connection_create",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "nc -z -G 3 <host> <port>",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::connection_create::nc -z -G 3 <host> <port>": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::connection_create::nc -z -G 3 <host> <port>",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:69:69:connection_create",
+      "source_end_line": 69,
+      "source_start_line": 69
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::connection_create::nc -z -G 3 <host> <port>"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"=== kubectl get ingress -A -o wide ===\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::wide": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::wide",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 19,
+      "source_start_line": 19
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::wide"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl \"${ctx_args[@]}\" get ingress -A -o wide 2>&1 || echo \"BLOCKED: ingress query failed\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::20": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::20",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::20"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"=== kubectl get svc -A (NodePort, LoadBalancer) ===\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::23": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::23",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 23,
+      "source_start_line": 23
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::23"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl \"${ctx_args[@]}\" get svc -A -o wide 2>&1 | awk 'NR==1 || /NodePort|LoadBalancer/' || echo \"BLOCKED: svc query failed\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::NR": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::NR",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::NR"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"=== kubectl get endpoints -A ===\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::A": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::A",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::A"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl \"${ctx_args[@]}\" get endpoints -A 2>&1 | head -200 || echo \"BLOCKED: endpoints query failed\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::28": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::28",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 28,
+      "source_start_line": 28
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::28"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect_k8s_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl \"${ctx_args[@]}\" get endpoints -A 2>&1 | head -200 || echo \"BLOCKED: endpoints query failed\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_k8s_endpoints.sh::file_read::28": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_k8s_endpoints.sh::file_read::28",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 28,
+      "source_start_line": 28
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_k8s_endpoints.sh::file_read::28"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/collect_repo_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "rg -n \"catalog_key:|hostname:|verify_url:|source:\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_repo_endpoints.sh::system_information_access::14": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_repo_endpoints.sh::system_information_access::14",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_repo_endpoints.sh::system_information_access::14"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/collect_repo_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "-A0 -B0 2>/dev/null | head -80 || true",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_repo_endpoints.sh::file_read::21": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::21",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 21,
+      "source_start_line": 21
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_repo_endpoints.sh::file_read::21"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/collect_repo_endpoints.sh"
+    ],
+    "attributes": {
+      "matched_text": "-A0 -B0 2>/dev/null | head -80 || true",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/collect_repo_endpoints.sh::file_read::27": "path"
+      },
+      "operation_object": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::27",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/collect_repo_endpoints.sh::file_read::27"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_read"
+  }
+]

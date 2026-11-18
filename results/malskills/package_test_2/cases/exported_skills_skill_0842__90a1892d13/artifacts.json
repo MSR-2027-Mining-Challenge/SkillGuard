@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: outreachos-external-intelligence\r\ndescription: Run Outreach OS external intelligence for market, competitor, trend, hiring, and funding sensing. Use when scanning or synthesizing public demand signals, competitor movement, price pressure, funding events, hiring demand, or weekly market reports.\r\n---\r\n\r\n# Outreach OS External Intelligence\r\n\r\nUse this skill to sense what the market wants before outreach volume is increased.\r\n\r\n## Sources\r\n\r\n- LinkedIn: founder posts, hiring trends, automation complaints, operational wins.\r\n- Reddit: SMB, agency, insurance, healthcare, and operations pain.\r\n- Product Hunt and startup launches: categories being productized.\r\n- G2 and review surfaces: fast-growing tools and recurring complaints.\r\n- Crunchbase and funding news: new buying capacity.\r\n- Job boards: manual-work roles such as support, claims, scheduling, reviewers, and operations.\r\n- Competitor websites and outbound examples: offers, pricing, guarantees, proof, hooks, and verticals.\r\n\r\n## Workflow\r\n\r\n1. Read `state/system-state.json`, `state/market-signals.json`, and `state/competitors.json`.\r\n2. Define the sensing window, usually last 7 days for weekly report or last 24 hours for daily jobs.\r\n3. Collect observations with source URLs or source descriptions.\r\n4. Normalize each observation into a market signal or competitor record.\r\n5. Synthesize trend shifts:\r\n   - Rising demand.\r\n   - Cooling demand.\r\n   - Pricing compression.\r\n   - Competitor crowding.\r\n   - New buying capacity.\r\n   - Hiring-driven automation demand.\r\n6. Write updated records.\r\n7. Flag anything that should trigger Opportunity Intelligence.\r\n\r\n## Output Requirements\r\n\r\nFor each market signal:\r\n\r\n```json\r\n{\r\n  \"id\": \"signal_...\",\r\n  \"source\": \"LinkedIn | Reddit | ProductHunt | G2 | Crunchbase | JobBoard | Other\",\r\n  \"topic\": \"Claims automation\",\r\n  \"segment\": \"Insurance\",\r\n  \"direction\": \"up | down | flat | emerging\",\r\n  \"magnitude\": 0,\r\n  \"observedAt\": \"2026-06-12T00:00:00.000Z\",\r\n  \"evidence\": [\"short evidence summary\"],\r\n  \"confidence\": \"low | medium | high\",\r\n  \"sourceAgent\": \"external-intelligence\",\r\n  \"createdAt\": \"2026-06-12T00:00:00.000Z\",\r\n  \"updatedAt\": \"2026-06-12T00:00:00.000Z\"\r\n}\r\n```\r\n\r\nFor each competitor:\r\n\r\n```json\r\n{\r\n  \"id\": \"competitor_...\",\r\n  \"name\": \"Competitor name\",\r\n  \"category\": \"Agency | Startup | Adjacent\",\r\n  \"offers\": [\"AI Voice Agent\"],\r\n  \"pricing\": [{\"offer\": \"AI Voice Agent\", \"amount\": 2200, \"cadence\": \"monthly\"}],\r\n  \"guarantees\": [],\r\n  \"positioning\": \"short summary\",\r\n  \"hooks\": [],\r\n  \"proof\": [],\r\n  \"confidence\": \"low | medium | high\"\r\n}\r\n```\r\n\r\n## Weekly Report\r\n\r\nProduce four sections:\r\n\r\n- Market summary.\r\n- Competitor summary.\r\n- Opportunity summary.\r\n- Threat summary.\r\n\r\nKeep the report decision-oriented. End with no more than three recommended pushes and three threats.\r\n",
+    "content_hash": "8eb6b0b8ae31024a649477d904ef9011b72c2a06c9494dbee03e75795ee670d7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 84,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2833,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: testrail\r\ndescription: >-\r\n  Sync tests with TestRail. Use when user mentions \"testrail\", \"test management\",\r\n  \"test cases\", \"test run\", \"sync test cases\", \"push results to testrail\",\r\n  or \"import from testrail\".\r\n---\r\n\r\n# TestRail Integration\r\n\r\nBidirectional sync between Playwright tests and TestRail test management.\r\n\r\n## Prerequisites\r\n\r\nEnvironment variables must be set:\r\n\r\n- `TESTRAIL_URL` \u2014 e.g., `https://your-instance.testrail.io`\r\n- `TESTRAIL_USER` \u2014 your email\r\n- `TESTRAIL_API_KEY` \u2014 API key from TestRail\r\n\r\nIf not set, inform the user how to configure them and stop.\r\n\r\n## Capabilities\r\n\r\n### 1. Import Test Cases \u2192 Generate Playwright Tests\r\n\r\n```\r\n/pw:testrail import --project <id> --suite <id>\r\n```\r\n\r\nSteps:\r\n\r\n1. Call `testrail_get_cases` MCP tool to fetch test cases\r\n2. For each test case:\r\n   - Read title, preconditions, steps, expected results\r\n   - Map to a Playwright test using appropriate template\r\n   - Include TestRail case ID as test annotation: `test.info().annotations.push({ type: 'testrail', description: 'C12345' })`\r\n3. Generate test files grouped by section\r\n4. Report: X cases imported, Y tests generated\r\n\r\n### 2. Push Test Results \u2192 TestRail\r\n\r\n```\r\n/pw:testrail push --run <id>\r\n```\r\n\r\nSteps:\r\n\r\n1. Run Playwright tests with JSON reporter:\r\n   ```bash\r\n   npx playwright test --reporter=json > test-results.json\r\n   ```\r\n2. Parse results: map each test to its TestRail case ID (from annotations)\r\n3. Call `testrail_add_result` MCP tool for each test:\r\n   - Pass \u2192 status_id: 1\r\n   - Fail \u2192 status_id: 5, include error message\r\n   - Skip \u2192 status_id: 2\r\n4. Report: X results pushed, Y passed, Z failed\r\n\r\n### 3. Create Test Run\r\n\r\n```\r\n/pw:testrail run --project <id> --name \"Sprint 42 Regression\"\r\n```\r\n\r\nSteps:\r\n\r\n1. Call `testrail_add_run` MCP tool\r\n2. Include all test case IDs found in Playwright test annotations\r\n3. Return run ID for result pushing\r\n\r\n### 4. Sync Status\r\n\r\n```\r\n/pw:testrail status --project <id>\r\n```\r\n\r\nSteps:\r\n\r\n1. Fetch test cases from TestRail\r\n2. Scan local Playwright tests for TestRail annotations\r\n3. Report coverage:\r\n   ```\r\n   TestRail cases: 150\r\n   Playwright tests with TestRail IDs: 120\r\n   Unlinked TestRail cases: 30\r\n   Playwright tests without TestRail IDs: 15\r\n   ```\r\n\r\n### 5. Update Test Cases in TestRail\r\n\r\n```\r\n/pw:testrail update --case <id>\r\n```\r\n\r\nSteps:\r\n\r\n1. Read the Playwright test for this case ID\r\n2. Extract steps and expected results from test code\r\n3. Call `testrail_update_case` MCP tool to update steps\r\n\r\n## MCP Tools Used\r\n\r\n| Tool                    | When                    |\r\n| ----------------------- | ----------------------- |\r\n| `testrail_get_projects` | List available projects |\r\n| `testrail_get_suites`   | List suites in project  |\r\n| `testrail_get_cases`    | Read test cases         |\r\n| `testrail_add_case`     | Create new test case    |\r\n| `testrail_update_case`  | Update existing case    |\r\n| `testrail_add_run`      | Create test run         |\r\n| `testrail_add_result`   | Push individual result  |\r\n| `testrail_get_results`  | Read historical results |\r\n\r\n## Test Annotation Format\r\n\r\nAll Playwright tests linked to TestRail include:\r\n\r\n```typescript\r\ntest(\"should login successfully\", async ({ page }) => {\r\n  test.info().annotations.push({\r\n    type: \"testrail\",\r\n    description: \"C12345\",\r\n  });\r\n  // ... test code\r\n});\r\n```\r\n\r\nThis annotation is the bridge between Playwright and TestRail.\r\n\r\n## Output\r\n\r\n- Operation summary with counts\r\n- Any errors or unmatched cases\r\n- Link to TestRail run/results\r\n",
+    "content_hash": "6dd4032987e348fdb20a54c1fba7ca10c55b69401c8c6ad9cdbb9ea6391b3adc",
+    "generated": false,
+    "is_text": true,
+    "line_count": 136,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3571,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   npx playwright test --reporter=json > test-results.json",
+    "content_hash": "4954a949c3452d0fb7e2a9ec97c8cd213d0f063c7a550a90787926f661607ab0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 58,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 52,
+    "source_start_line": 50
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "javascript",
+    "content": "test(\"should login successfully\", async ({ page }) => {\r\n  test.info().annotations.push({\r\n    type: \"testrail\",\r\n    description: \"C12345\",\r\n  });\r\n  // ... test code\r\n});",
+    "content_hash": "1a731f34ef9e8ff593a0d4dca95540a34e480c00d641f90355362079fd175a4a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 7,
+    "relative_path": ".malskills_fences/SKILL__fence_7.ts",
+    "size_bytes": 172,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 127,
+    "source_start_line": 119
+  }
+]

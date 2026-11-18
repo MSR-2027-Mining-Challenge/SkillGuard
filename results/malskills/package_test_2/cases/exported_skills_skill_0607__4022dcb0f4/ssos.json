@@ -1,0 +1,1393 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_1.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_11.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_12.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::limit": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::limit",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::limit"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::limit": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::limit",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::limit"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_13.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\""
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_14.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_14.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_14.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_14.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::file_read::1"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_15.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_15.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_15.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_15.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_15.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_15.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_15.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_15.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_15.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_15.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_15.sh::file_read::1"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_4.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::1"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_read::1"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -L \"<video-url>\" -o /tmp/luma_output.mp4",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -L \"<video-url>\" -o /tmp/luma_output.mp4": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -L \"<video-url>\" -o /tmp/luma_output.mp4",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_6.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -L \"<video-url>\" -o /tmp/luma_output.mp4"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_8.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_9.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::file_read::1",
+      "path_class": "sensitive",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::file_read::1"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:54:54:data_receive",
+      "source_end_line": 54,
+      "source_start_line": 54
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:79:79:data_receive",
+      "source_end_line": 79,
+      "source_start_line": 79
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:87:87:data_receive",
+      "source_end_line": 87,
+      "source_start_line": 87
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:100:100:data_receive",
+      "source_end_line": 100,
+      "source_start_line": 100
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:122:122:data_receive",
+      "source_end_line": 122,
+      "source_start_line": 122
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:128:128:data_receive",
+      "source_end_line": 128,
+      "source_start_line": 128
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00038"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'"
+    ],
+    "sso_id": "sso_00038",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:153:153:data_receive",
+      "source_end_line": 153,
+      "source_start_line": 153
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00039"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'"
+    ],
+    "sso_id": "sso_00039",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:159:159:data_receive",
+      "source_end_line": 159,
+      "source_start_line": 159
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00040"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'"
+    ],
+    "sso_id": "sso_00040",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:165:165:data_receive",
+      "source_end_line": 165,
+      "source_start_line": 165
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00041"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\""
+    ],
+    "sso_id": "sso_00041",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:171:171:data_receive",
+      "source_end_line": 171,
+      "source_start_line": 171
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00042"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'"
+    ],
+    "sso_id": "sso_00042",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:177:177:data_receive",
+      "source_end_line": 177,
+      "source_start_line": 177
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00043"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'"
+    ],
+    "sso_id": "sso_00043",
+    "subtype": "data_receive"
+  }
+]

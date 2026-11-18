@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: gsd-quick\r\ndescription: \"Execute a quick task with GSD guarantees (atomic commits, state tracking) but skip optional agents\"\r\n---\r\n\r\n<cursor_skill_adapter>\r\n## A. Skill Invocation\r\n- This skill is invoked when the user mentions `gsd-quick` or describes a task matching this skill.\r\n- Treat all user text after the skill mention as `{{GSD_ARGS}}`.\r\n- If no arguments are present, treat `{{GSD_ARGS}}` as empty.\r\n\r\n## B. User Prompting\r\nWhen the workflow needs user input, prompt the user conversationally:\r\n- Present options as a numbered list in your response text\r\n- Ask the user to reply with their choice\r\n- For multi-select, ask for comma-separated numbers\r\n\r\n## C. Tool Usage\r\nUse these Cursor tools when executing GSD workflows:\r\n- `Shell` for running commands (terminal operations)\r\n- `StrReplace` for editing existing files\r\n- `Read`, `Write`, `Glob`, `Grep`, `Task`, `WebSearch`, `WebFetch`, `TodoWrite` as needed\r\n\r\n## D. Subagent Spawning\r\nWhen the workflow needs to spawn a subagent:\r\n- Use `Task(subagent_type=\"generalPurpose\", ...)`\r\n- The `model` parameter maps to Cursor's model options (e.g., \"fast\")\r\n</cursor_skill_adapter>\r\n\r\n<objective>\r\nExecute small, ad-hoc tasks with GSD guarantees (atomic commits, STATE.md tracking).\r\n\r\nQuick mode is the same system with a shorter path:\r\n- Spawns gsd-planner (quick mode) + gsd-executor(s)\r\n- Quick tasks live in `.planning/quick/` separate from planned phases\r\n- Updates STATE.md \"Quick Tasks Completed\" table (NOT ROADMAP.md)\r\n\r\n**Default:** Skips research, discussion, plan-checker, verifier. Use when you know exactly what to do.\r\n\r\n**`--discuss` flag:** Lightweight discussion phase before planning. Surfaces assumptions, clarifies gray areas, captures decisions in CONTEXT.md. Use when the task has ambiguity worth resolving upfront.\r\n\r\n**`--full` flag:** Enables plan-checking (max 2 iterations) and post-execution verification. Use when you want quality guarantees without full milestone ceremony.\r\n\r\n**`--research` flag:** Spawns a focused research agent before planning. Investigates implementation approaches, library options, and pitfalls for the task. Use when you're unsure of the best approach.\r\n\r\nFlags are composable: `--discuss --research --full` gives discussion + research + plan-checking + verification.\r\n</objective>\r\n\r\n<execution_context>\r\n@/home/milgraph/Projects/algo_framework/.cursor/get-shit-done/workflows/quick.md\r\n</execution_context>\r\n\r\n<context>\r\n{{GSD_ARGS}}\r\n\r\nContext files are resolved inside the workflow (`init quick`) and delegated via `<files_to_read>` blocks.\r\n</context>\r\n\r\n<process>\r\nExecute the quick workflow from @/home/milgraph/Projects/algo_framework/.cursor/get-shit-done/workflows/quick.md end-to-end.\r\nPreserve all workflow gates (validation, task description, planning, execution, state updates, commits).\r\n</process>\r\n",
+    "content_hash": "457f0945e73c20ef5175a1616d80a5c56e14766f679d75a977722ebdc1b619d7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 63,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2844,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,626 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_path": "SKILL.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit dynamic module loading pattern",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00000",
+    "matched_text": "Single node capture uses $NAME syntax. For example, pattern const $NAME = require($PATH) captures the variable name and path.",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0000",
+        "path": "SKILL.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 143,
+        "start_line": 142
+      }
+    },
+    "span": {
+      "end_line": 143,
+      "start_line": 142
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0012",
+    "artifact_path": "modules/.malskills_fences/refactoring-patterns__fence_18.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell reads file, config, or database contents",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "cat changes.json | jq '.[] | {file: .path, line: .range.start.line, fix: .fix}'",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0012",
+        "path": "modules/.malskills_fences/refactoring-patterns__fence_18.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0015",
+    "artifact_path": "modules/.malskills_fences/security-rules__fence_15.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell reads file, config, or database contents",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "sg scan --config sgconfig.yml --json | jq '.[] | select(.severity == \"error\")'",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0015",
+        "path": "modules/.malskills_fences/security-rules__fence_15.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0017",
+    "artifact_path": "references/.malskills_fences/examples__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "brew install ast-grep",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0017",
+        "path": "references/.malskills_fences/examples__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0017",
+    "artifact_path": "references/.malskills_fences/examples__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "npm install -g @ast-grep/cli",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0017",
+        "path": "references/.malskills_fences/examples__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 5,
+        "start_line": 5
+      }
+    },
+    "span": {
+      "end_line": 5,
+      "start_line": 5
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0047",
+    "artifact_path": "references/.malskills_fences/reference__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "brew install ast-grep",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0047",
+        "path": "references/.malskills_fences/reference__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0048",
+    "artifact_path": "references/.malskills_fences/reference__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00007",
+    "matched_text": "npm install -g @ast-grep/cli",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0048",
+        "path": "references/.malskills_fences/reference__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0016",
+    "artifact_path": "references/examples.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00008",
+    "matched_text": "brew install ast-grep",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0016",
+        "path": "references/examples.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 11,
+        "start_line": 11
+      }
+    },
+    "span": {
+      "end_line": 11,
+      "start_line": 11
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0016",
+    "artifact_path": "references/examples.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00009",
+    "matched_text": "npm install -g @ast-grep/cli",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0016",
+        "path": "references/examples.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 14,
+        "start_line": 14
+      }
+    },
+    "span": {
+      "end_line": 14,
+      "start_line": 14
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0016",
+    "artifact_path": "references/examples.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00010",
+    "matched_text": "- npm install -g @ast-grep/cli",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0016",
+        "path": "references/examples.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 822,
+        "start_line": 822
+      }
+    },
+    "span": {
+      "end_line": 822,
+      "start_line": 822
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0046",
+    "artifact_path": "references/reference.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00011",
+    "matched_text": "brew install ast-grep",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0046",
+        "path": "references/reference.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 27,
+        "start_line": 27
+      }
+    },
+    "span": {
+      "end_line": 27,
+      "start_line": 27
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0046",
+    "artifact_path": "references/reference.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00012",
+    "matched_text": "npm install -g @ast-grep/cli",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0046",
+        "path": "references/reference.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 32,
+        "start_line": 32
+      }
+    },
+    "span": {
+      "end_line": 32,
+      "start_line": 32
+    },
+    "subtype": "package_installation"
+  }
+]

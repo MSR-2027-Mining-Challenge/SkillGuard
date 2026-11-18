@@ -1,0 +1,203 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "rules/01-choosing-and-modeling.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "rules/02-schema-migrations.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "rules/03-queries-and-indexes.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "path": "rules/.malskills_fences/03-queries-and-indexes__fence_2.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0005",
+      "path": "rules/.malskills_fences/03-queries-and-indexes__fence_4.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0006",
+      "path": "rules/04-transactions-concurrency.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0007",
+      "path": "rules/05-reliability-and-scale.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0008",
+      "path": "rules/06-security-and-compliance.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0009",
+      "path": "rules/07-vector-and-ai.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0010",
+      "path": "rules/08-surrealdb-multimodel.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0011",
+      "path": "rules/.malskills_fences/08-surrealdb-multimodel__fence_0.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0012",
+      "path": "rules/.malskills_fences/08-surrealdb-multimodel__fence_2.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0010",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209",
+      "target": "value::b9cae83872e33f7401e3",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "rules/01-choosing-and-modeling.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "rules/02-schema-migrations.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "rules/03-queries-and-indexes.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "rules/.malskills_fences/03-queries-and-indexes__fence_2.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "rules/.malskills_fences/03-queries-and-indexes__fence_4.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "rules/04-transactions-concurrency.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "rules/05-reliability-and-scale.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "rules/06-security-and-compliance.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": "rules/07-vector-and-ai.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": "rules/08-surrealdb-multimodel.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": "rules/.malskills_fences/08-surrealdb-multimodel__fence_0.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": "rules/.malskills_fences/08-surrealdb-multimodel__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209",
+      "identity_key": "rules/08-surrealdb-multimodel.md::dynamic_code_execution::209",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::b9cae83872e33f7401e3",
+      "kind": "value",
+      "value": "rules/08-surrealdb-multimodel.md::dynamic_code_execution::209",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

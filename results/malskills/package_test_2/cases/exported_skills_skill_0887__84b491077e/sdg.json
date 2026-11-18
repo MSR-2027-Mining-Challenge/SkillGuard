@@ -1,0 +1,171 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "target": "value::4c10820415c4b05d3f0f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2",
+      "target": "value::071524d29192746928a2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "target": "value::a367d511b05973e7ce6f",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::4c10820415c4b05d3f0f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2",
+      "identity_key": ".malskills_fences/SKILL__fence_3.sh::file_read::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::071524d29192746928a2",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_3.sh::file_read::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "identity_key": "SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::a367d511b05973e7ce6f",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

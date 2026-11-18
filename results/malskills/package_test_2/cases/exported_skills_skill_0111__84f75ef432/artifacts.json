@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: source-code-management\r\ndescription: authcrunch source code management and commit message rules. Use when creating, reviewing, or updating commit messages, especially when the user asks to create a commit message for a change in this repository.\r\n---\r\n\r\n# Source Code Management\r\n\r\n## Commit Message Rules\r\n\r\nAll hand-written commits must have a proper commit message.\r\n\r\nA hand-written commit message subject line must conform to these rules:\r\n\r\n- The first line of each commit message is the subject.\r\n- The subject line MUST be less than 87 characters long.\r\n- The subject line MUST NOT terminate with a period (`.`).\r\n- The subject line MUST start with a change indicator followed by a colon\r\n  (`:`).\r\n\r\n## Change Indicators\r\n\r\nUse exactly one indicator. Prefer the most specific repository surface when the\r\nchange is clearly anchored there. Use a maintenance label when the change is\r\nrepository plumbing, documentation, tests, release work, or cross-cutting\r\nmaintenance.\r\n\r\nUse one of these indicators:\r\n\r\n- `build`: local binary build behavior, build flags, or `bin/authcrunch`\r\n  generation\r\n- `caddy`: Caddy runtime integration, Caddy module wiring, `main.go`, or\r\n  Caddyfile behavior\r\n- `deps`: dependency updates in `go.mod` or `go.sum`\r\n- `docker`: Dockerfile image contents, Caddy builder/runtime image tags,\r\n  `xcaddy` plugin list, `authdbctl` image installation, or OCI labels\r\n- `github`: GitHub Actions workflows and repository GitHub metadata\r\n- `goreleaser`: GoReleaser packaging and release artifact configuration\r\n- `ops`: Makefile automation, version sync, release procedure, repository\r\n  maintenance, or deliberately cross-cutting operational work\r\n- `release`: release-only version metadata when the change is not created by\r\n  existing release automation\r\n- `security`: vulnerability fixes, hardening, dependency-audit work, or\r\n  disclosure-policy changes\r\n- `skills`: AI agent skills, skill metadata, `AGENTS.md`, or agent-facing\r\n  repository instructions\r\n- `docs`: documentation-only changes\r\n- `tests`: test additions, fixture updates, or validation-only changes\r\n- `fix`: correctness fix without a known production breakage\r\n- `feat`: user-facing capability that does not fit a more specific surface\r\n- `various`: intentionally mixed changes that do not fit one indicator\r\n\r\nOlder repository history contains subjects such as `released v1.0.41`,\r\n`upgraded to caddy-security v1.1.62`, and\r\n`upgrade to github.com/greenpau/caddy-security v1.1.58`. Treat those as\r\nexisting automation/history, not as templates for new hand-written messages.\r\nPrefer colon-form subjects such as:\r\n\r\n```text\r\nops: upgrade caddy-security to v1.1.63\r\ndocker: add authdbctl image smoke check\r\nskills: add repo-local agent guidance\r\n```\r\n\r\n## Commit Message Body\r\n\r\nThe commit message body must contain these sections in this order:\r\n\r\n1. `Before this commit:`\r\n2. `After this commit:`\r\n3. `Tests:`\r\n4. `More info:`\r\n\r\nThe body may also contain these optional sections:\r\n\r\n1. `Resolves:`\r\n2. `Partial Resolution:`\r\n3. `See also:`\r\n4. `Links:`\r\n\r\nBody rules:\r\n\r\n- Separate sections with one blank line.\r\n- Each section title MUST end with a colon (`:`).\r\n- Lines MUST NOT exceed 87 characters, except in `Links` and `More info`.\r\n- Use `Resolves` only when the PR or commit resolves an issue completely.\r\n- Use `Partial Resolution` when the PR or commit addresses an issue partially.\r\n- Use `See also` for additional related references.\r\n- `Resolves`, `Partial Resolution`, and `See also` MUST contain valid links.\r\n- Multiple links in those reference sections MUST be separated by comma and\r\n  space (`, `).\r\n- `Tests` MUST describe the command or manual check performed.\r\n- If no smoke test was run, `Tests` MUST say `not run` and include the reason.\r\n- `More info` MUST summarize implementation details or notable decisions.\r\n\r\nUse this template:\r\n\r\n```text\r\nindicator: concise subject under 87 characters\r\n\r\nBefore this commit: describe the previous behavior, limitation, or state.\r\n\r\nAfter this commit: describe the new behavior, implementation, or state.\r\n\r\nTests: describe the command or manual check performed.\r\n\r\nMore info: summarize important implementation details or decisions.\r\n```\r\n\r\n## Commit Message File Workflow\r\n\r\nWhen asked to \"create commit message for the change\", create a file in\r\n`tmp/commits` and place the commit message in that file. Commit message files in\r\n`tmp/commits` are working artifacts and should not be committed unless\r\nexplicitly requested. Prefix the file name with `YYYYMMDD_HHMM_`.\r\n",
+    "content_hash": "f43abf5e708ba30a419a3214e457da186ee63655dc4f6dbfd278401b389062dd",
+    "generated": false,
+    "is_text": true,
+    "line_count": 115,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4550,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Source Code Management\"\r\n  short_description: \"Commit message rules for authcrunch\"\r\n  default_prompt: \"Use $source-code-management to create a commit message for this change.\"\r\n",
+    "content_hash": "41acaeba6b357c73ab476685be9c6aa226d1d586d95d5c26eb200ab4cfa379c3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 207,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

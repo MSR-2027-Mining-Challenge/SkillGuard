@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: gsd-validate-phase\r\ndescription: \"Retroactively audit and fill Nyquist validation gaps for a completed phase\"\r\n---\r\n\r\n<objective>\r\nAudit Nyquist validation coverage for a completed phase. Three states:\r\n- (A) VALIDATION.md exists \u2014 audit and fill gaps\r\n- (B) No VALIDATION.md, SUMMARY.md exists \u2014 reconstruct from artifacts\r\n- (C) Phase not executed \u2014 exit with guidance\r\n\r\nOutput: updated VALIDATION.md + generated test files.\r\n</objective>\r\n\r\n<execution_context>\r\n@.agent/get-shit-done/workflows/validate-phase.md\r\n</execution_context>\r\n\r\n<context>\r\nPhase: $ARGUMENTS \u2014 optional, defaults to last completed phase.\r\n</context>\r\n\r\n<process>\r\nExecute @.agent/get-shit-done/workflows/validate-phase.md.\r\nPreserve all workflow gates.\r\n</process>\r\n",
+    "content_hash": "bda57f50a58ea0d36a770ceaacb7883adaf7b7cd83325100d35f6d59e04bc2b0",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "SKILL.md",
+    "size_bytes": 763,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

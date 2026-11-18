@@ -1,0 +1,677 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev vitest @vitest/coverage-v8",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev @playwright/test",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_19.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev husky",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_19.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_19.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_19.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_20.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": ". \"$(dirname -- \"$0\")/_/husky.sh\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_20.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_28.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev typescript",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_28.sh::package_installation::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_28.sh::package_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_28.sh::package_installation::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_31.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev @biomejs/biome",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_31.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_31.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_31.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_32.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_32.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_32.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_32.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_33.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev vitest @vitest/coverage-v8",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_33.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_33.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_33.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_35.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev vitest @vitest/coverage-v8 @playwright/test",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_35.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_35.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_35.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_36.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev husky",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_36.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_36.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_36.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_36.sh"
+    ],
+    "attributes": {
+      "matched_text": "chmod +x .husky/pre-commit",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_36.sh::file_permission_modify::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_36.sh::file_permission_modify::4",
+      "path_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_36.sh::file_permission_modify::4"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_permission_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev @biomejs/biome",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev @biomejs/biome",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::248": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::248",
+      "source_end_line": 248,
+      "source_start_line": 248,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::248"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::352": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::352",
+      "source_end_line": 352,
+      "source_start_line": 352,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::352"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev vitest @vitest/coverage-v8",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::431": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::431",
+      "source_end_line": 431,
+      "source_start_line": 431,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::431"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev @playwright/test",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::487": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::487",
+      "source_end_line": 487,
+      "source_start_line": 487,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::487"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev husky",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::520": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::520",
+      "source_end_line": 520,
+      "source_start_line": 520,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::520"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev typescript",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::732": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::732",
+      "source_end_line": 732,
+      "source_start_line": 732,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::732"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev @biomejs/biome",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::760": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::760",
+      "source_end_line": 760,
+      "source_start_line": 760,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::760"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::767": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::767",
+      "source_end_line": 767,
+      "source_start_line": 767,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::767"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev vitest @vitest/coverage-v8",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::783": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::783",
+      "source_end_line": 783,
+      "source_start_line": 783,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::783"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev vitest @vitest/coverage-v8 @playwright/test",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::795": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::795",
+      "source_end_line": 795,
+      "source_start_line": 795,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::795"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install --save-dev husky",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::802": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::802",
+      "source_end_line": 802,
+      "source_start_line": 802,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::802"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "package_installation"
+  }
+]

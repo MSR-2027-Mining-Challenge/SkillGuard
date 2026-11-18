@@ -1,0 +1,321 @@
+[
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_auth.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gsc_auth.py::credential_data_access::24": "path"
+      },
+      "operation_object": "obj::operation::scripts/gsc_auth.py::credential_data_access::24",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gsc_auth.py::credential_data_access::24"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_auth.py"
+    ],
+    "attributes": {
+      "matched_text": "client_id = args.client_id or os.environ.get(\"GOOGLE_CLIENT_ID\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/gsc_auth.py::client_id": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/gsc_auth.py::client_id",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 40,
+      "source_start_line": 40
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/gsc_auth.py::client_id"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_auth.py"
+    ],
+    "attributes": {
+      "matched_text": "client_secret = args.client_secret or os.environ.get(\"GOOGLE_CLIENT_SECRET\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/gsc_auth.py::client_secret": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/gsc_auth.py::client_secret",
+      "secret_class": "generic_secret",
+      "sensitivity_class": "contextual",
+      "source_end_line": 41,
+      "source_start_line": 41
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/gsc_auth.py::client_secret"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_auth.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gsc_auth.py::credential_data_access::46": "path"
+      },
+      "operation_object": "obj::operation::scripts/gsc_auth.py::credential_data_access::46",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 46,
+      "source_start_line": 46
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gsc_auth.py::credential_data_access::46"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gsc_query.py::credential_data_access::30": "path"
+      },
+      "operation_object": "obj::operation::scripts/gsc_query.py::credential_data_access::30",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 30,
+      "source_start_line": 30
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gsc_query.py::credential_data_access::30"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "client_id = os.environ.get(\"GOOGLE_CLIENT_ID\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/gsc_query.py::client_id": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/gsc_query.py::client_id",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 35,
+      "source_start_line": 35
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/gsc_query.py::client_id"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "client_secret = os.environ.get(\"GOOGLE_CLIENT_SECRET\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/gsc_query.py::client_secret": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/gsc_query.py::client_secret",
+      "secret_class": "generic_secret",
+      "sensitivity_class": "contextual",
+      "source_end_line": 36,
+      "source_start_line": 36
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/gsc_query.py::client_secret"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "refresh_token = os.environ.get(\"GOOGLE_REFRESH_TOKEN\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/gsc_query.py::refresh_token": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/gsc_query.py::refresh_token",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 37,
+      "source_start_line": 37
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/gsc_query.py::refresh_token"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gsc_query.py::credential_data_access::44": "path"
+      },
+      "operation_object": "obj::operation::scripts/gsc_query.py::credential_data_access::44",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 44,
+      "source_start_line": 44
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gsc_query.py::credential_data_access::44"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gsc_query.py::credential_data_access::105": "path"
+      },
+      "operation_object": "obj::operation::scripts/gsc_query.py::credential_data_access::105",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 105,
+      "source_start_line": 105
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gsc_query.py::credential_data_access::105"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/gsc_query.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gsc_query.py::credential_data_access::322": "path"
+      },
+      "operation_object": "obj::operation::scripts/gsc_query.py::credential_data_access::322",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 322,
+      "source_start_line": 322
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gsc_query.py::credential_data_access::322"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  }
+]

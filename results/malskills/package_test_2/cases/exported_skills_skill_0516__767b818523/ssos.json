@@ -1,0 +1,65 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker exec laravel_app php artisan route:list --path=api/nouveau-endpoint",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::path": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::path",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::path"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "docker exec laravel_app php artisan route:list --path=api/nouveau-endpoint",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::docker exec laravel_app php artisan route:list --path=api/nouveau-endpoint": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::docker exec laravel_app php artisan route:list --path=api/nouveau-endpoint",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:1:1:connection_create",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::docker exec laravel_app php artisan route:list --path=api/nouveau-endpoint"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "connection_create"
+  }
+]

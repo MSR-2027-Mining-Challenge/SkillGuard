@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# MyFin Web\r\n\r\nUse this skill when working in the `myfin-web` repository, especially when\r\nrunning commands, changing React/TypeScript code, or verifying frontend work.\r\n\r\n## Start Here\r\n\r\nThis repository is developed inside WSL, not the Windows PowerShell runtime.\r\nUse this command shape whenever Codex is launched from PowerShell:\r\n\r\n```powershell\r\nwsl -d Ubuntu-26.04 -- bash -lc \"cd ~/projects/myfin-web && <command>\"\r\n```\r\n\r\nDo not spend time checking whether PowerShell has `npm` available. It does not\r\nfor this project context; use WSL immediately.\r\n\r\n## Useful Commands\r\n\r\n- `npm run dev -- --host 0.0.0.0`\r\n- `npm run lint`\r\n- `npm run build`\r\n- `npm run preview -- --host 0.0.0.0`\r\n\r\nIf `rg` fails in WSL because it resolves to a Windows Codex app path, fall back\r\nto `find` and `grep` or a native WSL `rg`.\r\n\r\n## Project Notes\r\n\r\n- The app is a React 19, TypeScript, and Vite frontend.\r\n- Keep domain screens and components in `src/features/<domain>`.\r\n- Keep API/service calls in `src/services/<domain>`.\r\n- Keep shared components in `src/components`, providers in `src/providers`, and\r\n  helpers in `src/utils`.\r\n- Use existing MUI theme/components and React Query patterns.\r\n- Keep user-facing strings localized in both\r\n  `public/locales/en/translation.json` and\r\n  `public/locales/pt/translation.json`.\r\n\r\n## Verification Habit\r\n\r\nAfter meaningful code edits, run `npm run lint` and `npm run build` from WSL.\r\nFor UI changes, start Vite from WSL and inspect the affected route in the\r\nbrowser when practical.\r\n",
+    "content_hash": "7eb18fb179862e597973d14c7abdb5c4472d2b81e2feecb18f08e19fa829b689",
+    "generated": false,
+    "is_text": true,
+    "line_count": 45,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1528,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

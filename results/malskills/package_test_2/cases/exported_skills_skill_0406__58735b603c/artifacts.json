@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: Fixed Video Format (9:16)\r\ndescription: Fixed 1080x1920 pixel video format with percentage-based positioning. Use this when laying out video compositions, positioning elements on the canvas, or calculating dimensions. All videos render at exactly 9:16 aspect ratio for TikTok/Instagram Reels.\r\n---\r\n\r\n# Fixed Video Format (9:16)\r\n\r\nThis Skill provides Claude Code with specific guidance on how it should handle the fixed 9:16 video format.\r\n\r\n## When to use this skill:\r\n\r\n- Positioning elements in any video composition\r\n- Calculating element dimensions and coordinates\r\n- Using VIDEO_CONFIG.width and VIDEO_CONFIG.height\r\n- Defining safe zones for platform UI overlays\r\n- Creating layouts optimized for vertical viewing\r\n- Testing compositions in Remotion Studio preview\r\n\r\n## Instructions\r\n\r\n- **Fixed Dimensions**: All videos render at exactly 1080x1920 pixels (9:16 portrait); no responsive design needed\r\n- **VIDEO_CONFIG Constants**: Use `VIDEO_CONFIG` from `src/lib/theme.ts` for width/height values\r\n- **Percentage-Based Layout**: Position elements using percentages of VIDEO_CONFIG dimensions for maintainability\r\n- **TikTok Optimization**: Format optimized for TikTok/Instagram Reels vertical viewing\r\n- **Safe Zones**: Keep important content within central 90% to account for platform UI overlays\r\n- **Consistent Aspect Ratio**: All compositions must maintain 9:16 aspect ratio; test in Remotion Studio preview\r\n\r\n**Examples:**\r\n```typescript\r\n// Good: Use VIDEO_CONFIG, percentage-based positioning\r\nimport { VIDEO_CONFIG } from '@/lib/theme';\r\n\r\nexport const BookCover: React.FC = () => (\r\n  <img\r\n    src={coverUrl}\r\n    style={{\r\n      position: 'absolute',\r\n      top: VIDEO_CONFIG.height * 0.15, // 15% from top\r\n      left: VIDEO_CONFIG.width * 0.1,  // 10% from left\r\n      width: VIDEO_CONFIG.width * 0.8,  // 80% width\r\n      height: VIDEO_CONFIG.width * 0.8 * 1.5, // Maintain book aspect ratio\r\n    }}\r\n  />\r\n);\r\n\r\n// Bad: Hardcoded pixels, no VIDEO_CONFIG reference\r\n<img\r\n  style={{\r\n    position: 'absolute',\r\n    top: 300,\r\n    left: 100,\r\n    width: 800,\r\n  }}\r\n/>\r\n```\r\n",
+    "content_hash": "47f7a0749639ad312ecdf337a89a16b101bf44cc7f2cce0ed36ba520db404076",
+    "generated": false,
+    "is_text": true,
+    "line_count": 56,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2111,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "// Good: Use VIDEO_CONFIG, percentage-based positioning\r\nimport { VIDEO_CONFIG } from '@/lib/theme';\r\n\r\nexport const BookCover: React.FC = () => (\r\n  <img\r\n    src={coverUrl}\r\n    style={{\r\n      position: 'absolute',\r\n      top: VIDEO_CONFIG.height * 0.15, // 15% from top\r\n      left: VIDEO_CONFIG.width * 0.1,  // 10% from left\r\n      width: VIDEO_CONFIG.width * 0.8,  // 80% width\r\n      height: VIDEO_CONFIG.width * 0.8 * 1.5, // Maintain book aspect ratio\r\n    }}\r\n  />\r\n);\r\n\r\n// Bad: Hardcoded pixels, no VIDEO_CONFIG reference\r\n<img\r\n  style={{\r\n    position: 'absolute',\r\n    top: 300,\r\n    left: 100,\r\n    width: 800,\r\n  }}\r\n/>",
+    "content_hash": "b422eefd09ceb40e82e0060bc278ce1c56409e594dc10b42f1f1ac2675144482",
+    "generated": true,
+    "is_text": true,
+    "line_count": 25,
+    "relative_path": ".malskills_fences/SKILL__fence_0.ts",
+    "size_bytes": 637,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 55,
+    "source_start_line": 29
+  }
+]

@@ -1,0 +1,705 @@
+[
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require('fs');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::fs"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const path = require('path');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::path": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::path",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 17,
+      "source_start_line": 17
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::path"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const { execSync } = require('child_process');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::18": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::18",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:18:18:require('child_process')",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::18"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return execSync('dot -Tsvg', {\n      input: dotContent,\n      encoding: 'utf-8',\n      maxBuffer: 10 * 1024 * 1024\n    });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::72": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::72",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:72:76:child_process.execSync()",
+      "source_end_line": 76,
+      "source_start_line": 72
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::72"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::98": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::98",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:98:98:process.exit()",
+      "source_end_line": 98,
+      "source_start_line": 98
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::98"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const skillDir = path.resolve(skillDirArg);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::skillDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::skillDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 101,
+      "source_start_line": 101
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::skillDir"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const skillFile = path.join(skillDir, 'SKILL.md');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::skillFile": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::skillFile",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 102,
+      "source_start_line": 102
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::skillFile"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const skillName = path.basename(skillDir).replace(/-/g, '_');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::skillName": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::skillName",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 103,
+      "source_start_line": 103
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::skillName"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(skillFile)) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_access::105": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_access::105",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 105,
+      "source_start_line": 105
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_access::105"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::107": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::107",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:107:107:process.exit()",
+      "source_end_line": 107,
+      "source_start_line": 107
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::107"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "execSync('which dot', { encoding: 'utf-8' });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::112": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::112",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:112:112:child_process.execSync()",
+      "source_end_line": 112,
+      "source_start_line": 112
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::112"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::117": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::117",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:117:117:process.exit()",
+      "source_end_line": 117,
+      "source_start_line": 117
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::117"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const markdown = fs.readFileSync(skillFile, 'utf-8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::markdown": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::markdown",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 120,
+      "source_start_line": 120
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::markdown"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::system_command_execution::125": "command"
+      },
+      "operation_object": "obj::operation::render-graphs.js::system_command_execution::125",
+      "parameter_bindings": [],
+      "sink_callsite_id": "render-graphs.js:125:125:process.exit()",
+      "source_end_line": 125,
+      "source_start_line": 125
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::system_command_execution::125"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "console.log(`Found ${blocks.length} diagram(s) in ${path.basename(skillDir)}/SKILL.md`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_access::128": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_access::128",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 128,
+      "source_start_line": 128
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_access::128"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const outputDir = path.join(skillDir, 'diagrams');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::outputDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::outputDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 130,
+      "source_start_line": 130
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::outputDir"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(outputDir)) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_access::131": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_access::131",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 131,
+      "source_start_line": 131
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_access::131"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(outputDir);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_create::132": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_create::132",
+      "path_class": "ordinary",
+      "source_end_line": 132,
+      "source_start_line": 132,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_create::132"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const outputPath = path.join(outputDir, `${skillName}_combined.svg`);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::outputPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::outputPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 140,
+      "source_start_line": 140
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::outputPath"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(outputPath, svg);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_write::141": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_write::141",
+      "path_class": "ordinary",
+      "source_end_line": 141,
+      "source_start_line": 141,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_write::141"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const dotPath = path.join(outputDir, `${skillName}_combined.dot`);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::dotPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::dotPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 145,
+      "source_start_line": 145
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::dotPath"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(dotPath, combined);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_write::146": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_write::146",
+      "path_class": "ordinary",
+      "source_end_line": 146,
+      "source_start_line": 146,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_write::146"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "const outputPath = path.join(outputDir, `${block.name}.svg`);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::render-graphs.js::outputPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::render-graphs.js::outputPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 156,
+      "source_start_line": 156
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::render-graphs.js::outputPath"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "render-graphs.js"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(outputPath, svg);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::render-graphs.js::file_write::157": "path"
+      },
+      "operation_object": "obj::operation::render-graphs.js::file_write::157",
+      "path_class": "ordinary",
+      "source_end_line": 157,
+      "source_start_line": 157,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::render-graphs.js::file_write::157"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_write"
+  }
+]

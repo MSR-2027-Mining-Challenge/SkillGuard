@@ -1,0 +1,237 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": "references/anti-rationalization.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/deploy-proof.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "path": "references/.malskills_fences/deploy-proof__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": "references/.malskills_fences/deploy-proof__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": "references/.malskills_fences/deploy-proof__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": "scripts/cloud_run_service_evidence.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0008",
+      "path": "skill.json",
+      "type": "config"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0007",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27",
+      "target": "value::749d20ef6ce2ada9a4b5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args",
+      "target": "value::9defc7d270caccc2328c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140",
+      "target": "value::28faa8b933c516c5e75e",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "references/anti-rationalization.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/deploy-proof.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/deploy-proof__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/deploy-proof__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/deploy-proof__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "scripts/cloud_run_service_evidence.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "skill.json",
+      "type": "config"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "environment_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27",
+      "identity_key": "scripts/cloud_run_service_evidence.py::environment_access::27",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::749d20ef6ce2ada9a4b5",
+      "kind": "value",
+      "value": "scripts/cloud_run_service_evidence.py::environment_access::27",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args",
+      "identity_key": "scripts/cloud_run_service_evidence.py::args",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::9defc7d270caccc2328c",
+      "kind": "value",
+      "value": "scripts/cloud_run_service_evidence.py::args",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140",
+      "identity_key": "scripts/cloud_run_service_evidence.py::credential_data_access::140",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::28faa8b933c516c5e75e",
+      "kind": "value",
+      "value": "scripts/cloud_run_service_evidence.py::credential_data_access::140",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

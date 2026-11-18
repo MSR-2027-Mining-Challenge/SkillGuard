@@ -1,0 +1,28 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=python\npath=scripts/notify.py"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=config\npath=scripts/pyproject.toml"];
+  "obj::operation::scripts/notify.py::environment_access::15" [label="obj::operation::scripts/notify.py::environment_access::15\nkind=operand"];
+  "obj::operation::scripts/notify.py::environment_access::16" [label="obj::operation::scripts/notify.py::environment_access::16\nkind=operand"];
+  "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )" [label="obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_send"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "value::14d6811f38864d8f5464" [label="value::14d6811f38864d8f5464\nkind=value"];
+  "value::85f9c8b6dc88d0fca9ae" [label="value::85f9c8b6dc88d0fca9ae\nkind=value"];
+  "value::b11d0316af5c27fc36a0" [label="value::b11d0316af5c27fc36a0\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "art_0002" -> "sso_00002" [label="contains"];
+  "obj::operation::scripts/notify.py::environment_access::15" -> "value::14d6811f38864d8f5464" [label="value_flow"];
+  "obj::operation::scripts/notify.py::environment_access::16" -> "value::85f9c8b6dc88d0fca9ae" [label="value_flow"];
+  "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )" -> "value::b11d0316af5c27fc36a0" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )" [label="has_operand"];
+  "sso_00001" -> "obj::operation::scripts/notify.py::environment_access::15" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/notify.py::environment_access::16" [label="has_operand"];
+}

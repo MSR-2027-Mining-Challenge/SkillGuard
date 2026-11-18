@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\ndescription: \"Scrape web content, RSS feeds, or API data\"\r\ndisable-model-invocation: false\r\nallowedTools: mcp__krowork__krowork_scrape_page, mcp__krowork__krowork_scrape_elements, mcp__krowork__krowork_scrape_rss, mcp__krowork__krowork_scrape_table, mcp__krowork__krowork_scrape_api, mcp__krowork__krowork_monitor_page\r\n---\r\n\r\n# KroWork: Scrape\r\n\r\nScrape web pages, RSS feeds, API endpoints, or HTML tables.\r\n\r\n## Workflow\r\n\r\n### Step 1: Analyze Request\r\n\r\nThe user input `$ARGUMENTS` describes what to scrape. Determine the appropriate tool:\r\n\r\n- **Full page content** \u2192 `krowork_scrape_page` (title, text, links)\r\n- **Specific elements** \u2192 `krowork_scrape_elements` (CSS selector)\r\n- **RSS/Atom feed** \u2192 `krowork_scrape_rss`\r\n- **HTML table** \u2192 `krowork_scrape_table`\r\n- **REST API** \u2192 `krowork_scrape_api`\r\n- **Page monitoring** \u2192 `krowork_monitor_page` (detect changes)\r\n\r\n### Step 2: Execute Scraping\r\n\r\nCall the appropriate tool with the URL and parameters.\r\n\r\n### Step 3: Present Results\r\n\r\nDisplay the scraped data in a readable format:\r\n- Summarize key findings\r\n- Show data in tables for structured content\r\n- Highlight important links or entries\r\n- Note any errors or limitations\r\n\r\n### Step 4: Suggest Next Steps\r\n\r\nIf the user wants to:\r\n- **Save as an app**: Suggest `/krowork:create` to build an app using this data\r\n- **Register as data source**: Suggest `/krowork:datasource` for repeated access\r\n- **Monitor for changes**: Suggest using `krowork_monitor_page` on a schedule\r\n",
+    "content_hash": "ae39658086c903ab94517628f86281bf7d85c7fd75d665bd98fb99b70a4106d7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 42,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1510,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

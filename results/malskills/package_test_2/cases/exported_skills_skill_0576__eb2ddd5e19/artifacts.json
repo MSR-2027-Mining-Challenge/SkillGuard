@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: laboneq-workflow-maintainer\r\ndescription: Maintain and debug existing LabOne Q experiment/analysis workflows in this repository. Use for bug fixes, review follow-ups, and minor behavior changes under qubit_experiment/, experiments/, analysis/, and qpu_types/.\r\n---\r\n\r\n# LabOne Q Workflow Maintainer\r\n\r\n## Scope\r\n\r\nUse for maintenance work on existing modules:\r\n- bug fixes from PR/review feedback\r\n- workflow `Reference` and `OptionBuilder` failures\r\n- acquisition/update contract drift\r\n- small behavior extensions in existing experiment/analysis modules\r\n\r\nDo not use for brand-new module creation or major redesigns. For those, use\r\n`skills/module-builder/SKILL.md`.\r\n\r\n## Triage Gate (before code edits)\r\n\r\n1. Identify the failing path and exact file/function.\r\n2. Classify root cause:\r\n- workflow `Reference` misuse\r\n- option builder typing/assignment issue\r\n- acquisition/averaging contract mismatch\r\n- `update_qpu`/parameter update path mismatch\r\n- task-boundary violation (`workflow.log/comment/save_artifact`)\r\n3. List paired modules that must stay in sync (`experiments/*` and `analysis/*`).\r\n\r\n## Hard Rules\r\n\r\n- Prefer canonical package edits under `qubit_experiment/*`; keep top-level\r\n  compatibility modules import-compatible.\r\n- Keep experiment and analysis behavior aligned when changing interfaces or outputs.\r\n- In `@workflow.workflow` bodies, use workflow control flow (`workflow.if_`,\r\n  `workflow.for_`), not Python `if/for/while`.\r\n- Treat workflow outputs as `Reference`; avoid Python truthiness and container\r\n  methods on unresolved values.\r\n- Treat optional workflow inputs and workflow-parameter objects as potentially\r\n  unresolved during graph construction; do not run `int(...)`, `bool(...)`,\r\n  `isinstance(...)`, `x is None`, or attribute-based branching on them in the\r\n  workflow body. Resolve them in helper tasks first.\r\n- Set options with call style only (`opt.field(value)`), never assignment\r\n  (`opt.field = value`).\r\n- Do not assemble notebook-facing nested dict/list payloads inline in workflow\r\n  returns when nested fields come from tasks or sub-workflows. Keep returns\r\n  top-level, or assemble nested bundles in helper tasks or plain Python wrappers.\r\n- When public maintenance code accepts both plain option objects and\r\n  `OptionBuilder`s, normalize them explicitly before reading fields.\r\n- Call `workflow.comment(...)`, `workflow.log(...)`, and\r\n  `workflow.save_artifact(...)` only inside `@workflow.task`.\r\n- Enforce acquisition/averaging constraints in `create_experiment(...)` with\r\n  explicit `ValueError`.\r\n- Persist updates only via\r\n  `analysis_results.output[\"new_parameter_values\"]` + `update_qpu(...)`.\r\n- Do not use deprecated `update_qubits` in new maintenance code.\r\n- Every bug fix should include a regression test under `tests/` unless explicitly\r\n  blocked.\r\n\r\n## Maintenance Workflow\r\n\r\n1. Reproduce failure (or trace it from logs/review notes) and isolate the smallest\r\n   failing path.\r\n2. Implement a minimal fix in canonical modules; touch legacy wrappers only when\r\n   required for compatibility.\r\n3. Update paired experiment/analysis modules if interfaces or outputs changed.\r\n4. Add or adjust regression tests targeting the failure mode.\r\n   For notebook-facing payloads, include a recursive assertion that no nested value is\r\n   a `laboneq.workflow.reference.Reference`.\r\n5. Run fast checks:\r\n\r\n```bash\r\nruff check .\r\npytest -q\r\n```\r\n\r\n6. Report root cause, changed contract (if any), and validation evidence.\r\n\r\n## Quick PR Review Checklist\r\n\r\n- Any workflow `Reference` consumed via Python control flow?\r\n- Any workflow input or options object being cast/inspected directly in the workflow\r\n  body?\r\n- Any branch-local value read after a conditional chain?\r\n- Any `OptionBuilder` field written by assignment?\r\n- Any nested workflow return payload likely to leak `Reference` values into notebook\r\n  output?\r\n- Any analysis-derived output used when `do_analysis=False`?\r\n- Any persistent update path missing `new_parameter_values` keys?\r\n- Did the fix include a test that fails before and passes after?\r\n\r\n## References\r\n\r\n- `../module-builder/SKILL.md` (shared LabOne Q workflow contracts)\r\n",
+    "content_hash": "73daa9d7526e1049f2e715a2a8e2a38b1d1f386fb35b19031212fb35703e8402",
+    "generated": false,
+    "is_text": true,
+    "line_count": 95,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4180,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "ruff check .\r\npytest -q",
+    "content_hash": "5fe55bba6df5e2019bb0db8755acde72fcd4df5608ba25e14e8a4298de58f1b5",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 23,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 75,
+    "source_start_line": 72
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Workflow Maintainer\"\r\n  short_description: \"Debug and maintain existing LabOne Q workflows\"\r\n  default_prompt: \"Debug and maintain existing LabOne Q experiment and analysis workflows in this repository. Focus on minimal bugfixes, workflow Reference and OptionBuilder safety, acquisition/update contract correctness, and add regression tests for each fix.\"\r\n",
+    "content_hash": "dfa6cc553e8dd97177caf20d3a56ddc78e3f50371a84cf899553fbd4b38cab59",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 386,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

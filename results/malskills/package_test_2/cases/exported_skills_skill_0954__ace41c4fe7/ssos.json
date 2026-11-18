@@ -1,0 +1,89 @@
+[
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "--body \"$(cat <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_read::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_read::4",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::file_read::4"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat apps/app/package.json | grep '\"version\"'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh issue comment {ISSUE_NUMBER} --repo growilabs/growi --body \"$(cat <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  }
+]

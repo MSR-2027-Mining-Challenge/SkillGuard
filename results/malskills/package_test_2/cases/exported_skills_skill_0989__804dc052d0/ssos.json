@@ -1,0 +1,356 @@
+[
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn '/nix/store/' ~/.gitconfig ~/.bashrc ~/.zshrc ~/.config/ 2>/dev/null",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo nixos-rebuild switch --flake /etc/nixos",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "nix shell nixpkgs#git nixpkgs#ripgrep nixpkgs#curl",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::nix shell nixpkgs#git nixpkgs#ripgrep nixpkgs#curl": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::nix shell nixpkgs#git nixpkgs#ripgrep nixpkgs#curl",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::nix shell nixpkgs#git nixpkgs#ripgrep nixpkgs#curl"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "bash -c 'python3 my_script.py arg1 arg2'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::4": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::4",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_4.sh:4:4:system_command_execution",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::4"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "nixpkgs#gnugrep nixpkgs#bash --command bash -c '",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::8": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_4.sh:8:8:system_command_execution",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::8"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -la output/",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_search::11": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_search::11",
+      "path_class": "ordinary",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_search::11"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo nixos-rebuild switch --flake .",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.sh::process_control::3": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.sh::process_control::3",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 3,
+      "source_start_line": 3,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.sh::process_control::3"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo nixos-rebuild list-generations",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::process_control::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::process_control::2",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::process_control::2"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo nix-env --delete-generations old",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::process_control::3": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::process_control::3",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 3,
+      "source_start_line": 3,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::process_control::3"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl start/stop/restart <service>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::process_control::1",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::process_control::1"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl enable/disable <service>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::process_control::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::process_control::2",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::process_control::2"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl enable/disable <service>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_configuration_modify::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_configuration_modify::2",
+      "resource_class": "startup_configuration",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_configuration_modify::2"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_configuration_modify"
+  }
+]

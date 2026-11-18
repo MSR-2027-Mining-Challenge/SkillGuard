@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: deslop-repo\r\ndescription: Clean up the EZVals Codebase\r\n---\r\n\r\nI want to clean up tech debt and remove as many lines of code as possible in this codebase. The goal is to simplify the codebase as much as possible while still maintaining the same behavior and performance. The ultimate flex of a good developer is to tell them to download my lib, and its this many lines of code! The behavior right now is great, I just want to simplify the code. I suggest you:\r\n\r\n1. Make sure integration tests give you a snapshot of the current public behavior. Crosscheck docs/changelog.mdx and @README.md to make sure all public features and edge cases mentioned are covered in the integration tests.\r\n2. Remove the bloat code\r\n3. Run tests to confirm no regressions.\r\n\r\nThe goal:\r\n1. Simple, understandable, non-confusing code\r\n2. No useless code\r\n3. Efficient code, as in solves the most in the fewest lines of code\r\n\r\nThe type of bloat code you might look out for:\r\n- functions that are only used in 1 place are bad practice. The only time a short function makes sense is to keep things DRY. There are some exceptions where longer functions that are only used once make sense. I just want to avoid spaghetti code jumping all over the place. No need to make things into little reusable functions if theyre not actively being reused somewhere.\r\n\r\n- Overly defensive code should be removed. The authors tend to overdue the fallbacks and error handling and safety. Things like type checking things that would obviously be the correct type. Or falling back to another hardcoded value if something expected is not found. We want things to fail loudly if they arent where we expect them to be! But this is also a great opportunity to reduce lines of code.\r\n\r\n\r\nBesides that, you have carte blanche. Comments and clear naming is useful for maintainablilty\r\n",
+    "content_hash": "19dd23d7e4847ed75d00b4abfcae6fc5f54b90d958cab794cee978a9d17bf79e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 24,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1849,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

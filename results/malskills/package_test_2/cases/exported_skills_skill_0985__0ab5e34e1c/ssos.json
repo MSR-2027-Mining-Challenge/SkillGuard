@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat ./scan.pdf | fakturownia invoice add-attachment --id 111 --file - --name scan.pdf --dry-run --json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 38,
+      "source_start_line": 38
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::38"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "fakturownia invoice download-attachments --id 111 --path ./invoice-111-attachments.zip --json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43",
+      "path_class": "ordinary",
+      "source_end_line": 43,
+      "source_start_line": 43,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::43"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_write"
+  }
+]

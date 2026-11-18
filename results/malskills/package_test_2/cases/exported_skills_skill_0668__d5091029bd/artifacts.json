@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: openapi-generator-online\r\ndescription: \"OpenAPI Generator Online API skill. Use when working with OpenAPI Generator Online for api. Covers 7 endpoints.\"\r\nversion: 1.0.0\r\ngenerator: lapsh\r\n---\r\n\r\n# OpenAPI Generator Online\r\nAPI version: 7.12.0\r\n\r\n## Auth\r\nNo authentication required.\r\n\r\n## Base URL\r\nhttps://api.openapi-generator.tech/\r\n\r\n## Setup\r\n1. No auth setup needed\r\n2. GET /api/gen/clients -- verify access\r\n3. POST /api/gen/clients/{language} -- create first clients\r\n\r\n## Endpoints\r\n\r\n7 endpoints across 1 groups. See references/api-spec.lap for full details.\r\n\r\n### api\r\n| Method | Path | Description |\r\n|--------|------|-------------|\r\n| GET | /api/gen/clients | Gets languages supported by the client generator |\r\n| GET | /api/gen/clients/{language} | Returns options for a client library |\r\n| POST | /api/gen/clients/{language} | Generates a client library |\r\n| GET | /api/gen/download/{fileId} | Downloads a pre-generated file |\r\n| GET | /api/gen/servers | Gets languages supported by the server generator |\r\n| GET | /api/gen/servers/{framework} | Returns options for a server framework |\r\n| POST | /api/gen/servers/{framework} | Generates a server library |\r\n\r\n## Common Questions\r\n\r\nMatch user requests to endpoints in references/api-spec.lap. Key patterns:\r\n- \"List all clients?\" -> GET /api/gen/clients\r\n- \"Get client details?\" -> GET /api/gen/clients/{language}\r\n- \"Get download details?\" -> GET /api/gen/download/{fileId}\r\n- \"List all servers?\" -> GET /api/gen/servers\r\n- \"Get server details?\" -> GET /api/gen/servers/{framework}\r\n\r\n## Response Tips\r\n- Check response schemas in references/api-spec.lap for field details\r\n- Create/update endpoints typically return the created/updated object\r\n\r\n## References\r\n- Full spec: See references/api-spec.lap for complete endpoint details, parameter tables, and response schemas\r\n\r\n> Generated from the official API spec by [LAP](https://lap.sh)\r\n",
+    "content_hash": "4d51f652718d9a19498a46f8c2a24225f3d20ea3861c7c8cb7f48bb7027f9843",
+    "generated": false,
+    "is_text": true,
+    "line_count": 54,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1920,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

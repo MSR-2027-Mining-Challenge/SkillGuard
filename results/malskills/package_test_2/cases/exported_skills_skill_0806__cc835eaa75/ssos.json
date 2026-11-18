@@ -1,0 +1,70 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_1.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\""
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  }
+]

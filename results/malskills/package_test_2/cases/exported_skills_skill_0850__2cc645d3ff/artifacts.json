@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: visat-robustness-eval\r\ndescription: Evaluates the robustness of traffic sign recognition models against adversarial attacks (PGD) and distribution shifts (ImageNet-C corruptions, color quantization). It specifically probes multi-task learning models for spurious correlations across visual attributes (color, shape, symbol, text) by measuring error propagation and task-dependent vulnerability. Use when the user wants to benchmark on VISAT, or asks about evaluating this task. Reports epsilon (model error).\r\nmetadata:\r\n  skill_kind: dataset_eval\r\n  source_arxiv: 2510.26833\r\n  bibtex_key: yu2025visat\r\n  confidence: high\r\n---\r\n\r\n# visat-robustness-eval\r\n\r\n> VISAT: Benchmarking Adversarial and Distribution Shift Robustness in Traffic Sign Recognition with Visual Attributes \u2014 Simon Yu et al. (arXiv:2510.26833, 2025)\r\n\r\n## What this evaluates\r\n\r\nEvaluates the robustness of traffic sign recognition models against adversarial attacks (PGD) and distribution shifts (ImageNet-C corruptions, color quantization). It specifically probes multi-task learning models for spurious correlations across visual attributes (color, shape, symbol, text) by measuring error propagation and task-dependent vulnerability.\r\n\r\n## Datasets\r\n\r\n- **VISAT** \u2014 total ?; splits: test (-1), test_attacked (-1)\r\n\r\n## Metrics\r\n\r\n- `epsilon (model error)` **(primary)** \u2014 range: [0, 1]\r\n  - 1 - model accuracy. Represents the overall error rate on a given split.\r\n- `Delta_epsilon (relative model error)` \u2014 range: [0, 1]\r\n  - epsilon_at - epsilon_cl. The difference between model error on an attacked split and the clean split.\r\n- `epsilon_cumulative` \u2014 range: [0, 1]\r\n  - Sum of Delta_epsilon across all MTL tasks under a single attack. Measures total robustness degradation across tasks.\r\n- `RECorr` \u2014 range: [0, 1]\r\n  - (1/n) * sum_{i=0}^{n} (Delta_epsilon_i / Delta_epsilon_t), where n=3 non-targeted tasks and t is the targeted task. Measures error correlation propagation across MTL tasks.\r\n\r\n## Input / output format\r\n\r\n**Input**: Traffic sign image patches (cropped from MTSD). For MTL models, inputs are paired with visual attribute labels (color, shape, symbol, text).\r\n\r\n**Output**: Predicted traffic sign class, plus predicted visual attributes (color, shape, symbol, text) for MTL models.\r\n\r\n## Scoring recipe\r\n\r\n```python\r\ndef compute_metrics(preds, labels, is_attacked=False):\r\n    accuracy = mean(preds == labels)\r\n    epsilon = 1.0 - accuracy\r\n    if is_attacked:\r\n        epsilon_at = epsilon\r\n        delta_epsilon = epsilon_at - epsilon_cl\r\n        # For MTL tasks:\r\n        epsilon_cumulative = sum(delta_epsilon_i for i in tasks)\r\n        re_corr = mean(delta_epsilon_i / delta_epsilon_target for i in non_targeted_tasks)\r\n    return epsilon, delta_epsilon, epsilon_cumulative, re_corr\r\n```\r\n\r\n## Common pitfalls\r\n\r\n- PGD attacks are highly model-specific; cross-examination shows attacks generated for ResNet-152 are ineffective against ViT-B/32, and vice versa.\r\n- Blurring corruptions yield minimal performance drops because the dataset already contains small, distant sign patches that are naturally blurry, making blur an ineffective distribution shift.\r\n- MTL models with disabled backbone fine-tuning (Linear heads) show uniform vulnerability across all tasks, as PGD attacks solely target the task heads rather than shared backbone features.\r\n\r\n## Evidence (verbatim from paper)\r\n\r\n> For the following benchmarks, we use the metrics defined below to gauge model robustness: * \u2022 $\\epsilon$: model error, i.e., 1 - model accuracy. * \u2022 $\\epsilon_{clean}$ or $\\epsilon_{cl}$: model error evaluated on the original, clean VISAT testing split. * \u2022 $\\epsilon_{attacked}$ or $\\epsilon_{at}$: model error evaluated on an attacked VISAT testing split. * \u2022 $\\Delta_{\\epsilon}$\\= $\\epsilon_{at}$ - $\\epsilon_{cl}$: relative model error, i.e., difference between attacked and clean model errors. * \u2022 $\\epsilon_{cumulative}$ or $\\epsilon_{cu}$: cumulative relative model error across MTL tasks under an attack. * \u2022 $\\textit{RECorr}\\=\\frac{1}{n}\\sum_{i\\=0}^{n}\\frac{\\Delta_{\\epsilon_{i}}}{\\Delta_{\\epsilon_{t}}}$: relative error correlation across MTL tasks under one attack targeting task $t$. $n$ is the number of non-targeted MTL tasks, in our case, 3. $\\Delta_{\\epsilon_{\\text{t}}}$ is the relative model error of the targeted MTL task.\r\n\r\n## Citation\r\n\r\n```bibtex\r\n@misc{yu2025visat,\r\n  title={VISAT: Benchmarking Adversarial and Distribution Shift Robustness in Traffic Sign Recognition with Visual Attributes},\r\n  author={Simon Yu et al.},\r\n  year={2025},\r\n  note={arXiv:2510.26833}\r\n}\r\n```\r\n\r\n- arXiv: 2510.26833\r\n",
+    "content_hash": "83b4c2b13be3bc74dc54ed153a70d371ac682e5d8e033e37fc974ec8c0b306f3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 77,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4646,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "def compute_metrics(preds, labels, is_attacked=False):\r\n    accuracy = mean(preds == labels)\r\n    epsilon = 1.0 - accuracy\r\n    if is_attacked:\r\n        epsilon_at = epsilon\r\n        delta_epsilon = epsilon_at - epsilon_cl\r\n        # For MTL tasks:\r\n        epsilon_cumulative = sum(delta_epsilon_i for i in tasks)\r\n        re_corr = mean(delta_epsilon_i / delta_epsilon_target for i in non_targeted_tasks)\r\n    return epsilon, delta_epsilon, epsilon_cumulative, re_corr",
+    "content_hash": "779567248e0e0d16050fc37435e72cdb60110a49005e3f79bed41a1ef0584e91",
+    "generated": true,
+    "is_text": true,
+    "line_count": 10,
+    "relative_path": ".malskills_fences/SKILL__fence_0.py",
+    "size_bytes": 470,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 53,
+    "source_start_line": 42
+  }
+]

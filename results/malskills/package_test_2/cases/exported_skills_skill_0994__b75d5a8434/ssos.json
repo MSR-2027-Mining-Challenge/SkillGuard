@@ -1,0 +1,349 @@
+[
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "# .envrc for Docker-based development",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "export COMPOSE_FILE=\"docker-compose.yml:docker-compose.dev.yml\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::COMPOSE_FILE": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::COMPOSE_FILE",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::COMPOSE_FILE"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "export DOCKER_BUILDKIT=1",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::DOCKER_BUILDKIT": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::DOCKER_BUILDKIT",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_13.sh::DOCKER_BUILDKIT"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_19.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "eval \"$name() { $body; }\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_19.sh::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_19.sh::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_19.sh:5:5:system_command_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_19.sh::system_command_execution::5"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "brew install direnv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::package_installation::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::package_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::package_installation::2"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt install direnv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::process_control::5": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::process_control::5",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::process_control::5"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt install direnv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::package_installation::5": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::package_installation::5",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::package_installation::5"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "echo 'eval \"$(direnv hook bash)\"' >> ~/.bashrc",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_command_execution::8": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_command_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_21.sh:8:8:system_command_execution",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_command_execution::8"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo 'eval \"$(direnv hook bash)\"' >> ~/.bashrc",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_configuration_modify::8": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_configuration_modify::8",
+      "resource_class": "startup_configuration",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_configuration_modify::8"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "echo 'eval \"$(direnv hook zsh)\"' >> ~/.zshrc",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_command_execution::11": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_command_execution::11",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_21.sh:11:11:system_command_execution",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_command_execution::11"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "brew install direnv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::330": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::330",
+      "source_end_line": 330,
+      "source_start_line": 330,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::330"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt install direnv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::333": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::333",
+      "source_end_line": 333,
+      "source_start_line": 333,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::333"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "package_installation"
+  }
+]

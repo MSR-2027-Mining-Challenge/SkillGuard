@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: feature-status\r\ndescription: Count features marked as @failing and write to status JSON file. Used to determine when the autonomous coding loop should end.\r\nallowed-tools: Glob, Read, Write\r\n---\r\n\r\n# Feature Status Skill\r\n\r\n## Purpose\r\n\r\nThis skill counts the number of features marked as `@failing` and writes the count to a JSON file. This is used by the autonomous coding harness to determine when the implementation loop should end (when `failing_count` reaches 0).\r\n\r\n## Output File\r\n\r\n**File**: `feature-status.json`\r\n\r\n**Format**:\r\n```json\r\n{\r\n  \"failing_count\": 3\r\n}\r\n```\r\n\r\n**Loop Termination Logic**:\r\n- If `failing_count > 0` \u2192 Continue coding sessions\r\n- If `failing_count == 0` \u2192 All features implemented, end loop\r\n\r\n## How It Works\r\n\r\n### Step 1: Find Feature Files\r\n\r\nUse Glob to find all Gherkin feature files:\r\n```\r\nPattern: gherkin.feature_*.feature\r\n```\r\n\r\n### Step 2: Count @failing Tags\r\n\r\nFor each feature file:\r\n1. Read the first few lines\r\n2. Look for `@failing` tag\r\n3. If found, increment the failing counter\r\n\r\n**Tag Detection**:\r\n```\r\n@failing\r\nFeature: Some Feature Name\r\n  ...\r\n```\r\n\r\nRead lines until you find either:\r\n- `@failing` \u2192 Count this feature as failing\r\n- `@passing` \u2192 Skip (not failing)\r\n- `Feature:` line \u2192 Stop searching (assume no tag = passing)\r\n\r\n### Step 3: Write JSON\r\n\r\nWrite `feature-status.json` with just the failing count:\r\n```json\r\n{\r\n  \"failing_count\": <count>\r\n}\r\n```\r\n\r\n## Usage\r\n\r\nSimply invoke the skill:\r\n```\r\n/feature-status\r\n```\r\n\r\nThis will:\r\n1. Scan all `gherkin.feature_*.feature` files in the current directory\r\n2. Count how many have `@failing` tags\r\n3. Write the count to `feature-status.json`\r\n\r\n## Example Implementation\r\n\r\n```python\r\n# Pseudocode for reference\r\ndef count_failing_features(directory):\r\n    failing_count = 0\r\n\r\n    # Find all feature files\r\n    feature_files = glob(\"gherkin.feature_*.feature\")\r\n\r\n    for file in feature_files:\r\n        with open(file) as f:\r\n            for line in f:\r\n                line = line.strip()\r\n\r\n                if line.startswith(\"@failing\"):\r\n                    failing_count += 1\r\n                    break\r\n                elif line.startswith(\"@passing\"):\r\n                    break\r\n                elif line.startswith(\"Feature:\"):\r\n                    # No tag found, assume passing\r\n                    break\r\n\r\n    return failing_count\r\n```\r\n\r\n## Integration with Autonomous Coding Harness\r\n\r\nThe harness can check the status file to decide whether to continue:\r\n\r\n```python\r\nimport json\r\n\r\ndef should_continue_loop():\r\n    with open(\"feature-status.json\") as f:\r\n        status = json.load(f)\r\n    return status[\"failing_count\"] > 0\r\n```\r\n\r\n## Best Practices\r\n\r\n1. **Run after each coding session** to update the failing count\r\n2. **Commit the status file** to track progress over time\r\n3. **Check before starting a new session** to avoid unnecessary runs\r\n4. **Use as a termination condition** in automation scripts\r\n",
+    "content_hash": "40e24c46b5f4a273d23a9e61c5f0cc175cabb8fb1b9d81b9cc38af0515106235",
+    "generated": false,
+    "is_text": true,
+    "line_count": 123,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2973,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "# Pseudocode for reference\r\ndef count_failing_features(directory):\r\n    failing_count = 0\r\n\r\n    # Find all feature files\r\n    feature_files = glob(\"gherkin.feature_*.feature\")\r\n\r\n    for file in feature_files:\r\n        with open(file) as f:\r\n            for line in f:\r\n                line = line.strip()\r\n\r\n                if line.startswith(\"@failing\"):\r\n                    failing_count += 1\r\n                    break\r\n                elif line.startswith(\"@passing\"):\r\n                    break\r\n                elif line.startswith(\"Feature:\"):\r\n                    # No tag found, assume passing\r\n                    break\r\n\r\n    return failing_count",
+    "content_hash": "7d011b623844ca9f105a03834ad2968f6369c66a8152f017bf6acbc06137a233",
+    "generated": true,
+    "is_text": true,
+    "line_count": 22,
+    "relative_path": ".malskills_fences/SKILL__fence_5.py",
+    "size_bytes": 660,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 102,
+    "source_start_line": 79
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "import json\r\n\r\ndef should_continue_loop():\r\n    with open(\"feature-status.json\") as f:\r\n        status = json.load(f)\r\n    return status[\"failing_count\"] > 0",
+    "content_hash": "4e9013158974deb42905f190c8fc540b285b917340e016c086866e5f1800c593",
+    "generated": true,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".malskills_fences/SKILL__fence_6.py",
+    "size_bytes": 157,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 115,
+    "source_start_line": 108
+  }
+]

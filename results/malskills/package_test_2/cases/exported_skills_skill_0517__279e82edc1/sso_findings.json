@@ -1,0 +1,626 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00000",
+    "matched_text": "kubectl get <type> -n <namespace> -o yaml",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00001",
+    "matched_text": "kubectl describe <resource> -n <namespace>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00002",
+    "matched_text": "kubectl logs <pod> -n <namespace>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": ".malskills_fences/SKILL__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell launches interpreter-hosted inline code",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.script_host_execution",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.script_host_execution"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00003",
+    "matched_text": "WORKDIR=\"/tmp/k8s-investigate-$(python3 -c 'import time; print(int(time.time()))')\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": ".malskills_fences/SKILL__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": ".malskills_fences/SKILL__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell enumerates files or directories",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "ls -la \"$WORKDIR\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": ".malskills_fences/SKILL__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_3.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00005",
+    "matched_text": "kubectl get pods -n <namespace>   # STATUS=Running AND READY=N/N (not 0/N)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_3.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_3.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00006",
+    "matched_text": "kubectl logs <pod> -n <namespace> # no errors",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_3.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00007",
+    "matched_text": "# Before kubectl set image \u2014 ALWAYS verify container name first:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00008",
+    "matched_text": "kubectl get deployment/<name> -n <namespace> \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00009",
+    "matched_text": "kubectl set image deployment/<name> <container>=<new-image> -n <namespace>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 7,
+        "start_line": 7
+      }
+    },
+    "span": {
+      "end_line": 7,
+      "start_line": 7
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00010",
+    "matched_text": "kubectl patch deployment/<name> -n <namespace> --type='json' \\",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 10,
+        "start_line": 10
+      }
+    },
+    "span": {
+      "end_line": 10,
+      "start_line": 10
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell security environment or cloud metadata discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.security_environment_discovery"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00011",
+    "matched_text": "kubectl set env deployment/<name> VAR_NAME=new_value -n <namespace>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 14,
+        "start_line": 14
+      }
+    },
+    "span": {
+      "end_line": 14,
+      "start_line": 14
+    },
+    "subtype": "system_information_access"
+  }
+]

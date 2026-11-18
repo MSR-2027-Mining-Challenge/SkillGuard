@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: unconstrain-spacegroup-parameter\r\ndescription: Unconstarin a parameter constrained by the spacegroup symmertry in the diffpy.srfit code performing the PDF(Pair Distribution Function) analysis. Activate when user specifically asks to unconstrain spacegroup parameters\r\n---\r\n\r\nCurrently supported parameters: a, b, c, alpha, beta, gamma, atom.x, atom.y, atom.z. \r\n\r\nIf a parameter is not supported here:\r\n1. Verify if it is a spacegroup parameter(lattice parameters, atoms positions, and atomicc displacement parameters).\r\n2. Give instructions about how to unconstrain them.\r\n\r\nIf it is a spacegroup parameter:\r\n1. Complete the script as usual\r\n2. Add the following changes after ``constrainAsSpaceGroup`` is \r\ncalled:\r\n   1. Let the 'ParameterSet' to which the parameter belongs constrain all the parameters.\r\n   2. Then let the ``ParameterSet`` unconstrain the specific parameter.\r\n   \r\nYou can \r\n1. constrain the lattice parameter set by `sgpars._constrainLattice()`\r\n2. constrain the xyz parameter set by `sgpars._constrainXYZs()`\r\nsuppose `sgpars` is the object returned by `constrainAsSpacegroup`\r\n   \r\na, b, c parameter is created as `pdfgenerator.phase.lattice.<parameter-name>` and belongs to the parameterset `pdfgenerator.phase.lattice`\r\nxyz parametetr is created as `pdfgenerator.phase.getScatters()[<atom-index>].<parameter-name>` and belongs to the parameterset `pdfgenerator.phase.getScatters()`\r\n\r\n",
+    "content_hash": "dc4516895dda61c98c3bfcf29857f744bc1c9232ef950738d762bf177d33378f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1423,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

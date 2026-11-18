@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: aeon-deal-flow\r\ndescription: |\r\n  Weekly funding round tracker across configurable verticals (AI, crypto, prediction markets,\r\n  agentic infrastructure, etc.). Primary-source-required (Form D, press release, or verified\r\n  founder/firm post) \u2014 filters re-announcements and rumored rounds. Per round: lead, size,\r\n  valuation if disclosed, what they do, why now, and the sharpest risk.\r\n  Triggers: \"this week in funding\", \"deal flow\", \"who raised this week\",\r\n  \"crypto funding rounds\", \"AI funding tracker\".\r\n---\r\n\r\n# aeon-deal-flow\r\n\r\nWeekly synthesis of announced funding rounds. Read in 3 minutes \u2014 round \u2192 company \u2192 why it matters \u2192 who else is in the space.\r\n\r\n## Inputs\r\n\r\n| Param | Description |\r\n|---|---|\r\n| `verticals` | Comma-separated, e.g. `ai, crypto, prediction-markets, agentic-infra`. |\r\n| `min_round_usd` | Floor. Default $1M. Suppresses seed noise. |\r\n| `geo` | Optional: `us`, `eu`, `asia`, `latam`, empty for all. |\r\n\r\n## Sources\r\n\r\nCrunchbase news, TechCrunch funding tag, Pitchbook where accessible, SEC Form D filings, company press releases, founder/firm X & LinkedIn posts as confirmation only.\r\n\r\nA round needs **at least one primary source** (Form D, press release, or verified founder/firm post). Pure rumor entries excluded.\r\n\r\n## Filters\r\n\r\nRe-announcements (same round previously reported), rumored / TBA without filing, undisclosed-amount bridge rounds, below `min_round_usd`, off-topic verticals.\r\n\r\n## Per-round fields\r\n\r\n```\r\nCompany: [name]\r\nWhat they do: [one sentence, plain English]\r\nRound: Seed / Series A / etc. \u2014 $XM at $YM post if disclosed\r\nLead: [firm]\r\nOther participants: [firm1, firm2]\r\nSource: [primary link]\r\nWhy it matters:\r\n  - Why now (named catalyst \u2014 model breakthrough, regulatory clarity, etc.)\r\n  - Who else is in the space (2-3 competitors by name)\r\n  - One sharp risk\r\n```\r\n\r\n## Output\r\n\r\nGroup by vertical, lead with the headline (biggest round or theme of the week). Show \"Filtered out\" footer (rumored, re-announced, below floor) so the operator can see what's excluded.\r\n\r\n## Rules\r\n\r\n- Primary source required.\r\n- \"Why it matters\" must include a catalyst, not just sector framing. \"AI is hot\" is not a catalyst.\r\n- Risk section mandatory and specific \u2014 never \"execution risk\" filler.\r\n- Bias toward rounds that change the structure of a category, not just the leader.\r\n",
+    "content_hash": "b9da58946cf86293e8258238cc4c824615e4c44fc8a596617b79397521273e8f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 59,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2363,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

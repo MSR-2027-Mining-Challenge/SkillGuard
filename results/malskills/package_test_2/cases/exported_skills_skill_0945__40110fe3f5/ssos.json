@@ -1,0 +1,118 @@
+[
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r '[.links[].relation] | unique[]' graphify-out/graph.json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::file_read::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r --arg f \"src/foo.cpp\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_15.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_15.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_15.sh::file_read::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_16.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r --arg rel \"inherits\" '",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_16.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_16.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_16.sh::file_read::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r --arg label \"MyClass\" '",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_read"
+  }
+]

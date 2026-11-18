@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: meta__cheat_sheet\r\ndescription: 'Quick reference for BookStore code rules and patterns. Use this when you need a fast lookup of conventions for IDs (Guid.CreateVersion7), timestamps (DateTimeOffset.UtcNow), event naming, logging (LoggerMessage), caching, or multi-tenancy. DO NOT USE FOR: step-by-step workflows \u2014 use the relevant scaffold skill instead.'\r\n---\r\n\r\n# BookStore Cheat Sheet\r\n\r\n## IDs & Timestamps\r\n```csharp\r\nvar id = Guid.CreateVersion7();           // \u2705 UUIDv7\r\nvar now = DateTimeOffset.UtcNow;          // \u2705 UTC timestamp\r\n```\r\n\r\n## Event (past tense, record)\r\n```csharp\r\npublic record BookAdded(Guid Id, string Title, decimal Price);\r\n```\r\n\r\n## Command (record)\r\n```csharp\r\npublic record AddBookCommand(string Title, decimal Price);\r\n```\r\n\r\n## Aggregate Apply Method\r\n```csharp\r\npublic void Apply(BookAdded @event)\r\n{\r\n    Id = @event.Id;\r\n    Title = @event.Title;\r\n}\r\n```\r\n\r\n## Handler (static, Wolverine)\r\n```csharp\r\npublic static class AddBookHandler\r\n{\r\n    public static BookAdded Handle(AddBookCommand cmd) =>\r\n        new(Guid.CreateVersion7(), cmd.Title, cmd.Price);\r\n}\r\n```\r\n\r\n## HybridCache Query\r\n```csharp\r\nvar result = await cache.GetOrCreateAsync(\r\n    $\"books:{culture}\",\r\n    async ct => await session.Query<BookProjection>().ToListAsync(ct),\r\n    tags: [CacheTags.BookList],\r\n    cancellationToken: ct);\r\n```\r\n\r\n## Cache Invalidation\r\n```csharp\r\nawait cache.RemoveByTagAsync(CacheTags.BookList, ct);\r\n```\r\n\r\n## SSE Notification\r\n```csharp\r\npublic record BookUpdatedNotification(Guid Id) : IDomainEventNotification;\r\n```\r\n\r\n## TUnit Test\r\n```csharp\r\n[Test]\r\npublic async Task Should_Create_Book()\r\n{\r\n    var result = await client.CreateBookAsync(request);\r\n    await Assert.That(result.Id).IsNotNull();\r\n}\r\n```\r\n\r\n## Namespace\r\n```csharp\r\nnamespace BookStore.ApiService.Handlers;  // \u2705 File-scoped\r\n```\r\n\r\n## Related Skills\r\n- `/wolverine__guide` - All Wolverine write operations (create, update, delete)\r\n- `/marten__guide` - Aggregates, projections, and query endpoints\r\n",
+    "content_hash": "6ecebb628f31bcf75fc2240cb492c51213e354bd7988f4d79796e068349f37d5",
+    "generated": false,
+    "is_text": true,
+    "line_count": 79,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2028,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

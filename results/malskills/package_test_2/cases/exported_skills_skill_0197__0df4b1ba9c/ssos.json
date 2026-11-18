@@ -1,0 +1,94 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/notify.py"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "endpoint_class": "external",
+      "network_role": "send",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "requests.post()",
+      "sink_callsite_id": "scripts/notify.py:12:19:requests.post()",
+      "source_end_line": 19,
+      "source_start_line": 12
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/notify.py::data_send::response = requests.post(\n        \"https://api.pushover.net/1/messages.json\",\n        data={\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\n            \"message\": message,\n        }\n    )"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_send"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/notify.py"
+    ],
+    "attributes": {
+      "matched_text": "\"token\": os.getenv(\"PUSHOVER_TOKEN\"),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/notify.py::environment_access::15": "path"
+      },
+      "operation_object": "obj::operation::scripts/notify.py::environment_access::15",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/notify.py::environment_access::15"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/notify.py"
+    ],
+    "attributes": {
+      "matched_text": "\"user\": os.getenv(\"PUSHOVER_USER\"),",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/notify.py::environment_access::16": "path"
+      },
+      "operation_object": "obj::operation::scripts/notify.py::environment_access::16",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/notify.py::environment_access::16"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "environment_access"
+  }
+]

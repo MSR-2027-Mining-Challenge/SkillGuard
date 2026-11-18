@@ -1,0 +1,461 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:38:38:connection_create",
+      "source_end_line": 38,
+      "source_start_line": 38
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ==="
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "# SSH through IAP tunnel",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:45:45:connection_create",
+      "source_end_line": 45,
+      "source_start_line": 45
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "# SSH through IAP tunnel",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::45": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::45",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:45:45:system_command_execution",
+      "source_end_line": 45,
+      "source_start_line": 45
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::45"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:46:46:connection_create",
+      "source_end_line": 46,
+      "source_start_line": 46
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::46": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::46",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:46:46:system_command_execution",
+      "source_end_line": 46,
+      "source_start_line": 46
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::46"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat > managed-device.yaml << 'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat > corp-network.yaml << 'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::24": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::24",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::24"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat > high-trust.yaml << 'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::39": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::39",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 39,
+      "source_start_line": 39
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::39"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.sh:4:4:connection_create",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.sh:4:4:system_command_execution",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::credential_data_access::13": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::credential_data_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::credential_data_access::13"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.output, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::126": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::126",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 126,
+      "source_start_line": 126
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::126"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/process.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/process.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/process.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/process.py:22:22:subprocess.run()",
+      "source_end_line": 22,
+      "source_start_line": 22
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/process.py::cmd"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/process.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/process.py::credential_data_access::199": "path"
+      },
+      "operation_object": "obj::operation::scripts/process.py::credential_data_access::199",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 199,
+      "source_start_line": 199
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/process.py::credential_data_access::199"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/process.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filename, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/process.py::file_access::212": "path"
+      },
+      "operation_object": "obj::operation::scripts/process.py::file_access::212",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 212,
+      "source_start_line": 212
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/process.py::file_access::212"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_access"
+  }
+]

@@ -1,0 +1,678 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "_meta.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0002",
+      "path": "scripts/generate-pack.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::60",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::60",
+      "target": "value::4b072b77b2279266a53a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::70",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::70",
+      "target": "value::8e953c3c9ea8ae0767d7",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::71",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::71",
+      "target": "value::379052d74bc73023d0aa",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::72",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::72",
+      "target": "value::73c58a90837ecd85e159",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::79",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::79",
+      "target": "value::75f60b0993b97c1298b9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::87",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::87",
+      "target": "value::92369a983d1f69598c79",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::97",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::97",
+      "target": "value::988d4a4d7445cb2f5cb0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00007",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::98",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::98",
+      "target": "value::e4abd1f1287984730a2b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::operation::scripts/generate-pack.sh::file_read::98",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::file_read::98",
+      "target": "value::9227038867147835f6c0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00009",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::146",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::146",
+      "target": "value::9d37a865426546b4755b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00010",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::191",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::191",
+      "target": "value::50ec9620c45d059bac58",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::symbolic_reference::scripts/generate-pack.sh::RESULTS_JSON",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/generate-pack.sh::RESULTS_JSON",
+      "target": "value::1bba44e4c7fecf4a44b6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::scripts/generate-pack.sh::URL",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/generate-pack.sh::URL",
+      "target": "value::1095c49581230f67ae3a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00013",
+      "target": "obj::symbolic_reference::scripts/generate-pack.sh::data_receive::curl -s -o \"$TEMP_FILE\" \"$URL\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/generate-pack.sh::data_receive::curl -s -o \"$TEMP_FILE\" \"$URL\"",
+      "target": "value::6459c8ee3aee502f8f90",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::symbolic_reference::scripts/generate-pack.sh::URLS",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/generate-pack.sh::URLS",
+      "target": "value::8b1e4253bfb582c45140",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00015",
+      "target": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::237",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::237",
+      "target": "value::2f4243bd915e360af9d6",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "_meta.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "scripts/generate-pack.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::60",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::60",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::4b072b77b2279266a53a",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::60",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::70",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::70",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::8e953c3c9ea8ae0767d7",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::70",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::71",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::71",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::379052d74bc73023d0aa",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::71",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::72",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::72",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::73c58a90837ecd85e159",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::72",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::79",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::79",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::75f60b0993b97c1298b9",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::79",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::87",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::87",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::92369a983d1f69598c79",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::87",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::97",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::97",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::988d4a4d7445cb2f5cb0",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::97",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::98",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::98",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::e4abd1f1287984730a2b",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::98",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::file_read::98",
+      "identity_key": "scripts/generate-pack.sh::file_read::98",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::9227038867147835f6c0",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::file_read::98",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::146",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::146",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::9d37a865426546b4755b",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::146",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::191",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::191",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::50ec9620c45d059bac58",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::191",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/generate-pack.sh::RESULTS_JSON",
+      "identity_key": "scripts/generate-pack.sh::RESULTS_JSON",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::1bba44e4c7fecf4a44b6",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::RESULTS_JSON",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/generate-pack.sh::URL",
+      "identity_key": "scripts/generate-pack.sh::URL",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::1095c49581230f67ae3a",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::URL",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/generate-pack.sh::data_receive::curl -s -o \"$TEMP_FILE\" \"$URL\"",
+      "identity_key": "scripts/generate-pack.sh::data_receive::curl -s -o \"$TEMP_FILE\" \"$URL\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::6459c8ee3aee502f8f90",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::data_receive::curl -s -o \"$TEMP_FILE\" \"$URL\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/generate-pack.sh::URLS",
+      "identity_key": "scripts/generate-pack.sh::URLS",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::8b1e4253bfb582c45140",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::URLS",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/generate-pack.sh::system_configuration_modify::237",
+      "identity_key": "scripts/generate-pack.sh::system_configuration_modify::237",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::2f4243bd915e360af9d6",
+      "kind": "value",
+      "value": "scripts/generate-pack.sh::system_configuration_modify::237",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

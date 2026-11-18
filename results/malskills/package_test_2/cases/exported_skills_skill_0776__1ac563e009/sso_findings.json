@@ -1,0 +1,262 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/SKILL__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell launches interpreter-hosted inline code",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.script_host_execution",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.script_host_execution"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00000",
+    "matched_text": "uv run python -c \"from agent.function_calling.agent_tools import get_agent_function_definitions; print('GTPlanner \u73af\u5883\u6b63\u5e38')\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/SKILL__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "references/.malskills_fences/examples__fence_1.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "with open('ecommerce_prd.md', 'w', encoding='utf-8') as f:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "references/.malskills_fences/examples__fence_1.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 114,
+        "start_line": 114
+      }
+    },
+    "span": {
+      "end_line": 114,
+      "start_line": 114
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0017",
+    "artifact_path": "references/.malskills_fences/examples__fence_7.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell launches interpreter-hosted inline code",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.script_host_execution",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.script_host_execution"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00002",
+    "matched_text": "uv run python -c \"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0017",
+        "path": "references/.malskills_fences/examples__fence_7.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0019",
+    "artifact_path": "references/.malskills_fences/examples__fence_9.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "with open('output_prd.md', 'w', encoding='utf-8') as f:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0019",
+        "path": "references/.malskills_fences/examples__fence_9.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "references/tools.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit dynamic module loading pattern",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00004",
+    "matched_text": "from agent.function_calling.agent_tools import (\n    execute_agent_tool,              # \u6267\u884c\u5de5\u5177\n    get_agent_function_definitions   # \u83b7\u53d6\u5de5\u5177\u5b9a\u4e49\n)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "references/tools.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 11,
+        "start_line": 8
+      }
+    },
+    "span": {
+      "end_line": 11,
+      "start_line": 8
+    },
+    "subtype": "dynamic_code_execution"
+  }
+]

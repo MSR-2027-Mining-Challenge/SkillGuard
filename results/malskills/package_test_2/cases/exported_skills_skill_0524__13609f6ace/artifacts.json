@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: content-attachments\r\ndescription: pipeline data.json \u2192 Excel (.xlsx, raw 25\uac1c \uad6c \ub370\uc774\ud130) + PDF (A4 \uc778\uc0ac\uc774\ud2b8 \uc694\uc57d). \uc778\uc2a4\ud0c0 \"\ub313\uae00 \ub2ec\uba74 \ubcf4\ub0b4\ub4dc\ub824\uc694\" \ub9ac\ub4dc\ub9e4\uadf8\ub137 \ud30c\uc77c\uc6a9.\r\n---\r\n\r\n# content-attachments \uc2a4\ud0ac\r\n\r\n\ub370\uc774\ud130 \ud30c\uc77c \ub7ec\ubc84\uc6a9 Excel + \uc778\uc0ac\uc774\ud2b8 \uc694\uc57d \ub7ec\ubc84\uc6a9 PDF \ub3d9\uc2dc \uc0dd\uc131.\r\n\r\n## \uc0ac\uc6a9\r\n\r\n```bash\r\npython3 -m scripts.content_attachments \\\r\n  --data brands/zipsaja/zipsaja_pipeline_<slug>/data.json \\\r\n  --out brands/zipsaja/zipsaja_pipeline_<slug>/attachments/\r\n```\r\n\r\n## \uc0b0\ucd9c\ubb3c\r\n\r\n```\r\n{out}/\r\n\u251c\u2500\u2500 seoul-price-data.xlsx       # openpyxl \u2014 25\uac1c \uad6c \uc804\uccb4 raw + \uc11c\uc2dd\r\n\u2514\u2500\u2500 seoul-price-insights.pdf    # weasyprint \u2014 A4, \uc0c1/\ud558 \ubcc0\ub3d9\ub960 \uc694\uc57d + \uc804\uccb4 \ud14c\uc774\ube14\r\n```\r\n\r\n## Excel \uad6c\uc870\r\n\r\n| Row | Content |\r\n|---|---|\r\n| 1 | \uc81c\ubaa9 (merged A:D, \uc624\ub80c\uc9c0 \uad75\uc740) |\r\n| 2 | \uae30\uac04\u00b7\ucd9c\ucc98 (merged, \ud68c\uc0c9 \uc774\ud0e4\ub9ad) |\r\n| 3 | \ud5e4\ub354 (\uc9c0\uc5ed/\ucde8\uc784 \uc804/\ucde8\uc784 \ud6c4/\ubcc0\ub3d9\ub960%) \u2014 \uc624\ub80c\uc9c0 \ubc30\uacbd |\r\n| 4-28 | 25\uac1c \uad6c \ub370\uc774\ud130 \u2014 \uc591\uc218 \ubcc0\ub3d9\ub960 \uc624\ub80c\uc9c0, \uc74c\uc218 \ud30c\ub791 |\r\n\r\n## PDF \uad6c\uc870\r\n\r\n1\ud398\uc774\uc9c0 \uc774\ub0b4\uc5d0 \uc694\uc57d \ubc15\uc2a4(\uc0c1/\ud558 \ubcc0\ub3d9\ub960, \ud3c9\uade0) + \uc804\uccb4 25\ud589 \ud14c\uc774\ube14.\r\n\r\n## \uc694\uad6c\uc0ac\ud56d\r\n\r\n- openpyxl >= 3.1\r\n- Node.js + Puppeteer (content_carousel\uc758 node_modules \uacf5\uc720)\r\n- \ub300\uc2e0 weasyprint\ub294 macOS libgobject \ub9c1\ud06c \uc774\uc288\ub85c \uc81c\uac70\ub428\r\n",
+    "content_hash": "0172c34084d108a6dcae85f9b2138885e40aa6c5c0f8dc34fedb5217d53e97f2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 44,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1337,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "python3 -m scripts.content_attachments \\\r\n  --data brands/zipsaja/zipsaja_pipeline_<slug>/data.json \\\r\n  --out brands/zipsaja/zipsaja_pipeline_<slug>/attachments/",
+    "content_hash": "ba52a8e70ada7893266bc1dd686134502584c7742624c7c164cb7b492e40581d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 162,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 16,
+    "source_start_line": 12
+  }
+]

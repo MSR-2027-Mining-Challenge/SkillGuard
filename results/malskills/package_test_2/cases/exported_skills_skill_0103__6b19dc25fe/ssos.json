@@ -1,0 +1,235 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "aws iam get-credential-report --query 'Content' --output text | base64 -d > iam-report.csv",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::decoding::3": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::decoding::3",
+      "parameter_bindings": [],
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::decoding::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "decoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "--query \"AccessKeyMetadata[?CreateDate<='$(date -d '-90 days' +%Y-%m-%d)'].[UserName,AccessKeyId,Status,CreateDate]\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::11": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::11",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::11"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "# Enforce MFA via SCP at the organization level",
+      "endpoint_class": "unknown",
+      "network_role": "send",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_send::# Enforce MFA via SCP at the organization level": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_send::# Enforce MFA via SCP at the organization level",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:1:1:data_send",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_send::# Enforce MFA via SCP at the organization level"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_send"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Enforce MFA via SCP at the organization level",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "pip install boto3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install boto3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/api-reference.md::package_installation::7": "target"
+      },
+      "operation_object": "obj::operation::references/api-reference.md::package_installation::7",
+      "source_end_line": 7,
+      "source_start_line": 7,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::references/api-reference.md::package_installation::7"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "content = b64decode(response[\"Content\"]).decode(\"utf-8\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::decoding::20": "target"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::decoding::20",
+      "parameter_bindings": [],
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::decoding::20"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "decoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(output_path, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::141": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::141",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 141,
+      "source_start_line": 141
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::141"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  }
+]

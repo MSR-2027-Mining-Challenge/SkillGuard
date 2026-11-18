@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: bug-report\r\ndescription: Log a bug report. Use when user asks to create, log, file, or report a bug.\r\nallowed-tools: Write, Read, Glob\r\n---\r\n\r\n# Bug Report Skill\r\n\r\nCreate bug reports in `DevPlans/Bugs/` following the project's bug tracking conventions.\r\n\r\n## File Naming\r\n\r\n`{STATUS}-{BugName}.md`\r\n\r\n| Status | Meaning |\r\n|--------|---------|\r\n| OPEN | Active bug, not yet fixed |\r\n| FIXED | Bug has been resolved |\r\n| REJECTED | Not a bug, or won't fix |\r\n\r\nNew bugs should always start with `OPEN-`.\r\n\r\n## Required Sections\r\n\r\n```markdown\r\n# Bug: {Title}\r\n\r\n## Summary\r\nBrief description of the issue.\r\n\r\n## Symptoms\r\n- Observable behaviors\r\n- Error messages\r\n- Performance impacts\r\n\r\n## Root Cause\r\nTechnical explanation of why this happens (if known).\r\n\r\n## Affected Code\r\n- List relevant files and line numbers\r\n- `path/to/file.cs:123`\r\n\r\n## Potential Solutions\r\n### 1. Solution Name\r\nDescription of approach, tradeoffs.\r\n\r\n### 2. Alternative\r\nAnother option if applicable.\r\n\r\n## Priority\r\nLow / Medium / High / Critical\r\n\r\n## Related Files\r\n- `path/to/related/file.cs`\r\n```\r\n\r\n## Example\r\n\r\nFor a bug about slow rendering:\r\n- File: `DevPlans/Bugs/OPEN-SlowChunkRendering.md`\r\n- Title: `# Bug: Slow Chunk Rendering`\r\n- Include profiling data if available\r\n\r\n## Status Changes\r\n\r\nWhen a bug is fixed or rejected, rename the file:\r\n- `OPEN-MyBug.md` \u2192 `FIXED-MyBug.md`\r\n- `OPEN-MyBug.md` \u2192 `REJECTED-MyBug.md`\r\n",
+    "content_hash": "ef467c5ce99a25ef04502ab406630795344faccd5469e4251726a248ba2eccd0",
+    "generated": false,
+    "is_text": true,
+    "line_count": 69,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1431,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

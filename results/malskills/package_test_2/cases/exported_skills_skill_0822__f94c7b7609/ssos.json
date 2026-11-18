@@ -1,0 +1,99 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_4.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"xi-api-key: $ELEVENLABS_API_KEY\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:172:172:data_receive",
+      "source_end_line": 172,
+      "source_start_line": 172
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  }
+]

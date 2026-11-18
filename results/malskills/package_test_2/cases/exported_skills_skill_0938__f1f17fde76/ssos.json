@@ -1,0 +1,31 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/data_adapter_reference.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/data_adapter_reference.py::credential_data_access::47": "path"
+      },
+      "operation_object": "obj::operation::scripts/data_adapter_reference.py::credential_data_access::47",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 47,
+      "source_start_line": 47
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/data_adapter_reference.py::credential_data_access::47"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  }
+]

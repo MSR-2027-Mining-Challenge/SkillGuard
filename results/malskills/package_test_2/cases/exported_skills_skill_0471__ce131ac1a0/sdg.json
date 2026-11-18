@@ -1,0 +1,193 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "bin/check-freeze.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0004",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::bin/check-freeze.sh::INPUT",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::bin/check-freeze.sh::INPUT",
+      "target": "value::6b14b63dee18960dd8ce",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH",
+      "target": "value::91170ef1fd6963c2008f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34",
+      "target": "value::c3abd72f096f7730f558",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "bin/check-freeze.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::bin/check-freeze.sh::INPUT",
+      "identity_key": "bin/check-freeze.sh::INPUT",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::6b14b63dee18960dd8ce",
+      "kind": "value",
+      "value": "bin/check-freeze.sh::INPUT",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH",
+      "identity_key": "bin/check-freeze.sh::FILE_PATH",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::91170ef1fd6963c2008f",
+      "kind": "value",
+      "value": "bin/check-freeze.sh::FILE_PATH",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34",
+      "identity_key": "bin/check-freeze.sh::dynamic_code_execution::34",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::c3abd72f096f7730f558",
+      "kind": "value",
+      "value": "bin/check-freeze.sh::dynamic_code_execution::34",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

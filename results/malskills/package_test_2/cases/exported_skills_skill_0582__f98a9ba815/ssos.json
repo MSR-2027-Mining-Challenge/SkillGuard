@@ -1,0 +1,149 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq '.status, .summary' /tmp/report_to_google_doc_plan_smoke/preflight_checks.json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::5"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/report_to_google_doc/quality.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "getattr(Image, \"Resampling\", Image).NEAREST,",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/report_to_google_doc/quality.py::dynamic_code_execution::133": "command"
+      },
+      "operation_object": "obj::operation::scripts/report_to_google_doc/quality.py::dynamic_code_execution::133",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/report_to_google_doc/quality.py:133:133:getattr()",
+      "source_end_line": 133,
+      "source_start_line": 133
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/report_to_google_doc/quality.py::dynamic_code_execution::133"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/report_to_google_doc/rendering.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "subprocess.run(\n                [rsvg_convert, \"-f\", \"png\", \"-o\", str(path)],\n                input=svg_markup,\n                check=True,\n            )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/report_to_google_doc/rendering.py::system_command_execution::398": "command"
+      },
+      "operation_object": "obj::operation::scripts/report_to_google_doc/rendering.py::system_command_execution::398",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/report_to_google_doc/rendering.py:398:402:subprocess.run()",
+      "source_end_line": 402,
+      "source_start_line": 398
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/report_to_google_doc/rendering.py::system_command_execution::398"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/report_to_google_doc/rendering.py"
+    ],
+    "attributes": {
+      "matched_text": "raw = base64.b64decode(re.sub(r\"\\s+\", \"\", match.group(1)), validate=False)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/report_to_google_doc/rendering.py::decoding::516": "target"
+      },
+      "operation_object": "obj::operation::scripts/report_to_google_doc/rendering.py::decoding::516",
+      "parameter_bindings": [],
+      "source_end_line": 516,
+      "source_start_line": 516
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/report_to_google_doc/rendering.py::decoding::516"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "decoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/report_to_google_doc/rendering.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "__import__(\"PIL.Image\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/report_to_google_doc/rendering.py::dynamic_code_execution::586": "command"
+      },
+      "operation_object": "obj::operation::scripts/report_to_google_doc/rendering.py::dynamic_code_execution::586",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/report_to_google_doc/rendering.py:586:586:__import__()",
+      "source_end_line": 586,
+      "source_start_line": 586
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/report_to_google_doc/rendering.py::dynamic_code_execution::586"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  }
+]

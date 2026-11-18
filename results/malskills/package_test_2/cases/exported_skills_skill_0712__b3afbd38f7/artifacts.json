@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: douyin-downloader\r\ndescription: \"Download Douyin (\u6296\u97f3) short videos from URLs. Supports direct video links, search page links with modal_id, share links (v.douyin.com), and note links. Uses headless browser to bypass anti-scraping and extract video source. Use when asked to \\\"download douyin video\\\", \\\"\u4e0b\u8f7d\u6296\u97f3\u89c6\u9891\\\", \\\"save douyin clip\\\", or given any douyin.com URL to download.\"\r\n---\r\n\r\n# Douyin Video Downloader\r\n\r\nDownloads Douyin videos by opening the page in a headless browser, extracting the `<video>` source URL, and downloading via curl. This bypasses yt-dlp's cookie issues with Douyin's anti-scraping.\r\n\r\n## Prerequisites\r\n\r\n- `agent-browser` (`npm i -g agent-browser`)\r\n- `curl`\r\n\r\n## Usage\r\n\r\n```bash\r\npython3 scripts/douyin_download.py <URL> [--output-dir DIR] [--filename NAME]\r\n```\r\n\r\n## Supported URL Formats\r\n\r\n- `https://www.douyin.com/video/<id>` \u2014 direct video page\r\n- `https://www.douyin.com/search/...?modal_id=<id>` \u2014 search results with video modal\r\n- `https://v.douyin.com/<code>` \u2014 share short links\r\n- `https://www.douyin.com/note/<id>` \u2014 note/image posts with video\r\n\r\n## Examples\r\n\r\n```bash\r\n# Basic download to ~/Downloads\r\npython3 scripts/douyin_download.py 'https://www.douyin.com/video/7577715519366576522'\r\n\r\n# Custom output directory and filename\r\npython3 scripts/douyin_download.py 'https://www.douyin.com/video/7577715519366576522' \\\r\n  -o ~/Videos -f my_video\r\n\r\n# From search page URL\r\npython3 scripts/douyin_download.py 'https://www.douyin.com/search/\u5173\u952e\u8bcd?modal_id=7577715519366576522'\r\n```\r\n\r\n## How It Works\r\n\r\n1. Normalize URL \u2192 extract video ID, construct direct video page URL\r\n2. Open page in `agent-browser` (headless Chromium)\r\n3. Extract `<video>` element's `currentSrc` (CDN direct link)\r\n4. Close browser\r\n5. Download MP4 via `curl` with proper Referer header\r\n\r\n## Notes\r\n\r\n- No login required \u2014 fresh browser session is sufficient\r\n- Video title auto-detected from page title for filename\r\n- Large videos may take 30-60s to download depending on network\r\n- CDN links are temporary (~2h validity); download promptly after extraction\r\n",
+    "content_hash": "2ae7ca33f66994565b50c8ca024a32c43f30b62816aa6a1be13a67c6a64f2828",
+    "generated": false,
+    "is_text": true,
+    "line_count": 56,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2128,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "python3 scripts/douyin_download.py <URL> [--output-dir DIR] [--filename NAME]",
+    "content_hash": "dc0fa8ac611a7539963d5d4838febcd734ff0f2f782ac39cb0cd6d8baeb5cfa2",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 77,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 19,
+    "source_start_line": 17
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# Basic download to ~/Downloads\r\npython3 scripts/douyin_download.py 'https://www.douyin.com/video/7577715519366576522'\r\n\r\n# Custom output directory and filename\r\npython3 scripts/douyin_download.py 'https://www.douyin.com/video/7577715519366576522' \\\r\n  -o ~/Videos -f my_video\r\n\r\n# From search page URL\r\npython3 scripts/douyin_download.py 'https://www.douyin.com/search/\u5173\u952e\u8bcd?modal_id=7577715519366576522'",
+    "content_hash": "ddb26a8758e5f92412f8faff79c55fabbed3e5bac6b3ae655f14bab41a3f714d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 9,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 409,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 40,
+    "source_start_line": 30
+  }
+]

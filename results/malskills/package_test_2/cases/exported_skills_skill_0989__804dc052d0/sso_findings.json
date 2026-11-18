@@ -1,0 +1,634 @@
+[
+  {
+    "artifact_id": "art_0012",
+    "artifact_path": ".malskills_fences/SKILL__fence_13.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell startup or logon persistence",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "startup_configuration",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.startup_or_logon_persistence",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.startup_or_logon_persistence"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_id": "semgrep_00000",
+    "matched_text": "grep -rn '/nix/store/' ~/.gitconfig ~/.bashrc ~/.zshrc ~/.config/ 2>/dev/null",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0012",
+        "path": ".malskills_fences/SKILL__fence_13.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": ".malskills_fences/SKILL__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell switches user or account context",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "privilege_boundary",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "sudo nixos-rebuild switch --flake /etc/nixos",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": ".malskills_fences/SKILL__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_3.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell receives data from a remote endpoint",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.network_and_remote_communication.remote_data_receive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00002",
+    "matched_text": "nix shell nixpkgs#git nixpkgs#ripgrep nixpkgs#curl",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_3.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell interpreter execution or remote shell bootstrap",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.shell_interpreter_execution",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.shell_interpreter_execution"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00003",
+    "matched_text": "bash -c 'python3 my_script.py arg1 arg2'",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 4,
+        "start_line": 4
+      }
+    },
+    "span": {
+      "end_line": 4,
+      "start_line": 4
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell interpreter execution or remote shell bootstrap",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.shell_interpreter_execution",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.execution_control.shell_interpreter_execution"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00004",
+    "matched_text": "nixpkgs#gnugrep nixpkgs#bash --command bash -c '",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 8,
+        "start_line": 8
+      }
+    },
+    "span": {
+      "end_line": 8,
+      "start_line": 8
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell enumerates files or directories",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "ls -la output/",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": ".malskills_fences/SKILL__fence_4.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 11,
+        "start_line": 11
+      }
+    },
+    "span": {
+      "end_line": 11,
+      "start_line": 11
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0008",
+    "artifact_path": ".malskills_fences/SKILL__fence_7.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell switches user or account context",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "privilege_boundary",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "sudo nixos-rebuild switch --flake .",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0008",
+        "path": ".malskills_fences/SKILL__fence_7.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0009",
+    "artifact_path": ".malskills_fences/SKILL__fence_8.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell switches user or account context",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "privilege_boundary",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00007",
+    "matched_text": "sudo nixos-rebuild list-generations",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0009",
+        "path": ".malskills_fences/SKILL__fence_8.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0009",
+    "artifact_path": ".malskills_fences/SKILL__fence_8.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell switches user or account context",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "privilege_boundary",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00008",
+    "matched_text": "sudo nix-env --delete-generations old",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0009",
+        "path": ".malskills_fences/SKILL__fence_8.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": ".malskills_fences/SKILL__fence_9.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell switches user or account context",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "privilege_boundary",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00009",
+    "matched_text": "sudo systemctl start/stop/restart <service>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": ".malskills_fences/SKILL__fence_9.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": ".malskills_fences/SKILL__fence_9.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell switches user or account context",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "privilege_boundary",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.privilege_and_identity_manipulation.identity_switch"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00010",
+    "matched_text": "sudo systemctl enable/disable <service>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": ".malskills_fences/SKILL__fence_9.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": ".malskills_fences/SKILL__fence_9.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell service or daemon persistence",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "startup_configuration",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.service_or_daemon_persistence",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.service_or_daemon_persistence"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_id": "semgrep_00011",
+    "matched_text": "sudo systemctl enable/disable <service>",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": ".malskills_fences/SKILL__fence_9.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "system_configuration_modify"
+  }
+]

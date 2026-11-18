@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: fix-cuda-kernel-view-offset\r\ndescription: \"CUDA kernels that iterate over input array elements must add src->offset when computing source byte address, or the kernel reads from byte 0 instead of the view's start.\"\r\nsource: auto-skill\r\nextracted_at: '2026-06-06T20:24:00.000Z'\r\n---\r\n\r\n# Fix CUDA Kernel View Offset Access\r\n\r\n## The Problem\r\n\r\nWhen a CUDA kernel reads input elements using a flat linear index (e.g. iterating `linear` from 0 to `src->numel`), it must account for `src->offset` to handle **views** (sliced arrays). Without the offset, the kernel reads from byte 0 of the parent buffer instead of the view's start.\r\n\r\n**Symptoms:**\r\n- `fftshift` on GPU returns identity (no swapping), because the concat kernel reads from byte 0 for both halves\r\n- User sees \"rectangle\" pattern when plotting: red crosses at bottom-left/top-right but energy peaks at top-left/bottom-right\r\n- Any operation using `slice` + `concat` (fftshift, ifftshift) produces wrong output on GPU\r\n- CPU backend works correctly; GPU backend gives wrong results\r\n\r\n**Root cause:**\r\n```cpp\r\n// \u274c BUG: ignores src->offset \u2014 always reads from byte 0 of parent buffer\r\ncudaMemcpy(dst, static_cast<const char*>(src->data) + linear * element_size, ...);\r\n```\r\n\r\nThe `InsightArray` struct has field `int64_t offset` at struct offset `0xC0` (after `data`, `dims`, `strides`, `ndim`, `numel`, `dtype`, `device_type`, `device_id`). For views created by `x.slice(ax, start, end, step)`:\r\n- `src->data` = parent buffer start (same as parent)\r\n- `src->offset` = element offset from parent buffer start\r\n\r\n## The Fix\r\n\r\nAdd `src->offset` to the source byte address calculation:\r\n\r\n```cpp\r\n// \u2705 FIX: account for view offset\r\nint64_t src_offset = src->offset + linear;\r\ncudaMemcpy(dst, static_cast<const char*>(src->data) + src_offset * element_size, ...);\r\n```\r\n\r\n## Where to check\r\n\r\nSearch CUDA kernels that iterate over `src->numel` elements using `cudaMemcpy` or direct pointer arithmetic:\r\n\r\n```bash\r\ngrep -r \"cudaMemcpy.*src->data.*linear\" backends/cuda/kernels/\r\ngrep -r \"linear \\* element_size\" backends/cuda/kernels/\r\n```\r\n\r\nEach occurrence that reads source data using a flat linear index should add `src->offset`.\r\n\r\n## Frontend workaround (when kernel fix is blocked)\r\n\r\nIf the kernel fix doesn't take effect (e.g., .so caching, build issues), apply a frontend workaround in the C++ API:\r\n\r\n```cpp\r\n// In the frontend function (e.g., src/ops/fft.cpp: fftshift):\r\nauto last = x.slice(ax, mid, n, 1);\r\nauto first = x.slice(ax, 0, mid, 1);\r\n\r\n// Make contiguous copies to avoid view offset issues in backend kernels\r\nArray last_contig = contiguous(last);\r\nArray first_contig = contiguous(first);\r\nArray result = concat({last_contig, first_contig}, ax);\r\n```\r\n\r\nThis creates temporary contiguous copies that have `offset=0`, bypassing the kernel bug. Apply to both `fftshift` and `ifftshift`.\r\n\r\n## Testing\r\n\r\nAfter fixing, verify in all 4 languages (C++, Python, Lua, Julia) for both CPU and GPU:\r\n\r\n| Test | Input | Expected output |\r\n|------|-------|-----------------|\r\n| fftshift 1D | `[1..8]` | `[5,6,7,8,1,2,3,4]` |\r\n| fftshift fftfreq | `fftfreq(32, 100e-6)` | matches `np.fft.fftshift(np.fft.fftfreq(32, 100e-6))` |\r\n| fftshift 2D | `arange(24).reshape(4,6)` | matches `np.fft.fftshift(...)` |\r\n| fftshift axis | same 2D, axis=1 | matches `np.fft.fftshift(..., axes=1)` |\r\n| ifftshift 1D | `[1..8]` | `[5,6,7,8,1,2,3,4]` (same as fftshift for even N) |\r\n| ifftshift roundtrip | random array | `fftshift(ifftshift(x)) == x` |\r\n\r\nC++ test pattern (GPU):\r\n```cpp\r\nTEST_F(FFTTestGPU, FFTShift) {\r\n  set_device(GPUPlace(0));\r\n  int n = 8;\r\n  Array x = arange(0.0, static_cast<double>(n), 1.0, DType::F64);\r\n  Array y = fft::fftshift(x, 0);\r\n  Array y_cpu = y.to(CPUPlace());\r\n  EXPECT_NEAR(y_cpu.at(0).item<double>(), 4.0, 1e-10);\r\n  EXPECT_NEAR(y_cpu.at(4).item<double>(), 0.0, 1e-10);\r\n}\r\n```\r\n\r\nPython test pattern:\r\n```python\r\ndef test_fftshift_fftfreq_gpu(self):\r\n    x = ins.fftfreq(32, 100e-6).to(GPU)\r\n    result = ins.fftshift(x)\r\n    assert_allclose(to_numpy(result), np.fft.fftshift(np.fft.fftfreq(32, 100e-6)), atol=1e-10)\r\n```\r\n\r\n## Debugging workflow\r\n\r\n1. **Reproduce**: Run `ins.fftshift(ins.fftfreq(N, d))` on GPU and compare with NumPy\r\n2. **Isolate**: Test `concat([x[16:32], x[0:16]], 0)` directly (not through fftshift)\r\n3. **Compare CPU vs GPU**: Both use same C++ frontend code; only the backend kernel differs\r\n4. **Check binary**: If kernel fix doesn't take effect, verify `.so` is loaded:\r\n   ```\r\n   ldd /proc/$$/exe | grep cuda_backend\r\n   nm -C libinsight_cuda_backend.so | grep concat_kernel\r\n   ```\r\n5. **Frontend workaround**: Add `contiguous()` calls as a safe fallback\r\n",
+    "content_hash": "c650664e12601cc102114c763e8d3e79cd385bcfe3f1d837e46ac2e04ee68a96",
+    "generated": false,
+    "is_text": true,
+    "line_count": 113,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4697,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "grep -r \"cudaMemcpy.*src->data.*linear\" backends/cuda/kernels/\r\ngrep -r \"linear \\* element_size\" backends/cuda/kernels/",
+    "content_hash": "64245fb757e3d05564524876507b5ae45cd172bb23ab83a82b77a3821b3437ea",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 119,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 47,
+    "source_start_line": 44
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "def test_fftshift_fftfreq_gpu(self):\r\n    x = ins.fftfreq(32, 100e-6).to(GPU)\r\n    result = ins.fftshift(x)\r\n    assert_allclose(to_numpy(result), np.fft.fftshift(np.fft.fftfreq(32, 100e-6)), atol=1e-10)",
+    "content_hash": "57484adb30c02abddb9412b89cfdf233bf3a6223e7bb68fd3036abfea02ca49e",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_5.py",
+    "size_bytes": 203,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 100,
+    "source_start_line": 95
+  }
+]

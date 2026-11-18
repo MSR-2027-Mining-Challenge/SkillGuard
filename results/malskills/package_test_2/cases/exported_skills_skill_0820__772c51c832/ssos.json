@@ -1,0 +1,70 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/build_notion_interview_db.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "req = urllib.request.Request(url, data=data, method=method)",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.Request()",
+      "sink_callsite_id": "scripts/build_notion_interview_db.py:44:44:urllib.request.Request()",
+      "source_end_line": 44,
+      "source_start_line": 44
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/build_notion_interview_db.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "with urllib.request.urlopen(req) as resp:",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.urlopen()",
+      "sink_callsite_id": "scripts/build_notion_interview_db.py:49:49:urllib.request.urlopen()",
+      "source_end_line": 49,
+      "source_start_line": 49
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "connection_create"
+  }
+]

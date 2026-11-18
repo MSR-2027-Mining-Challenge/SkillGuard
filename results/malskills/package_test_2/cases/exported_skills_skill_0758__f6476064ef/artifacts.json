@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: gcpo-cooperative-policy-optimization\r\ndescription: Group Cooperative Policy Optimization (GCPO) replaces GRPO's winner-takes-all competition with team cooperation. Rollouts are rewarded by contribution to team's valid solution coverage, measured as determinant volume over reward-weighted semantic embeddings. Solves exploration collapse in RLVR for LLM reasoning.\r\n---\r\n\r\n# GCPO: Group Cooperative Policy Optimization for Diverse LLM Reasoning\r\n\r\n## Core Methodology\r\n\r\nGCPO addresses exploration collapse in RLVR (Reinforcement Learning with Verifiable Rewards), where GRPO causes models to prematurely converge on narrow high-scoring patterns.\r\n\r\n### Key Innovation: Team Cooperation over Competition\r\n\r\nInstead of independent rollout scoring, GCPO implements team-level credit assignment:\r\n\r\n1. **Coverage-based scoring**: A rollout is rewarded by how much it contributes to the team's valid solution coverage, not individual accuracy\r\n2. **Determinant volume metric**: Coverage is described as determinant volume over reward-weighted semantic embeddings\r\n   - Only correct AND non-redundant rollouts contribute to this volume\r\n   - Redundant correct answers add no value\r\n3. **Marginal contribution redistribution**: During advantage estimation, collective team reward is redistributed to each rollout according to its average marginal contribution\r\n\r\n## Implementation Details\r\n\r\n1. **Semantic embedding space**: Compute embeddings for each rollout's reasoning path\r\n2. **Reward weighting**: Weight embeddings by correctness (verified rewards)\r\n3. **Volume computation**: Calculate determinant volume of the coverage space\r\n4. **Shapley-value-like redistribution**: Distribute team reward based on marginal contributions\r\n\r\n## Advantages over GRPO\r\n- Eliminates winner-takes-all dynamics that cause exploration collapse\r\n- Naturally rewards diverse, correct reasoning paths\r\n- No need for hand-tuned entropy regularization or diversity bonuses\r\n- Incentivizes novel solutions that complement team coverage\r\n\r\n## Applications\r\n- LLM reasoning with verifiable rewards (RLVR)\r\n- Mathematical reasoning tasks requiring multiple solution strategies\r\n- Code generation with diverse valid implementations\r\n- Any RLVR scenario where solution diversity is valuable\r\n\r\n## Activation Keywords\r\ngcpo, cooperative policy optimization, exploration collapse, RLVR, diverse reasoning, team credit assignment, winner-takes-all, determinant volume\r\n",
+    "content_hash": "a24c78a02072054be2d9d7e0bd2484f4a84fd4d9aab3418c681357be73680a8d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 43,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2448,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

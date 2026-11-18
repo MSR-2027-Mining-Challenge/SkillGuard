@@ -1,0 +1,20 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=javascript\npath=assets/template.ts"];
+  "obj::operation::assets/template.ts::system_command_execution::27" [label="obj::operation::assets/template.ts::system_command_execution::27\nkind=operand"];
+  "obj::operation::assets/template.ts::system_command_execution::34" [label="obj::operation::assets/template.ts::system_command_execution::34\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "value::67c00c75c950a20ff1e1" [label="value::67c00c75c950a20ff1e1\nkind=value"];
+  "value::c40fbfccce4ac4ce58de" [label="value::c40fbfccce4ac4ce58de\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0001" -> "sso_00001" [label="contains"];
+  "obj::operation::assets/template.ts::system_command_execution::27" -> "value::67c00c75c950a20ff1e1" [label="value_flow"];
+  "obj::operation::assets/template.ts::system_command_execution::34" -> "value::c40fbfccce4ac4ce58de" [label="value_flow"];
+  "sso_00000" -> "obj::operation::assets/template.ts::system_command_execution::27" [label="has_operand"];
+  "sso_00001" -> "obj::operation::assets/template.ts::system_command_execution::34" [label="has_operand"];
+}

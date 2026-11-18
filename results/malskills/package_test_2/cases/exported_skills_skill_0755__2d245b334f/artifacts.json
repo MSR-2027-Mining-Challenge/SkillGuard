@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: codex-research-router\r\ndescription: Route broad public-web research to Codex CLI and keep interactive browser work in ZeroClaw's native tools.\r\n---\r\n\r\n# Codex Research Router\r\n\r\nUse this skill to decide whether a task should go to Codex research or stay inside ZeroClaw's own browser/tool loop.\r\n\r\n## Decision policy\r\n\r\nPrefer `$HOME/utils/zeroclaw/bin/codex-research` when the task is mainly about:\r\n- researching, comparing, investigating, summarizing, or gathering links\r\n- public web information, current docs, tutorials, pricing, changelogs, issues, news, or market scans\r\n- multi-source synthesis where breadth matters more than clicking through a workflow\r\n- fact-finding tasks that do not require interacting with a live web app\r\n\r\nPrefer ZeroClaw's native `browser` tool when the task requires:\r\n- clicking, typing, logging in, uploading, downloading, or submitting forms\r\n- screenshots, PDFs, or visual verification\r\n- JavaScript-triggered state changes or deterministic DOM interaction\r\n- localhost, LAN, intranet, private dashboards, or authenticated sessions\r\n- repeated page actions where a true browser is the main work, not the research summary\r\n\r\nUse both when the task has two phases:\r\n1. First research with Codex.\r\n2. Then act with ZeroClaw browser/shell tools.\r\n\r\nIf the user explicitly asks to use Codex or explicitly asks to use the browser tool, obey that.\r\n\r\n## How to call Codex research\r\n\r\nRun this exact local command:\r\n\r\n```bash\r\n$HOME/utils/zeroclaw/bin/codex-research --reasoning medium -- \"<research prompt>\"\r\n```\r\n\r\nPrompt-writing rules for Codex research:\r\n- State the desired output shape clearly.\r\n- Ask for exact dates when recency matters.\r\n- Ask for links when the user wants sources.\r\n- Keep the prompt focused on public-web research, not local machine actions.\r\n\r\nAfter Codex returns:\r\n- If the Codex output already matches the user's requested format, pass it through verbatim.\r\n- Do not append second guesses, alternate answers, or extra lines after a successful Codex result.\r\n- Only override the Codex result if you intentionally do a second verification step and are confident the original result is wrong.\r\n- If you do override it, replace the earlier result cleanly instead of appending both.\r\n- If Codex research is insufficient or the task turns into a real browser workflow, switch to ZeroClaw's native browser tool.\r\n",
+    "content_hash": "22fb50ec8a44cc90e15a0ba44c375e8ae058c71f084ae20e5f97ead1f8d12432",
+    "generated": false,
+    "is_text": true,
+    "line_count": 51,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2380,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "$HOME/utils/zeroclaw/bin/codex-research --reasoning medium -- \"<research prompt>\"",
+    "content_hash": "02f6efe35c3bc19225d069297770a693c01d5d4f4cb54a150f6e9219e6e4435f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 81,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 37,
+    "source_start_line": 35
+  }
+]

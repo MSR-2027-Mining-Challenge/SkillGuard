@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: Global Validation\r\ndescription: Implement comprehensive input validation on server-side with complementary client-side validation for user experience, using allowlists, type checking, and sanitization to prevent injection attacks. Use this skill when validating user inputs, form data, API requests, file uploads, query parameters, or any external data entering the application. Apply this skill when implementing server-side validation as the primary security layer, adding client-side validation for immediate user feedback, validating data types and formats, checking ranges and required fields, sanitizing inputs to prevent SQL injection and XSS attacks, using allowlists over blocklists, providing field-specific error messages, or enforcing business rules at appropriate application layers. This skill ensures validation happens at all entry points consistently, security is never dependent on client-side checks alone, users receive helpful immediate feedback, and data integrity is maintained through multiple layers of validation.\r\n---\r\n\r\n# Global Validation\r\n\r\nThis Skill provides Claude Code with specific guidance on how to adhere to coding standards as they relate to how it should handle global validation.\r\n\r\n## When to use this skill\r\n\r\n- When implementing server-side validation for API endpoints, forms, or data processing\r\n- When adding client-side validation for immediate user feedback (but always duplicating server-side)\r\n- When validating user inputs in forms, search fields, or text inputs\r\n- When processing API request payloads, query parameters, or file uploads\r\n- When sanitizing inputs to prevent SQL injection, XSS, or command injection attacks\r\n- When validating data types, formats (email, phone, date), required fields, and ranges\r\n- When providing specific, helpful error messages for each validation failure\r\n- When using allowlists (defining what's allowed) rather than blocklists (blocking bad patterns)\r\n- When implementing business rule validation (sufficient balance, valid dates, inventory checks)\r\n- When ensuring validation is applied consistently across all entry points (web, API, background jobs)\r\n- When failing early by rejecting invalid data before processing or storing it\r\n- When working with form validation libraries or schema validation tools (Yup, Zod, Joi, Pydantic)\r\n- When adding validation error handling in UI components or API error responses\r\n- When testing validation logic to ensure security and data integrity\r\n\r\n## Instructions\r\n\r\nFor details, refer to the information provided in this file:\r\n[global validation](../../../agent-os/standards/global/validation.md)\r\n",
+    "content_hash": "14bacb4e3a1bd07a0dd020c6d1a43121c5d4ec6c5bc55fe9197c7dd10486d29b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 31,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2642,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

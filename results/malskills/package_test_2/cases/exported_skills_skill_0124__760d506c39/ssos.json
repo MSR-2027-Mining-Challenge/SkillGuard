@@ -1,0 +1,268 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/run.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd, capture_output=True, text=True, cwd=cwd)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/run.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/run.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/run.py:89:89:subprocess.run()",
+      "source_end_line": 89,
+      "source_start_line": 89
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/run.py::cmd"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/run.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "proc = subprocess.Popen(\n        cmd,\n        stdin=subprocess.DEVNULL,\n        stdout=subprocess.PIPE,\n        stderr=subprocess.PIPE,\n        text=True,\n        cwd=cwd,\n    )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run.py::system_command_execution::261": "command"
+      },
+      "operation_object": "obj::operation::scripts/run.py::system_command_execution::261",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/run.py:261:268:subprocess.Popen()",
+      "source_end_line": 268,
+      "source_start_line": 261
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run.py::system_command_execution::261"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/run.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\n                \"claude\",\n                \"-p\",\n                \"--model\",\n                \"opus\",\n                \"--output-format\",\n                \"text\",\n                \"--no-session-persistence\",\n                prompt,\n            ],\n            capture_output=True,\n            text=True,\n            timeout=300,\n            cwd=str(cwd),\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run.py::system_command_execution::323": "command"
+      },
+      "operation_object": "obj::operation::scripts/run.py::system_command_execution::323",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/run.py:323:338:subprocess.run()",
+      "source_end_line": 338,
+      "source_start_line": 323
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run.py::system_command_execution::323"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/run.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run.py::credential_data_access::539": "path"
+      },
+      "operation_object": "obj::operation::scripts/run.py::credential_data_access::539",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 539,
+      "source_start_line": 539
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run.py::credential_data_access::539"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/skip_counter.py"
+    ],
+    "attributes": {
+      "matched_text": "tmp = tempfile.NamedTemporaryFile(\n            mode=\"w\",\n            dir=path.parent,\n            delete=False,\n            suffix=\".tmp\",\n            encoding=\"utf-8\",\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/skip_counter.py::file_create::255": "path"
+      },
+      "operation_object": "obj::operation::scripts/skip_counter.py::file_create::255",
+      "path_class": "ordinary",
+      "source_end_line": 261,
+      "source_start_line": 255,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/skip_counter.py::file_create::255"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/skip_counter.py"
+    ],
+    "attributes": {
+      "matched_text": "os.replace(tmp.name, path)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/skip_counter.py::file_write::267": "path"
+      },
+      "operation_object": "obj::operation::scripts/skip_counter.py::file_write::267",
+      "path_class": "ordinary",
+      "source_end_line": 267,
+      "source_start_line": 267,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/skip_counter.py::file_write::267"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/skip_counter.py"
+    ],
+    "attributes": {
+      "matched_text": "os.unlink(tmp.name)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/skip_counter.py::link_operation::271": "path"
+      },
+      "operation_object": "obj::operation::scripts/skip_counter.py::link_operation::271",
+      "path_class": "ordinary",
+      "source_end_line": 271,
+      "source_start_line": 271,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/skip_counter.py::link_operation::271"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "link_operation"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/skip_counter.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "r = subprocess.run(\n            [\"git\", \"rev-parse\", \"HEAD\"],\n            capture_output=True,\n            text=True,\n            cwd=cwd,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/skip_counter.py::system_command_execution::279": "command"
+      },
+      "operation_object": "obj::operation::scripts/skip_counter.py::system_command_execution::279",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/skip_counter.py:279:284:subprocess.run()",
+      "source_end_line": 284,
+      "source_start_line": 279
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/skip_counter.py::system_command_execution::279"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/skip_counter.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "r = subprocess.run(\n            [\"git\", \"diff\", \"--shortstat\", base_sha, \"HEAD\"],\n            capture_output=True,\n            text=True,\n            cwd=cwd,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/skip_counter.py::system_command_execution::292": "command"
+      },
+      "operation_object": "obj::operation::scripts/skip_counter.py::system_command_execution::292",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/skip_counter.py:292:297:subprocess.run()",
+      "source_end_line": 297,
+      "source_start_line": 292
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/skip_counter.py::system_command_execution::292"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_command_execution"
+  }
+]

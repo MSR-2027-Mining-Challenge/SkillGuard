@@ -1,0 +1,25 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=README.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_2.ts"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_5.ts"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_6.ts"];
+  "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1" [label="obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1\nkind=operand"];
+  "obj::operation::SKILL.md::package_installation::21" [label="obj::operation::SKILL.md::package_installation::21\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "value::0defed9d11e8208038c9" [label="value::0defed9d11e8208038c9\nkind=value"];
+  "value::c18901fca838d9a94104" [label="value::c18901fca838d9a94104\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00001" [label="contains"];
+  "art_0003" -> "sso_00000" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1" -> "value::c18901fca838d9a94104" [label="value_flow"];
+  "obj::operation::SKILL.md::package_installation::21" -> "value::0defed9d11e8208038c9" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1" [label="has_operand"];
+  "sso_00001" -> "obj::operation::SKILL.md::package_installation::21" [label="has_operand"];
+}

@@ -1,0 +1,263 @@
+[
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"Committed: $(git rev-parse HEAD)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::file_read::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_18.sh"
+    ],
+    "attributes": {
+      "matched_text": "STASH_REF=\"$(git stash list | head -1 | awk '{print $1}' | tr -d :)\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_18.sh::STASH_REF": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_18.sh::STASH_REF",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_18.sh::STASH_REF"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "if git diff-index --quiet HEAD -- 2>/dev/null && [ -z \"$(git status --porcelain)\" ]; then",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_read::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "sed -i.bak \"1,/^---$/{s/^working_tree_clean: false/working_tree_clean: $WTC/;}\" \"$RESUME_FILE\" && rm -f \"${RESUME_FILE}.bak\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_write::7": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_write::7",
+      "path_class": "ordinary",
+      "source_end_line": 7,
+      "source_start_line": 7,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_write::7"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "sed -i.bak \"1,/^---$/{s/^working_tree_clean: false/working_tree_clean: $WTC/;}\" \"$RESUME_FILE\" && rm -f \"${RESUME_FILE}.bak\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_delete::7": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_delete::7",
+      "path_class": "ordinary",
+      "source_end_line": 7,
+      "source_start_line": 7,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::file_delete::7"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "BRANCH=\"$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse HEAD)\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::BRANCH": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::BRANCH",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::BRANCH"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "HEAD_SHA=\"$(git rev-parse HEAD)\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::HEAD_SHA": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::HEAD_SHA",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::HEAD_SHA"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "[ \"$DRY_RUN\" = \"1\" ] && rm -f \"$TMPFILE\" && echo \"[dry-run] would write $RESUME_FILE\" || mv \"$TMPFILE\" \"$RESUME_FILE\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_delete::17": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_delete::17",
+      "path_class": "ordinary",
+      "source_end_line": 17,
+      "source_start_line": 17,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_delete::17"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r '.permissions.allow // [] | .[]' \"$f\" 2>/dev/null | while IFS= read -r entry; do",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::IFS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::IFS",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::IFS"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_read"
+  }
+]

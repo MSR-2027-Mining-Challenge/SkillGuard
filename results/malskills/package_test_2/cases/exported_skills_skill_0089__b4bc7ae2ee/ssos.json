@@ -1,0 +1,1452 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Verify kubectl is available",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "which kubectl",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config get-contexts",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::5",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::5"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <svc-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::8": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::8",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::8"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl cluster-info",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::9",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::9"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get namespace maestro 2>/dev/null",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::10": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::10",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::10"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <mgmt-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::13"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl cluster-info",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::14": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::14",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::14"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestworks -A 2>/dev/null | head -n 5",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::15"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestworks -A 2>/dev/null | head -n 5",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::15": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::15",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::15"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <mgmt-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "amw_name=$(kubectl get \"$manifest_kind\" \"$manifest_name\" -n \"$manifest_namespace\" \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::amw_name": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::amw_name",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::amw_name"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "-o jsonpath='{.metadata.ownerReferences[?(@.kind==\"AppliedManifestWork\")].name}' 2>/dev/null)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::jsonpath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::jsonpath",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::jsonpath"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "amw_name=$(kubectl get \"$manifest_kind\" \"$manifest_name\" \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::amw_name": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::amw_name",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::amw_name"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "-o jsonpath='{.metadata.ownerReferences[?(@.kind==\"AppliedManifestWork\")].name}' 2>/dev/null)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::jsonpath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::jsonpath",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::jsonpath"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "resource_id=$(kubectl get appliedmanifestwork \"$amw_name\" \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::resource_id": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::resource_id",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::resource_id"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <svc-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <mgmt-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_15.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_15.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_15.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_16.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestwork \"$amw_name\" -o jsonpath='{range .status.appliedResources[*]}{.resource}{\"\\t\"}{.namespace}{\"\\t\"}{.name}{\"\\n\"}{end}'",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_16.sh::jsonpath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_16.sh::jsonpath",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_16.sh::jsonpath"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <svc-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Verify kubectl is available",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "which kubectl",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl --kubeconfig=/path/to/svc-kubeconfig.yaml cluster-info",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl --kubeconfig=/path/to/svc-kubeconfig.yaml get namespace maestro 2>/dev/null",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl --kubeconfig=/path/to/mgmt-kubeconfig.yaml cluster-info",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl --kubeconfig=/path/to/mgmt-kubeconfig.yaml get appliedmanifestworks -A 2>/dev/null | head -n 5",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl --kubeconfig=/path/to/mgmt-kubeconfig.yaml get appliedmanifestworks -A 2>/dev/null | head -n 5",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::kubeconfig"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_20.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <mgmt-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "amw_name=$(kubectl get appliedmanifestworks -o json | \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::amw_name": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::amw_name",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::amw_name"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r \".items[] | select(.spec.manifestWorkName == \\\"$resource_id\\\") | .metadata.name\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::manifestWorkName": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::manifestWorkName",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::manifestWorkName"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r \".items[] | select(.spec.manifestWorkName == \\\"$resource_id\\\") | .metadata.name\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::manifestWorkName": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::manifestWorkName",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::manifestWorkName"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestwork \"$amw_name\" -o yaml",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_information_access::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_information_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_21.sh::system_information_access::13"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_21.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestwork \"$amw_name\" -o jsonpath='{range .status.appliedResources[*]}{.resource}{\"\\t\"}{.namespace}{\"\\t\"}{.name}{\"\\n\"}{end}'",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::jsonpath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::jsonpath",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_21.sh::jsonpath"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_22.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <svc-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_22.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_22.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_22.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_24.sh"
+    ],
+    "attributes": {
+      "matched_text": "pod_name=$(kubectl -n maestro get pods -l name=maestro-db -o jsonpath='{.items[0].metadata.name}')",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_24.sh::pod_name": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_24.sh::pod_name",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_24.sh::pod_name"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_24.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl -n maestro exec -i \"$pod_name\" -- psql -U maestro -d maestro -c \"<SQL_QUERY>\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_24.sh::system_information_access::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_24.sh::system_information_access::5",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_24.sh::system_information_access::5"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp ~/.kube/config ~/.kube/config.backup",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_write::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_write::2",
+      "path_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_write::2"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config view --flatten > ~/.kube/config",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::6",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00038"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::6"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config get-contexts",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::9",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00039"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::9"
+    ],
+    "sso_id": "sso_00038",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config rename-context <old-svc-context> svc-cluster",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::12": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::12",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 12,
+      "source_start_line": 12
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00040"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::12"
+    ],
+    "sso_id": "sso_00039",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config rename-context <old-mgmt-context> mgmt-cluster",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00041"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::13"
+    ],
+    "sso_id": "sso_00040",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <svc-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00042"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00041",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl -n maestro get pods -l app=postgres-breakglass 2>/dev/null",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::app": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::app",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00043"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::app"
+    ],
+    "sso_id": "sso_00042",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl -n maestro get pods -l name=maestro-db 2>/dev/null",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::name": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::name",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00044"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::name"
+    ],
+    "sso_id": "sso_00043",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl config use-context <mgmt-cluster-context>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00045"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00044",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "amw_name=$(kubectl get appliedmanifestworks -o json | \\",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::amw_name": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::amw_name",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00046"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::amw_name"
+    ],
+    "sso_id": "sso_00045",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r \".items[] | select(.spec.manifestWorkName == \\\"$resource_id\\\") | .metadata.name\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::manifestWorkName": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::manifestWorkName",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00047"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::manifestWorkName"
+    ],
+    "sso_id": "sso_00046",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "jq -r \".items[] | select(.spec.manifestWorkName == \\\"$resource_id\\\") | .metadata.name\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::manifestWorkName": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::manifestWorkName",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00048"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::manifestWorkName"
+    ],
+    "sso_id": "sso_00047",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestwork \"$amw_name\" -o yaml",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::13": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00049"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_information_access::13"
+    ],
+    "sso_id": "sso_00048",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "matched_text": "kubectl get appliedmanifestwork \"$amw_name\" -o jsonpath='{range .status.appliedResources[*]}{.resource}{\"\\t\"}{.namespace}{\"\\t\"}{.name}{\"\\n\"}{end}'",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::jsonpath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::jsonpath",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00050"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_9.sh::jsonpath"
+    ],
+    "sso_id": "sso_00049",
+    "subtype": "system_information_access"
+  }
+]

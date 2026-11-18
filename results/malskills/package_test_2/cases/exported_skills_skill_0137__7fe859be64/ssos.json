@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "SID=\"${CLAUDE_CODE_SESSION_ID:-$(tty 2>/dev/null | shasum | cut -c1-12)}\"; SID=\"${SID:-nosession}\"; F=\"/tmp/proxyme-$(echo -n \"$PWD\" | shasum | cut -c1-12)-${SID}.active\"; test -f \"$F\" && rm -f \"$F\" && echo \"DEACTIVATED\" || echo \"INACTIVE\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1",
+      "path_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat ~/.claude/skills/proxyme/config.json 2>/dev/null || echo '{\"model\":\"opus\",\"effort\":\"xhigh\"}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  }
+]

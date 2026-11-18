@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: create-project\r\ndescription: Creates new moonrepo projects with placement, task wiring, and validation steps, when onboarding packages/apps into an existing moon workspace, resulting in consistent project setup and fewer integration regressions.\r\n---\r\n\r\n# Moonrepo Create Project\r\n\r\n## Overview\r\nUse this skill when adding a new app/package/service to an existing moon workspace and you need consistent placement, task wiring, and post-create validation.\r\n\r\n## When to Use\r\n- New project scaffold in a mono-repo.\r\n- Standardizing creation steps across maintainers.\r\n- Reducing onboarding mistakes in task/dependency config.\r\n\r\n## Creation Workflow\r\n1. **Choose location + id conventions**\r\n   - Place app/package in repository convention (`apps/`, `packages/`, etc.).\r\n   - Choose stable project id used by moon config.\r\n2. **Scaffold project files**\r\n   ```bash\r\n   mkdir -p apps/new-app\r\n   ```\r\n   (Use framework generator as needed, then align with workspace conventions.)\r\n3. **Register moon project config**\r\n   - Add project config (`moon.yml`/workspace config according to repo convention).\r\n   - Define baseline targets: `lint`, `test`, `build` (as applicable).\r\n4. **Wire dependencies**\r\n   - Declare upstream project dependencies explicitly.\r\n   - Ensure task deps reflect real build/test ordering.\r\n5. **Validate immediately**\r\n   ```bash\r\n   moon query projects\r\n   moon query tasks new-app\r\n   moon run new-app:lint\r\n   moon run new-app:test\r\n   ```\r\n\r\n## Pitfalls and Recovery\r\n- **Project not discovered:** verify config path/naming and rerun `moon query projects`.\r\n- **Target missing:** confirm target key exists in project task config.\r\n- **Unexpected fan-out:** inspect dependency edges and remove accidental broad deps.\r\n- **CI-only failure:** compare local/CI env inputs in task definitions.\r\n\r\n## Caveats\r\n- Do not copy task config from unrelated project without pruning stale dependencies.\r\n- Validate each target right after creation; delayed validation compounds setup mistakes.\r\n\r\n",
+    "content_hash": "fabe50e131e568057b1ec19b72f71c4940b558f9950c79cdfb3b6666c3b9cc8a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 49,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2019,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   mkdir -p apps/new-app",
+    "content_hash": "62fa8ac736951d1b453f74016be835972914c6940816bcfd4ad662fe1cc11e5f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 24,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 23,
+    "source_start_line": 21
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "   moon query projects\r\n   moon query tasks new-app\r\n   moon run new-app:lint\r\n   moon run new-app:test",
+    "content_hash": "b7826f0253a895d56a5302d079d095df52953362b34faf4a0a3bcc0c11543ef0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 103,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 37,
+    "source_start_line": 32
+  }
+]

@@ -1,0 +1,499 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "--metadata ./workspace/data/show_notes.json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(config_path, encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/generate_image.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 63,
+      "source_start_line": 63
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/generate_image.py::encoding"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(metadata_path, encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/generate_image.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 73,
+      "source_start_line": 73
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/generate_image.py::encoding"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(os.path.dirname(output_path), exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::file_create::86": "path"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::file_create::86",
+      "path_class": "ordinary",
+      "source_end_line": 86,
+      "source_start_line": 86,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::file_create::86"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n        [\n            \"ffmpeg\",\n            \"-y\",\n            \"-loglevel\",\n            \"error\",\n            \"-f\",\n            \"lavfi\",\n            \"-i\",\n            \"color=c=0x1a1a2e:s=1000x1000\",\n            \"-frames:v\",\n            \"1\",\n            \"-update\",\n            \"1\",\n            output_path,\n        ],\n        capture_output=True,\n        text=True,\n        check=False,\n    )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::system_command_execution::88": "command"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::system_command_execution::88",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/generate_image.py:88:107:subprocess.run()",
+      "source_end_line": 107,
+      "source_start_line": 88
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::system_command_execution::88"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "api_key=os.environ.get(\"GEMINI_API_KEY\", \"dummy-key\"),",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/generate_image.py::api_key": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/generate_image.py::api_key",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 117,
+      "source_start_line": 117
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/generate_image.py::api_key"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "for step in getattr(interaction, \"steps\", []):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::dynamic_code_execution::146": "command"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::dynamic_code_execution::146",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/generate_image.py:146:146:getattr()",
+      "source_end_line": 146,
+      "source_start_line": 146
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::dynamic_code_execution::146"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "content_list = getattr(step, \"content\", [])",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::dynamic_code_execution::147": "command"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::dynamic_code_execution::147",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/generate_image.py:147:147:getattr()",
+      "source_end_line": 147,
+      "source_start_line": 147
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::dynamic_code_execution::147"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "item_type = getattr(item, \"type\", \"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::dynamic_code_execution::149": "command"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::dynamic_code_execution::149",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/generate_image.py:149:149:getattr()",
+      "source_end_line": 149,
+      "source_start_line": 149
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::dynamic_code_execution::149"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "mime_type = getattr(item, \"mime_type\", \"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::dynamic_code_execution::150": "command"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::dynamic_code_execution::150",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/generate_image.py:150:150:getattr()",
+      "source_end_line": 150,
+      "source_start_line": 150
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::dynamic_code_execution::150"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "image_data = base64.b64decode(item.data)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::decoding::152": "target"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::decoding::152",
+      "parameter_bindings": [],
+      "source_end_line": 152,
+      "source_start_line": 152
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::decoding::152"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "decoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(os.path.dirname(output_path), exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::file_create::153": "path"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::file_create::153",
+      "path_class": "ordinary",
+      "source_end_line": 153,
+      "source_start_line": 153,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::file_create::153"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(output_path, \"wb\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::file_access::154": "path"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::file_access::154",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 154,
+      "source_start_line": 154
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::file_access::154"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::credential_data_access::194": "path"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::credential_data_access::194",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 194,
+      "source_start_line": 194
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::credential_data_access::194"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.metadata, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/generate_image.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/generate_image.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 196,
+      "source_start_line": 196
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/generate_image.py::encoding"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "if is_opensource() or os.environ.get(\"IMAGE_ENGINE\", \"template\").strip().lower() == \"template\":",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::environment_access::225": "path"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::environment_access::225",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 225,
+      "source_start_line": 225
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::environment_access::225"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/generate_image.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(0)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/generate_image.py::credential_data_access::244": "path"
+      },
+      "operation_object": "obj::operation::scripts/generate_image.py::credential_data_access::244",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 244,
+      "source_start_line": 244
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/generate_image.py::credential_data_access::244"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "credential_data_access"
+  }
+]

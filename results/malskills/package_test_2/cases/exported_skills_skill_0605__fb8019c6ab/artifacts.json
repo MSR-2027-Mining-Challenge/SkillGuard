@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: odoo-sales-crm-expert\r\ndescription: \"Expert guide for Odoo Sales and CRM: pipeline stages, quotation templates, pricelists, sales teams, lead scoring, and forecasting.\"\r\nrisk: safe\r\nsource: \"self\"\r\n---\r\n\r\n# Odoo Sales & CRM Expert\r\n\r\n## Overview\r\n\r\nThis skill helps you configure and optimize Odoo Sales and CRM. It covers opportunity pipeline setup, automated lead assignment, quotation templates, pricelist strategies, sales team management, and the sales-to-invoice workflow.\r\n\r\n## When to Use This Skill\r\n\r\n- Designing CRM pipeline stages for your sales process.\r\n- Creating a quotation template with optional products and bundles.\r\n- Setting up pricelists with customer-tier pricing.\r\n- Configuring automated lead assignment by territory or salesperson.\r\n\r\n## How It Works\r\n\r\n1. **Activate**: Mention `@odoo-sales-crm-expert` and describe your sales scenario.\r\n2. **Configure**: Receive step-by-step Odoo setup instructions.\r\n3. **Optimize**: Get recommendations for improving pipeline velocity and deal closure rate.\r\n\r\n## Examples\r\n\r\n### Example 1: Configure CRM Pipeline Stages\r\n\r\n```text\r\nMenu: CRM \u2192 Configuration \u2192 Stages \u2192 New\r\n\r\nTypical B2B Pipeline:\r\n  Stage 1: New Lead          (probability: 10%)\r\n  Stage 2: Qualified         (probability: 25%)\r\n  Stage 3: Proposal Sent     (probability: 50%)\r\n  Stage 4: Negotiation       (probability: 75%)\r\n  Stage 5: Won               (is_won: YES \u2014 marks opportunity as closed-won)\r\n  Stage 6: Lost              (mark as lost via the \"Mark as Lost\" button)\r\n\r\nTips:\r\n  - Enable \"Rotting Days\" in CRM Settings to flag stale deals in red\r\n  - In Odoo 16+, Predictive Lead Scoring (AI) auto-updates probability\r\n    based on historical data. Disable it in Settings if you prefer manual\r\n    stage-based probability.\r\n```\r\n\r\n### Example 2: Create a Quotation Template\r\n\r\n```text\r\nMenu: Sales \u2192 Configuration \u2192 Quotation Templates \u2192 New\r\n(Requires the \"Sales Management\" module \u2014 enabled in Sales Settings)\r\n\r\nTemplate Name: SaaS Annual Subscription\r\nValid for: 30 days\r\n\r\nLines:\r\n  1. Platform License   | Qty: 1 | Price: $1,200/yr | (required)\r\n  2. Onboarding Package | Qty: 1 | Price: $500       | Optional\r\n  3. Premium Support    | Qty: 1 | Price: $300/yr    | Optional\r\n  4. Extra User License | Qty: 0 | Price: $120/user  | Optional\r\n\r\nSignature & Payment:\r\n  \u2611 Online Signature required before order confirmation\r\n  \u2611 Online Payment (deposit) \u2014 50% upfront\r\n\r\nNotes section:\r\n  \"Prices valid until expiration date. Subject to Schedule A terms.\"\r\n```\r\n\r\n### Example 3: Customer Tier Pricelist (VIP Discount)\r\n\r\n```text\r\nMenu: Sales \u2192 Configuration \u2192 Settings\r\n  \u2611 Enable Pricelists\r\n\r\nMenu: Sales \u2192 Configuration \u2192 Pricelists \u2192 New\r\n\r\nName: VIP Customer \u2014 15% Off\r\nCurrency: USD\r\nDiscount Policy: Show public price & discount on quotation\r\n\r\nRules:\r\n  Apply To: All Products\r\n  Compute Price: Discount\r\n  Discount: 15%\r\n  Min. Quantity: 1\r\n\r\nAssign to a customer:\r\n  Customer record \u2192 Sales & Purchase tab \u2192 Pricelist \u2192 VIP Customer\r\n```\r\n\r\n## Best Practices\r\n\r\n- \u2705 **Do:** Use **Lost Reasons** (CRM \u2192 Configuration \u2192 Lost Reasons) to build a dataset of why deals are lost \u2014 invaluable for sales coaching.\r\n- \u2705 **Do:** Enable **Sales Teams** with revenue targets so pipeline forecasting is meaningful per team.\r\n- \u2705 **Do:** Set **Expected Revenue** and **Closing Date** on every opportunity \u2014 these feed the revenue forecast dashboard.\r\n- \u2705 **Do:** Use **Quotation Templates** to standardize offers and reduce quoting time across the team.\r\n- \u274c **Don't:** Skip the CRM opportunity when selling \u2014 going directly from lead to invoice breaks pipeline analytics.\r\n- \u274c **Don't:** Manually edit prices on quotation lines as a workaround \u2014 set up proper pricelists instead.\r\n- \u274c **Don't:** Ignore the **Predictive Lead Scoring** feature in v16+ \u2014 configure it with historical data for accurate forecasting.\r\n\r\n## Limitations\r\n\r\n- **Commission rules** are not built into Odoo CRM out of the box \u2014 they require custom development or third-party modules.\r\n- The **Quotation Template** optional product feature requires the **Sale Management** module; it is not available in the base `sale` module.\r\n- **Territory-based lead assignment** (geographic routing) requires custom rules or the Enterprise Leads module.\r\n- Odoo CRM does not have native **email sequence / cadence** automation \u2014 use the **Email Marketing** or **Marketing Automation** modules for drip campaigns.\r\n\r\n---\r\n\r\n<!-- AGI-INTEGRATION-START -->\r\n\r\n## AGI Framework Integration\r\n\r\n> **Adapted for [@techwavedev/agi-agent-kit](https://www.npmjs.com/package/@techwavedev/agi-agent-kit)**\r\n> Original source: [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)\r\n\r\n### Memory-First Protocol\r\n\r\nRetrieve prior design decisions (color palettes, typography, spacing scales) to maintain visual consistency across sessions. Cache generated design tokens.\r\n\r\n```bash\r\n# Check for prior frontend/design context before starting\r\npython3 execution/memory_manager.py auto --query \"design system decisions and component patterns for Odoo Sales Crm Expert\"\r\n```\r\n\r\n### Storing Results\r\n\r\nAfter completing work, store frontend/design decisions for future sessions:\r\n\r\n```bash\r\npython3 execution/memory_manager.py store \\\r\n  --content \"Design system: adopted 8px grid, Inter font family, HSL color tokens with dark mode support\" \\\r\n  --type decision --project <project> \\\r\n  --tags odoo-sales-crm-expert frontend\r\n```\r\n\r\n### Multi-Agent Collaboration\r\n\r\nShare design decisions with backend agents (API contract changes) and QA agents (visual regression baselines).\r\n\r\n```bash\r\npython3 execution/cross_agent_context.py store \\\r\n  --agent \"<your-agent>\" \\\r\n  --action \"Implemented UI components \u2014 new design system with accessibility compliance (WCAG 2.1 AA)\" \\\r\n  --project <project>\r\n```\r\n\r\n### Design Memory Persistence\r\n\r\nStore design system tokens and component decisions in Qdrant so any agent on any platform (Claude, Gemini, Cursor) can retrieve and apply consistent styling.\r\n\r\n<!-- AGI-INTEGRATION-END -->\r\n",
+    "content_hash": "6272e682cd3682b64073d4ec2933c3a058d434dcfb5e698c80a3a067093fbbc9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 156,
+    "relative_path": "SKILL.md",
+    "size_bytes": 6131,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Check for prior frontend/design context before starting\r\npython3 execution/memory_manager.py auto --query \"design system decisions and component patterns for Odoo Sales Crm Expert\"",
+    "content_hash": "bffdafed7fb231dfab34080e1908de3985bb15295fd58cefbdc64fc43103046f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 182,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 127,
+    "source_start_line": 124
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "python3 execution/memory_manager.py store \\\r\n  --content \"Design system: adopted 8px grid, Inter font family, HSL color tokens with dark mode support\" \\\r\n  --type decision --project <project> \\\r\n  --tags odoo-sales-crm-expert frontend",
+    "content_hash": "075a3cb9ff5a1320894e20b3404f37d79cc5a112aeb7faf2c703b706bbd67ae6",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_4.sh",
+    "size_bytes": 234,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 138,
+    "source_start_line": 133
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "python3 execution/cross_agent_context.py store \\\r\n  --agent \"<your-agent>\" \\\r\n  --action \"Implemented UI components \u2014 new design system with accessibility compliance (WCAG 2.1 AA)\" \\\r\n  --project <project>",
+    "content_hash": "c4f687914688e8fca45683962a72646e333f5b3ecb56de56016f8b627d2de874",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_5.sh",
+    "size_bytes": 207,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 149,
+    "source_start_line": 144
+  }
+]

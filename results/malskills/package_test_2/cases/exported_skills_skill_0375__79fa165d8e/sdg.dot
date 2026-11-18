@@ -1,0 +1,34 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=config\npath=source.json"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"" [label="obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"" [label="obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::80ff37153e5c5189a913" [label="value::80ff37153e5c5189a913\nkind=value"];
+  "value::b38ecacc825658313f31" [label="value::b38ecacc825658313f31\nkind=value"];
+  "value::caf3dc2a1be88f844827" [label="value::caf3dc2a1be88f844827\nkind=value"];
+  "value::d29b913774a4afd20914" [label="value::d29b913774a4afd20914\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00002" [label="contains"];
+  "art_0000" -> "sso_00003" [label="contains"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"" -> "value::d29b913774a4afd20914" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"" -> "value::caf3dc2a1be88f844827" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"" -> "value::b38ecacc825658313f31" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"" -> "value::80ff37153e5c5189a913" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"" [label="has_operand"];
+  "sso_00002" -> "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"" [label="has_operand"];
+  "sso_00003" -> "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://publish.x.com/oembed?url=<original-url>\"" [label="has_operand"];
+}

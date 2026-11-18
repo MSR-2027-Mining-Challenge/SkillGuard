@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "\ufeff---\r\nname: stock-analysis\r\ndescription: Investigaci\u00f3n accionaria completa v\u00eda Yahoo Finance. Usar para: perfiles corporativos, an\u00e1lisis t\u00e9cnico/fundamental, actividad insider, filings SEC y comparativas multi-acci\u00f3n.\r\n---\r\n# Stock Analysis\r\n## Trigger\r\nActivar con: ticker, s\u00edmbolo, an\u00e1lisis de acci\u00f3n, perfil empresa, gr\u00e1ficos, insider, 10-K/10-Q, comparativa sectorial.\r\n## Workflow\r\n1. Identificar s\u00edmbolo \u2192 `AAPL`, `TSLA`, `^GSPC`, etc.\r\n2. Cargar APIs m\u00ednimas necesarias:\r\n   - Perfil: `Yahoo/get_stock_profile`\r\n   - T\u00e9cnico/Valoraci\u00f3n: `Yahoo/get_stock_insights`\r\n   - Precio: `Yahoo/get_stock_chart` (interval/range seg\u00fan horizonte)\r\n   - Insider/SEC: `Yahoo/get_stock_holders`, `Yahoo/get_stock_sec_filing`\r\n3. Combinar outputs \u2192 retornar resumen estructurado (perfil + outlook + riesgo + pr\u00f3ximos eventos)\r\n## Rules\r\n- Perfil + Insights siempre juntos para preguntas generales.\r\n- Usar `comparisons` en chart para multi-ticker.\r\n- Ajustar `region`/`lang` para mercados no-US.\r\n- No dar recomendaci\u00f3n de inversi\u00f3n. Solo datos y contexto.\r\n",
+    "content_hash": "2422d0318018ad0a20c605fcfe2e686e191b3b71b503dc3514785da473a5c5b6",
+    "generated": false,
+    "is_text": true,
+    "line_count": 21,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1072,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

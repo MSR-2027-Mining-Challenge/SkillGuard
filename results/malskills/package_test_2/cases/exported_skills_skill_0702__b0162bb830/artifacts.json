@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: authors-build-place\r\ndescription: Build a place entry for the project bible via an interactive interview. Usage - /authors-build-place <name> [--author <author-name>]. Seven questions covering type, sensory signature, one odd detail, meaning to characters, how it changes, contradiction, connections. Optional --author lens (mcphee for architectural history, didion for cultural specificity). Use when you're adding a new location to a long-form project and want author personas to read its bible entry before editing passages set there.\r\n---\r\n\r\n# /authors-build-place <name> [--author <author>]\r\n\r\nBuild a structured place entry in the project bible.\r\n\r\n## When to use\r\n\r\n- A new location has entered your novel and you want other author personas to know about it.\r\n- You're pre-planning a novel and sketching out key settings.\r\n- A location has been drifting (sensory details shifting across chapters) and you want to nail it down.\r\n\r\nNot for: writing scene prose set in this place (use `/authors-channel <author>` or `/authors-draft`); editing an existing passage (use `/authors-edit`).\r\n\r\n## Instructions for Claude\r\n\r\n1. **Parse arguments:** place name (required) + optional `--author <name>` flag. Valid lenses in v0.5: `mcphee`, `didion`. Others fall back to default.\r\n\r\n2. **Verify `.great-authors/` exists.** If not, tell the user to run `/authors-project-init` and stop.\r\n\r\n3. **Check for existing place file** at `.great-authors/places/<name>.md`. If exists, ask about overwrite (default no).\r\n\r\n4. **Dispatch place-builder** via `Agent` tool:\r\n   - `subagent_type: place-builder`\r\n   - Prompt includes: `Mode: interactive`, `Place name: <name>`, `Author lens: <author>`, `Working directory: <cwd>`.\r\n\r\n5. **Relay the interview.** Seven questions, one at a time, user answers pass back verbatim.\r\n\r\n6. **Confirm creation:**\r\n   ```\r\n   Created .great-authors/places/<name>.md\r\n\r\n   Type: <type>\r\n   Sensory signature: <one-line summary>\r\n\r\n   Next: run /authors-channel <author> to draft a scene here, or /authors-build-place for the next location.\r\n   ```\r\n\r\n## Notes\r\n\r\n- Places are bible metadata. Do not write to the manuscript.\r\n- If the user mentions a character that doesn't exist in `.great-authors/characters/` during the interview (question 7, connections), offer to run `/authors-build-character` next \u2014 after finishing this place file.\r\n- If the user says \"cancel\" or \"abort,\" stop the dispatch and confirm no file was written.\r\n",
+    "content_hash": "38727d7c97e96d216af088cae73ade44394a9940eeb3935147bdc80ac55405af",
+    "generated": false,
+    "is_text": true,
+    "line_count": 47,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2465,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

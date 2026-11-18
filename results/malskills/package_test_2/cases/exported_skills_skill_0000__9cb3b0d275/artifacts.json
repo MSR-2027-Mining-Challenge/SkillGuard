@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: git-management\r\ndescription: Manage git operations safely with human review for commits and protection against destructive commands. Use when committing, pushing, branching, or performing any git operations. Enforces human approval before pushes, blocks force operations without confirmation, and requires pulling base branch before creating new branches.\r\nmetadata:\r\n  cairel-title: \"Git Repository Management\"\r\n  cairel-category: git\r\n  cairel-version: \"1.1.0\"\r\n  cairel-tags:\r\n    - git\r\n    - version-control\r\n    - commits\r\n    - workflow\r\n  cairel-conditions:\r\n    requires-git: true\r\n---\r\n\r\n# Git Repository Management\r\n\r\n**Purpose**: Ensure safe and consistent git operations with human oversight.\r\n\r\n**Applies To**: All projects using git\r\n\r\n---\r\n\r\n## \ud83d\udea8 Critical Rules\r\n\r\n### 1. Human Review Before Committing\r\n\r\n**AI MUST show human before committing ANY changes:**\r\n\r\n```\r\nRepository: /path/to/repo\r\nFiles to commit:\r\n  - src/auth.ts (modified)\r\n  - tests/auth.test.ts (new)\r\nChanges: +45 lines, -12 lines\r\nProposed commit message (28 chars): \"Add JWT authentication logic\"\r\nReady to commit? (y/n)\r\n```\r\n\r\n### 2. Commit Message Standards\r\n\r\n**All commit messages MUST be \u2264 50 characters.** Imperative mood, concise, descriptive.\r\n\r\n**No commit message body.** Most teams rarely use commit bodies, and they add noise. Write only the subject line. If the user explicitly requests a body, then include one.\r\n\r\n> **Conventional Commits**: If the project has the `conventional-commits` skill enabled, commit messages MUST follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format instead. The 50-char limit applies to the `<type>[scope]: <description>` line. See the `conventional-commits` skill for full details.\r\n\r\n### 3. Never Push Without Explicit Request\r\n\r\n**NEVER push to remote unless the human explicitly asks to push.** After a successful commit, do NOT automatically push. Wait for the human to say \"push\", \"push it\", \"push to remote\", or similar.\r\n\r\n```\r\n\u2713 Committed: \"Add JWT authentication logic\"\r\n\r\nNote: Changes are committed locally. Let me know if you'd like to push.\r\n```\r\n\r\n### 4. Never Use --force or --force-with-lease Without Confirmation\r\n\r\n**NEVER execute `git push --force`, `git push --force-with-lease`, or any force-push variant without explicitly requesting confirmation first.** These are destructive operations that rewrite remote history.\r\n\r\nBefore executing, AI MUST:\r\n1. Explain what the force push will do\r\n2. Warn about potential consequences (overwriting others' work, lost commits)\r\n3. Wait for explicit \"yes\" confirmation\r\n\r\n```\r\n\u26a0\ufe0f  You're requesting a force push to origin/feature-branch.\r\n\r\nThis will OVERWRITE the remote branch history. If others have pulled\r\nfrom this branch, their local copies will diverge.\r\n\r\nCommand: git push --force-with-lease origin feature-branch\r\n\r\nProceed? (y/n)\r\n```\r\n\r\n### 5. Pull Base Branch Before Creating New Branches\r\n\r\n**ALWAYS pull the latest changes from the base branch before creating a new branch.** This prevents working on stale code and reduces merge conflicts.\r\n\r\n```bash\r\n# Before creating a new branch:\r\ngit checkout main          # (or the base branch)\r\ngit pull origin main       # Pull latest changes\r\ngit checkout -b feature/x  # Now create the new branch\r\n```\r\n\r\nAI MUST follow this sequence every time a new branch is requested. If the human specifies a different base branch, pull that branch instead.\r\n\r\n---\r\n\r\n## \u2705 Checklist\r\n\r\n- [ ] Identified correct repository\r\n- [ ] Checked `git status`\r\n- [ ] Commit message \u2264 50 characters (or follows conventional commits if enabled)\r\n- [ ] Showed human the review format before committing\r\n- [ ] Received explicit approval before committing\r\n- [ ] Did NOT auto-push after commit \u2014 waited for explicit push request\r\n- [ ] No `--force` or `--force-with-lease` used without confirmation\r\n- [ ] Pulled base branch before creating any new branch\r\n\r\n---\r\n\r\n## \ud83e\udd16 AI Self-Check Protocol\r\n\r\n```\r\nGit Commit \u2192 Correct repo? \u2192 Show review \u2192 Approved?\r\n\u251c\u2500 YES \u2192 Execute commit \u2192 STOP (do NOT push unless asked)\r\n\u2514\u2500 NO \u2192 Stop, ask for changes\r\n\r\nPush Requested \u2192 Is it a force push?\r\n\u251c\u2500 YES \u2192 Warn about consequences \u2192 Confirmed? \u2192 Execute\r\n\u2514\u2500 NO \u2192 Show push details \u2192 Approved? \u2192 Push\r\n\r\nNew Branch Requested \u2192 Pull base branch first \u2192 Create branch\r\n```\r\n",
+    "content_hash": "8de75774ae5422db287759675072296e4af713c544987031a9e1dc6a6c5c2b71",
+    "generated": false,
+    "is_text": true,
+    "line_count": 120,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4400,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Before creating a new branch:\r\ngit checkout main          # (or the base branch)\r\ngit pull origin main       # Pull latest changes\r\ngit checkout -b feature/x  # Now create the new branch",
+    "content_hash": "84894e3f39e714e2844d6c5c437ab122abe48f49b877427eefd912efe7b8d10a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 188,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 88,
+    "source_start_line": 83
+  }
+]

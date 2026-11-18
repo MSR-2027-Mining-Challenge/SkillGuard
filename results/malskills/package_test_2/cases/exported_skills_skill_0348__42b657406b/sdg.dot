@@ -1,0 +1,36 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_0.js"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_1.js"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_2.js"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_3.js"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_4.js"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_5.js"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_6.js"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_7.js"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_8.js"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_9.js"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_10.js"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_11.js"];
+  "art_0013" [label="art_0013\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_12.js"];
+  "art_0014" [label="art_0014\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_13.js"];
+  "art_0015" [label="art_0015\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_14.js"];
+  "art_0016" [label="art_0016\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_15.js"];
+  "art_0017" [label="art_0017\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_16.js"];
+  "obj::operation::.malskills_fences/SKILL__fence_3.js::file_write::10" [label="obj::operation::.malskills_fences/SKILL__fence_3.js::file_write::10\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::5" [label="obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::5\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_write"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_write"];
+  "value::346b12268f35260a0dbc" [label="value::346b12268f35260a0dbc\nkind=value"];
+  "value::9d888bae8810265c2726" [label="value::9d888bae8810265c2726\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "art_0006" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_3.js::file_write::10" -> "value::9d888bae8810265c2726" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::5" -> "value::346b12268f35260a0dbc" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_3.js::file_write::10" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_5.js::file_write::5" [label="has_operand"];
+}

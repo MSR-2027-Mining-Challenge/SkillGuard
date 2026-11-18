@@ -1,0 +1,26 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/analyzing-failures.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=references/.malskills_fences/analyzing-failures__fence_0.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=references/.malskills_fences/analyzing-failures__fence_1.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=markdown\npath=references/fixing-tests.md"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=references/.malskills_fences/fixing-tests__fence_0.sh"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/fixing-tests__fence_6.ts"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/fixing-tests__fence_7.ts"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/fixing-tests__fence_8.ts"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=shell\npath=references/.malskills_fences/fixing-tests__fence_9.sh"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=shell\npath=references/.malskills_fences/fixing-tests__fence_10.sh"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/fixing-tests__fence_11.ts"];
+  "art_0013" [label="art_0013\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/fixing-tests__fence_12.ts"];
+  "obj::operation::references/.malskills_fences/fixing-tests__fence_0.sh::file_read::2" [label="obj::operation::references/.malskills_fences/fixing-tests__fence_0.sh::file_read::2\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::33ccc38d6debe29299a1" [label="value::33ccc38d6debe29299a1\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0006" -> "sso_00000" [label="contains"];
+  "obj::operation::references/.malskills_fences/fixing-tests__fence_0.sh::file_read::2" -> "value::33ccc38d6debe29299a1" [label="value_flow"];
+  "sso_00000" -> "obj::operation::references/.malskills_fences/fixing-tests__fence_0.sh::file_read::2" [label="has_operand"];
+}

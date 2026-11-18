@@ -1,0 +1,58 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.ts"
+    ],
+    "attributes": {
+      "matched_text": "const expectedSignature = crypto\n    .createHmac(\"sha256\", process.env.MONEROO_WEBHOOK_SECRET!)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69",
+      "parameter_bindings": [],
+      "source_end_line": 70,
+      "source_start_line": 69
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.ts::hashing::69"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "hashing"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.ts"
+    ],
+    "attributes": {
+      "matched_text": "return crypto.timingSafeEqual(\n    Buffer.from(signature),\n    Buffer.from(expectedSignature)\n  );",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74",
+      "parameter_bindings": [],
+      "source_end_line": 77,
+      "source_start_line": 74
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.ts::cryptographic_operation::74"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "cryptographic_operation"
+  }
+]

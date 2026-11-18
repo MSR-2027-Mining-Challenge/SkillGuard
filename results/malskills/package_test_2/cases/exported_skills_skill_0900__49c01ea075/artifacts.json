@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "\r\n---\r\nname: kernel-syscall-userfaultfd-race-detect\r\ndescription: Detect userfaultfd-based race condition exploits \u2014 identify processes using userfaultfd to slow kernel operations and win race conditions in privilege escalation.\r\ndomain: cybersecurity\r\nsubdomain: kernel-security\r\ntags:\r\n- linux\r\n- userfaultfd\r\n- race-condition\r\n- exploit\r\nnist_csf:\r\n- DE.CM-01\r\n- DE.AE-02\r\nmodel: sonnet\r\nmaxTurns: 15\r\ntools: [Read, Bash, Glob, Grep]\r\nmitre_attack:\r\n- T1068\r\ncapec: []\r\n",
+    "content_hash": "c8392f163f0cb4d60f25eea6280dc8d1390a25936999fd491b91f9d8ad70415a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 21,
+    "relative_path": "SKILL.md",
+    "size_bytes": 475,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"version\": \"1.0.0\",\r\n  \"updated\": \"2026-06-02\",\r\n  \"agents\": [],\r\n  \"skills\": [\r\n    {\r\n      \"name\": \"kernel-syscall-userfaultfd-race-detect\",\r\n      \"path\": \"linux/kernel/syscall/userfaultfd/race/detect\",\r\n      \"description\": \"Detect userfaultfd-based race condition exploits \\u2014 identify processes using userfaultfd to slow kernel operations and win race conditions in privilege escalation.\",\r\n      \"domain\": \"cybersecurity\",\r\n      \"model\": \"sonnet\",\r\n      \"sha512\": \"727fec1c77dc7473f190828042fb25f1832f51a8a1817ee6df2632084bed6e16b6a9bc7fff4942ab32abb8afda0b8dedc5e32bdcf8a60ec7c561be05d6981b0c\",\r\n      \"file\": \"skills/linux/kernel/syscall/userfaultfd/race/detect/SKILL.md\"\r\n    }\r\n  ]\r\n}\r\n",
+    "content_hash": "244f1cc240d776ab57dbd68951c9c6d63229a80ddc92f254e855dd26a61cd173",
+    "generated": false,
+    "is_text": true,
+    "line_count": 17,
+    "relative_path": "index.json",
+    "size_bytes": 708,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

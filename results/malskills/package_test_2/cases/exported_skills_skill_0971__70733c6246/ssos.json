@@ -1,0 +1,494 @@
+[
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "pip install youtube-transcript-api",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install youtube-transcript-api",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::211": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::211",
+      "source_end_line": 211,
+      "source_start_line": 211,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::211"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "_ZEDCLAW_HOME = Path(os.environ.get(\"ZEDCLAW_HOME\", Path.home() / \".zedclaw\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memento_cards.py::_ZEDCLAW_HOME": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memento_cards.py::_ZEDCLAW_HOME",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memento_cards.py::_ZEDCLAW_HOME"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(CARDS_FILE, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memento_cards.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memento_cards.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 45,
+      "source_start_line": 45
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memento_cards.py::encoding"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "fd, tmp = tempfile.mkstemp(dir=DATA_DIR, suffix=\".tmp\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::file_create::56": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::file_create::56",
+      "path_class": "ordinary",
+      "source_end_line": 56,
+      "source_start_line": 56,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::file_create::56"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "os.replace(tmp, CARDS_FILE)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::file_write::61": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::file_write::61",
+      "path_class": "ordinary",
+      "source_end_line": 61,
+      "source_start_line": 61,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::file_write::61"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "os.unlink(tmp)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::link_operation::64": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::link_operation::64",
+      "path_class": "ordinary",
+      "source_end_line": 64,
+      "source_start_line": 64,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::link_operation::64"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "link_operation"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::credential_data_access::105": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::credential_data_access::105",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 105,
+      "source_start_line": 105
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::credential_data_access::105"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::credential_data_access::160": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::credential_data_access::160",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 160,
+      "source_start_line": 160
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::credential_data_access::160"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "user_answer = getattr(args, \"user_answer\", None)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::dynamic_code_execution::163": "command"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::dynamic_code_execution::163",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/memento_cards.py:163:163:getattr()",
+      "source_end_line": 163,
+      "source_start_line": 163
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::dynamic_code_execution::163"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(output_path, \"w\", newline=\"\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memento_cards.py::newline": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memento_cards.py::newline",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 226,
+      "source_start_line": 226
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memento_cards.py::newline"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::credential_data_access::240": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::credential_data_access::240",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 240,
+      "source_start_line": 240
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::credential_data_access::240"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(file_path, \"r\", encoding=\"utf-8\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/memento_cards.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/memento_cards.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 243,
+      "source_start_line": 243
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/memento_cards.py::encoding"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/memento_cards.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/memento_cards.py::credential_data_access::279": "path"
+      },
+      "operation_object": "obj::operation::scripts/memento_cards.py::credential_data_access::279",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 279,
+      "source_start_line": 279
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/memento_cards.py::credential_data_access::279"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/youtube_quiz.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/youtube_quiz.py::credential_data_access::37": "path"
+      },
+      "operation_object": "obj::operation::scripts/youtube_quiz.py::credential_data_access::37",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 37,
+      "source_start_line": 37
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/youtube_quiz.py::credential_data_access::37"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/youtube_quiz.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/youtube_quiz.py::credential_data_access::53": "path"
+      },
+      "operation_object": "obj::operation::scripts/youtube_quiz.py::credential_data_access::53",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 53,
+      "source_start_line": 53
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/youtube_quiz.py::credential_data_access::53"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/youtube_quiz.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/youtube_quiz.py::credential_data_access::66": "path"
+      },
+      "operation_object": "obj::operation::scripts/youtube_quiz.py::credential_data_access::66",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 66,
+      "source_start_line": 66
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/youtube_quiz.py::credential_data_access::66"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "credential_data_access"
+  }
+]

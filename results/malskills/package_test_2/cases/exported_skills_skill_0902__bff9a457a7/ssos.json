@@ -1,0 +1,266 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_read::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "matched_text": "git merge-base --is-ancestor origin/<branch-name> HEAD && echo \"Merged into HEAD\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::5"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Remote branches (excluding HEAD)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::4",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::4"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "git branch -r | grep -v HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::5"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Alternative: show all branches that contain this branch's HEAD",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::9",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::9"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "git branch -r --no-merged main | grep -v HEAD | grep -v \"archive/\" | grep -v \"wip/\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "analyze_branches.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n        [\"git\"] + args,\n        capture_output=True,\n        text=True,\n        check=check,\n    )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::analyze_branches.py::system_command_execution::27": "command"
+      },
+      "operation_object": "obj::operation::analyze_branches.py::system_command_execution::27",
+      "parameter_bindings": [],
+      "sink_callsite_id": "analyze_branches.py:27:32:subprocess.run()",
+      "source_end_line": 32,
+      "source_start_line": 27
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::analyze_branches.py::system_command_execution::27"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "analyze_branches.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            [\"gh\", \"repo\", \"view\", \"--json\", \"defaultBranchRef\", \"--jq\", \".defaultBranchRef.name\"],\n            capture_output=True,\n            text=True,\n            check=True,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::analyze_branches.py::system_command_execution::40": "command"
+      },
+      "operation_object": "obj::operation::analyze_branches.py::system_command_execution::40",
+      "parameter_bindings": [],
+      "sink_callsite_id": "analyze_branches.py:40:45:subprocess.run()",
+      "source_end_line": 45,
+      "source_start_line": 40
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::analyze_branches.py::system_command_execution::40"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "analyze_branches.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "subprocess.run(\n            [\"git\", \"merge-base\", \"--is-ancestor\", branch, target],\n            check=True,\n            capture_output=True,\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::analyze_branches.py::system_command_execution::94": "command"
+      },
+      "operation_object": "obj::operation::analyze_branches.py::system_command_execution::94",
+      "parameter_bindings": [],
+      "sink_callsite_id": "analyze_branches.py:94:98:subprocess.run()",
+      "source_end_line": 98,
+      "source_start_line": 94
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::analyze_branches.py::system_command_execution::94"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_command_execution"
+  }
+]

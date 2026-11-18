@@ -1,0 +1,191 @@
+[
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'",
+    "span": null,
+    "value_id": "value::6c44e794c4374799f6ba",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::key",
+    "span": null,
+    "value_id": "value::5ce27f6c69118428861f",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -s \"https://api.trello.com/1/boards/{boardId}/lists?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'",
+    "span": null,
+    "value_id": "value::21cc7d1c2833f2ddeb26",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_2.sh::key",
+    "span": null,
+    "value_id": "value::a76f2ca3929b1d6a930e",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -s \"https://api.trello.com/1/lists/{listId}/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id, desc}'",
+    "span": null,
+    "value_id": "value::27c285e69c1e97de9648",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::key",
+    "span": null,
+    "value_id": "value::bf2866d5560edfefee87",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.trello.com/1/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::f678f2f55c4a5eae0bf6",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::key",
+    "span": null,
+    "value_id": "value::a8bcd1489f1174a0ed96",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X PUT \"https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::efa01e2b5f7f06c470c0",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::key",
+    "span": null,
+    "value_id": "value::600d7adff12676f192b7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_6.sh::data_receive::curl -s -X POST \"https://api.trello.com/1/cards/{cardId}/actions/comments?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::49caf5f7f7ff73569309",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_6.sh::key",
+    "span": null,
+    "value_id": "value::6a69e9a9087f8e62b19c",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_7.sh::data_receive::curl -s -X PUT \"https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::20a285372b4fe8772040",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_7.sh::key",
+    "span": null,
+    "value_id": "value::e72b83bba37ca43cedb6",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN&fields=name,id\" | jq",
+    "span": null,
+    "value_id": "value::ace6329ed844278dafb0",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::key",
+    "span": null,
+    "value_id": "value::03eb130abbd2a305ca76",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | select(.name | contains(\"Work\"))'",
+    "span": null,
+    "value_id": "value::d451e6571e453f78d001",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::data_receive::curl -s \"https://api.trello.com/1/boards/{boardId}/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, list: .idList}'",
+    "span": null,
+    "value_id": "value::f9596ef79d45210b93db",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'",
+    "span": null,
+    "value_id": "value::404801c1b13a20858fef",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s \"https://api.trello.com/1/boards/{boardId}/lists?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'",
+    "span": null,
+    "value_id": "value::b38ab5f72d70003bc836",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s \"https://api.trello.com/1/lists/{listId}/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id, desc}'",
+    "span": null,
+    "value_id": "value::ca19cbaba9a9edd33ed8",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X POST \"https://api.trello.com/1/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::7e8bfa223aebd5a9c377",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X PUT \"https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::118cc397c16f963cbf64",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X POST \"https://api.trello.com/1/cards/{cardId}/actions/comments?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" \\",
+    "span": null,
+    "value_id": "value::180027f71d3db6413dfb",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN&fields=name,id\" | jq",
+    "span": null,
+    "value_id": "value::81bfa1959c6ec6b5801c",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | select(.name | contains(\"Work\"))'",
+    "span": null,
+    "value_id": "value::e40bf9307705f885bff7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s \"https://api.trello.com/1/boards/{boardId}/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, list: .idList}'",
+    "span": null,
+    "value_id": "value::7ac17ac473b903faaa9e",
+    "value_kind": "symbolic"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: photographer-lindbergh\r\ndescription: Generate images in Peter Lindbergh's iconic black and white style. Use when users ask for Lindbergh style, raw authentic beauty, emotional B&W portraits, supermodel aesthetic, or unretouched natural photography.\r\nallowed-tools: Bash, Read, Write\r\nlicense: MIT\r\ncompatibility: Requires credentials.json or FAL_KEY environment variable (fal.ai API key). Claude.ai users provide credentials via credentials.json.\r\n---\r\n\r\n# Peter Lindbergh Style Photography\r\n\r\nGenerate images in the iconic style of Peter Lindbergh - raw, authentic black and white photography that celebrates natural beauty and emotional depth.\r\n\r\nSee `references/fal-api.md` for setup, Python patterns, and error handling.\r\n\r\n## Style Characteristics\r\n\r\nPeter Lindbergh revolutionized fashion photography by:\r\n- **Raw authentic beauty** - minimal retouching, natural imperfections celebrated\r\n- **High-contrast black and white** - deep blacks, rich mid-tones, heavy film grain\r\n- **Natural/subtractive lighting** - soft, directional light that sculpts faces\r\n- **Emotional depth** - focus on personality and inner character over glamour\r\n- **Timeless elegance** - avoids trends, captures enduring beauty\r\n\r\n## API Endpoint\r\n\r\n`fal-ai/gemini-3-pro-image-preview`\r\n\r\n## Prompt Construction\r\n\r\n### Core Style Elements\r\n\r\nAlways include these elements for authentic Lindbergh style:\r\n\r\n```\r\nin the style of Peter Lindbergh, black and white photography,\r\nnatural light, minimal makeup, raw authentic beauty, high contrast,\r\nfilm grain texture, intimate portrait, emotional depth, unretouched skin\r\n```\r\n\r\n### Mood Keywords\r\n\r\n| Category | Keywords |\r\n|----------|----------|\r\n| Emotion | `introspective`, `soulful`, `intimate`, `vulnerable` |\r\n| Aesthetic | `raw`, `unretouched`, `authentic`, `natural` |\r\n| Technical | `high contrast`, `film grain`, `black and white` |\r\n| Style | `cinematic`, `timeless`, `verite`, `documentary` |\r\n\r\n## CLI Script\r\n\r\n```bash\r\npython3 scripts/fal_generate.py \\\r\n    --endpoint image \\\r\n    --prompt \"woman with freckles, in the style of Peter Lindbergh, black and white, natural light, raw authentic beauty, high contrast, film grain, intimate portrait\" \\\r\n    --aspect-ratio 3:4 \\\r\n    --output lindbergh-portrait.png\r\n```\r\n\r\n## Examples\r\n\r\n### 1. Classic Supermodel Portrait\r\n```\r\nwoman with strong bone structure, direct gaze at camera,\r\nin the style of Peter Lindbergh, black and white photography,\r\nnatural daylight, minimal makeup, raw authentic beauty,\r\nhigh contrast with rich shadows, film grain texture,\r\nintimate close-up portrait, soulful and introspective\r\n```\r\n\r\n### 2. Emotional Editorial\r\n```\r\nmodel in simple white shirt, wind in hair, beach setting,\r\nin the style of Peter Lindbergh, black and white photography,\r\novercast natural light, unretouched skin texture,\r\ndocumentary fashion photography, emotional vulnerability,\r\ncinematic composition, timeless elegance\r\n```\r\n\r\n### 3. Group Dynamic\r\n```\r\nthree models in casual poses, genuine interaction,\r\nin the style of Peter Lindbergh, black and white photography,\r\nstudio with natural light, authentic connection between subjects,\r\nraw beauty without heavy makeup, film grain aesthetic,\r\ncandid moment captured, verite fashion photography\r\n```\r\n\r\n### 4. Character Study\r\n```\r\nolder man with weathered face, life experience in eyes,\r\nin the style of Peter Lindbergh, black and white photography,\r\nwindow light, every wrinkle celebrated, raw authentic portrait,\r\nhigh contrast dramatic shadows, soulful depth,\r\nhumanistic photography, unretouched character study\r\n```\r\n\r\n## Tips for Best Results\r\n\r\n1. **Embrace imperfection** - Include terms like \"unretouched\", \"natural skin texture\", \"authentic\"\r\n2. **Specify lighting** - Use \"natural light\", \"window light\", \"overcast\", \"subtractive lighting\"\r\n3. **Focus on emotion** - Add \"soulful\", \"introspective\", \"vulnerable\", \"genuine expression\"\r\n4. **Keep it simple** - Lindbergh's style avoids elaborate styling; use \"minimal makeup\", \"simple clothing\"\r\n5. **Add grain** - Always include \"film grain texture\" or \"analog film aesthetic\"\r\n6. **Use portrait ratios** - 2:3, 3:4, or 4:5 work best for the classic Lindbergh look\r\n7. **Web search grounding** - `enable_web_search: True` lets Gemini look up Lindbergh's actual style for authentic results\r\n\r\n## Reference\r\n\r\nPeter Lindbergh (1944-2019) was a German fashion photographer known for launching the supermodel era with his 1990 British Vogue cover featuring Naomi Campbell, Linda Evangelista, Tatjana Patitz, Christy Turlington, and Cindy Crawford. His work emphasized natural beauty and rejected heavy retouching.\r\n\r\n**Key Influences**: Henri Cartier-Bresson, German Expressionist cinema\r\n**Signature**: Black and white, natural light, emotional authenticity\r\n",
+    "content_hash": "26f958390c341073a339ae9b37cbc008821658b17df383daba849f8455377a68",
+    "generated": false,
+    "is_text": true,
+    "line_count": 113,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4772,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "python3 scripts/fal_generate.py \\\r\n    --endpoint image \\\r\n    --prompt \"woman with freckles, in the style of Peter Lindbergh, black and white, natural light, raw authentic beauty, high contrast, film grain, intimate portrait\" \\\r\n    --aspect-ratio 3:4 \\\r\n    --output lindbergh-portrait.png",
+    "content_hash": "e19d757fdc99433409350efd058728064f49f6f3d6ceb66b62ee07c22cfd9f82",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 291,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 57,
+    "source_start_line": 51
+  }
+]

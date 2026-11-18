@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: ci-automation\r\ndescription: Use this skill when you need to automate continuous integration processes, including building, testing, and creating pull requests with optional auto-fixes.\r\n---\r\n\r\n# CI Automation Skill\r\n\r\nCoordinates pull \u2192 build \u2192 test \u2192 fix \u2192 PR. Keeps instructions lean; heavy details live in references and contracts file. Agent Runner is required for all agent calls (registry-enforced, audited).\r\n\r\n## Commands\r\n- `/ci-automation` (flags: `--build`, `--test`, `--dest`, `--src`, `--allow-warnings`, `--patch`, `--yolo`, `--help`)\r\n\r\n## Agents (v0.1.0)\r\n- `ci-validate-agent`: pre-flight checks (clean repo, config present, auth available)\r\n- `ci-pull-agent`: pull target branch, handle simple conflicts\r\n- `ci-build-agent`: run build, classify failures\r\n- `ci-test-agent`: run tests, classify failures/warnings\r\n- `ci-fix-agent`: apply straightforward fixes\r\n- `ci-root-cause-agent`: summarize unresolved issues, recommend actions\r\n- `ci-pr-agent`: commit/push/PR when gates pass\r\n\r\n## Flow\r\n0. Validate via Agent Runner \u2192 `ci-validate-agent`\r\n1. Pull via Agent Runner \u2192 `ci-pull-agent` (dest inferred from tracking; `--dest` overrides)\r\n2. Build via Agent Runner \u2192 `ci-build-agent`\r\n3. On build fail: Agent Runner \u2192 `ci-fix-agent` (only straightforward fixes), repeat\r\n4. Test via Agent Runner \u2192 `ci-test-agent`\r\n5. On test/warn fail: Agent Runner \u2192 `ci-fix-agent` if straightforward, else `ci-root-cause-agent`\r\n6. If clean and confirmed (or `--yolo`): Agent Runner \u2192 `ci-pr-agent` to commit/push/PR\r\n\r\n## Config\r\nPreferred: `.claude/ci-automation.yaml` (fallback: `.claude/config.yaml`) with `upstream_branch`, `build_command`, `test_command`, `warn_patterns`, `allow_warnings`, `auto_fix_enabled`, `pr_template_path`, `repo_root`. Detect stack (e.g., .NET/Python/Node) and prompt to save suggested commands.\r\n\r\n## Safety\r\n- No force-push; respect protected branches.\r\n- Default is conservative: auto-fix only; stop before commit/PR unless clean and confirmed.\r\n- `--yolo`: allow commit/push/PR after gates pass.\r\n- Warnings block PR unless `--allow-warnings` or config override.\r\n- Explicit confirmation for PRs to main/master unless `--dest main` provided.\r\n- Audit: Agent Runner logs to `.claude/state/logs/ci-automation/`.\r\n\r\n## References\r\n- `.claude/references/ci-automation-commands.md`\r\n- `.claude/references/ci-automation-checklists.md`\r\n- `.claude/references/ci-automation-contracts.md`\r\n\r\n## Size Guidance\r\n- Keep SKILL.md under ~2KB: overview, flags, agent list, flow summary, contracts, config, safety, references.",
+    "content_hash": "5a45eb28423dd4e4fcbac40111a9dd66a0222d8ef4d643a767ef8720f4276153",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2582,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,176 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo $HYPER3D_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo $HYPER3D_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "python <skill_dir>/scripts/generate_3d_model.py --image path/to/image.jpg --geometry-file-format glb --quality medium --output path/to/output_dir --api-key $HYPER3D_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "python <skill_dir>/scripts/generate_3d_model.py --image path/to/image.jpg --geometry-file-format glb --quality medium --tier Sketch --output path/to/output_dir --api-key $HYPER3D_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "python <skill_dir>/scripts/generate_3d_model.py --prompt \"A detailed 3D model of a medieval castle\" --geometry-file-format glb --quality high --output path/to/output_dir --api-key $HYPER3D_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "python <skill_dir>/scripts/generate_3d_model.py --images path/to/image1.jpg path/to/image2.jpg --geometry-file-format glb --quality high --output path/to/output_dir --api-key $HYPER3D_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "credential_data_access"
+  }
+]

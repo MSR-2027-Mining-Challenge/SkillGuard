@@ -1,0 +1,321 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "'{\"id\":\"d1\",\"text\":\"Orin Nano draws 7-15W\",\"type\":\"docs\",\"metadata\":{\"source\":\"docs\",\"permalink\":\"https://...\"}}' --json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat records.ndjson | bash .claude/skills/remember/scripts/remember.sh --json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "# the embedding endpoint at the local model-gear embed gear (overridable), and",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::system_configuration_modify::5": "target"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::system_configuration_modify::5",
+      "resource_class": "startup_configuration",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::system_configuration_modify::5"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "#   remember.sh '{\"id\":\"d1\",\"text\":\"...\",\"type\":\"docs\",\"metadata\":{...}}' --json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::system_information_access::9": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::system_information_access::9",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::system_information_access::9"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "#   cat records.ndjson | remember.sh --json",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::file_read::10": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::file_read::10",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::file_read::10"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "# The store is the files backend at ~/.eidetic/memory by default \u2014 a home-dir",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::system_configuration_modify::15": "target"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::system_configuration_modify::15",
+      "resource_class": "startup_configuration",
+      "source_end_line": 15,
+      "source_start_line": 15,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::system_configuration_modify::15"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat >&2 <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::file_read::43": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::file_read::43",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 43,
+      "source_start_line": 43
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::file_read::43"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat <<'EOF'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::file_read::53": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::file_read::53",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 53,
+      "source_start_line": 53
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::file_read::53"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat records.ndjson | remember.sh [--json] ...",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::file_read::59": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::file_read::59",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 59,
+      "source_start_line": 59
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::file_read::59"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "A record needs `id`, `text`, and `type`; `hash` and `metadata` are recommended",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::system_information_access::61": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::system_information_access::61",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 61,
+      "source_start_line": 61
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::system_information_access::61"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/remember.sh"
+    ],
+    "attributes": {
+      "matched_text": "\"$dir/culture.yaml\" | head -n1 | tr -d \"\\\"'\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/remember.sh::file_read::105": "path"
+      },
+      "operation_object": "obj::operation::scripts/remember.sh::file_read::105",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 105,
+      "source_start_line": 105
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/remember.sh::file_read::105"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_read"
+  }
+]

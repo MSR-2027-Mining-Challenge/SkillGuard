@@ -1,0 +1,305 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0000",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::241",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::241",
+      "target": "value::513847195777dcf055f8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::455",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::455",
+      "target": "value::fb5d67022d63ee52c68a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::456",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::456",
+      "target": "value::cef6da944160ac223a85",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00003",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::457",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::457",
+      "target": "value::9f52179caf866ef9f164",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::466",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::466",
+      "target": "value::025976e58775d213982a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00005",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::467",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::467",
+      "target": "value::84a9d4e64c2704358076",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00006",
+      "target": "obj::operation::SKILL.md::dynamic_code_execution::468",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::dynamic_code_execution::468",
+      "target": "value::ed8d7e4e91c64b03ee58",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::241",
+      "identity_key": "SKILL.md::dynamic_code_execution::241",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::513847195777dcf055f8",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::241",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::455",
+      "identity_key": "SKILL.md::dynamic_code_execution::455",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::fb5d67022d63ee52c68a",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::455",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::456",
+      "identity_key": "SKILL.md::dynamic_code_execution::456",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::cef6da944160ac223a85",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::456",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::457",
+      "identity_key": "SKILL.md::dynamic_code_execution::457",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::9f52179caf866ef9f164",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::457",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::466",
+      "identity_key": "SKILL.md::dynamic_code_execution::466",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::025976e58775d213982a",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::466",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::467",
+      "identity_key": "SKILL.md::dynamic_code_execution::467",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::84a9d4e64c2704358076",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::467",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::SKILL.md::dynamic_code_execution::468",
+      "identity_key": "SKILL.md::dynamic_code_execution::468",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::ed8d7e4e91c64b03ee58",
+      "kind": "value",
+      "value": "SKILL.md::dynamic_code_execution::468",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

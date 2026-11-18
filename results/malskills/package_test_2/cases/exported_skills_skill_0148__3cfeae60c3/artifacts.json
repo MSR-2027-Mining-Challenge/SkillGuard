@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: quantum-espresso-simulation\r\ndescription: Quantum ESPRESSO experiment-spec and validation guidance for electronic-structure stages. Use when defining SCF inputs, checking QE workdir artifacts, reviewing convergence expectations, or mapping QE outputs into downstream Autolab stages.\r\n---\r\n\r\n# Quantum ESPRESSO Simulation\r\n\r\n- Create SCF-focused specs with explicit `ecutwfc`, `conv_thr`, lattice parameter, `prefix`, `pseudo_dir`, and `outdir`.\r\n- Expect generated artifacts: `qe.in`, `launch.sh`, manifests, logs, and parsed summaries.\r\n- Validate that the output contains a total-energy line and explicit convergence text when available.\r\n- Treat missing total energy or failed execution as invalid.\r\n- Use QE stages primarily for upstream property extraction and controlled stage-to-stage mappings.\r\n",
+    "content_hash": "3d54e1131fbed361ad3277a3f0c145956155aca2ce844eb0b78f9b395ae3e0a9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 13,
+    "relative_path": "SKILL.md",
+    "size_bytes": 814,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Quantum ESPRESSO\"\r\n  short_description: \"QE stage defaults and checks\"\r\n  default_prompt: \"Use $quantum-espresso-simulation to draft or review a Quantum ESPRESSO stage spec for Autolab.\"\r\n",
+    "content_hash": "a518963157f8600c2d3ff3f22c381c6ef456a2fc382e02e3f992777f9b13ef0d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 217,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: learn-recall\r\ndescription: Manual retrieval from the learning loop knowledge base \u2014 search skills, memory, and patterns via FTS5 with explicit filters. Counterpart to the automatic UserPromptSubmit hook. Tracks usage.\r\nargument-hint: \"<query> [--kind=skill|memory|pattern] [--since=7d] [--max=10]\"\r\nuser-invocable: true\r\nlearning_provenance:\r\n  - \"spec:learning-loop-harness:REQ-14\"\r\n  - \"spec:learning-loop-harness:REQ-16\"\r\n  - \"spec:learning-loop-harness:REQ-17\"\r\ncreated_at: 2026-05-14T20:00:00Z\r\nlast_reviewed_at: 2026-05-14T20:00:00Z\r\n---\r\n\r\n# /learn-recall <query> [--kind=skill|memory|pattern] [--since=7d] [--max=10]\r\n\r\nExplicit manual retrieval from the Learning Loop knowledge base (REQ-16). Use\r\nwhen the automatic `user-prompt-submit-recall.sh` hook didn't surface what\r\nyou wanted, or when you need to scope a search to a specific kind, recent\r\ntime window, or higher result count than the hook's default (`--top-k=3`).\r\nIncrements usage tracking via `learn track-use` for surfaced paths so TTL\r\ndeprecation in `/learn-nudge` reflects real access (REQ-17).\r\n\r\n## What this covers\r\n\r\n- Manual FTS5 BM25 retrieval over `skill_index`, `memory_index`, `pattern_fts`.\r\n- Explicit filters: `--kind`, `--since`, `--max`, `--min-score`.\r\n- Pretty-printing matches in the chat (one line per match: path + score +\r\n  summary excerpt + `Read` instruction).\r\n- Tracking usage on every surfaced path (REQ-17 closure: tracking is by\r\n  *presentation*, not by Claude's downstream consumption).\r\n\r\n## What this does NOT cover\r\n\r\n- Automatic retrieval at prompt-submit time \u2014 that's the\r\n  `user-prompt-submit-recall.sh` hook. No agent involvement, no skill.\r\n- Modifying skills/memory \u2014 out of scope (use `/learn-extract`,\r\n  `/learn-refine`).\r\n- Reading the FULL body of any surfaced file \u2014 this skill surfaces paths +\r\n  summaries only. The user (or Claude on the next turn) uses the `Read` tool\r\n  on the path of interest.\r\n- Pattern extraction \u2014 Stage 2 (`learn extract`).\r\n- Producing audit reports \u2014 `/learn-audit-skills`.\r\n\r\n## Workflow\r\n\r\n### Phase 1 \u2014 Parse intent\r\n\r\nRead the user's `<query>` and any filters. Defaults:\r\n\r\n- `--max=10` (wider than the automatic hook's `--top-k=3` because manual\r\n  invocation benefits from a broader view).\r\n- `--kind` unset \u2192 all three kinds (skill / memory / pattern).\r\n- `--since` unset \u2192 no time filter.\r\n- `--min-score` from `config.yml` (default 0.4).\r\n\r\nValidation errors (e.g. `--kind=invalid`, `--since=abc`, `--max=-1`) surface\r\nas `learn`'s `*UsageError` \u2014 fix the filter and re-invoke.\r\n\r\n### Phase 2 \u2014 Run the deterministic query\r\n\r\n```bash\r\nlearn recall \\\r\n  --format json \\\r\n  --prompt \"<query>\" \\\r\n  --top-k <max> \\\r\n  --max-tokens 2000 \\\r\n  --kind <kind-if-set> \\\r\n  --since <since-if-set> \\\r\n  --db-path \"$CLAUDE_PROJECT_DIR/.claude/learning/db.sqlite\"\r\n```\r\n\r\nThe binary returns a JSON array of `{kind, path, score, summary}`. Parse it.\r\n\r\n### Phase 3 \u2014 Present results\r\n\r\nFor each match, print:\r\n\r\n```text\r\nResult <N>: <path> (<kind>, score=<X.XX>)\r\n  <summary excerpt, sanitized, \u2264120 chars>\r\n\r\n  Read full content with: Read <path>\r\n```\r\n\r\nIf no results: print *\"No matches above min-score (<X>); try a broader query\r\nor relax filters.\"*\r\n\r\n### Phase 4 \u2014 Track usage (REQ-17 closure)\r\n\r\nFor every path surfaced:\r\n\r\n```bash\r\nlearn track-use \\\r\n  --paths \"<comma-separated-paths>\" \\\r\n  --db-path \"...\"\r\n```\r\n\r\nBest-effort: `track-use` failures are logged but never block the user output.\r\nEven for paths that aren't in the index (unlikely, since they came from\r\nrecall), `track-use` exits 0 silently and logs a structured warn (REQ-17:\r\n*tracking best-effort \u2014 n\u00e3o bloqueia retrieval se a heur\u00edstica falhar*).\r\n\r\n## Rules\r\n\r\n- ALWAYS call `learn track-use` in Phase 4 (REQ-17). The skill being invoked\r\n  counts as \"presented to the agent\" for TTL purposes \u2014 the same accounting\r\n  the automatic hook does after injection.\r\n- NEVER read full file bodies inside this skill. Surface paths + summaries\r\n  only; the user / next-turn Claude does the `Read` if relevant.\r\n- NEVER modify the KB \u2014 this skill is strictly read-only.\r\n- Respect `--since` and `--kind` strictly. The binary validates them; on\r\n  `*UsageError`, surface the validation error to the user verbatim.\r\n- The system-reminder template is for the automatic hook only. This skill\r\n  uses `--format json` and reformats for readable chat output.\r\n\r\n## When NOT to use\r\n\r\n- For broad context every prompt \u2014 the automatic hook covers that with\r\n  `--top-k=3`. Use this skill only when you need scoping (specific kind,\r\n  time window, or larger result set).\r\n- For pattern counts and KB health \u2014 `learn stats` (or no skill at all) is\r\n  the right tool.\r\n- For deciding on a merge \u2014 that's `/learn-refine`, which has its own\r\n  similarity workflow via `learn similar`.\r\n\r\n## Related skills\r\n\r\n- `/learn-extract` \u2014 Stage 3. New skills produced by it are immediately\r\n  recall-able through this skill.\r\n- `/learn-refine` \u2014 Stage 4. Uses a different similarity API\r\n  (`learn similar`) but the same FTS5 backbone.\r\n- `/learn-nudge` \u2014 Stage 5. Reads usage tracking populated by this skill +\r\n  the hook to compute TTL candidates.\r\n- `/learn-audit-skills` \u2014 one-shot rubric review, complementary information.\r\n\r\n## Automatic counterpart\r\n\r\nFor every-prompt context retrieval, the hook\r\n[`.claude/hooks/user-prompt-submit-recall.sh`](../../hooks/user-prompt-submit-recall.sh)\r\nruns `learn recall --format=system-reminder` with `--top-k=3\r\n--max-tokens=500`. It injects the REQ-14a template into the prompt and calls\r\n`learn track-use` afterwards \u2014 exactly the same closure pattern as this\r\nmanual skill, just at every prompt boundary instead of on-demand.\r\n",
+    "content_hash": "4d8e5442b37ac2ef407e0c432088334d193f461974c3d67c19b0357f5f57d23e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 144,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5731,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "learn recall \\\r\n  --format json \\\r\n  --prompt \"<query>\" \\\r\n  --top-k <max> \\\r\n  --max-tokens 2000 \\\r\n  --kind <kind-if-set> \\\r\n  --since <since-if-set> \\\r\n  --db-path \"$CLAUDE_PROJECT_DIR/.claude/learning/db.sqlite\"",
+    "content_hash": "d2399d884818a572886bb7cddaf99f39d88a2e6311688622b108213a91493661",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 215,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 70,
+    "source_start_line": 61
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "learn track-use \\\r\n  --paths \"<comma-separated-paths>\" \\\r\n  --db-path \"...\"",
+    "content_hash": "d89d285d3ffa8f58953b5f4690a1d7786232559acb356f1aa33b3c48e02a6c45",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 75,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 96,
+    "source_start_line": 92
+  }
+]

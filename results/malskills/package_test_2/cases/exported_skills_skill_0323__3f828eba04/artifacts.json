@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: create-skill\r\ndescription: Create an agent skill customization file (SKILL.md) that packages a workflow.\r\ncompatibility: Requires access to the target workspace so the agent can create or update files under `.agents/skills/`.\r\nmetadata:\r\n  version: '0.2.0'\r\n---\r\n\r\n# Create Skill\r\n\r\n## Overview\r\n\r\nUse this skill when you want to turn a conversation, repeated workflow, or manual operating pattern into a reusable skill.\r\n\r\nThe final result should be a reusable skill under `.agents/skills/<skill-name>/`.\r\n\r\n## Inputs\r\n\r\n- `goal`: what the skill should produce or automate\r\n- conversation context, issue text, or workflow notes when available\r\n- optional target path if the destination should be fixed up front\r\n\r\n## Instructions\r\n\r\n1. Read `references/workflow.md` and follow it as the authoritative runbook for this skill. **You must follow it in full.**\r\n2. Create or update the skill under `.agents/skills/<skill-name>/SKILL.md` unless the user asks for a different valid skill root.\r\n3. Follow the Agent Skills format: valid frontmatter, concise body instructions, and referenced files only when they materially improve reuse.\r\n4. Keep the main `SKILL.md` concise and move longer supporting guidance into `references/` only when needed.\r\n5. Include at least one runnable example prompt that shows how the resulting skill should be invoked.\r\n\r\n## Referenced Files\r\n\r\n- `references/workflow.md`\r\n\r\n## Example prompts\r\n\r\n```text\r\nCreate a skill that packages our PR review workflow into `.agents/skills/pr-review/SKILL.md`, including an example prompt and any supporting reference files that are actually needed.\r\n```\r\n\r\n```text\r\nTurn this conversation's release checklist into a reusable workspace skill. Keep the main `SKILL.md` concise and move long guidance into `references/` if necessary.\r\n```\r\n\r\n## Changelog\r\n\r\n- `0.2.0`: Consolidate the create-skill prompt into the workspace skill and align the skill frontmatter with the Agent Skills specification.\r\n",
+    "content_hash": "6003171d14ff0c6b151500396d820f56b4342bc9c933b86d9847a126993c64eb",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1975,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "allow_implicit_invocation: false\r\n",
+    "content_hash": "f321bd9bea48704b290e17773c433ca15ae679a08e68ff5471284498174de7b8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 34,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "markdown",
+    "content": "# Agent-Customization Workflow Runbook\r\n\r\nUse this runbook when creating or refining a reusable skill from a conversation, manual workflow, or repeated operating pattern.\r\n\r\n## Extract from Conversation\r\nFirst, review the conversation history or any provided workflow material. If the user has been following a multi-step workflow or methodology, generalize that into a reusable skill. Extract:\r\n- The step-by-step process being followed\r\n- Decision points and branching logic\r\n- Quality criteria or completion checks\r\n\r\n## Clarify if Needed\r\nIf no clear workflow emerges from the conversation, clarify:\r\n- What outcome should this skill produce?\r\n- Workspace-scoped or personal?\r\n- Quick checklist or full multi-step workflow?\r\n\r\n## Draft the Skill\r\n\r\nWhen drafting the skill:\r\n\r\n- Place it under `.agents/skills/<skill-name>/SKILL.md` unless the user requests a different valid skill root.\r\n- Follow the Agent Skills specification for frontmatter:\r\n  - `name` and `description` are required\r\n  - `compatibility`, `metadata`, `license`, and `allowed-tools` are optional\r\n  - `metadata` should be a string-to-string map\r\n- Keep the main `SKILL.md` concise and task-focused.\r\n- Move longer supporting guidance into `references/` when it would otherwise make `SKILL.md` bulky.\r\n- Add `assets/` or `scripts/` only when they provide clear reuse value.\r\n- Include at least one runnable example prompt.\r\n\r\n## Validate Against the Spec\r\n\r\nBefore finishing, verify that the resulting skill:\r\n\r\n- matches the parent directory name in the `name` field\r\n- uses valid Agent Skills frontmatter\r\n- clearly describes what the skill does and when to use it\r\n- keeps the main `SKILL.md` short enough for efficient loading\r\n- references supporting files with relative paths from the skill root\r\n\r\n## Iterate\r\n1. Draft the skill and save it.\r\n2. Identify the most ambiguous or weak parts and ask about those.\r\n3. Once finalized, summarize what the skill produces, suggest example prompts to try it, and propose related customizations to create next.\r\n\r\n## Governing References\r\n\r\nThe resulting skill **must align** with these references:\r\n\r\n- https://agentskills.io/what-are-skills\r\n- https://agentskills.io/specification\r\n",
+    "content_hash": "455706e8f83c00dddd4aeb4cd89a307c0cd94a523888a00a1f1c6dd918790f09",
+    "generated": false,
+    "is_text": true,
+    "line_count": 52,
+    "relative_path": "references/workflow.md",
+    "size_bytes": 2204,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

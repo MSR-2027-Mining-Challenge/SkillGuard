@@ -1,0 +1,115 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": "agents/openai.yaml",
+      "type": "config"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/obsidian-basics.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "path": "scripts/create_vault.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0004",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/create_vault.py::file_access::174",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/create_vault.py::file_access::174",
+      "target": "value::ed8afef233f56c9cd764",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "agents/openai.yaml",
+      "type": "config"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/obsidian-basics.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "scripts/create_vault.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/create_vault.py::file_access::174",
+      "identity_key": "scripts/create_vault.py::file_access::174",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ed8afef233f56c9cd764",
+      "kind": "value",
+      "value": "scripts/create_vault.py::file_access::174",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

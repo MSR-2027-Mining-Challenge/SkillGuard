@@ -1,0 +1,616 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "references/output-template.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "path": "references/repo-catalog-index.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0006",
+      "path": "scripts/collect_k8s_endpoints.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": "scripts/collect_repo_endpoints.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "target": "value::77f744d9cccb86dc5d52",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>",
+      "target": "value::d93ae9f344964bbbd805",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::SKILL.md::connection_create::nc -z -G 3 <host> <port>",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::connection_create::nc -z -G 3 <host> <port>",
+      "target": "value::25dc20bdf1403e7626cd",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::wide",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::wide",
+      "target": "value::bd63578572df7d6af81e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::20",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::20",
+      "target": "value::3b22804c1f09532a1d22",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::23",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::23",
+      "target": "value::1a9a69cd41b9df8b9356",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::NR",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::NR",
+      "target": "value::d51b3a52421b30657bc9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::A",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::A",
+      "target": "value::5a99fa46aed60c24c222",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::28",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::28",
+      "target": "value::4b2c64ca547a6f4f646f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::operation::scripts/collect_k8s_endpoints.sh::file_read::28",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_k8s_endpoints.sh::file_read::28",
+      "target": "value::abe948e0b7286e4a90ae",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::operation::scripts/collect_repo_endpoints.sh::system_information_access::14",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_repo_endpoints.sh::system_information_access::14",
+      "target": "value::3a299c4d8143e765be93",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::21",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::21",
+      "target": "value::76a1fe1b7ca5e302ba36",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::27",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::27",
+      "target": "value::5dcd7cd1829194dfeced",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "references/output-template.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "references/repo-catalog-index.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "scripts/collect_k8s_endpoints.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "scripts/collect_repo_endpoints.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::77f744d9cccb86dc5d52",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS -o /dev/null -w '%{http_code}' --connect-timeout 5 <url>",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>",
+      "identity_key": ".malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::d93ae9f344964bbbd805",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_3.sh::connection_create::nc -z -G 3 <host> <port>",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::connection_create::nc -z -G 3 <host> <port>",
+      "identity_key": "SKILL.md::connection_create::nc -z -G 3 <host> <port>",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::25dc20bdf1403e7626cd",
+      "kind": "value",
+      "value": "SKILL.md::connection_create::nc -z -G 3 <host> <port>",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::wide",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::wide",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::bd63578572df7d6af81e",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::wide",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::20",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::system_information_access::20",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::3b22804c1f09532a1d22",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::system_information_access::20",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::23",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::system_information_access::23",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1a9a69cd41b9df8b9356",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::system_information_access::23",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::NR",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::NR",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::d51b3a52421b30657bc9",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::NR",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/collect_k8s_endpoints.sh::A",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::A",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::5a99fa46aed60c24c222",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::A",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/collect_k8s_endpoints.sh::system_information_access::28",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::system_information_access::28",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4b2c64ca547a6f4f646f",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::system_information_access::28",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/collect_k8s_endpoints.sh::file_read::28",
+      "identity_key": "scripts/collect_k8s_endpoints.sh::file_read::28",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::abe948e0b7286e4a90ae",
+      "kind": "value",
+      "value": "scripts/collect_k8s_endpoints.sh::file_read::28",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/collect_repo_endpoints.sh::system_information_access::14",
+      "identity_key": "scripts/collect_repo_endpoints.sh::system_information_access::14",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::3a299c4d8143e765be93",
+      "kind": "value",
+      "value": "scripts/collect_repo_endpoints.sh::system_information_access::14",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::21",
+      "identity_key": "scripts/collect_repo_endpoints.sh::file_read::21",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::76a1fe1b7ca5e302ba36",
+      "kind": "value",
+      "value": "scripts/collect_repo_endpoints.sh::file_read::21",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/collect_repo_endpoints.sh::file_read::27",
+      "identity_key": "scripts/collect_repo_endpoints.sh::file_read::27",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::5dcd7cd1829194dfeced",
+      "kind": "value",
+      "value": "scripts/collect_repo_endpoints.sh::file_read::27",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

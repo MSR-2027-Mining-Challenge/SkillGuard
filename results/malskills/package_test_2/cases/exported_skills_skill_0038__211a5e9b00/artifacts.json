@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Config Schema Validator Skill\r\n\r\nGenerate configuration schema validators.\r\n\r\n## Features\r\n\r\n- Zod schema generation\r\n- Default value handling\r\n- Strict validation\r\n- Type inference\r\n\r\n## Integration with Processes\r\n\r\n| Process | Integration |\r\n|---------|-------------|\r\n| configuration-management-system | Schema validation |\r\n| mcp-tool-implementation | Input validation |\r\n| cli-application-bootstrap | Config validation |\r\n",
+    "content_hash": "b8f03a5dd8a761ebcb76f3805cdd8afa7df7675e5c5a7cf8b261a3550c33c1f2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "README.md",
+    "size_bytes": 430,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: config-schema-validator\r\ndescription: Generate Zod/JSON Schema configuration validators with defaults and error messages.\r\nallowed-tools: Read, Write, Edit, Bash, Glob, Grep\r\n---\r\n\r\n# Config Schema Validator\r\n\r\nGenerate configuration schema validators.\r\n\r\n## Generated Patterns\r\n\r\n```typescript\r\nimport { z } from 'zod';\r\n\r\nexport const configSchema = z.object({\r\n  server: z.object({\r\n    host: z.string().default('localhost'),\r\n    port: z.number().int().min(1).max(65535).default(3000),\r\n    cors: z.object({\r\n      origins: z.array(z.string().url()).default(['*']),\r\n      credentials: z.boolean().default(false),\r\n    }).default({}),\r\n  }).default({}),\r\n  logging: z.object({\r\n    level: z.enum(['debug', 'info', 'warn', 'error']).default('info'),\r\n    format: z.enum(['json', 'pretty']).default('pretty'),\r\n  }).default({}),\r\n}).strict();\r\n\r\nexport type Config = z.infer<typeof configSchema>;\r\n\r\nexport function validateConfig(input: unknown): Config {\r\n  return configSchema.parse(input);\r\n}\r\n\r\nexport function getConfigWithDefaults(partial: Partial<Config> = {}): Config {\r\n  return configSchema.parse(partial);\r\n}\r\n```\r\n\r\n## Target Processes\r\n\r\n- configuration-management-system\r\n- mcp-tool-implementation\r\n- cli-application-bootstrap\r\n",
+    "content_hash": "8c5b1e1c2e536daf5087a47499ea361b930adae78c035acfea8aa3b0e7789758",
+    "generated": false,
+    "is_text": true,
+    "line_count": 47,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1256,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "javascript",
+    "content": "import { z } from 'zod';\r\n\r\nexport const configSchema = z.object({\r\n  server: z.object({\r\n    host: z.string().default('localhost'),\r\n    port: z.number().int().min(1).max(65535).default(3000),\r\n    cors: z.object({\r\n      origins: z.array(z.string().url()).default(['*']),\r\n      credentials: z.boolean().default(false),\r\n    }).default({}),\r\n  }).default({}),\r\n  logging: z.object({\r\n    level: z.enum(['debug', 'info', 'warn', 'error']).default('info'),\r\n    format: z.enum(['json', 'pretty']).default('pretty'),\r\n  }).default({}),\r\n}).strict();\r\n\r\nexport type Config = z.infer<typeof configSchema>;\r\n\r\nexport function validateConfig(input: unknown): Config {\r\n  return configSchema.parse(input);\r\n}\r\n\r\nexport function getConfigWithDefaults(partial: Partial<Config> = {}): Config {\r\n  return configSchema.parse(partial);\r\n}",
+    "content_hash": "855ae0cc83c35d84330d3e63c1748a585fd8aa352f8c26e93c73997659ac4846",
+    "generated": true,
+    "is_text": true,
+    "line_count": 26,
+    "relative_path": ".malskills_fences/SKILL__fence_0.ts",
+    "size_bytes": 826,
+    "source_artifact_id": "art_0001",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 40,
+    "source_start_line": 13
+  }
+]

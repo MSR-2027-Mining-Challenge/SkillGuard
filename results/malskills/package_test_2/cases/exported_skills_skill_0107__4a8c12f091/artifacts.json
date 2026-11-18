@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: reviewer-stress-test\r\nfollows: rf-obsidian-markdown\r\ndescription: Runs a strict-but-fair ICLR/CVPR/SIGGRAPH reviewer challenge on idea, roadmap, or full paper, with major-risk diagnostics and actionable repair paths. Use when the user wants high-pressure review questioning instead of brainstorming.\r\n---\r\n\r\n# Reviewer Stress Test\r\n\r\n## Purpose\r\n\r\nProvide a strong reviewer-mode stress test for:\r\n\r\n- idea\r\n- roadmap\r\n- full paper draft\r\n\r\nDefault strictness is **strong review**.\r\nThe skill must remain fair and must provide repair paths.\r\n\r\n## Positioning\r\n\r\nThis is an **evaluative** mode, not a co-creation ideation mode.\r\n\r\n- Focus: attack assumptions, expose rejection-level risks, test evidence sufficiency.\r\n- Output style: verdict-like risk assessment with fixes.\r\n\r\n## Evidence protocol\r\n\r\n1. **KB-first**: first ground analysis via `papers-query-knowledge-base`.\r\n2. **On-demand web checks**: search web only for high-risk or uncertain claims (for example novelty/SOTA/parallel work).\r\n3. Separate missing evidence from actual invalidity.\r\n\r\n## Mandatory user clarification\r\n\r\nBefore final verdict, require the user to state:\r\n\r\n- The key difference between this work and the most similar prior works.\r\n- Preferably top-3 nearest works with one-line distinctions.\r\n\r\nIf this is missing, mark novelty confidence as limited.\r\n\r\n## Review dimensions\r\n\r\nChallenge from multiple angles:\r\n\r\n- Problem framing and significance\r\n- Novelty and non-triviality\r\n- Technical soundness\r\n- Experimental rigor (baselines, ablations, statistics)\r\n- Reproducibility and implementation feasibility\r\n- Failure modes, robustness, ethics/bias scope\r\n\r\n## Output contract\r\n\r\nReturn structured sections:\r\n\r\n1. **Overall risk verdict** (acceptance risk band + confidence)\r\n2. **Major concerns** (rejection-level)\r\n3. **Minor concerns**\r\n4. **Nearest-work gap check**\r\n5. **Repair paths** (for each major concern: minimum actionable steps)\r\n6. **Re-review checklist** (what evidence would change verdict)\r\n\r\n## Tone and fairness guardrails\r\n\r\n- Be rigorous, specific, and evidence-based.\r\n- Do not use dismissive or insulting phrasing.\r\n- Every major concern should include at least one feasible repair action.\r\n\r\n## Non-goals\r\n\r\n- Not for open-ended idea expansion.\r\n- Not for broad roadmap generation from scratch.\r\n\r\n## Independence\r\n\r\nThis skill can be used independently and does not depend on outputs from `idea-focus-coach` or `research-brainstorm-from-kb`. Users can directly bring a formed idea, roadmap, or paper draft into stress testing.\r\n",
+    "content_hash": "6c3f3b3ae752fc5abe9e555764d6e279ce1c8b57ef62829c96370773001c8b22",
+    "generated": false,
+    "is_text": true,
+    "line_count": 78,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2548,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

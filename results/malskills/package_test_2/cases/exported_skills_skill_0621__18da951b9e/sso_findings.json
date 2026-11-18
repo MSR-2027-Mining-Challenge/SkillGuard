@@ -1,0 +1,523 @@
+[
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/start-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell system and hardware discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.system_info",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.system_info"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00000",
+    "matched_text": "# Usage: start-server.sh [--project-dir <path>] [--host <host>] [--url-host <hostname>] [--foreground] [--background]",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/start-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 3,
+        "start_line": 3
+      }
+    },
+    "span": {
+      "end_line": 3,
+      "start_line": 3
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/start-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell system and hardware discovery",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.system_info",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.host_and_environment_discovery.system_info"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00001",
+    "matched_text": "#   --url-host <hostname> Hostname shown in returned URL JSON.",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/start-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 13,
+        "start_line": 13
+      }
+    },
+    "span": {
+      "end_line": 13,
+      "start_line": 13
+    },
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/start-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell reads file, config, or database contents",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "old_pid=$(cat \"$PID_FILE\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/start-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 95,
+        "start_line": 95
+      }
+    },
+    "span": {
+      "end_line": 95,
+      "start_line": 95
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/start-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell deletes or overwrites data",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "rm -f \"$PID_FILE\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/start-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 97,
+        "start_line": 97
+      }
+    },
+    "span": {
+      "end_line": 97,
+      "start_line": 97
+    },
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": "scripts/start-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell reads file, config, or database contents",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "grep \"server-started\" \"$LOG_FILE\" | head -1",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": "scripts/start-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 140,
+        "start_line": 140
+      }
+    },
+    "span": {
+      "end_line": 140,
+      "start_line": 140
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/stop-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell reads file, config, or database contents",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.content_read_and_parse"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "pid=$(cat \"$PID_FILE\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/stop-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 20,
+        "start_line": 20
+      }
+    },
+    "span": {
+      "end_line": 20,
+      "start_line": 20
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/stop-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell disrupts host or service availability",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.impact_and_destruction.availability_disruption",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.impact_and_destruction.availability_disruption"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00007",
+    "matched_text": "# Wait for graceful shutdown (up to ~2s)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/stop-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 23,
+        "start_line": 23
+      }
+    },
+    "span": {
+      "end_line": 23,
+      "start_line": 23
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/stop-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell disrupts host or service availability",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.impact_and_destruction.availability_disruption",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.impact_and_destruction.availability_disruption"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_id": "semgrep_00008",
+    "matched_text": "kill -9 \"$pid\" 2>/dev/null || true",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/stop-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 32,
+        "start_line": 32
+      }
+    },
+    "span": {
+      "end_line": 32,
+      "start_line": 32
+    },
+    "subtype": "process_control"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/stop-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell deletes or overwrites data",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00009",
+    "matched_text": "rm -f \"$PID_FILE\" \"${STATE_DIR}/server.log\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/stop-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 40,
+        "start_line": 40
+      }
+    },
+    "span": {
+      "end_line": 40,
+      "start_line": 40
+    },
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": "scripts/stop-server.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell deletes or overwrites data",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.deletion_or_overwrite",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.impact_and_destruction.data_destruction"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00010",
+    "matched_text": "rm -rf \"$SESSION_DIR\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": "scripts/stop-server.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 43,
+        "start_line": 43
+      }
+    },
+    "span": {
+      "end_line": 43,
+      "start_line": 43
+    },
+    "subtype": "file_delete"
+  }
+]

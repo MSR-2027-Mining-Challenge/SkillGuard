@@ -1,0 +1,909 @@
+[
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "README.md"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::README.md::package_installation::49": "target"
+      },
+      "operation_object": "obj::operation::README.md::package_installation::49",
+      "source_end_line": 49,
+      "source_start_line": 49,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::README.md::package_installation::49"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "> Reply 0\u20133, or describe what you need.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::71": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::71",
+      "source_end_line": 71,
+      "source_start_line": 71,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::71"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "\"use strict\";",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::file_access::3": "path"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::file_access::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::file_access::3"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::file_access::4": "path"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::file_access::4",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::file_access::4"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "// Default: bar / line / area / combo",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::system_command_execution::259": "command"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::system_command_execution::259",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/chart_renderer.js:259:259:process.exit()",
+      "source_end_line": 259,
+      "source_start_line": 259
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::system_command_execution::259"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::file_access::262": "path"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::file_access::262",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 262,
+      "source_start_line": 262
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::file_access::262"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "};",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::system_command_execution::281": "command"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::system_command_execution::281",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/chart_renderer.js:281:281:process.exit()",
+      "source_end_line": 281,
+      "source_start_line": 281
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::system_command_execution::281"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::file_access::288": "path"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::file_access::288",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 288,
+      "source_start_line": 288
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::file_access::288"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "if (seriesConf.itemStyle) s.itemStyle = seriesConf.itemStyle;",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::tools/chart_renderer.js::itemStyle": "path"
+      },
+      "operation_object": "obj::symbolic_reference::tools/chart_renderer.js::itemStyle",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 289,
+      "source_start_line": 289
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::tools/chart_renderer.js::itemStyle"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "if (seriesConf.label) s.label = seriesConf.label;",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::tools/chart_renderer.js::label": "path"
+      },
+      "operation_object": "obj::symbolic_reference::tools/chart_renderer.js::label",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 291,
+      "source_start_line": 291
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::tools/chart_renderer.js::label"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::file_access::294": "path"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::file_access::294",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 294,
+      "source_start_line": 294
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::file_access::294"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "tools/chart_renderer.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/chart_renderer.js::system_command_execution::304": "command"
+      },
+      "operation_object": "obj::operation::tools/chart_renderer.js::system_command_execution::304",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/chart_renderer.js:304:304:process.exit()",
+      "source_end_line": 304,
+      "source_start_line": 304
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/chart_renderer.js::system_command_execution::304"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "tools/data_profiler.js"
+    ],
+    "attributes": {
+      "matched_text": "\"use strict\";",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/data_profiler.js::file_access::3": "path"
+      },
+      "operation_object": "obj::operation::tools/data_profiler.js::file_access::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/data_profiler.js::file_access::3"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "tools/data_profiler.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/data_profiler.js::system_command_execution::12": "command"
+      },
+      "operation_object": "obj::operation::tools/data_profiler.js::system_command_execution::12",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/data_profiler.js:12:12:process.exit()",
+      "source_end_line": 12,
+      "source_start_line": 12
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/data_profiler.js::system_command_execution::12"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "tools/data_profiler.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/data_profiler.js::file_access::16": "path"
+      },
+      "operation_object": "obj::operation::tools/data_profiler.js::file_access::16",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/data_profiler.js::file_access::16"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "tools/data_profiler.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/data_profiler.js::file_access::20": "path"
+      },
+      "operation_object": "obj::operation::tools/data_profiler.js::file_access::20",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/data_profiler.js::file_access::20"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "tools/data_profiler.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "}",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/data_profiler.js::system_command_execution::25": "command"
+      },
+      "operation_object": "obj::operation::tools/data_profiler.js::system_command_execution::25",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/data_profiler.js:25:25:process.exit()",
+      "source_end_line": 25,
+      "source_start_line": 25
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/data_profiler.js::system_command_execution::25"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "tools/excel_parser.js"
+    ],
+    "attributes": {
+      "matched_text": "\"use strict\";",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/excel_parser.js::file_access::3": "path"
+      },
+      "operation_object": "obj::operation::tools/excel_parser.js::file_access::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/excel_parser.js::file_access::3"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "tools/excel_parser.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "function main() {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/excel_parser.js::system_command_execution::11": "command"
+      },
+      "operation_object": "obj::operation::tools/excel_parser.js::system_command_execution::11",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/excel_parser.js:11:11:process.exit()",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/excel_parser.js::system_command_execution::11"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "tools/excel_parser.js"
+    ],
+    "attributes": {
+      "matched_text": "if (!filePath) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/excel_parser.js::file_access::15": "path"
+      },
+      "operation_object": "obj::operation::tools/excel_parser.js::file_access::15",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/excel_parser.js::file_access::15"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "tools/excel_parser.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const resolved = path.resolve(filePath);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/excel_parser.js::system_command_execution::29": "command"
+      },
+      "operation_object": "obj::operation::tools/excel_parser.js::system_command_execution::29",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/excel_parser.js:29:29:process.exit()",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/excel_parser.js::system_command_execution::29"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "tools/lib/parser.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/lib/parser.js::file_access::2": "path"
+      },
+      "operation_object": "obj::operation::tools/lib/parser.js::file_access::2",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/lib/parser.js::file_access::2"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "tools/lib/parser.js"
+    ],
+    "attributes": {
+      "matched_text": "const fs = require(\"fs\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::tools/lib/parser.js::fs": "path"
+      },
+      "operation_object": "obj::symbolic_reference::tools/lib/parser.js::fs",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::tools/lib/parser.js::fs"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "tools/lib/parser.js"
+    ],
+    "attributes": {
+      "matched_text": "const XLSX = require(\"xlsx\");",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::tools/lib/parser.js::XLSX": "path"
+      },
+      "operation_object": "obj::symbolic_reference::tools/lib/parser.js::XLSX",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::tools/lib/parser.js::XLSX"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "tools/lib/parser.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/lib/parser.js::file_read::16": "path"
+      },
+      "operation_object": "obj::operation::tools/lib/parser.js::file_read::16",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/lib/parser.js::file_read::16"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "tools/quality_scanner.js"
+    ],
+    "attributes": {
+      "matched_text": "\"use strict\";",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/quality_scanner.js::file_access::3": "path"
+      },
+      "operation_object": "obj::operation::tools/quality_scanner.js::file_access::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/quality_scanner.js::file_access::3"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "tools/quality_scanner.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/quality_scanner.js::system_command_execution::14": "command"
+      },
+      "operation_object": "obj::operation::tools/quality_scanner.js::system_command_execution::14",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/quality_scanner.js:14:14:process.exit()",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/quality_scanner.js::system_command_execution::14"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "tools/quality_scanner.js"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/quality_scanner.js::file_access::18": "path"
+      },
+      "operation_object": "obj::operation::tools/quality_scanner.js::file_access::18",
+      "path_class": "unknown",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/quality_scanner.js::file_access::18"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "tools/quality_scanner.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/quality_scanner.js::system_command_execution::28": "command"
+      },
+      "operation_object": "obj::operation::tools/quality_scanner.js::system_command_execution::28",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/quality_scanner.js:28:28:process.exit()",
+      "source_end_line": 28,
+      "source_start_line": 28
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/quality_scanner.js::system_command_execution::28"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "tools/quality_scanner.js"
+    ],
+    "attributes": {
+      "matched_text": "const resolved = path.resolve(filePath);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::tools/quality_scanner.js::resolved": "path"
+      },
+      "operation_object": "obj::symbolic_reference::tools/quality_scanner.js::resolved",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 35,
+      "source_start_line": 35
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::tools/quality_scanner.js::resolved"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "tools/quality_scanner.js"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "dataValidity: prof.dataValidity,",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::tools/quality_scanner.js::system_command_execution::51": "command"
+      },
+      "operation_object": "obj::operation::tools/quality_scanner.js::system_command_execution::51",
+      "parameter_bindings": [],
+      "sink_callsite_id": "tools/quality_scanner.js:51:51:process.exit()",
+      "source_end_line": 51,
+      "source_start_line": 51
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::tools/quality_scanner.js::system_command_execution::51"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "system_command_execution"
+  }
+]

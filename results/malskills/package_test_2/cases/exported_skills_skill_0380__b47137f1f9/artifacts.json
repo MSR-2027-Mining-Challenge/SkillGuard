@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: presentation-workflow\r\ndescription: A skill for creating, updating, and managing slide presentations. Use for tasks involving slide decks, speaker notes, and integrating presentation materials with Git.\r\n---\r\n\r\n# Presentation Workflow\r\n\r\nThis skill provides a structured workflow for creating and managing slide presentations, from initial concept to final delivery and version control.\r\n\r\n## Core Principles\r\n\r\n- **Governance First:** All presentation artifacts are version-controlled and auditable.\r\n- **Proof Over Promise:** Slides are built on verifiable data and evidence.\r\n- **Quiet Execution:** The process is automated and efficient, speaking through the quality of the output.\r\n\r\n## Workflow Phases\r\n\r\nThis skill follows a five-phase workflow:\r\n\r\n1.  **Initialization:** Create the slide deck structure.\r\n2.  **Content Generation:** Create the individual slides.\r\n3.  **Speaker Notes:** Generate the presentation script.\r\n4.  **Final Presentation:** Assemble and present the final deck.\r\n5.  **Version Control:** Commit all artifacts to Git.\r\n\r\n### Phase 1: Initialization\r\n\r\nUse `slide_initialize` to create the project structure and outline. If the user provides a detailed outline, use it. Otherwise, create a standard structure:\r\n\r\n- Title Slide\r\n- Problem Statement\r\n- Proposed Solution\r\n- Architecture/Methodology\r\n- Key Features/Differentiators\r\n- Market/Use Cases\r\n- Financials/Projections (if applicable)\r\n- Next Steps/Call to Action\r\n\r\n### Phase 2: Content Generation\r\n\r\nUse `slide_edit` to create each slide. Adhere to the following principles:\r\n\r\n- **Visual Consistency:** Maintain a consistent design language (colors, fonts, layout).\r\n- **Data-Driven:** Use charts and tables to present data. Never fabricate information.\r\n- **Stark & Minimal:** Focus on clarity and impact. Avoid decorative elements.\r\n\r\n### Phase 3: Speaker Notes\r\n\r\nUse `slide_edit_notes` to generate the presentation script. The notes should be:\r\n\r\n- **Concise:** Under 200 words per slide.\r\n- **Authoritative:** Clear, direct, and confident.\r\n- **Structured:** Use talking points for natural delivery.\r\n\r\n### Phase 4: Final Presentation\r\n\r\nUse `slide_present` to assemble the final slide deck. This tool generates the final output and provides the presentation link.\r\n\r\n### Phase 5: Version Control\r\n\r\nUse the `shell` tool to commit all presentation artifacts to a Git repository. This includes:\r\n\r\n- The presentation project directory\r\n- The final presentation notes (`slide_notes.md`)\r\n- Any supporting assets (images, data files)\r\n\r\nCreate a new, separate repository for each presentation project to maintain modularity and a clean history.\r\n\r\n## Bundled Resources\r\n\r\n- **`templates/`**: Contains a `slide_template.html` for consistent slide design.\r\n- **`scripts/`**: Includes a `git_push.sh` script to automate the version control process.\r\n",
+    "content_hash": "dd4be69342c3c681271e701c36224ee4ff0987b713f6aa53857609206b4ec480",
+    "generated": false,
+    "is_text": true,
+    "line_count": 73,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2851,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

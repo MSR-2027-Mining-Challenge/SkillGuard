@@ -1,0 +1,89 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.py"
+    ],
+    "attributes": {
+      "matched_text": "with open('train.txt', 'r') as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.py::file_access::3": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.py::file_access::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.py::file_access::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.py"
+    ],
+    "attributes": {
+      "matched_text": "with open('train_sample.txt', 'w') as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.py::file_access::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.py::file_access::6",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.py::file_access::6"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "tail -f training.log",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::file_read::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  }
+]

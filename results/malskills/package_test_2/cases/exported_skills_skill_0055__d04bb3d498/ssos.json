@@ -1,0 +1,186 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/api.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -sS -X \"$method\" \"${BASE}${path}\" \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api.sh::data_receive::curl -sS -X \"$method\" \"${BASE}${path}\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api.sh::data_receive::curl -sS -X \"$method\" \"${BASE}${path}\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/api.sh:34:34:data_receive",
+      "source_end_line": 34,
+      "source_start_line": 34
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api.sh::data_receive::curl -sS -X \"$method\" \"${BASE}${path}\" \\"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/api.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -sS -X \"$method\" \"${BASE}${path}\" \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api.sh::data_receive::curl -sS -X \"$method\" \"${BASE}${path}\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api.sh::data_receive::curl -sS -X \"$method\" \"${BASE}${path}\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/api.sh:40:40:data_receive",
+      "source_end_line": 40,
+      "source_start_line": 40
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api.sh::data_receive::curl -sS -X \"$method\" \"${BASE}${path}\" \\"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/api.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat <<'USAGE'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/api.sh::file_read::48": "path"
+      },
+      "operation_object": "obj::operation::scripts/api.sh::file_read::48",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 48,
+      "source_start_line": 48
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/api.sh::file_read::48"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/api.sh"
+    ],
+    "attributes": {
+      "matched_text": "id=\"${2:-}\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api.sh::id": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api.sh::id",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 71,
+      "source_start_line": 71
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api.sh::id"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "user_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/api.sh"
+    ],
+    "attributes": {
+      "matched_text": "id=\"${2:-}\"; name=\"${3:-}\"; content=\"${4:-}\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api.sh::id": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api.sh::id",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 81,
+      "source_start_line": 81
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api.sh::id"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "user_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/api.sh"
+    ],
+    "attributes": {
+      "matched_text": "id=\"${2:-}\"",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/api.sh::id": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/api.sh::id",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 86,
+      "source_start_line": 86
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/api.sh::id"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "user_information_access"
+  }
+]

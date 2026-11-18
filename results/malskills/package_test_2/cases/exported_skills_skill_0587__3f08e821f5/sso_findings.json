@@ -1,0 +1,1406 @@
+[
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": ".malskills_fences/01-authenticate__fence_7.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using base64.b64encode(), as it can lead to potential issues with obfuscation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.obfuscation.sso.python.obfuscation.base64.0002.no-base64-b64encode",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.obfuscation.sso.python.obfuscation.base64.0002.no-base64-b64encode"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "base64.b64encode()",
+      "source_rule_category": "Obfuscation",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00000",
+    "matched_text": "credentials = base64.b64encode(f\"{client_id}:{client_secret}\".encode()).decode()",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": ".malskills_fences/01-authenticate__fence_7.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 5,
+        "start_line": 5
+      }
+    },
+    "span": {
+      "end_line": 5,
+      "start_line": 5
+    },
+    "subtype": "encoding"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": ".malskills_fences/01-authenticate__fence_7.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00001",
+    "matched_text": "response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"authorization_code\",\n            \"scope\": \"vms.all\",\n            \"code\": code,\n            \"redirect_uri\": redirect_uri,\n        },\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": ".malskills_fences/01-authenticate__fence_7.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 20,
+        "start_line": 7
+      }
+    },
+    "span": {
+      "end_line": 20,
+      "start_line": 7
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": ".malskills_fences/02-refresh-access-token__fence_1.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using base64.b64encode(), as it can lead to potential issues with obfuscation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.obfuscation.sso.python.obfuscation.base64.0002.no-base64-b64encode",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.obfuscation.sso.python.obfuscation.base64.0002.no-base64-b64encode"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "base64.b64encode()",
+      "source_rule_category": "Obfuscation",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00002",
+    "matched_text": "credentials = base64.b64encode(f\"{client_id}:{client_secret}\".encode()).decode()",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": ".malskills_fences/02-refresh-access-token__fence_1.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 9,
+        "start_line": 9
+      }
+    },
+    "span": {
+      "end_line": 9,
+      "start_line": 9
+    },
+    "subtype": "encoding"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": ".malskills_fences/02-refresh-access-token__fence_1.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00003",
+    "matched_text": "response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"refresh_token\",\n            \"scope\": \"vms.all\",\n            \"refresh_token\": refresh_token,\n        },\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": ".malskills_fences/02-refresh-access-token__fence_1.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 23,
+        "start_line": 11
+      }
+    },
+    "span": {
+      "end_line": 23,
+      "start_line": 11
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0009",
+    "artifact_path": ".malskills_fences/03-list-cameras__fence_3.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00004",
+    "matched_text": "response = requests.get(\n            f\"https://{base_url}/api/v3.0/cameras\",\n            headers=headers,\n            params=params,\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0009",
+        "path": ".malskills_fences/03-list-cameras__fence_3.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 22,
+        "start_line": 18
+      }
+    },
+    "span": {
+      "end_line": 22,
+      "start_line": 18
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0014",
+    "artifact_path": ".malskills_fences/04-get-live-feed__fence_7.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00005",
+    "matched_text": "response = requests.get(\n        f\"https://{base_url}/api/v3.0/feeds\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Accept\": \"application/json\",\n        },\n        params={\n            \"deviceId\": device_id,\n            \"type\": stream_type,\n            \"include\": include,\n        },\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0014",
+        "path": ".malskills_fences/04-get-live-feed__fence_7.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 21,
+        "start_line": 10
+      }
+    },
+    "span": {
+      "end_line": 21,
+      "start_line": 10
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0018",
+    "artifact_path": ".malskills_fences/05-query-events__fence_7.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00006",
+    "matched_text": "response = requests.get(\n            f\"https://{base_url}/api/v3.0/events\",\n            headers=headers,\n            params=params,\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0018",
+        "path": ".malskills_fences/05-query-events__fence_7.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 33,
+        "start_line": 29
+      }
+    },
+    "span": {
+      "end_line": 33,
+      "start_line": 29
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": ".malskills_fences/06-event-lifecycle__fence_10.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00007",
+    "matched_text": "response = requests.post(\n        f\"https://{base_url}/api/v3.0/eventSubscriptions\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"deliveryConfig\": {\n                \"type\": \"webhook.v1\",\n                \"url\": webhook_url,\n                \"authorizationHeader\": f\"Bearer {webhook_secret}\",\n            },\n            \"filters\": [\n                {\n                    \"resourceType\": \"camera\",\n                    \"resourceIds\": camera_ids,\n                    \"types\": event_types,\n                }\n            ],\n        },\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": ".malskills_fences/06-event-lifecycle__fence_10.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 33,
+        "start_line": 12
+      }
+    },
+    "span": {
+      "end_line": 33,
+      "start_line": 12
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": ".malskills_fences/06-event-lifecycle__fence_10.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00008",
+    "matched_text": "response = requests.get(\n        f\"https://{base_url}/api/v3.0/media/recordedImage.jpeg\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n        params={\n            \"deviceId\": device_id,\n            \"recordedType\": recorded_type,\n            \"timestampGreaterOrEqual\": timestamp,\n        },\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": ".malskills_fences/06-event-lifecycle__fence_10.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 54,
+        "start_line": 46
+      }
+    },
+    "span": {
+      "end_line": 54,
+      "start_line": 46
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": ".malskills_fences/06-event-lifecycle__fence_10.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using __import__(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0001.no-__import__",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0001.no-__import__"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "__import__()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00009",
+    "matched_text": "ts_dt = start + __import__('datetime').timedelta(seconds=offset)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": ".malskills_fences/06-event-lifecycle__fence_10.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 75,
+        "start_line": 75
+      }
+    },
+    "span": {
+      "end_line": 75,
+      "start_line": 75
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": ".malskills_fences/06-event-lifecycle__fence_10.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00010",
+    "matched_text": "response = requests.post(\n        f\"https://{base_url}/api/v3.0/events\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"startTimestamp\": start_ts,\n            \"endTimestamp\": end_ts,\n            \"span\": start_ts != end_ts,\n            \"accountId\": account_id,\n            \"actorId\": actor_id,\n            \"actorAccountId\": actor_account_id,\n            \"actorType\": \"camera\",\n            \"creatorId\": creator_id,\n            \"type\": event_type,\n            \"dataSchemas\": data_schemas,\n            \"data\": data,\n        },\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": ".malskills_fences/06-event-lifecycle__fence_10.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 117,
+        "start_line": 97
+      }
+    },
+    "span": {
+      "end_line": 117,
+      "start_line": 97
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0024",
+    "artifact_path": ".malskills_fences/07-user-account-management__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00011",
+    "matched_text": "r = requests.get(f\"https://{base_url}/api/v3.0/users\", headers=headers, params=params)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0024",
+        "path": ".malskills_fences/07-user-account-management__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 12,
+        "start_line": 12
+      }
+    },
+    "span": {
+      "end_line": 12,
+      "start_line": 12
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0024",
+    "artifact_path": ".malskills_fences/07-user-account-management__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00012",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/users\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"firstName\": first_name, \"lastName\": last_name, \"email\": email},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0024",
+        "path": ".malskills_fences/07-user-account-management__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 32,
+        "start_line": 28
+      }
+    },
+    "span": {
+      "end_line": 32,
+      "start_line": 28
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0024",
+    "artifact_path": ".malskills_fences/07-user-account-management__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.delete(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0009.no-requests-delete",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0009.no-requests-delete"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.delete()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00013",
+    "matched_text": "r = requests.delete(\n        f\"https://{base_url}/api/v3.0/users/{user_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0024",
+        "path": ".malskills_fences/07-user-account-management__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 50,
+        "start_line": 47
+      }
+    },
+    "span": {
+      "end_line": 50,
+      "start_line": 47
+    },
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_id": "art_0024",
+    "artifact_path": ".malskills_fences/07-user-account-management__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00014",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/roles\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"description\": description, \"permissions\": permissions},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0024",
+        "path": ".malskills_fences/07-user-account-management__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 65,
+        "start_line": 61
+      }
+    },
+    "span": {
+      "end_line": 65,
+      "start_line": 61
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0024",
+    "artifact_path": ".malskills_fences/07-user-account-management__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00015",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/roleAssignments:bulkCreate\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=assignments,\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0024",
+        "path": ".malskills_fences/07-user-account-management__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 79,
+        "start_line": 75
+      }
+    },
+    "span": {
+      "end_line": 79,
+      "start_line": 75
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0027",
+    "artifact_path": ".malskills_fences/08-automations__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00016",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActions\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"type\": action_type, \"name\": name, \"enabled\": enabled, \"settings\": settings},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0027",
+        "path": ".malskills_fences/08-automations__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 15,
+        "start_line": 11
+      }
+    },
+    "span": {
+      "end_line": 15,
+      "start_line": 11
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0027",
+    "artifact_path": ".malskills_fences/08-automations__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00017",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/eventAlertConditionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0027",
+        "path": ".malskills_fences/08-automations__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 42,
+        "start_line": 38
+      }
+    },
+    "span": {
+      "end_line": 42,
+      "start_line": 38
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0027",
+    "artifact_path": ".malskills_fences/08-automations__fence_17.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00018",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"alertActionIds\": alert_action_ids},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0027",
+        "path": ".malskills_fences/08-automations__fence_17.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 57,
+        "start_line": 53
+      }
+    },
+    "span": {
+      "end_line": 57,
+      "start_line": 53
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0030",
+    "artifact_path": ".malskills_fences/09-video-export__fence_11.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00019",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/exports\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0030",
+        "path": ".malskills_fences/09-video-export__fence_11.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 30,
+        "start_line": 26
+      }
+    },
+    "span": {
+      "end_line": 30,
+      "start_line": 26
+    },
+    "subtype": "data_send"
+  },
+  {
+    "artifact_id": "art_0030",
+    "artifact_path": ".malskills_fences/09-video-export__fence_11.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00020",
+    "matched_text": "r = requests.get(\n            f\"https://{base_url}/api/v3.0/jobs/{job_id}\",\n            headers=headers,\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0030",
+        "path": ".malskills_fences/09-video-export__fence_11.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 50,
+        "start_line": 47
+      }
+    },
+    "span": {
+      "end_line": 50,
+      "start_line": 47
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0030",
+    "artifact_path": ".malskills_fences/09-video-export__fence_11.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00021",
+    "matched_text": "r = requests.get(\n        f\"https://{base_url}/api/v3.0/downloads\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"name\": name, \"include\": \"url\"},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0030",
+        "path": ".malskills_fences/09-video-export__fence_11.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 77,
+        "start_line": 73
+      }
+    },
+    "span": {
+      "end_line": 77,
+      "start_line": 73
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0033",
+    "artifact_path": ".malskills_fences/10-device-management__fence_18.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00022",
+    "matched_text": "r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"include\": include},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0033",
+        "path": ".malskills_fences/10-device-management__fence_18.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 14,
+        "start_line": 10
+      }
+    },
+    "span": {
+      "end_line": 14,
+      "start_line": 10
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0033",
+    "artifact_path": ".malskills_fences/10-device-management__fence_18.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00023",
+    "matched_text": "r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}/status\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0033",
+        "path": ".malskills_fences/10-device-management__fence_18.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 37,
+        "start_line": 34
+      }
+    },
+    "span": {
+      "end_line": 37,
+      "start_line": 34
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0033",
+    "artifact_path": ".malskills_fences/10-device-management__fence_18.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00024",
+    "matched_text": "r = requests.get(f\"https://{base_url}/api/v3.0/bridges\", headers=headers, params=params)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0033",
+        "path": ".malskills_fences/10-device-management__fence_18.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 50,
+        "start_line": 50
+      }
+    },
+    "span": {
+      "end_line": 50,
+      "start_line": 50
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0033",
+    "artifact_path": ".malskills_fences/10-device-management__fence_18.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.get(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0010.no-requests-get"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.get()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00025",
+    "matched_text": "r = requests.get(\n        f\"https://{base_url}/api/v3.0/availableDevices\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params=params,\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0033",
+        "path": ".malskills_fences/10-device-management__fence_18.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 71,
+        "start_line": 67
+      }
+    },
+    "span": {
+      "end_line": 71,
+      "start_line": 67
+    },
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_id": "art_0033",
+    "artifact_path": ".malskills_fences/10-device-management__fence_18.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using requests.post(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.requests.0013.no-requests-post"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "requests.post()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00026",
+    "matched_text": "r = requests.post(\n        f\"https://{base_url}/api/v3.0/bridges/{bridge_id}/devices:scan\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0033",
+        "path": ".malskills_fences/10-device-management__fence_18.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 80,
+        "start_line": 77
+      }
+    },
+    "span": {
+      "end_line": 80,
+      "start_line": 77
+    },
+    "subtype": "data_send"
+  }
+]

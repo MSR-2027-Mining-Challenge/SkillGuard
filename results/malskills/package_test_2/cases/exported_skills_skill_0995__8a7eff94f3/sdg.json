@@ -1,0 +1,243 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": "source.json",
+      "type": "config"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "target": "value::f5d72f548b16180534ec",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3",
+      "target": "value::96b94eafe893d1740231",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\",
+      "target": "value::76b78d66f40f4a1b43db",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "target": "value::9c31235e29f8e1cdbd90",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "source.json",
+      "type": "config"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "identity_key": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::f5d72f548b16180534ec",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3",
+      "identity_key": ".malskills_fences/SKILL__fence_5.sh::file_write::3",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::96b94eafe893d1740231",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_5.sh::file_write::3",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\",
+      "identity_key": ".malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::76b78d66f40f4a1b43db",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "identity_key": "SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::9c31235e29f8e1cdbd90",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

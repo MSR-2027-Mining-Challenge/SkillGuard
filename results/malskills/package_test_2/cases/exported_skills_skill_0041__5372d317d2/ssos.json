@@ -1,0 +1,203 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "pnpm install",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::3": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::3",
+      "source_end_line": 3,
+      "source_start_line": 3,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp .env.example .env.local",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::1",
+      "path_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp -R /path/to/OpenMAIC/skills/openmaic ~/.openclaw/skills/openmaic",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_write::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_write::6",
+      "path_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::file_write::6"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp .env.example .env.local",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::1",
+      "path_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker compose up --build",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::4",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::4"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Fork the repo, then import at https://vercel.com/new",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "pnpm install",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::41": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::41",
+      "source_end_line": 41,
+      "source_start_line": 41,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::41"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  }
+]

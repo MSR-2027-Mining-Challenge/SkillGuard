@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\n# \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\r\n# CLAUDE OFFICE SKILL - Enhanced Metadata v2.0\r\n# \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\r\n\r\n# Basic Information\r\nname: doc-pipeline\r\ndescription: \"Chain document operations into reusable pipelines\"\r\nversion: \"1.0\"\r\nauthor: claude-office-skills\r\nlicense: MIT\r\n\r\n# Categorization\r\ncategory: workflow\r\ntags:\r\n  - pipeline\r\n  - workflow\r\n  - document\r\n  - automation\r\ndepartment: All\r\n\r\n# AI Model Compatibility\r\nmodels:\r\n  recommended:\r\n    - claude-sonnet-4\r\n    - claude-opus-4\r\n  compatible:\r\n    - claude-3-5-sonnet\r\n    - gpt-4\r\n    - gpt-4o\r\n\r\n# Skill Capabilities\r\ncapabilities:\r\n  - document_workflow\r\n  - pipeline_automation\r\n\r\n# Language Support\r\nlanguages:\r\n  - en\r\n  - zh\r\n---\r\n\r\n# Doc Pipeline Skill\r\n\r\n## Overview\r\n\r\nThis skill enables building document processing pipelines - chain multiple operations (extract, transform, convert) into reusable workflows with data flowing between stages.\r\n\r\n## How to Use\r\n\r\n1. Describe what you want to accomplish\r\n2. Provide any required input data or files\r\n3. I'll execute the appropriate operations\r\n\r\n**Example prompts:**\r\n- \"PDF \u2192 Extract Text \u2192 Translate \u2192 Generate DOCX\"\r\n- \"Image \u2192 OCR \u2192 Summarize \u2192 Create Report\"\r\n- \"Excel \u2192 Analyze \u2192 Generate Charts \u2192 Create PPT\"\r\n- \"Multiple inputs \u2192 Merge \u2192 Format \u2192 Output\"\r\n\r\n## Domain Knowledge\r\n\r\n\r\n### Pipeline Architecture\r\n\r\n```\r\nStage 1      Stage 2      Stage 3      Stage 4\r\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2510\r\n\u2502Extract\u2502 \u2192 \u2502Transform\u2502 \u2192 \u2502 AI   \u2502 \u2192 \u2502Output\u2502\r\n\u2502 PDF  \u2502    \u2502  Data  \u2502    \u2502Analyze\u2502   \u2502 DOCX \u2502\r\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2518    \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2518\r\n     \u2502           \u2502           \u2502           \u2502\r\n     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\r\n                 Data Flow\r\n```\r\n\r\n### Pipeline DSL (Domain Specific Language)\r\n\r\n```yaml\r\n# pipeline.yaml\r\nname: contract-review-pipeline\r\ndescription: Extract, analyze, and report on contracts\r\n\r\nstages:\r\n  - name: extract\r\n    operation: pdf-extraction\r\n    input: $input_file\r\n    output: $extracted_text\r\n    \r\n  - name: analyze\r\n    operation: ai-analyze\r\n    input: $extracted_text\r\n    prompt: \"Review this contract for risks...\"\r\n    output: $analysis\r\n    \r\n  - name: report\r\n    operation: docx-generation\r\n    input: $analysis\r\n    template: templates/review_report.docx\r\n    output: $output_file\r\n```\r\n\r\n### Python Implementation\r\n\r\n```python\r\nfrom typing import Callable, Any\r\nfrom dataclasses import dataclass\r\n\r\n@dataclass\r\nclass Stage:\r\n    name: str\r\n    operation: Callable\r\n    \r\nclass Pipeline:\r\n    def __init__(self, name: str):\r\n        self.name = name\r\n        self.stages: list[Stage] = []\r\n    \r\n    def add_stage(self, name: str, operation: Callable):\r\n        self.stages.append(Stage(name, operation))\r\n        return self  # Fluent API\r\n    \r\n    def run(self, input_data: Any) -> Any:\r\n        data = input_data\r\n        for stage in self.stages:\r\n            print(f\"Running stage: {stage.name}\")\r\n            data = stage.operation(data)\r\n        return data\r\n\r\n# Example usage\r\npipeline = Pipeline(\"contract-review\")\r\npipeline.add_stage(\"extract\", extract_pdf_text)\r\npipeline.add_stage(\"analyze\", analyze_with_ai)\r\npipeline.add_stage(\"generate\", create_docx_report)\r\n\r\nresult = pipeline.run(\"/path/to/contract.pdf\")\r\n```\r\n\r\n### Advanced: Conditional Pipelines\r\n\r\n```python\r\nclass ConditionalPipeline(Pipeline):\r\n    def add_conditional_stage(self, name: str, condition: Callable, \r\n                               if_true: Callable, if_false: Callable):\r\n        def conditional_op(data):\r\n            if condition(data):\r\n                return if_true(data)\r\n            return if_false(data)\r\n        return self.add_stage(name, conditional_op)\r\n\r\n# Usage\r\npipeline.add_conditional_stage(\r\n    \"ocr_if_needed\",\r\n    condition=lambda d: d.get(\"has_images\"),\r\n    if_true=run_ocr,\r\n    if_false=lambda d: d\r\n)\r\n```\r\n\r\n\r\n## Best Practices\r\n\r\n1. **Keep stages focused (single responsibility)**\r\n2. **Use intermediate outputs for debugging**\r\n3. **Implement stage-level error handling**\r\n4. **Make pipelines configurable via YAML/JSON**\r\n\r\n## Installation\r\n\r\n```bash\r\n# Install required dependencies\r\npip install python-docx openpyxl python-pptx reportlab jinja2\r\n```\r\n\r\n## Resources\r\n\r\n- [Custom Repository](https://github.com/claude-office-skills/skills)\r\n- [Claude Office Skills Hub](https://github.com/claude-office-skills/skills)\r\n",
+    "content_hash": "dd4c4aa11b13a1e8f712107b0bf190011e88f1256dcd980f0a63aa16ea4d4610",
+    "generated": false,
+    "is_text": true,
+    "line_count": 179,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5042,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "from typing import Callable, Any\r\nfrom dataclasses import dataclass\r\n\r\n@dataclass\r\nclass Stage:\r\n    name: str\r\n    operation: Callable\r\n    \r\nclass Pipeline:\r\n    def __init__(self, name: str):\r\n        self.name = name\r\n        self.stages: list[Stage] = []\r\n    \r\n    def add_stage(self, name: str, operation: Callable):\r\n        self.stages.append(Stage(name, operation))\r\n        return self  # Fluent API\r\n    \r\n    def run(self, input_data: Any) -> Any:\r\n        data = input_data\r\n        for stage in self.stages:\r\n            print(f\"Running stage: {stage.name}\")\r\n            data = stage.operation(data)\r\n        return data\r\n\r\n# Example usage\r\npipeline = Pipeline(\"contract-review\")\r\npipeline.add_stage(\"extract\", extract_pdf_text)\r\npipeline.add_stage(\"analyze\", analyze_with_ai)\r\npipeline.add_stage(\"generate\", create_docx_report)\r\n\r\nresult = pipeline.run(\"/path/to/contract.pdf\")",
+    "content_hash": "702b81ec46479243abec0adc514668eec07d50df54b30edf302075e0d99132d4",
+    "generated": true,
+    "is_text": true,
+    "line_count": 31,
+    "relative_path": ".malskills_fences/SKILL__fence_2.py",
+    "size_bytes": 894,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 137,
+    "source_start_line": 105
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "class ConditionalPipeline(Pipeline):\r\n    def add_conditional_stage(self, name: str, condition: Callable, \r\n                               if_true: Callable, if_false: Callable):\r\n        def conditional_op(data):\r\n            if condition(data):\r\n                return if_true(data)\r\n            return if_false(data)\r\n        return self.add_stage(name, conditional_op)\r\n\r\n# Usage\r\npipeline.add_conditional_stage(\r\n    \"ocr_if_needed\",\r\n    condition=lambda d: d.get(\"has_images\"),\r\n    if_true=run_ocr,\r\n    if_false=lambda d: d\r\n)",
+    "content_hash": "e5371bcdea92ed268b02eedf395a38774e14ca2a3daaf7503d45de8a02a6a209",
+    "generated": true,
+    "is_text": true,
+    "line_count": 16,
+    "relative_path": ".malskills_fences/SKILL__fence_3.py",
+    "size_bytes": 535,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 158,
+    "source_start_line": 141
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "# Install required dependencies\r\npip install python-docx openpyxl python-pptx reportlab jinja2",
+    "content_hash": "d022c6c0c525da4aa49302c90c8ff444286a50b4101eac2132b4693dd392597d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_4.sh",
+    "size_bytes": 94,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 173,
+    "source_start_line": 170
+  }
+]

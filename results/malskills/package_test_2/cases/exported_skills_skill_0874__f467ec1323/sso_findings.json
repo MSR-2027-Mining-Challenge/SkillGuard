@@ -1,0 +1,3125 @@
+[
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.resolve(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.resolve()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "let current = path.resolve(start);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 13,
+        "start_line": 13
+      }
+    },
+    "span": {
+      "end_line": 13,
+      "start_line": 13
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "if (fs.existsSync(path.join(current, 'project-manifest.json')) && fs.existsSync(path.join(current, 'AGENTS.md'))) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 15,
+        "start_line": 15
+      }
+    },
+    "span": {
+      "end_line": 15,
+      "start_line": 15
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.dirname(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.dirname()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "const parent = path.dirname(current);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 18,
+        "start_line": 18
+      }
+    },
+    "span": {
+      "end_line": 18,
+      "start_line": 18
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.dirname(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.dirname()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "const scriptDir = path.dirname(fileURLToPath(import.meta.url));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 25,
+        "start_line": 25
+      }
+    },
+    "span": {
+      "end_line": 25,
+      "start_line": 25
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using process.cwd(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0018.no-process-cwd",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0018.no-process-cwd"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "process.cwd()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00007",
+    "matched_text": "const root = findRepoRoot(process.cwd()) ?? findRepoRoot(scriptDir);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 26,
+        "start_line": 26
+      }
+    },
+    "span": {
+      "end_line": 26,
+      "start_line": 26
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00008",
+    "matched_text": "const coord = path.join(root, 'coordination');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 29,
+        "start_line": 29
+      }
+    },
+    "span": {
+      "end_line": 29,
+      "start_line": 29
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00009",
+    "matched_text": "const tasksDir = path.join(coord, 'tasks');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 30,
+        "start_line": 30
+      }
+    },
+    "span": {
+      "end_line": 30,
+      "start_line": 30
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00010",
+    "matched_text": "const inboxDir = path.join(coord, 'inbox');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 31,
+        "start_line": 31
+      }
+    },
+    "span": {
+      "end_line": 31,
+      "start_line": 31
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00011",
+    "matched_text": "const reportsDir = path.join(coord, 'reports');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 32,
+        "start_line": 32
+      }
+    },
+    "span": {
+      "end_line": 32,
+      "start_line": 32
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00012",
+    "matched_text": "const rolesPath = path.join(coord, 'roles.json');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 33,
+        "start_line": 33
+      }
+    },
+    "span": {
+      "end_line": 33,
+      "start_line": 33
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00013",
+    "matched_text": "const threadsPath = path.join(coord, 'thread-registry.json');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 34,
+        "start_line": 34
+      }
+    },
+    "span": {
+      "end_line": 34,
+      "start_line": 34
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00014",
+    "matched_text": "for (const dir of [coord, tasksDir, inboxDir, reportsDir, path.join(coord, 'decisions'), path.join(coord, 'blockers')]) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 94,
+        "start_line": 94
+      }
+    },
+    "span": {
+      "end_line": 94,
+      "start_line": 94
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.mkdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0050.no-fs-mkdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0050.no-fs-mkdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.mkdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00016",
+    "matched_text": "fs.mkdirSync(dir, { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 95,
+        "start_line": 95
+      }
+    },
+    "span": {
+      "end_line": 95,
+      "start_line": 95
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00017",
+    "matched_text": "function taskPath(id) { return path.join(tasksDir, `${id}.json`); }",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 100,
+        "start_line": 100
+      }
+    },
+    "span": {
+      "end_line": 100,
+      "start_line": 100
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readFileSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0060.no-fs-readFileSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0060.no-fs-readFileSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readFileSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00018",
+    "matched_text": "function readJson(file) { return JSON.parse(fs.readFileSync(file, 'utf8')); }",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 101,
+        "start_line": 101
+      }
+    },
+    "span": {
+      "end_line": 101,
+      "start_line": 101
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.mkdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0050.no-fs-mkdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0050.no-fs-mkdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.mkdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00019",
+    "matched_text": "fs.mkdirSync(path.dirname(file), { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 103,
+        "start_line": 103
+      }
+    },
+    "span": {
+      "end_line": 103,
+      "start_line": 103
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.dirname(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.dirname()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00020",
+    "matched_text": "fs.mkdirSync(path.dirname(file), { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 103,
+        "start_line": 103
+      }
+    },
+    "span": {
+      "end_line": 103,
+      "start_line": 103
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using crypto.randomUUID(), as it can lead to potential issues with cryptography.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0059.no-crypto-randomUUID",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0059.no-crypto-randomUUID"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "crypto.randomUUID()",
+      "source_rule_category": "Cryptography",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00021",
+    "matched_text": "const temp = `${file}.${process.pid}.${crypto.randomUUID()}.tmp`;",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 104,
+        "start_line": 104
+      }
+    },
+    "span": {
+      "end_line": 104,
+      "start_line": 104
+    },
+    "subtype": "cipher_object_creation"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.writeFileSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0093.no-fs-writeFileSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0093.no-fs-writeFileSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.writeFileSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00022",
+    "matched_text": "fs.writeFileSync(temp, `${JSON.stringify(value, null, 2)}\\n`, 'utf8');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 105,
+        "start_line": 105
+      }
+    },
+    "span": {
+      "end_line": 105,
+      "start_line": 105
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.renameSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0071.no-fs-renameSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0071.no-fs-renameSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.renameSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00023",
+    "matched_text": "fs.renameSync(temp, file);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 106,
+        "start_line": 106
+      }
+    },
+    "span": {
+      "end_line": 106,
+      "start_line": 106
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00024",
+    "matched_text": "if (!fs.existsSync(file)) fail(`Task not found: ${id}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 110,
+        "start_line": 110
+      }
+    },
+    "span": {
+      "end_line": 110,
+      "start_line": 110
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00025",
+    "matched_text": "return fs.readdirSync(tasksDir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(tasksDir, f));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 114,
+        "start_line": 114
+      }
+    },
+    "span": {
+      "end_line": 114,
+      "start_line": 114
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00026",
+    "matched_text": "return fs.readdirSync(tasksDir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(tasksDir, f));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 114,
+        "start_line": 114
+      }
+    },
+    "span": {
+      "end_line": 114,
+      "start_line": 114
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00027",
+    "matched_text": "if (!fs.existsSync(rolesPath)) return [];",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 118,
+        "start_line": 118
+      }
+    },
+    "span": {
+      "end_line": 118,
+      "start_line": 118
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00028",
+    "matched_text": "if (!fs.existsSync(threadsPath)) return { schemaVersion: 1, threads: {} };",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 123,
+        "start_line": 123
+      }
+    },
+    "span": {
+      "end_line": 123,
+      "start_line": 123
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.openSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0055.no-fs-openSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0055.no-fs-openSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.openSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00029",
+    "matched_text": "fd = fs.openSync(lock, 'wx');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 137,
+        "start_line": 137
+      }
+    },
+    "span": {
+      "end_line": 137,
+      "start_line": 137
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.closeSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0018.no-fs-closeSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0018.no-fs-closeSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.closeSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00030",
+    "matched_text": "if (fd !== undefined) fs.closeSync(fd);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 143,
+        "start_line": 143
+      }
+    },
+    "span": {
+      "end_line": 143,
+      "start_line": 143
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.rmSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0073.no-fs-rmSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0073.no-fs-rmSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.rmSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00031",
+    "matched_text": "fs.rmSync(lock, { force: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 144,
+        "start_line": 144
+      }
+    },
+    "span": {
+      "end_line": 144,
+      "start_line": 144
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using crypto.randomBytes(), as it can lead to potential issues with cryptography.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0055.no-crypto-randomBytes",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0055.no-crypto-randomBytes"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "crypto.randomBytes()",
+      "source_rule_category": "Cryptography",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00032",
+    "matched_text": "return `MSG-${Date.now().toString(36).toUpperCase()}-${crypto.randomBytes(3).toString('hex').toUpperCase()}`;",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 159,
+        "start_line": 159
+      }
+    },
+    "span": {
+      "end_line": 159,
+      "start_line": 159
+    },
+    "subtype": "cipher_object_creation"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00033",
+    "matched_text": "const dir = path.join(inboxDir, to);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 165,
+        "start_line": 165
+      }
+    },
+    "span": {
+      "end_line": 165,
+      "start_line": 165
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.mkdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0050.no-fs-mkdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0050.no-fs-mkdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.mkdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00034",
+    "matched_text": "fs.mkdirSync(dir, { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 166,
+        "start_line": 166
+      }
+    },
+    "span": {
+      "end_line": 166,
+      "start_line": 166
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00035",
+    "matched_text": "atomicWrite(path.join(dir, `${id}.json`), msg);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 168,
+        "start_line": 168
+      }
+    },
+    "span": {
+      "end_line": 168,
+      "start_line": 168
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00036",
+    "matched_text": "function reportAbsolute(id) { return path.join(root, reportRelative(id)); }",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 172,
+        "start_line": 172
+      }
+    },
+    "span": {
+      "end_line": 172,
+      "start_line": 172
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00037",
+    "matched_text": "console.log(`Coordination layout ready at ${path.relative(process.cwd(), coord) || coord}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 176,
+        "start_line": 176
+      }
+    },
+    "span": {
+      "end_line": 176,
+      "start_line": 176
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using process.cwd(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0018.no-process-cwd",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0018.no-process-cwd"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "process.cwd()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00038",
+    "matched_text": "console.log(`Coordination layout ready at ${path.relative(process.cwd(), coord) || coord}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 176,
+        "start_line": 176
+      }
+    },
+    "span": {
+      "end_line": 176,
+      "start_line": 176
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.basename(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.basename()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00039",
+    "matched_text": "for (const key of required) if (!(key in t)) errors.push(`${path.basename(file)} missing ${key}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 190,
+        "start_line": 190
+      }
+    },
+    "span": {
+      "end_line": 190,
+      "start_line": 190
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.basename(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.basename()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00040",
+    "matched_text": "if (path.basename(file, '.json') !== t.id) errors.push(`${t.id} filename mismatch`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 197,
+        "start_line": 197
+      }
+    },
+    "span": {
+      "end_line": 197,
+      "start_line": 197
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00041",
+    "matched_text": "if (fs.existsSync(threadsPath)) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 211,
+        "start_line": 211
+      }
+    },
+    "span": {
+      "end_line": 211,
+      "start_line": 211
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00042",
+    "matched_text": "if (fs.existsSync(inboxDir)) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 220,
+        "start_line": 220
+      }
+    },
+    "span": {
+      "end_line": 220,
+      "start_line": 220
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00043",
+    "matched_text": "for (const roleDir of fs.readdirSync(inboxDir)) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 221,
+        "start_line": 221
+      }
+    },
+    "span": {
+      "end_line": 221,
+      "start_line": 221
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00044",
+    "matched_text": "const dir = path.join(inboxDir, roleDir);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 222,
+        "start_line": 222
+      }
+    },
+    "span": {
+      "end_line": 222,
+      "start_line": 222
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.statSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0077.no-fs-statSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0077.no-fs-statSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.statSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00045",
+    "matched_text": "if (!fs.statSync(dir).isDirectory()) continue;",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 223,
+        "start_line": 223
+      }
+    },
+    "span": {
+      "end_line": 223,
+      "start_line": 223
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00046",
+    "matched_text": "for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 224,
+        "start_line": 224
+      }
+    },
+    "span": {
+      "end_line": 224,
+      "start_line": 224
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00047",
+    "matched_text": "const m = readJson(path.join(dir, file));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 226,
+        "start_line": 226
+      }
+    },
+    "span": {
+      "end_line": 226,
+      "start_line": 226
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using process.exit(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0021.no-process-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0021.no-process-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "process.exit()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00048",
+    "matched_text": "process.exit(2);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 236,
+        "start_line": 236
+      }
+    },
+    "span": {
+      "end_line": 236,
+      "start_line": 236
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00049",
+    "matched_text": "if (!fs.existsSync(path.join(root, report))) fail(`Missing work report: ${report}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 293,
+        "start_line": 293
+      }
+    },
+    "span": {
+      "end_line": 293,
+      "start_line": 293
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00051",
+    "matched_text": "const dir = path.join(inboxDir, role);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 386,
+        "start_line": 386
+      }
+    },
+    "span": {
+      "end_line": 386,
+      "start_line": 386
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00052",
+    "matched_text": "if (!fs.existsSync(dir)) return [];",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 387,
+        "start_line": 387
+      }
+    },
+    "span": {
+      "end_line": 387,
+      "start_line": 387
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00053",
+    "matched_text": "return fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(dir, f));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 388,
+        "start_line": 388
+      }
+    },
+    "span": {
+      "end_line": 388,
+      "start_line": 388
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00054",
+    "matched_text": "return fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(dir, f));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 388,
+        "start_line": 388
+      }
+    },
+    "span": {
+      "end_line": 388,
+      "start_line": 388
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00055",
+    "matched_text": "if (!fs.existsSync(inboxDir)) return result;",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 392,
+        "start_line": 392
+      }
+    },
+    "span": {
+      "end_line": 392,
+      "start_line": 392
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readdirSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0063.no-fs-readdirSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readdirSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00056",
+    "matched_text": "for (const role of fs.readdirSync(inboxDir).sort()) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 393,
+        "start_line": 393
+      }
+    },
+    "span": {
+      "end_line": 393,
+      "start_line": 393
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0077.no-fs-statSync",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00057",
+    "matched_text": "const dir = path.join(inboxDir, role); if (!fs.statSync(dir).isDirectory()) continue;",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 394,
+        "start_line": 394
+      }
+    },
+    "span": {
+      "end_line": 394,
+      "start_line": 394
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00059",
+    "matched_text": "if (jsonOut) return console.log(JSON.stringify(rows.map(({ file, msg }) => ({ path: path.relative(root, file), ...msg })), null, 2));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 402,
+        "start_line": 402
+      }
+    },
+    "span": {
+      "end_line": 402,
+      "start_line": 402
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00060",
+    "matched_text": "for (const { file, msg } of rows) console.log(`${msg.id}\\t${msg.kind}\\t${msg.from}\\t${msg.taskId ?? '-'}\\t${msg.subject}\\t${path.relative(root, file)}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 404,
+        "start_line": 404
+      }
+    },
+    "span": {
+      "end_line": 404,
+      "start_line": 404
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00061",
+    "matched_text": "const file = path.join(inboxDir, role, `${id}.json`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 408,
+        "start_line": 408
+      }
+    },
+    "span": {
+      "end_line": 408,
+      "start_line": 408
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00062",
+    "matched_text": "if (!fs.existsSync(file)) fail(`Message not found: ${id} in ${role}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 409,
+        "start_line": 409
+      }
+    },
+    "span": {
+      "end_line": 409,
+      "start_line": 409
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00063",
+    "matched_text": "console.log(`  file: ${path.relative(root, file)}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 426,
+        "start_line": 426
+      }
+    },
+    "span": {
+      "end_line": 426,
+      "start_line": 426
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.existsSync(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0026.no-fs-existsSync"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.existsSync()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00064",
+    "matched_text": "if (fs.existsSync(taskPath(id))) fail(`Task already exists: ${id}`);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 462,
+        "start_line": 462
+      }
+    },
+    "span": {
+      "end_line": 462,
+      "start_line": 462
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/taskctl.mjs",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using process.exit(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0021.no-process-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0021.no-process-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "process.exit()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00065",
+    "matched_text": "function fail(message) { console.error(`taskctl: ${message}`); process.exit(1); }",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/taskctl.mjs"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 475,
+        "start_line": 475
+      }
+    },
+    "span": {
+      "end_line": 475,
+      "start_line": 475
+    },
+    "subtype": "system_command_execution"
+  }
+]

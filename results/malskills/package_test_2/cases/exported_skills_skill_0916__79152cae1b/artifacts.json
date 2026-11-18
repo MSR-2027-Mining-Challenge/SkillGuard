@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: phpunit\r\ndescription: PHPUnit test structure, naming, assertions, and factory conventions for Laravel feature and unit tests.\r\n---\r\n\r\n**Name:** PHPUnit\r\n**Description:** PHPUnit test structure, naming, assertions, and factory conventions for Laravel feature and unit tests.\r\n**Compatible Agents:** general-purpose, testing\r\n**Tags:** tests/**/*.php, laravel, php, testing, phpunit, unit-test, feature-test\r\n\r\n## Rules\r\n\r\n- **Feature tests** go in `tests/Feature/` and extend `Tests\\TestCase`\r\n- **Unit tests** go in `tests/Unit/` and extend `PHPUnit\\Framework\\TestCase`\r\n- Always use `Illuminate\\Foundation\\Testing\\RefreshDatabase` in feature tests that touch the database\r\n- Unit tests have no Laravel bootstrap \u2014 pure PHP tests only\r\n- Use `test_` method prefix with snake_case names: `test_user_can_create_resource`\r\n- All test methods must have `: void` return type\r\n- One assertion concern per test method \u2014 keep tests focused\r\n- Prefer `assertSame` over `assertEquals` for strict type + value comparison\r\n- Assert specific values, not just truthiness\r\n- Every new model **must** have a corresponding factory in `database/factories/`\r\n- Use factories in tests instead of manual `create()` / `insert()` calls\r\n- Define meaningful default factory values; use states for variations\r\n\r\n## Examples\r\n\r\n```php\r\n// Feature test\r\nuse Illuminate\\Foundation\\Testing\\RefreshDatabase;\r\nuse Tests\\TestCase;\r\n\r\nclass InvoiceControllerTest extends TestCase\r\n{\r\n    use RefreshDatabase;\r\n\r\n    public function test_user_can_create_invoice(): void\r\n    {\r\n        $user  = User::factory()->create();\r\n        $order = Order::factory()->create(['user_id' => $user->id]);\r\n\r\n        $response = $this->actingAs($user)\r\n            ->postJson('/api/invoices', ['order_id' => $order->id]);\r\n\r\n        $response->assertStatus(201);\r\n        $this->assertDatabaseHas('invoices', ['order_id' => $order->id]);\r\n    }\r\n}\r\n```\r\n\r\n```php\r\n// Unit test \u2014 no Laravel bootstrap\r\nuse PHPUnit\\Framework\\TestCase;\r\n\r\nclass MoneyHelperTest extends TestCase\r\n{\r\n    public function test_formats_amount_in_cents_as_currency_string(): void\r\n    {\r\n        $result = MoneyHelper::format(1000, 'CHF');\r\n\r\n        $this->assertSame('10.00 CHF', $result);\r\n    }\r\n}\r\n```\r\n\r\n```php\r\n// Factory with states\r\n// database/factories/UserFactory.php\r\npublic function unverified(): static\r\n{\r\n    return $this->state(fn (array $attributes) => [\r\n        'email_verified_at' => null,\r\n    ]);\r\n}\r\n\r\n// Usage in tests\r\nUser::factory()->create();\r\nUser::factory()->unverified()->create();\r\n```\r\n\r\n## Anti-Patterns\r\n\r\n- Not using `RefreshDatabase` in feature tests that write to the database\r\n- Using raw `insert()` or `create()` calls in tests instead of factories\r\n- Mixing multiple assertion concerns in a single test method\r\n- Using `assertEquals` when `assertSame` is needed for strict comparison\r\n- Asserting truthiness (`assertTrue($result !== null)`) instead of a specific value\r\n- Unit tests that bootstrap the full Laravel application (use `Tests\\TestCase` only for feature tests)\r\n\r\n## References\r\n\r\n- [PHPUnit Documentation](https://phpunit.de/)\r\n- [Laravel Testing](https://laravel.com/docs/testing)\r\n- Related: `PestTesting/SKILL.md` \u2014 the preferred test framework (Pest over raw PHPUnit)\r\n",
+    "content_hash": "55162cd674191cc7a43d5e823866b8e2a2743c3ec2990d9e6b525a2cd65901a7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 95,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3275,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"phpunit\",\r\n  \"description\": \"PHPUnit test structure, naming, assertions, and factory conventions for Laravel feature and unit tests.\",\r\n  \"category\": \"backend\",\r\n  \"canonical_category\": \"backend\",\r\n  \"repository\": \"codebar-ag/coding-guidelines\",\r\n  \"repository_url\": \"https://github.com/codebar-ag/coding-guidelines\",\r\n  \"author\": \"codebar-ag\",\r\n  \"author_avatar\": \"https://github.com/codebar-ag.png\",\r\n  \"file_path\": \"resources/boost/skills/phpunit/SKILL.md\",\r\n  \"source\": \"github_code_search\",\r\n  \"stars\": 0,\r\n  \"quality_score\": 45,\r\n  \"best_practices_score\": 55,\r\n  \"skill_level\": 2,\r\n  \"skill_level_label\": \"instructions\",\r\n  \"has_scripts\": false,\r\n  \"has_extra_files\": false,\r\n  \"downloads\": 0,\r\n  \"content_hash\": \"6e4def25055dc0e348e6c0920220e8b537be822968ec5d44a1a5c15563013701\",\r\n  \"indexed_at\": \"2026-02-28T01:07:56.633Z\",\r\n  \"synced_at\": \"2026-02-28T04:28:15.083Z\",\r\n  \"omni_registry_url\": \"https://omni-skill-registry.omniroute.online/#/skill/b82879b06b482cae4ce8ad9db143ee6eac2573ca8e18d5df5e1539859d500682\",\r\n  \"install_command\": \"mkdir -p .claude/skills/phpunit && curl -sL \\\"https://raw.githubusercontent.com/codebar-ag/coding-guidelines/main/resources/boost/skills/phpunit/SKILL.md\\\" > .claude/skills/phpunit/SKILL.md\",\r\n  \"raw_url\": \"https://raw.githubusercontent.com/codebar-ag/coding-guidelines/main/resources/boost/skills/phpunit/SKILL.md\"\r\n}\r\n",
+    "content_hash": "cae2241da58f77553efd65b5c31e5f70f086a7c84c114b4e28eb157815cba453",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "metadata.json",
+    "size_bytes": 1378,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

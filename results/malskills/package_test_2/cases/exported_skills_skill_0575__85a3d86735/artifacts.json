@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: searxng_search\r\ndescription: \"**\u805a\u5408\u7f51\u7edc\u641c\u7d22**\u3002\u57fa\u4e8e SearXNG\uff0c\u652f\u6301 Google/Bing/DuckDuckGo \u7b49\u591a\u5f15\u64ce\u805a\u5408\u641c\u7d22\u3002\"\r\ntriggers:\r\n- search\r\n- \u641c\u7d22\r\n- \u67e5\u627e\r\n- find\r\n- google\r\n- \u767e\u5ea6\r\n- \u8c37\u6b4c\r\n---\r\n\r\n# SearXNG Search (\u7f51\u7edc\u641c\u7d22)\r\n\r\n\u4f60\u662f\u4e00\u4e2a\u7f51\u7edc\u641c\u7d22\u4e13\u5bb6\u3002\r\n\r\n## \u6838\u5fc3\u80fd\u529b\r\n\r\n1.  **\u805a\u5408\u641c\u7d22**: \u80fd\u591f\u540c\u65f6\u68c0\u7d22\u591a\u4e2a\u641c\u7d22\u5f15\u64ce\u7684\u7ed3\u679c\u3002\r\n2.  **\u591a\u89d2\u5ea6\u641c\u7d22**: \u652f\u6301\u5e76\u884c\u641c\u7d22\u591a\u4e2a\u5173\u952e\u8bcd (`queries`)\uff0c\u5e76\u751f\u6210\u805a\u5408\u62a5\u544a\u3002\r\n\r\n## \u6267\u884c\u6307\u4ee4 (SOP)\r\n\r\n### \u53c2\u6570\u8bf4\u660e\r\n\r\n| \u53c2\u6570\u540d | \u7c7b\u578b | \u5fc5\u586b | \u8bf4\u660e |\r\n| :--- | :--- | :--- | :--- |\r\n| `query` | string | \u6761\u4ef6 | \u5355\u4e00\u641c\u7d22\u5173\u952e\u8bcd (\u4e0e `queries` \u4e8c\u9009\u4e00) |\r\n| `queries` | list | \u6761\u4ef6 | **\u63a8\u8350**\u3002\u5e76\u884c\u641c\u7d22\u5173\u952e\u8bcd\u5217\u8868 (\u4f8b\u5982 `[\"Python \u6559\u7a0b\", \"Python \u6700\u4f73\u5b9e\u8df5\"]`) |\r\n| `num_results` | int | \u5426 | \u8fd4\u56de\u7ed3\u679c\u6570\u91cf (\u9ed8\u8ba4 5) |\r\n| `categories` | string | \u5426 | \u5206\u7c7b: `general` (\u9ed8\u8ba4), `news`, `it`, `science`, `images` |\r\n| `time_range` | string | \u5426 | \u65f6\u95f4\u8303\u56f4: `day`, `week`, `month`, `year` |\r\n| `language` | string | \u5426 | \u8bed\u8a00: `zh-CN` (\u9ed8\u8ba4), `en-US` |\r\n\r\n### \u610f\u56fe\u6620\u5c04\u793a\u4f8b\r\n\r\n**1. \u7b80\u5355\u641c\u7d22**\r\n- \u7528\u6237\u8f93\u5165: \"\u641c\u7d22 Linux \u5e38\u7528\u547d\u4ee4\"\r\n- \u63d0\u53d6\u53c2\u6570:\r\n  ```json\r\n  { \"query\": \"Linux \u5e38\u7528\u547d\u4ee4\" }\r\n  ```\r\n\r\n**2. \u591a\u89d2\u5ea6\u641c\u7d22 (\u63a8\u8350)**\r\n- \u7528\u6237\u8f93\u5165: \"\u5e2e\u6211\u5bf9\u6bd4\u4e00\u4e0b Python \u548c Golang \u7684\u4f18\u7f3a\u70b9\"\r\n- \u63d0\u53d6\u53c2\u6570:\r\n  ```json\r\n  { \"queries\": [\"Python \u4f18\u7f3a\u70b9\", \"Golang \u4f18\u7f3a\u70b9\", \"Python vs Golang \u6027\u80fd\u5bf9\u6bd4\"] }\r\n  ```\r\n\r\n**3. \u641c\u7d22\u7279\u5b9a\u7c7b\u578b (\u65b0\u95fb)**\r\n- \u7528\u6237\u8f93\u5165: \"\u641c\u7d22\u6700\u8fd1\u5173\u4e8e SpaceX \u7684\u65b0\u95fb\"\r\n- \u63d0\u53d6\u53c2\u6570:\r\n  ```json\r\n  { \"query\": \"SpaceX\", \"categories\": \"news\", \"time_range\": \"month\" }\r\n  ```\r\n",
+    "content_hash": "ec180812521d1f0a378fb4112f5bb9035e5961ca1b886c3359eebada2e4cc29e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 58,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1720,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"searxng-search\",\r\n  \"description\": \"\",\r\n  \"repo\": \"glwlg/X-bot\",\r\n  \"category\": \"analysis\",\r\n  \"tags\": [],\r\n  \"stars\": 0,\r\n  \"source\": \"github.com/glwlg/X-bot\",\r\n  \"github_path\": \"skills/builtin/searxng_search\",\r\n  \"github_branch\": \"master\",\r\n  \"dir_name\": \"searxng-search\",\r\n  \"downloaded_at\": \"2026-02-05T05:41:55.548836Z\",\r\n  \"author\": \"glwlg\",\r\n  \"source_url\": \"https://github.com/glwlg/X-bot/blob/master/skills/builtin/searxng_search/SKILL.md\",\r\n  \"license\": \"NOASSERTION\",\r\n  \"copyright\": \"Copyright belongs to upstream author(s); see https://github.com/glwlg/X-bot/blob/master/skills/builtin/searxng_search/SKILL.md\",\r\n  \"permission_note\": \"Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.\",\r\n  \"distribution\": \"restricted\",\r\n  \"license_class\": \"restricted\"\r\n}",
+    "content_hash": "101d573fb477296d2d3655d9186432958ce4a9624bdd9ec9be342bc54562e9f6",
+    "generated": false,
+    "is_text": true,
+    "line_count": 20,
+    "relative_path": "metadata.json",
+    "size_bytes": 825,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

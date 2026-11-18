@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "LATEST_ENTRY=$(grep -E \"^## Session [0-9]+\\.[0-9]+ - \" SESSION_LOG.md | head -1)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::LATEST_ENTRY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::LATEST_ENTRY",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::LATEST_ENTRY"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "LATEST_DATE_STR=$(echo \"$LATEST_ENTRY\" | grep -oE \"[A-Z][a-z]+ [0-9]+, [0-9]+\" | head -1)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::LATEST_DATE_STR": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::LATEST_DATE_STR",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::LATEST_DATE_STR"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  }
+]

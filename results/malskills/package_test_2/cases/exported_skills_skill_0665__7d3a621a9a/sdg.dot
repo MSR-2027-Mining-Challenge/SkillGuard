@@ -1,0 +1,20 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=aggregate.mjs"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=markdown\npath=refute-architectural.md"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=markdown\npath=refute-infosec.md"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=markdown\npath=refute-methodology.md"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=markdown\npath=refute-qa.md"];
+  "obj::operation::aggregate.mjs::system_command_execution::218" [label="obj::operation::aggregate.mjs::system_command_execution::218\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "value::00f30acbe32eb7391823" [label="value::00f30acbe32eb7391823\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0003" -> "sso_00000" [label="contains"];
+  "obj::operation::aggregate.mjs::system_command_execution::218" -> "value::00f30acbe32eb7391823" [label="value_flow"];
+  "sso_00000" -> "obj::operation::aggregate.mjs::system_command_execution::218" [label="has_operand"];
+}

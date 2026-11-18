@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: \"impl-instrs:meta-instructions\"\r\ndescription: \"DO NOT TRIGGER AUTOMATICALLY. Workflow for explicit invocation only via /slash command. Write meta-instructions that define guidelines and formats for other instructions. Trigger on files matching: 'ai_instrs/', '*.ai_instrs/', 'ai_instrs.*/', 'ai_instrs.*', '*.ai_instrs.*'.\"\r\n---\r\n\r\n# Meta-instructions\r\n\r\n**Core:** The ability to write instructions at any level, including instructions for instructions.\r\n\r\n## Strict Imperative Workflow Algorithm\r\n\r\nUpon receiving a task to create or modify a meta-instruction, strictly execute the following steps in the specified order:\r\n\r\n### Step 1. Analysis of Current Base\r\n1. Discover and read existing rules using the `ai_instrs` file and directory patterns.\r\n2. Determine to which abstraction level the task belongs (e.g., core agent behavior, prompt authoring rules, directory structure).\r\n3. Check the concept for absence of overlaps with already existing instructions. Strictly adhere to the principle of isolated areas of responsibility.\r\n\r\n### Step 2. Translation of Concepts into Algorithms\r\nDirect transfer of abstract business requirements is prohibited. Translate every conceptual idea into an executable algorithm:\r\n1. Replace abstract intentions (e.g., \"the agent should analyze the situation\") with specific tool invocation steps (e.g., \"Step 1: Use tool X. Step 2: Perform search Y\").\r\n2. Formulate a single, clear, and unambiguous set of rules for the target object.\r\n3. Describe activation triggers if the instruction must trigger automatically (in accordance with `trigger: model_decision` standards).\r\n\r\n### Step 3. Interconnections and Reuse\r\n1. If a new meta-instruction uses logic described in another instruction, use explicit links in the format `[Name](<Path>)`.\r\n2. Never duplicate logic from adjacent objects.\r\n\r\n### Step 4. Formatting and Validation\r\n1. Format the final document in Markdown with a mandatory YAML frontmatter (if applicable).\r\n2. Ensure that the final text does not contain ambiguous interpretations, but represents a strict technical pipeline.\r\n\r\n### Step 5. Application\r\n1. Formulate a file name strictly matching discovery patterns (e.g., `name.ai_instrs.md`).\r\n2. Save the file in the working directory using exclusively allowed relative paths.\r\n",
+    "content_hash": "e671328ec2b9811fda33e85c97fe0613f190a96a93f8197051e67fad4a1a7480",
+    "generated": false,
+    "is_text": true,
+    "line_count": 36,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2297,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

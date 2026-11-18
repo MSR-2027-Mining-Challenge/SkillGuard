@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "uv sync --project scripts/eval",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "uv run --project scripts/eval python scripts/eval/evaluate_rag.py \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  }
+]

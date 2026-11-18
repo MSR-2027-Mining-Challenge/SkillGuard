@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: verify\r\ndescription: Run all verification checks (static analysis, tests, formatting) on the codebase. Use this skill whenever the user asks to verify code quality, run all checks, lint, type check, run tests, format code, or ensure the codebase is clean before committing or deploying. Discovers project-configured commands from build files and runs them in the right order.\r\n---\r\n\r\n# Verify\r\n\r\nRun static analysis, tests, and formatters to ensure the codebase is in a clean state.\r\n\r\nThis skill is the single entry point for all routine quality checks. It supersedes separate `test`, `format`, and `static-analysis` skills by handling discovery and orchestration in one place.\r\n\r\n## Workflow\r\n\r\n### 1. Discover Project Commands\r\n\r\nInvestigate available commands by checking project files in this priority order:\r\n\r\n1. **`flake.nix` / `flake.lock`**: prefer `nix flake check` for analysis+tests and `nix fmt` (treefmt) for formatting. Single command covers multi-language projects.\r\n2. **`Makefile` / `justfile`**: look for `lint`, `check`, `typecheck`, `test`, `format`, `fmt` targets.\r\n3. **`package.json`**: check `scripts` for `lint`, `typecheck`, `test`, `format`, plus common tools (`eslint`, `tsc --noEmit`, `vitest`, `jest`, `prettier`, `biome`).\r\n4. **Language-native fallbacks** (when no project-configured command exists):\r\n   - Go: `go vet ./...`, `golangci-lint run`, `go test ./...`, `gofmt -w .` / `goimports -w .`\r\n   - Rust: `cargo clippy`, `cargo test`, `cargo fmt`\r\n   - Python: `ruff check`, `mypy` / `pyright`, `pytest`, `ruff format` / `black .`\r\n\r\nPrefer project-configured commands over language defaults. If a command fails due to missing dependencies, recommend the appropriate setup (`nix develop`, `npm install`, `go mod download`, etc.) rather than falling back to a different tool.\r\n\r\n### 2. Run Checks\r\n\r\nRun in this order, fixing issues before moving to the next step:\r\n\r\n1. **Static analysis** (lint + type check)\r\n2. **Tests** (full suite)\r\n3. **Formatter** (auto-fix style)\r\n\r\nRationale: lint/type errors often surface issues that would otherwise cause confusing test failures; running the formatter last avoids reformatting code that you are about to fix.\r\n\r\n### 3. Report and Fix\r\n\r\n- Report results clearly per step: passed / failed / skipped, with failing test names and lint messages.\r\n- Fix errors before proceeding. Distinguish errors (must fix) from warnings (fix if straightforward).\r\n- Never skip failing tests. Never disable lint rules to pass.\r\n- If no test framework or formatter is configured, propose adding one appropriate for the project rather than silently skipping.\r\n",
+    "content_hash": "d212c2e668f9fb3633c6040628c2c94d4b64c042bdfdd8d99c600828376ee23c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 44,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2634,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

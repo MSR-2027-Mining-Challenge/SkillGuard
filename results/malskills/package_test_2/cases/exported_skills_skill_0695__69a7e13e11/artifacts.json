@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: \"adhoc_gcal\"\r\ndescription: \"Wrapper skill: inspect Google Calendar meetings and create draft-confirmed events.\"\r\n---\r\n\r\n# Ad-hoc Google Calendar\r\n\r\nThis is a **wrapper** skill for the repo automation in `90_System/Skills/adhoc_gcal/`.\r\n\r\n## Scope\r\n- List/search upcoming meetings\r\n- Inspect one event\r\n- Create local meeting drafts and confirm them into real calendar events\r\n\r\n## Run (from the vault repo root)\r\n- Authenticate:\r\n  - `.\\.venv\\Scripts\\python.exe 90_System\\Skills\\adhoc_gcal\\adhoc_gcal.py auth --account private`\r\n- List meetings:\r\n  - `.\\.venv\\Scripts\\python.exe 90_System\\Skills\\adhoc_gcal\\adhoc_gcal.py list --account both --days 14`\r\n- Create a draft:\r\n  - `.\\.venv\\Scripts\\python.exe 90_System\\Skills\\adhoc_gcal\\adhoc_gcal.py create-meeting-draft --account private --title \"Planning\" --start \"2026-03-12T10:00:00+01:00\"`\r\n- Full docs:\r\n  - `90_System/Skills/adhoc_gcal/SKILL.md`\r\n",
+    "content_hash": "97f627a4efa7a69fdff208e538bba328b0de4996054e4e35eda934374a48a88a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 24,
+    "relative_path": "SKILL.md",
+    "size_bytes": 911,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

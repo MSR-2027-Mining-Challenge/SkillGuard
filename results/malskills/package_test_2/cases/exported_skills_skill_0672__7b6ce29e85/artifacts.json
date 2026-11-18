@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: views-filtering\r\ndescription: \"Query filtering from GET params, django-filter integration. Use when: filtering list views by query params, building filter forms, faceted navigation.\"\r\n---\r\n\r\n# View Filtering\r\n\r\n## When to Use\r\n- List views with filter dropdowns (brand, category, status)\r\n- URL query parameter filtering (`?brand=samsung&type=official`)\r\n- Combined filtering + search + pagination\r\n- Admin list views with sidebar filters\r\n\r\n## Rules\r\n- Validate/sanitize all GET params before using in queries\r\n- Never pass raw GET params directly to `.filter()` kwargs \u2014 whitelist allowed fields\r\n- Combine filtering with pagination \u2014 filter first, then paginate\r\n- For complex filtering, use django-filter or a dedicated service function\r\n- Default to showing all items when no filter is applied\r\n\r\n## Patterns\r\n\r\n### Manual GET Param Filtering\r\n```python\r\n@require_GET\r\ndef firmware_list(request: HttpRequest) -> HttpResponse:\r\n    qs = Firmware.objects.filter(is_active=True).select_related(\"brand\")\r\n\r\n    # Safe filtering from GET params\r\n    brand = request.GET.get(\"brand\", \"\").strip()\r\n    firmware_type = request.GET.get(\"type\", \"\").strip()\r\n    sort = request.GET.get(\"sort\", \"-created_at\")\r\n\r\n    if brand:\r\n        qs = qs.filter(brand__slug=brand)\r\n    if firmware_type:\r\n        qs = qs.filter(firmware_type=firmware_type)\r\n\r\n    # Whitelist allowed sort fields\r\n    allowed_sorts = {\"-created_at\", \"created_at\", \"name\", \"-name\", \"-download_count\"}\r\n    if sort not in allowed_sorts:\r\n        sort = \"-created_at\"\r\n    qs = qs.order_by(sort)\r\n\r\n    paginator = Paginator(qs, 20)\r\n    page_obj = paginator.get_page(request.GET.get(\"page\"))\r\n\r\n    context = {\r\n        \"page_obj\": page_obj,\r\n        \"brands\": Brand.objects.all(),\r\n        \"current_brand\": brand,\r\n        \"current_type\": firmware_type,\r\n        \"current_sort\": sort,\r\n    }\r\n\r\n    if request.headers.get(\"HX-Request\"):\r\n        return render(request, \"firmwares/fragments/list.html\", context)\r\n    return render(request, \"firmwares/list.html\", context)\r\n```\r\n\r\n### Filter Service Function\r\n```python\r\n# apps/firmwares/services.py\r\nfrom django.db.models import QuerySet\r\n\r\ndef filter_firmwares(\r\n    *,\r\n    brand_slug: str = \"\",\r\n    firmware_type: str = \"\",\r\n    search_query: str = \"\",\r\n    sort: str = \"-created_at\",\r\n) -> QuerySet[Firmware]:\r\n    qs = Firmware.objects.filter(is_active=True).select_related(\"brand\")\r\n\r\n    if brand_slug:\r\n        qs = qs.filter(brand__slug=brand_slug)\r\n    if firmware_type:\r\n        qs = qs.filter(firmware_type=firmware_type)\r\n    if search_query:\r\n        qs = qs.filter(name__icontains=search_query)\r\n\r\n    allowed_sorts = {\"-created_at\", \"name\", \"-download_count\"}\r\n    return qs.order_by(sort if sort in allowed_sorts else \"-created_at\")\r\n\r\n# In view:\r\n@require_GET\r\ndef firmware_list(request: HttpRequest) -> HttpResponse:\r\n    firmwares = filter_firmwares(\r\n        brand_slug=request.GET.get(\"brand\", \"\"),\r\n        firmware_type=request.GET.get(\"type\", \"\"),\r\n        search_query=request.GET.get(\"q\", \"\"),\r\n        sort=request.GET.get(\"sort\", \"-created_at\"),\r\n    )\r\n    ...\r\n```\r\n\r\n### HTMX Filter Form\r\n```html\r\n<!-- Filter form that triggers HTMX update -->\r\n<form hx-get=\"{% url 'firmwares:list' %}\"\r\n      hx-target=\"#firmware-list\"\r\n      hx-swap=\"innerHTML\"\r\n      hx-trigger=\"change\"\r\n      hx-push-url=\"true\">\r\n    <select name=\"brand\">\r\n        <option value=\"\">All Brands</option>\r\n        {% for brand in brands %}\r\n        <option value=\"{{ brand.slug }}\" {% if brand.slug == current_brand %}selected{% endif %}>\r\n            {{ brand.name }}\r\n        </option>\r\n        {% endfor %}\r\n    </select>\r\n\r\n    <select name=\"type\">\r\n        <option value=\"\">All Types</option>\r\n        <option value=\"official\" {% if current_type == \"official\" %}selected{% endif %}>Official</option>\r\n        <option value=\"modified\" {% if current_type == \"modified\" %}selected{% endif %}>Modified</option>\r\n    </select>\r\n</form>\r\n\r\n<div id=\"firmware-list\">\r\n    {% include \"firmwares/fragments/list.html\" %}\r\n</div>\r\n```\r\n\r\n### Preserving Filters in Pagination\r\n```html\r\n<!-- In pagination component, preserve filter params -->\r\n{% if page_obj.has_next %}\r\n<a hx-get=\"?page={{ page_obj.next_page_number }}&brand={{ current_brand }}&type={{ current_type }}\"\r\n   hx-target=\"#firmware-list\"\r\n   hx-swap=\"innerHTML\">\r\n   Next\r\n</a>\r\n{% endif %}\r\n```\r\n\r\n## Anti-Patterns\r\n- Passing raw GET params to `**kwargs` in `.filter()` \u2014 SQL injection risk\r\n- Not whitelisting sort fields \u2014 user could sort by sensitive fields\r\n- Filtering after pagination \u2014 apply filters before `Paginator`\r\n- Losing filter state on page change \u2014 preserve params in pagination links\r\n- Complex filter logic in views \u2014 extract to service function\r\n\r\n## Quality Gate\r\n```powershell\r\n& .\\.venv\\Scripts\\python.exe -m ruff check . --fix\r\n& .\\.venv\\Scripts\\python.exe -m ruff format .\r\n& .\\.venv\\Scripts\\python.exe manage.py check --settings=app.settings_dev\r\n```\r\n\r\n## References\r\n- [Django QuerySet Filtering](https://docs.djangoproject.com/en/5.2/topics/db/queries/#retrieving-specific-objects-with-filters)\r\n",
+    "content_hash": "0a916e1b318808315fd20b6cb97782d71e4769f58e141a59f09cbbc7630ccf2a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 154,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5125,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "@require_GET\r\ndef firmware_list(request: HttpRequest) -> HttpResponse:\r\n    qs = Firmware.objects.filter(is_active=True).select_related(\"brand\")\r\n\r\n    # Safe filtering from GET params\r\n    brand = request.GET.get(\"brand\", \"\").strip()\r\n    firmware_type = request.GET.get(\"type\", \"\").strip()\r\n    sort = request.GET.get(\"sort\", \"-created_at\")\r\n\r\n    if brand:\r\n        qs = qs.filter(brand__slug=brand)\r\n    if firmware_type:\r\n        qs = qs.filter(firmware_type=firmware_type)\r\n\r\n    # Whitelist allowed sort fields\r\n    allowed_sorts = {\"-created_at\", \"created_at\", \"name\", \"-name\", \"-download_count\"}\r\n    if sort not in allowed_sorts:\r\n        sort = \"-created_at\"\r\n    qs = qs.order_by(sort)\r\n\r\n    paginator = Paginator(qs, 20)\r\n    page_obj = paginator.get_page(request.GET.get(\"page\"))\r\n\r\n    context = {\r\n        \"page_obj\": page_obj,\r\n        \"brands\": Brand.objects.all(),\r\n        \"current_brand\": brand,\r\n        \"current_type\": firmware_type,\r\n        \"current_sort\": sort,\r\n    }\r\n\r\n    if request.headers.get(\"HX-Request\"):\r\n        return render(request, \"firmwares/fragments/list.html\", context)\r\n    return render(request, \"firmwares/list.html\", context)",
+    "content_hash": "1835e1cd6d8dff2b30c44044ef3ac7f2a3f8d1e8fcc7bff6c51e96bcc42f43f0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 34,
+    "relative_path": ".malskills_fences/SKILL__fence_0.py",
+    "size_bytes": 1174,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 59,
+    "source_start_line": 24
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "# apps/firmwares/services.py\r\nfrom django.db.models import QuerySet\r\n\r\ndef filter_firmwares(\r\n    *,\r\n    brand_slug: str = \"\",\r\n    firmware_type: str = \"\",\r\n    search_query: str = \"\",\r\n    sort: str = \"-created_at\",\r\n) -> QuerySet[Firmware]:\r\n    qs = Firmware.objects.filter(is_active=True).select_related(\"brand\")\r\n\r\n    if brand_slug:\r\n        qs = qs.filter(brand__slug=brand_slug)\r\n    if firmware_type:\r\n        qs = qs.filter(firmware_type=firmware_type)\r\n    if search_query:\r\n        qs = qs.filter(name__icontains=search_query)\r\n\r\n    allowed_sorts = {\"-created_at\", \"name\", \"-download_count\"}\r\n    return qs.order_by(sort if sort in allowed_sorts else \"-created_at\")\r\n\r\n# In view:\r\n@require_GET\r\ndef firmware_list(request: HttpRequest) -> HttpResponse:\r\n    firmwares = filter_firmwares(\r\n        brand_slug=request.GET.get(\"brand\", \"\"),\r\n        firmware_type=request.GET.get(\"type\", \"\"),\r\n        search_query=request.GET.get(\"q\", \"\"),\r\n        sort=request.GET.get(\"sort\", \"-created_at\"),\r\n    )\r\n    ...",
+    "content_hash": "afa8abae85eb0cac68dd330c17a636fef61e0737dc08fb3e0d2f0f933d3c5f2c",
+    "generated": true,
+    "is_text": true,
+    "line_count": 32,
+    "relative_path": ".malskills_fences/SKILL__fence_1.py",
+    "size_bytes": 1021,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 95,
+    "source_start_line": 62
+  }
+]

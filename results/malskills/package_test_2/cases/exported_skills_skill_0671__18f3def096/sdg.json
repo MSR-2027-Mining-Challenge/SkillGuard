@@ -1,0 +1,494 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/remember.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "target": "value::e88edc7781c4b63ca841",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "target": "value::139774ada800d4642e01",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/remember.sh::system_configuration_modify::5",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::system_configuration_modify::5",
+      "target": "value::1a700748e5a9f06f4c73",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/remember.sh::system_information_access::9",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::system_information_access::9",
+      "target": "value::ce2d271dd7768e8076b4",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/remember.sh::file_read::10",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::file_read::10",
+      "target": "value::6e1e67b059d8a9c877f9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/remember.sh::system_configuration_modify::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::system_configuration_modify::15",
+      "target": "value::f7aa7805e8ed36ce7e83",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/remember.sh::file_read::43",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::file_read::43",
+      "target": "value::9a9b49c36038d25129b5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::scripts/remember.sh::file_read::53",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::file_read::53",
+      "target": "value::e3086fbb324cbf183405",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::operation::scripts/remember.sh::file_read::59",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::file_read::59",
+      "target": "value::49c9b53a648d0626dce0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::operation::scripts/remember.sh::system_information_access::61",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::system_information_access::61",
+      "target": "value::b28ce32fa875d8988647",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::operation::scripts/remember.sh::file_read::105",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/remember.sh::file_read::105",
+      "target": "value::7812794a25e5b5c47aa7",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/remember.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e88edc7781c4b63ca841",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_information_access::3",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::139774ada800d4642e01",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::file_read::6",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::system_configuration_modify::5",
+      "identity_key": "scripts/remember.sh::system_configuration_modify::5",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::1a700748e5a9f06f4c73",
+      "kind": "value",
+      "value": "scripts/remember.sh::system_configuration_modify::5",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::system_information_access::9",
+      "identity_key": "scripts/remember.sh::system_information_access::9",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ce2d271dd7768e8076b4",
+      "kind": "value",
+      "value": "scripts/remember.sh::system_information_access::9",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::file_read::10",
+      "identity_key": "scripts/remember.sh::file_read::10",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::6e1e67b059d8a9c877f9",
+      "kind": "value",
+      "value": "scripts/remember.sh::file_read::10",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "system_configuration_modify",
+      "type": "system_configuration"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::system_configuration_modify::15",
+      "identity_key": "scripts/remember.sh::system_configuration_modify::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::f7aa7805e8ed36ce7e83",
+      "kind": "value",
+      "value": "scripts/remember.sh::system_configuration_modify::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::file_read::43",
+      "identity_key": "scripts/remember.sh::file_read::43",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::9a9b49c36038d25129b5",
+      "kind": "value",
+      "value": "scripts/remember.sh::file_read::43",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::file_read::53",
+      "identity_key": "scripts/remember.sh::file_read::53",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e3086fbb324cbf183405",
+      "kind": "value",
+      "value": "scripts/remember.sh::file_read::53",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::file_read::59",
+      "identity_key": "scripts/remember.sh::file_read::59",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::49c9b53a648d0626dce0",
+      "kind": "value",
+      "value": "scripts/remember.sh::file_read::59",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::system_information_access::61",
+      "identity_key": "scripts/remember.sh::system_information_access::61",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b28ce32fa875d8988647",
+      "kind": "value",
+      "value": "scripts/remember.sh::system_information_access::61",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/remember.sh::file_read::105",
+      "identity_key": "scripts/remember.sh::file_read::105",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::7812794a25e5b5c47aa7",
+      "kind": "value",
+      "value": "scripts/remember.sh::file_read::105",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

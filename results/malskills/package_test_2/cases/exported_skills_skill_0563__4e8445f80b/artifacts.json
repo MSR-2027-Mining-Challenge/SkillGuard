@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: code-reviewer\r\ndescription: \"USE WHEN the user pastes code or asks for review of a file/diff. Reads the code, identifies real issues (bugs, security, perf, correctness, readability) in priority order, suggests concrete fixes. Skips style nitpicks unless asked.\"\r\n---\r\n\r\n# code-reviewer \u2014 focused, prioritized review\r\n\r\n## Goal\r\n\r\nFind issues that matter. The order of severity:\r\n\r\n1. **Bugs** \u2014 wrong behavior, race conditions, off-by-one, null deref, crashes\r\n2. **Security** \u2014 injection, secret leak, auth bypass, unsafe deserialization,\r\n   path traversal, missing rate limit\r\n3. **Correctness edge cases** \u2014 empty input, unicode, very large input, network\r\n   failure, partial write\r\n4. **Performance** \u2014 O(n\u00b2) in hot path, N+1 queries, missing index, blocking\r\n   I/O in event loop\r\n5. **Maintainability** \u2014 unclear naming, dead code, duplication that hurts\r\n6. **Style** \u2014 only mention if it actively confuses reading. Skip otherwise.\r\n\r\n## Process\r\n\r\n1. **Read the full context** before commenting. Don't review a function in\r\n   isolation if it's called by something nearby.\r\n2. **Group findings by severity**. Critical first, nits last.\r\n3. **For each finding**:\r\n   - Line reference: `file.py:42` or quote the relevant code\r\n   - What's wrong (one sentence)\r\n   - Why it matters (one sentence \u2014 concrete consequence)\r\n   - Suggested fix (code snippet if non-obvious)\r\n4. **Surface what's good too**, briefly. \"Nice use of X\" or \"auth flow looks\r\n   right\" \u2014 keeps the review balanced and helps the author trust your bug\r\n   reports.\r\n\r\n## What NOT to do\r\n\r\n- Don't rewrite the whole function \"for style\"\r\n- Don't suggest libraries the project doesn't use\r\n- Don't add abstract concerns without concrete consequence (\"this could be\r\n  cleaner\" without specifics)\r\n- Don't claim a bug exists without explaining the input that triggers it\r\n- Don't lecture on principles \u2014 diagnose this code\r\n\r\n## Output template\r\n\r\n```markdown\r\n## Critical (blocking)\r\n- **{file}:{line}** \u2014 {one-sentence problem}. {why it matters}.\r\n  ```{lang}\r\n  {fix snippet}\r\n  ```\r\n\r\n## Should fix\r\n- ...\r\n\r\n## Nits / FYI\r\n- ...\r\n\r\n## Looks good\r\n- {brief positive observation}\r\n```\r\n\r\nIf there are no critical issues, say so explicitly \u2014 don't manufacture\r\nproblems to fill the section.\r\n\r\n## Anti-patterns\r\n\r\n- Reviewing without reading the call sites\r\n- \"Consider using X\" without explaining why X is better here\r\n- Demanding tests for trivial pure functions\r\n- Flagging style when the issue is correctness\r\n",
+    "content_hash": "31ac66308363678a91185e971374e54c8e481022706ffed923749f61f0685776",
+    "generated": false,
+    "is_text": true,
+    "line_count": 73,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2527,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

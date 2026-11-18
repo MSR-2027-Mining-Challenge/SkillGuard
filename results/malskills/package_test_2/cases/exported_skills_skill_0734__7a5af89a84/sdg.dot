@@ -1,0 +1,28 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=sub-skills/implementation-playbook.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_0.py"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_1.py"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_2.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_3.py"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_4.py"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_6.py"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_8.py"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_9.py"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_10.py"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=python\npath=sub-skills/.malskills_fences/implementation-playbook__fence_11.py"];
+  "obj::config_key::split" [label="obj::config_key::split\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "value::807364297de6e0208ed0" [label="value::807364297de6e0208ed0\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::config_key::split" -> "value::807364297de6e0208ed0" [label="value_flow"];
+  "sso_00000" -> "obj::config_key::split" [label="has_operand"];
+  "sso_00000" -> "sso_00001" [label="same_object"];
+  "sso_00001" -> "obj::config_key::split" [label="has_operand"];
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: routing-profiles\r\ndescription: \"Change the Routing Solution routing profiles/vehicle types. To be used as part of customize-main skill\"\r\n---\r\n\r\n# Customize Routing Profiles\r\n\r\n> **WARNING: This subskill cannot be run independently.** It must be invoked from the `customize-main` router. It only updates the config file -- it does NOT restart services or rebuild routing graphs. The router handles service restarts, graph rebuilding, MAP_CONFIG updates, and Function Tester redeployment in Steps 4-6 after this subskill completes.\r\n\r\nConfigure which routing profiles are available in your Routing Solution.\r\n\r\n## Prerequisites\r\n\r\n- Active Snowflake connection\r\n- OpenRouteService Native App deployed\r\n\r\n## Input Parameters\r\n\r\n- `<REGION_NAME>`: Target region name selected by user (e.g., \"great-britain\", \"switzerland\", \"new-york\")\r\n\r\n## Available Profiles\r\n\r\n| Profile | Category | Description |\r\n|---------|----------|-------------|\r\n| `driving-car` | Driving | Standard passenger vehicles |\r\n| `driving-hgv` | Driving | Heavy goods vehicles (trucks) |\r\n| `cycling-regular` | Cycling | Standard bicycles |\r\n| `cycling-road` | Cycling | Road/racing bicycles |\r\n| `cycling-mountain` | Cycling | Mountain bikes |\r\n| `cycling-electric` | Cycling | Electric bicycles |\r\n| `foot-walking` | Foot | Standard walking |\r\n| `foot-hiking` | Foot | Hiking trails |\r\n| `wheelchair` | Wheelchair | Wheelchair accessible routes |\r\n\r\n## Workflow\r\n\r\n### Step 1: Get User Preferences\r\n\r\n**Goal:** Determine which profiles to enable/disable\r\n\r\n**Actions:**\r\n\r\n1. **Ask user** what changes they want:\r\n   - \"Which profiles do you want to ENABLE?\" (list any currently disabled)\r\n   - \"Which profiles do you want to DISABLE?\" (list any currently enabled)\r\n\r\n2. **Warn about resource impact:**\r\n   - More profiles = longer graph build time\r\n   - More profiles = more memory usage\r\n   - Default (car, cycling-road, walking) covers most use cases\r\n\r\n**Output:** User selections recorded\r\n\r\n### Step 2: Update Configuration\r\n\r\n**Goal:** Modify ors-config.yml with new profile settings\r\n\r\n**Actions:**\r\n\r\n1. **Edit** `oss-build-routing-solution-in-snowflake/Native_app/provider_setup/staged_files/ors-config.yml`:\r\n   - For each profile, set `enabled: true` or `enabled: false`\r\n   \r\n   Example structure:\r\n   ```yaml\r\n   ors:\r\n     engine:\r\n       profiles:\r\n         driving-car:\r\n           enabled: true\r\n         driving-hgv:\r\n           enabled: false\r\n         cycling-regular:\r\n           enabled: false\r\n         cycling-road:\r\n           enabled: true\r\n         cycling-mountain:\r\n           enabled: false\r\n         cycling-electric:\r\n           enabled: false\r\n         foot-walking:\r\n           enabled: true\r\n         foot-hiking:\r\n           enabled: false\r\n         wheelchair:\r\n           enabled: false\r\n   ```\r\n\r\n2. **Upload** modified file:\r\n   ```bash\r\n   snow stage copy oss-build-routing-solution-in-snowflake/Native_app/provider_setup/staged_files/ors-config.yml @OPENROUTESERVICE_NATIVE_APP.CORE.ORS_SPCS_STAGE/<REGION_NAME>/ --connection <ACTIVE_CONNECTION> --overwrite\r\n   ```\r\n\r\n**Output:** Configuration updated with new profiles\r\n\r\n## Return to Router\r\n\r\nAfter completing all steps in this subskill, return to the **customize-main** router and continue from **Step 4: Update Routing Graphs**. This subskill does NOT restart services or rebuild graphs -- the router handles that.\r\n\r\n## Stopping Points\r\n\r\n- \u270b After Step 1: Confirm user selections before modifying config\r\n",
+    "content_hash": "834077b673214f4754eefc9319f1cde4a66f7e087202825db04fec4720b9d89c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 102,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3487,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   snow stage copy oss-build-routing-solution-in-snowflake/Native_app/provider_setup/staged_files/ors-config.yml @OPENROUTESERVICE_NATIVE_APP.CORE.ORS_SPCS_STAGE/<REGION_NAME>/ --connection <ACTIVE_CONNECTION> --overwrite",
+    "content_hash": "9988b40088e30d78107d23cdb26fce64ca1156af18de5364f5d74a4f7604ac8d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 221,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 91,
+    "source_start_line": 89
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"routing-profiles\",\r\n  \"description\": \"Change the Routing Solution routing profiles/vehicle types. To be used as part of customize-main skill\",\r\n  \"category\": \"data-ai\",\r\n  \"canonical_category\": \"data-ai\",\r\n  \"repository\": \"Snowflake-Labs/sfguide-create-a-route-optimisation-and-vehicle-route-plan-simulator\",\r\n  \"repository_url\": \"https://github.com/Snowflake-Labs/sfguide-create-a-route-optimisation-and-vehicle-route-plan-simulator\",\r\n  \"author\": \"Snowflake-Labs\",\r\n  \"author_avatar\": \"https://github.com/Snowflake-Labs.png\",\r\n  \"file_path\": \".cortex/skills/customize-main/routing-profiles/SKILL.md\",\r\n  \"source\": \"github_code_search\",\r\n  \"stars\": 0,\r\n  \"quality_score\": 45,\r\n  \"best_practices_score\": 70,\r\n  \"skill_level\": 3,\r\n  \"skill_level_label\": \"resources\",\r\n  \"has_scripts\": true,\r\n  \"has_extra_files\": false,\r\n  \"downloads\": 0,\r\n  \"content_hash\": \"8344cb9466d9b1ebd79b8290574498e8b1ab1e286e5b7689fe40c4a7386c7fa4\",\r\n  \"indexed_at\": \"2026-02-26T22:25:23.120Z\",\r\n  \"synced_at\": \"2026-02-28T04:22:15.697Z\",\r\n  \"omni_registry_url\": \"https://omni-skill-registry.omniroute.online/#/skill/d9eab05e369c8ebfff4aaa5369641df5cce4700d315f1e7cfd6b8dde8e1edb05\",\r\n  \"install_command\": \"mkdir -p .claude/skills/routing-profiles && curl -sL \\\"https://raw.githubusercontent.com/Snowflake-Labs/sfguide-create-a-route-optimisation-and-vehicle-route-plan-simulator/main/.cortex/skills/customize-main/routing-profiles/SKILL.md\\\" > .claude/skills/routing-profiles/SKILL.md\",\r\n  \"raw_url\": \"https://raw.githubusercontent.com/Snowflake-Labs/sfguide-create-a-route-optimisation-and-vehicle-route-plan-simulator/main/.cortex/skills/customize-main/routing-profiles/SKILL.md\"\r\n}\r\n",
+    "content_hash": "1303384666dbfb219759b98f03c7d028c8af96bc13d50710e5a9867e2ad9b1e0",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "metadata.json",
+    "size_bytes": 1676,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

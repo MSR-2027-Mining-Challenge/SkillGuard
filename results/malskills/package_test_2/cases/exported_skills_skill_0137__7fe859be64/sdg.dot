@@ -1,0 +1,25 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_5.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_7.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_8.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1" [label="obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1" [label="obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_delete"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::29ee15105f75f4d4b024" [label="value::29ee15105f75f4d4b024\nkind=value"];
+  "value::cca5371c0a8a93f425f4" [label="value::cca5371c0a8a93f425f4\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0006" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1" -> "value::cca5371c0a8a93f425f4" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1" -> "value::29ee15105f75f4d4b024" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_delete::1" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::1" [label="has_operand"];
+}

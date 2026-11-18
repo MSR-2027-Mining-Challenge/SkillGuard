@@ -1,0 +1,32 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_7.js"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_8.js"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_9.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_10.sh"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_11.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2" [label="obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\" [label="obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::11d902cef9a126f093bb" [label="value::11d902cef9a126f093bb\nkind=value"];
+  "value::8079aea2c596e43c762b" [label="value::8079aea2c596e43c762b\nkind=value"];
+  "value::c18b80c47fa6a4192730" [label="value::c18b80c47fa6a4192730\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00002" [label="contains"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2" -> "value::11d902cef9a126f093bb" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\" -> "value::c18b80c47fa6a4192730" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\" -> "value::8079aea2c596e43c762b" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_4.sh::credential_data_access::2" [label="has_operand"];
+  "sso_00002" -> "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST \"https://api.elevenlabs.io/v1/text-to-speech/AZnzlk1XvdvUeBnXmlld\" \\" [label="has_operand"];
+}

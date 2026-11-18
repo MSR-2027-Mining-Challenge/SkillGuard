@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: evolver-solidify\r\ndescription: Solidify the current working changes into a durable Evolver gene/capsule (with rollback safety). Use when the user requests to \"solidify changes\", \"save gene\", or \"capture this capsule\".\r\n---\r\n\r\n# Evolver Solidify\r\n\r\nSolidify the current working-tree changes into a durable, reusable Evolver asset.\r\n\r\n## Execution Guide\r\n\r\nWhen requested, follow these steps:\r\n\r\n1. **Verify environment** \u2014 ensure we are in a git repository (`git rev-parse --is-inside-work-tree`) and show `git diff --stat` so the user sees what changes are being captured.\r\n\r\n2. **Formulate summary** \u2014 if the user didn't specify a summary or note, infer a concise one-line description of the change from the diff and use it for the `--summary` flag.\r\n\r\n3. **Resolve CLI and execute**:\r\n   \r\n   ```bash\r\n   EVOLVER=\"evolver\"\r\n   command -v evolver >/dev/null 2>&1 || EVOLVER=\"npx -y @evomap/evolver\"\r\n   ```\r\n\r\n   Run the solidify command with inferred or specified arguments:\r\n   \r\n   ```bash\r\n   $EVOLVER solidify --summary=\"[Insert summary here]\"\r\n   ```\r\n\r\n   *(Pass `--dry-run` first if the user requested a dry run/preview)*.\r\n\r\n4. **Report outcome** \u2014 print details about the gene/capsule that was created or updated, and whether a rollback point was successfully recorded.\r\n",
+    "content_hash": "b2a465f92881cbc5bc6ae23746c017c4a6226ab7ca9c2eebb829bdc76149f8c4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 34,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1299,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   EVOLVER=\"evolver\"\r\n   command -v evolver >/dev/null 2>&1 || EVOLVER=\"npx -y @evomap/evolver\"",
+    "content_hash": "2b402326f62855e806f996108c895ff3a7857138867ee779062ef91f7a4f814a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 95,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 23,
+    "source_start_line": 20
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "   $EVOLVER solidify --summary=\"[Insert summary here]\"",
+    "content_hash": "4dcf23d8851c7fd005d0a5b29feff5e556b5537acdb2f146a0efbe069c0d8184",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 54,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 29,
+    "source_start_line": 27
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: agentpowers-marketplace\r\ndescription: Use AgentPowers marketplace tools to search skills, log in, checkout, access purchases, and install skills.\r\n---\r\n\r\n# AgentPowers Marketplace\r\n\r\nUse this skill when you want to use AgentPowers in Codex for marketplace discovery, account access, checkout, and purchased-skill installs.\r\n\r\n## Environment\r\n\r\n- `AGENTPOWERS_API_BASE`: optional API base (defaults to `https://api.agentpowers.ai/v1`).\r\n- `AGENTPOWERS_API_TOKEN`: optional bearer token for authenticated endpoints.\r\n- `AGENTPOWERS_OPENAPI_URL`: optional OpenAPI URL override (defaults to `https://docs.agentpowers.ai/openapi.json`).\r\n\r\n## Quick Workflow\r\n\r\n1. Check API connectivity:\r\n\r\n```bash\r\nbash scripts/agentpowers-marketplace-context.sh\r\n```\r\n\r\n2. Log in:\r\n\r\n```bash\r\nap login\r\nap whoami\r\n```\r\n\r\n3. Search and inspect skills:\r\n\r\n```bash\r\nsearch_marketplace(query=\"security\")\r\nget_skill_details(slug=\"<skill-slug>\")\r\n```\r\n\r\n4. Buy/install:\r\n\r\nFree skill:\r\n`install_skill(slug=\"<skill-slug>\", target_tool=\"codex\")`\r\n\r\nPaid skill:\r\n`install_skill(slug=\"<skill-slug>\", target_tool=\"codex\", wait_for_completion=true)`\r\n\r\nSession confirm/download:\r\n`confirm_purchase_session(session_id=\"cs_...\", include_download_url=true)`\r\n`download_purchased_skill(session_id=\"cs_...\")`\r\n\r\n5. Use MCP tools exposed by the plugin bridge:\r\n- `search_marketplace`\r\n- `get_skill_details`\r\n- `install_skill` (free or paid, with checkout automation)\r\n- `start_checkout`\r\n- `check_purchase_status`\r\n- `confirm_purchase_session`\r\n- `download_purchased_skill`\r\n- `list_purchases`\r\n- `install_purchased_skill`\r\n- `check_installed`\r\n- `check_for_updates`\r\n- `uninstall_skill`\r\n- `login_account`\r\n- `whoami_account`\r\n- Plus compatibility/discovery tools (`search_skills`, `get_categories`, etc.)\r\n\r\n## Notes\r\n\r\n- API tools can read auth automatically from `~/.agentpowers/auth.json`.\r\n- Session-based purchase confirmation/download can work with `session_id`.\r\n- Use `/health` to verify API availability.\r\n- Accepted install targets: `codex`, `claude-code`, `claude-ai`, `claude-cowork`, `cursor`,\r\n  `windsurf`, `antigravity`, `gemini-cli`, `github-copilot`, `opencode`, `openclaw`, `kiro`.\r\n- Friendly aliases: `gemini`, `open code`, `claude desktop`, `claude.ai`, `copilot`.\r\n",
+    "content_hash": "35d626481e530e796d6d3e573728444c64108bd12d515680b1f7453f9e6180a2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 75,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2264,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "bash scripts/agentpowers-marketplace-context.sh",
+    "content_hash": "05e177095e7587c5defd246e1a978de5da7f980cd5a760974d735e70839e8dcd",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 47,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 22,
+    "source_start_line": 20
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "ap login\r\nap whoami",
+    "content_hash": "b59522918b91d1ac760bd471b73b8d0d3ba3a42d6f70fdf527c73ebaf61e105d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 19,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 29,
+    "source_start_line": 26
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "search_marketplace(query=\"security\")\r\nget_skill_details(slug=\"<skill-slug>\")",
+    "content_hash": "019af010c0bd6956b3d9c2e618cca60b9814136002f11da835807ac1e44cd38b",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 76,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 36,
+    "source_start_line": 33
+  }
+]

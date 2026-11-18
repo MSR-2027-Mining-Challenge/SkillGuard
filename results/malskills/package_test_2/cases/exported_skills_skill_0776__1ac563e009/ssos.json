@@ -1,0 +1,150 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "uv run python -c \"from agent.function_calling.agent_tools import get_agent_function_definitions; print('GTPlanner \u73af\u5883\u6b63\u5e38')\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:2:2:dynamic_code_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/examples__fence_1.py"
+    ],
+    "attributes": {
+      "matched_text": "with open('ecommerce_prd.md', 'w', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/examples__fence_1.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/examples__fence_1.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 114,
+      "source_start_line": 114
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/examples__fence_1.py::encoding"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/examples__fence_7.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "uv run python -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/examples__fence_7.sh::dynamic_code_execution::1": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/examples__fence_7.sh::dynamic_code_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/examples__fence_7.sh:1:1:dynamic_code_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/examples__fence_7.sh::dynamic_code_execution::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/examples__fence_9.py"
+    ],
+    "attributes": {
+      "matched_text": "with open('output_prd.md', 'w', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/examples__fence_9.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/examples__fence_9.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/examples__fence_9.py::encoding"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "references/tools.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "from agent.function_calling.agent_tools import (\n    execute_agent_tool,              # \u6267\u884c\u5de5\u5177\n    get_agent_function_definitions   # \u83b7\u53d6\u5de5\u5177\u5b9a\u4e49\n)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/tools.md::dynamic_code_execution::8": "command"
+      },
+      "operation_object": "obj::operation::references/tools.md::dynamic_code_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/tools.md:8:11:dynamic_code_execution",
+      "source_end_line": 11,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/tools.md::dynamic_code_execution::8"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  }
+]

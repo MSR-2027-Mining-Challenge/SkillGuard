@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: openapi-sdk-change\r\ndescription: Use when changing openapi/schema.json, REST contracts, Socket.IO contract metadata, generated Dart API models in client/packages/openapi, or frontend/server code that depends on public contracts.\r\n---\r\n\r\n# OpenAPI and SDK change skill\r\n\r\nUse this skill when changing `openapi/schema.json`, REST contracts, Socket.IO contract metadata, generated Dart API models, or frontend/server code that depends on the public contract.\r\n\r\n## Read first\r\n\r\n1. `openapi/AGENTS.md`\r\n2. `server/AGENTS.md` for backend-owned contracts\r\n3. `client/AGENTS.md` for generated-client usage\r\n4. `docs/agent/03-verification-matrix.md`\r\n\r\n## Files to inspect\r\n\r\n- backend REST/socket handler files involved in the contract\r\n- backend DTOs and validators involved in the contract\r\n- `openapi/schema.json`\r\n- `client/packages/openapi/swagger_parser.yaml`\r\n- generated models/client package in `client/packages/openapi/`\r\n- affected app controllers/services/listeners\r\n\r\n## Contract invariant\r\n\r\nThe public contract should not drift between backend, schema, and client.\r\n\r\n## Implementation steps\r\n\r\n1. Identify whether the change is REST, Socket.IO, enum, DTO, or error contract.\r\n2. Update backend code/types/validators first or inspect existing code if schema-only correction.\r\n3. Update `openapi/schema.json`.\r\n4. Run schema validation from `server/`.\r\n5. Regenerate Dart API/models from `client/` when in scope.\r\n6. Update frontend call sites/listeners for new generated shapes.\r\n7. Update docs/specs if product-visible behavior changed.\r\n8. Report compatibility impact.\r\n\r\n## Common failure modes\r\n\r\n- Backend contract changed but OpenAPI unchanged.\r\n- OpenAPI updated but generated Dart files not regenerated.\r\n- Generated files manually patched instead of generated.\r\n- Frontend still expects old enum values.\r\n- Required field added without compatibility decision.\r\n\r\n## Verification\r\n\r\nFrom `server/`:\r\n\r\n```bash\r\nnpm run validate:schema\r\nnpm run lint\r\nnpm run build\r\n```\r\n\r\nFrom `client/` when generated SDK/client is in scope:\r\n\r\n```bash\r\nmelos run gen_api\r\nmelos run gen_files\r\nmelos run analyze\r\n```\r\n\r\n## Handoff checklist\r\n\r\nInclude contract area changed, backend files changed, schema files changed, generated client impact, compatibility notes, and verification run.\r\n",
+    "content_hash": "f59a01f06ff17cc9c0de6aab6616d516d20545204283bfc222d9b353bafa0e6d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 70,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2301,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "npm run validate:schema\r\nnpm run lint\r\nnpm run build",
+    "content_hash": "2f279f182fad4cca47868999dc660c43f8b9ce7a442630922a59e3e8a0469a62",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 52,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 57,
+    "source_start_line": 53
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "melos run gen_api\r\nmelos run gen_files\r\nmelos run analyze",
+    "content_hash": "16b9834181b56870009ec22a0a247164962657b83543ed7ac6fff663eca4eb0b",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 57,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 65,
+    "source_start_line": 61
+  }
+]

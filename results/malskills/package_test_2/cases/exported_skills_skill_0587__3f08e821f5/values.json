@@ -1,0 +1,226 @@
+[
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/01-authenticate__fence_7.py::encoding::5",
+    "span": null,
+    "value_id": "value::9a731769496f6e0f8ed1",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/01-authenticate__fence_7.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"authorization_code\",\n            \"scope\": \"vms.all\",\n            \"code\": code,\n            \"redirect_uri\": redirect_uri,\n        },\n    )",
+    "span": null,
+    "value_id": "value::0e705e93d3dae9a43385",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/02-refresh-access-token__fence_1.py::encoding::9",
+    "span": null,
+    "value_id": "value::b29e05b091eaf883ce98",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/02-refresh-access-token__fence_1.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"refresh_token\",\n            \"scope\": \"vms.all\",\n            \"refresh_token\": refresh_token,\n        },\n    )",
+    "span": null,
+    "value_id": "value::78969b1424ca9a422ade",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/03-list-cameras__fence_3.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/cameras\",\n            headers=headers,\n            params=params,\n        )",
+    "span": null,
+    "value_id": "value::277b6082ed4e12cc19d4",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/04-get-live-feed__fence_7.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/feeds\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Accept\": \"application/json\",\n        },\n        params={\n            \"deviceId\": device_id,\n            \"type\": stream_type,\n            \"include\": include,\n        },\n    )",
+    "span": null,
+    "value_id": "value::63fc0420845adb065831",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/05-query-events__fence_7.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/events\",\n            headers=headers,\n            params=params,\n        )",
+    "span": null,
+    "value_id": "value::52deab67b8c9776dc058",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/eventSubscriptions\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"deliveryConfig\": {\n                \"type\": \"webhook.v1\",\n                \"url\": webhook_url,\n                \"authorizationHeader\": f\"Bearer {webhook_secret}\",\n            },\n            \"filters\": [\n                {\n                    \"resourceType\": \"camera\",\n                    \"resourceIds\": camera_ids,\n                    \"types\": event_types,\n                }\n            ],\n        },\n    )",
+    "span": null,
+    "value_id": "value::56b8c41495b13a9994ed",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/media/recordedImage.jpeg\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n        params={\n            \"deviceId\": device_id,\n            \"recordedType\": recorded_type,\n            \"timestampGreaterOrEqual\": timestamp,\n        },\n    )",
+    "span": null,
+    "value_id": "value::17deb4c12154d0503ec2",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::dynamic_code_execution::75",
+    "span": null,
+    "value_id": "value::8e31ea96d0a0f64ae17a",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/events\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"startTimestamp\": start_ts,\n            \"endTimestamp\": end_ts,\n            \"span\": start_ts != end_ts,\n            \"accountId\": account_id,\n            \"actorId\": actor_id,\n            \"actorAccountId\": actor_account_id,\n            \"actorType\": \"camera\",\n            \"creatorId\": creator_id,\n            \"type\": event_type,\n            \"dataSchemas\": data_schemas,\n            \"data\": data,\n        },\n    )",
+    "span": null,
+    "value_id": "value::a3b10f8fa06586c09556",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data",
+    "span": null,
+    "value_id": "value::e434b6c028ebbc2f523c",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/users\", headers=headers, params=params)",
+    "span": null,
+    "value_id": "value::65557f679f44a72af808",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/users\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"firstName\": first_name, \"lastName\": last_name, \"email\": email},\n    )",
+    "span": null,
+    "value_id": "value::04993d557fd5ba659890",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::email",
+    "span": null,
+    "value_id": "value::1e121ab750aaa70a0bcc",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::connection_create::r = requests.delete(\n        f\"https://{base_url}/api/v3.0/users/{user_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "span": null,
+    "value_id": "value::635de75928fd46697783",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roles\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"description\": description, \"permissions\": permissions},\n    )",
+    "span": null,
+    "value_id": "value::b3647e4f4eb181337094",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::permissions",
+    "span": null,
+    "value_id": "value::eacb7a96699422b4623b",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roleAssignments:bulkCreate\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=assignments,\n    )",
+    "span": null,
+    "value_id": "value::4e2d8d4f188314f7a8c2",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActions\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"type\": action_type, \"name\": name, \"enabled\": enabled, \"settings\": settings},\n    )",
+    "span": null,
+    "value_id": "value::2f5729bddd3ad8919c8d",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/08-automations__fence_17.py::settings",
+    "span": null,
+    "value_id": "value::6d5576132d020fe58351",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/eventAlertConditionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "span": null,
+    "value_id": "value::80af4998ea1562b42d7d",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"alertActionIds\": alert_action_ids},\n    )",
+    "span": null,
+    "value_id": "value::439559046e708e3393a9",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/08-automations__fence_17.py::alert_action_ids",
+    "span": null,
+    "value_id": "value::2b8f723cdb5acd7efb42",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/09-video-export__fence_11.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/exports\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "span": null,
+    "value_id": "value::5e846b9fae1497c6a743",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n            f\"https://{base_url}/api/v3.0/jobs/{job_id}\",\n            headers=headers,\n        )",
+    "span": null,
+    "value_id": "value::71319a1cf893daefe1a2",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/downloads\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"name\": name, \"include\": \"url\"},\n    )",
+    "span": null,
+    "value_id": "value::02e06b46e1629fc897dc",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"include\": include},\n    )",
+    "span": null,
+    "value_id": "value::5586bfb76c36ab621f0d",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}/status\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n    )",
+    "span": null,
+    "value_id": "value::ddb0a537c1d8820d718e",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/bridges\", headers=headers, params=params)",
+    "span": null,
+    "value_id": "value::9b3e12decc22b6152409",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/availableDevices\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params=params,\n    )",
+    "span": null,
+    "value_id": "value::54a54ea8579f551d7799",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/bridges/{bridge_id}/devices:scan\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "span": null,
+    "value_id": "value::9bf45a82f0979cc82618",
+    "value_kind": "symbolic"
+  }
+]

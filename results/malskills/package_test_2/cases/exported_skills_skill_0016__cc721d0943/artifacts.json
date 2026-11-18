@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: aads-colab-doc-sync\r\ndescription: Keep Colab notebooks, canonical scripts, and repository documentation synchronized for AADS-ULoRA. Use when notebook flow, script entrypoints, docs navigation, or compatibility alias guidance changes.\r\n---\r\n\r\n# AADS Colab and Docs Sync\r\n\r\n## Workflow\r\n\r\n1. Confirm canonical entrypoints.\r\n- Treat `colab_notebooks/0_AUTO_TRAIN_COMPLETE_PIPELINE.ipynb` as the primary full-flow notebook unless intentionally changed.\r\n\r\n2. Synchronize docs and scripts.\r\n- Keep `README.md`, `scripts/README.md`, and `docs/REPO_FILE_RELATIONS.md` aligned with notebook/script changes.\r\n- Keep `docs/README.md` and notebook index pages aligned with renamed or re-prioritized entrypoints.\r\n\r\n3. Preserve compatibility policy.\r\n- Keep root wrappers as compatibility aliases unless explicitly deprecating.\r\n\r\n4. Validate documentation and import surfaces.\r\n- Run markdown link checks and notebook import validation.\r\n- Run Colab environment checks when relevant.\r\n\r\n5. Emit synchronization summary.\r\n- List every file synchronized and any intentional deprecations.\r\n\r\n## Output Contract\r\n\r\nReturn sections in this order:\r\n1. Changed user entrypoints\r\n2. Synced docs/scripts/notebooks\r\n3. Validation commands and results\r\n4. Compatibility/deprecation notes\r\n5. Remaining doc drift risks\r\n\r\n## References\r\n\r\n- Read `references/colab-doc-sync-checklist.md` for synchronization points.\r\n",
+    "content_hash": "7c768746aff7514116d600c019f299e99900326840f85058c3637826467fadae",
+    "generated": false,
+    "is_text": true,
+    "line_count": 39,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1405,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

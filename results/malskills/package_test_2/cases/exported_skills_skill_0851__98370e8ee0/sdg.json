@@ -1,0 +1,176 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_2.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_5.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_6.ts",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "target": "value::c18901fca838d9a94104",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00001",
+      "target": "obj::operation::SKILL.md::package_installation::21",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::SKILL.md::package_installation::21",
+      "target": "value::0defed9d11e8208038c9",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_5.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.ts",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::c18901fca838d9a94104",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "package_installation",
+      "type": "software_installation"
+    },
+    {
+      "id": "obj::operation::SKILL.md::package_installation::21",
+      "identity_key": "SKILL.md::package_installation::21",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::0defed9d11e8208038c9",
+      "kind": "value",
+      "value": "SKILL.md::package_installation::21",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

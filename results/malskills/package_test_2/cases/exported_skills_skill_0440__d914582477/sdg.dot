@@ -1,0 +1,24 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_0.tsx"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_1.tsx"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_2.py"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_5.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_6.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::26" [label="obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::26\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::37" [label="obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::37\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_access"];
+  "value::952418ea4da13d85c326" [label="value::952418ea4da13d85c326\nkind=value"];
+  "value::e3846bb1fd84c1a27470" [label="value::e3846bb1fd84c1a27470\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "art_0004" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::26" -> "value::952418ea4da13d85c326" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::37" -> "value::e3846bb1fd84c1a27470" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::26" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::37" [label="has_operand"];
+}

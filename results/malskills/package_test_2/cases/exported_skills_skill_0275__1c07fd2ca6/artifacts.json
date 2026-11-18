@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: commit\r\ndescription: Optionally checks, then commits code to the current or a new feature branch.\r\n---\r\n\r\nWhen asked to commit code, follow these steps:\r\n\r\n## Arguments\r\n\r\n- `check` (default): Run checks first to lint, build, and test the code. Stop if any checks fail.\r\n- `force`: Skip the check step and commit directly.\r\n\r\n## Steps\r\n\r\n1. Run these bash commands in parallel to understand the current state:\r\n\r\n   - `git status` to see all untracked files\r\n   - `git diff HEAD` to see both staged and unstaged changes\r\n   - `git log --oneline -10` to see recent commit messages for style consistency\r\n\r\n2. If you are on the `main` branch, create a new feature branch using `git branch` and switch to it.\r\n\r\n3. Analyze all changes and draft a commit message:\r\n\r\n   - Summarize the nature of the changes (new feature, enhancement, bug fix, refactoring, test, docs, etc.)\r\n   - Use the conventional commit format: `type(scope): description`\r\n   - Keep the first line under 72 characters\r\n   - Do not commit files that likely contain secrets (.env, credentials.json, etc.)\r\n\r\n4. Stage and commit the changes:\r\n\r\n   - Add relevant files using `git add`\r\n   - Use a plain string for the commit message (do not use HEREDOCs).\r\n\r\n5. Report the results including:\r\n   - The commit hash\r\n   - The commit message\r\n",
+    "content_hash": "bf86784fe1bd796df2e0366e5f6dbf31b989978f171ee572a083053ccff669ba",
+    "generated": false,
+    "is_text": true,
+    "line_count": 38,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1316,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,253 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/telephony.py::environment_access::72": "path"
+      },
+      "operation_object": "obj::operation::scripts/telephony.py::environment_access::72",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 72,
+      "source_start_line": 72
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/telephony.py::environment_access::72"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/telephony.py::environment_access::136": "path"
+      },
+      "operation_object": "obj::operation::scripts/telephony.py::environment_access::136",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 136,
+      "source_start_line": 136
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/telephony.py::environment_access::136"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "if not line or line.startswith(\"#\") or \"=\" not in line:",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/telephony.py::connection_create::if not line or line.startswith(\"#\") or \"=\" not in line:": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/telephony.py::connection_create::if not line or line.startswith(\"#\") or \"=\" not in line:",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.parse.urlencode()",
+      "sink_callsite_id": "scripts/telephony.py:247:247:urllib.parse.urlencode()",
+      "source_end_line": 247,
+      "source_start_line": 247
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/telephony.py::connection_create::if not line or line.startswith(\"#\") or \"=\" not in line:"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/telephony.py::connection_create::": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/telephony.py::connection_create::",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.parse.urlencode()",
+      "sink_callsite_id": "scripts/telephony.py:256:256:urllib.parse.urlencode()",
+      "source_end_line": 256,
+      "source_start_line": 256
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/telephony.py::connection_create::"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "value = value[1:-1].replace('\\\\\"', '\"').replace('\\\\\\\\', '\\\\')",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/telephony.py::connection_create::value = value[1:-1].replace('\\\\\"', '\"').replace('\\\\\\\\', '\\\\')": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/telephony.py::connection_create::value = value[1:-1].replace('\\\\\"', '\"').replace('\\\\\\\\', '\\\\')",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.Request()",
+      "sink_callsite_id": "scripts/telephony.py:259:259:urllib.request.Request()",
+      "source_end_line": 259,
+      "source_start_line": 259
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/telephony.py::connection_create::value = value[1:-1].replace('\\\\\"', '\"').replace('\\\\\\\\', '\\\\')"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "values[key] = value",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/telephony.py::connection_create::values[key] = value": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/telephony.py::connection_create::values[key] = value",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.urlopen()",
+      "sink_callsite_id": "scripts/telephony.py:261:261:urllib.request.urlopen()",
+      "source_end_line": 261,
+      "source_start_line": 261
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/telephony.py::connection_create::values[key] = value"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/telephony.py::encoding::296": "target"
+      },
+      "operation_object": "obj::operation::scripts/telephony.py::encoding::296",
+      "parameter_bindings": [],
+      "source_end_line": 296,
+      "source_start_line": 296
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/telephony.py::encoding::296"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/telephony.py"
+    ],
+    "attributes": {
+      "matched_text": "}",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/telephony.py::credential_data_access::1343": "path"
+      },
+      "operation_object": "obj::operation::scripts/telephony.py::credential_data_access::1343",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1343,
+      "source_start_line": 1343
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/telephony.py::credential_data_access::1343"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "credential_data_access"
+  }
+]

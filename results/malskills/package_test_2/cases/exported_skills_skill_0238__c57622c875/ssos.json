@@ -1,0 +1,88 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "find logseq/pages -name \"*.md\" -type f -exec grep -l \"technical-area\\|domain-category\\|Official Documentation Comprehensive\" {} \\; | \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::2",
+      "path_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "sed -i.bak '/technical-area/d; /domain-category/d; /Official Documentation Comprehensive/d' \"$file\" && rm \"${file}.bak\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::4",
+      "path_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_write::4"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "sed -i.bak '/technical-area/d; /domain-category/d; /Official Documentation Comprehensive/d' \"$file\" && rm \"${file}.bak\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_delete::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_delete::4",
+      "path_class": "ordinary",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_delete::4"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_delete"
+  }
+]

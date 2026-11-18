@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: delete-mcp\r\ndescription: >\r\n  Delete an MCP server from a live LiteLLM proxy. Ask for the server_id and\r\n  confirm before calling DELETE /v1/mcp/server/{server_id}.\r\nlicense: MIT\r\ncompatibility: Requires curl.\r\nmetadata:\r\n  author: BerriAI\r\n  version: \"1.0\"\r\nallowed-tools: Bash(curl:*)\r\n---\r\n\r\n# Delete MCP Server\r\n\r\nRemove an MCP server registration from a live LiteLLM proxy.\r\n\r\n## Setup\r\n\r\n```\r\nLITELLM_BASE_URL  \u2014 e.g. https://my-proxy.example.com\r\nLITELLM_API_KEY   \u2014 proxy admin key\r\n```\r\n\r\n## Ask the user\r\n\r\n1. **server_id** \u2014 if they don't have it, list first:\r\n   ```bash\r\n   curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"\r\n   ```\r\n2. **Confirm** \u2014 show the server name/URL and ask for confirmation.\r\n\r\n## Run\r\n\r\n```bash\r\ncurl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\\r\n  -H \"Authorization: Bearer $KEY\"\r\n```\r\n\r\n## Output\r\n\r\nConfirm deletion. Note that any agents using this MCP server will lose access to its tools.\r\n",
+    "content_hash": "e386ec96ecb9e11a536052186b262bddb9811ec4170b32d262be95a1ec302cb9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 43,
+    "relative_path": "SKILL.md",
+    "size_bytes": 970,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"",
+    "content_hash": "6faa44d9277fa749d34d67bc46a41bf1a33d277ebdfe08300cf8ccb96fbea137",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 64,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 30,
+    "source_start_line": 28
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\\r\n  -H \"Authorization: Bearer $KEY\"",
+    "content_hash": "ab4bddd4d73268f6ffab934c20730e0da9cb565585984b0eeb6e4321f124f194",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 88,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 38,
+    "source_start_line": 35
+  }
+]

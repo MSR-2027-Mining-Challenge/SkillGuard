@@ -1,0 +1,100 @@
+[
+  {
+    "artifact_path": "",
+    "display_value": "README.md::data_receive::Get your API key from [console.x.ai](https://console.x.ai), then:",
+    "span": null,
+    "value_id": "value::18e3b4d7269a9a55fdf4",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::connection_create::const https = require('https');",
+    "span": null,
+    "value_id": "value::fa0a2ca5263e68d538d9",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::fs",
+    "span": null,
+    "value_id": "value::ecd557890c67dd2dd04c",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::path",
+    "span": null,
+    "value_id": "value::589cf2a220cfa14db1c8",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::configPath",
+    "span": null,
+    "value_id": "value::92bfd7cea1daebd1739b",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::file_access::24",
+    "span": null,
+    "value_id": "value::5fe9e6832adb788c3735",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::config",
+    "span": null,
+    "value_id": "value::449b4a2e4272cb17e2b7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::system_command_execution::125",
+    "span": null,
+    "value_id": "value::2d861971847afdb973f2",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::connection_create::const req = https.request({\n      hostname: API_BASE,\n      path: '/v1/responses',\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${apiKey}`,\n      },\n    }, (res) => {\n      let data = '';\n      \n      res.on('data', chunk => data += chunk);\n      \n      res.on('end', () => {\n        if (res.statusCode !== 200) {\n          console.error(`\u274c API Error (${res.statusCode}):`, data.slice(0, 500));\n          process.exit(1);\n        }\n        \n        try {\n          const response = JSON.parse(data);\n          \n          // Full JSON output\n          if (options.json) {\n            console.log(JSON.stringify(response, null, 2));\n            resolve(response);\n            return;\n          }\n          \n          const { text, citations } = extractContent(response);\n          \n          // Links only output\n          if (options.linksOnly) {\n            if (citations.length > 0) {\n              citations.forEach(url => console.log(url));\n            } else {\n              console.log('No X links found.');\n            }\n            resolve({ text, citations });\n            return;\n          }\n          \n          // Standard or compact output\n          if (text) {\n            console.log(text);\n          } else {\n            console.log('No results found.');\n          }\n          \n          if (!options.compact && citations.length > 0) {\n            console.log('\\n\ud83d\udcce Citations (' + citations.length + '):');\n            citations.slice(0, 10).forEach(url => console.log('   ' + url));\n            if (citations.length > 10) {\n              console.log(`   ... and ${citations.length - 10} more`);\n            }\n          }\n          \n          resolve({ text, citations });\n        } catch (e) {\n          console.error('\u274c Failed to parse response:', e.message);\n          process.exit(1);\n        }\n      });\n    });",
+    "span": null,
+    "value_id": "value::ebcefc4555adcc3b7bce",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::system_command_execution::183",
+    "span": null,
+    "value_id": "value::edc8e613c4ca572ff1af",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::system_command_execution::227",
+    "span": null,
+    "value_id": "value::c81e00df7af4de8591df",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::system_command_execution::234",
+    "span": null,
+    "value_id": "value::bf948103c3ea4d68328a",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::system_command_execution::269",
+    "span": null,
+    "value_id": "value::6c9ed9f274aad260a350",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "scripts/search.js::system_command_execution::276",
+    "span": null,
+    "value_id": "value::dbdf980dd8b792891f70",
+    "value_kind": "symbolic"
+  }
+]

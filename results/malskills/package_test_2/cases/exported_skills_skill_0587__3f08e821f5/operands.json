@@ -1,0 +1,322 @@
+[
+  {
+    "display_value": ".malskills_fences/01-authenticate__fence_7.py::encoding::5",
+    "identity_key": ".malskills_fences/01-authenticate__fence_7.py::encoding::5",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/01-authenticate__fence_7.py::encoding::5",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "target"
+  },
+  {
+    "display_value": ".malskills_fences/01-authenticate__fence_7.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"authorization_code\",\n            \"scope\": \"vms.all\",\n            \"code\": code,\n            \"redirect_uri\": redirect_uri,\n        },\n    )",
+    "identity_key": ".malskills_fences/01-authenticate__fence_7.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"authorization_code\",\n            \"scope\": \"vms.all\",\n            \"code\": code,\n            \"redirect_uri\": redirect_uri,\n        },\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/01-authenticate__fence_7.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"authorization_code\",\n            \"scope\": \"vms.all\",\n            \"code\": code,\n            \"redirect_uri\": redirect_uri,\n        },\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/02-refresh-access-token__fence_1.py::encoding::9",
+    "identity_key": ".malskills_fences/02-refresh-access-token__fence_1.py::encoding::9",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/02-refresh-access-token__fence_1.py::encoding::9",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "target"
+  },
+  {
+    "display_value": ".malskills_fences/02-refresh-access-token__fence_1.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"refresh_token\",\n            \"scope\": \"vms.all\",\n            \"refresh_token\": refresh_token,\n        },\n    )",
+    "identity_key": ".malskills_fences/02-refresh-access-token__fence_1.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"refresh_token\",\n            \"scope\": \"vms.all\",\n            \"refresh_token\": refresh_token,\n        },\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/02-refresh-access-token__fence_1.py::data_send::response = requests.post(\n        \"https://auth.eagleeyenetworks.com/oauth2/token\",\n        headers={\n            \"Authorization\": f\"Basic {credentials}\",\n            \"Content-Type\": \"application/x-www-form-urlencoded\",\n            \"Accept\": \"application/json\",\n        },\n        data={\n            \"grant_type\": \"refresh_token\",\n            \"scope\": \"vms.all\",\n            \"refresh_token\": refresh_token,\n        },\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/03-list-cameras__fence_3.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/cameras\",\n            headers=headers,\n            params=params,\n        )",
+    "identity_key": ".malskills_fences/03-list-cameras__fence_3.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/cameras\",\n            headers=headers,\n            params=params,\n        )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/03-list-cameras__fence_3.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/cameras\",\n            headers=headers,\n            params=params,\n        )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/04-get-live-feed__fence_7.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/feeds\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Accept\": \"application/json\",\n        },\n        params={\n            \"deviceId\": device_id,\n            \"type\": stream_type,\n            \"include\": include,\n        },\n    )",
+    "identity_key": ".malskills_fences/04-get-live-feed__fence_7.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/feeds\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Accept\": \"application/json\",\n        },\n        params={\n            \"deviceId\": device_id,\n            \"type\": stream_type,\n            \"include\": include,\n        },\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/04-get-live-feed__fence_7.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/feeds\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Accept\": \"application/json\",\n        },\n        params={\n            \"deviceId\": device_id,\n            \"type\": stream_type,\n            \"include\": include,\n        },\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/05-query-events__fence_7.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/events\",\n            headers=headers,\n            params=params,\n        )",
+    "identity_key": ".malskills_fences/05-query-events__fence_7.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/events\",\n            headers=headers,\n            params=params,\n        )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/05-query-events__fence_7.py::data_receive::response = requests.get(\n            f\"https://{base_url}/api/v3.0/events\",\n            headers=headers,\n            params=params,\n        )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/eventSubscriptions\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"deliveryConfig\": {\n                \"type\": \"webhook.v1\",\n                \"url\": webhook_url,\n                \"authorizationHeader\": f\"Bearer {webhook_secret}\",\n            },\n            \"filters\": [\n                {\n                    \"resourceType\": \"camera\",\n                    \"resourceIds\": camera_ids,\n                    \"types\": event_types,\n                }\n            ],\n        },\n    )",
+    "identity_key": ".malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/eventSubscriptions\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"deliveryConfig\": {\n                \"type\": \"webhook.v1\",\n                \"url\": webhook_url,\n                \"authorizationHeader\": f\"Bearer {webhook_secret}\",\n            },\n            \"filters\": [\n                {\n                    \"resourceType\": \"camera\",\n                    \"resourceIds\": camera_ids,\n                    \"types\": event_types,\n                }\n            ],\n        },\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/eventSubscriptions\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"deliveryConfig\": {\n                \"type\": \"webhook.v1\",\n                \"url\": webhook_url,\n                \"authorizationHeader\": f\"Bearer {webhook_secret}\",\n            },\n            \"filters\": [\n                {\n                    \"resourceType\": \"camera\",\n                    \"resourceIds\": camera_ids,\n                    \"types\": event_types,\n                }\n            ],\n        },\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/media/recordedImage.jpeg\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n        params={\n            \"deviceId\": device_id,\n            \"recordedType\": recorded_type,\n            \"timestampGreaterOrEqual\": timestamp,\n        },\n    )",
+    "identity_key": ".malskills_fences/06-event-lifecycle__fence_10.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/media/recordedImage.jpeg\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n        params={\n            \"deviceId\": device_id,\n            \"recordedType\": recorded_type,\n            \"timestampGreaterOrEqual\": timestamp,\n        },\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/06-event-lifecycle__fence_10.py::data_receive::response = requests.get(\n        f\"https://{base_url}/api/v3.0/media/recordedImage.jpeg\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n        params={\n            \"deviceId\": device_id,\n            \"recordedType\": recorded_type,\n            \"timestampGreaterOrEqual\": timestamp,\n        },\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::dynamic_code_execution::75",
+    "identity_key": ".malskills_fences/06-event-lifecycle__fence_10.py::dynamic_code_execution::75",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/06-event-lifecycle__fence_10.py::dynamic_code_execution::75",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/events\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"startTimestamp\": start_ts,\n            \"endTimestamp\": end_ts,\n            \"span\": start_ts != end_ts,\n            \"accountId\": account_id,\n            \"actorId\": actor_id,\n            \"actorAccountId\": actor_account_id,\n            \"actorType\": \"camera\",\n            \"creatorId\": creator_id,\n            \"type\": event_type,\n            \"dataSchemas\": data_schemas,\n            \"data\": data,\n        },\n    )",
+    "identity_key": ".malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/events\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"startTimestamp\": start_ts,\n            \"endTimestamp\": end_ts,\n            \"span\": start_ts != end_ts,\n            \"accountId\": account_id,\n            \"actorId\": actor_id,\n            \"actorAccountId\": actor_account_id,\n            \"actorType\": \"camera\",\n            \"creatorId\": creator_id,\n            \"type\": event_type,\n            \"dataSchemas\": data_schemas,\n            \"data\": data,\n        },\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/06-event-lifecycle__fence_10.py::data_send::response = requests.post(\n        f\"https://{base_url}/api/v3.0/events\",\n        headers={\n            \"Authorization\": f\"Bearer {access_token}\",\n            \"Content-Type\": \"application/json\",\n            \"Accept\": \"application/json\",\n        },\n        json={\n            \"startTimestamp\": start_ts,\n            \"endTimestamp\": end_ts,\n            \"span\": start_ts != end_ts,\n            \"accountId\": account_id,\n            \"actorId\": actor_id,\n            \"actorAccountId\": actor_account_id,\n            \"actorType\": \"camera\",\n            \"creatorId\": creator_id,\n            \"type\": event_type,\n            \"dataSchemas\": data_schemas,\n            \"data\": data,\n        },\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/06-event-lifecycle__fence_10.py::data",
+    "identity_key": ".malskills_fences/06-event-lifecycle__fence_10.py::data",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/06-event-lifecycle__fence_10.py::data",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/users\", headers=headers, params=params)",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/users\", headers=headers, params=params)",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/users\", headers=headers, params=params)",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/users\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"firstName\": first_name, \"lastName\": last_name, \"email\": email},\n    )",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/users\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"firstName\": first_name, \"lastName\": last_name, \"email\": email},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/users\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"firstName\": first_name, \"lastName\": last_name, \"email\": email},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::email",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::email",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::email",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::connection_create::r = requests.delete(\n        f\"https://{base_url}/api/v3.0/users/{user_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::connection_create::r = requests.delete(\n        f\"https://{base_url}/api/v3.0/users/{user_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::connection_create::r = requests.delete(\n        f\"https://{base_url}/api/v3.0/users/{user_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roles\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"description\": description, \"permissions\": permissions},\n    )",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roles\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"description\": description, \"permissions\": permissions},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roles\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"description\": description, \"permissions\": permissions},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::permissions",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::permissions",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::permissions",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roleAssignments:bulkCreate\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=assignments,\n    )",
+    "identity_key": ".malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roleAssignments:bulkCreate\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=assignments,\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/07-user-account-management__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/roleAssignments:bulkCreate\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=assignments,\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActions\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"type\": action_type, \"name\": name, \"enabled\": enabled, \"settings\": settings},\n    )",
+    "identity_key": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActions\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"type\": action_type, \"name\": name, \"enabled\": enabled, \"settings\": settings},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActions\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"type\": action_type, \"name\": name, \"enabled\": enabled, \"settings\": settings},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/08-automations__fence_17.py::settings",
+    "identity_key": ".malskills_fences/08-automations__fence_17.py::settings",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/08-automations__fence_17.py::settings",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/eventAlertConditionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "identity_key": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/eventAlertConditionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/eventAlertConditionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"alertActionIds\": alert_action_ids},\n    )",
+    "identity_key": ".malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"alertActionIds\": alert_action_ids},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/08-automations__fence_17.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/alertActionRules\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json={\"name\": name, \"alertActionIds\": alert_action_ids},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/08-automations__fence_17.py::alert_action_ids",
+    "identity_key": ".malskills_fences/08-automations__fence_17.py::alert_action_ids",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/08-automations__fence_17.py::alert_action_ids",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/09-video-export__fence_11.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/exports\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "identity_key": ".malskills_fences/09-video-export__fence_11.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/exports\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/09-video-export__fence_11.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/exports\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Content-Type\": \"application/json\"},\n        json=body,\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n            f\"https://{base_url}/api/v3.0/jobs/{job_id}\",\n            headers=headers,\n        )",
+    "identity_key": ".malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n            f\"https://{base_url}/api/v3.0/jobs/{job_id}\",\n            headers=headers,\n        )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n            f\"https://{base_url}/api/v3.0/jobs/{job_id}\",\n            headers=headers,\n        )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/downloads\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"name\": name, \"include\": \"url\"},\n    )",
+    "identity_key": ".malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/downloads\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"name\": name, \"include\": \"url\"},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/09-video-export__fence_11.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/downloads\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"name\": name, \"include\": \"url\"},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"include\": include},\n    )",
+    "identity_key": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"include\": include},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params={\"include\": include},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}/status\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n    )",
+    "identity_key": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}/status\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/cameras/{camera_id}/status\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/bridges\", headers=headers, params=params)",
+    "identity_key": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/bridges\", headers=headers, params=params)",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(f\"https://{base_url}/api/v3.0/bridges\", headers=headers, params=params)",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/availableDevices\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params=params,\n    )",
+    "identity_key": ".malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/availableDevices\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params=params,\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/10-device-management__fence_18.py::data_receive::r = requests.get(\n        f\"https://{base_url}/api/v3.0/availableDevices\",\n        headers={\"Authorization\": f\"Bearer {access_token}\", \"Accept\": \"application/json\"},\n        params=params,\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/10-device-management__fence_18.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/bridges/{bridge_id}/devices:scan\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "identity_key": ".malskills_fences/10-device-management__fence_18.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/bridges/{bridge_id}/devices:scan\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/10-device-management__fence_18.py::data_send::r = requests.post(\n        f\"https://{base_url}/api/v3.0/bridges/{bridge_id}/devices:scan\",\n        headers={\"Authorization\": f\"Bearer {access_token}\"},\n    )",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  }
+]

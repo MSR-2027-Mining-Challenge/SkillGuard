@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: git-commit\r\ndescription: Use when writing Git commit messages. Enforces imperative mood, 50/72 character limits, and zero meta-commentary.\r\n---\r\n\r\n# Git Commit\r\n\r\n## Overview\r\nGenerate high-quality, professional Git commit messages that summarize changes accurately and concisely.\r\n\r\n## When to Use\r\n- **Trigger**: When asked to \"write a commit message\", \"commit these changes\", or \"summarize the diff\".\r\n- **Symptom**: Verbose commit messages, non-imperative subjects, or repetition of subject in body.\r\n\r\n## Core Pattern\r\n1. **Analyze Diff**: Identify the *primary* purpose of the changes.\r\n2. **Subject Line**: \r\n   - Start with an imperative verb (Add, Fix, Update, Refactor).\r\n   - Limit to 50 characters.\r\n   - Capitalize first letter.\r\n   - No trailing punctuation.\r\n3. **Body (Optional)**:\r\n   - Use only if it adds context not obvious from the subject.\r\n   - Separate from subject with a blank line.\r\n   - Wrap at 72 characters.\r\n4. **Final Check (Strict Output)**: \r\n   - **MANDATORY**: Only return the commit message. \r\n   - **STOP**: Delete all additional meta-commentary, explanations, or quotes.\r\n   - **No Preamble**: No \"Here is the message...\" or \"Commit message:\".\r\n\r\n## Quick Reference\r\n- **GOOD**: `Add Gmail authentication flow`\r\n- **BAD**: `I added the Gmail authentication flow.`\r\n- **GOOD**: `Fix typo in README`\r\n- **BAD**: `Fixed typo in README.`\r\n\r\n## Common Mistakes\r\n- **Meta-commentary**: Including text like \"Here is the commit message:\" or \"I hope this helps.\"\r\n- **Narrative bodies**: \"In this commit, I decided to...\" (Delete).\r\n- **Redundancy**: Repeating the subject in the first line of the body.\r\n- **Punctuation**: Ending the subject line with a period.\r\n- **Past Tense**: Using \"Fixed\" or \"Added\" instead of \"Fix\" or \"Add\".\r\n\r\n## Red Flags\r\n| Violation | Skill Fix |\r\n| :--- | :--- |\r\n| Including meta-commentary | **STOP**. Delete everything except the raw commit message. |\r\n| Subject > 50 chars | Rewrite to capture the *impact*, not the list of files. |\r\n| Body repeats subject | Delete the redundant lines in the body. |\r\n| Past tense verb | Change to imperative (e.g., Fixed -> Fix). |\r\n| Ending with `.` | Remove the trailing punctuation from the subject line. |\r\n",
+    "content_hash": "d40be067a415618eba01becb7727eac18dd0ce524cba8a725dfb04961c8e2963",
+    "generated": false,
+    "is_text": true,
+    "line_count": 52,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2222,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

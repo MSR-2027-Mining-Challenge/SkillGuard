@@ -1,0 +1,290 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/start-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Usage: start-server.sh [--project-dir <path>] [--host <host>] [--url-host <hostname>] [--foreground] [--background]",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/start-server.sh::system_information_access::3": "path"
+      },
+      "operation_object": "obj::operation::scripts/start-server.sh::system_information_access::3",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/start-server.sh::system_information_access::3"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/start-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "#   --url-host <hostname> Hostname shown in returned URL JSON.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/start-server.sh::system_information_access::13": "path"
+      },
+      "operation_object": "obj::operation::scripts/start-server.sh::system_information_access::13",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/start-server.sh::system_information_access::13"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/start-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "old_pid=$(cat \"$PID_FILE\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/start-server.sh::old_pid": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/start-server.sh::old_pid",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 95,
+      "source_start_line": 95
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/start-server.sh::old_pid"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/start-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -f \"$PID_FILE\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/start-server.sh::file_delete::97": "path"
+      },
+      "operation_object": "obj::operation::scripts/start-server.sh::file_delete::97",
+      "path_class": "ordinary",
+      "source_end_line": 97,
+      "source_start_line": 97,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/start-server.sh::file_delete::97"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "scripts/start-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep \"server-started\" \"$LOG_FILE\" | head -1",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/start-server.sh::file_read::140": "path"
+      },
+      "operation_object": "obj::operation::scripts/start-server.sh::file_read::140",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 140,
+      "source_start_line": 140
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/start-server.sh::file_read::140"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/stop-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "pid=$(cat \"$PID_FILE\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/stop-server.sh::pid": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/stop-server.sh::pid",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/stop-server.sh::pid"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/stop-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Wait for graceful shutdown (up to ~2s)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/stop-server.sh::process_control::23": "target"
+      },
+      "operation_object": "obj::operation::scripts/stop-server.sh::process_control::23",
+      "source_end_line": 23,
+      "source_start_line": 23,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/stop-server.sh::process_control::23"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/stop-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "kill -9 \"$pid\" 2>/dev/null || true",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/stop-server.sh::process_control::32": "target"
+      },
+      "operation_object": "obj::operation::scripts/stop-server.sh::process_control::32",
+      "source_end_line": 32,
+      "source_start_line": 32,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/stop-server.sh::process_control::32"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/stop-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -f \"$PID_FILE\" \"${STATE_DIR}/server.log\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/stop-server.sh::file_delete::40": "path"
+      },
+      "operation_object": "obj::operation::scripts/stop-server.sh::file_delete::40",
+      "path_class": "ordinary",
+      "source_end_line": 40,
+      "source_start_line": 40,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/stop-server.sh::file_delete::40"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/stop-server.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf \"$SESSION_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/stop-server.sh::file_delete::43": "path"
+      },
+      "operation_object": "obj::operation::scripts/stop-server.sh::file_delete::43",
+      "path_class": "ordinary",
+      "source_end_line": 43,
+      "source_start_line": 43,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/stop-server.sh::file_delete::43"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_delete"
+  }
+]

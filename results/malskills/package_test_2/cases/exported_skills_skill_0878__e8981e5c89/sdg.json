@@ -1,0 +1,260 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/agent.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "target": "value::abe4e858835e488c1e2a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/agent.py::system_command_execution::50",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::system_command_execution::50",
+      "target": "value::64f4118ce4aa3e955832",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/agent.py::system_command_execution::73",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::system_command_execution::73",
+      "target": "value::1b04ca9092afa541caaa",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/agent.py::system_command_execution::105",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::system_command_execution::105",
+      "target": "value::83ac98a622e4e01bed10",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/agent.py::system_command_execution::114",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::system_command_execution::114",
+      "target": "value::de60233e0f0075b6ec7a",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/agent.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "identity_key": "scripts/agent.py::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::abe4e858835e488c1e2a",
+      "kind": "value",
+      "value": "scripts/agent.py::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::system_command_execution::50",
+      "identity_key": "scripts/agent.py::system_command_execution::50",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::64f4118ce4aa3e955832",
+      "kind": "value",
+      "value": "scripts/agent.py::system_command_execution::50",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::system_command_execution::73",
+      "identity_key": "scripts/agent.py::system_command_execution::73",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::1b04ca9092afa541caaa",
+      "kind": "value",
+      "value": "scripts/agent.py::system_command_execution::73",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::system_command_execution::105",
+      "identity_key": "scripts/agent.py::system_command_execution::105",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::83ac98a622e4e01bed10",
+      "kind": "value",
+      "value": "scripts/agent.py::system_command_execution::105",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::system_command_execution::114",
+      "identity_key": "scripts/agent.py::system_command_execution::114",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::de60233e0f0075b6ec7a",
+      "kind": "value",
+      "value": "scripts/agent.py::system_command_execution::114",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

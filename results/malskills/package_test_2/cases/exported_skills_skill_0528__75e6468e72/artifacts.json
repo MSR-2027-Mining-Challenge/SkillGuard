@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: ponytail-gain\r\ndescription: >\r\n  Show ponytail's measured impact as a compact scoreboard: less code, less\r\n  cost, more speed, from the benchmark medians. One-shot display, not a\r\n  persistent mode, and not a per-repo number. Trigger: /ponytail-gain,\r\n  \"ponytail gain\", \"what does ponytail save\", \"show ponytail impact\",\r\n  \"ponytail scoreboard\".\r\n---\r\n\r\n# Ponytail Gain\r\n\r\nDisplay this scoreboard when invoked. One-shot: do NOT change mode, write flag\r\nfiles, or persist anything.\r\n\r\nThe figures are the published benchmark medians (5 everyday tasks: email\r\nvalidator, debounce, CSV sum, countdown timer, rate limiter; three models:\r\nHaiku, Sonnet, Opus). They are measured, not computed from the current repo.\r\nSource: `benchmarks/` and the README.\r\n\r\n## Scoreboard\r\n\r\nRender plain ASCII bars. The bar length shows the measured range; the label\r\ncarries the exact figure:\r\n\r\n```\r\n  ponytail gain                     benchmark median \u00b7 5 tasks \u00b7 3 models\r\n\r\n  Lines of code   no-skill  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  100%\r\n                  ponytail  \u2588\u2588\u258c\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7    6\u201320%   \u25bc 80\u201394%\r\n  Cost            no-skill  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  100%\r\n                  ponytail  \u2588\u2588\u2588\u2588\u2588\u258c\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7   23\u201353%  \u25bc 47\u201377%\r\n  Speed           ponytail  \u25b8 3\u20136\u00d7 faster\r\n\r\n  This repo:  /ponytail-debt  (shortcuts you deferred)\r\n              /ponytail-audit (what's still cuttable)\r\n```\r\n\r\n## Honesty boundary\r\n\r\nThese are benchmark medians, not this repo. NEVER print a per-repo savings\r\nnumber (\"you saved X lines/tokens here\"): the unbuilt version was never\r\nwritten, so there is no real baseline to subtract from in a live repo. The\r\nonly real per-repo figures come from `/ponytail-debt` (a counted ledger), and\r\nthis card points there instead of inventing one.\r\n\r\n## Boundaries\r\n\r\nOne-shot display. Edits nothing, changes no mode.\r\n\"stop ponytail\" or \"normal mode\": revert.\r\n",
+    "content_hash": "f8847c410b54978fff41eab775fc754d41ede19ad6fb72fac799b65616cc6683",
+    "generated": false,
+    "is_text": true,
+    "line_count": 51,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2023,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

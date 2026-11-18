@@ -1,0 +1,27 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2" [label="obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\" [label="obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::071524d29192746928a2" [label="value::071524d29192746928a2\nkind=value"];
+  "value::4c10820415c4b05d3f0f" [label="value::4c10820415c4b05d3f0f\nkind=value"];
+  "value::a367d511b05973e7ce6f" [label="value::a367d511b05973e7ce6f\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00002" [label="contains"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2" -> "value::071524d29192746928a2" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\" -> "value::4c10820415c4b05d3f0f" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\" -> "value::a367d511b05973e7ce6f" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s -X POST http://localhost:8888/notify \\" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::2" [label="has_operand"];
+  "sso_00002" -> "obj::symbolic_reference::SKILL.md::data_receive::curl -s -X POST http://localhost:8888/notify \\" [label="has_operand"];
+}

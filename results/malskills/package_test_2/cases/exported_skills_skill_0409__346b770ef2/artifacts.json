@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: agent-skill-kit-validator\r\ndescription: Validate one or many SKILL.md files against the agentskills.io specification \u2014 frontmatter, naming, body, optional-directory, and reference checks. Use when the user asks to validate a skill, audit skills, check SKILL.md, or run skills-ref against an existing skill or directory tree.\r\ntier: org\r\nlicense: Apache-2.0\r\ncompatibility: requires `skills-ref` CLI from `.agents/skills/agent-skill-kit-commons/packages/mjs` or `.agents/skills/agent-skill-kit-commons/packages/py`; node>=20 or python>=3.11\r\n---\r\n\r\n# Agent Skill Validator\r\n\r\nWraps the `skills-ref validate` CLI in three modes: single-skill, recursive scan, and CI (machine-readable JSON output). Use this skill when the user has a skill (or skill tree) and wants to know whether it conforms to the agentskills.io specification.\r\n\r\n## When to use\r\n\r\n- User says: \"validate this skill\", \"is my SKILL.md valid\", \"check the skills directory\", \"run the validator\", \"audit my skills\".\r\n- After authoring or editing any SKILL.md, before committing.\r\n- In CI, on every PR touching `.agents/skills/**`.\r\n\r\n## Modes\r\n\r\n### Mode A \u2014 single skill\r\n\r\n`skills-ref validate /absolute/path/to/skill-dir`\r\n\r\nExit 0 = PASS. Exit 1 = errors present. Exit 2 = warnings only (use `--strict` to treat as failure).\r\n\r\n### Mode B \u2014 recursive scan\r\n\r\n`skills-ref validate /path/to/.agents/skills/`\r\n\r\nWalks every direct child directory looking for `SKILL.md`. Reports per-skill PASS/FAIL/WARN with a final aggregate.\r\n\r\n### Mode C \u2014 CI\r\n\r\n`skills-ref validate /path/ --format json --no-color > report.json`\r\n\r\nStable JSON output suitable for machine parsing. Schema: `{path, status, issues: [...], summary: {errors, warnings}}`.\r\n\r\n## Flags\r\n\r\n- `--tiers` (alias `--agents-skills-kit-tiers`) \u2014 enforce the `tier` frontmatter field. **Off by default:** without this flag `tier` is optional, so a skill with no `tier:` PASSES and an invalid tier value is ignored (E006/E007 are suppressed). Pass it to require a present, valid tier.\r\n- `--extra-tiers <list>` \u2014 accept additional tier values beyond the spec's four (e.g., `company,enterprise,application` for the creator's six-tier scheme). Only meaningful alongside `--tiers`.\r\n- `--strict` \u2014 promote warnings to errors (exit 1 instead of 2).\r\n- `--format human|json` \u2014 output format. Default `human`.\r\n- `--no-color` \u2014 strip ANSI codes (auto-stripped when not a TTY).\r\n\r\n## Reference\r\n\r\nThe validator is implemented twice \u2014 `.agents/skills/agent-skill-kit-commons/packages/mjs/` (Node ESM) and `.agents/skills/agent-skill-kit-commons/packages/py/` (Python).\r\nBoth runtimes share the fixture suite under `.agents/skills/agent-skill-kit-commons/fixtures/` and a cross-runtime parity harness\r\n(`make parity`). Either CLI satisfies this skill \u2014 pick whichever toolchain is already\r\ninstalled on the host.\r\n",
+    "content_hash": "b0edfc5ee265d8b9378966fb6f33941d5dc7271ff165a0dc1864976992fb29f8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2859,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nquality_gate: production\r\nid: legal-compliance.nda-reviewer\r\nname: NDA Review Support\r\nversion: 1.0.0\r\ndomain: legal-compliance\r\ncategory: legal-compliance.contracts\r\npurpose: Review NDA structure, business risks, missing clauses, and negotiation questions. Not legal advice.\r\nsummary: NDA review support highlights confidentiality scope, term, exclusions, residuals, return obligations, jurisdiction, and unusual obligations for counsel review.\r\ntriggers:\r\n  - nda review\r\n  - nda reviewer task\r\n  - review confidentiality agreement\r\n  - mutual nda check\r\n  - unilateral nda review\r\nactivation_triggers:\r\n  - review this NDA\r\n  - check this confidentiality agreement\r\nprerequisites:\r\n  - NDA text is available\r\n  - Party roles and transaction context are known\r\n  - Desired risk posture is defined\r\ninputs:\r\n  - nda_text\r\n  - transaction_context\r\n  - party_roles\r\n  - risk_posture\r\nsteps:\r\n  - Identify NDA type, parties, purpose, effective date, governing law, and term.\r\n  - Review confidential information definition, exclusions, use limits, disclosure permissions, and return or destruction obligations.\r\n  - Flag business-sensitive terms: residuals, non-solicit, non-compete, IP ownership, injunctive relief, and unusual audit rights.\r\n  - Check whether obligations are mutual, one-way, or mismatched to the transaction.\r\n  - Produce issues table with clause, risk, business impact, and counsel question.\r\n  - Add not-legal-advice disclaimer and require attorney review before signature.\r\noutputs:\r\n  - nda_review_notes\r\n  - issue_table\r\n  - negotiation_questions\r\n  - counsel_review_summary\r\ntools:\r\n  - filesystem.read\r\n  - filesystem.write\r\nquality_gates:\r\n  - Disclaimer and counsel review gate are present\r\n  - Clause references are included for each issue\r\n  - Business risks are separated from legal conclusions\r\nfailure_modes:\r\n  - Giving legal advice or signature recommendation\r\n  - Missing one-way obligations in a mutual deal\r\n  - Ignoring embedded non-compete or IP terms\r\nhandoffs:\r\n  - legal-compliance.contract-reviewer\r\n  - legal-compliance.legal-researcher\r\nsource_references:\r\n  - ref.github.legal-compliance.nda-reviewer.2026-06-02\r\n  - https://github.com/commonaccord/commonaccord\r\nallowed_agents:\r\n  - legal-compliance.nda-reviewer\r\nstatus: active\r\nbudget_band: standard\r\nrollback:\r\n  - Revert NDA review artifact\r\nvalidators:\r\n  - skill.validator\r\n  - disclaimer_present\r\n---\r\n\r\n## Procedure\r\n\r\n1. Capture party roles, purpose, transaction context, and risk posture.\r\n2. Review confidentiality definition, exclusions, permitted disclosures, term, and return obligations.\r\n3. Flag unusual business terms and missing operational protections.\r\n4. Create an issue table for counsel with clause reference and question.\r\n5. Require attorney review before signing or sending redlines.\r\n\r\n## Verification\r\n\r\n- No legal conclusion is presented as final advice.\r\n- Each issue cites a clause or missing clause.\r\n- Counsel review is explicit.\r\n",
+    "content_hash": "1421c25fcafc20cfb7039e94c1cfd3d0aeffda7b299176efdc5b56cbf4a2a3fa",
+    "generated": false,
+    "is_text": true,
+    "line_count": 81,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2966,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,33 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/anti-rationalization.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=references/deploy-proof.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=references/.malskills_fences/deploy-proof__fence_0.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=references/.malskills_fences/deploy-proof__fence_1.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=references/.malskills_fences/deploy-proof__fence_2.sh"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=python\npath=scripts/cloud_run_service_evidence.py"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=config\npath=skill.json"];
+  "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140" [label="obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140\nkind=operand"];
+  "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27" [label="obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27\nkind=operand"];
+  "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args" [label="obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::28faa8b933c516c5e75e" [label="value::28faa8b933c516c5e75e\nkind=value"];
+  "value::749d20ef6ce2ada9a4b5" [label="value::749d20ef6ce2ada9a4b5\nkind=value"];
+  "value::9defc7d270caccc2328c" [label="value::9defc7d270caccc2328c\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0007" -> "sso_00000" [label="contains"];
+  "art_0007" -> "sso_00001" [label="contains"];
+  "art_0007" -> "sso_00002" [label="contains"];
+  "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140" -> "value::28faa8b933c516c5e75e" [label="value_flow"];
+  "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27" -> "value::749d20ef6ce2ada9a4b5" [label="value_flow"];
+  "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args" -> "value::9defc7d270caccc2328c" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/cloud_run_service_evidence.py::environment_access::27" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::scripts/cloud_run_service_evidence.py::args" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/cloud_run_service_evidence.py::credential_data_access::140" [label="has_operand"];
+}

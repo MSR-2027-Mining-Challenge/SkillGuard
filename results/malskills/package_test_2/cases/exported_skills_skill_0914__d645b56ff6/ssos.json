@@ -1,0 +1,321 @@
+[
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/collect.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(os.path.expanduser(out), \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/collect.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/collect.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 131,
+      "source_start_line": 131
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/collect.py::encoding"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/digest.py"
+    ],
+    "attributes": {
+      "matched_text": "for line in open(path, encoding=\"utf-8\"):",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/digest.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/digest.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 96,
+      "source_start_line": 96
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/digest.py::encoding"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/digest.py"
+    ],
+    "attributes": {
+      "matched_text": "for line in open(path, encoding=\"utf-8\"):",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/digest.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/digest.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 159,
+      "source_start_line": 159
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/digest.py::encoding"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/digest.py"
+    ],
+    "attributes": {
+      "matched_text": "with tempfile.NamedTemporaryFile(\"w\", suffix=\".jsonl\", delete=False) as fh:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/digest.py::file_create::282": "path"
+      },
+      "operation_object": "obj::operation::scripts/digest.py::file_create::282",
+      "path_class": "ordinary",
+      "source_end_line": 282,
+      "source_start_line": 282,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/digest.py::file_create::282"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/digest.py"
+    ],
+    "attributes": {
+      "matched_text": "os.unlink(path)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/digest.py::link_operation::287": "path"
+      },
+      "operation_object": "obj::operation::scripts/digest.py::link_operation::287",
+      "path_class": "ordinary",
+      "source_end_line": 287,
+      "source_start_line": 287,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/digest.py::link_operation::287"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "link_operation"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/digest.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(f\"no {agent or 'claude'} transcript found\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/digest.py::credential_data_access::316": "path"
+      },
+      "operation_object": "obj::operation::scripts/digest.py::credential_data_access::316",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 316,
+      "source_start_line": 316
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/digest.py::credential_data_access::316"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/digest.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(f\"not found: {path}\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/digest.py::credential_data_access::320": "path"
+      },
+      "operation_object": "obj::operation::scripts/digest.py::credential_data_access::320",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 320,
+      "source_start_line": 320
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/digest.py::credential_data_access::320"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/render_report.py"
+    ],
+    "attributes": {
+      "matched_text": "stats = json.load(open(os.path.expanduser(arg(\"--stats\", \"/tmp/mentor-stats.json\")), encoding=\"utf-8\"))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/render_report.py::stats": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/render_report.py::stats",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 354,
+      "source_start_line": 354
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/render_report.py::stats"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/render_report.py"
+    ],
+    "attributes": {
+      "matched_text": "an = json.load(open(os.path.expanduser(ap), encoding=\"utf-8\")) if ap and os.path.exists(os.path.expanduser(ap)) else {}",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/render_report.py::an": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/render_report.py::an",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 356,
+      "source_start_line": 356
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/render_report.py::an"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/render_report.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(os.path.dirname(out), exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/render_report.py::file_create::359": "path"
+      },
+      "operation_object": "obj::operation::scripts/render_report.py::file_create::359",
+      "path_class": "ordinary",
+      "source_end_line": 359,
+      "source_start_line": 359,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/render_report.py::file_create::359"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/render_report.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(out, \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/render_report.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/render_report.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 360,
+      "source_start_line": 360
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/render_report.py::encoding"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_access"
+  }
+]

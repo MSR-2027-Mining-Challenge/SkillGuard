@@ -1,0 +1,54 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": "references/incremental-implementation.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit dynamic module loading pattern",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00000",
+    "matched_text": "- src/utils/format.ts has an unused import (unrelated to this task)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": "references/incremental-implementation.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 133,
+        "start_line": 133
+      }
+    },
+    "span": {
+      "end_line": 133,
+      "start_line": 133
+    },
+    "subtype": "dynamic_code_execution"
+  }
+]

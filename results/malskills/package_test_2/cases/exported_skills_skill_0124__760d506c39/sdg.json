@@ -1,0 +1,416 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": "scripts/run.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/skip_counter.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::scripts/run.py::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/run.py::cmd",
+      "target": "value::0d6a72c686e38513b035",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/run.py::system_command_execution::261",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/run.py::system_command_execution::261",
+      "target": "value::8e6bd0471dbb497d8c92",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/run.py::system_command_execution::323",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/run.py::system_command_execution::323",
+      "target": "value::14f7964327f68b29492e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/run.py::credential_data_access::539",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/run.py::credential_data_access::539",
+      "target": "value::2f1754720531e0011f20",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/skip_counter.py::file_create::255",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/skip_counter.py::file_create::255",
+      "target": "value::cfdf492cdc167122aef5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/skip_counter.py::file_write::267",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/skip_counter.py::file_write::267",
+      "target": "value::436f8f0a8a94862ab265",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::scripts/skip_counter.py::link_operation::271",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/skip_counter.py::link_operation::271",
+      "target": "value::ab7bf12521a880f1c849",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00007",
+      "target": "obj::operation::scripts/skip_counter.py::system_command_execution::279",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/skip_counter.py::system_command_execution::279",
+      "target": "value::efe26dd37728e755a070",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00008",
+      "target": "obj::operation::scripts/skip_counter.py::system_command_execution::292",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/skip_counter.py::system_command_execution::292",
+      "target": "value::05042127aae493fb67f4",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "scripts/run.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/skip_counter.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/run.py::cmd",
+      "identity_key": "scripts/run.py::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::0d6a72c686e38513b035",
+      "kind": "value",
+      "value": "scripts/run.py::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/run.py::system_command_execution::261",
+      "identity_key": "scripts/run.py::system_command_execution::261",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::8e6bd0471dbb497d8c92",
+      "kind": "value",
+      "value": "scripts/run.py::system_command_execution::261",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/run.py::system_command_execution::323",
+      "identity_key": "scripts/run.py::system_command_execution::323",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::14f7964327f68b29492e",
+      "kind": "value",
+      "value": "scripts/run.py::system_command_execution::323",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/run.py::credential_data_access::539",
+      "identity_key": "scripts/run.py::credential_data_access::539",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2f1754720531e0011f20",
+      "kind": "value",
+      "value": "scripts/run.py::credential_data_access::539",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/skip_counter.py::file_create::255",
+      "identity_key": "scripts/skip_counter.py::file_create::255",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::cfdf492cdc167122aef5",
+      "kind": "value",
+      "value": "scripts/skip_counter.py::file_create::255",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/skip_counter.py::file_write::267",
+      "identity_key": "scripts/skip_counter.py::file_write::267",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::436f8f0a8a94862ab265",
+      "kind": "value",
+      "value": "scripts/skip_counter.py::file_write::267",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "link_operation",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/skip_counter.py::link_operation::271",
+      "identity_key": "scripts/skip_counter.py::link_operation::271",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ab7bf12521a880f1c849",
+      "kind": "value",
+      "value": "scripts/skip_counter.py::link_operation::271",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/skip_counter.py::system_command_execution::279",
+      "identity_key": "scripts/skip_counter.py::system_command_execution::279",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::efe26dd37728e755a070",
+      "kind": "value",
+      "value": "scripts/skip_counter.py::system_command_execution::279",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/skip_counter.py::system_command_execution::292",
+      "identity_key": "scripts/skip_counter.py::system_command_execution::292",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::05042127aae493fb67f4",
+      "kind": "value",
+      "value": "scripts/skip_counter.py::system_command_execution::292",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

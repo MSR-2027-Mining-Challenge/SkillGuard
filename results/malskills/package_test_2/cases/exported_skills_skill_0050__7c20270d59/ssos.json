@@ -1,0 +1,512 @@
+[
+  {
+    "artifact_ids": [
+      "art_0029"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_105.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://mise.run | sh",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_105.sh::data_receive::curl https://mise.run | sh": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_105.sh::data_receive::curl https://mise.run | sh",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_105.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_105.sh::data_receive::curl https://mise.run | sh"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0029"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_105.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "curl https://mise.run | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_105.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_105.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_105.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_105.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0029"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_105.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl https://mise.run | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_105.sh::external_component_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_105.sh::external_component_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_105.sh::external_component_installation::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0030"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_106.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "eval \"$(mise activate zsh --shims)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_106.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_106.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_106.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_106.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_17.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "eval \"files=($usage_files)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_17.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_23.sh"
+    ],
+    "attributes": {
+      "matched_text": "docker build ${usage_verbose:+--verbose} .",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_information_access::8": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_information_access::8",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_information_access::8"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_23.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "eval \"files=($usage_files)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::16": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::16",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_23.sh:16:16:system_command_execution",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::16"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_67.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "eval \"$(mise activate zsh --shims)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_67.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_67.sh"
+    ],
+    "attributes": {
+      "matched_text": "# PATH mode (interactive shells \u2014 .bashrc/.zshrc)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_configuration_modify::4": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_configuration_modify::4",
+      "resource_class": "startup_configuration",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_configuration_modify::4"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_67.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "eval \"$(mise activate zsh)\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_67.sh:5:5:system_command_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_67.sh::system_command_execution::5"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_68.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "# powershell",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_68.sh::system_command_execution::7": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_68.sh::system_command_execution::7",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_68.sh:7:7:system_command_execution",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_68.sh::system_command_execution::7"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_68.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "mise completion powershell | Out-String | Invoke-Expression",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_68.sh::system_command_execution::8": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_68.sh::system_command_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_68.sh:8:8:system_command_execution",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_68.sh::system_command_execution::8"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_76.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat private.key | mise set --stdin MY_KEY  # From stdin",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_76.sh::file_read::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_76.sh::file_read::5",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_76.sh::file_read::5"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0025"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_95.sh"
+    ],
+    "attributes": {
+      "matched_text": "mise bootstrap --update     # refresh package-manager metadata first",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_95.sh::system_information_access::4": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_95.sh::system_information_access::4",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_95.sh::system_information_access::4"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://mise.run | sh",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl https://mise.run | sh": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl https://mise.run | sh",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:2302:2302:data_receive",
+      "source_end_line": 2302,
+      "source_start_line": 2302
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl https://mise.run | sh"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "curl https://mise.run | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::system_command_execution::2302": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::system_command_execution::2302",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:2302:2302:system_command_execution",
+      "source_end_line": 2302,
+      "source_start_line": 2302
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::system_command_execution::2302"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "curl https://mise.run | sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::external_component_installation::2302": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::external_component_installation::2302",
+      "source_end_line": 2302,
+      "source_start_line": 2302,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::external_component_installation::2302"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "external_component_installation"
+  }
+]

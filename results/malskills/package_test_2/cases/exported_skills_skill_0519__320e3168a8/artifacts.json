@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "<!-- BEGIN GENERATED related (scripts/relate_skills.py) -->\r\n\r\n## Related\r\n\r\nSkills related to this one, with the nature of each relation (direction from prose citations; cluster domains characterized from exa and our own use). Symmetric \u2014 each related skill lists this one too. Do not edit inside the markers; regenerate with `python3 scripts/relate_skills.py`.\r\n\r\n- `condensed-analytic-stacks` \u2014 builds on \u2014 Scholze Clausen condensed mathematics bridge to sheaf neural networks\r\n- `duck-time-travel` \u2014 sibling in the skill routing & dispatch cluster \u2014 DuckDB time travel queries for temporal versioning and causality tracking\r\n- `duckdb-timetravel` \u2014 builds on \u2014 Layer 3: Temporal Versioning and ACSet Schema Generation for DuckDB\r\n- `ducklake` \u2014 builds on \u2014 Create, query, migrate, and maintain DuckLake lakehouse databases using the DuckDB duckla\u2026\r\n- `interverse-bundle` \u2014 sibling in the skill routing & dispatch cluster \u2014 This skill bundles the Interverse Engineering & Acrobatics research program:\r\n- `self-validation-loop` \u2014 builds on \u2014 Run self validation loops for triadic color systems using prediction\r\n\r\n<!-- END GENERATED related -->\r\n",
+    "content_hash": "1bf00bbaef2b5f6da58e354f678e7d575d3de8941519f4d8f9828cd81064bfde",
+    "generated": false,
+    "is_text": true,
+    "line_count": 15,
+    "relative_path": "CONCOMITANT_SKILLS.md",
+    "size_bytes": 1176,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: 69-constructions\r\ndescription: 'From Interverse transcript (Sep-Oct 2025):'\r\n---\r\n# 69-constructions Skill\r\n\r\n> *Self-play curricula via DuckLake time-travel with path-invariant verification*\r\n\r\n**Trit**: -1 (MINUS - consumer/verifier)\r\n\r\n## Origin\r\n\r\nFrom Interverse transcript (Sep-Oct 2025):\r\n> \"Executed my preceding ask of verification 69 times, which led to constructions of constructions... enumerate those 69 previous interactions relating to constructions as a verification step.\"\r\n\r\n## The 69 Curriculum\r\n\r\nA year-long weekly schedule of condensed mathematics topics:\r\n\r\n| Week | Topic |\r\n|------|-------|\r\n| Dec 5 | Condensing and constructing morphisms |\r\n| Jan 2 | Role in robust AI systems |\r\n| Jan 9 | Modeling abstract mathematical objects |\r\n| ... | ... |\r\n| Sep 25 | Representations of the world |\r\n\r\n**Total**: 69 weekly constructions covering condensed sets, derived categories, spectral sequences, \u221e-categories, and cognitive modeling.\r\n\r\n## Path-Invariant Verification\r\n\r\n```\r\nUI creates task \u2192 DB stores task \u2192 UI reads task \u2192 DB confirms\r\n                     \u2193\r\n              Path invariant:\r\n         create;read = read;create = id\r\n```\r\n\r\nThe system tests itself by verifying both directions:\r\n- Forward: UI \u2192 DB \u2192 verification\r\n- Backward: DB \u2192 UI \u2192 verification\r\n\r\n## DuckLake Time-Travel\r\n\r\n```sql\r\n-- Query historical state at construction #42\r\nSELECT * FROM constructions\r\nAS OF TIMESTAMP '2025-04-10'\r\nWHERE construction_id = 42;\r\n\r\n-- Diff between constructions\r\nSELECT * FROM table_diff(\r\n    'constructions', \r\n    '2025-03-01', \r\n    '2025-04-01'\r\n);\r\n```\r\n\r\n## Self-Play Structure\r\n\r\n```julia\r\nstruct SelfPlayCurriculum\r\n    constructions::Vector{Construction}  # 69 of them\r\n    verifications::Matrix{Bool}          # 69\u00d769 path checks\r\n    time_travel_enabled::Bool\r\nend\r\n\r\nfunction verify_path_invariant(c::SelfPlayCurriculum, i::Int, j::Int)\r\n    forward = apply(c.constructions[i], c.constructions[j])\r\n    backward = apply(c.constructions[j], c.constructions[i])\r\n    return forward == backward  # Commutativity check\r\nend\r\n```\r\n\r\n## Related Skills\r\n\r\n- `duckdb-timetravel` (0): Temporal versioning layer\r\n- `self-validation-loop` (-1): Prediction vs observation\r\n- `duck-time-travel` (0): Time-travel queries\r\n- `condensed-analytic-stacks` (+1): Scholze-Clausen bridge\r\n\r\n## Commands\r\n\r\n```bash\r\n# Run 69-construction verification\r\nbb 69-constructions.bb --verify-all\r\n\r\n# Time-travel query\r\nduckdb -c \"SELECT * FROM constructions AS OF '2025-06-01'\"\r\n```\r\n\r\n\r\n---\r\n\r\n## Autopoietic Marginalia\r\n\r\n> **The interaction IS the skill improving itself.**\r\n\r\nEvery use of this skill is an opportunity for worlding:\r\n- **MEMORY** (-1): Record what was learned\r\n- **REMEMBERING** (0): Connect patterns to other skills  \r\n- **WORLDING** (+1): Evolve the skill based on use\r\n\r\n\r\n\r\n*Add Interaction Exemplars here as the skill is used.*\r\n",
+    "content_hash": "d9da315cd017510b3bee500a4a0a46c959b2c142a883a54f70f85a7e89cb6674",
+    "generated": false,
+    "is_text": true,
+    "line_count": 107,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2902,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# Run 69-construction verification\r\nbb 69-constructions.bb --verify-all\r\n\r\n# Time-travel query\r\nduckdb -c \"SELECT * FROM constructions AS OF '2025-06-01'\"",
+    "content_hash": "7a85a5c27d581ce385cde709bb0451d8b750d234a98959ed668f6367e8ff3ed7",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 154,
+    "source_artifact_id": "art_0001",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 90,
+    "source_start_line": 84
+  }
+]

@@ -1,0 +1,37 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_5.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::1" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::1\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::3" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::3\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::1" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::1\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::3" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::3\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=system_information_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_delete"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=sensitive_data_access\nsubtype=system_information_access"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=file_operation\nsubtype=file_delete"];
+  "value::0565562bb4939774dcae" [label="value::0565562bb4939774dcae\nkind=value"];
+  "value::5fa55ebc7d5021fb8ca2" [label="value::5fa55ebc7d5021fb8ca2\nkind=value"];
+  "value::88d74a9b87abc25ecbd3" [label="value::88d74a9b87abc25ecbd3\nkind=value"];
+  "value::98451bd0c41ab674686e" [label="value::98451bd0c41ab674686e\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0006" -> "sso_00000" [label="contains"];
+  "art_0006" -> "sso_00001" [label="contains"];
+  "art_0006" -> "sso_00002" [label="contains"];
+  "art_0006" -> "sso_00003" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::1" -> "value::98451bd0c41ab674686e" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::3" -> "value::88d74a9b87abc25ecbd3" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::1" -> "value::5fa55ebc7d5021fb8ca2" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::3" -> "value::0565562bb4939774dcae" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::1" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::1" [label="has_operand"];
+  "sso_00002" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_information_access::3" [label="has_operand"];
+  "sso_00003" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_delete::3" [label="has_operand"];
+}

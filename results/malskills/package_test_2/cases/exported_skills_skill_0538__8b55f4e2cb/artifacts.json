@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Execute Project Skill\r\n\r\n## Skill: Execute All Tasks in Directory with Subagent\r\n\r\nIn `specs/projects/$1/tasks/`, for each task file, spawn a subagent to execute the task. Collect and report the results from all subagents.\r\nYou can check the `specs/projects/$1/tasks/Dependency.md` for helping you to parallelize the work.\r\n\r\n## Steps\r\n1. For each task file in `specs/projects/$1/tasks/` (excluding SKILL.md), spawn a subagent with the corresponding task file as input. Can be parallelized if there is no dependency between tasks (see `specs/projects/$1/tasks/Dependency.md`).\r\n    - Subagent may check the `specs/architecture/` for helping it to execute the task.\r\n    - The subagent will execute the implementation steps, run the tests, and check that the implementation is correct. If not, it will continue to work on the task until it is done.\r\n    - A task is considered done when all implementation steps are completed, all tests are passing, and the implementation is correct. \r\n    - When finished, the subagent will update the architecture documentation in `specs/architecture/` and subdirectories if necessary.\r\n    - When finished and commited, the subagent will commit the changes with an appropriate professional commit message.\r\n2. When all tasks are completed, check that all tests are passing and that the implementation is correct. If not, continue to work on them.\r\n3. When everything is done, checked, commited, report the result in a concise way.\r\n4. Move the project to `specs/done/`.\r\n",
+    "content_hash": "1e16f964005e007d738f572049d7c1256b89f49718d2224fca294a076521e142",
+    "generated": false,
+    "is_text": true,
+    "line_count": 18,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1509,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

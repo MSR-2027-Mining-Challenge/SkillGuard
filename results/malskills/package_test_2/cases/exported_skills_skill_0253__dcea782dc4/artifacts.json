@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: claude-code-switchboard\r\ndescription: \"Manage how OpenClaw routes Telegram messages to different Claude model backends. Switch between CLI and API providers with simple config changes.\"\r\n---\r\n\r\n# /telegram-routing \u2014 Telegram Message Routing Manager\r\n\r\nManage how Telegram messages are routed between different Claude model backends in OpenClaw.\r\n\r\n## Usage\r\n\r\n```\r\n/telegram-routing status       # Show current routing config\r\n/telegram-routing model <ref>  # Switch primary model (e.g. opus, sonnet, haiku)\r\n/telegram-routing logs         # Show recent message processing logs\r\n/telegram-routing fallback     # Switch to lightweight API mode\r\n/telegram-routing restore      # Restore default CLI-based routing\r\n```\r\n\r\n## Config Location\r\n\r\nAll settings live in `~/.openclaw/openclaw.json` under `agents.defaults`.\r\n\r\n### Key fields:\r\n- `model.primary` \u2014 The primary model/provider reference\r\n- `model.fallbacks` \u2014 Ordered fallback chain when primary is unavailable\r\n\r\n## Commands\r\n\r\n### status\r\n\r\nRead the OpenClaw config and display current routing settings including:\r\n- Active primary model\r\n- Configured fallback models\r\n- Whether CLI backend is active\r\n\r\n### model <ref>\r\n\r\nSwitch the primary model. Valid shorthand references:\r\n\r\n| Shorthand | Resolves to |\r\n|-----------|-------------|\r\n| `opus` | `claude-cli/opus` |\r\n| `sonnet` | `claude-cli/sonnet` |\r\n| `haiku` | `anthropic/claude-haiku-4-5` |\r\n\r\nSteps:\r\n1. Read `~/.openclaw/openclaw.json`\r\n2. Update `agents.defaults.model.primary` to the resolved model reference\r\n3. Write the updated config\r\n4. Restart the gateway service\r\n5. Verify via gateway logs\r\n\r\n### logs\r\n\r\nShow recent Telegram message processing activity from the gateway log.\r\n\r\n### fallback\r\n\r\nQuick switch to API-only mode for faster, lightweight responses.\r\n\r\n### restore\r\n\r\nRestore the default CLI-based routing configuration.\r\n\r\n## Architecture\r\n\r\nMessages flow through the OpenClaw Gateway, which reads the configured model provider and dispatches to the appropriate backend. CLI-based providers use the local Claude Code installation, while API providers make direct API calls.\r\n\r\n## Troubleshooting\r\n\r\n| Issue | Fix |\r\n|-------|-----|\r\n| Config errors on restart | Run `openclaw doctor` to validate config |\r\n| Slow responses | Try switching to `sonnet` for faster responses |\r\n| Gateway issues | Check `~/.openclaw/logs/gateway.log` for details |\r\n| Falling back to secondary model | Primary backend may be unavailable \u2014 check logs |\r\n",
+    "content_hash": "0aa21de2f8ee114874d0d7f414457f195e2ff6b5c83a47b0bc28aeb76a2ffa3e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 78,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2490,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

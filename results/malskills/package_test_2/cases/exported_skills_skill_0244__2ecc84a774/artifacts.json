@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: franken-adapter-eval\r\ndescription: Evaluates the cross-lingual adaptation and zero-shot/few-shot transfer capabilities of decoder-only LLMs across reading comprehension, topic classification, machine translation, mathematical reasoning, and summarization tasks in Southeast Asian, African, and Indic languages. Use when the user wants to benchmark on BeleBele, Sib-200, Flores-200, GSM8K-NTL, IndicGenBench, or asks about evaluating this task. Reports Accuracy, ChrF++.\r\nmetadata:\r\n  skill_kind: dataset_eval\r\n  source_arxiv: 2502.08037\r\n  bibtex_key: jiang2025frankenadapter\r\n  confidence: high\r\n---\r\n\r\n# franken-adapter-eval\r\n\r\n> Franken-Adapter: Cross-Lingual Adaptation of LLMs by Embedding Surgery \u2014 Fan Jiang et al. (arXiv:2502.08037, 2025)\r\n\r\n## What this evaluates\r\n\r\nEvaluates the cross-lingual adaptation and zero-shot/few-shot transfer capabilities of decoder-only LLMs across reading comprehension, topic classification, machine translation, mathematical reasoning, and summarization tasks in Southeast Asian, African, and Indic languages.\r\n\r\n## Datasets\r\n\r\n- **BeleBele** \u2014 total ?; splits: test (-1)\r\n- **Sib-200** \u2014 total ?; splits: test (-1)\r\n- **Flores-200** \u2014 total ?; splits: test (-1)\r\n- **GSM8K-NTL** \u2014 total ?; splits: test (-1)\r\n- **IndicGenBench** \u2014 total ?; splits: test (-1)\r\n\r\n## Metrics\r\n\r\n- `Accuracy` **(primary)** \u2014 range: [0, 1]\r\n  - Proportion of correctly predicted labels or options across all instances. Calculated as correct predictions divided by total predictions.\r\n- `ChrF++` **(primary)** \u2014 range: percent\r\n  - Character n-gram F-score extended with character n-gram precision and recall, typically with beta=2. Measures character-level overlap between generated and reference translations.\r\n- `Token-level F1` \u2014 range: [0, 1]\r\n  - Harmonic mean of token-level precision and recall for cross-lingual question answering. Averages F1 scores across all tokens in the prediction and reference.\r\n- `ChrF` \u2014 range: percent\r\n  - Character n-gram F-score used for summarization evaluation. Measures character-level overlap between generated summaries and references.\r\n\r\n## Input / output format\r\n\r\n**Input**: Text prompt containing task instructions and up to five demonstration examples (few-shot) or just the task instruction (zero-shot), followed by the target language query or source text.\r\n\r\n**Output**: Model-generated text (for generation tasks) or selected option letter/text (for multiple-choice/classification tasks).\r\n\r\n## Scoring recipe\r\n\r\n```python\r\ndef compute_metrics(predictions, golds, task_type):\r\n    if task_type in ['classification', 'qa', 'math_reasoning']:\r\n        return sum(1 for p, g in zip(predictions, golds) if p == g) / len(golds)\r\n    elif task_type == 'mt':\r\n        return chrf_score(predictions, golds, beta=2)  # ChrF++\r\n    elif task_type == 'summarization':\r\n        return chrf_score(predictions, golds, beta=2)  # ChrF\r\n    elif task_type == 'qa_f1':\r\n        return f1_score(predictions, golds, average='token')\r\n```\r\n\r\n## Common pitfalls\r\n\r\n- Generation tasks often show performance degradation compared to classification due to auto-regressive error propagation accumulating over time steps.\r\n- English proficiency regression is minimal but must be explicitly monitored using a separate compiled English benchmark, as cross-lingual gains do not guarantee English preservation.\r\n- Tokenizer fertility reduction improves low-resource performance but requires careful 'Prune-with-Extension' construction to avoid parameter bloat and latency issues.\r\n\r\n## Evidence (verbatim from paper)\r\n\r\n> For LLMs after language adaptation, we adopt the *five-shot* prompting strategy. In contrast, Franken-Adapter is evaluated in a *zero-shot* setting, given it has been instruction tuned. We also evaluate Franken-Adapter using a compiled English benchmark (Appendix[B]) to examine potential regressions in general English ability. BeleBele *(Bandarkar et al., [2024])* is a multiple-choice reading comprehension (MRC) dataset with 122 languages. ... We follow the original paper to use the Accuracy metric and sample five-shot prompts from the English training dataset. ... Flores-200 *(Goyal et al., [2022])* is a machine translation dataset with 200 languages. ... evaluate ... using ChrF++ and sample five-shot prompts ... GSM8K-NTL ... use the Accuracy metric and fixed five-shot prompts. IndicGenBench ... zero-shot prompting. The token-level F1 and ChrF scores are reported inXorQA-In andXSum-In, respectively.\r\n\r\n## Citation\r\n\r\n```bibtex\r\n@misc{jiang2025frankenadapter,\r\n  title={Franken-Adapter: Cross-Lingual Adaptation of LLMs by Embedding Surgery},\r\n  author={Fan Jiang et al.},\r\n  year={2025},\r\n  note={arXiv:2502.08037}\r\n}\r\n```\r\n\r\n- arXiv: 2502.08037\r\n",
+    "content_hash": "c5853ef1a681247dda6b7931d34f4070214e342101cf8fb3a801212967b77dcf",
+    "generated": false,
+    "is_text": true,
+    "line_count": 80,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4759,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "def compute_metrics(predictions, golds, task_type):\r\n    if task_type in ['classification', 'qa', 'math_reasoning']:\r\n        return sum(1 for p, g in zip(predictions, golds) if p == g) / len(golds)\r\n    elif task_type == 'mt':\r\n        return chrf_score(predictions, golds, beta=2)  # ChrF++\r\n    elif task_type == 'summarization':\r\n        return chrf_score(predictions, golds, beta=2)  # ChrF\r\n    elif task_type == 'qa_f1':\r\n        return f1_score(predictions, golds, average='token')",
+    "content_hash": "6e5e05fb2d27d9be34cd39afc4ffadd18be3af7b18078489d0b7f8ad7207f447",
+    "generated": true,
+    "is_text": true,
+    "line_count": 9,
+    "relative_path": ".malskills_fences/SKILL__fence_0.py",
+    "size_bytes": 489,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 56,
+    "source_start_line": 46
+  }
+]

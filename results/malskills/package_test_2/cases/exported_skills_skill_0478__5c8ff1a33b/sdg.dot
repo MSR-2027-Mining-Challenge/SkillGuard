@@ -1,0 +1,14 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_0.ts"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=server_listen"];
+  "value::27c174b74a330a45baad" [label="value::27c174b74a330a45baad\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');" -> "value::27c174b74a330a45baad" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');" [label="has_operand"];
+}

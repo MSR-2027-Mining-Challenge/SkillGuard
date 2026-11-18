@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: croq-dsl-cuda\r\ndescription: DSL-specific tuning contract for CUDA kernels. Loaded by croq-tune when dsl=cuda.\r\n---\r\n\r\n# Croq-DSL: CUDA\r\n\r\nSource extension: `.cu` | Compiler: `nvcc` -> static binary | Group: compiled-binary\r\n\r\n## Environment Validation\r\n\r\nNo additional checks beyond the standard ncu/nvcc/GPU validation.\r\n\r\n## BUILD / RUN Templates\r\n\r\n**build_iter\\<NNN\\>.sh:**\r\n```bash\r\n#!/usr/bin/env bash\r\nset -e\r\nnvcc -O3 -arch=sm_90 -std=c++17 -I/usr/local/cuda/include \\\r\n     -o tuning/<gpu>/cuda/bin/<shape_key>/<model>/iter<NNN>_<tag> \\\r\n     tuning/<gpu>/cuda/srcs/<shape_key>/<model>/iter<NNN>_<tag>.cu \\\r\n     2>&1 | tee tuning/<gpu>/cuda/perf/<shape_key>/<model>/build_iter<NNN>.txt\r\n```\r\n\r\n**run_iter\\<NNN\\>.sh:**\r\n```bash\r\n#!/usr/bin/env bash\r\ntuning/<gpu>/cuda/bin/<shape_key>/<model>/iter<NNN>_<tag> \\\r\n    2>&1 | tee tuning/<gpu>/cuda/perf/<shape_key>/<model>/timing_iter<NNN>.txt\r\n```\r\n\r\nBinary must print: `TFLOPS: <value>   time_ms: <value>`\r\n\r\n## PROFILE \u2014 ncu Command\r\n\r\n```bash\r\nncu --set full \\\r\n    --export tuning/<gpu>/cuda/perf/<shape_key>/<model>/ncu_iter<NNN>.ncu-rep \\\r\n    --force-overwrite \\\r\n    tuning/<gpu>/cuda/bin/<shape_key>/<model>/iter<NNN>_<tag> [args]\r\n\r\nncu --import tuning/<gpu>/cuda/perf/<shape_key>/<model>/ncu_iter<NNN>.ncu-rep \\\r\n    --csv --page raw \\\r\n    > tuning/<gpu>/cuda/perf/<shape_key>/<model>/ncu_iter<NNN>.csv\r\n```\r\n\r\n## Pure Implementation Rule\r\n\r\n**Allowed:** Raw CUDA kernels, CUDA intrinsics (`__shfl_sync`, `__ldg`, etc.),\r\nPTX inline asm (`asm volatile`), cooperative groups, CuTe/CUTLASS atoms only\r\n(copy atoms, MMA atoms, layout algebra).\r\n\r\n**Forbidden:** `cublasSgemm`, `cublasGemmEx`, `cutlass::gemm::device::Gemm`,\r\ncuSPARSELt, cuDNN compute calls, PyTorch/TensorFlow ops.\r\n\r\n## IDEA Menu\r\n\r\n| Bottleneck | Ideas |\r\n|---|---|\r\n| Memory-bound (DRAM) | Increase BM/BN/BK tiles; vectorize loads (`float4`/`uint4`); `cp.async`; `__ldg`; TMA (Hopper) |\r\n| Compute-bound | Reduce smem; decrease register count (`--maxrregcount`); increase threads; split accumulator |\r\n| Latency-bound | Add `cp.async` pipeline stages; `tma.load` on Hopper; interleave independent mem + compute |\r\n| L2 locality | Threadblock swizzle (tile-ID remapping); change CTA launch order |\r\n| Bank conflicts | Pad smem arrays (`+4`/`+8` elements/row); swizzled shared layout |\r\n| Warp divergence | Eliminate conditional branches in hot paths; predicate with masks |\r\n\r\n**Key levers:** BM/BN/BK (multiples of 16, typically 64-256), warp count (blockDim),\r\npipeline stages (1-5), smem padding, register pressure (`#pragma unroll N`, `--maxrregcount`),\r\nvectorized loads, warp primitives, PTX inline (`ldmatrix`, `mma.sync`), TMA.\r\n\r\n## VERIFY / MEASURE\r\n\r\nThe binary must accept `--verify` (or run verify by default) and:\r\n1. Compute with custom kernel\r\n2. Compute reference (cuBLAS in harness, or prior verified iter)\r\n3. Print `VERIFY: PASS` or `VERIFY: FAIL max_abs_err=<v>`\r\n\r\n**Verification Tolerance:**\r\n\r\n| Precision | base_tol | rel_tol | Notes |\r\n|-----------|----------|---------|-------|\r\n| FP16 input, FP32 accum | 1.0 | 0.01 | Standard |\r\n| FP16 input, FP16 accum | 16.0 | 0.05 | Higher error from FP16 accumulation |\r\n| FP8 E4M3 input, FP16 accum | 0.5 | 0.01 | FP8 inputs are lower magnitude |\r\n\r\n**NEVER print \"Test Passed\" without actual numerical comparison.**\r\nKeep reference tensors alive in host code. Timing via CUDA events (10 warmup + 50 timed).\r\n\r\n## BASELINE (iter000)\r\n\r\ncuBLAS harness (`.cu`) \u2014 calls `cublasGemmEx`. Library calls allowed only in iter000.\r\n",
+    "content_hash": "0aa8ccbd8efa8c46e0b632cf25ad0cca21672f9aa7c768793f550f4c110beb5b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 93,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3540,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "#!/usr/bin/env bash\r\nset -e\r\nnvcc -O3 -arch=sm_90 -std=c++17 -I/usr/local/cuda/include \\\r\n     -o tuning/<gpu>/cuda/bin/<shape_key>/<model>/iter<NNN>_<tag> \\\r\n     tuning/<gpu>/cuda/srcs/<shape_key>/<model>/iter<NNN>_<tag>.cu \\\r\n     2>&1 | tee tuning/<gpu>/cuda/perf/<shape_key>/<model>/build_iter<NNN>.txt",
+    "content_hash": "05b54344c5d5edb6fe11b62c4278de9537d299f81248c5fa723a705e24a9f173",
+    "generated": true,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 307,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 24,
+    "source_start_line": 17
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "#!/usr/bin/env bash\r\ntuning/<gpu>/cuda/bin/<shape_key>/<model>/iter<NNN>_<tag> \\\r\n    2>&1 | tee tuning/<gpu>/cuda/perf/<shape_key>/<model>/timing_iter<NNN>.txt",
+    "content_hash": "2ad11e20d0824fd494c9cf4b70734533b5098d0d2fd9f192795e59edae7b9aaf",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 160,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 31,
+    "source_start_line": 27
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "ncu --set full \\\r\n    --export tuning/<gpu>/cuda/perf/<shape_key>/<model>/ncu_iter<NNN>.ncu-rep \\\r\n    --force-overwrite \\\r\n    tuning/<gpu>/cuda/bin/<shape_key>/<model>/iter<NNN>_<tag> [args]\r\n\r\nncu --import tuning/<gpu>/cuda/perf/<shape_key>/<model>/ncu_iter<NNN>.ncu-rep \\\r\n    --csv --page raw \\\r\n    > tuning/<gpu>/cuda/perf/<shape_key>/<model>/ncu_iter<NNN>.csv",
+    "content_hash": "cbc4561e27b5da6bf7fd169b7f5d5740a1d1d50f61493b86d378a53aa766682f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 367,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 46,
+    "source_start_line": 37
+  }
+]

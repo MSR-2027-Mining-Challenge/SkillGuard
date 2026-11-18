@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: auditor-gate\r\ndescription: Apply final governance and release-gate checks to a judged change set by reading `handoff.json`, `verdict.json`, optional eval evidence, and emitting machine-readable `audit.json` with `gate` status. Use when implementation already has a judge verdict and a separate auditor must decide landability (`pass`, `fail`, or `needs-human`) without modifying source files.\r\n---\r\n\r\n# Auditor Gate\r\n\r\nRun final acceptance gating as a separate role after judge evaluation.\r\n\r\n## Role Boundaries\r\n\r\n- Audit process and risk posture.\r\n- Validate traceability and policy signals.\r\n- Produce `audit.json` only.\r\n- Do not implement fixes and do not re-grade functional correctness from scratch.\r\n\r\n## Required Inputs\r\n\r\n- `task_id`\r\n- `handoff.json`\r\n- `verdict.json`\r\n- output path for `audit.json`\r\n\r\nOptional:\r\n- `eval-results.json`\r\n- explicit audit commands (policy/security/license/quality checks)\r\n\r\n## Workflow\r\n\r\n### 1) Run audit evidence collection\r\n\r\nRun:\r\n\r\n```bash\r\npython3 <path-to-skill>/scripts/run_audit.py \\\r\n  --repo <repo-root> \\\r\n  --handoff <artifact-path>/handoff.json \\\r\n  --verdict <artifact-path>/verdict.json \\\r\n  --output <artifact-path>/audit-results.json \\\r\n  --command \"python3 -m pip list --format=freeze\"\r\n```\r\n\r\nThis collects artifact-integrity checks and command outcomes.\r\nIt also checks task and requirement traceability between `handoff.json` and `verdict.json`.\r\n\r\n### 2) Write gate artifact\r\n\r\nRun:\r\n\r\n```bash\r\npython3 <path-to-skill>/scripts/write_audit.py \\\r\n  --task-id <task-id> \\\r\n  --audit-results <artifact-path>/audit-results.json \\\r\n  --output <artifact-path>/audit.json \\\r\n  --gate fail \\\r\n  --finding \"policy::Dependency policy review missing\" \\\r\n  --required-action \"Add dependency review evidence\" \\\r\n  --risk-level high\r\n```\r\n\r\n### 3) Validate gate artifact\r\n\r\nRun:\r\n\r\n```bash\r\npython3 <path-to-skill>/scripts/validate_audit.py \\\r\n  --input <artifact-path>/audit.json\r\n```\r\n\r\n## Decision Rules\r\n\r\n- `pass`:\r\n  - no critical audit failures\r\n  - traceability and policy checks pass or are explicitly accepted\r\n- `fail`:\r\n  - policy, traceability, or release constraints are violated\r\n- `needs-human`:\r\n  - missing evidence or ambiguous policy interpretation blocks deterministic decision\r\n\r\n## Output Rules\r\n\r\n- Always produce `audit.json`.\r\n- Keep findings evidence-based and implementation-neutral.\r\n- Provide concrete `required_actions` for `fail` and `needs-human`.\r\n- Report requirement-coverage traceability explicitly in `audit.json`.\r\n\r\n## Resources\r\n\r\n### scripts/\r\n- `scripts/run_audit.py`: collect artifact and command-level audit evidence.\r\n- `scripts/write_audit.py`: synthesize `audit.json` gate decision.\r\n- `scripts/validate_audit.py`: validate audit artifact schema.\r\n\r\n### references/\r\n- `references/artifact-contract.md`: canonical `audit.json` structure.\r\n- `references/gate-rubric.md`: practical criteria for `pass`/`fail`/`needs-human`.\r\n",
+    "content_hash": "1c8b6b46524cf0e1569597359bb59ff2ea7d9c08af865c8822cf34714fa14a89",
+    "generated": false,
+    "is_text": true,
+    "line_count": 97,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2935,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "python3 <path-to-skill>/scripts/run_audit.py \\\r\n  --repo <repo-root> \\\r\n  --handoff <artifact-path>/handoff.json \\\r\n  --verdict <artifact-path>/verdict.json \\\r\n  --output <artifact-path>/audit-results.json \\\r\n  --command \"python3 -m pip list --format=freeze\"",
+    "content_hash": "49fbb90ccce76523a5aed55ca1f34edadcdb352761b74416fdcb5570ea433e44",
+    "generated": true,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 258,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 41,
+    "source_start_line": 34
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "python3 <path-to-skill>/scripts/write_audit.py \\\r\n  --task-id <task-id> \\\r\n  --audit-results <artifact-path>/audit-results.json \\\r\n  --output <artifact-path>/audit.json \\\r\n  --gate fail \\\r\n  --finding \"policy::Dependency policy review missing\" \\\r\n  --required-action \"Add dependency review evidence\" \\\r\n  --risk-level high",
+    "content_hash": "2f0c9e558fa097d106b81b7b5032a98a4041e704b295234ae5b1e0412e69c6b0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 322,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 59,
+    "source_start_line": 50
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "python3 <path-to-skill>/scripts/validate_audit.py \\\r\n  --input <artifact-path>/audit.json",
+    "content_hash": "a50f251db7ef22dc4e7c2880bd241aca5135824e507cc741e12862312202b6bd",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 89,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 68,
+    "source_start_line": 65
+  }
+]

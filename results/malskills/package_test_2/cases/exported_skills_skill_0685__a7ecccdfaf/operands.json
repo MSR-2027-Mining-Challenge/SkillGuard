@@ -1,0 +1,72 @@
+[
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::2",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::2",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::2",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::4",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::4",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::4",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::5",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::5",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::5",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::16",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::16",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::dynamic_code_execution::16",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::data_receive::echo \"published object: \"; curl -s \"$BASE/challenges.jsonl\" | sha256sum | cut -d' ' -f1",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::data_receive::echo \"published object: \"; curl -s \"$BASE/challenges.jsonl\" | sha256sum | cut -d' ' -f1",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::echo \"published object: \"; curl -s \"$BASE/challenges.jsonl\" | sha256sum | cut -d' ' -f1",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_0.sh::data_receive::curl -sI \"$BASE/challenges.jsonl\" | grep -iE '^HTTP|content-length'   # expect 200 + matching size",
+    "identity_key": ".malskills_fences/SKILL__fence_0.sh::data_receive::curl -sI \"$BASE/challenges.jsonl\" | grep -iE '^HTTP|content-length'   # expect 200 + matching size",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -sI \"$BASE/challenges.jsonl\" | grep -iE '^HTTP|content-length'   # expect 200 + matching size",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  }
+]

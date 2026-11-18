@@ -1,0 +1,36 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_2.ts"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_3.tsx"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_4.ts"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_5.ts"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_6.ts"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_7.tsx"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_8.ts"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_9.ts"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_10.ts"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_11.ts"];
+  "art_0013" [label="art_0013\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_12.tsx"];
+  "art_0014" [label="art_0014\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_14.ts"];
+  "art_0015" [label="art_0015\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_15.ts"];
+  "art_0016" [label="art_0016\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_16.ts"];
+  "art_0017" [label="art_0017\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_17.ts"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1" [label="obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1\nkind=operand"];
+  "obj::operation::SKILL.md::package_installation::41" [label="obj::operation::SKILL.md::package_installation::41\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "value::3d97e81ee1cfe9ca083c" [label="value::3d97e81ee1cfe9ca083c\nkind=value"];
+  "value::3e57a360fd920b50f327" [label="value::3e57a360fd920b50f327\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00001" [label="contains"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1" -> "value::3d97e81ee1cfe9ca083c" [label="value_flow"];
+  "obj::operation::SKILL.md::package_installation::41" -> "value::3e57a360fd920b50f327" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1" [label="has_operand"];
+  "sso_00001" -> "obj::operation::SKILL.md::package_installation::41" [label="has_operand"];
+}

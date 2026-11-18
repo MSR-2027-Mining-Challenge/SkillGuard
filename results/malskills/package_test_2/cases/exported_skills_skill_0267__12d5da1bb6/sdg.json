@@ -1,0 +1,204 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": ".clawhub/origin.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0001",
+      "path": "QUALITY_CRITERIA.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "RESEARCH_PROTOCOL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "path": "_meta.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0005",
+      "path": "scripts/quality-score.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0005",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/quality-score.py::credential_data_access::101",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/quality-score.py::credential_data_access::101",
+      "target": "value::dd2c3163947f9c056492",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::scripts/quality-score.py::encoding",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/quality-score.py::encoding",
+      "target": "value::85153e3b6a57f161217e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0005",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/quality-score.py::credential_data_access::113",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/quality-score.py::credential_data_access::113",
+      "target": "value::771a3fc4c6eb90440c3e",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": ".clawhub/origin.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "QUALITY_CRITERIA.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "RESEARCH_PROTOCOL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "_meta.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "scripts/quality-score.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/quality-score.py::credential_data_access::101",
+      "identity_key": "scripts/quality-score.py::credential_data_access::101",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::dd2c3163947f9c056492",
+      "kind": "value",
+      "value": "scripts/quality-score.py::credential_data_access::101",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/quality-score.py::encoding",
+      "identity_key": "scripts/quality-score.py::encoding",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::85153e3b6a57f161217e",
+      "kind": "value",
+      "value": "scripts/quality-score.py::encoding",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/quality-score.py::credential_data_access::113",
+      "identity_key": "scripts/quality-score.py::credential_data_access::113",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::771a3fc4c6eb90440c3e",
+      "kind": "value",
+      "value": "scripts/quality-score.py::credential_data_access::113",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

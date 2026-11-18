@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: vue-cross-tab-navigate\r\ndescription: Vue 3 \u5b50\u7ec4\u4ef6\u4e2d\u8868\u5355\u9879\u4ee5\u63d0\u793a\u6587\u6848\u66ff\u4ee3\u8f93\u5165\u63a7\u4ef6\uff0c\u70b9\u51fb\u94fe\u63a5\u8df3\u8f6c\u5230\u540c\u9875\u9762\u53e6\u4e00\u4e2a Tab \u9875\u7b7e\r\nsource: auto-skill\r\nextracted_at: '2026-06-16T10:56:51.418Z'\r\n---\r\n\r\n# Vue 3 \u8868\u5355\u9879\u63d0\u793a\u8df3\u8f6c\u81f3\u53e6\u4e00 Tab\r\n\r\n## \u573a\u666f\r\n\r\n\u5728\u591a Tab \u9875\u9762\u4e2d\uff0c\u67d0\u4e2a Tab \u4e0b\u7684\u8868\u5355\u9879\u4e0d\u518d\u9700\u8981\u7528\u6237\u76f4\u63a5\u7f16\u8f91\uff0c\u800c\u662f\u63d0\u793a\u7528\u6237\u524d\u5f80\u53e6\u4e00\u4e2a Tab \u914d\u7f6e\u3002\u9700\u8981\u5c06\u8f93\u5165\u63a7\u4ef6\u66ff\u6362\u4e3a\u63d0\u793a\u6587\u6848 + \u53ef\u70b9\u51fb\u94fe\u63a5\uff0c\u70b9\u51fb\u540e\u81ea\u52a8\u5207\u6362\u5230\u76ee\u6807 Tab\u3002\r\n\r\n## \u6b65\u9aa4\r\n\r\n### 1. \u5b50\u7ec4\u4ef6\uff1a\u66ff\u6362\u8f93\u5165\u63a7\u4ef6\u4e3a\u63d0\u793a\u6587\u6848\r\n\r\n\u5c06\u539f\u6765\u7684 `<a-input>` \u7b49\u8f93\u5165\u63a7\u4ef6\u66ff\u6362\u4e3a\u5e26\u94fe\u63a5\u7684\u63d0\u793a\u6587\u6848\uff1a\r\n\r\n```vue\r\n<!-- \u547c\u901a\u5373\u8f6c\uff1a\u8f6c\u63a5\u63d0\u793a\u8bed -->\r\n<div v-if=\"systemSettingsForm.transferCondition === 'auto-transfer'\" class=\"transfer-sub-setting\">\r\n  <a-form-item label=\"\u8f6c\u63a5\u63d0\u793a\u8bed\u914d\u7f6e\u9879\uff1a\" class=\"required-label\" style=\"margin-bottom: 0;\">\r\n    <span class=\"form-tip\">\r\n      \u63d0\u793a\uff1a\u8bf7\u5728\r\n      <a class=\"link-text\" @click.prevent=\"handleGoToFallbackSetting\">\u6d41\u7a0b\u515c\u5e95\u8bbe\u7f6e</a>\r\n      \u4e2d\u914d\u7f6e\u8f6c\u63a5\u63d0\u793a\u8bed\u6587\u6848\uff0c\u5e76\u4e0a\u4f20\u5bf9\u5e94\u5f55\u97f3\r\n    </span>\r\n  </a-form-item>\r\n</div>\r\n```\r\n\r\n\u5173\u952e\u70b9\uff1a\r\n- \u4f7f\u7528 `@click.prevent` \u963b\u6b62\u9ed8\u8ba4\u8df3\u8f6c\u884c\u4e3a\r\n- \u590d\u7528\u5df2\u6709\u7684 `.link-text` \u548c `.form-tip` \u6837\u5f0f\u7c7b\r\n- \u5982\u679c\u539f\u5b57\u6bb5\u4e0d\u518d\u4f7f\u7528\uff0c\u4ece `reactive` \u6570\u636e\u4e2d\u79fb\u9664\u8be5\u5b57\u6bb5\r\n\r\n### 2. \u5b50\u7ec4\u4ef6\uff1a\u6dfb\u52a0 emit \u4e8b\u4ef6\r\n\r\n\u5728 `defineEmits` \u4e2d\u58f0\u660e\u65b0\u4e8b\u4ef6\uff1a\r\n\r\n```ts\r\nconst emit = defineEmits<{\r\n  // ...\u5df2\u6709\u4e8b\u4ef6\r\n  (e: 'go-to-fallback-setting'): void;\r\n}>();\r\n```\r\n\r\n### 3. \u5b50\u7ec4\u4ef6\uff1a\u6dfb\u52a0\u8df3\u8f6c\u65b9\u6cd5\r\n\r\n```ts\r\nconst handleGoToFallbackSetting = () => {\r\n  emit('go-to-fallback-setting');\r\n};\r\n```\r\n\r\n### 4. \u7236\u7ec4\u4ef6\uff1a\u76d1\u542c\u4e8b\u4ef6\r\n\r\n\u5728\u6240\u6709\u4f7f\u7528\u8be5\u5b50\u7ec4\u4ef6\u7684\u7236\u7ec4\u4ef6\u4e2d\u7ed1\u5b9a\u4e8b\u4ef6\uff1a\r\n\r\n```vue\r\n<SystemSettingsTab\r\n  @save=\"handleSystemSettingsSave\"\r\n  @back=\"handleSystemSettingsBack\"\r\n  @go-to-fallback-setting=\"handleGoToFallbackSetting\"\r\n/>\r\n```\r\n\r\n> \u26a0\ufe0f \u6ce8\u610f\u68c0\u67e5\u6240\u6709\u4f7f\u7528\u8be5\u5b50\u7ec4\u4ef6\u7684\u7236\u7ec4\u4ef6\uff08grep \u641c\u7d22\u7ec4\u4ef6\u540d\uff09\uff0c\u6bcf\u4e2a\u90fd\u8981\u7ed1\u5b9a\u4e8b\u4ef6\u3002\r\n\r\n### 5. \u7236\u7ec4\u4ef6\uff1a\u6dfb\u52a0 Tab \u5207\u6362\u65b9\u6cd5\r\n\r\n```ts\r\nconst handleGoToFallbackSetting = () => {\r\n  activeTabKey.value = 'fallback'; // \u76ee\u6807 Tab \u7684 key\r\n};\r\n```\r\n\r\n## \u6ce8\u610f\u4e8b\u9879\r\n\r\n- \u5982\u679c\u540c\u4e00\u5b50\u7ec4\u4ef6\u88ab\u591a\u4e2a\u7236\u7ec4\u4ef6\u4f7f\u7528\uff08\u5982 SceneTemplateDetail.vue \u548c SceneDetail.vue\uff09\uff0c\u6bcf\u4e2a\u7236\u7ec4\u4ef6\u90fd\u9700\u8981\u7ed1\u5b9a\u4e8b\u4ef6\u5e76\u6dfb\u52a0\u5904\u7406\u65b9\u6cd5\r\n- \u76ee\u6807 Tab key \u9700\u8981\u4e0e `<a-tab-pane key=\"fallback\">` \u4e2d\u7684 key \u4e00\u81f4\r\n- \u4f7f\u7528 `@click.prevent` \u800c\u975e `href=\"#\"` \u53ef\u907f\u514d\u9875\u9762\u6eda\u52a8\u5230\u9876\u90e8\r\n",
+    "content_hash": "dda9f323c4a2a6f62aeffbfa92e24bd2d7be0c7299ee92857879e6fc38d14685",
+    "generated": false,
+    "is_text": true,
+    "line_count": 84,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2586,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "const emit = defineEmits<{\r\n  // ...\u5df2\u6709\u4e8b\u4ef6\r\n  (e: 'go-to-fallback-setting'): void;\r\n}>();",
+    "content_hash": "51e448142288cb66f6050f36083953fa1cfd94d047473e5254a42558a7001dc5",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_1.ts",
+    "size_bytes": 95,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 47,
+    "source_start_line": 42
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "javascript",
+    "content": "const handleGoToFallbackSetting = () => {\r\n  emit('go-to-fallback-setting');\r\n};",
+    "content_hash": "79841685ced242e56c648da3ebc95ad03208d2d1ea0bff5efad1ecb785a9b26c",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_2.ts",
+    "size_bytes": 80,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 55,
+    "source_start_line": 51
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "javascript",
+    "content": "const handleGoToFallbackSetting = () => {\r\n  activeTabKey.value = 'fallback'; // \u76ee\u6807 Tab \u7684 key\r\n};",
+    "content_hash": "3d29bf1eaa8e215e02e004163867fa26114b25b14bf55ebfc1216ba3cc213c71",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_4.ts",
+    "size_bytes": 103,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 77,
+    "source_start_line": 73
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: git-commit\r\ndescription: Create conventional commit messages. Use when committing changes or writing commit messages.\r\n---\r\n\r\n## Conventional Commits Format\r\n\r\n```\r\n<type>(<scope>): <subject>\r\n\r\n<body>\r\n\r\n<footer>\r\n```\r\n\r\n## Types\r\n\r\n| Type | Description |\r\n|------|-------------|\r\n| `feat` | New feature |\r\n| `fix` | Bug fix |\r\n| `docs` | Documentation only |\r\n| `style` | Formatting, no code change |\r\n| `refactor` | Code restructuring, no behavior change |\r\n| `perf` | Performance improvement |\r\n| `test` | Adding/updating tests |\r\n| `build` | Build system or dependencies |\r\n| `ci` | CI/CD configuration |\r\n| `chore` | Maintenance tasks |\r\n| `revert` | Reverting previous commit |\r\n\r\n## Rules\r\n\r\n### Subject Line\r\n- Max 50 characters\r\n- Imperative mood (\"add\" not \"added\")\r\n- No period at end\r\n- Lowercase\r\n\r\n### Body (optional)\r\n- Wrap at 72 characters\r\n- Explain what and why, not how\r\n- Separate from subject with blank line\r\n\r\n### Footer (optional)\r\n- Reference issues: `Closes #123`, `Fixes #456`\r\n- Breaking changes: `BREAKING CHANGE: description`\r\n\r\n## Examples\r\n\r\n### Simple\r\n```\r\nfeat(auth): add OAuth2 login support\r\n```\r\n\r\n### With Body\r\n```\r\nfix(api): handle null response from payment gateway\r\n\r\nThe payment gateway occasionally returns null instead of an error\r\nobject when the service is degraded. This caused unhandled exceptions.\r\n\r\nAdded null check and appropriate error handling.\r\n\r\nFixes #789\r\n```\r\n\r\n### Breaking Change\r\n```\r\nrefactor(api)!: change user endpoint response format\r\n\r\nBREAKING CHANGE: The /api/users endpoint now returns an object\r\nwith a `data` wrapper instead of a raw array.\r\n\r\nBefore: [{ id: 1, name: \"John\" }]\r\nAfter: { data: [{ id: 1, name: \"John\" }], meta: { total: 1 } }\r\n```\r\n\r\n## Commands\r\n```bash\r\n# Stage and commit\r\ngit add .\r\ngit commit -m \"feat(scope): description\"\r\n\r\n# Amend last commit\r\ngit commit --amend\r\n\r\n# Interactive rebase to fix commits\r\ngit rebase -i HEAD~3\r\n```\r\n",
+    "content_hash": "564e065e3f410274a8ade19a6dd3b0e3277103b112d5c5134fca4f41151812a4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 91,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1941,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Stage and commit\r\ngit add .\r\ngit commit -m \"feat(scope): description\"\r\n\r\n# Amend last commit\r\ngit commit --amend\r\n\r\n# Interactive rebase to fix commits\r\ngit rebase -i HEAD~3",
+    "content_hash": "afc22a2157d201b2dfff89b6f6429d112125a96cc55f0919a2f3c843bee39c9a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 9,
+    "relative_path": ".malskills_fences/SKILL__fence_4.sh",
+    "size_bytes": 175,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 90,
+    "source_start_line": 80
+  }
+]

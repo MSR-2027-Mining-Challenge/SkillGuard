@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: repo-quality-gates\r\ndescription: 'Run the repositorys test, lint, and typecheck commands, then summarize failures and next actions for coding agents.'\r\n---\r\n\r\n# Repo Quality Gates\r\n\r\nUse this skill when you need to validate a change or interpret failing automation for this repository.\r\n\r\n## Default validation commands\r\n- `python -m pip install nbconvert`\r\n- `\u251c\u2500\u2500 criteria.json         # Test specs: command, stdin, expected_stdout, points`\r\n\r\n## Workflow\r\n1. Run the smallest relevant validation subset first.\r\n2. Group failures by root cause instead of by raw output order.\r\n3. Call out missing tooling or environment issues separately from code regressions.\r\n4. Do not relax or delete tests just to produce a green run.\r\n",
+    "content_hash": "e7347cd57fa089f570bf0da66e20099b8d23edac1dc18ced177b185d9d480031",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "SKILL.md",
+    "size_bytes": 742,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

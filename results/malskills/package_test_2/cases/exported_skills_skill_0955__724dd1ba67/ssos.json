@@ -1,0 +1,148 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/jax_modal_analysis.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd, capture_output=True, text=True, env=env, timeout=600)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/jax_modal_analysis.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/jax_modal_analysis.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/jax_modal_analysis.py:57:57:subprocess.run()",
+      "source_end_line": 57,
+      "source_start_line": 57
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/jax_modal_analysis.py::cmd"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/jax_modal_analysis.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(p, newline=\"\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/jax_modal_analysis.py::newline": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/jax_modal_analysis.py::newline",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 82,
+      "source_start_line": 82
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/jax_modal_analysis.py::newline"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/jax_modal_analysis.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::217": "path"
+      },
+      "operation_object": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::217",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 217,
+      "source_start_line": 217
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::217"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/jax_modal_analysis.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::223": "path"
+      },
+      "operation_object": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::223",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 223,
+      "source_start_line": 223
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::223"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "scripts/jax_modal_analysis.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::238": "path"
+      },
+      "operation_object": "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::238",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 238,
+      "source_start_line": 238
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/jax_modal_analysis.py::credential_data_access::238"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  }
+]

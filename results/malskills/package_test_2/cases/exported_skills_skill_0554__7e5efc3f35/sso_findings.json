@@ -1,0 +1,1458 @@
+[
+  {
+    "artifact_id": "art_0005",
+    "artifact_path": "references/custom-symbol-design.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit dynamic module loading pattern",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.execution_control.dynamic_module_load_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00000",
+    "matched_text": "| Validate | `validate-template` (lint) \u2192 SF Symbols app File > Validate Templates or Xcode import (authoritative) |",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0005",
+        "path": "references/custom-symbol-design.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 70,
+        "start_line": 70
+      }
+    },
+    "span": {
+      "end_line": 70,
+      "start_line": 70
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "with open(path, encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 77,
+        "start_line": 77
+      }
+    },
+    "span": {
+      "end_line": 77,
+      "start_line": 77
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00002",
+    "matched_text": "sys.exit(\n                f\"error: SF Symbols metadata not found at {directory}\\n\"\n                \"Install the SF Symbols app (https://developer.apple.com/sf-symbols/)\\n\"\n                \"or point at it with --metadata-dir / SF_SYMBOLS_METADATA_DIR.\"\n            )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 94,
+        "start_line": 90
+      }
+    },
+    "span": {
+      "end_line": 94,
+      "start_line": 90
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "with open(os.path.join(self.directory, fname), \"rb\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 99,
+        "start_line": 99
+      }
+    },
+    "span": {
+      "end_line": 99,
+      "start_line": 99
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00004",
+    "matched_text": "directory = (getattr(args, \"metadata_dir\", None)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 159,
+        "start_line": 159
+      }
+    },
+    "span": {
+      "end_line": 159,
+      "start_line": 159
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00005",
+    "matched_text": "or os.environ.get(\"SF_SYMBOLS_METADATA_DIR\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 160,
+        "start_line": 160
+      }
+    },
+    "span": {
+      "end_line": 160,
+      "start_line": 160
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00006",
+    "matched_text": "sys.exit(\n            \"error: this command renders symbols via macOS AppKit and needs PyObjC.\\n\"\n            \"Install it with:    python3 -m pip install pyobjc-framework-cocoa\\n\"\n            \"          (or):    uv pip install pyobjc-framework-cocoa\\n\"\n            \"Rendering requires macOS. The metadata commands (search/list/info/\\n\"\n            \"categories/custom/validate-template) run anywhere with no dependencies.\"\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 181,
+        "start_line": 175
+      }
+    },
+    "span": {
+      "end_line": 181,
+      "start_line": 175
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00007",
+    "matched_text": "names = meta.base_names() if getattr(args, \"base_only\", True) else sorted(meta.names)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 268,
+        "start_line": 268
+      }
+    },
+    "span": {
+      "end_line": 268,
+      "start_line": 268
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00008",
+    "matched_text": "if getattr(args, \"category\", None):",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 269,
+        "start_line": 269
+      }
+    },
+    "span": {
+      "end_line": 269,
+      "start_line": 269
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00009",
+    "matched_text": "if getattr(args, \"contains\", None):",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 272,
+        "start_line": 272
+      }
+    },
+    "span": {
+      "end_line": 272,
+      "start_line": 272
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00010",
+    "matched_text": "if getattr(args, \"starts_with\", None):",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 274,
+        "start_line": 274
+      }
+    },
+    "span": {
+      "end_line": 274,
+      "start_line": 274
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using getattr(), as it can lead to potential issues with dynamic code execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.dynamic_execution.sso.python.dynamic_execution.others.0006.no-getattr"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "getattr()",
+      "source_rule_category": "Dynamic Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00011",
+    "matched_text": "if getattr(args, \"search\", None):",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 276,
+        "start_line": 276
+      }
+    },
+    "span": {
+      "end_line": 276,
+      "start_line": 276
+    },
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00012",
+    "matched_text": "sys.exit(f\"error: unknown symbol '{name}' \u2014 try: sf_symbols.py search \\\"{args.name}\\\"\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 307,
+        "start_line": 307
+      }
+    },
+    "span": {
+      "end_line": 307,
+      "start_line": 307
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00013",
+    "matched_text": "sys.exit(f\"error: {err}\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 914,
+        "start_line": 914
+      }
+    },
+    "span": {
+      "end_line": 914,
+      "start_line": 914
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00014",
+    "matched_text": "sys.exit(\"error: the artwork has zero width or height\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 920,
+        "start_line": 920
+      }
+    },
+    "span": {
+      "end_line": 920,
+      "start_line": 920
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00015",
+    "matched_text": "sys.exit(\"error: --import needs --out \u2014 the output filename becomes the \"\n                 \"symbol's display name in the app (e.g. --out my.bolt.svg)\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 944,
+        "start_line": 943
+      }
+    },
+    "span": {
+      "end_line": 944,
+      "start_line": 943
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00016",
+    "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 946,
+        "start_line": 946
+      }
+    },
+    "span": {
+      "end_line": 946,
+      "start_line": 946
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00017",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1065,
+        "start_line": 1065
+      }
+    },
+    "span": {
+      "end_line": 1065,
+      "start_line": 1065
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00018",
+    "matched_text": "result = subprocess.run([\"open\", \"-a\", \"SF Symbols\", path],\n                            capture_output=True, text=True)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1081,
+        "start_line": 1080
+      }
+    },
+    "span": {
+      "end_line": 1081,
+      "start_line": 1080
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00019",
+    "matched_text": "sys.exit(\"error: could not hand the file to the SF Symbols app \u2014 is it \"\n                 f\"installed?\\n{result.stderr.strip()}\\n\"\n                 \"Get it at https://developer.apple.com/sf-symbols/\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1085,
+        "start_line": 1083
+      }
+    },
+    "span": {
+      "end_line": 1085,
+      "start_line": 1083
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00020",
+    "matched_text": "sys.exit(\"error: template failed structural validation \u2014 fix the issues \"\n                 \"above before importing (the app rejects or mangles bad templates)\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1099,
+        "start_line": 1098
+      }
+    },
+    "span": {
+      "end_line": 1099,
+      "start_line": 1098
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00021",
+    "matched_text": "sys.exit(f\"error: macOS could not resolve symbol '{args.name}' \u2014 \"\n                 f\"check the name with: sf_symbols.py search \\\"{args.name}\\\"\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1112,
+        "start_line": 1111
+      }
+    },
+    "span": {
+      "end_line": 1112,
+      "start_line": 1111
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00022",
+    "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1114,
+        "start_line": 1114
+      }
+    },
+    "span": {
+      "end_line": 1114,
+      "start_line": 1114
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using os.makedirs(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.makedirs()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00023",
+    "matched_text": "os.makedirs(out_dir, exist_ok=True)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1132,
+        "start_line": 1132
+      }
+    },
+    "span": {
+      "end_line": 1132,
+      "start_line": 1132
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00024",
+    "matched_text": "with open(out_path, \"w\", encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1143,
+        "start_line": 1143
+      }
+    },
+    "span": {
+      "end_line": 1143,
+      "start_line": 1143
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00025",
+    "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1219,
+        "start_line": 1219
+      }
+    },
+    "span": {
+      "end_line": 1219,
+      "start_line": 1219
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00026",
+    "matched_text": "sys.exit(f\"error: macOS could not resolve symbol '{args.name}' \u2014 \"\n                     f\"check the name with: sf_symbols.py search \\\"{args.name}\\\"\")",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1233,
+        "start_line": 1232
+      }
+    },
+    "span": {
+      "end_line": 1233,
+      "start_line": 1232
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0010",
+    "artifact_path": "scripts/sf_symbols.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00027",
+    "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0010",
+        "path": "scripts/sf_symbols.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1250,
+        "start_line": 1250
+      }
+    },
+    "span": {
+      "end_line": 1250,
+      "start_line": 1250
+    },
+    "subtype": "file_access"
+  }
+]

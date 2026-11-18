@@ -1,0 +1,628 @@
+[
+  {
+    "artifact_id": "art_0001",
+    "artifact_path": ".malskills_fences/README__fence_0.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell copies or archives data in bulk",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.bulk_copy_and_archive"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "cp -r claude-skills/ai-study-noter ~/.claude/skills/",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0001",
+        "path": ".malskills_fences/README__fence_0.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 2,
+        "start_line": 2
+      }
+    },
+    "span": {
+      "end_line": 2,
+      "start_line": 2
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_path": ".malskills_fences/README__fence_1.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "pip install yt-dlp youtube-transcript-api google-generativeai",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0002",
+        "path": ".malskills_fences/README__fence_1.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": ".malskills_fences/README__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell startup or logon persistence",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "startup_configuration",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.startup_or_logon_persistence",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.startup_or_logon_persistence"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_id": "semgrep_00003",
+    "matched_text": "# ~/.zshrc \ub610\ub294 ~/.bashrc\uc5d0 \ucd94\uac00",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": ".malskills_fences/README__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_id": "art_0008",
+    "artifact_path": ".malskills_fences/SKILL__fence_3.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell enumerates files or directories",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.file_and_data_access.file_enumeration_and_location"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "ls /Users/jun/Documents/ai-study/*.md",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0008",
+        "path": ".malskills_fences/SKILL__fence_3.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0000",
+    "artifact_path": "README.md",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Markdown contains an explicit package installation command",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.markdown.markdown.software_installation.package_manager_command"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "pip install yt-dlp youtube-transcript-api google-generativeai",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0000",
+        "path": "README.md"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 26,
+        "start_line": 26
+      }
+    },
+    "span": {
+      "end_line": 26,
+      "start_line": 26
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00006",
+    "matched_text": "result = subprocess.run(\n            ['yt-dlp', '--print', '%(title)s|||%(description)s|||%(channel)s', '--no-playlist', url],\n            capture_output=True, text=True, timeout=30\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 44,
+        "start_line": 41
+      }
+    },
+    "span": {
+      "end_line": 44,
+      "start_line": 41
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00007",
+    "matched_text": "subprocess.run(\n            [\n                'yt-dlp',\n                '--write-auto-sub',\n                '--write-sub',\n                '--sub-langs', 'ko.*,en.*',\n                '--skip-download',\n                '--output', os.path.join(tmpdir, 'video'),\n                '--no-playlist',\n                url\n            ],\n            capture_output=True, text=True, timeout=60\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 112,
+        "start_line": 100
+      }
+    },
+    "span": {
+      "end_line": 112,
+      "start_line": 100
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00008",
+    "matched_text": "with open(fpath, 'r', encoding='utf-8') as f:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 117,
+        "start_line": 117
+      }
+    },
+    "span": {
+      "end_line": 117,
+      "start_line": 117
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00009",
+    "matched_text": "result = subprocess.run(\n        [\n            'yt-dlp',\n            '-f', 'bestaudio[ext=m4a]/bestaudio/best',\n            '--extract-audio',\n            '--audio-format', 'm4a',\n            '--audio-quality', '5',        # \ub0ae\uc740 \ud488\uc9c8\ub85c \ud30c\uc77c \ud06c\uae30 \uc904\uc774\uae30\n            '--output', out_template,\n            '--no-playlist',\n            url\n        ],\n        capture_output=True, text=True, timeout=300\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 149,
+        "start_line": 137
+      }
+    },
+    "span": {
+      "end_line": 149,
+      "start_line": 137
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00010",
+    "matched_text": "result = subprocess.run(\n            ['npx', '--yes', 'defuddle', 'parse', url, '--json'],\n            capture_output=True, text=True, timeout=60\n        )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 166,
+        "start_line": 163
+      }
+    },
+    "span": {
+      "end_line": 166,
+      "start_line": 163
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00011",
+    "matched_text": "api_key = os.environ.get('GEMINI_API_KEY') or os.environ.get('GOOGLE_API_KEY')",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 194,
+        "start_line": 194
+      }
+    },
+    "span": {
+      "end_line": 194,
+      "start_line": 194
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0011",
+    "artifact_path": "scripts/get_transcript.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00013",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0011",
+        "path": "scripts/get_transcript.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 285,
+        "start_line": 285
+      }
+    },
+    "span": {
+      "end_line": 285,
+      "start_line": 285
+    },
+    "subtype": "credential_data_access"
+  }
+]

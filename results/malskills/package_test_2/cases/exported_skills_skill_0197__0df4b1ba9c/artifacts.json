@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: notify\r\ndescription: Sends a push notification to the user\r\n---\r\n\r\nTo send a push notification to the user, run the following script passing in the message you want to send:\r\n\r\n```bash\r\nuv run {baseDir}/scripts/notify.py \"Your message here\"\r\n```",
+    "content_hash": "9219b3b732d38b4a3229abaea220388e053f35c11322945f2ead19bb7bbd5d31",
+    "generated": false,
+    "is_text": true,
+    "line_count": 10,
+    "relative_path": "SKILL.md",
+    "size_bytes": 256,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "uv run {baseDir}/scripts/notify.py \"Your message here\"",
+    "content_hash": "d18bd9d3f5254b9386f367ee2c790fbd32c47d3544c216d8a8fe91592e23b051",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 54,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 10,
+    "source_start_line": 8
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "from dotenv import load_dotenv\r\nimport requests\r\nimport os\r\nimport sys\r\n\r\nload_dotenv(override=True)\r\n\r\ndef notify(message: str):\r\n    \"\"\"\r\n    Sends a push notification to the user\r\n    \"\"\"\r\n    response = requests.post(\r\n        \"https://api.pushover.net/1/messages.json\",\r\n        data={\r\n            \"token\": os.getenv(\"PUSHOVER_TOKEN\"),\r\n            \"user\": os.getenv(\"PUSHOVER_USER\"),\r\n            \"message\": message,\r\n        }\r\n    )\r\n    response.raise_for_status()\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    message = sys.argv[1] if len(sys.argv) > 1 else \"Empty notification\"\r\n    notify(message)",
+    "content_hash": "0c766ca6abd8ec9770edf94c8d6fad1c80ba3d7f509f1a2c5afa9f520cef6daa",
+    "generated": false,
+    "is_text": true,
+    "line_count": 25,
+    "relative_path": "scripts/notify.py",
+    "size_bytes": 601,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "config",
+    "content": "[project]\r\nname = \"scripts\"\r\nversion = \"0.1.0\"\r\nrequires-python = \">=3.12\"\r\ndependencies = [\r\n    \"python-dotenv>=1.2.2\",\r\n    \"requests>=2.33.1\",\r\n]\r\n",
+    "content_hash": "1780a5ef0bfcbb738c65d88921481ebf4af32fbaee058b3daf5d175c97f162ff",
+    "generated": false,
+    "is_text": true,
+    "line_count": 9,
+    "relative_path": "scripts/pyproject.toml",
+    "size_bytes": 151,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

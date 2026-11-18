@@ -1,0 +1,348 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g @gitlawb/openclaude",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "# or set: export CODEX_API_KEY=$CODEX_TOKEN",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_10.sh::CODEX_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_10.sh::CODEX_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_10.sh::CODEX_API_KEY"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "matched_text": "export OPENAI_API_KEY=$TOGETHER_API_KEY",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::OPENAI_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::OPENAI_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_12.sh::OPENAI_API_KEY"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Quick startup sanity check",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_15.sh::system_configuration_modify::19": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_15.sh::system_configuration_modify::19",
+      "resource_class": "startup_configuration",
+      "source_end_line": 19,
+      "source_start_line": 19,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_15.sh::system_configuration_modify::19"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_16.sh"
+    ],
+    "attributes": {
+      "matched_text": "bun run profile:init -- --provider openai --api-key $OPENAI_API_KEY",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_16.sh::credential_data_access::5": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_16.sh::credential_data_access::5",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_16.sh::credential_data_access::5"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_23.sh"
+    ],
+    "attributes": {
+      "matched_text": "export CODEX_API_KEY=$YOUR_CODEX_TOKEN",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_23.sh::CODEX_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_23.sh::CODEX_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_23.sh::CODEX_API_KEY"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "export OPENAI_API_KEY=$OPENAI_API_KEY",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::OPENAI_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::OPENAI_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::OPENAI_API_KEY"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "export OPENAI_API_KEY=$DEEPSEEK_API_KEY",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::OPENAI_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::OPENAI_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_4.sh::OPENAI_API_KEY"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "export OPENAI_API_KEY=$OPENROUTER_API_KEY",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::OPENAI_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::OPENAI_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::OPENAI_API_KEY"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "export OPENAI_API_KEY=$GROQ_API_KEY",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.sh::OPENAI_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.sh::OPENAI_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_7.sh::OPENAI_API_KEY"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "matched_text": "export OPENAI_API_KEY=$MISTRAL_API_KEY",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::OPENAI_API_KEY": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::OPENAI_API_KEY",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::OPENAI_API_KEY"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g @gitlawb/openclaude",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::28": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::28",
+      "source_end_line": 28,
+      "source_start_line": 28,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::28"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "package_installation"
+  }
+]

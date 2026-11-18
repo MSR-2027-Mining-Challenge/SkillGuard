@@ -1,0 +1,21 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=references/export-and-serving.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/sft-dpo-grpo-workflows.md"];
+  "obj::operation::SKILL.md::package_installation::67" [label="obj::operation::SKILL.md::package_installation::67\nkind=operand"];
+  "obj::operation::SKILL.md::package_installation::70" [label="obj::operation::SKILL.md::package_installation::70\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "value::7b948de73b031b15ee69" [label="value::7b948de73b031b15ee69\nkind=value"];
+  "value::be86ee95691cad06674f" [label="value::be86ee95691cad06674f\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00000" [label="contains"];
+  "art_0000" -> "sso_00001" [label="contains"];
+  "obj::operation::SKILL.md::package_installation::67" -> "value::be86ee95691cad06674f" [label="value_flow"];
+  "obj::operation::SKILL.md::package_installation::70" -> "value::7b948de73b031b15ee69" [label="value_flow"];
+  "sso_00000" -> "obj::operation::SKILL.md::package_installation::67" [label="has_operand"];
+  "sso_00001" -> "obj::operation::SKILL.md::package_installation::70" [label="has_operand"];
+}

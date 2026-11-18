@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: seed4j-execplan-tdd\r\ndescription: Use for seed4j-cli requests that need an ExecPlan, a plan saved in the shared seed4j-cli AI context directory, or implementation through quiet autonomous TDD. Triggers when the user asks to plan, implement, execute, or continue substantial seed4j-cli work with ExecPlan discipline and tdd-strict-autonomous-quiet.\r\n---\r\n\r\n# Seed4J ExecPlan TDD\r\n\r\nUse this skill only for work in `/home/renanfranca/projects/seed4j-cli`.\r\n\r\n## Workflow\r\n\r\n1. Load and follow the `implement-execplan` skill before creating or updating any plan.\r\n2. Save every ExecPlan under `/home/renanfranca/projects/seed4j-cli/_temporary/ai_agent/seed4j-cli-ai-context/shared`.\r\n3. Name new plans as `<YYYY-MM-DD>_<TYPE>_<short-kebab-title>-exec-plan.md`, where `TYPE` is a concise uppercase change category such as `FEATURE`, `FIX`, `REFACTOR`, `DOCS`, or `TEST`.\r\n4. Before implementing from an ExecPlan, load and follow the `tdd-behavior-autonomous-quiet` skill.\r\n5. Keep the ExecPlan living during execution: update Progress, Decisions, Risks, Lessons Learned, validation results, and any scope changes as work proceeds.\r\n\r\n## Seed4J Constraints\r\n\r\nRespect the repository `AGENTS.md` instructions, especially:\r\n\r\n- preserve hexagonal architecture boundaries;\r\n- use Types Driven Development for business concepts;\r\n- validate incrementally with focused tests or checks;\r\n- do not run `./mvnw clean verify` automatically unless the user explicitly asks.\r\n\r\nIf a requested change conflicts with those constraints, flag it before implementation.\r\n",
+    "content_hash": "fcc1758dbe0a863b09b5873d4969d0f53e1ccc4e8d4ef4d6c95d5508041dbaee",
+    "generated": false,
+    "is_text": true,
+    "line_count": 28,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1561,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Seed4J ExecPlan TDD\"\r\n  short_description: \"Seed4J ExecPlans with quiet TDD.\"\r\n  default_prompt: \"Use $seed4j-execplan-tdd to create an ExecPlan for this seed4j-cli change.\"\r\n",
+    "content_hash": "ae06d7b7c3cfd07f4fbecf1564187252f2110b7170359d18c92dc1790eecdb24",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 204,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

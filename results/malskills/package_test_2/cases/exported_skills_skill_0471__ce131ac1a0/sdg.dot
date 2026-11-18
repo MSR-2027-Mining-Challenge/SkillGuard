@@ -1,0 +1,29 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=bin/check-freeze.sh"];
+  "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34" [label="obj::operation::bin/check-freeze.sh::dynamic_code_execution::34\nkind=operand"];
+  "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH" [label="obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH\nkind=operand"];
+  "obj::symbolic_reference::bin/check-freeze.sh::INPUT" [label="obj::symbolic_reference::bin/check-freeze.sh::INPUT\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "value::6b14b63dee18960dd8ce" [label="value::6b14b63dee18960dd8ce\nkind=value"];
+  "value::91170ef1fd6963c2008f" [label="value::91170ef1fd6963c2008f\nkind=value"];
+  "value::c3abd72f096f7730f558" [label="value::c3abd72f096f7730f558\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "art_0004" -> "sso_00001" [label="contains"];
+  "art_0004" -> "sso_00002" [label="contains"];
+  "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34" -> "value::c3abd72f096f7730f558" [label="value_flow"];
+  "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH" -> "value::91170ef1fd6963c2008f" [label="value_flow"];
+  "obj::symbolic_reference::bin/check-freeze.sh::INPUT" -> "value::6b14b63dee18960dd8ce" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::bin/check-freeze.sh::INPUT" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::bin/check-freeze.sh::FILE_PATH" [label="has_operand"];
+  "sso_00002" -> "obj::operation::bin/check-freeze.sh::dynamic_code_execution::34" [label="has_operand"];
+}

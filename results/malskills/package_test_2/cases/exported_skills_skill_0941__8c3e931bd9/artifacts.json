@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Skill: Content Moderation & Safety\r\n\r\n**Domain:** Spam detection, CSAM scanning, PII doxxing, toxic language, child safety  \r\n**Files:** `src/lib/chat/moderation.ts`, `src/lib/chat/photodna.ts`, `src/lib/safety/`  \r\n**When to apply:** Message content validation, image upload, user report handling\r\n\r\n---\r\n\r\n## Knowledge\r\n\r\n### Spam Detection\r\n- **Rate limiting**: X msg/min for new accounts, Y msg/min for trusted\r\n- **Duplicate detection**: identical message fingerprint (hash)\r\n- **Flood detection**: burst pattern (10 msg in 5s)\r\n- **Content-based classifiers**: Naive Bayes, Logistic Regression (bag-of-words)\r\n- **Behavioral profiling**: account age, friend count, send time distribution\r\n\r\n### CSAM Detection (PhotoDNA)\r\n- **Perceptual hashing**: pHash, dHash, aHash (robust to resize/crop)\r\n- **PhotoDNA database**: NCMEC known hashes (Microsoft)\r\n- **Cross-platform**: PDQHash (open source alternative)\r\n- **Content type**: image only (not text)\r\n- **Takedown procedure**: immediate report to NCMEC, preserve evidence\r\n\r\n### PII Detection (Doxxing)\r\n- **Regex patterns**: email (`/[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}/i`), phone (`/(?:\\+?1[-.\\s]?)?(?:\\(\\d{3}\\)|\\d{3})[-.\\s]?\\d{3}[-.\\s]?\\d{4}/`), SSN (`/\\d{3}-\\d{2}-\\d{4}/`)\r\n- **Russian-specific**: INN (10/12 digits), SNILS (XXX-XXX-XXX-XX), passport series/number\r\n- **Address extraction**: named entity recognition (NER)\r\n- **Redaction**: replace with `[EMAIL_REDACTED]`, `[PHONE_REDACTED]`\r\n\r\n### Toxic Language\r\n- ** profanity lists**: Google's profanity filter, custom list\r\n- **Hate speech detection**: keyword + context (BERT-based)\r\n- **Harassment patterns**: repeated mentions, threats\r\n- **Severity scoring**: 0 (clean) \u2192 1 (toxic) \u2192 2 (severely toxic)\r\n\r\n### Child Safety (COPPA)\r\n- **Age verification**: government ID upload (sumsub, jumio)\r\n- **Age gating**: restrict features for <13\r\n- **Predator detection**: grooming language patterns\r\n- **Parental controls**: screen time limits, contact whitelist\r\n\r\n### Ban Evasion\r\n- **Fingerprinting**: canvas fingerprint, WebGL, audio fingerprint\r\n- **IP address reuse**: banned IP \u2192 new account\r\n- **Device ID reuse**: hardware identifiers (where available)\r\n- **Behavioral similarity**: messaging patterns match known abuser\r\n\r\n---\r\n\r\n## Quality Gates\r\n\r\n1. **Spam catch rate**: > 99% (F1-score)\r\n2. **False positive rate**: < 0.1% (legitimate messages blocked)\r\n3. **CSAM detection**: 100% (zero tolerance)\r\n4. **PII detection recall**: > 95% (emails, phones)\r\n5. **Toxicity AUC**: > 0.9 (precision/recall trade-off)\r\n6. **Child safety filter**: no predatory content slips through\r\n\r\n---\r\n\r\n## When to Apply\r\n\r\n- Message send validation\r\n- Image upload pipeline\r\n- User report review queue\r\n- Automated moderation (flag/hide/delete)\r\n- Age-gated content filter\r\n- Bot/scam account detection\r\n- Contact list restrictions (minors)\r\n",
+    "content_hash": "87749fe5cb3673ed7e628b44c8fc205f8644d20a5f46f298640f3d8f377165f7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 71,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2858,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

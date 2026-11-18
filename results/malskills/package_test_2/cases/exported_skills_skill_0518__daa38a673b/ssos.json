@@ -1,0 +1,70 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:119:119:data_receive",
+      "source_end_line": 119,
+      "source_start_line": 119
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -X POST 'https://chat.googleapis.com/v1/spaces/.../messages?key=...' \\"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  }
+]

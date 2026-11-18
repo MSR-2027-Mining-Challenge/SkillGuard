@@ -1,0 +1,142 @@
+[
+  {
+    "display_value": "README.md::data_receive::Get your API key from [console.x.ai](https://console.x.ai), then:",
+    "identity_key": "README.md::data_receive::Get your API key from [console.x.ai](https://console.x.ai), then:",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::README.md::data_receive::Get your API key from [console.x.ai](https://console.x.ai), then:",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "scripts/search.js::connection_create::const https = require('https');",
+    "identity_key": "scripts/search.js::connection_create::const https = require('https');",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::scripts/search.js::connection_create::const https = require('https');",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "scripts/search.js::fs",
+    "identity_key": "scripts/search.js::fs",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::scripts/search.js::fs",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": "scripts/search.js::path",
+    "identity_key": "scripts/search.js::path",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::scripts/search.js::path",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": "scripts/search.js::configPath",
+    "identity_key": "scripts/search.js::configPath",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::scripts/search.js::configPath",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": "scripts/search.js::file_access::24",
+    "identity_key": "scripts/search.js::file_access::24",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::file_access::24",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": "scripts/search.js::config",
+    "identity_key": "scripts/search.js::config",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::scripts/search.js::config",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "path"
+  },
+  {
+    "display_value": "scripts/search.js::system_command_execution::125",
+    "identity_key": "scripts/search.js::system_command_execution::125",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::system_command_execution::125",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": "scripts/search.js::connection_create::const req = https.request({\n      hostname: API_BASE,\n      path: '/v1/responses',\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${apiKey}`,\n      },\n    }, (res) => {\n      let data = '';\n      \n      res.on('data', chunk => data += chunk);\n      \n      res.on('end', () => {\n        if (res.statusCode !== 200) {\n          console.error(`\u274c API Error (${res.statusCode}):`, data.slice(0, 500));\n          process.exit(1);\n        }\n        \n        try {\n          const response = JSON.parse(data);\n          \n          // Full JSON output\n          if (options.json) {\n            console.log(JSON.stringify(response, null, 2));\n            resolve(response);\n            return;\n          }\n          \n          const { text, citations } = extractContent(response);\n          \n          // Links only output\n          if (options.linksOnly) {\n            if (citations.length > 0) {\n              citations.forEach(url => console.log(url));\n            } else {\n              console.log('No X links found.');\n            }\n            resolve({ text, citations });\n            return;\n          }\n          \n          // Standard or compact output\n          if (text) {\n            console.log(text);\n          } else {\n            console.log('No results found.');\n          }\n          \n          if (!options.compact && citations.length > 0) {\n            console.log('\\n\ud83d\udcce Citations (' + citations.length + '):');\n            citations.slice(0, 10).forEach(url => console.log('   ' + url));\n            if (citations.length > 10) {\n              console.log(`   ... and ${citations.length - 10} more`);\n            }\n          }\n          \n          resolve({ text, citations });\n        } catch (e) {\n          console.error('\u274c Failed to parse response:', e.message);\n          process.exit(1);\n        }\n      });\n    });",
+    "identity_key": "scripts/search.js::connection_create::const req = https.request({\n      hostname: API_BASE,\n      path: '/v1/responses',\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${apiKey}`,\n      },\n    }, (res) => {\n      let data = '';\n      \n      res.on('data', chunk => data += chunk);\n      \n      res.on('end', () => {\n        if (res.statusCode !== 200) {\n          console.error(`\u274c API Error (${res.statusCode}):`, data.slice(0, 500));\n          process.exit(1);\n        }\n        \n        try {\n          const response = JSON.parse(data);\n          \n          // Full JSON output\n          if (options.json) {\n            console.log(JSON.stringify(response, null, 2));\n            resolve(response);\n            return;\n          }\n          \n          const { text, citations } = extractContent(response);\n          \n          // Links only output\n          if (options.linksOnly) {\n            if (citations.length > 0) {\n              citations.forEach(url => console.log(url));\n            } else {\n              console.log('No X links found.');\n            }\n            resolve({ text, citations });\n            return;\n          }\n          \n          // Standard or compact output\n          if (text) {\n            console.log(text);\n          } else {\n            console.log('No results found.');\n          }\n          \n          if (!options.compact && citations.length > 0) {\n            console.log('\\n\ud83d\udcce Citations (' + citations.length + '):');\n            citations.slice(0, 10).forEach(url => console.log('   ' + url));\n            if (citations.length > 10) {\n              console.log(`   ... and ${citations.length - 10} more`);\n            }\n          }\n          \n          resolve({ text, citations });\n        } catch (e) {\n          console.error('\u274c Failed to parse response:', e.message);\n          process.exit(1);\n        }\n      });\n    });",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::scripts/search.js::connection_create::const req = https.request({\n      hostname: API_BASE,\n      path: '/v1/responses',\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${apiKey}`,\n      },\n    }, (res) => {\n      let data = '';\n      \n      res.on('data', chunk => data += chunk);\n      \n      res.on('end', () => {\n        if (res.statusCode !== 200) {\n          console.error(`\u274c API Error (${res.statusCode}):`, data.slice(0, 500));\n          process.exit(1);\n        }\n        \n        try {\n          const response = JSON.parse(data);\n          \n          // Full JSON output\n          if (options.json) {\n            console.log(JSON.stringify(response, null, 2));\n            resolve(response);\n            return;\n          }\n          \n          const { text, citations } = extractContent(response);\n          \n          // Links only output\n          if (options.linksOnly) {\n            if (citations.length > 0) {\n              citations.forEach(url => console.log(url));\n            } else {\n              console.log('No X links found.');\n            }\n            resolve({ text, citations });\n            return;\n          }\n          \n          // Standard or compact output\n          if (text) {\n            console.log(text);\n          } else {\n            console.log('No results found.');\n          }\n          \n          if (!options.compact && citations.length > 0) {\n            console.log('\\n\ud83d\udcce Citations (' + citations.length + '):');\n            citations.slice(0, 10).forEach(url => console.log('   ' + url));\n            if (citations.length > 10) {\n              console.log(`   ... and ${citations.length - 10} more`);\n            }\n          }\n          \n          resolve({ text, citations });\n        } catch (e) {\n          console.error('\u274c Failed to parse response:', e.message);\n          process.exit(1);\n        }\n      });\n    });",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "scripts/search.js::system_command_execution::183",
+    "identity_key": "scripts/search.js::system_command_execution::183",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::system_command_execution::183",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": "scripts/search.js::system_command_execution::227",
+    "identity_key": "scripts/search.js::system_command_execution::227",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::system_command_execution::227",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": "scripts/search.js::system_command_execution::234",
+    "identity_key": "scripts/search.js::system_command_execution::234",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::system_command_execution::234",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": "scripts/search.js::system_command_execution::269",
+    "identity_key": "scripts/search.js::system_command_execution::269",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::system_command_execution::269",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  },
+  {
+    "display_value": "scripts/search.js::system_command_execution::276",
+    "identity_key": "scripts/search.js::system_command_execution::276",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::scripts/search.js::system_command_execution::276",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "command"
+  }
+]

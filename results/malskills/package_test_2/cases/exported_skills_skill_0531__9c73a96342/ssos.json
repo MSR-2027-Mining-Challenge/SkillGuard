@@ -1,0 +1,295 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s \"https://r.jina.ai/URL\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://r.jina.ai/URL\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://r.jina.ai/URL\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::data_receive::curl -s \"https://r.jina.ai/URL\""
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "yt-dlp --dump-json \"URL\"                     # video metadata",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::1",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_information_access::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\""
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\""
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s \"https://r.jina.ai/URL\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://r.jina.ai/URL\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://r.jina.ai/URL\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:33:33:data_receive",
+      "source_end_line": 33,
+      "source_start_line": 33
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://r.jina.ai/URL\""
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:73:73:data_receive",
+      "source_end_line": 73,
+      "source_start_line": 73
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://www.reddit.com/r/SUBREDDIT/hot.json?limit=10\" -H \"User-Agent: agent-reach/1.0\""
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:74:74:data_receive",
+      "source_end_line": 74,
+      "source_start_line": 74
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -s \"https://www.reddit.com/search.json?q=QUERY&limit=10\" -H \"User-Agent: agent-reach/1.0\""
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "python3 -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::113": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::113",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:113:113:dynamic_code_execution",
+      "source_end_line": 113,
+      "source_start_line": 113
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::113"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "python3 -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::151": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::151",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:151:151:dynamic_code_execution",
+      "source_end_line": 151,
+      "source_start_line": 151
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::151"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "dynamic_code_execution"
+  }
+]

@@ -1,0 +1,36 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_5.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_6.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_7.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=config\npath=source.json"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3" [label="obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md" [label="obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_write"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::76b78d66f40f4a1b43db" [label="value::76b78d66f40f4a1b43db\nkind=value"];
+  "value::96b94eafe893d1740231" [label="value::96b94eafe893d1740231\nkind=value"];
+  "value::9c31235e29f8e1cdbd90" [label="value::9c31235e29f8e1cdbd90\nkind=value"];
+  "value::f5d72f548b16180534ec" [label="value::f5d72f548b16180534ec\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00003" [label="contains"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "art_0003" -> "sso_00002" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3" -> "value::96b94eafe893d1740231" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md" -> "value::f5d72f548b16180534ec" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\" -> "value::76b78d66f40f4a1b43db" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md" -> "value::9c31235e29f8e1cdbd90" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_5.sh::file_write::3" [label="has_operand"];
+  "sso_00002" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_6.sh::data_receive::curl -sL \\" [label="has_operand"];
+  "sso_00003" -> "obj::symbolic_reference::SKILL.md::data_receive::curl -sL \"https://raw.githubusercontent.com/<owner>/<repo>/main/SKILL.md\" -o /tmp/source.md" [label="has_operand"];
+}

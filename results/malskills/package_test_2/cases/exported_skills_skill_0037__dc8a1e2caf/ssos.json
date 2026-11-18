@@ -1,0 +1,262 @@
+[
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -sSL \"https://api.github.com/repos/okx/onchainos-skills/releases/latest\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl -sSL \"https://api.github.com/repos/okx/onchainos-skills/releases/latest\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl -sSL \"https://api.github.com/repos/okx/onchainos-skills/releases/latest\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:21:21:data_receive",
+      "source_end_line": 21,
+      "source_start_line": 21
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl -sSL \"https://api.github.com/repos/okx/onchainos-skills/releases/latest\""
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "`curl -sSL \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.sh\" -o /tmp/onchainos-install.sh`",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.sh\" -o /tmp/onchainos-install.sh`": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.sh\" -o /tmp/onchainos-install.sh`",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:33:33:data_receive",
+      "source_end_line": 33,
+      "source_start_line": 33
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.sh\" -o /tmp/onchainos-install.sh`"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -o /tmp/installer-checksums.txt`",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -o /tmp/installer-checksums.txt`": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -o /tmp/installer-checksums.txt`",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:34:34:data_receive",
+      "source_end_line": 34,
+      "source_start_line": 34
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -o /tmp/installer-checksums.txt`"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "`Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.ps1\" -OutFile \"$env:TEMP\\onchainos-install.ps1\"`",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::`Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.ps1\" -OutFile \"$env:TEMP\\onchainos-install.ps1\"`": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::`Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.ps1\" -OutFile \"$env:TEMP\\onchainos-install.ps1\"`",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:36:36:data_receive",
+      "source_end_line": 36,
+      "source_start_line": 36
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::`Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/okx/onchainos-skills/${LATEST_TAG}/install.ps1\" -OutFile \"$env:TEMP\\onchainos-install.ps1\"`"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "`Invoke-WebRequest -Uri \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -OutFile \"$env:TEMP\\installer-checksums.txt\"`",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::`Invoke-WebRequest -Uri \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -OutFile \"$env:TEMP\\installer-checksums.txt\"`": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::`Invoke-WebRequest -Uri \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -OutFile \"$env:TEMP\\installer-checksums.txt\"`",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:37:37:data_receive",
+      "source_end_line": 37,
+      "source_start_line": 37
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::`Invoke-WebRequest -Uri \"https://github.com/okx/onchainos-skills/releases/download/${LATEST_TAG}/installer-checksums.txt\" -OutFile \"$env:TEMP\\installer-checksums.txt\"`"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/v<version>/checksums.txt\" -o /tmp/onchainos-checksums.txt`",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/v<version>/checksums.txt\" -o /tmp/onchainos-checksums.txt`": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/v<version>/checksums.txt\" -o /tmp/onchainos-checksums.txt`",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:46:46:data_receive",
+      "source_end_line": 46,
+      "source_start_line": 46
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::`curl -sSL \"https://github.com/okx/onchainos-skills/releases/download/v<version>/checksums.txt\" -o /tmp/onchainos-checksums.txt`"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/risk-transaction-detection__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "--encoding <base58|base64> \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/risk-transaction-detection__fence_1.sh::encoding::4": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/risk-transaction-detection__fence_1.sh::encoding::4",
+      "parameter_bindings": [],
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/risk-transaction-detection__fence_1.sh::encoding::4"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/risk-transaction-detection__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "onchainos security tx-scan --chain solana --from EeBCkp5j17U5Fg4bEiboHvRrUvQ4LP9AdioQwPg5wF43 --encoding base64 --transactions \"CAurZp2HY+l9yM1By3HbAABCA==\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/risk-transaction-detection__fence_6.sh::encoding::1": "target"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/risk-transaction-detection__fence_6.sh::encoding::1",
+      "parameter_bindings": [],
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/risk-transaction-detection__fence_6.sh::encoding::1"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "encoding"
+  }
+]

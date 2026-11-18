@@ -1,0 +1,1961 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "AGENTS_SNIPPET.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "CONTRACT.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/README__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "path": "package.json",
+      "type": "manifest"
+    },
+    {
+      "id": "art_0006",
+      "path": "server.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0007",
+      "path": "src/roadmap.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0008",
+      "path": "ui/index.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0009",
+      "path": "ui/styles.css",
+      "type": "binary"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0006",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::server.js::__dirname",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::__dirname",
+      "target": "value::c0d33603a09e795e573c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::server.js::staticRoot",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::staticRoot",
+      "target": "value::466cd4e17cf280ba4575",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::server.js::system_command_execution::18",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::server.js::system_command_execution::18",
+      "target": "value::9d266dfbc59e0803bc57",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::server.js::repoName",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::repoName",
+      "target": "value::9c07d62aa8c854223472",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::symbolic_reference::server.js::normalized",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::normalized",
+      "target": "value::41962f06d3e31d5789c9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::server.js::resolved",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::resolved",
+      "target": "value::bb6dc83af341e899ead5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::server.js::file_access::66",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::server.js::file_access::66",
+      "target": "value::44b1dd0201ca17067c20",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::server.js::file",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::file",
+      "target": "value::d1dfaeb0e3cd98776298",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::server.js::extension",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::extension",
+      "target": "value::0c061c1b01f8186d2f65",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::server.js::server_listen::const server = http.createServer(requestListener);",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::server.js::server_listen::const server = http.createServer(requestListener);",
+      "target": "value::4f07e66a0adbbe430a1c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::src/roadmap.js::__dirname",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::__dirname",
+      "target": "value::9ef228c9e456690094b1",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::symbolic_reference::src/roadmap.js::TEMPLATE_ROADMAP_ROOT",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::TEMPLATE_ROADMAP_ROOT",
+      "target": "value::105c7940a2966f5cba61",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::operation::src/roadmap.js::file_access::744",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::744",
+      "target": "value::f6ab5d212b21aed824ab",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::src/roadmap.js::file_access::753",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::753",
+      "target": "value::7858cab4d71ef86f2d21",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::operation::src/roadmap.js::file_access::764",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::764",
+      "target": "value::45faf22fbfddc0f756dc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00015",
+      "target": "obj::symbolic_reference::src/roadmap.js::resolvedRepoRoot",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::resolvedRepoRoot",
+      "target": "value::fe1ebc89907562f5329f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00016",
+      "target": "obj::symbolic_reference::src/roadmap.js::configPath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::configPath",
+      "target": "value::2f23130d640bb558066c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00017",
+      "target": "obj::symbolic_reference::src/roadmap.js::rawConfig",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::rawConfig",
+      "target": "value::3311fd2110532a9a59b0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00018",
+      "target": "obj::symbolic_reference::src/roadmap.js::resolvedPath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::resolvedPath",
+      "target": "value::2d4558ee514b042f44e2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00019",
+      "target": "obj::symbolic_reference::src/roadmap.js::relative",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::relative",
+      "target": "value::2964101977ef21e1631e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00020",
+      "target": "obj::operation::src/roadmap.js::file_access::836",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::836",
+      "target": "value::de5b727f71c35da2d0bc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00021",
+      "target": "obj::symbolic_reference::src/roadmap.js::targetPath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::targetPath",
+      "target": "value::e92bcf826f7ad32f32e6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00022",
+      "target": "obj::symbolic_reference::src/roadmap.js::targetPath",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00023",
+      "target": "obj::symbolic_reference::src/roadmap.js::templatePath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::templatePath",
+      "target": "value::8b3c365aafe88e4d7a2e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00024",
+      "target": "obj::symbolic_reference::src/roadmap.js::templateText",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::templateText",
+      "target": "value::58791f5de1b153f347dc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00025",
+      "target": "obj::operation::src/roadmap.js::file_write::922",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_write::922",
+      "target": "value::73dee76381c4234054da",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00026",
+      "target": "obj::operation::src/roadmap.js::file_read::965",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_read::965",
+      "target": "value::1aaf1bdf5f0e4eb966de",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00027",
+      "target": "obj::symbolic_reference::src/roadmap.js::entries",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::entries",
+      "target": "value::66b9e32a1f4fed6dde7a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00028",
+      "target": "obj::operation::src/roadmap.js::file_access::979",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::979",
+      "target": "value::caeabe89059ed4424ced",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00029",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00029",
+      "target": "obj::symbolic_reference::src/roadmap.js::featuresDir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::featuresDir",
+      "target": "value::ace59f98920a0a91006d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00030",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00030",
+      "target": "obj::symbolic_reference::src/roadmap.js::ideasDir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::ideasDir",
+      "target": "value::03689affe8072c55d3fa",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00031",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00031",
+      "target": "obj::symbolic_reference::src/roadmap.js::text",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::text",
+      "target": "value::fee065022670bdbef469",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00032",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00032",
+      "target": "obj::symbolic_reference::src/roadmap.js::boardPath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::boardPath",
+      "target": "value::510af86d111699d30c8e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00033",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00033",
+      "target": "obj::symbolic_reference::src/roadmap.js::scopePath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::scopePath",
+      "target": "value::68e762cdf64a76e44617",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00034",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00034",
+      "target": "obj::operation::src/roadmap.js::file_access::1048",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::1048",
+      "target": "value::f8013d7b6e6ec96f03cf",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00035",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00035",
+      "target": "obj::operation::src/roadmap.js::file_create::1070",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_create::1070",
+      "target": "value::3aa8814b32f99bf0e220",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00036",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00036",
+      "target": "obj::operation::src/roadmap.js::file_create::1073",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_create::1073",
+      "target": "value::eaf26dff6e2ecdfad431",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00037",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00037",
+      "target": "obj::operation::src/roadmap.js::file_access::1073",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::1073",
+      "target": "value::ed191fd0019d4060b1d9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00038",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00038",
+      "target": "obj::operation::src/roadmap.js::file_access::1077",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::1077",
+      "target": "value::0a621ab5b37c99821909",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00039",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00039",
+      "target": "obj::operation::src/roadmap.js::file_access::1102",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_access::1102",
+      "target": "value::44b6cf207227437b63a6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00040",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00040",
+      "target": "obj::operation::src/roadmap.js::file_write::1131",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_write::1131",
+      "target": "value::4ee4b32fe1c38ca3eb93",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00041",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00041",
+      "target": "obj::symbolic_reference::src/roadmap.js::nextKind",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::src/roadmap.js::nextKind",
+      "target": "value::df8781fa8955ce82d008",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00042",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00042",
+      "target": "obj::operation::src/roadmap.js::file_write::1174",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_write::1174",
+      "target": "value::7f3e0c3a4fd568e457dc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00043",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00043",
+      "target": "obj::operation::src/roadmap.js::file_write::1177",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_write::1177",
+      "target": "value::331ad0dd0469780271fd",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00044",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00044",
+      "target": "obj::symbolic_reference::src/roadmap.js::scopePath",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00045",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00045",
+      "target": "obj::operation::src/roadmap.js::file_write::1191",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_write::1191",
+      "target": "value::388572728fec50cc4d10",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00046",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00046",
+      "target": "obj::symbolic_reference::src/roadmap.js::boardPath",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00047",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00047",
+      "target": "obj::operation::src/roadmap.js::file_write::1240",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::src/roadmap.js::file_write::1240",
+      "target": "value::89609538dfa16bf90a36",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00021",
+      "target": "sso_00022",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00032",
+      "target": "sso_00046",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00033",
+      "target": "sso_00044",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "AGENTS_SNIPPET.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "CONTRACT.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/README__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "package.json",
+      "type": "manifest"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "server.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "src/roadmap.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "ui/index.html",
+      "type": "binary"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": "ui/styles.css",
+      "type": "binary"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::__dirname",
+      "identity_key": "server.js::__dirname",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::c0d33603a09e795e573c",
+      "kind": "value",
+      "value": "server.js::__dirname",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::staticRoot",
+      "identity_key": "server.js::staticRoot",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::466cd4e17cf280ba4575",
+      "kind": "value",
+      "value": "server.js::staticRoot",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::server.js::system_command_execution::18",
+      "identity_key": "server.js::system_command_execution::18",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::9d266dfbc59e0803bc57",
+      "kind": "value",
+      "value": "server.js::system_command_execution::18",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::repoName",
+      "identity_key": "server.js::repoName",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::9c07d62aa8c854223472",
+      "kind": "value",
+      "value": "server.js::repoName",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::normalized",
+      "identity_key": "server.js::normalized",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::41962f06d3e31d5789c9",
+      "kind": "value",
+      "value": "server.js::normalized",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::resolved",
+      "identity_key": "server.js::resolved",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::bb6dc83af341e899ead5",
+      "kind": "value",
+      "value": "server.js::resolved",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::server.js::file_access::66",
+      "identity_key": "server.js::file_access::66",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::44b1dd0201ca17067c20",
+      "kind": "value",
+      "value": "server.js::file_access::66",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::file",
+      "identity_key": "server.js::file",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::d1dfaeb0e3cd98776298",
+      "kind": "value",
+      "value": "server.js::file",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::extension",
+      "identity_key": "server.js::extension",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::0c061c1b01f8186d2f65",
+      "kind": "value",
+      "value": "server.js::extension",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "server_listen",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::server.js::server_listen::const server = http.createServer(requestListener);",
+      "identity_key": "server.js::server_listen::const server = http.createServer(requestListener);",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::4f07e66a0adbbe430a1c",
+      "kind": "value",
+      "value": "server.js::server_listen::const server = http.createServer(requestListener);",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::__dirname",
+      "identity_key": "src/roadmap.js::__dirname",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::9ef228c9e456690094b1",
+      "kind": "value",
+      "value": "src/roadmap.js::__dirname",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::TEMPLATE_ROADMAP_ROOT",
+      "identity_key": "src/roadmap.js::TEMPLATE_ROADMAP_ROOT",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::105c7940a2966f5cba61",
+      "kind": "value",
+      "value": "src/roadmap.js::TEMPLATE_ROADMAP_ROOT",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::744",
+      "identity_key": "src/roadmap.js::file_access::744",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f6ab5d212b21aed824ab",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::744",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::753",
+      "identity_key": "src/roadmap.js::file_access::753",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::7858cab4d71ef86f2d21",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::753",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::764",
+      "identity_key": "src/roadmap.js::file_access::764",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::45faf22fbfddc0f756dc",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::764",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::resolvedRepoRoot",
+      "identity_key": "src/roadmap.js::resolvedRepoRoot",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::fe1ebc89907562f5329f",
+      "kind": "value",
+      "value": "src/roadmap.js::resolvedRepoRoot",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::configPath",
+      "identity_key": "src/roadmap.js::configPath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::2f23130d640bb558066c",
+      "kind": "value",
+      "value": "src/roadmap.js::configPath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::rawConfig",
+      "identity_key": "src/roadmap.js::rawConfig",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::3311fd2110532a9a59b0",
+      "kind": "value",
+      "value": "src/roadmap.js::rawConfig",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::resolvedPath",
+      "identity_key": "src/roadmap.js::resolvedPath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::2d4558ee514b042f44e2",
+      "kind": "value",
+      "value": "src/roadmap.js::resolvedPath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::relative",
+      "identity_key": "src/roadmap.js::relative",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::2964101977ef21e1631e",
+      "kind": "value",
+      "value": "src/roadmap.js::relative",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::836",
+      "identity_key": "src/roadmap.js::file_access::836",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::de5b727f71c35da2d0bc",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::836",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::targetPath",
+      "identity_key": "src/roadmap.js::targetPath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::e92bcf826f7ad32f32e6",
+      "kind": "value",
+      "value": "src/roadmap.js::targetPath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::templatePath",
+      "identity_key": "src/roadmap.js::templatePath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::8b3c365aafe88e4d7a2e",
+      "kind": "value",
+      "value": "src/roadmap.js::templatePath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::templateText",
+      "identity_key": "src/roadmap.js::templateText",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::58791f5de1b153f347dc",
+      "kind": "value",
+      "value": "src/roadmap.js::templateText",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_write::922",
+      "identity_key": "src/roadmap.js::file_write::922",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::73dee76381c4234054da",
+      "kind": "value",
+      "value": "src/roadmap.js::file_write::922",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00029"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_read::965",
+      "identity_key": "src/roadmap.js::file_read::965",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1aaf1bdf5f0e4eb966de",
+      "kind": "value",
+      "value": "src/roadmap.js::file_read::965",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00030"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::entries",
+      "identity_key": "src/roadmap.js::entries",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::66b9e32a1f4fed6dde7a",
+      "kind": "value",
+      "value": "src/roadmap.js::entries",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00031"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::979",
+      "identity_key": "src/roadmap.js::file_access::979",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::caeabe89059ed4424ced",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::979",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00032"
+      ],
+      "id": "sso_00029",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::featuresDir",
+      "identity_key": "src/roadmap.js::featuresDir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::ace59f98920a0a91006d",
+      "kind": "value",
+      "value": "src/roadmap.js::featuresDir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00033"
+      ],
+      "id": "sso_00030",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::ideasDir",
+      "identity_key": "src/roadmap.js::ideasDir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::03689affe8072c55d3fa",
+      "kind": "value",
+      "value": "src/roadmap.js::ideasDir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00034"
+      ],
+      "id": "sso_00031",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::text",
+      "identity_key": "src/roadmap.js::text",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::fee065022670bdbef469",
+      "kind": "value",
+      "value": "src/roadmap.js::text",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00035"
+      ],
+      "id": "sso_00032",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::boardPath",
+      "identity_key": "src/roadmap.js::boardPath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::510af86d111699d30c8e",
+      "kind": "value",
+      "value": "src/roadmap.js::boardPath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00036"
+      ],
+      "id": "sso_00033",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::scopePath",
+      "identity_key": "src/roadmap.js::scopePath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::68e762cdf64a76e44617",
+      "kind": "value",
+      "value": "src/roadmap.js::scopePath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00037"
+      ],
+      "id": "sso_00034",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::1048",
+      "identity_key": "src/roadmap.js::file_access::1048",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f8013d7b6e6ec96f03cf",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::1048",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00039"
+      ],
+      "id": "sso_00035",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_create::1070",
+      "identity_key": "src/roadmap.js::file_create::1070",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::3aa8814b32f99bf0e220",
+      "kind": "value",
+      "value": "src/roadmap.js::file_create::1070",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00040"
+      ],
+      "id": "sso_00036",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_create::1073",
+      "identity_key": "src/roadmap.js::file_create::1073",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::eaf26dff6e2ecdfad431",
+      "kind": "value",
+      "value": "src/roadmap.js::file_create::1073",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00041"
+      ],
+      "id": "sso_00037",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::1073",
+      "identity_key": "src/roadmap.js::file_access::1073",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ed191fd0019d4060b1d9",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::1073",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00042"
+      ],
+      "id": "sso_00038",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::1077",
+      "identity_key": "src/roadmap.js::file_access::1077",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::0a621ab5b37c99821909",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::1077",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00043"
+      ],
+      "id": "sso_00039",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_access::1102",
+      "identity_key": "src/roadmap.js::file_access::1102",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::44b6cf207227437b63a6",
+      "kind": "value",
+      "value": "src/roadmap.js::file_access::1102",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00044"
+      ],
+      "id": "sso_00040",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_write::1131",
+      "identity_key": "src/roadmap.js::file_write::1131",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4ee4b32fe1c38ca3eb93",
+      "kind": "value",
+      "value": "src/roadmap.js::file_write::1131",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00045"
+      ],
+      "id": "sso_00041",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::src/roadmap.js::nextKind",
+      "identity_key": "src/roadmap.js::nextKind",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::df8781fa8955ce82d008",
+      "kind": "value",
+      "value": "src/roadmap.js::nextKind",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00047"
+      ],
+      "id": "sso_00042",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_write::1174",
+      "identity_key": "src/roadmap.js::file_write::1174",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::7f3e0c3a4fd568e457dc",
+      "kind": "value",
+      "value": "src/roadmap.js::file_write::1174",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00048"
+      ],
+      "id": "sso_00043",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_write::1177",
+      "identity_key": "src/roadmap.js::file_write::1177",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::331ad0dd0469780271fd",
+      "kind": "value",
+      "value": "src/roadmap.js::file_write::1177",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00049"
+      ],
+      "id": "sso_00044",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00050"
+      ],
+      "id": "sso_00045",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_write::1191",
+      "identity_key": "src/roadmap.js::file_write::1191",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::388572728fec50cc4d10",
+      "kind": "value",
+      "value": "src/roadmap.js::file_write::1191",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00051"
+      ],
+      "id": "sso_00046",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00052"
+      ],
+      "id": "sso_00047",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::src/roadmap.js::file_write::1240",
+      "identity_key": "src/roadmap.js::file_write::1240",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::89609538dfa16bf90a36",
+      "kind": "value",
+      "value": "src/roadmap.js::file_write::1240",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

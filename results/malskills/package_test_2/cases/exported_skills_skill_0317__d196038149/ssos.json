@@ -1,0 +1,31 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "scripts/validate_domain_harness.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/validate_domain_harness.py::credential_data_access::386": "path"
+      },
+      "operation_object": "obj::operation::scripts/validate_domain_harness.py::credential_data_access::386",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 386,
+      "source_start_line": 386
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/validate_domain_harness.py::credential_data_access::386"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  }
+]

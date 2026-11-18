@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: pr-merge\r\ndescription: Merge a GitHub pull request from the current branch and clean up the remote branch.\r\nmetadata:\r\n  short-description: Merge PR from current branch\r\n---\r\n\r\n# Merge Pull Request\r\n\r\n## Objective\r\n\r\nDo the correct procedure to merge a GitHub pull request from the current branch using the same merge strategy as GitHub's \"Merge pull request\" button (`--merge`), then delete the remote branch.\r\n\r\n## General Guidelines\r\n\r\n- Only go to the next step after finishing the current one.\r\n- When this workflow calls `$commit`, override `$commit` confirmation prompts and proceed automatically.\r\n\r\n## Instructions\r\n\r\n1. Check whether the current branch is ahead of its remote tracking branch.\r\n\r\n- Verify sync status with remote: run `git status -sb`.\r\n- If the branch is ahead (e.g., `[ahead N]`), execute `git push`.\r\n\r\n2. Run `$code-quality`.\r\n\r\n3. Commit/push only if local changes exist.\r\n\r\n- Check for local changes:\r\n  - `git diff --quiet && git diff --staged --quiet`\r\n- If there are no local changes, skip commit/push and continue.\r\n- If there are local changes:\r\n  - Run `$commit` in non-interactive override mode.\r\n  - Use the generated commit message directly.\r\n  - Push branch automatically.\r\n\r\n4. Get PR info from current branch.\r\n\r\n- Run:\r\n  - `gh pr view --json number,title,mergeable,mergeStateStatus,headRefName,baseRefName,closingIssuesReferences --jq '.'`\r\n  - If `gh pr view` fails, stop execution and report: \"No open PR found for the current branch.\"\r\n- From `closingIssuesReferences`, collect for each issue:\r\n  - issue number\r\n- For each collected issue, fetch the issue title with:\r\n  - `gh issue view <issue-number> --json title --jq '.title'`\r\n- Save for output:\r\n  - PR number\r\n  - PR title\r\n  - Head branch name\r\n  - Base branch name\r\n  - Issue numbers\r\n  - Issue titles\r\n\r\n5. Check mergeability status (GitHub-like pre-check).\r\n\r\n- Re-check mergeability up to 6 times (5s interval):\r\n  - `gh pr view --json mergeable --jq '.mergeable'`\r\n- At each retry:\r\n  - If result is `MERGEABLE`, continue to next step.\r\n  - If result is `CONFLICTING`, stop execution and report:\r\n    - \"PR has conflicts with base branch and cannot be merged automatically.\"\r\n  - If result is `UNKNOWN`, wait 5 seconds and retry.\r\n- If result is not `MERGEABLE` after all retries, stop execution and report current status.\r\n\r\n6. Merge PR using `--merge` and delete the branch only after merge succeeds.\r\n\r\n- `gh pr merge <pr-number> --merge --delete-branch`\r\n\r\n7. Sync linked issues to Kanban `Done` (mandatory for completed work).\r\n\r\n- For each issue in `closingIssuesReferences`:\r\n  - `bash .agents/skills/issue/scripts/edit_issue_project_fields.sh --issue <issue-number> --status Done`\r\n  - `gh issue close <issue-number> --comment \"Closing automatically after PR merge.\"` (only if still open)\r\n  - `gh issue view <issue-number> --json state,projectItems --jq '.'` and keep evidence for output.\r\n\r\n## Output Rules\r\n\r\nReturn exactly this structure:\r\n\r\n**Merged Pull Request**\r\n\r\n- Name: `<pr-title>`\r\n- Number: `<pr-number>`\r\n- Base branch: `<base-branch>`\r\n- Head branch: `<head-branch>`\r\n\r\n**Linked Closing Issues**\r\n\r\n- If linked issues exist, list each one as:\r\n  - `#<issue-number> - <issue-title> (state: <state>, status: <project-status>)`\r\n- If there are no linked issues, write:\r\n  - `No linked closing issues`\r\n\r\n**Branch Cleanup**\r\n\r\n- Remote branch deleted: <head-branch>\r\n",
+    "content_hash": "9e335dde05cdf5b47637c2bd8ec0d3951275cfce254d29a3b6e6988ff09ed8d3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 98,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3411,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"PR Merge\"\r\n  short_description: \"Merge a GitHub pull request from the current branch and clean up the remote branch.\"\r\n  default_prompt: \"Use this skill to verify the current branch state, merge the related GitHub pull request with the correct strategy, and clean up the remote branch.\"\r\n",
+    "content_hash": "5b9bb6239bcdb7de16e1a6cbd26f9cf4ee78e022d23c053e2660f0b2b0c82ca0",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 317,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

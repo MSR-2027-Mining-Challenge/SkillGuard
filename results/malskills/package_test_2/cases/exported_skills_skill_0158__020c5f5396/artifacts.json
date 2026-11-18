@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: cognitive-doc-design\r\ndescription: \"Design docs that reduce cognitive load. Trigger: writing guides, READMEs, RFCs, onboarding, architecture, or review-facing docs.\"\r\nlicense: Apache-2.0\r\nmetadata:\r\n  author: iperez\r\n  version: \"1.0\"\r\n---\r\n\r\n## When to Use\r\n\r\nLoad this skill when creating or editing documentation that people need to understand quickly, retain, or use during review.\r\n\r\nUse it especially for:\r\n\r\n- PR descriptions and review notes.\r\n- Contributor or maintainer guides.\r\n- Architecture, workflow, or onboarding docs.\r\n- Any doc that currently feels long, dense, or hard to scan.\r\n\r\n## Critical Patterns\r\n\r\n| Pattern | Rule |\r\n|---------|------|\r\n| Lead with the answer | Put the decision, action, or outcome first. Context comes after. |\r\n| Progressive disclosure | Start with the happy path, then add details, edge cases, and references. |\r\n| Chunking | Group related information into small sections. Keep flat lists short. |\r\n| Signposting | Use headings, labels, callouts, and summaries so readers know where they are. |\r\n| Recognition over recall | Prefer tables, checklists, examples, and templates over prose that must be remembered. |\r\n| Review empathy | Design docs so reviewers can verify intent without reconstructing the whole story. |\r\n\r\n## Documentation Shape\r\n\r\nUse this default structure unless the repo already provides a stronger template:\r\n\r\n```markdown\r\n# <Outcome-oriented title>\r\n\r\n<One paragraph: what changed, who it helps, and why it matters.>\r\n\r\n## Quick path\r\n\r\n1. <First action>\r\n2. <Second action>\r\n3. <Verification or expected result>\r\n\r\n## Details\r\n\r\n| Topic | Decision |\r\n|-------|----------|\r\n| <area> | <concise explanation> |\r\n\r\n## Checklist\r\n\r\n- [ ] <Reader can confirm this>\r\n- [ ] <Reader can confirm that>\r\n\r\n## Next step\r\n\r\n<Link or action that continues the workflow.>\r\n```\r\n\r\n## PR and Review Docs\r\n\r\nWhen documenting a PR, reduce reviewer burnout by making the review path explicit:\r\n\r\n- State what to review first.\r\n- State what is intentionally out of scope.\r\n- Link the previous and next PR when work is chained.\r\n- Keep each section focused on one decision or unit of work.\r\n- Use checklists for acceptance criteria and verification.\r\n\r\n## Commands\r\n\r\n```bash\r\n# Check markdown files changed in the current branch\r\ngit diff --name-only -- '*.md'\r\n\r\n# Inspect PR changed-line count for cognitive load\r\ngh pr view <PR_NUMBER> --json additions,deletions,changedFiles\r\n```\r\n",
+    "content_hash": "3076d0db30ad45aad91ccea015de4a2c9bc22779f15bcbff68899957b4e1985c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 82,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2444,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Check markdown files changed in the current branch\r\ngit diff --name-only -- '*.md'\r\n\r\n# Inspect PR changed-line count for cognitive load\r\ngh pr view <PR_NUMBER> --json additions,deletions,changedFiles",
+    "content_hash": "6e72cc3d9c99a884cee877b78d73207a070e5363e6d8d3e172c5e64df57bfdff",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 202,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 81,
+    "source_start_line": 75
+  }
+]

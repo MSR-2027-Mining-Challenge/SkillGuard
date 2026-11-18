@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "<!--\r\n# COPYRIGHT NOTICE\r\n# This file is part of the \"Universal Biomedical Skills\" project.\r\n# Copyright (c) 2026 MD BABU MIA, PhD <md.babu.mia@mssm.edu>\r\n# All Rights Reserved.\r\n#\r\n# This code is proprietary and confidential.\r\n# Unauthorized copying of this file, via any medium is strictly prohibited.\r\n#\r\n# Provenance: Authenticated by MD BABU MIA\r\n\r\n-->\r\n\r\n# Precision Oncology Agent\r\n\r\n**ID:** `biomedical.clinical.oncology.precision_agent`\r\n**Version:** 1.0.0\r\n**Status:** High Priority\r\n**Category:** Clinical / Oncology\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThe **Precision Oncology Agent** leverages multimodal LLMs (like GPT-4V or fine-tuned LLaVA) to integrate genomic profiling (NGS), pathology images, and clinical history to recommend personalized cancer therapies.\r\n\r\n## Key Capabilities\r\n\r\n- **Variant Interpretation:** matches NGS mutations (e.g., *BRAF* V600E) to targeted therapies using OncoKB / CIViC.\r\n- **Trial Matching:** Screens patients against eligibility criteria for active oncology trials.\r\n- **Multimodal Synthesis:** Correlates histology patterns (e.g., tumor infiltrating lymphocytes) with genomic immune markers (TMB, MSI).\r\n\r\n## Performance\r\n- 87.2% decision-making accuracy in simulated tumor boards (Nature Cancer 2025).\r\n\r\n## References\r\n- *Autonomous Clinical AI Agent* (Nature Cancer, 2025)\r\n\r\n<!-- AUTHOR_SIGNATURE: 9a7f3c2e-MD-BABU-MIA-2026-MSSM-SECURE -->",
+    "content_hash": "889bd3bce6a922cacf2cd24e941cc1a481a59684b90b9e0db3ceef8f6b8bd542",
+    "generated": false,
+    "is_text": true,
+    "line_count": 39,
+    "relative_path": "README.md",
+    "size_bytes": 1385,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: precision-oncology-agent\r\ndescription: Fuse genomic variants, pathology findings, and clinical context to draft evidence-linked therapy options for tumor board review.\r\nallowed-tools:\r\n  - read_file\r\n  - run_shell_command\r\n---\r\n\r\n<!--\r\n# COPYRIGHT NOTICE\r\n# This file is part of the \"Universal Biomedical Skills\" project.\r\n# Copyright (c) 2026 MD BABU MIA, PhD <md.babu.mia@mssm.edu>\r\n# All Rights Reserved.\r\n#\r\n# This code is proprietary and confidential.\r\n# Unauthorized copying of this file, via any medium is strictly prohibited.\r\n#\r\n# Provenance: Authenticated by MD BABU MIA\r\n\r\n-->\r\n\r\n\r\n## At-a-Glance\r\n- **description (10-20 chars):** Tumor board copilot\r\n- **keywords:** oncology, genomics, OncoKB, therapy-ranking, evidence\r\n- **measurable_outcome:** Deliver a ranked therapy list with OncoKB/NCCN citations plus data-gap checklist for every case within 10 minutes of receiving inputs.\r\n\r\n## Inputs\r\n- `vcf_path` (hg38 preferred) plus optional CNV/fusion summaries.\r\n- `pathology_report` text for histology/grade/biomarkers.\r\n- `clinical_context` dict capturing tumor type, stage, prior lines, ECOG.\r\n\r\n## Outputs\r\n1. Ranked treatment options (approved, off-label, clinical trials) with evidence strength + contraindications.\r\n2. Variant interpretation table (pathogenicity, tier, therapy linkage).\r\n3. Biomarker summary (TMB, MSI, PD-L1 if provided) and missing-test checklist.\r\n\r\n## Workflow\r\n1. **Ingest & normalize:** Harmonize gene symbols, genome build, and variant effects.\r\n2. **Annotate:** Query OncoKB/NCCN + internal knowledge for actionability tiers.\r\n3. **Contextualize:** Blend pathology + prior therapy info to filter contraindicated options.\r\n4. **Recommend:** Present therapies ordered by evidence + patient fit; cite sources.\r\n5. **Gaps:** Highlight assays or confirmations still required before treatment.\r\n\r\n## Guardrails\r\n- No autonomous treatment decisions\u2014flag outputs as advisory.\r\n- Cite evidence rigorously (guideline version, publication).\r\n- Highlight resistance mechanisms and prior exposure conflicts.\r\n\r\n## References\r\n- See `README.md` for detailed workflow plus cited Nature Cancer study.\r\n\r\n\r\n<!-- AUTHOR_SIGNATURE: 9a7f3c2e-MD-BABU-MIA-2026-MSSM-SECURE -->",
+    "content_hash": "188511e9f371ff7aea099696bb6c325127f1c9c43e10a2787c54ee46636ceb6a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 54,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2213,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,38 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=markdown\npath=references/v2-upgrade-notes.md"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=text\npath=requirements.txt"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=python\npath=scripts/analyze_music.py"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=python\npath=scripts/listen.py"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=python\npath=scripts/music_analysis_v2.py"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=python\npath=scripts/temporal_listen.py"];
+  "obj::operation::scripts/temporal_listen.py::credential_data_access::252" [label="obj::operation::scripts/temporal_listen.py::credential_data_access::252\nkind=operand"];
+  "obj::symbolic_reference::scripts/analyze_music.py::cmd" [label="obj::symbolic_reference::scripts/analyze_music.py::cmd\nkind=operand"];
+  "obj::symbolic_reference::scripts/listen.py::cmd" [label="obj::symbolic_reference::scripts/listen.py::cmd\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::48dadb65b0519e172dc8" [label="value::48dadb65b0519e172dc8\nkind=value"];
+  "value::dff69e57cf9a25279971" [label="value::dff69e57cf9a25279971\nkind=value"];
+  "value::fe832b22f69a8f393f71" [label="value::fe832b22f69a8f393f71\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0006" -> "sso_00000" [label="contains"];
+  "art_0007" -> "sso_00001" [label="contains"];
+  "art_0007" -> "sso_00002" [label="contains"];
+  "art_0009" -> "sso_00003" [label="contains"];
+  "obj::operation::scripts/temporal_listen.py::credential_data_access::252" -> "value::fe832b22f69a8f393f71" [label="value_flow"];
+  "obj::symbolic_reference::scripts/analyze_music.py::cmd" -> "value::48dadb65b0519e172dc8" [label="value_flow"];
+  "obj::symbolic_reference::scripts/listen.py::cmd" -> "value::dff69e57cf9a25279971" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::scripts/analyze_music.py::cmd" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::scripts/listen.py::cmd" [label="has_operand"];
+  "sso_00001" -> "sso_00002" [label="same_object"];
+  "sso_00002" -> "obj::symbolic_reference::scripts/listen.py::cmd" [label="has_operand"];
+  "sso_00003" -> "obj::operation::scripts/temporal_listen.py::credential_data_access::252" [label="has_operand"];
+}

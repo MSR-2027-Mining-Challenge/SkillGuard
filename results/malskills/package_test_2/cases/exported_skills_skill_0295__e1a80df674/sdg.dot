@@ -1,0 +1,35 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=binary\npath=assets/stage.html"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=config\npath=evals/evals.json"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=references/recipes.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=scripts/render.mjs"];
+  "obj::operation::scripts/render.mjs::system_command_execution::45" [label="obj::operation::scripts/render.mjs::system_command_execution::45\nkind=operand"];
+  "obj::operation::scripts/render.mjs::system_command_execution::50" [label="obj::operation::scripts/render.mjs::system_command_execution::50\nkind=operand"];
+  "obj::operation::scripts/render.mjs::system_command_execution::56" [label="obj::operation::scripts/render.mjs::system_command_execution::56\nkind=operand"];
+  "obj::operation::scripts/render.mjs::system_command_execution::76" [label="obj::operation::scripts/render.mjs::system_command_execution::76\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "value::0afc3fe60c1f54b46852" [label="value::0afc3fe60c1f54b46852\nkind=value"];
+  "value::8996eb537b16dbcd1e1a" [label="value::8996eb537b16dbcd1e1a\nkind=value"];
+  "value::aba0a199559a5c153e0e" [label="value::aba0a199559a5c153e0e\nkind=value"];
+  "value::be76fe7240f32e902078" [label="value::be76fe7240f32e902078\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "art_0004" -> "sso_00001" [label="contains"];
+  "art_0004" -> "sso_00002" [label="contains"];
+  "art_0004" -> "sso_00003" [label="contains"];
+  "obj::operation::scripts/render.mjs::system_command_execution::45" -> "value::be76fe7240f32e902078" [label="value_flow"];
+  "obj::operation::scripts/render.mjs::system_command_execution::50" -> "value::8996eb537b16dbcd1e1a" [label="value_flow"];
+  "obj::operation::scripts/render.mjs::system_command_execution::56" -> "value::0afc3fe60c1f54b46852" [label="value_flow"];
+  "obj::operation::scripts/render.mjs::system_command_execution::76" -> "value::aba0a199559a5c153e0e" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/render.mjs::system_command_execution::45" [label="has_operand"];
+  "sso_00001" -> "obj::operation::scripts/render.mjs::system_command_execution::50" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/render.mjs::system_command_execution::56" [label="has_operand"];
+  "sso_00003" -> "obj::operation::scripts/render.mjs::system_command_execution::76" [label="has_operand"];
+}

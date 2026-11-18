@@ -1,0 +1,146 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "lsmod | grep -E 'algif_aead|esp4|esp6|espintcp|rxrpc' || echo \"NO_VULN_MODULES_LOADED\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::1",
+      "path_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat /etc/modprobe.d/*.conf 2>/dev/null | grep -E 'install.*(algif_aead|esp4|esp6|rxrpc).*/bin/false' || echo \"NO_MITIGATION_FOUND\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat /proc/sys/kernel/unprivileged_userns_clone 2>/dev/null || echo \"NOT_AVAILABLE\"; cat /proc/sys/user/max_user_namespaces 2>/dev/null || echo \"NOT_AVAILABLE\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/check_vulns.sh"
+    ],
+    "attributes": {
+      "matched_text": "UNPRIV_USERNS=$(cat /proc/sys/kernel/unprivileged_userns_clone 2>/dev/null || echo \"N/A\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/check_vulns.sh::UNPRIV_USERNS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/check_vulns.sh::UNPRIV_USERNS",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 71,
+      "source_start_line": 71
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/check_vulns.sh::UNPRIV_USERNS"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/check_vulns.sh"
+    ],
+    "attributes": {
+      "matched_text": "MAX_USERNS=$(cat /proc/sys/user/max_user_namespaces 2>/dev/null || echo \"N/A\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/check_vulns.sh::MAX_USERNS": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/check_vulns.sh::MAX_USERNS",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 72,
+      "source_start_line": 72
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/check_vulns.sh::MAX_USERNS"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  }
+]

@@ -1,0 +1,34 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=New items for skill.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=Specifications_Markdown/ReadMe.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=config\npath=Specifications_Markdown/graphify-out/cache/stat-index.json"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=markdown\npath=Specifications_Markdown/markdownPrimer.md"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=markdown\npath=SysMLv2-best-practice.md"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=markdown\npath=fix_recipies.md"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=markdown\npath=incose_se_skill.md"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=markdown\npath=methodology_skill.md"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=markdown\npath=ntrs_skill.md"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=shell\npath=.malskills_fences/ntrs_skill__fence_0.sh"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=shell\npath=.malskills_fences/ntrs_skill__fence_1.sh"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=markdown\npath=pattern_fix_recipies.md"];
+  "art_0013" [label="art_0013\nkind=artifact\ntype=markdown\npath=shorthands_skill.md"];
+  "art_0014" [label="art_0014\nkind=artifact\ntype=markdown\npath=standard_libraries_skill.md"];
+  "art_0015" [label="art_0015\nkind=artifact\ntype=markdown\npath=validation_skill.md"];
+  "obj::operation::SKILL.md::dynamic_code_execution::4932" [label="obj::operation::SKILL.md::dynamic_code_execution::4932\nkind=operand"];
+  "obj::operation::SKILL.md::dynamic_code_execution::4934" [label="obj::operation::SKILL.md::dynamic_code_execution::4934\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "value::36efe2adaf0bf01dd6ce" [label="value::36efe2adaf0bf01dd6ce\nkind=value"];
+  "value::ca4042954cc5d4d82d5b" [label="value::ca4042954cc5d4d82d5b\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0001" -> "sso_00001" [label="contains"];
+  "obj::operation::SKILL.md::dynamic_code_execution::4932" -> "value::ca4042954cc5d4d82d5b" [label="value_flow"];
+  "obj::operation::SKILL.md::dynamic_code_execution::4934" -> "value::36efe2adaf0bf01dd6ce" [label="value_flow"];
+  "sso_00000" -> "obj::operation::SKILL.md::dynamic_code_execution::4932" [label="has_operand"];
+  "sso_00001" -> "obj::operation::SKILL.md::dynamic_code_execution::4934" [label="has_operand"];
+}

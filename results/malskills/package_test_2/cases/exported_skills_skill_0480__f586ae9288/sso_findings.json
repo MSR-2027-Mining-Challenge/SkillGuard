@@ -1,0 +1,2502 @@
+[
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.dirname(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.dirname()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "const __dirname = path.dirname(__filename);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 16,
+        "start_line": 16
+      }
+    },
+    "span": {
+      "end_line": 16,
+      "start_line": 16
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00001",
+    "matched_text": "const staticRoot = path.join(__dirname, \"ui\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 17,
+        "start_line": 17
+      }
+    },
+    "span": {
+      "end_line": 17,
+      "start_line": 17
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using process.cwd(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0018.no-process-cwd",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.command_execution.sso.javascript.command_execution.process.0018.no-process-cwd"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "process.cwd()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00002",
+    "matched_text": "const repoRoot = process.cwd();",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 18,
+        "start_line": 18
+      }
+    },
+    "span": {
+      "end_line": 18,
+      "start_line": 18
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.basename(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.basename()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00003",
+    "matched_text": "const repoName = path.basename(path.resolve(repoRoot));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 21,
+        "start_line": 21
+      }
+    },
+    "span": {
+      "end_line": 21,
+      "start_line": 21
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.normalize(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0008.no-path-normalize",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0008.no-path-normalize"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.normalize()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00005",
+    "matched_text": "const normalized = path.normalize(requestedPath).replace(/^([.][.][/\\\\])+/, \"\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 62,
+        "start_line": 62
+      }
+    },
+    "span": {
+      "end_line": 62,
+      "start_line": 62
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00006",
+    "matched_text": "const resolved = path.join(staticRoot, normalized);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 63,
+        "start_line": 63
+      }
+    },
+    "span": {
+      "end_line": 63,
+      "start_line": 63
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00007",
+    "matched_text": "if (!resolved.startsWith(staticBase) && resolved !== path.join(staticRoot, \"index.html\")) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 66,
+        "start_line": 66
+      }
+    },
+    "span": {
+      "end_line": 66,
+      "start_line": 66
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00008",
+    "matched_text": "file = await fs.readFile(filePath, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 171,
+        "start_line": 171
+      }
+    },
+    "span": {
+      "end_line": 171,
+      "start_line": 171
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.extname(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0004.no-path-extname",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0004.no-path-extname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.extname()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00009",
+    "matched_text": "const extension = path.extname(filePath);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 180,
+        "start_line": 180
+      }
+    },
+    "span": {
+      "end_line": 180,
+      "start_line": 180
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0006",
+    "artifact_path": "server.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using http.createServer(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.network_access.sso.javascript.network_access.http.0008.no-http-createServer",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.network_access.sso.javascript.network_access.http.0008.no-http-createServer"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "http.createServer()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00010",
+    "matched_text": "const server = http.createServer(requestListener);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0006",
+        "path": "server.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 248,
+        "start_line": 248
+      }
+    },
+    "span": {
+      "end_line": 248,
+      "start_line": 248
+    },
+    "subtype": "server_listen"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.dirname(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0003.no-path-dirname"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.dirname()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00011",
+    "matched_text": "const __dirname = path.dirname(__filename);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 18,
+        "start_line": 18
+      }
+    },
+    "span": {
+      "end_line": 18,
+      "start_line": 18
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00012",
+    "matched_text": "const TEMPLATE_ROADMAP_ROOT = path.join(__dirname, \"..\", \"templates\", \"roadmap\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 19,
+        "start_line": 19
+      }
+    },
+    "span": {
+      "end_line": 19,
+      "start_line": 19
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.access(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0009.no-fs-access",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0009.no-fs-access"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.access()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00013",
+    "matched_text": "await fs.access(filePath);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 744,
+        "start_line": 744
+      }
+    },
+    "span": {
+      "end_line": 744,
+      "start_line": 744
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.stat(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0076.no-fs-stat",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0076.no-fs-stat"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.stat()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00014",
+    "matched_text": "return await fs.stat(targetPath);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 753,
+        "start_line": 753
+      }
+    },
+    "span": {
+      "end_line": 753,
+      "start_line": 753
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00015",
+    "matched_text": "return path.relative(path.resolve(repoRoot), path.resolve(targetPath)).replaceAll('\\\\', '/');",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 764,
+        "start_line": 764
+      }
+    },
+    "span": {
+      "end_line": 764,
+      "start_line": 764
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.resolve(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.resolve()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00018",
+    "matched_text": "const resolvedRepoRoot = path.resolve(repoRoot);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 805,
+        "start_line": 805
+      }
+    },
+    "span": {
+      "end_line": 805,
+      "start_line": 805
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00019",
+    "matched_text": "const configPath = path.join(resolvedRepoRoot, \"roadmap.config.json\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 806,
+        "start_line": 806
+      }
+    },
+    "span": {
+      "end_line": 806,
+      "start_line": 806
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00020",
+    "matched_text": "rawConfig = await fs.readFile(configPath, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 815,
+        "start_line": 815
+      }
+    },
+    "span": {
+      "end_line": 815,
+      "start_line": 815
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.resolve(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.resolve()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00021",
+    "matched_text": "const resolvedPath = path.resolve(resolvedRepoRoot, configuredPath);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 833,
+        "start_line": 833
+      }
+    },
+    "span": {
+      "end_line": 833,
+      "start_line": 833
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00022",
+    "matched_text": "const relative = path.relative(resolvedRepoRoot, resolvedPath);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 834,
+        "start_line": 834
+      }
+    },
+    "span": {
+      "end_line": 834,
+      "start_line": 834
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.isAbsolute(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0006.no-path-isAbsolute",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0006.no-path-isAbsolute"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.isAbsolute()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00023",
+    "matched_text": "if (relative.startsWith(\"..\") || path.isAbsolute(relative)) {",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 836,
+        "start_line": 836
+      }
+    },
+    "span": {
+      "end_line": 836,
+      "start_line": 836
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00024",
+    "matched_text": "const targetPath = path.join(workspace.resolvedPath, directoryName);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 872,
+        "start_line": 872
+      }
+    },
+    "span": {
+      "end_line": 872,
+      "start_line": 872
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00025",
+    "matched_text": "const targetPath = path.join(workspace.resolvedPath, fileName);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 890,
+        "start_line": 890
+      }
+    },
+    "span": {
+      "end_line": 890,
+      "start_line": 890
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00026",
+    "matched_text": "const templatePath = path.join(TEMPLATE_ROADMAP_ROOT, templateName);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 920,
+        "start_line": 920
+      }
+    },
+    "span": {
+      "end_line": 920,
+      "start_line": 920
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00027",
+    "matched_text": "const templateText = await fs.readFile(templatePath, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 921,
+        "start_line": 921
+      }
+    },
+    "span": {
+      "end_line": 921,
+      "start_line": 921
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.writeFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.writeFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00028",
+    "matched_text": "await fs.writeFile(targetPath, templateText, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 922,
+        "start_line": 922
+      }
+    },
+    "span": {
+      "end_line": 922,
+      "start_line": 922
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00029",
+    "matched_text": "return await fs.readFile(filePath, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 965,
+        "start_line": 965
+      }
+    },
+    "span": {
+      "end_line": 965,
+      "start_line": 965
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readdir(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0062.no-fs-readdir",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0062.no-fs-readdir"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readdir()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00030",
+    "matched_text": "const entries = await fs.readdir(directoryPath, { withFileTypes: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 976,
+        "start_line": 976
+      }
+    },
+    "span": {
+      "end_line": 976,
+      "start_line": 976
+    },
+    "subtype": "file_search"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00031",
+    "matched_text": ".map((entry) => path.join(directoryPath, entry.name));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 979,
+        "start_line": 979
+      }
+    },
+    "span": {
+      "end_line": 979,
+      "start_line": 979
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00032",
+    "matched_text": "const featuresDir = path.join(roadmapRoot, \"features\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 983,
+        "start_line": 983
+      }
+    },
+    "span": {
+      "end_line": 983,
+      "start_line": 983
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00033",
+    "matched_text": "const ideasDir = path.join(roadmapRoot, \"ideas\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 984,
+        "start_line": 984
+      }
+    },
+    "span": {
+      "end_line": 984,
+      "start_line": 984
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.readFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0059.no-fs-readFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.readFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00034",
+    "matched_text": "const text = await fs.readFile(entry.filePath, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 997,
+        "start_line": 997
+      }
+    },
+    "span": {
+      "end_line": 997,
+      "start_line": 997
+    },
+    "subtype": "file_read"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00035",
+    "matched_text": "const boardPath = path.join(workspace.resolvedPath, \"board.md\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1019,
+        "start_line": 1019
+      }
+    },
+    "span": {
+      "end_line": 1019,
+      "start_line": 1019
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00036",
+    "matched_text": "const scopePath = path.join(workspace.resolvedPath, \"scope.md\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1020,
+        "start_line": 1020
+      }
+    },
+    "span": {
+      "end_line": 1020,
+      "start_line": 1020
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.basename(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0011.no-path-resolve"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.basename()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00037",
+    "matched_text": "repoName: path.basename(path.resolve(repoRoot)),",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1048,
+        "start_line": 1048
+      }
+    },
+    "span": {
+      "end_line": 1048,
+      "start_line": 1048
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.mkdir(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0049.no-fs-mkdir",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0049.no-fs-mkdir"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.mkdir()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00039",
+    "matched_text": "await fs.mkdir(workspace.resolvedPath, { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1070,
+        "start_line": 1070
+      }
+    },
+    "span": {
+      "end_line": 1070,
+      "start_line": 1070
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.mkdir(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0049.no-fs-mkdir",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0049.no-fs-mkdir"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.mkdir()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00040",
+    "matched_text": "await fs.mkdir(path.join(workspace.resolvedPath, directoryName), { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1073,
+        "start_line": 1073
+      }
+    },
+    "span": {
+      "end_line": 1073,
+      "start_line": 1073
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00041",
+    "matched_text": "await fs.mkdir(path.join(workspace.resolvedPath, directoryName), { recursive: true });",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1073,
+        "start_line": 1073
+      }
+    },
+    "span": {
+      "end_line": 1073,
+      "start_line": 1073
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00042",
+    "matched_text": "await ensureStarterFile(fileName, path.join(workspace.resolvedPath, fileName));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1077,
+        "start_line": 1077
+      }
+    },
+    "span": {
+      "end_line": 1077,
+      "start_line": 1077
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.relative(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0010.no-path-relative"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.relative()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00043",
+    "matched_text": "filePath: path.relative(repoRoot, item.filePath),",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1102,
+        "start_line": 1102
+      }
+    },
+    "span": {
+      "end_line": 1102,
+      "start_line": 1102
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.writeFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.writeFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00044",
+    "matched_text": "await fs.writeFile(item.filePath, payload.rawText, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1131,
+        "start_line": 1131
+      }
+    },
+    "span": {
+      "end_line": 1131,
+      "start_line": 1131
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0002.no-path-basename",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00045",
+    "matched_text": ": path.join(workspace.resolvedPath, nextKind === \"feature\" ? \"features\" : \"ideas\", path.basename(item.filePath));",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1168,
+        "start_line": 1168
+      }
+    },
+    "span": {
+      "end_line": 1168,
+      "start_line": 1168
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.writeFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.writeFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00047",
+    "matched_text": "await fs.writeFile(item.filePath, serialized, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1174,
+        "start_line": 1174
+      }
+    },
+    "span": {
+      "end_line": 1174,
+      "start_line": 1174
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.rename(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0070.no-fs-rename",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0070.no-fs-rename"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.rename()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00048",
+    "matched_text": "await fs.rename(item.filePath, destinationPath);",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1177,
+        "start_line": 1177
+      }
+    },
+    "span": {
+      "end_line": 1177,
+      "start_line": 1177
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00049",
+    "matched_text": "const scopePath = path.join(workspace.resolvedPath, \"scope.md\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1185,
+        "start_line": 1185
+      }
+    },
+    "span": {
+      "end_line": 1185,
+      "start_line": 1185
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.writeFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.writeFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00050",
+    "matched_text": "await fs.writeFile(scopePath, nextText.replace(/\\n/g, eol), \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1191,
+        "start_line": 1191
+      }
+    },
+    "span": {
+      "end_line": 1191,
+      "start_line": 1191
+    },
+    "subtype": "file_write"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using path.join(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.path.0007.no-path-join"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "path.join()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00051",
+    "matched_text": "const boardPath = path.join(workspace.resolvedPath, \"board.md\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1197,
+        "start_line": 1197
+      }
+    },
+    "span": {
+      "end_line": 1197,
+      "start_line": 1197
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "src/roadmap.js",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using fs.writeFile(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.file_or_system_operation.sso.javascript.file_or_system_operation.fs.0092.no-fs-writeFile"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "fs.writeFile()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00052",
+    "matched_text": "await fs.writeFile(boardPath, serialized, \"utf8\");",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "src/roadmap.js"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1240,
+        "start_line": 1240
+      }
+    },
+    "span": {
+      "end_line": 1240,
+      "start_line": 1240
+    },
+    "subtype": "file_write"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: gsd-remove-workspace\r\ndescription: \"Remove a GSD workspace and clean up worktrees\"\r\n---\r\n\r\n<cursor_skill_adapter>\r\n## A. Skill Invocation\r\n- This skill is invoked when the user mentions `gsd-remove-workspace` or describes a task matching this skill.\r\n- Treat all user text after the skill mention as `{{GSD_ARGS}}`.\r\n- If no arguments are present, treat `{{GSD_ARGS}}` as empty.\r\n\r\n## B. User Prompting\r\nWhen the workflow needs user input, prompt the user conversationally:\r\n- Present options as a numbered list in your response text\r\n- Ask the user to reply with their choice\r\n- For multi-select, ask for comma-separated numbers\r\n\r\n## C. Tool Usage\r\nUse these Cursor tools when executing GSD workflows:\r\n- `Shell` for running commands (terminal operations)\r\n- `StrReplace` for editing existing files\r\n- `Read`, `Write`, `Glob`, `Grep`, `Task`, `WebSearch`, `WebFetch`, `TodoWrite` as needed\r\n\r\n## D. Subagent Spawning\r\nWhen the workflow needs to spawn a subagent:\r\n- Use `Task(subagent_type=\"generalPurpose\", ...)`\r\n- The `model` parameter maps to Cursor's model options (e.g., \"fast\")\r\n</cursor_skill_adapter>\r\n\r\n<context>\r\n**Arguments:**\r\n- `<workspace-name>` (required) \u2014 Name of the workspace to remove\r\n</context>\r\n\r\n<objective>\r\nRemove a workspace directory after confirmation. For worktree strategy, runs `git worktree remove` for each member repo first. Refuses if any repo has uncommitted changes.\r\n</objective>\r\n\r\n<execution_context>\r\n@C:/Dev/LeanQuill/.cursor/get-shit-done/workflows/remove-workspace.md\r\n@C:/Dev/LeanQuill/.cursor/get-shit-done/references/ui-brand.md\r\n</execution_context>\r\n\r\n<process>\r\nExecute the remove-workspace workflow from @C:/Dev/LeanQuill/.cursor/get-shit-done/workflows/remove-workspace.md end-to-end.\r\n</process>\r\n",
+    "content_hash": "990fdad1ca28a3a29df1072c5f963f5eaeddfc554a459b36f9feafdefed4df2b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 47,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1767,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

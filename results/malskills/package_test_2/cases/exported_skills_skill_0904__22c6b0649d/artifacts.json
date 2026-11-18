@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: ci-setup\r\ndescription: Wire a CI pipeline from the framework's ci/ samples. Use for \"set up CI\", \"add GitHub Actions / GitLab CI / Jenkins\", \"wire the pipeline\". Copies a sample to its active location, sets up secrets guidance + per-surface slices, and keeps the AI-QA report step.\r\n---\r\n\r\n# ci-setup \u2014 activate a CI provider from ci/ samples\r\n\r\nThe `ci/` folder holds ready samples; this activates one. See `ci/README.md`.\r\n\r\n## Activate (ask which provider)\r\n- **GitHub Actions** \u2192 `cp ci/github-actions/*.yml .github/workflows/` (regression + pr-smoke).\r\n- **GitLab CI** \u2192 `cp ci/gitlab/.gitlab-ci.yml .gitlab-ci.yml` (repo root).\r\n- **Jenkins** \u2192 point a Pipeline job at `ci/jenkins/regression-pipeline` (Pipeline script from SCM).\r\n\r\n## Configure\r\n- **Secrets/vars** (never commit): `AUTH_URL`, `APP_URL`, `APP_USER`, `APP_PASS`;\r\n  optional `JIRA_URL/JIRA_EMAIL/JIRA_TOKEN/JIRA_PROJECT`, `ANTHROPIC_API_KEY`,\r\n  and (mobile/perf) `DEVICE_GRID`/grid creds.\r\n- **Slices**: `--grep \"@regression\"` (all surfaces) or per-surface (`@ui`/`@api`/`@grpc`/`@graphql`/\r\n  `@mobile-web`); native-mobile needs a device farm; add a perf job (`perf:k6`/`perf:jmeter`).\r\n- Keep the canonical flow: install \u2192 `playwright install` \u2192 run \u2192 **`yarn report:all`** (AI-QA) \u2192 artifacts.\r\n  Env via `test_env` (dev|test|prod).\r\n\r\n## Rules\r\n- `.github/` is patch-guarded \u2014 confirm before writing there. Put real secrets in the CI secret store,\r\n  never in the yaml. Mirror the same commands across providers so results stay comparable.\r\n",
+    "content_hash": "cfdbbc04d1b558621ad7f25be9cdee39514027b787e15eb2400d18aa03a688bc",
+    "generated": false,
+    "is_text": true,
+    "line_count": 27,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1547,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "config",
+    "content": "{\r\n  \"version\": 1,\r\n  \"registry\": \"https://clawhub.ai\",\r\n  \"slug\": \"k8s\",\r\n  \"installedVersion\": \"1.0.0\",\r\n  \"installedAt\": 1775861072310\r\n}\r\n",
+    "content_hash": "a82c02d028f88a901ade020d58f7dbcac9694190dc7c3380193912445e59c1ec",
+    "generated": false,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".clawhub/origin.json",
+    "size_bytes": 142,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: Kubernetes\r\ndescription: Avoid common Kubernetes mistakes \u2014 resource limits, probe configuration, selector mismatches, and RBAC pitfalls.\r\nmetadata: {\"clawdbot\":{\"emoji\":\"\u2638\ufe0f\",\"requires\":{\"bins\":[\"kubectl\"]},\"os\":[\"linux\",\"darwin\",\"win32\"]}}\r\n---\r\n\r\n## Resource Management\r\n- `requests` = guaranteed minimum \u2014 scheduler uses this for placement\r\n- `limits` = maximum allowed \u2014 exceeding memory = OOMKilled, CPU = throttled\r\n- No limits = can consume entire node \u2014 always set production limits\r\n- `requests` without `limits` = burstable \u2014 can use more if available\r\n\r\n## Probes\r\n- `readinessProbe` controls traffic \u2014 fails = removed from Service endpoints\r\n- `livenessProbe` restarts container \u2014 fails = container killed and restarted\r\n- `startupProbe` for slow starts \u2014 disables liveness/readiness until success\r\n- Don't use same endpoint for liveness and readiness \u2014 liveness should be minimal health check\r\n\r\n## Probe Pitfalls\r\n- Liveness probe checking dependencies \u2014 if DB down, all pods restart indefinitely\r\n- `initialDelaySeconds` too short \u2014 pod killed before app starts\r\n- `timeoutSeconds` too short \u2014 slow response = restart loop\r\n- HTTP probe to HTTPS endpoint \u2014 needs `scheme: HTTPS`\r\n\r\n## Labels and Selectors\r\n- Service selector must match Pod labels exactly \u2014 typo = no endpoints\r\n- Deployment selector is immutable \u2014 can't change after creation\r\n- Use consistent labeling scheme \u2014 `app`, `version`, `environment`\r\n- `matchExpressions` for complex selection \u2014 `In`, `NotIn`, `Exists`\r\n\r\n## ConfigMaps and Secrets\r\n- ConfigMap changes don't restart pods \u2014 mount as volume for auto-update, or restart manually\r\n- Secrets are base64 encoded, not encrypted \u2014 use external secrets manager for sensitive data\r\n- `envFrom` imports all keys \u2014 `env.valueFrom` for specific keys\r\n- Volume mount makes files \u2014 `subPath` for single file without replacing directory\r\n\r\n## Networking\r\n- `ClusterIP` internal only \u2014 default, only accessible within cluster\r\n- `NodePort` exposes on node IP \u2014 30000-32767 range, not for production\r\n- `LoadBalancer` provisions cloud LB \u2014 works only in supported environments\r\n- Ingress needs Ingress Controller \u2014 nginx-ingress, traefik, etc. installed separately\r\n\r\n## Persistent Storage\r\n- PVC binds to PV \u2014 must match capacity and access modes\r\n- `storageClassName` must match \u2014 or use `\"\"` for no dynamic provisioning\r\n- `ReadWriteOnce` = single node \u2014 `ReadWriteMany` needed for multi-pod\r\n- Pod deletion doesn't delete PVC \u2014 `persistentVolumeReclaimPolicy` controls PV fate\r\n\r\n## Common Mistakes\r\n- `kubectl apply` vs `create` \u2014 apply for declarative (can update), create for imperative (fails if exists)\r\n- Forgetting namespace \u2014 `-n namespace` or set context default\r\n- Image tag `latest` in production \u2014 no version pinning, unpredictable updates\r\n- Not setting `imagePullPolicy` \u2014 `Always` for latest tag, `IfNotPresent` for versioned\r\n- Service port vs targetPort \u2014 port is Service's, targetPort is container's\r\n\r\n## Debugging\r\n- `kubectl describe pod` for events \u2014 shows scheduling failures, probe failures\r\n- `kubectl logs -f pod` for logs \u2014 `-p` for previous container (after crash)\r\n- `kubectl exec -it pod -- sh` for shell \u2014 debug inside container\r\n- `kubectl get events --sort-by=.lastTimestamp` \u2014 cluster-wide events timeline\r\n\r\n## RBAC\r\n- `ServiceAccount` per workload \u2014 not default, for least privilege\r\n- `Role` is namespaced \u2014 `ClusterRole` is cluster-wide\r\n- `RoleBinding` binds Role to user/SA \u2014 `ClusterRoleBinding` for cluster-wide\r\n- Check permissions: `kubectl auth can-i verb resource --as=system:serviceaccount:ns:sa`\r\n",
+    "content_hash": "fda03ecacd34bc3f086a72bcfad2a25c3da6e9f6d6fc8c712ff40931b8787b65",
+    "generated": false,
+    "is_text": true,
+    "line_count": 67,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3673,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "{\r\n  \"ownerId\": \"kn73vp5rarc3b14rc7wjcw8f8580t5d1\",\r\n  \"slug\": \"k8s\",\r\n  \"version\": \"1.0.0\",\r\n  \"publishedAt\": 1770684789290\r\n}",
+    "content_hash": "73a2e91a945a3c56b23819547159b3911f84adfdb11cdce7b52c79ce7068df9e",
+    "generated": false,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": "_meta.json",
+    "size_bytes": 127,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

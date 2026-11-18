@@ -1,0 +1,99 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "# vLLM exposes Prometheus metrics at /metrics",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\""
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:114:114:data_receive",
+      "source_end_line": 114,
+      "source_start_line": 114
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\""
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.ts",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using crypto.createHmac(), as it can lead to potential issues with cryptography.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0025.no-crypto-createHmac",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0025.no-crypto-createHmac",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.typescript.cryptography.sso.typescript.cryptography.crypto.0025.no-crypto-createHmac"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "crypto.createHmac()",
+      "source_rule_category": "Cryptography",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00000",
+    "matched_text": "const expectedSignature = crypto\n    .createHmac(\"sha256\", process.env.MONEROO_WEBHOOK_SECRET!)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_4.ts"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 70,
+        "start_line": 69
+      }
+    },
+    "span": {
+      "end_line": 70,
+      "start_line": 69
+    },
+    "subtype": "hashing"
+  },
+  {
+    "artifact_id": "art_0004",
+    "artifact_path": ".malskills_fences/SKILL__fence_4.ts",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using crypto.timingSafeEqual(), as it can lead to potential issues with cryptography.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0067.no-crypto-timingSafeEqual",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.javascript.cryptography.sso.javascript.cryptography.crypto.0067.no-crypto-timingSafeEqual",
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.typescript.cryptography.sso.typescript.cryptography.crypto.0067.no-crypto-timingSafeEqual"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "crypto.timingSafeEqual()",
+      "source_rule_category": "Cryptography",
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_id": "semgrep_00002",
+    "matched_text": "return crypto.timingSafeEqual(\n    Buffer.from(signature),\n    Buffer.from(expectedSignature)\n  );",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0004",
+        "path": ".malskills_fences/SKILL__fence_4.ts"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 77,
+        "start_line": 74
+      }
+    },
+    "span": {
+      "end_line": 77,
+      "start_line": 74
+    },
+    "subtype": "cryptographic_operation"
+  }
+]

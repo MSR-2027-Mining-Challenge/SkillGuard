@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: tinman\r\nversion: 1.0.0\r\ndescription: Security auditing and hardening for OpenClaw and system infrastructure.\r\nmetadata:\r\n  openclaw:\r\n    emoji: \ud83d\udee1\ufe0f\r\n    category: security\r\n---\r\n\r\n# Tinman\r\n\r\nSecurity auditing and hardening for OpenClaw and system infrastructure.\r\n\r\n## Security Levels\r\n\r\n| Level | Description | Response |\r\n|-------|-------------|----------|\r\n| **S0** | Info | Log only |\r\n| **S1** | Low | Notify user |\r\n| **S2** | Medium | Alert + recommend fix |\r\n| **S3** | High | Immediate action required |\r\n| **S4** | Critical | Stop + notify immediately |\r\n\r\n## Checks\r\n\r\n### OpenClaw Security\r\n\r\n| Check | Risk | Action |\r\n|-------|------|--------|\r\n| Credentials in git | S3 | Add to .gitignore, rotate |\r\n| Token expiration | S2 | Refresh tokens |\r\n| Exposed secrets | S4 | Rotate immediately |\r\n| Uncommitted changes | S1 | Review + commit |\r\n\r\n### System Security\r\n\r\n| Check | Risk | Action |\r\n|-------|------|--------|\r\n| SSH password auth | S2 | Disable, use keys only |\r\n| Open ports | S1 | Review with `ss -tlnp` |\r\n| Unattended upgrades | S2 | Enable automatic updates |\r\n| Firewall status | S2 | Verify ufw/iptables |\r\n\r\n## Workflow\r\n\r\n### 1. Security Scan\r\n\r\n```bash\r\n# Check for credentials in git\r\ngit log --all --full-history -- .credentials/\r\n\r\n# Check file permissions\r\nls -la ~/.credentials/\r\n\r\n# Check SSH config\r\ncat /etc/ssh/sshd_config | grep -E \"PasswordAuthentication|PermitRootLogin\"\r\n```\r\n\r\n### 2. Report Generation\r\n\r\n```markdown\r\n## Security Audit Report\r\n**Date:** 2026-02-20\r\n**Scope:** OpenClaw + System\r\n\r\n### Findings\r\n| Level | Issue | Recommendation |\r\n|-------|-------|----------------|\r\n| S2 | Token expires in 3 days | Refresh Google OAuth |\r\n\r\n### Actions Taken\r\n- [x] Verified .credentials/ permissions (600)\r\n- [ ] Refresh expiring tokens\r\n```\r\n\r\n### 3. Automated Monitoring\r\n\r\n```json\r\n{\r\n  \"name\": \"daily-security-check\",\r\n  \"schedule\": {\"kind\": \"cron\", \"expr\": \"0 6 * * *\"},\r\n  \"payload\": {\r\n    \"kind\": \"agentTurn\",\r\n    \"message\": \"Run tinman security scan. Check: credential perms, token expiration, git secrets. Report S2+ issues.\"\r\n  },\r\n  \"sessionTarget\": \"isolated\",\r\n  \"notify\": true\r\n}\r\n```\r\n\r\n## Best Practices\r\n\r\n1. **Credential hygiene** \u2014 600 permissions, never in git\r\n2. **Token rotation** \u2014 Before expiration\r\n3. **Regular audits** \u2014 Weekly automated scans\r\n4. **Principle of least privilege** \u2014 Minimal permissions\r\n5. **Audit logging** \u2014 Track all changes\r\n\r\n## Emergency Response\r\n\r\nIf S4 (Critical) detected:\r\n\r\n1. **Stop** \u2014 Halt related operations\r\n2. **Assess** \u2014 Scope of exposure\r\n3. **Rotate** \u2014 Change all affected credentials\r\n4. **Review** \u2014 How did it happen\r\n5. **Prevent** \u2014 Update processes\r\n",
+    "content_hash": "728ff62f7c33b5af7dd45ae81419f45b1e4328d6325fa5a2d3af8016a0b77cc9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 109,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2714,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Check for credentials in git\r\ngit log --all --full-history -- .credentials/\r\n\r\n# Check file permissions\r\nls -la ~/.credentials/\r\n\r\n# Check SSH config\r\ncat /etc/ssh/sshd_config | grep -E \"PasswordAuthentication|PermitRootLogin\"",
+    "content_hash": "4844cd982057fcd1d8f299fa055e4be3c040385ac0d1e43727274c79ed18125d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 228,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 58,
+    "source_start_line": 49
+  }
+]

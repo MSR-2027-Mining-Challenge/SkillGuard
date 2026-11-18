@@ -1,0 +1,37 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=scripts/codex-web.sh"];
+  "obj::operation::scripts/codex-web.sh::file_delete::9" [label="obj::operation::scripts/codex-web.sh::file_delete::9\nkind=operand"];
+  "obj::operation::scripts/codex-web.sh::file_read::15" [label="obj::operation::scripts/codex-web.sh::file_read::15\nkind=operand"];
+  "obj::operation::scripts/codex-web.sh::file_read::22" [label="obj::operation::scripts/codex-web.sh::file_read::22\nkind=operand"];
+  "obj::operation::scripts/codex-web.sh::file_read::26" [label="obj::operation::scripts/codex-web.sh::file_read::26\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_delete"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::05741ca9def0a8cd2c6c" [label="value::05741ca9def0a8cd2c6c\nkind=value"];
+  "value::1c6eed98b0beffed9b34" [label="value::1c6eed98b0beffed9b34\nkind=value"];
+  "value::a112c6dd2d65f80a671b" [label="value::a112c6dd2d65f80a671b\nkind=value"];
+  "value::e3782f4f7b0b49c371e9" [label="value::e3782f4f7b0b49c371e9\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0006" -> "sso_00000" [label="contains"];
+  "art_0006" -> "sso_00001" [label="contains"];
+  "art_0006" -> "sso_00002" [label="contains"];
+  "art_0006" -> "sso_00003" [label="contains"];
+  "obj::operation::scripts/codex-web.sh::file_delete::9" -> "value::1c6eed98b0beffed9b34" [label="value_flow"];
+  "obj::operation::scripts/codex-web.sh::file_read::15" -> "value::e3782f4f7b0b49c371e9" [label="value_flow"];
+  "obj::operation::scripts/codex-web.sh::file_read::22" -> "value::a112c6dd2d65f80a671b" [label="value_flow"];
+  "obj::operation::scripts/codex-web.sh::file_read::26" -> "value::05741ca9def0a8cd2c6c" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/codex-web.sh::file_delete::9" [label="has_operand"];
+  "sso_00001" -> "obj::operation::scripts/codex-web.sh::file_read::15" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/codex-web.sh::file_read::22" [label="has_operand"];
+  "sso_00003" -> "obj::operation::scripts/codex-web.sh::file_read::26" [label="has_operand"];
+}

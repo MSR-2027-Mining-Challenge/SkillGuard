@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: comment-analyzer\r\ndescription: Analyzes code comments for accuracy, completeness, and long-term maintainability. Detects comment rot and misleading documentation. Use after adding or modifying code comments.\r\nargument-hint: \"[file or directory to analyze]\"\r\nuser-invocable: true\r\n---\r\n\r\n# Comment Analyzer\r\n\r\nAnalyze code comments for accuracy, completeness, and long-term maintainability. Protect codebases from comment rot by ensuring every comment adds genuine value.\r\n\r\n## When to Use\r\n\r\n- After adding or modifying documentation comments or docstrings\r\n- When reviewing existing comments for potential technical debt\r\n- When verifying comments accurately reflect the code they describe\r\n\r\n## Analysis Steps\r\n\r\n1. **Verify Factual Accuracy**: Cross-reference every claim against the actual code.\r\n   - Function signatures match documented parameters and return types\r\n   - Described behavior aligns with actual code logic\r\n   - Referenced types, functions, and variables exist and are used correctly\r\n   - Edge cases mentioned are actually handled\r\n   - Performance or complexity claims are accurate\r\n\r\n2. **Assess Completeness**:\r\n   - Critical assumptions or preconditions are documented\r\n   - Non-obvious side effects are mentioned\r\n   - Complex algorithms have their approach explained\r\n   - Business logic rationale is captured when not self-evident\r\n\r\n3. **Evaluate Long-term Value**:\r\n   - Comments that merely restate obvious code should be flagged for removal\r\n   - Comments explaining _why_ are more valuable than those explaining _what_\r\n   - Comments that will become outdated with likely future changes should be reconsidered\r\n   - Avoid comments referencing temporary states or transitional implementations\r\n\r\n4. **Identify Misleading Elements**:\r\n   - Ambiguous language with multiple possible meanings\r\n   - Outdated references to refactored code\r\n   - Assumptions that may no longer hold\r\n   - TODOs or FIXMEs that may already be addressed\r\n\r\n## Output Format\r\n\r\n```\r\n## Summary\r\nBrief overview of the analysis scope and findings.\r\n\r\n## Critical Issues\r\nComments that are factually incorrect or highly misleading.\r\n- Location: [file:line]\r\n- Issue: [specific problem]\r\n- Suggestion: [recommended fix]\r\n\r\n## Improvement Opportunities\r\n- Location: [file:line]\r\n- Current state: [what's lacking]\r\n- Suggestion: [how to improve]\r\n\r\n## Recommended Removals\r\n- Location: [file:line]\r\n- Rationale: [why it should be removed]\r\n\r\n## Positive Findings\r\nWell-written comments that serve as good examples (if any).\r\n```\r\n\r\nAnalysis and feedback only \u2014 do not modify code or comments directly.\r\n",
+    "content_hash": "300a99c498f2f7c5c78a14a2a1195c5a4acb2063aefc76d2634744fc5af74cd6",
+    "generated": false,
+    "is_text": true,
+    "line_count": 71,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2616,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

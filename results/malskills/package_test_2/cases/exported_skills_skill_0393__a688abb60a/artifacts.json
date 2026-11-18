@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: bun-script\r\ndescription: Use when writing a TypeScript script with Bun. Covers the template, conventions, and required patterns.\r\n---\r\n\r\n## Template\r\n\r\nStart from the template at [`assets/template.ts`](assets/template.ts). Copy it exactly and fill in the specific logic.\r\n\r\n## Conventions\r\n\r\n- File: `<name>.ts` with kebab-case (e.g., `extract-pr-number.ts`)\r\n- Make the file executable (`chmod +x`)\r\n- Flag-based arguments using `--flag-name` (kebab-case). Only use positional args for very simple cases.\r\n- Variable names use camelCase (`outputDirectory`, not `output_directory`)\r\n- Full variable names (`directory`, not `dir`)\r\n- Exit `0` for success, `1` for errors\r\n- stdout for primary output, stderr for errors/warnings/progress messages\r\n\r\n## Required patterns\r\n\r\n- `#!/usr/bin/env bun` shebang\r\n- Use `cleye` for argument parsing (auto-generates `--help` and separates unknown flags into `argv.unknownFlags`)\r\n- All error messages must start with `Error: ` and go to stderr via `console.error`\r\n- Invalid options must print `Error: The option --<option> is invalid.`\r\n- Validate required flags with explicit checks (cleye does not enforce required flags)\r\n- Use `argv.showHelp()` to print help after error messages\r\n- `process.exit(1)` on error\r\n",
+    "content_hash": "eb24caef813904e3e5e2fa1401361625e88401432a91e11b600edd659e2c26e4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 29,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1266,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "#!/usr/bin/env bun\r\nimport { cli } from \"cleye\";\r\n\r\nconst argv = cli({\r\n  name: \"script-name\",\r\n  help: {\r\n    description: \"Description of what the script does.\",\r\n  },\r\n  flags: {\r\n    required: {\r\n      type: String,\r\n      description: \"Description of required flag.\",\r\n    },\r\n    optional: {\r\n      type: String,\r\n      description: \"Description of optional flag.\",\r\n    },\r\n  },\r\n});\r\n\r\n// Check for invalid options\r\nconst invalidOption = Object.keys(argv.unknownFlags)[0];\r\n\r\nif (invalidOption) {\r\n  console.error(`Error: The option --${invalidOption} is invalid.`);\r\n  argv.showHelp();\r\n  process.exit(1);\r\n}\r\n\r\n// Validate required arguments\r\nif (!argv.flags.required) {\r\n  console.error(\"Error: The --required flag is required.\");\r\n  argv.showHelp();\r\n  process.exit(1);\r\n}\r\n\r\n// TODO: Implement script\r\n",
+    "content_hash": "ad81338edba61e813851d79c596831121ef89971c836b9d8f9360dad305fca3c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 38,
+    "relative_path": "assets/template.ts",
+    "size_bytes": 815,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

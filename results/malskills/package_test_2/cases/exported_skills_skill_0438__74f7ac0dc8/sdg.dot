@@ -1,0 +1,30 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=commands/building-secure-contracts.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/research-requirements.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=rules/building-secure-contracts.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=config\npath=schemas/input.schema.json"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=config\npath=schemas/output.schema.json"];
+  "obj::operation::SKILL.md::dynamic_code_execution::124" [label="obj::operation::SKILL.md::dynamic_code_execution::124\nkind=operand"];
+  "obj::operation::SKILL.md::dynamic_code_execution::136" [label="obj::operation::SKILL.md::dynamic_code_execution::136\nkind=operand"];
+  "obj::operation::SKILL.md::dynamic_code_execution::139" [label="obj::operation::SKILL.md::dynamic_code_execution::139\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "value::75a503dcf7cba28c0626" [label="value::75a503dcf7cba28c0626\nkind=value"];
+  "value::9f59ff10d3a084fe055a" [label="value::9f59ff10d3a084fe055a\nkind=value"];
+  "value::b578801f39fae69f9060" [label="value::b578801f39fae69f9060\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00000" [label="contains"];
+  "art_0000" -> "sso_00001" [label="contains"];
+  "art_0000" -> "sso_00002" [label="contains"];
+  "obj::operation::SKILL.md::dynamic_code_execution::124" -> "value::75a503dcf7cba28c0626" [label="value_flow"];
+  "obj::operation::SKILL.md::dynamic_code_execution::136" -> "value::b578801f39fae69f9060" [label="value_flow"];
+  "obj::operation::SKILL.md::dynamic_code_execution::139" -> "value::9f59ff10d3a084fe055a" [label="value_flow"];
+  "sso_00000" -> "obj::operation::SKILL.md::dynamic_code_execution::124" [label="has_operand"];
+  "sso_00001" -> "obj::operation::SKILL.md::dynamic_code_execution::136" [label="has_operand"];
+  "sso_00002" -> "obj::operation::SKILL.md::dynamic_code_execution::139" [label="has_operand"];
+}

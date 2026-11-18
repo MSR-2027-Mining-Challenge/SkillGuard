@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: sessions\r\ndescription: List recent session logs across all projects.\r\nargument-hint: [project-name]\r\nallowed-tools: Bash(find *), Bash(ls *), Read\r\n---\r\n\r\nList recent session logs across all projects.\r\n\r\n1. Scan ~/.claude/sessions/ for all project directories\r\n\r\n2. For each project found:\r\n   - Read session-state.md to get last session timestamp\r\n   - Count how many session logs exist in notes/\r\n   - Get the date of the most recent log file\r\n\r\n3. Display a table or list showing:\r\n   - Project name\r\n   - Last session date\r\n   - Number of saved sessions\r\n   - Last noted status/phase (one-line summary from session-state.md)\r\n\r\n4. Sort by most recently active first.\r\n\r\n5. If $ARGUMENTS is provided, treat it as a project name filter:\r\n   - Show detailed session history for that project\r\n   - List all session logs with dates and one-line summaries\r\n   - Example: /sessions myproject\r\n\r\n6. Do not ask any follow-up questions. Just display the information.\r\n",
+    "content_hash": "d0cbcc3c18ae325c57ee6765c481cf4c233ad760797d2f442d8e99394df4680c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 31,
+    "relative_path": "SKILL.md",
+    "size_bytes": 973,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

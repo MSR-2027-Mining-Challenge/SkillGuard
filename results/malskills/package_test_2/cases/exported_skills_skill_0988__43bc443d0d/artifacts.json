@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: vvvv-editor-extensions\r\ndescription: Helps create vvvv gamma editor extensions \u2014 .HDE.vl file naming, Command node registration with keyboard shortcuts, SkiaWindow/SkiaWindowTopMost window types, docking with WindowFactory, and API access to hovered/selected nodes via VL.Lang Session nodes. Use when building editor plugins, custom tooling windows, or automating editor workflows.\r\nlicense: CC-BY-SA-4.0\r\ncompatibility: Designed for coding AI agents assisting with vvvv gamma development\r\nmetadata:\r\n  author: Tebjan Halm\r\n  version: \"1.0\"\r\n---\r\n\r\n# Editor Extensions\r\n\r\nExtensions are standard VL patches saved with a `.HDE.vl` suffix. They run automatically when open in the editor.\r\n\r\n## File Naming\r\n\r\n| Context | Required Name |\r\n|---|---|\r\n| Standalone extension | `VL.MyExtension.HDE.vl` |\r\n| Extension-only NuGet | `VL.MyExtension.HDE` (package ID) |\r\n| Mixed NuGet main doc | `VL.MyPackage.vl` |\r\n| Mixed NuGet extension doc | `VL.MyPackage.HDE.vl` |\r\n\r\n## Required NuGet References\r\n\r\n- **VL.HDE** \u2014 provides `Command` node, window types, `WindowFactory`\r\n- **VL.Lang** \u2014 provides API nodes under the `Session` category\r\n\r\n## Command Node\r\n\r\nRegisters a command in the editor menu:\r\n\r\n| Pin | Purpose |\r\n|---|---|\r\n| `Label` | Menu text |\r\n| `Visible` | Show/hide the command |\r\n| `Shortcut` | Keyboard binding |\r\n| Output | Triggers (bang) on activation |\r\n\r\nMultiple `Command` nodes can live in one `.HDE.vl` document.\r\n\r\n**Warning**: A runtime error in one command may affect all others in the same document.\r\n\r\n## Window Types\r\n\r\n| Type | Behavior |\r\n|---|---|\r\n| `SkiaWindow` | Slimmed-down Skia renderer window |\r\n| `SkiaWindowTopMost` | Always-on-top, no focus steal |\r\n\r\n## Docking\r\n\r\nWrap window with `WindowFactory` node. Connect `WindowContext` and `Window` pins.\r\n\r\nTemplate: `VL.HDE/Template.HDE.vl`\r\n\r\n## API Access\r\n\r\nAccess hovered/selected nodes, read/write pins via `VL.Lang` `Session` category nodes. Browse available API in the HelpBrowser's `API` section.\r\n\r\n## Developer Shortcuts\r\n\r\n- **Shift+F9** \u2014 restarts all extensions simultaneously\r\n\r\n## Limitations\r\n\r\n- Settings panel integration is not yet possible\r\n- Extensions only run in the editor, not in exported applications\r\n",
+    "content_hash": "ea34daabba6424deb550d77c740685db268cc789190d1510eb29456d0ffe11bf",
+    "generated": false,
+    "is_text": true,
+    "line_count": 69,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2230,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

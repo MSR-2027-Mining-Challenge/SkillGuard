@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: ingest-tweet\r\ndescription: Extract full text from X/Twitter posts for wiki ingestion. Uses FXTwitter API, no auth required.\r\nuser-invocable: false\r\nallowed-tools: Bash(curl *)\r\n---\r\n\r\n# Ingest Tweet\r\n\r\nExtract the full text of an X/Twitter post.\r\n\r\n## Extraction Method\r\n\r\n1. Parse the URL to extract username and tweet ID:\r\n   - Pattern: `https://x.com/{user}/status/{id}` or `https://twitter.com/{user}/status/{id}`\r\n   - Strip query parameters (`?s=46`, `?t=...`)\r\n\r\n2. Fetch via FXTwitter API (free, no auth, returns full text including long \"note tweets\"):\r\n```bash\r\ncurl -s \"https://api.fxtwitter.com/{user}/status/{id}\"\r\n```\r\n\r\n3. Parse JSON response:\r\n   - `tweet.text` \u2014 full tweet text (with expanded URLs, not t.co links)\r\n   - `tweet.author.name` / `tweet.author.screen_name` \u2014 author\r\n   - `tweet.created_at` \u2014 date\r\n   - `tweet.likes`, `tweet.retweets`, `tweet.replies` \u2014 engagement\r\n   - `tweet.quote` \u2014 quoted tweet (if present)\r\n   - `tweet.media` \u2014 images/videos (if present)\r\n\r\n## Post-Extraction\r\n\r\n- Save to vault's `raw/<author>-tweet-<id>.md` with YAML header:\r\n```yaml\r\n---\r\nsource-url: <tweet-url>\r\ntitle: \"<author> tweet on <topic>\"\r\nauthor: \"<name> (@<screen_name>)\"\r\ndate-fetched: <today>\r\nsource-type: tweet\r\n---\r\n```\r\n- Include quoted tweet text if present\r\n- Note engagement stats in the source-note\r\n\r\n## Fallback\r\n\r\nIf FXTwitter fails, use oEmbed (truncates long tweets):\r\n```bash\r\ncurl -s \"https://publish.x.com/oembed?url=<original-url>\"\r\n```\r\n\r\n## Dependencies\r\n\r\nNone \u2014 uses only `curl`.\r\n\r\n## See also\r\n\r\n- [`ronan-skills/x-scan`](https://github.com/RonanCodes/ronan-skills/blob/main/skills/x-scan/SKILL.md) \u2014 generic sibling for browsing tweets (URL, user timeline, topic search) without vault persistence. Use this skill when you want to keep the content.\r\n",
+    "content_hash": "a2b32f558a69db84b1fd571e1f5052953a31b7d8b36e0729b60874a35995ada3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 60,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1824,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "curl -s \"https://api.fxtwitter.com/{user}/status/{id}\"",
+    "content_hash": "4cd54e04f392b00c2bdffa78df6990d0b43b025c1f7b72596efec3df90535a9d",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 54,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 21,
+    "source_start_line": 19
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "curl -s \"https://publish.x.com/oembed?url=<original-url>\"",
+    "content_hash": "72f7b80e827cb218abadfc73cf26ba6f239c1fad4b72929d200b5b344996f405",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 57,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 51,
+    "source_start_line": 49
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"ingest-tweet\",\r\n  \"slug\": \"ingest-tweet\",\r\n  \"source\": \"claudskills\",\r\n  \"source_url\": \"https://claudskills.com/skills/ingest-tweet/\",\r\n  \"download_url\": \"https://claudskills.com/skills/ingest-tweet/SKILL.md\",\r\n  \"external_source_url\": \"\",\r\n  \"license\": \"\",\r\n  \"description\": \"Extract full text from X/Twitter posts for wiki ingestion. Uses FXTwitter API, no auth required.\",\r\n  \"category\": \"general\",\r\n  \"download_status\": \"downloaded\",\r\n  \"download_note\": \"cached\",\r\n  \"metadata\": {\r\n    \"subcategory\": \"general-misc\",\r\n    \"featured\": false\r\n  },\r\n  \"collected_at\": \"2026-05-27T03:43:20+00:00\"\r\n}\r\n",
+    "content_hash": "1289d321a7debfd2498633cda3cee0b1e4047b417fb55b777126edc1e6c57685",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "source.json",
+    "size_bytes": 615,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

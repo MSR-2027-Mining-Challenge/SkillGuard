@@ -1,0 +1,36 @@
+[
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good.",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:24:24:data_receive",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::`curl -X POST https://automate.hales.ai/webhook/cupcake-build -H \"Content-Type: application/json\" -d '{\"prompt\": \"<what to build>\", \"slug\": \"<slug>\"}'` \u2014 n8n generates the page with AI, commits, and deploys autonomously (notifies Matt's Telegram). Prefer hand-writing for anything that needs to be good."
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  }
+]

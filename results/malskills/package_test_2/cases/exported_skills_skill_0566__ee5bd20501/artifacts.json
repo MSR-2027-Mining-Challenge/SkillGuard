@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# nature-figure\r\n\r\nCreate and audit publication-quality figures for RL/MARL/LLM/Agent papers: training curves, benchmark tables, ablations, architecture diagrams, trajectory visuals and agent workflows.\r\n",
+    "content_hash": "31de415c924298d3daa015e5a57af42ed3142d23979140913aceaec8a38a0244",
+    "generated": false,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": "README.md",
+    "size_bytes": 204,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: nature-figure\r\ndescription: Create, revise, or audit Nature-style scientific figures for RL, MARL, LLM, and LLM Agent papers. Use for Python/R plotting, training curves, ablations, benchmark bars, architecture diagrams, agent workflow figures, trajectory visualizations, and publication export QA.\r\nversion: 2.0.0-agent-rl\r\n---\r\n\r\n# AI/RL publication figure workflow\r\n\r\n## Blocking gate\r\n\r\nIf the user asks to generate executable plotting code and has not chosen a backend, ask: **Python or R?** If the user provides Python code or matplotlib context, proceed with Python. For image/design-only requests, focus on figure logic and layout.\r\n\r\n## Figure contract\r\n\r\nBefore drawing, define:\r\n\r\n1. core conclusion of the figure;\r\n2. evidence units: seeds, tasks, agents, models, datasets, environments;\r\n3. comparison target: baselines, ablations, scaling, generalization, cost, failure mode;\r\n4. uncertainty display: CI, standard error, bootstrapping, per-seed scatter;\r\n5. export target: PDF/SVG for vector, PNG/TIFF for raster.\r\n\r\n## Field-specific figure archetypes\r\n\r\n- RL: learning curve with shaded uncertainty, final-return bar with per-seed dots, sample-efficiency curve, hyperparameter sensitivity.\r\n- MARL: partner/opponent generalization matrix, zero-shot coordination heatmap, population diversity map, role/policy trajectory visualization.\r\n- LLM: benchmark grouped bars, scaling/cost Pareto plot, error taxonomy, ablation matrix, prompt sensitivity.\r\n- LLM Agent: workflow graph, tool-call timeline, success/failure trajectory, memory/retrieval diagram, latency-cost-quality Pareto plot.\r\n\r\n## Quality rules\r\n\r\n- Do not plot mock data unless the user explicitly asks for synthetic illustration.\r\n- Use consistent fonts, readable labels, direct legends, restrained color and high contrast.\r\n- Every multi-panel figure must have a single narrative order.\r\n- State what raw data columns are required if data is missing.\r\n- For RL curves, avoid hiding instability: show seeds or uncertainty.\r\n- For benchmark tables, include rank, mean, uncertainty and compute/cost where relevant.\r\n\r\n## Output format\r\n\r\nReturn: figure plan \u2192 required data \u2192 code or layout \u2192 export instructions \u2192 QA checklist.\r\n",
+    "content_hash": "06c0a5e7eb24fe79ba0cdf3d61129eae7925ce0f04fc20f0e04ce8a9abf81cb8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 42,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2223,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

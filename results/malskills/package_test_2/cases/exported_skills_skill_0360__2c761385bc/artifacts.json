@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: camsnap\r\ndescription: Capture frames or clips from RTSP/ONVIF cameras.\r\nhomepage: https://camsnap.ai\r\nmetadata:\r\n  {\r\n    \"brigade\":\r\n      {\r\n        \"emoji\": \"\ud83d\udcf8\",\r\n        \"requires\": { \"bins\": [\"camsnap\"] },\r\n        \"install\":\r\n          [\r\n            {\r\n              \"id\": \"brew\",\r\n              \"kind\": \"brew\",\r\n              \"formula\": \"steipete/tap/camsnap\",\r\n              \"bins\": [\"camsnap\"],\r\n              \"label\": \"Install camsnap (brew)\",\r\n            },\r\n          ],\r\n      },\r\n  }\r\n---\r\n\r\n# camsnap\r\n\r\nUse `camsnap` to grab snapshots, clips, or motion events from configured cameras.\r\n\r\nSetup\r\n\r\n- Config file: `~/.config/camsnap/config.yaml`\r\n- Add camera: `camsnap add --name kitchen --host 192.168.0.10 --user user --pass pass`\r\n\r\nCommon commands\r\n\r\n- Discover: `camsnap discover --info`\r\n- Snapshot: `camsnap snap kitchen --out shot.jpg`\r\n- Clip: `camsnap clip kitchen --dur 5s --out clip.mp4`\r\n- Motion watch: `camsnap watch kitchen --threshold 0.2 --action '...'`\r\n- Doctor: `camsnap doctor --probe`\r\n\r\nNotes\r\n\r\n- Requires `ffmpeg` on PATH.\r\n- Prefer a short test capture before longer clips.\r\n",
+    "content_hash": "e4a67403f09ecb625160688003695eb04cc3d147348953defe05966bfbf9f674",
+    "generated": false,
+    "is_text": true,
+    "line_count": 46,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1133,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

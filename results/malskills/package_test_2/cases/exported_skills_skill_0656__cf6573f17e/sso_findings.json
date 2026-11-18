@@ -1,0 +1,627 @@
+[
+  {
+    "artifact_id": "art_0003",
+    "artifact_path": ".malskills_fences/SKILL__fence_2.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00000",
+    "matched_text": "cd <target-directory>/remotion-video && npm install",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0003",
+        "path": ".malskills_fences/SKILL__fence_2.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 1,
+        "start_line": 1
+      }
+    },
+    "span": {
+      "end_line": 1,
+      "start_line": 1
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/scaffold.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell scheduled persistence",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "resource_class": "startup_configuration",
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.scheduled_persistence",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.persistence_and_startup_control.scheduled_persistence"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_id": "semgrep_00001",
+    "matched_text": "echo \"Scaffolded Remotion tutorial video project at $TARGET/remotion-video/\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/scaffold.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 15,
+        "start_line": 15
+      }
+    },
+    "span": {
+      "end_line": 15,
+      "start_line": 15
+    },
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_id": "art_0020",
+    "artifact_path": "scripts/scaffold.sh",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Shell invokes a software package installer",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.malskills.rules.semgrep.shell.shell.software_installation.package_manager"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "",
+      "source_rule_category": "",
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_id": "semgrep_00002",
+    "matched_text": "echo \"  2. cd $TARGET/remotion-video && npm install\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0020",
+        "path": "scripts/scaffold.sh"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 19,
+        "start_line": 19
+      }
+    },
+    "span": {
+      "end_line": 19,
+      "start_line": 19
+    },
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00003",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 49,
+        "start_line": 49
+      }
+    },
+    "span": {
+      "end_line": 49,
+      "start_line": 49
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00004",
+    "matched_text": "with open(AUDIO_FILE, \"rb\") as f:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 51,
+        "start_line": 51
+      }
+    },
+    "span": {
+      "end_line": 51,
+      "start_line": 51
+    },
+    "subtype": "file_access"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using urllib.request.Request(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.urllib.0007.no-urllib-request-Request",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.urllib.0007.no-urllib-request-Request"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "urllib.request.Request()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00005",
+    "matched_text": "req = urllib.request.Request(\n        WHISPER_API_URL,\n        data=body,\n        headers={\"Content-Type\": content_type},\n    )",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 71,
+        "start_line": 67
+      }
+    },
+    "span": {
+      "end_line": 71,
+      "start_line": 67
+    },
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using urllib.request.urlopen(), as it can lead to potential issues with network access.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.urllib.0008.no-urllib-request-urlopen",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.network_access.sso.python.network_access.urllib.0008.no-urllib-request-urlopen"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "urllib.request.urlopen()",
+      "source_rule_category": "Network Access",
+      "sso_category": "network_access"
+    },
+    "category": "network_access",
+    "finding_id": "semgrep_00006",
+    "matched_text": "with urllib.request.urlopen(req, timeout=300) as resp:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 74,
+        "start_line": 74
+      }
+    },
+    "span": {
+      "end_line": 74,
+      "start_line": 74
+    },
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00007",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 78,
+        "start_line": 78
+      }
+    },
+    "span": {
+      "end_line": 78,
+      "start_line": 78
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00008",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 81,
+        "start_line": 81
+      }
+    },
+    "span": {
+      "end_line": 81,
+      "start_line": 81
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00009",
+    "matched_text": "sys.exit(1)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 124,
+        "start_line": 124
+      }
+    },
+    "span": {
+      "end_line": 124,
+      "start_line": 124
+    },
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using os.makedirs(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.os.0012.no-os-makedirs"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.makedirs()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00010",
+    "matched_text": "os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 126,
+        "start_line": 126
+      }
+    },
+    "span": {
+      "end_line": 126,
+      "start_line": 126
+    },
+    "subtype": "file_create"
+  },
+  {
+    "artifact_id": "art_0021",
+    "artifact_path": "scripts/transcribe-template.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using open(), as it can lead to potential issues with file or system operation.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.file_or_system_operation.sso.python.file_or_system_operation.others.0001.no-open"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "open()",
+      "source_rule_category": "File or System Operation",
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_id": "semgrep_00011",
+    "matched_text": "with open(OUTPUT_FILE, \"w\", encoding=\"utf-8\") as f:",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0021",
+        "path": "scripts/transcribe-template.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 127,
+        "start_line": 127
+      }
+    },
+    "span": {
+      "end_line": 127,
+      "start_line": 127
+    },
+    "subtype": "file_access"
+  }
+]

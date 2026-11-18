@@ -1,0 +1,771 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_4.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": "assets/template.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0009",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0010",
+      "path": "references/.malskills_fences/api-reference__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "path": "references/standards.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0012",
+      "path": "references/workflows.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0013",
+      "path": "scripts/agent.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0014",
+      "path": "scripts/process.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0002",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "target": "value::21c4e19c20b7aa9ba15e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel",
+      "target": "value::38e7e07c9c04f560c3a2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::45",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::45",
+      "target": "value::f83302e817bf764f4851",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "target": "value::1b42fce46423d2c606dc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::46",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::46",
+      "target": "value::6676fada27db6ba15714",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "target": "value::4372ae2407d42b1e5f38",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::24",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::24",
+      "target": "value::a1f9dddf118ce7dd2eb6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::39",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::39",
+      "target": "value::12e236200793a19eac05",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "target": "value::b28cf44e4f43e5f1bac0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00009",
+      "target": "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4",
+      "target": "value::9ccc09bcf069a2ba17d5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0013",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::operation::scripts/agent.py::credential_data_access::13",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::credential_data_access::13",
+      "target": "value::9b6b65c0624df138ec5d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0013",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/agent.py::file_access::126",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/agent.py::file_access::126",
+      "target": "value::67814b2ba92b2c9f8a32",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0014",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::scripts/process.py::cmd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/process.py::cmd",
+      "target": "value::8ff3fa89c0d449328400",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0014",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::scripts/process.py::credential_data_access::199",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/process.py::credential_data_access::199",
+      "target": "value::24b7637541b0e42ddebf",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0014",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::operation::scripts/process.py::file_access::212",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/process.py::file_access::212",
+      "target": "value::2aa79becd816ab68f168",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "LICENSE",
+      "type": "binary"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "assets/template.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": "references/api-reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/api-reference__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": "references/standards.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": "references/workflows.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0013",
+      "kind": "artifact",
+      "path": "scripts/agent.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0014",
+      "kind": "artifact",
+      "path": "scripts/process.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::21c4e19c20b7aa9ba15e",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::connection_create::# === Enable IAP TCP Forwarding for SSH/RDP ===",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::38e7e07c9c04f560c3a2",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::connection_create::# SSH through IAP tunnel",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::45",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::45",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::f83302e817bf764f4851",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::45",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::1b42fce46423d2c606dc",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::connection_create::gcloud compute ssh my-vm --zone=us-central1-a --tunnel-through-iap",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::46",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::46",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::6676fada27db6ba15714",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::46",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "identity_key": ".malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4372ae2407d42b1e5f38",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_2.sh::file_read::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::24",
+      "identity_key": ".malskills_fences/SKILL__fence_2.sh::file_read::24",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a1f9dddf118ce7dd2eb6",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_2.sh::file_read::24",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_read::39",
+      "identity_key": ".malskills_fences/SKILL__fence_2.sh::file_read::39",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::12e236200793a19eac05",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_2.sh::file_read::39",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "connection_create",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::b28cf44e4f43e5f1bac0",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.sh::connection_create::gcloud compute ssh INSTANCE --tunnel-through-iap",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4",
+      "identity_key": "references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::9ccc09bcf069a2ba17d5",
+      "kind": "value",
+      "value": "references/.malskills_fences/api-reference__fence_0.sh::system_command_execution::4",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::credential_data_access::13",
+      "identity_key": "scripts/agent.py::credential_data_access::13",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::9b6b65c0624df138ec5d",
+      "kind": "value",
+      "value": "scripts/agent.py::credential_data_access::13",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/agent.py::file_access::126",
+      "identity_key": "scripts/agent.py::file_access::126",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::67814b2ba92b2c9f8a32",
+      "kind": "value",
+      "value": "scripts/agent.py::file_access::126",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/process.py::cmd",
+      "identity_key": "scripts/process.py::cmd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "command"
+    },
+    {
+      "id": "value::8ff3fa89c0d449328400",
+      "kind": "value",
+      "value": "scripts/process.py::cmd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/process.py::credential_data_access::199",
+      "identity_key": "scripts/process.py::credential_data_access::199",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::24b7637541b0e42ddebf",
+      "kind": "value",
+      "value": "scripts/process.py::credential_data_access::199",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/process.py::file_access::212",
+      "identity_key": "scripts/process.py::file_access::212",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2aa79becd816ab68f168",
+      "kind": "value",
+      "value": "scripts/process.py::file_access::212",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

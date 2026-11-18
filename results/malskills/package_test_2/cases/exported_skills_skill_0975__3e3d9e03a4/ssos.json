@@ -1,0 +1,150 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls /Users/mehdi.lamrani/code/code/agent-forge/data/pdf/*.pdf 2>/dev/null | xargs -I{} basename {}",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::1",
+      "path_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_search::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "cd /Users/mehdi.lamrani/code/code/agent-forge && uv run python -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::dynamic_code_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::dynamic_code_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_2.sh:1:1:dynamic_code_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::dynamic_code_execution::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_8.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "python3 -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_8.sh::dynamic_code_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_8.sh::dynamic_code_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_8.sh:1:1:dynamic_code_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_8.sh::dynamic_code_execution::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "cd /Users/mehdi.lamrani/code/code/agent-forge && uv run python -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::dynamic_code_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::dynamic_code_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_9.sh:1:1:dynamic_code_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::dynamic_code_execution::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "python3 -c \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::80": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::80",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:80:80:dynamic_code_execution",
+      "source_end_line": 80,
+      "source_start_line": 80
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::80"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  }
+]

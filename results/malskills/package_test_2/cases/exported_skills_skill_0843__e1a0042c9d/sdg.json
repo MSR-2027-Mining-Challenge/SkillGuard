@@ -1,0 +1,343 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": "reference/security-checklist.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0007",
+      "path": "scripts/audit_policy.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0007",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/audit_policy.py::credential_data_access::283",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/audit_policy.py::credential_data_access::283",
+      "target": "value::dec659a7adc05dad157d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/audit_policy.py::credential_data_access::288",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/audit_policy.py::credential_data_access::288",
+      "target": "value::eadf06afedbe9b8bfd1d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::scripts/audit_policy.py::file_access::291",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/audit_policy.py::file_access::291",
+      "target": "value::2ff8076e55d72a3f862a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/audit_policy.py::credential_data_access::295",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/audit_policy.py::credential_data_access::295",
+      "target": "value::36b55b934c0e268b5a62",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/audit_policy.py::credential_data_access::299",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/audit_policy.py::credential_data_access::299",
+      "target": "value::dc0226f49290921c3963",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::scripts/audit_policy.py::credential_data_access::303",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/audit_policy.py::credential_data_access::303",
+      "target": "value::cff31f2afe0b6cd2bf32",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "reference/security-checklist.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "scripts/audit_policy.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/audit_policy.py::credential_data_access::283",
+      "identity_key": "scripts/audit_policy.py::credential_data_access::283",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::dec659a7adc05dad157d",
+      "kind": "value",
+      "value": "scripts/audit_policy.py::credential_data_access::283",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/audit_policy.py::credential_data_access::288",
+      "identity_key": "scripts/audit_policy.py::credential_data_access::288",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::eadf06afedbe9b8bfd1d",
+      "kind": "value",
+      "value": "scripts/audit_policy.py::credential_data_access::288",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/audit_policy.py::file_access::291",
+      "identity_key": "scripts/audit_policy.py::file_access::291",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2ff8076e55d72a3f862a",
+      "kind": "value",
+      "value": "scripts/audit_policy.py::file_access::291",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/audit_policy.py::credential_data_access::295",
+      "identity_key": "scripts/audit_policy.py::credential_data_access::295",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::36b55b934c0e268b5a62",
+      "kind": "value",
+      "value": "scripts/audit_policy.py::credential_data_access::295",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/audit_policy.py::credential_data_access::299",
+      "identity_key": "scripts/audit_policy.py::credential_data_access::299",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::dc0226f49290921c3963",
+      "kind": "value",
+      "value": "scripts/audit_policy.py::credential_data_access::299",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/audit_policy.py::credential_data_access::303",
+      "identity_key": "scripts/audit_policy.py::credential_data_access::303",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::cff31f2afe0b6cd2bf32",
+      "kind": "value",
+      "value": "scripts/audit_policy.py::credential_data_access::303",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

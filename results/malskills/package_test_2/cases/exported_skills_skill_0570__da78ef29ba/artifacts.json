@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "<!--\r\nLICENSE UPL\r\nAuthor: Mauro Risonho de Paula Assump\u00e7\u00e3o\r\nData Create: 2026-03-16\r\nData Update: 2026-03-16\r\n-->\r\n\r\n---\r\nname: writeup-0xrasel\r\ndescription: CTF writeups and security challenges by 0xrasel.\r\n---\r\n\r\n# Writeups by 0xrasel\r\n\r\nSource repository: `/repos/0xrasel`\r\n\r\n## Repository Index\r\n\r\n- bulk_ffuf/README.md\r\n\r\n## Writeup Content\r\n\r\n\r\n### File: bulk_ffuf/README.md\r\n\r\n# Bulk FFUF Fuzzer\r\n\r\nA simple Bash script to fuzz multiple websites using [ffuf](https://github.com/ffuf/ffuf). It reads a list of target URLs from a file, fuzzes them using a specified wordlist, and saves the results in separate HTML reports for each site.\r\n\r\n---\r\n\r\n## What It Does\r\n\r\n- Performs directory or endpoint fuzzing across **multiple domains**\r\n- Filters common noise responses (`400`, `404`, `429`)\r\n- Recursively fuzzes up to a specified depth\r\n- Saves output in **HTML format**, one report per domain\r\n- Stores results neatly in a `ffuf_results/` directory\r\n\r\n---\r\n\r\n## Files Included\r\n\r\n- `bulk_ffuf.sh`: The main Bash script\r\n- `README.md`: You're reading it\r\n- `LICENSE`: MIT License\r\n\r\n---\r\n\r\n## Requirements\r\n\r\n- Bash (Linux/macOS or WSL)\r\n- [`ffuf`](https://github.com/ffuf/ffuf) installed and in your `$PATH`\r\n- A wordlist file (e.g., from SecLists, `rockyou.txt`, etc.)\r\n\r\n---\r\n\r\n## Installation\r\n\r\n1. Clone this repository or download the script:\r\n\r\n   ```bash\r\n   git clone https://github.com/0xrasel/bulk_ffuf.git\r\n   cd bulk_ffuf\r\n   chmod +x bulk_ffuf.sh\r\n\r\n## Usage\r\n`./bulk_ffuf.sh sites.txt ~/wordlist/hfuzz.txt`\r\n\r\n## Output\r\n```\r\nffuf_results/\r\n\u251c\u2500\u2500 example.com.html\r\n\u251c\u2500\u2500 testsite.local.html\r\n\u2514\u2500\u2500 demo.example.org.html\r\n```\r\n\r\n",
+    "content_hash": "1b557fc5837543a52e77904700c3b829c547fe0fd5b9091a3814a2a97d1f7d89",
+    "generated": false,
+    "is_text": true,
+    "line_count": 78,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1665,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "   git clone https://github.com/0xrasel/bulk_ffuf.git\r\n   cd bulk_ffuf\r\n   chmod +x bulk_ffuf.sh\r\n\r\n## Usage\r\n`./bulk_ffuf.sh sites.txt ~/wordlist/hfuzz.txt`\r\n\r\n## Output",
+    "content_hash": "97682976d3b197583d99c5bce7fea6a1a3c142631b0f828f71bbab8359d97ada",
+    "generated": true,
+    "is_text": true,
+    "line_count": 8,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 170,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 71,
+    "source_start_line": 62
+  }
+]

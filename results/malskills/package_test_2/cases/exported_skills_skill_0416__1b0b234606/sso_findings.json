@@ -1,0 +1,158 @@
+[
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "scripts/cloud_run_service_evidence.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Detect access to environment variables.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.os.0001.no-os-environ"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "os.getenv()/os.environ[]",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00000",
+    "matched_text": "return os.environ.get(\"GCLOUD_BIN\") or shutil.which(\"gcloud\") or \"/Users/ankitkumarsingh/google-cloud-sdk/bin/gcloud\"",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "scripts/cloud_run_service_evidence.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 27,
+        "start_line": 27
+      }
+    },
+    "span": {
+      "end_line": 27,
+      "start_line": 27
+    },
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "scripts/cloud_run_service_evidence.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using subprocess.run(), as it can lead to potential issues with command execution.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.command_execution.sso.python.command_execution.subprocess.0007.no-subprocess-run"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "subprocess.run()",
+      "source_rule_category": "Command Execution",
+      "sso_category": "payload_execution"
+    },
+    "category": "payload_execution",
+    "finding_id": "semgrep_00001",
+    "matched_text": "result = subprocess.run(args, check=False, text=True, capture_output=True)",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "scripts/cloud_run_service_evidence.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 31,
+        "start_line": 31
+      }
+    },
+    "span": {
+      "end_line": 31,
+      "start_line": 31
+    },
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_id": "art_0007",
+    "artifact_path": "scripts/cloud_run_service_evidence.py",
+    "attributes": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "engine": "semgrep",
+      "engines": [
+        "semgrep"
+      ],
+      "message": "Avoid using sys.exit(), as it can lead to potential issues with sensitive data.",
+      "producer": "semgrep",
+      "producers": [
+        "semgrep"
+      ],
+      "rule_id": "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit",
+      "rule_ids": [
+        "mnt.c.Users.rio.Desktop.msr.MalSkills.semgrep_rules.python.sensitive_data.sso.python.sensitive_data.sys.0001.no-sys-exit"
+      ],
+      "rule_origin": "offline",
+      "rule_origins": [
+        "offline"
+      ],
+      "ruleset_digest": "none",
+      "schema_version": "sso-finding-v3",
+      "sink_api": "sys.exit()",
+      "source_rule_category": "Sensitive Data",
+      "sso_category": "sensitive_data_access"
+    },
+    "category": "sensitive_data_access",
+    "finding_id": "semgrep_00002",
+    "matched_text": "sys.exit(main())",
+    "producer": "semgrep",
+    "provenance": {
+      "analysis_component": "semgrep_finding",
+      "analysis_stage": "sso_extraction",
+      "artifact": {
+        "id": "art_0007",
+        "path": "scripts/cloud_run_service_evidence.py"
+      },
+      "producer": "semgrep",
+      "span": {
+        "end_line": 140,
+        "start_line": 140
+      }
+    },
+    "span": {
+      "end_line": 140,
+      "start_line": 140
+    },
+    "subtype": "credential_data_access"
+  }
+]

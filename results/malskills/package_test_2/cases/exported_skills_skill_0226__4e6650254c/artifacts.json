@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: systematic-debugging\r\ndescription: Adapted from obra/superpowers. Use for bugs, regressions, failing checks, and unexpected behavior. Root cause first, fixes second.\r\n---\r\n\r\n# Systematic Debugging\r\n\r\nNo fixes without root cause.\r\n\r\n## Process\r\n\r\n1. Reproduce the issue with a real command, route, or user flow.\r\n2. Narrow the failure boundary:\r\n   - input\r\n   - subsystem\r\n   - repo\r\n   - recent change\r\n3. Gather concrete evidence from logs, tests, diffs, and runtime behavior.\r\n4. State the most likely root cause before editing code.\r\n5. Apply the smallest fix that addresses that cause.\r\n6. Re-run the reproduction path and one adjacent regression check.\r\n\r\n## Guardrails\r\n\r\n- Do not stack speculative fixes.\r\n- Do not claim success from code inspection alone.\r\n- If the issue is not reproducible yet, keep investigating instead of patching blindly.\r\n",
+    "content_hash": "0975502d9b8bf4519cc11fda31d7e602a0b47b17ac65fd909bd105ef465d1f5a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 28,
+    "relative_path": "SKILL.md",
+    "size_bytes": 866,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

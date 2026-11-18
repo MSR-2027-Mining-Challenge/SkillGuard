@@ -1,0 +1,1744 @@
+[
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "NC='\\033[0m'",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::NC='\\033[0m'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::NC='\\033[0m'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:27:27:connection_create",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::NC='\\033[0m'"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:29:29:connection_create",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:30:30:connection_create",
+      "source_end_line": 30,
+      "source_start_line": 30
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:31:31:connection_create",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:32:32:connection_create",
+      "source_end_line": 32,
+      "source_start_line": 32
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp \"$INPUT\" \"$DEPLOY_DIR/index.html\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::file_write::50": "path"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::file_write::50",
+      "path_class": "ordinary",
+      "source_end_line": 50,
+      "source_start_line": 50,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::file_write::50"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp -r \"$SOURCE_FILE\" \"$TARGET_DIR/\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::file_write::65": "path"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::file_write::65",
+      "path_class": "ordinary",
+      "source_end_line": 65,
+      "source_start_line": 65,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::file_write::65"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp -r \"$PARENT_DIR/assets\" \"$DEPLOY_DIR/assets\" 2>/dev/null || true",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::file_write::71": "path"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::file_write::71",
+      "path_class": "ordinary",
+      "source_end_line": 71,
+      "source_start_line": 71,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::file_write::71"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:93:93:connection_create",
+      "source_end_line": 93,
+      "source_start_line": 93
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\""
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2551       Deploy Slides to Vercel         \u2551${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2551       Deploy Slides to Vercel         \u2551${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2551       Deploy Slides to Vercel         \u2551${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:94:94:connection_create",
+      "source_end_line": 94,
+      "source_start_line": 94
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2551       Deploy Slides to Vercel         \u2551${NC}\""
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:95:95:connection_create",
+      "source_end_line": 95,
+      "source_start_line": 95
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\""
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "err \"  macOS:   brew install node\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::package_installation::102": "target"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::package_installation::102",
+      "source_end_line": 102,
+      "source_start_line": 102,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::package_installation::102"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g vercel",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::package_installation::118": "target"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::package_installation::118",
+      "source_end_line": 118,
+      "source_start_line": 118,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::package_installation::118"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}To log in, run this command and follow the prompts:${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}To log in, run this command and follow the prompts:${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}To log in, run this command and follow the prompts:${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:133:133:connection_create",
+      "source_end_line": 133,
+      "source_start_line": 133
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}To log in, run this command and follow the prompts:${NC}\""
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${YELLOW}Attempting interactive login now...${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${YELLOW}Attempting interactive login now...${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${YELLOW}Attempting interactive login now...${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:145:145:connection_create",
+      "source_end_line": 145,
+      "source_start_line": 145
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${YELLOW}Attempting interactive login now...${NC}\""
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "[[ \"$CLEANUP_TEMP\" == \"true\" ]] && rm -rf \"$DEPLOY_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::file_delete::149": "path"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::file_delete::149",
+      "path_class": "ordinary",
+      "source_end_line": 149,
+      "source_start_line": 149,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::file_delete::149"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "[[ \"$CLEANUP_TEMP\" == \"true\" ]] && rm -rf \"$DEPLOY_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::file_delete::191": "path"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::file_delete::191",
+      "path_class": "ordinary",
+      "source_end_line": 191,
+      "source_start_line": 191,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::file_delete::191"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "DEPLOY_URL=$(echo \"$DEPLOY_OUTPUT\" | grep -o 'https://[^ ]*' | tail -1)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::DEPLOY_URL": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::DEPLOY_URL",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 196,
+      "source_start_line": 196
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::DEPLOY_URL"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:201:201:connection_create",
+      "source_end_line": 201,
+      "source_start_line": 201
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\""
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"  ${BOLD}Live URL:${NC}  $DEPLOY_URL\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"  ${BOLD}Live URL:${NC}  $DEPLOY_URL\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"  ${BOLD}Live URL:${NC}  $DEPLOY_URL\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:204:204:connection_create",
+      "source_end_line": 204,
+      "source_start_line": 204
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"  ${BOLD}Live URL:${NC}  $DEPLOY_URL\""
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "echo -e \"  ${CYAN}Tip:${NC} To take it down later, visit https://vercel.com/dashboard\"",
+      "endpoint_class": "external",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"  ${CYAN}Tip:${NC} To take it down later, visit https://vercel.com/dashboard\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"  ${CYAN}Tip:${NC} To take it down later, visit https://vercel.com/dashboard\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:209:209:connection_create",
+      "source_end_line": 209,
+      "source_start_line": 209
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"  ${CYAN}Tip:${NC} To take it down later, visit https://vercel.com/dashboard\""
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/deploy.sh:211:211:connection_create",
+      "source_end_line": 211,
+      "source_start_line": 211
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/deploy.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\""
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/deploy.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf \"$DEPLOY_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/deploy.sh::file_delete::217": "path"
+      },
+      "operation_object": "obj::operation::scripts/deploy.sh::file_delete::217",
+      "path_class": "ordinary",
+      "source_end_line": 217,
+      "source_start_line": 217,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/deploy.sh::file_delete::217"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "#   2. Uses Playwright to screenshot each slide at 1920x1080",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::system_configuration_modify::13": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::system_configuration_modify::13",
+      "resource_class": "startup_configuration",
+      "source_end_line": 13,
+      "source_start_line": 13,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::system_configuration_modify::13"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "NC='\\033[0m'",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::NC='\\033[0m'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::NC='\\033[0m'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:27:27:connection_create",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::NC='\\033[0m'"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:29:29:connection_create",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::info()  { echo -e \"${CYAN}\u2139${NC} $*\"; }"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:30:30:connection_create",
+      "source_end_line": 30,
+      "source_start_line": 30
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::ok()    { echo -e \"${GREEN}\u2713${NC} $*\"; }"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:31:31:connection_create",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::warn()  { echo -e \"${YELLOW}\u26a0${NC} $*\"; }"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:32:32:connection_create",
+      "source_end_line": 32,
+      "source_start_line": 32
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::err()   { echo -e \"${RED}\u2717${NC} $*\" >&2; }"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:93:93:connection_create",
+      "source_end_line": 93,
+      "source_start_line": 93
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557${NC}\""
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2551       Export Slides to PDF            \u2551${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2551       Export Slides to PDF            \u2551${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2551       Export Slides to PDF            \u2551${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:94:94:connection_create",
+      "source_end_line": 94,
+      "source_start_line": 94
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2551       Export Slides to PDF            \u2551${NC}\""
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:95:95:connection_create",
+      "source_end_line": 95,
+      "source_start_line": 95
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d${NC}\""
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "err \"  macOS:   brew install node\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::package_installation::106": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::package_installation::106",
+      "source_end_line": 106,
+      "source_start_line": 106,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::package_installation::106"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "# 3. Screenshot each slide at 1920x1080 (16:9 landscape)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::system_configuration_modify::118": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::system_configuration_modify::118",
+      "resource_class": "startup_configuration",
+      "source_end_line": 118,
+      "source_start_line": 118,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::system_configuration_modify::118"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat > \"$TEMP_SCRIPT\" << 'EXPORT_SCRIPT'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_read::128": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_read::128",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 128,
+      "source_start_line": 128
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_read::128"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "// 2. Opens the presentation in a headless browser at 1920x1080",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::system_configuration_modify::133": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::system_configuration_modify::133",
+      "resource_class": "startup_configuration",
+      "source_end_line": 133,
+      "source_start_line": 133,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00038"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::system_configuration_modify::133"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "const imgData = readFileSync(p).toString('base64');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::encoding::301": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::encoding::301",
+      "parameter_bindings": [],
+      "source_end_line": 301,
+      "source_start_line": 301
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00039"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::encoding::301"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "return `<div class=\"page\"><img src=\"data:image/png;base64,${imgData}\" /></div>`;",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::encoding::302": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::encoding::302",
+      "parameter_bindings": [],
+      "source_end_line": 302,
+      "source_start_line": 302
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00040"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::encoding::302"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "encoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "<head>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_read::307": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_read::307",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 307,
+      "source_start_line": 307
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00041"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_read::307"
+    ],
+    "sso_id": "sso_00038",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "</head>",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_read::325": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_read::325",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 325,
+      "source_start_line": 325
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00042"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_read::325"
+    ],
+    "sso_id": "sso_00039",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Create a minimal package.json so npm install works",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::package_installation::357": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::package_installation::357",
+      "source_end_line": 357,
+      "source_start_line": 357,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00043"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::package_installation::357"
+    ],
+    "sso_id": "sso_00040",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat > \"$TEMP_DIR/package.json\" << 'PKG'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_read::358": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_read::358",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 358,
+      "source_start_line": 358
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00044"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_read::358"
+    ],
+    "sso_id": "sso_00041",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install playwright &>/dev/null || {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::package_installation::363": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::package_installation::363",
+      "source_end_line": 363,
+      "source_start_line": 363,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00045"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::package_installation::363"
+    ],
+    "sso_id": "sso_00042",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "err \"Try running: npm install playwright\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::package_installation::365": "target"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::package_installation::365",
+      "source_end_line": 365,
+      "source_start_line": 365,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00046"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::package_installation::365"
+    ],
+    "sso_id": "sso_00043",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf \"$TEMP_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_delete::367": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_delete::367",
+      "path_class": "ordinary",
+      "source_end_line": 367,
+      "source_start_line": 367,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00047"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_delete::367"
+    ],
+    "sso_id": "sso_00044",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf \"$TEMP_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_delete::376": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_delete::376",
+      "path_class": "ordinary",
+      "source_end_line": 376,
+      "source_start_line": 376,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00049"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_delete::376"
+    ],
+    "sso_id": "sso_00045",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf \"$TEMP_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_delete::397": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_delete::397",
+      "path_class": "ordinary",
+      "source_end_line": 397,
+      "source_start_line": 397,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00051"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_delete::397"
+    ],
+    "sso_id": "sso_00046",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf \"$TEMP_DIR\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/export-pdf.sh::file_delete::405": "path"
+      },
+      "operation_object": "obj::operation::scripts/export-pdf.sh::file_delete::405",
+      "path_class": "ordinary",
+      "source_end_line": 405,
+      "source_start_line": 405,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00053"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/export-pdf.sh::file_delete::405"
+    ],
+    "sso_id": "sso_00047",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:408:408:connection_create",
+      "source_end_line": 408,
+      "source_start_line": 408
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00055"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\""
+    ],
+    "sso_id": "sso_00048",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"  ${BOLD}File:${NC}  $OUTPUT_PDF\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"  ${BOLD}File:${NC}  $OUTPUT_PDF\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"  ${BOLD}File:${NC}  $OUTPUT_PDF\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:411:411:connection_create",
+      "source_end_line": 411,
+      "source_start_line": 411
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00056"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"  ${BOLD}File:${NC}  $OUTPUT_PDF\""
+    ],
+    "sso_id": "sso_00049",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/export-pdf.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "scripts/export-pdf.sh:418:418:connection_create",
+      "source_end_line": 418,
+      "source_start_line": 418
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00057"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/export-pdf.sh::connection_create::echo -e \"${BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${NC}\""
+    ],
+    "sso_id": "sso_00050",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/extract-pptx.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "if getattr(shape, \"has_table\", False) and shape.has_table:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract-pptx.py::dynamic_code_execution::34": "command"
+      },
+      "operation_object": "obj::operation::scripts/extract-pptx.py::dynamic_code_execution::34",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/extract-pptx.py:34:34:getattr()",
+      "source_end_line": 34,
+      "source_start_line": 34
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00058"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract-pptx.py::dynamic_code_execution::34"
+    ],
+    "sso_id": "sso_00051",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/extract-pptx.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(image_path, \"wb\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract-pptx.py::file_access::58": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract-pptx.py::file_access::58",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 58,
+      "source_start_line": 58
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00059"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract-pptx.py::file_access::58"
+    ],
+    "sso_id": "sso_00052",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/extract-pptx.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(assets_dir, exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract-pptx.py::file_create::80": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract-pptx.py::file_create::80",
+      "path_class": "ordinary",
+      "source_end_line": 80,
+      "source_start_line": 80,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00060"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract-pptx.py::file_create::80"
+    ],
+    "sso_id": "sso_00053",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/extract-pptx.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract-pptx.py::credential_data_access::108": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract-pptx.py::credential_data_access::108",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 108,
+      "source_start_line": 108
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00061"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract-pptx.py::credential_data_access::108"
+    ],
+    "sso_id": "sso_00054",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/extract-pptx.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(output_path, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract-pptx.py::file_access::117": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract-pptx.py::file_access::117",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 117,
+      "source_start_line": 117
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00062"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract-pptx.py::file_access::117"
+    ],
+    "sso_id": "sso_00055",
+    "subtype": "file_access"
+  }
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/auth__fence_16.sh"
+    ],
+    "attributes": {
+      "matched_text": "npx playwright install --dry-run 2>/dev/null | grep \"chromium\" | head -2",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/auth__fence_16.sh::file_read::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/auth__fence_16.sh::file_read::1",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/auth__fence_16.sh::file_read::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0045"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/fix-bug__fence_15.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn \"<COMPONENT_NAME\\|className.*<SELECTOR>\" . --include=\"*.tsx\" --include=\"*.jsx\" 2>/dev/null | head -20",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/fix-bug__fence_15.sh::include": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/fix-bug__fence_15.sh::include",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/fix-bug__fence_15.sh::include"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0062"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/playwright-login__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -lh \"${AUTH_STATE_PATH}\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/playwright-login__fence_10.sh::file_search::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/playwright-login__fence_10.sh::file_search::1",
+      "path_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/playwright-login__fence_10.sh::file_search::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_search"
+  }
+]

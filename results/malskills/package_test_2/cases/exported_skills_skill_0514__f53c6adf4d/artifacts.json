@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: analytics-tracking\r\ndescription: |\r\n  Analytics & Tracking skill for privacy-first event tracking.\r\n  Use when: adding analytics providers, instrumenting user events,\r\n  configuring traffic dashboards, or auditing privacy compliance.\r\nrole: Specialist Executor\r\nintent: Track user behavior events using privacy-first analytics providers.\r\nkpis:\r\n  - event_tracking_coverage\r\n  - page_load_impact_ms\r\n  - privacy_compliance_rate\r\nstatus: active\r\npriority: low\r\ntriggers:\r\n  - analytics setup requested\r\n  - new page or feature requires event tracking\r\n  - privacy audit on tracking providers\r\nexecution: sequential\r\ndependencies:\r\n  - posthog.tool.md\r\n  - plausible.tool.md\r\n---\r\n\r\n# Analytics & Tracking\r\n\r\n## Provider Selection\r\n\r\n| Provider   | Purpose                     | When to Use                         |\r\n|------------|-----------------------------|-------------------------------------|\r\n| Plausible  | Traffic analytics, pageviews | Lightweight traffic dashboards      |\r\n| PostHog    | Events, feature flags, funnels | Behavioral tracking, A/B tests    |\r\n\r\n- Plausible is the default for simple traffic metrics (page views, referrers, geography).\r\n- PostHog handles granular event tracking, feature flags, and funnel analysis.\r\n- Never run both providers for the same metric \u2014 pick one source of truth per metric.\r\n\r\n## Privacy Rules\r\n\r\n1. **No PII** \u2014 Never track personally identifiable information (name, email, IP) in event payloads.\r\n2. **No Cookies** \u2014 Use cookieless tracking modes. Plausible is cookieless by default; PostHog must be configured with `persistence: 'memory'`.\r\n3. **GDPR Compliant** \u2014 All tracking must comply with GDPR. No data leaves the EU region unless explicitly configured.\r\n4. **DNT Respected** \u2014 Honor `Do Not Track` browser headers. If `navigator.doNotTrack === '1'`, disable all tracking.\r\n5. **Consent not required** \u2014 Because we use no cookies and no PII, explicit consent banners are not required. However, a privacy policy must document what is collected.\r\n\r\n## Key Events Table\r\n\r\n| Event Name            | Provider | Trigger                              | Properties                     |\r\n|-----------------------|----------|--------------------------------------|--------------------------------|\r\n| `page_view`           | Plausible | Every route navigation              | `path`, `referrer`             |\r\n| `sign_up`             | PostHog  | User completes registration          | `provider` (google/github/discord) |\r\n| `first_plug_run`      | PostHog  | User runs their first plug instance  | `plug_id`, `plug_category`     |\r\n| `subscription_started`| PostHog  | User subscribes to a paid plan       | `plan_id`, `billing_cycle`     |\r\n| `vertical_completed`  | PostHog  | User completes an ACHEEVY vertical   | `vertical_id`, `duration_ms`   |\r\n\r\n## Implementation Notes\r\n\r\n- All event calls go through a unified `trackEvent(name, properties)` wrapper in `frontend/lib/analytics.ts`.\r\n- The wrapper checks DNT, selects the correct provider, and normalizes property keys.\r\n- Server-side events (backend) use PostHog's Node SDK via the UEF Gateway \u2014 never call PostHog directly from client-side for sensitive events.\r\n- Page load impact must stay under 50ms (measured via Lighthouse CI).\r\n",
+    "content_hash": "b2168faf18deeafba8a33635b8ff9483629ffa2bd8e795f35947d9c1df914df2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 62,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3275,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "# Acceptance Criteria \u2014 analytics-tracking\r\n\r\n## Functional Requirements\r\n\r\n### FR-1: Provider Initialization\r\n- [ ] Plausible script loads asynchronously on all public pages\r\n- [ ] PostHog initializes with `persistence: 'memory'` (cookieless mode)\r\n- [ ] Provider initialization fails gracefully \u2014 no user-facing errors if a provider is unavailable\r\n\r\n### FR-2: Event Tracking\r\n- [ ] `trackEvent(name, properties)` wrapper exists in `frontend/lib/analytics.ts`\r\n- [ ] All 5 key events are instrumented: `page_view`, `sign_up`, `first_plug_run`, `subscription_started`, `vertical_completed`\r\n- [ ] Events route to the correct provider (Plausible for page_view, PostHog for behavioral events)\r\n- [ ] Property keys are normalized to snake_case before sending\r\n\r\n### FR-3: Privacy Compliance\r\n- [ ] No PII is included in any event payload (verified by code review and runtime audit)\r\n- [ ] `Do Not Track` header is honored \u2014 tracking disabled when `navigator.doNotTrack === '1'`\r\n- [ ] No cookies are set by any tracking provider\r\n- [ ] Privacy policy documents what data is collected\r\n\r\n### FR-4: Server-Side Events\r\n- [ ] Sensitive events (subscription, billing) are tracked server-side via PostHog Node SDK\r\n- [ ] Server-side events go through UEF Gateway, not directly from client\r\n\r\n## Non-Functional Requirements\r\n\r\n### NFR-1: Performance\r\n- [ ] Analytics scripts add less than 50ms to page load (measured via Lighthouse CI)\r\n- [ ] Event dispatch is non-blocking \u2014 analytics failures never delay user interactions\r\n\r\n### NFR-2: Reliability\r\n- [ ] Tracking wrapper handles provider outages without throwing\r\n- [ ] Failed events are logged locally (console.warn in dev, silent in prod)\r\n\r\n### NFR-3: Testability\r\n- [ ] Analytics wrapper can be stubbed in tests (no real network calls during unit tests)\r\n- [ ] Integration test exists that verifies event shape and provider routing\r\n\r\n### NFR-4: Compliance\r\n- [ ] GDPR compliance verified \u2014 no personal data leaves the tracking pipeline\r\n- [ ] DNT compliance verified with automated test\r\n",
+    "content_hash": "8ff35cd4f8a0daf654d31640acb9173e7eaf258222945b2f1fc0da5e1a525b9a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 43,
+    "relative_path": "references/acceptance-criteria.md",
+    "size_bytes": 2049,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::6",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.py::file_access::6"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "Run the following Python to extract a clean transcript and key signals from each JSON file. Execute this once across the whole directory and store results in memory.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::decoding::45": "target"
+      },
+      "operation_class": "archive_extraction",
+      "operation_object": "obj::operation::SKILL.md::decoding::45",
+      "parameter_bindings": [],
+      "source_end_line": 45,
+      "source_start_line": 45
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::decoding::45"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "decoding"
+  }
+]

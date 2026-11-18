@@ -1,0 +1,351 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/README__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp -r claude-skills/ai-study-noter ~/.claude/skills/",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/README__fence_0.sh::file_write::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/README__fence_0.sh::file_write::2",
+      "path_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/README__fence_0.sh::file_write::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/README__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "pip install yt-dlp youtube-transcript-api google-generativeai",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/README__fence_1.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/README__fence_1.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/README__fence_1.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/README__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "# ~/.zshrc \ub610\ub294 ~/.bashrc\uc5d0 \ucd94\uac00",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/README__fence_2.sh::system_configuration_modify::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/README__fence_2.sh::system_configuration_modify::1",
+      "resource_class": "startup_configuration",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/README__fence_2.sh::system_configuration_modify::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls /Users/jun/Documents/ai-study/*.md",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::1": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::1",
+      "path_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "README.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install yt-dlp youtube-transcript-api google-generativeai",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::README.md::package_installation::26": "target"
+      },
+      "operation_object": "obj::operation::README.md::package_installation::26",
+      "source_end_line": 26,
+      "source_start_line": 26,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::README.md::package_installation::26"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            ['yt-dlp', '--print', '%(title)s|||%(description)s|||%(channel)s', '--no-playlist', url],\n            capture_output=True, text=True, timeout=30\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/get_transcript.py::system_command_execution::41": "command"
+      },
+      "operation_object": "obj::operation::scripts/get_transcript.py::system_command_execution::41",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/get_transcript.py:41:44:subprocess.run()",
+      "source_end_line": 44,
+      "source_start_line": 41
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/get_transcript.py::system_command_execution::41"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "subprocess.run(\n            [\n                'yt-dlp',\n                '--write-auto-sub',\n                '--write-sub',\n                '--sub-langs', 'ko.*,en.*',\n                '--skip-download',\n                '--output', os.path.join(tmpdir, 'video'),\n                '--no-playlist',\n                url\n            ],\n            capture_output=True, text=True, timeout=60\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/get_transcript.py::system_command_execution::100": "command"
+      },
+      "operation_object": "obj::operation::scripts/get_transcript.py::system_command_execution::100",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/get_transcript.py:100:112:subprocess.run()",
+      "source_end_line": 112,
+      "source_start_line": 100
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/get_transcript.py::system_command_execution::100"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(fpath, 'r', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/get_transcript.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/get_transcript.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 117,
+      "source_start_line": 117
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/get_transcript.py::encoding"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n        [\n            'yt-dlp',\n            '-f', 'bestaudio[ext=m4a]/bestaudio/best',\n            '--extract-audio',\n            '--audio-format', 'm4a',\n            '--audio-quality', '5',        # \ub0ae\uc740 \ud488\uc9c8\ub85c \ud30c\uc77c \ud06c\uae30 \uc904\uc774\uae30\n            '--output', out_template,\n            '--no-playlist',\n            url\n        ],\n        capture_output=True, text=True, timeout=300\n    )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/get_transcript.py::system_command_execution::137": "command"
+      },
+      "operation_object": "obj::operation::scripts/get_transcript.py::system_command_execution::137",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/get_transcript.py:137:149:subprocess.run()",
+      "source_end_line": 149,
+      "source_start_line": 137
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/get_transcript.py::system_command_execution::137"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(\n            ['npx', '--yes', 'defuddle', 'parse', url, '--json'],\n            capture_output=True, text=True, timeout=60\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/get_transcript.py::system_command_execution::163": "command"
+      },
+      "operation_object": "obj::operation::scripts/get_transcript.py::system_command_execution::163",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/get_transcript.py:163:166:subprocess.run()",
+      "source_end_line": 166,
+      "source_start_line": 163
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/get_transcript.py::system_command_execution::163"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "matched_text": "api_key = os.environ.get('GEMINI_API_KEY') or os.environ.get('GOOGLE_API_KEY')",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/get_transcript.py::api_key": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/get_transcript.py::api_key",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 194,
+      "source_start_line": 194
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/get_transcript.py::api_key"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/get_transcript.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/get_transcript.py::credential_data_access::285": "path"
+      },
+      "operation_object": "obj::operation::scripts/get_transcript.py::credential_data_access::285",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 285,
+      "source_start_line": 285
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/get_transcript.py::credential_data_access::285"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "credential_data_access"
+  }
+]

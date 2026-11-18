@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: api-endpoint\r\ndescription: Creer un nouvel endpoint API REST Laravel. Utiliser automatiquement quand on demande de creer une route, un controller ou un endpoint API.\r\nargument-hint: \"[Resource] [action: index|show|store|update|destroy]\"\r\n---\r\n\r\n# Creer un endpoint API REST\r\n\r\nRessource demandee : $ARGUMENTS\r\n\r\n## Etapes obligatoires\r\n\r\n### 1. Controller\r\n\r\nCreer ou modifier le controller dans `backend/app/Http/Controllers/`.\r\n\r\n```php\r\n// Convention de reponse\r\nreturn response()->json([\r\n    'success' => true,\r\n    'data' => $data,\r\n]);\r\n\r\n// Erreur\r\nreturn response()->json([\r\n    'success' => false,\r\n    'message' => 'Description claire de l\\'erreur',\r\n], 422);\r\n```\r\n\r\n**Regles :**\r\n- Injecter les modeles via route model binding (`Client $client`)\r\n- Valider les inputs avec `$request->validate([...])` ou une FormRequest\r\n- Toujours inclure `team_id` dans les requetes (scope multi-tenant)\r\n- Logger les actions importantes avec `Log::info('[MODULE] ...')`\r\n- Wrap les operations risquees dans try/catch\r\n\r\n### 2. Route\r\n\r\nAjouter dans `backend/routes/api.php` a l'interieur du groupe `auth:sanctum`.\r\n\r\n```php\r\n// Convention REST\r\nRoute::get('/resources', [ResourceController::class, 'index']);\r\nRoute::post('/resources', [ResourceController::class, 'store']);\r\nRoute::get('/resources/{resource}', [ResourceController::class, 'show']);\r\nRoute::put('/resources/{resource}', [ResourceController::class, 'update']);\r\nRoute::delete('/resources/{resource}', [ResourceController::class, 'destroy']);\r\n```\r\n\r\n### 3. Validation\r\n\r\nValider tous les inputs utilisateur. Ne jamais faire confiance aux donnees entrantes.\r\n\r\n```php\r\n$request->validate([\r\n    'name' => 'required|string|max:255',\r\n    'email' => 'nullable|email',\r\n    'file' => 'nullable|file|mimes:pdf,jpg,png|max:10240',\r\n]);\r\n```\r\n\r\n### 4. Storage (si fichiers)\r\n\r\n- Upload persistant : `$file->store(\"dossier/{$client->id}\")` (va sur S3)\r\n- Ne jamais utiliser `Storage::disk('public')` -> utiliser le disk par defaut (S3)\r\n- Fichiers temporaires : `Storage::disk('temp')`\r\n\r\n### 5. Verifier\r\n\r\nApres creation, verifier que la route est accessible :\r\n```bash\r\ndocker exec laravel_app php artisan route:list --path=api/nouveau-endpoint\r\n```\r\n",
+    "content_hash": "351fd592bf1f0fdc1bdc2bf08e90e1f37776b5cd98b93ff700acac0e7d94b66c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 75,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2222,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "docker exec laravel_app php artisan route:list --path=api/nouveau-endpoint",
+    "content_hash": "53cf9b3f6d1918f9734adba6a706be807124095ba256ca877eacefe92c4f0d14",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 74,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 74,
+    "source_start_line": 72
+  }
+]

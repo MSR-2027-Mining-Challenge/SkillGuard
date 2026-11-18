@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: rule-generator\r\ndescription: \"Creates new Antigravity rules when a behavioral pattern, user preference, or project convention needs to be enforced permanently. Triggers when the evolution observer detects a preference, or when the user explicitly asks for a new rule.\"\r\n---\r\n\r\n# Rule Generator (Meta-Skill)\r\n\r\n## Goal\r\n\r\nCreate properly formatted Antigravity rules that are clear, actionable, and do not conflict with existing rules.\r\n\r\n## Instructions\r\n\r\n### Step 1: Define the Rule\r\n\r\nBefore creating the file, clarify:\r\n- **What behavior to enforce**: What should the agent always do (or never do)?\r\n- **Why it matters**: What goes wrong if this rule is not followed?\r\n- **Source**: Where did this rule come from? (user preference, error prevention, project convention)\r\n\r\n### Step 2: Check for Conflicts\r\n\r\nRead all existing rules in `.agent/rules/`:\r\n- Does any existing rule contradict this new one?\r\n- Does any existing rule already cover this? (in which case, update it instead of creating a new one)\r\n- If there is a conflict, present both rules to the orchestrator and ask which takes priority\r\n\r\n### Step 3: Write the Rule File\r\n\r\nCreate a new file in `.agent/rules/` with the naming convention:\r\n- Core rules (00-06): NEVER modify these\r\n- Project-specific rules: start numbering from `10-` onwards (e.g., `10-python-style.md`, `11-api-conventions.md`)\r\n- This leaves room for future core rules (07-09)\r\n\r\nUse the template in `resources/rule-template.md`.\r\n\r\n### Step 4: Log and Inform\r\n\r\n- Append to `.agent/knowledge/evolution-log.md`\r\n- Tell the orchestrator:\r\n  - What the new rule does (plain English)\r\n  - Why it was created\r\n  - That it is now active in all future interactions\r\n  - Where to find it (`.agent/rules/<filename>`)\r\n\r\n## Constraints\r\n\r\n- NEVER modify rules 00 through 06 \u2014 these are the Ground Zero core\r\n- NEVER create rules that weaken safety (e.g., \"skip quality checks,\" \"ignore errors\")\r\n- ALWAYS get orchestrator approval before creating a rule\r\n- Rules must be phrased as clear imperatives (\"Always do X,\" \"Never do Y,\" \"When X happens, do Y\")\r\n- Avoid vague rules (\"Try to be clean\" \u2014 what does \"clean\" mean? Be specific.)\r\n",
+    "content_hash": "182f2bea14c252ed7e90100fc6c3baf17f31ccfe30a688b5c4a9160b1a71928a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2179,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "# Rule Template\r\n\r\nUse this template when creating a new rule file.\r\n\r\n---\r\n\r\n```markdown\r\n# [Rule Title \u2014 Clear and Descriptive]\r\n\r\n## Purpose\r\n\r\n[One or two sentences explaining what this rule enforces and why it matters. Write for a non-programmer.]\r\n\r\n## Source\r\n\r\n[Where this rule came from: user preference, error prevention, project convention detected during bootstrap, etc.]\r\n\r\n## Rules\r\n\r\n1. [Clear, imperative statement: \"Always do X\" or \"Never do Y\"]\r\n2. [Each rule on its own line, numbered]\r\n3. [Be specific \u2014 avoid ambiguous language]\r\n\r\n## Examples\r\n\r\n### Correct (Following This Rule)\r\n[Show an example of behavior that follows this rule]\r\n\r\n### Incorrect (Violating This Rule)\r\n[Show an example of behavior that violates this rule and explain why it is wrong]\r\n\r\n## Exceptions\r\n\r\n[Are there cases where this rule should be relaxed? If none, state \"No exceptions.\"]\r\n```\r\n",
+    "content_hash": "16407c15e0aa39157dcd35a90340b5d871c72573f9fe6732663032c0db63f067",
+    "generated": false,
+    "is_text": true,
+    "line_count": 36,
+    "relative_path": "resources/rule-template.md",
+    "size_bytes": 893,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

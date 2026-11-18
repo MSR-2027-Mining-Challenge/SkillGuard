@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: handoff\r\ndescription: >\r\n  Hand off to a fresh Claude session. Use when context is full, you've finished\r\n  a logical chunk of work, or need a fresh perspective. Work continues from hook.\r\nallowed-tools: \"Bash(gt handoff:*),Bash(gt mail send:*)\"\r\nversion: \"1.0.0\"\r\nauthor: \"Gas Town\"\r\n---\r\n\r\n# Handoff - Session Cycling for Gas Town Agents\r\n\r\nHand off your current session to a fresh Claude instance while preserving work context.\r\n\r\n## When to Use\r\n\r\n- Context getting full (approaching token limit)\r\n- Finished a logical chunk of work\r\n- Need a fresh perspective on a problem\r\n- Human requests session cycling\r\n\r\n## Usage\r\n\r\n```\r\n/handoff [optional message]\r\n```\r\n\r\n## How It Works\r\n\r\n1. State is collected (your message, or auto-collected inbox/beads/hook status)\r\n2. Handoff mail is sent to yourself with context\r\n3. `gt handoff` respawns your session with a fresh Claude\r\n4. New session auto-primes via SessionStart hook\r\n5. Work continues from your hook (pinned molecule persists)\r\n\r\n## Examples\r\n\r\n```bash\r\n# Simple handoff - auto-collects state (inbox, ready beads, hooked work)\r\n/handoff\r\n\r\n# Handoff with context notes\r\n/handoff \"Found the bug in token refresh - check line 145 in auth.go first\"\r\n```\r\n\r\n## What Persists\r\n\r\n- **Hooked molecule**: Your work assignment stays on your hook\r\n- **Beads state**: All issues, dependencies, progress\r\n- **Git state**: Commits, branches, staged changes\r\n\r\n## What Resets\r\n\r\n- **Conversation context**: Fresh Claude instance\r\n- **TodoWrite items**: Ephemeral, session-scoped\r\n- **In-memory state**: Any uncommitted analysis\r\n\r\n## Implementation\r\n\r\nWhen invoked, execute:\r\n\r\n1. If user provided a message:\r\n   ```bash\r\n   gt handoff -m \"<message>\"\r\n   ```\r\n\r\n2. If NO message provided, use `-c` to auto-collect state:\r\n   ```bash\r\n   gt handoff -c\r\n   ```\r\n\r\n**IMPORTANT**: Never run bare `gt handoff` - it sends no mail and the next session loses context. Always use `-c` or `-m`.\r\n",
+    "content_hash": "a4181f5f46c4475244e6fb80349993406d6a4528bad98a4aa79945b59d139fdf",
+    "generated": false,
+    "is_text": true,
+    "line_count": 73,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1943,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# Simple handoff - auto-collects state (inbox, ready beads, hooked work)\r\n/handoff\r\n\r\n# Handoff with context notes\r\n/handoff \"Found the bug in token refresh - check line 145 in auth.go first\"",
+    "content_hash": "409d739921fd46297feb5599846bfd12f37b66338115be30b271dc741579cfa9",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 191,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 44,
+    "source_start_line": 38
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "   gt handoff -m \"<message>\"",
+    "content_hash": "2829c2608a8ace55ee1dd9e5d5970fa9baa2c8065fd6b5ac4b0ce9719942a063",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 28,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 65,
+    "source_start_line": 63
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "   gt handoff -c",
+    "content_hash": "e961666425addb1ae20c60d6de77fe3d151048aa2074d1488fd49385deecff34",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 16,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 70,
+    "source_start_line": 68
+  }
+]

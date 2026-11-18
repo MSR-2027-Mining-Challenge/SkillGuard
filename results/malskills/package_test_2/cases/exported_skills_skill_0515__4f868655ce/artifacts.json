@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: dart-flutter-sdk-upgrade\r\ndescription: >\r\n  VGV-specific reference for bumping Dart and Flutter SDK constraints across packages.\r\n  Covers pubspec.yaml environment constraints, CI workflow Flutter versions, and SDK\r\n  upgrade PR preparation. CI uses ^MAJOR.MINOR.x to resolve to the latest patch;\r\n  pubspec pins the exact patch version (e.g., ^3.50.1).\r\nwhen_to_use: >\r\n  Use when upgrading the Flutter or Dart SDK version in any VGV repository. Trigger on\r\n  phrases like \"bump Flutter to 3.x\", \"update SDK constraints\", \"upgrade Dart SDK\",\r\n  \"update CI Flutter version\", \"bump SDK version\", or \"prep the SDK upgrade PR\".\r\nallowed-tools: Read Glob Grep Edit Write Bash\r\nmodel: sonnet\r\neffort: medium\r\n---\r\n\r\n# VGV Flutter/Dart SDK Upgrade \u2014 Quick Reference\r\n\r\nOne PR per project. Only CI workflow and `pubspec.yaml` changes \u2014 no logic, no dependency\r\nversion bumps, no test changes.\r\n\r\n---\r\n\r\n## Core Standards\r\n\r\nApply these standards to ALL SDK upgrade work:\r\n\r\n- **Flutter and Dart versions differ** \u2014 always look up the Dart version bundled with the target Flutter release from <https://docs.flutter.dev/install/archive>\r\n- **Flutter CI uses `MAJOR.MINOR.x`** \u2014 no caret, `.x` wildcard resolves to latest patch\r\n- **Dart CI uses exact patch** \u2014 `MAJOR.MINOR.PATCH`, no caret, no wildcard\r\n- **pubspec pins exact patch** \u2014 use `^MAJOR.MINOR.PATCH` with the specific patch version\r\n- **Pure Dart packages** \u2014 use the Dart version directly, no Flutter mapping needed\r\n- **Verify with `pub get` and `analyze`** \u2014 don't silently resolve conflicts\r\n\r\n---\r\n\r\n## 0. Resolve target version\r\n\r\nFlutter bundles a specific Dart release \u2014 their version numbers do **not** match. For\r\nexample, Flutter 3.41.0 ships with Dart 3.11.0. You must look up the correct Dart version\r\nfor the target Flutter release before editing any files.\r\n\r\n**How to find the Dart version:**\r\n\r\n1. Open <https://docs.flutter.dev/install/archive>\r\n2. Find the target Flutter stable release\r\n3. Note the Dart version listed alongside it\r\n\r\nIf the user has not specified a Flutter version, look up the latest Flutter stable release\r\nfrom that same page. For pure Dart packages (no Flutter dependency), the Dart version is\r\nwhatever the user specifies or the latest stable \u2014 no Flutter mapping needed.\r\n\r\nConfirm both resolved versions with the user before editing files.\r\n\r\n---\r\n\r\n## 1. CI workflows \u2014 `.github/workflows/`\r\n\r\nVGV packages use `VeryGoodOpenSource/very_good_workflows` reusable workflows. Leave the\r\n`@v1` tag untouched. Flutter packages use `MAJOR.MINOR.x` \u2014 no caret, literal `x` as the\r\npatch wildcard so CI resolves to the latest patch automatically. Dart packages pin the exact\r\npatch version. When bumping versions, update MAJOR and/or MINOR as appropriate\r\n(e.g., `3.41.x` \u2192 `3.42.x` or `4.0.x`):\r\n\r\n**Flutter package:**\r\n\r\n```yaml\r\nuses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1\r\nwith:\r\n  flutter_version: \"3.41.x\" # \u2190 MAJOR.MINOR.x, resolves to latest patch\r\n```\r\n\r\n**Pure Dart package** \u2014 note the key is `dart_sdk`, not `flutter_version`. Use the Dart\r\nversion, not the Flutter version:\r\n\r\n```yaml\r\nuses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1\r\nwith:\r\n  dart_sdk: \"3.11.0\" # \u2190 exact Dart version (not Flutter version)\r\n```\r\n\r\nIf a file uses `flutter_channel: stable` instead of a pinned version,\r\npin the version \u2014 VGV always pins Flutter versions in CI workflows.\r\n\r\n---\r\n\r\n## 2. `pubspec.yaml` environment constraints\r\n\r\nFormat is `^MAJOR.MINOR.PATCH` (caret, exact patch). Unlike CI, pubspec pins a specific\r\npatch version \u2014 the one the user specifies or the current stable at the time of the bump.\r\n\r\n**Flutter package** (has `flutter:` under `dependencies`):\r\n\r\n```yaml\r\nenvironment:\r\n  sdk: ^3.11.0 # \u2190 Dart version bundled with the target Flutter release\r\n  flutter: ^3.41.0 # \u2190 Flutter version\r\n```\r\n\r\n**Pure Dart package** (no Flutter SDK dependency):\r\n\r\n```yaml\r\nenvironment:\r\n  sdk: ^3.11.0 # \u2190 Dart version only\r\n  # no flutter: line\r\n```\r\n\r\nIn a monorepo, update each package's `pubspec.yaml` individually. The shared CI workflow\r\nonly needs updating once.\r\n\r\n---\r\n\r\n## 3. Verify\r\n\r\nRun from each package directory. **Use Dart/Flutter MCP tools if available; otherwise Bash.**\r\n\r\n```bash\r\nflutter pub get   # or: dart pub get  (for pure Dart packages)\r\nflutter analyze   # or: dart analyze\r\n```\r\n\r\nIf `pub get` fails with dependency conflicts, report them \u2014 don't silently resolve by\r\nupgrading packages. If `analyze` surfaces new errors introduced by the SDK bump, report\r\nthem rather than fixing them in this PR.\r\n\r\n---\r\n\r\n## 4. PR scope check\r\n\r\nBefore committing, confirm the diff contains only:\r\n\r\n- `.github/workflows/*.yml`\r\n- `pubspec.yaml` (one or more)\r\n\r\n```bash\r\ngit diff HEAD --name-only\r\n```\r\n\r\nSuggested commit/PR message:\r\n\r\n```text\r\nchore: bump Flutter to 3.41.0 / Dart to 3.11.0\r\n\r\n- Update flutter_version in .github/workflows/ to 3.41.x (CI resolves latest patch)\r\n- Update dart_sdk in .github/workflows/ to 3.11.0 (exact patch)\r\n- Update environment sdk/flutter constraints in pubspec.yaml\r\n\r\nNo logic or code changes.\r\n```\r\n",
+    "content_hash": "ff0c95d9b620d903a3ceb80eaf8451f78c4410660d841deaef268b0b8ece3771",
+    "generated": false,
+    "is_text": true,
+    "line_count": 150,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5185,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "flutter pub get   # or: dart pub get  (for pure Dart packages)\r\nflutter analyze   # or: dart analyze",
+    "content_hash": "f406eb608066e44f1ce9b2f8e48230f6e432a1e3c7bd2e35ab022cfaa8d9e591",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_4.sh",
+    "size_bytes": 100,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 120,
+    "source_start_line": 117
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "git diff HEAD --name-only",
+    "content_hash": "b9f46e7bcf85ef9219e6a65c857d3c47334f649a258d269fd5f413d508f8b2e8",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_5.sh",
+    "size_bytes": 25,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 137,
+    "source_start_line": 135
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: cis-k8s-v200-1.1.10\r\ndescription: \"Ensure that the Container Network Interface file ownership is set to root:root (Manual)\"\r\ncategory: cis-k8s\r\nversion: \"2.0.0\"\r\nauthor: cyberstrike-official\r\ntags: [cis, kubernetes, control-plane, config-files, file-ownership, cni, networking]\r\ncis_id: \"1.1.10\"\r\ncis_benchmark: \"CIS Kubernetes Benchmark v2.0.0\"\r\ntech_stack: [kubernetes]\r\ncwe_ids: []\r\nchains_with: []\r\nprerequisites: []\r\nseverity_boost: {}\r\n---\r\n\r\n# 1.1.10 Ensure that the Container Network Interface file ownership is set to root:root (Manual)\r\n\r\n## Profile Applicability\r\n\r\n- Level 1 - Master Node\r\n\r\n## Description\r\n\r\nEnsure that the Container Network Interface files have ownership set to `root:root`.\r\n\r\n## Rationale\r\n\r\nContainer Network Interface provides various networking options for overlay networking. You should consult their documentation and restrict their respective file permissions to maintain the integrity of those files. Those files should be owned by `root:root`.\r\n\r\n## Impact\r\n\r\nNone\r\n\r\n## Audit\r\n\r\nRun the below command (based on the file location on your system) on the Control Plane node. For example,\r\n\r\n```bash\r\nstat -c %U:%G <path/to/cni/files>\r\n```\r\n\r\nVerify that the ownership is set to `root:root`.\r\n\r\n## Remediation\r\n\r\nRun the below command (based on the file location on your system) on the Control Plane node. For example,\r\n\r\n```bash\r\nchown root:root <path/to/cni/files>\r\n```\r\n\r\n## Default Value\r\n\r\nNA\r\n\r\n## References\r\n\r\n1. https://kubernetes.io/docs/concepts/cluster-administration/networking/\r\n\r\n## CIS Controls\r\n\r\n| Controls Version | Control                                                                                                                                                                                                                                                                                                                      | IG 1 | IG 2 | IG 3 |\r\n| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---- | ---- |\r\n| v8               | 5.4 Restrict Administrator Privileges to Dedicated Administrator Accounts - Restrict administrator privileges to dedicated administrator accounts on enterprise assets. Conduct general computing activities, such as internet browsing, email, and productivity suite use, from the user's primary, non-privileged account. | \\*   | \\*   | \\*   |\r\n| v7               | 4 Controlled Use of Administrative Privileges - Controlled Use of Administrative Privileges                                                                                                                                                                                                                                  |      |      |      |\r\n",
+    "content_hash": "0f1b7134f4721b3ec40e2336f03d70381d79ec9fb60fd84b925d04e2a5173538",
+    "generated": false,
+    "is_text": true,
+    "line_count": 67,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3012,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "stat -c %U:%G <path/to/cni/files>",
+    "content_hash": "5cd939d9a23c9a782ba589721c52dd31d605bf11358c75663cef37b2a2b12b80",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 33,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 41,
+    "source_start_line": 39
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "chown root:root <path/to/cni/files>",
+    "content_hash": "74391151f62c7e118f2b0f27d40eb6110518bc8cbca43adf0d0c469d63a017e5",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 35,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 51,
+    "source_start_line": 49
+  }
+]

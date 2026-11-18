@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: netdata\r\ndescription: Use Netdata to investigate live infrastructure health before drawing conclusions about incidents.\r\n---\r\n\r\n# Netdata\r\n\r\nUse Netdata to investigate live infrastructure health before drawing conclusions about incidents.\r\n\r\n## Use When\r\n- Inspect real-time metrics\r\n- Correlate alerts with logs\r\n- Spot anomalies during an incident\r\n\r\n## Guardrails\r\n- Treat telemetry as sensitive\r\n- Do not change agent config without approval\r\n- Cite the time window and node inspected\r\n\r\n## Default Flow\r\n\r\n1. Confirm the user intent and whether the action is read-only or state-changing.\r\n2. Use the narrowest available tool scope and collect only the context needed for the task.\r\n3. For state-changing or external actions, stop for explicit approval before acting.\r\n4. Summarize what changed or what was learned, including relevant object IDs or links.\r\n",
+    "content_hash": "c086ebcf18ccb5d2d47faa29638cc54bfe409985c7b874564cde9e34d110386d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 26,
+    "relative_path": "SKILL.md",
+    "size_bytes": 872,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

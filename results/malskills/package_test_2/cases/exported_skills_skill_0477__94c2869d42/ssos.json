@@ -1,0 +1,121 @@
+[
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/analyze_music.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "out = subprocess.check_output(cmd, text=True)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/analyze_music.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/analyze_music.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/analyze_music.py:17:17:subprocess.check_output()",
+      "source_end_line": 17,
+      "source_start_line": 17
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/analyze_music.py::cmd"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/listen.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "subprocess.run(cmd, check=True, capture_output=True, text=True)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/listen.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/listen.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/listen.py:62:62:subprocess.run()",
+      "source_end_line": 62,
+      "source_start_line": 62
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/listen.py::cmd"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/listen.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "proc = subprocess.run(cmd, check=True, capture_output=True, text=True)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/listen.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/listen.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/listen.py:285:285:subprocess.run()",
+      "source_end_line": 285,
+      "source_start_line": 285
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/listen.py::cmd"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/temporal_listen.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/temporal_listen.py::credential_data_access::252": "path"
+      },
+      "operation_object": "obj::operation::scripts/temporal_listen.py::credential_data_access::252",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 252,
+      "source_start_line": 252
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/temporal_listen.py::credential_data_access::252"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  }
+]

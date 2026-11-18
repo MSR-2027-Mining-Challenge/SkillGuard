@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: internal-site-analysis\r\ncategory: devops\r\ndescription: Analyze internal web applications when browser proxy blocks direct access\r\n---\r\n\r\n# Analyzing Internal Web Applications\r\n\r\nWhen browser tools fail due to proxy configuration, use curl with noproxy option to fetch and analyze the site.\r\n\r\n## Approach\r\n\r\n1. **Fetch main HTML page** to identify JS bundle paths\r\n\r\n2. **Analyze app structure** via manifest files (app-manifest.json often exists for micro-frontends)\r\n\r\n3. **Extract navigation/routes** from layout components (BasicLayout, Sidebar, Menu)\r\n\r\n4. **Check API endpoints** in main bundle by searching for /api/ patterns\r\n\r\n5. **Verify other routes** work with HEAD requests\r\n\r\n## Common Findings for React SPAs\r\n\r\n- app-manifest.json reveals micro-frontend modules\r\n- BasicLayout/Sidebar components contain menu structure\r\n- Route definitions show available pages\r\n- Look for auth guards, error boundaries, loading states\r\n\r\n## Proxy Environment Variables\r\n\r\nCheck with: env | grep -i proxy\r\n\r\nCommon blocking variables:\r\n- ALL_PROXY\r\n- http_proxy / https_proxy\r\n- HTTP_PROXY / HTTPS_PROXY\r\n\r\nBrowser tools inherit proxy from shell environment. Use noproxy flag with curl to bypass.\r\n",
+    "content_hash": "15ba5a881bf451d7db8a1dac1ac089bef0c93546caedf5c80d25f4858cfbde55",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1208,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

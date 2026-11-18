@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: aitask-resume\r\ndescription: Resume an in-flight task from its gate-ledger checkpoint (programmatic re-entry surface for testing / TUI / board ops).\r\n---\r\n\r\nThis is a profile-aware skill stub. Execute these steps in order, then stop:\r\n\r\n1. **Resolve active profile.** Parse ARGUMENTS for `--profile <name>`. If\r\n   found, use that as `<profile>` and remove the `--profile <name>` pair\r\n   from ARGUMENTS. Otherwise run:\r\n   `./.aitask-scripts/aitask_skill_resolve_profile.sh resume`\r\n   and use the single-line stdout as `<profile>`.\r\n\r\n2. **Render per-profile variant.** Run:\r\n   `./.aitask-scripts/aitask_skill_render.sh aitask-resume --profile <profile> --agent codex`\r\n   No-op if the per-profile SKILL.md is already up to date.\r\n\r\n3. **Dispatch via Read-and-follow.** Read the file at\r\n   `.agents/skills/aitask-resume-<profile>-codex-/SKILL.md` and execute its\r\n   instructions as if they were this skill, forwarding the (possibly\r\n   stripped) ARGUMENTS unchanged.\r\n",
+    "content_hash": "5f148c16e154571913747eebfe80aca715417e306e8b9775764cd1a2c5f72736",
+    "generated": false,
+    "is_text": true,
+    "line_count": 22,
+    "relative_path": "SKILL.md",
+    "size_bytes": 983,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

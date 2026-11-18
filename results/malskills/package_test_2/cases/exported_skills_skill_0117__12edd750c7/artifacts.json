@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: bb-tech-express\r\ndescription: >\r\n  Manejo estandarizado de errores backend Node.js, prevenci\u00f3n de stacktraces expuestos y logs limpios.\r\n  Trigger: Use al manejar middlewares atrape-errores o generar devoluciones fallidas via HTTP/Express.\r\nlicense: Apache-2.0\r\nmetadata:\r\n  author: valentin mathey\r\n  version: \"1.0\"\r\n---\r\n\r\n## When to Use\r\n\r\n- Al construir respuestas REST o GraphQL que resultan en fallos predecibles.\r\n- Middleware globales de Express para el enrutamiento.\r\n\r\n## Critical Patterns\r\n\r\n- **Never Leak Stacktraces:** Un requerimiento cr\u00edtico de seguridad. Jam\u00e1s exponer variables del sistema (`process.env`) ni fallos crudos de Prisma a nivel de la Request (Postman/Web).\r\n- **Log central vs Client Error:** Cada bloque global de fallos debe hacer uso del Logger para archivo/consola y a la vez fabricar un mensaje sanitizado (`Custom Error Model`) para `res.status(500).json(...)`.\r\n\r\n## Code Examples\r\n\r\n### DO: Sanitizar salida HTTP y enmascarar\r\n\r\n```typescript\r\nexport const globalErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {\r\n  logger.error(err.message, err.stack); // <- Para los internos!\r\n  return res.status(500).json({ error: \"Application Error, please contact support.\" }); // <- Client safe\r\n}\r\n```\r\n",
+    "content_hash": "c4bc4e33c828546aa318ad325e4be55665256a343dc96e3a77ad5bfebbfa24bb",
+    "generated": false,
+    "is_text": true,
+    "line_count": 32,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1278,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "export const globalErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {\r\n  logger.error(err.message, err.stack); // <- Para los internos!\r\n  return res.status(500).json({ error: \"Application Error, please contact support.\" }); // <- Client safe\r\n}",
+    "content_hash": "350ec512bff7fad324dad5b9ed8a9a7b5e9fe3c13240a013e5595c3a92c736f4",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_0.ts",
+    "size_bytes": 274,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 31,
+    "source_start_line": 26
+  }
+]

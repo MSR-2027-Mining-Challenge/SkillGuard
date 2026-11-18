@@ -1,0 +1,28 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_3.sh"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_7.sh"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_8.sh"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_9.sh"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_10.sh"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_11.sh"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=markdown\npath=reference/comment-guidelines.md"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=markdown\npath=reference/contribution-types.md"];
+  "art_0013" [label="art_0013\nkind=artifact\ntype=markdown\npath=reference/conventions.md"];
+  "art_0014" [label="art_0014\nkind=artifact\ntype=javascript\npath=reference/.malskills_fences/conventions__fence_0.ts"];
+  "art_0015" [label="art_0015\nkind=artifact\ntype=javascript\npath=reference/.malskills_fences/conventions__fence_1.ts"];
+  "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2" [label="obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=system_information_access"];
+  "value::bf23a80a4bdc27c04de7" [label="value::bf23a80a4bdc27c04de7\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2" -> "value::bf23a80a4bdc27c04de7" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_information_access::2" [label="has_operand"];
+}

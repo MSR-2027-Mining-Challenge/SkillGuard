@@ -1,0 +1,296 @@
+[
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+    "span": null,
+    "value_id": "value::8d5362a3b809c191ea22",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::44a0fc0200134b7db7a7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_1.sh::file_read::1",
+    "span": null,
+    "value_id": "value::65c2c35ccfdd78725df3",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_11.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+    "span": null,
+    "value_id": "value::e22ed543656e7b34c5f7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_11.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::5fbd46c99159bdf70810",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_11.sh::file_read::1",
+    "span": null,
+    "value_id": "value::37166eb4232def8e51ae",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_12.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+    "span": null,
+    "value_id": "value::9703332ebd49353ec682",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_12.sh::limit",
+    "span": null,
+    "value_id": "value::65a7ebe48e698c50484a",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_13.sh::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+    "span": null,
+    "value_id": "value::dff2590acc561d3c430e",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_13.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::7bc26733fe1f17ed1111",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_14.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+    "span": null,
+    "value_id": "value::3675672a301dd7b572d8",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_14.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::7f674c5bcb7aeea6cc0a",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_14.sh::file_read::1",
+    "span": null,
+    "value_id": "value::5fd7963e66eb3430aac1",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_15.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+    "span": null,
+    "value_id": "value::2aab7de2f326b1b3af65",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_15.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::5f3ecea7f98a6811bbdc",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_15.sh::file_read::1",
+    "span": null,
+    "value_id": "value::db2150bbaa80d37a7854",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+    "span": null,
+    "value_id": "value::3b251fee4e6db51c663c",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::957be10225f4df693d4e",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_3.sh::file_read::1",
+    "span": null,
+    "value_id": "value::efa04899e25b300fc2c9",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+    "span": null,
+    "value_id": "value::f1adf0d829776101612f",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::1e27c9f4cd118aae86b3",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_4.sh::file_read::1",
+    "span": null,
+    "value_id": "value::8306735b68d20f1ea689",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+    "span": null,
+    "value_id": "value::806e45663b984e1d4acf",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::9f0d03550eb9b23422e1",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::file_read::1",
+    "span": null,
+    "value_id": "value::48c9c9551a92f7aa1551",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_6.sh::data_receive::curl -L \"<video-url>\" -o /tmp/luma_output.mp4",
+    "span": null,
+    "value_id": "value::d8ce978acb9db0c53ef7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+    "span": null,
+    "value_id": "value::d5334aa47c31a0896fe9",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::4acb0f5452746c2146b7",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_8.sh::file_read::1",
+    "span": null,
+    "value_id": "value::29ee15105f75f4d4b024",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_9.sh::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+    "span": null,
+    "value_id": "value::f2b655ccba906c1a5292",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_9.sh::credential_data_access::1",
+    "span": null,
+    "value_id": "value::a49565d1fc830421f1b4",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": ".malskills_fences/SKILL__fence_9.sh::file_read::1",
+    "span": null,
+    "value_id": "value::c9a1b135e0add70841ed",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state, created_at}'",
+    "span": null,
+    "value_id": "value::45fcf446ca29038e4fff",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_video_request.json | jq '{id, state}'",
+    "span": null,
+    "value_id": "value::6dc42bdf8927a62f6d06",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '{id, state, failure_reason, assets}'",
+    "span": null,
+    "value_id": "value::4e648b4edd97711d03bf",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq -r '.assets.video'",
+    "span": null,
+    "value_id": "value::82cf906fbf15a2d6e27a",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/image\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_image_request.json | jq '{id, state, created_at}'",
+    "span": null,
+    "value_id": "value::30044962dce90bd2a187",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X POST \"https://api.lumalabs.ai/dream-machine/v1/generations/video\" --header \"Authorization: Bearer $LUMA_TOKEN\" --header \"Content-Type: application/json\" -d @/tmp/luma_extend_request.json | jq '{id, state}'",
+    "span": null,
+    "value_id": "value::98562d5813f55bd45915",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations?limit=10&offset=0\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.generations[] | {id, state, created_at}'",
+    "span": null,
+    "value_id": "value::732148c4fc03e4c280d4",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X DELETE \"https://api.lumalabs.ai/dream-machine/v1/generations/<generation-id>\" --header \"Authorization: Bearer $LUMA_TOKEN\"",
+    "span": null,
+    "value_id": "value::e255252fa195816d1c9e",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/camera_motion/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+    "span": null,
+    "value_id": "value::b2f8e577317cbe37dc0a",
+    "value_kind": "symbolic"
+  },
+  {
+    "artifact_path": "",
+    "display_value": "SKILL.md::data_receive::curl -s -X GET \"https://api.lumalabs.ai/dream-machine/v1/generations/concepts/list\" --header \"Authorization: Bearer $LUMA_TOKEN\" | jq '.[]'",
+    "span": null,
+    "value_id": "value::4323eaf5ca090538784d",
+    "value_kind": "symbolic"
+  }
+]

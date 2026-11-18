@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: run-via\r\ndescription: >-\r\n  Run a literal shell command or script file through codex's or gemini's own\r\n  CLI execution environment and return the result, instead of running it in\r\n  Claude's own Bash tool. Use when the user says \"run this via codex\", \"have\r\n  gemini run this script\", \"execute this in codex\", \"run this command with\r\n  codex/gemini\", or wants a second, independent runtime to execute a command\r\n  and confirm its real behavior. This is distinct from the codex/gemini\r\n  skills that ask those CLIs a question or hand them an open-ended task \u2014\r\n  this skill exists purely to execute one specific command or script and\r\n  hand back its stdout, stderr, and exit code. DO NOT TRIGGER for \"ask codex\r\n  to review this\" or \"what does gemini think\" (that's an opinion/analysis\r\n  request, not an execution request) or for plain command execution that\r\n  doesn't name codex or gemini.\r\n---\r\n\r\n# run-via\r\n\r\nDelegate running one specific command or script to codex or gemini, and get back\r\nwhat actually happened \u2014 not an opinion about the code, an execution result.\r\n\r\n## Why this is a different tool than the codex/gemini skills\r\n\r\nThe `codex` and `gemini` skills exist to ask those CLIs a question or hand them an\r\nopen-ended task (\"review this file\", \"refactor this function\"). This skill is\r\nnarrower: the user already knows exactly what command or script they want run \u2014\r\nthey just want another agent's CLI to be the one that executes it, instead of\r\nClaude's own Bash tool. Reach for it when the user specifically wants a second\r\nruntime to run something and report back what happened.\r\n\r\n## The two backends behave differently \u2014 pick deliberately\r\n\r\n**codex is deterministic.** `codex sandbox -- <command>` runs the literal command\r\ndirectly inside codex's own Linux sandbox \u2014 no LLM reasoning in the loop at all.\r\nThe exit code, stdout, and stderr you get back are exactly what the command\r\nproduced. Use codex whenever the user wants a real, trustworthy exit code.\r\n\r\n**gemini is agentic.** There is no non-agentic \"just run this\" mode in the gemini\r\nCLI \u2014 every invocation goes through the model, which decides how to invoke the\r\nshell tool. The script handles this by giving gemini a strict verbatim-execution\r\ninstruction and running with `--approval-mode yolo` so it doesn't stall on a\r\nconfirmation prompt, but the \"exit code\" gemini reports back is the model's own\r\ntranscription of what it saw, not a value the shell process itself returns to you.\r\nUse gemini when the user explicitly asks for it, or wants a second, differently-\r\nsandboxed environment to compare against codex \u2014 not when exact exit-code fidelity\r\nmatters.\r\n\r\nIf the user hasn't named a backend and exit-code fidelity matters, prefer codex.\r\n\r\n## Running it\r\n\r\n```bash\r\nscripts/run-via.sh --backend codex -- pytest -q\r\nscripts/run-via.sh --backend gemini -- pytest -q\r\nscripts/run-via.sh --backend codex --script ./build.sh\r\n```\r\n\r\nFull flag reference: `scripts/run-via.sh --help`.\r\n\r\n## codex sandbox levels \u2014 ask before escalating\r\n\r\n`codex sandbox` defaults to **read-only, no network, no writes anywhere** (verified:\r\neven writing to `/tmp` fails). That's the safe default \u2014 use it for anything that\r\nonly reads or inspects (tests that don't need to write, linters, `--version`\r\nchecks, diagnostics).\r\n\r\nIf the command needs to write files, add `--write` (`sandbox_mode=workspace-write`\r\n\u2014 writes allowed under the cwd, network still blocked). If it needs network too,\r\nthat requires `--danger-full-access`, which removes sandboxing entirely \u2014 **always\r\nconfirm with the user before passing this flag**; don't infer that a command needs\r\nfull access just because it failed under a lighter mode without checking first\r\nwhether `--write` alone would have been enough.\r\n\r\n## Scripts vs inline commands\r\n\r\n`--script <path>` runs a script file (executed directly if it's executable,\r\notherwise via `bash <path>`); anything after `--` runs as a literal command with\r\nits own arguments. Don't mix the two in one call \u2014 pick whichever matches what the\r\nuser handed you.\r\n\r\n## Reading back the result\r\n\r\nFor codex, the script's own exit code IS the command's real exit code (`exec`'d\r\nstraight through) \u2014 just report it.\r\n\r\nFor gemini, read the labeled `stdout:` / `stderr:` / `exit code:` sections the\r\nprompt asks it to print, and tell the user plainly that this is gemini's report of\r\nwhat happened, not a shell-guaranteed exit code, if precision matters to what\r\nthey're doing next.\r\n",
+    "content_hash": "53bc7d5909917d527e2f3ed594b8c9b951bf766537055009ce0fc09043c38bb7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 91,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4511,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "scripts/run-via.sh --backend codex -- pytest -q\r\nscripts/run-via.sh --backend gemini -- pytest -q\r\nscripts/run-via.sh --backend codex --script ./build.sh",
+    "content_hash": "ad96d458a97fc674ba0d51ac638d5fa812ccd99b35858ac8ad1e493bc8302da2",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 153,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 57,
+    "source_start_line": 53
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "#!/usr/bin/env bash\r\n# Run a literal command or script via codex's sandbox or gemini's agentic yolo mode.\r\nset -euo pipefail\r\n\r\nusage() {\r\n  cat <<'EOF'\r\nUsage:\r\n  run-via.sh --backend codex|gemini [--write] [--danger-full-access] --script <path> [-- extra args...]\r\n  run-via.sh --backend codex|gemini [--write] [--danger-full-access] -- <command> [args...]\r\n\r\nOptions:\r\n  --backend codex|gemini   required \u2014 which CLI executes the command\r\n  --script <path>          run a script file instead of an inline command\r\n  --write                  codex only: allow writes under the cwd (sandbox_mode=workspace-write)\r\n  --danger-full-access     codex only: full filesystem + network access \u2014 confirm with the user first\r\nEOF\r\n}\r\n\r\nbackend=\"\"\r\nwrite=false\r\ndanger=false\r\nscript=\"\"\r\nargs=()\r\n\r\nwhile [[ $# -gt 0 ]]; do\r\n  case \"$1\" in\r\n    --backend) backend=\"$2\"; shift 2 ;;\r\n    --write) write=true; shift ;;\r\n    --danger-full-access) danger=true; shift ;;\r\n    --script) script=\"$2\"; shift 2 ;;\r\n    -h|--help) usage; exit 0 ;;\r\n    --) shift; args+=(\"$@\"); break ;;\r\n    *) echo \"unknown arg: $1\" >&2; usage >&2; exit 2 ;;\r\n  esac\r\ndone\r\n\r\nif [[ -z \"$backend\" ]]; then\r\n  echo \"error: --backend codex|gemini is required\" >&2\r\n  exit 2\r\nfi\r\n\r\nif [[ -n \"$script\" ]]; then\r\n  if [[ ! -f \"$script\" ]]; then\r\n    echo \"error: script not found: $script\" >&2\r\n    exit 2\r\n  fi\r\n  if [[ -x \"$script\" ]]; then\r\n    cmd=(\"$script\" \"${args[@]}\")\r\n  else\r\n    cmd=(bash \"$script\" \"${args[@]}\")\r\n  fi\r\nelif [[ ${#args[@]} -gt 0 ]]; then\r\n  cmd=(\"${args[@]}\")\r\nelse\r\n  echo \"error: provide --script <path> or -- <command...>\" >&2\r\n  exit 2\r\nfi\r\n\r\ncase \"$backend\" in\r\n  codex)\r\n    codex_args=()\r\n    if $danger; then\r\n      codex_args+=(-c 'sandbox_mode=\"danger-full-access\"')\r\n    elif $write; then\r\n      codex_args+=(-c 'sandbox_mode=\"workspace-write\"')\r\n    fi\r\n    exec codex sandbox \"${codex_args[@]}\" -- \"${cmd[@]}\"\r\n    ;;\r\n  gemini)\r\n    printf -v quoted '%q ' \"${cmd[@]}\"\r\n    prompt=\"Run this exact shell command using the shell tool. Do not modify, split, retry, or reinterpret it. Do not summarize or explain the output. When it finishes, print exactly three labeled sections in this order: 'stdout:' followed by the raw stdout, 'stderr:' followed by the raw stderr, and 'exit code:' followed by the numeric exit code. Command: ${quoted}\"\r\n    exec gemini -p \"$prompt\" --approval-mode yolo\r\n    ;;\r\n  *)\r\n    echo \"error: --backend must be codex or gemini, got: $backend\" >&2\r\n    exit 2\r\n    ;;\r\nesac\r\n",
+    "content_hash": "838bcc54c0eb7d8eb9f6a0faf5d53845ad9fc1e1ba71befb398d3b82bb1dc38a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 79,
+    "relative_path": "scripts/run-via.sh",
+    "size_bytes": 2506,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

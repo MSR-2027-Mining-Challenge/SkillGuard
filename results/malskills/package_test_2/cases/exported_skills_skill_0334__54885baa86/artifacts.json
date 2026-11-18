@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: unreal-vision\r\ndescription: Click, type, and press keys inside the Unreal Engine editor by describing elements in plain English \u2014 powered by H Company's Holo3 vision-language model. Use this only when a Python/toolkit path doesn't exist (marketplace plugin panels, bespoke modals, Slate-only UI); prefer `unreal-toolkit` otherwise.\r\n---\r\n\r\n# Unreal vision clicker \u2014 `hue click`\r\n\r\nHolo3 sees the UE editor window and returns pixel coordinates for a plain-English\r\ndescription. `holo-unreal` then synthesizes the click (or type, or chord).\r\n\r\n## When to use\r\n\r\n**Reach for vision only when:**\r\n- The target is a marketplace plugin settings panel with no Python API\r\n- The target is a modal dialog / transient popup not exposed through `unreal.*`\r\n- You need a one-shot click in a Slate-only menu bar (Alt+F doesn't open UE's File menu)\r\n\r\n**Never use vision when a toolkit / Python path exists** \u2014 it's slower, non-deterministic on dense toolbars (\u00b115 px scatter on 3B-active VLMs), and the UE editor has deep programmatic surfaces via `PythonScriptPlugin`.\r\n\r\n## Commands\r\n\r\n```\r\n# Localize + annotate screenshot (no click) \u2014 inspect before committing:\r\nhue locate \"the green Play button in the main toolbar\" --save preview.png\r\n\r\n# Real clicks\r\nhue click \"the Blueprint menu in the toolbar\"\r\nhue right-click \"the selected actor in the viewport\"\r\nhue double-click \"the asset file in the Content Browser\"\r\n\r\n# Click a field, then type\r\nhue type \"the search box\" \"CharacterBP\"\r\n\r\n# Keyboard only, no click\r\nhue press \"ctrl+s\"\r\nhue press \"alt+p\"           # start PIE\r\nhue press \"shift+escape\"    # stop PIE (keyboard-only \u2014 PIE captures cursor)\r\n\r\n# Target a different UE window\r\nhue click \"Compile\" --window-title \"MyProject\"\r\n```\r\n\r\nEvery command prints a single JSON line on stdout with the clicked screen pixel.\r\n\r\n## Critical UE quirks\r\n\r\n- **PIE captures input.** Once PIE is running, `hue click` targets the game, not the editor. Use `hue press shift+escape` to stop PIE, or run `hue press f8` first to eject the cursor.\r\n- **Slate menus ignore Alt+F.** Open the File menu with `hue click \"the word 'File' in the top menu bar\"`, not `hue press \"alt+f\"`.\r\n- **\u00b115 px scatter on dense toolbars.** For tight targets, either ask for more context (\"the Save All icon in the top toolbar, immediately right of the Play button\") or fall back to a keyboard shortcut.\r\n- **`SetForegroundWindow` steals focus.** The tool foregrounds the UE editor before every screenshot. If you were typing in a terminal, your keystrokes will land in UE.\r\n\r\n## Always start with `locate --save`\r\n\r\nWhen grounding a new target for the first time, run `hue locate \"...\" --save preview.png` and inspect the red crosshair. Saves re-runs (and money on Holo3 calls) when the description doesn't match what you expect.\r\n\r\n## Python API\r\n\r\nFor scripts and notebooks:\r\n\r\n```python\r\nfrom holo_unreal import (\r\n    click_by_description, right_click_by_description,\r\n    type_into, press_key, localize_in_window, list_windows,\r\n)\r\n\r\nclick_by_description(\"the Play button\")\r\nx, y, sx, sy = localize_in_window(\"Save All\")   # dry-run, returns coords\r\ntype_into(\"the search box\", \"Paladin\")\r\npress_key(\"s\", modifiers=[\"ctrl\"])\r\n```\r\n\r\n## Environment\r\n\r\nSet `HAI_API_KEY` (H Company portal at https://portal.hcompany.ai). The tool also reads `HAI_MODEL_NAME` (default `holo3-35b-a3b`) and `HOLO_UNREAL_WINDOW_TITLE` (default `Unreal Editor`).\r\n",
+    "content_hash": "134212969e094e98e8d8a0bec021e55cb75bcfd200373ab3903c6a5848b0e1d1",
+    "generated": false,
+    "is_text": true,
+    "line_count": 75,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3429,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "python",
+    "content": "from holo_unreal import (\r\n    click_by_description, right_click_by_description,\r\n    type_into, press_key, localize_in_window, list_windows,\r\n)\r\n\r\nclick_by_description(\"the Play button\")\r\nx, y, sx, sy = localize_in_window(\"Save All\")   # dry-run, returns coords\r\ntype_into(\"the search box\", \"Paladin\")\r\npress_key(\"s\", modifiers=[\"ctrl\"])",
+    "content_hash": "9af6e636c65bb0e34546bd149e7fe3f3a3ce051e7aa27e1ba2bdf9264983da3c",
+    "generated": true,
+    "is_text": true,
+    "line_count": 9,
+    "relative_path": ".malskills_fences/SKILL__fence_1.py",
+    "size_bytes": 338,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 70,
+    "source_start_line": 60
+  }
+]

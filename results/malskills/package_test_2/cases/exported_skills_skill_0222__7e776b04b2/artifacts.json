@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: runagents-approval-connector\r\ndescription: Use when integrating RunAgents approvals with another system or custom interface. Helps preserve approval scope, distinguish approval from consent, and make background resume behavior visible in external workflows.\r\n---\r\n\r\n# RunAgents Approval Connector\r\n\r\nUse this skill when approvals need to be exposed or controlled outside the default RunAgents console.\r\n\r\n## Use this skill for\r\n\r\n- custom approval inboxes\r\n- messaging or portal-based approval surfaces\r\n- approval workflow integrations with ticketing or internal ops systems\r\n- exposing scoped approval choices outside the default UI\r\n- making approval decisions and resumed outcomes visible in another product surface\r\n\r\n## Workflow\r\n\r\n1. Preserve approval semantics.\r\n   The external system must keep these concepts distinct:\r\n   - approval\r\n   - consent\r\n   - approval scope\r\n   - resumed completion after approval\r\n\r\n2. Keep scope explicit.\r\n   Support the current scoped approval model:\r\n   - once\r\n   - run\r\n   - agent + user + tool for a time window\r\n\r\n3. Design around async behavior.\r\n   Approvals are often decoupled from the original request surface. The connector should make it clear when a run is waiting, approved, resumed, or finished.\r\n\r\n4. Validate the entire loop.\r\n   Confirm:\r\n   - the request appears in the external queue\r\n   - the decision is recorded correctly\r\n   - the run resumes\r\n   - the final result reaches the originating surface if needed\r\n\r\n5. Keep reviewer language clear.\r\n   The reviewer should always know which user, which agent, which tool, and which scope they are approving.\r\n\r\n## Strong defaults\r\n\r\n- Fail closed on approval persistence or grant errors.\r\n- Treat approval queue UX as request-centric, not just run-centric.\r\n- Make the resumed result visible, not only the approval decision.\r\n\r\n## Example prompt\r\n\r\nUse `$runagents-approval-connector` to design an external approval inbox for RunAgents that supports once, run, and timed agent-plus-user-plus-tool approvals.\r\n",
+    "content_hash": "d3a55c1a10cca5f117b56996e4740087b4cac2ff553236dda158e36d8f511477",
+    "generated": false,
+    "is_text": true,
+    "line_count": 55,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2031,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"RunAgents Approval Connector\"\r\n  short_description: \"Integrate approvals with other systems\"\r\n  default_prompt: \"Use $runagents-approval-connector to design or review this external RunAgents approval workflow.\"\r\n",
+    "content_hash": "34d3f2978a566e505951a3cc2eb2b564374641ef707552504242d3a00ceb224b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 241,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

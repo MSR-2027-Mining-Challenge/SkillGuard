@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: prepflow-error-recovery\r\ndescription: When something breaks or fails, finds and applies known fixes first, then documents any new fix. Use when builds fail, tests fail, or the user reports errors.\r\nevolvable: true\r\n---\r\n\r\n# PrepFlow Error Recovery Protocol\r\n\r\nWhen something breaks, find known fixes first. If new, fix then document so we never repeat it.\r\n\r\n## When to use this skill\r\n\r\n- Build fails\r\n- Tests fail\r\n- User reports an error\r\n- Runtime or pre-commit errors\r\n\r\n## Decision Tree\r\n\r\n1. **Check known fixes**\r\n   - Read [docs/TROUBLESHOOTING_LOG.md](docs/TROUBLESHOOTING_LOG.md) for similar symptoms\r\n   - Check [docs/errors/](docs/errors/) for documented fixes\r\n   - Check [.cursor/rules/error-patterns.mdc](.cursor/rules/error-patterns.mdc) for learned patterns\r\n\r\n2. **If match found** -> Apply the documented fix\r\n\r\n3. **If no match (new error)**:\r\n   - Fix the issue\r\n   - Document: Add to TROUBLESHOOTING_LOG (Symptom | Root Cause | Fix | Derived Rule)\r\n   - Or run `npm run error:document` for interactive documentation\r\n\r\n## Additional Resources\r\n\r\n- [docs/ERROR_LEARNING_SYSTEM.md](docs/ERROR_LEARNING_SYSTEM.md) - Full error learning workflow\r\n\r\n## Style Guide\r\n\r\n- Always check known fixes before inventing a new solution\r\n- Never fix without documenting if the pattern might recur\r\n",
+    "content_hash": "044613f28ec1dfa7eb3e2ec947d9a3894b757ed3b6726afb597eff31ae84e1b4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1317,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

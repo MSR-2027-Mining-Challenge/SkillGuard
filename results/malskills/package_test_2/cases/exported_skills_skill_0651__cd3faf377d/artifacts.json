@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: gsd-audit-fix\r\ndescription: \"Autonomous audit-to-fix pipeline \u2014 find issues, classify, fix, test, commit\"\r\n---\r\n\r\n<cursor_skill_adapter>\r\n## A. Skill Invocation\r\n- This skill is invoked when the user mentions `gsd-audit-fix` or describes a task matching this skill.\r\n- Treat all user text after the skill mention as `{{GSD_ARGS}}`.\r\n- If no arguments are present, treat `{{GSD_ARGS}}` as empty.\r\n\r\n## B. User Prompting\r\nWhen the workflow needs user input, prompt the user conversationally:\r\n- Present options as a numbered list in your response text\r\n- Ask the user to reply with their choice\r\n- For multi-select, ask for comma-separated numbers\r\n\r\n## C. Tool Usage\r\nUse these Cursor tools when executing GSD workflows:\r\n- `Shell` for running commands (terminal operations)\r\n- `StrReplace` for editing existing files\r\n- `Read`, `Write`, `Glob`, `Grep`, `Task`, `WebSearch`, `WebFetch`, `TodoWrite` as needed\r\n\r\n## D. Subagent Spawning\r\nWhen the workflow needs to spawn a subagent:\r\n- Use `Task(subagent_type=\"generalPurpose\", ...)`\r\n- The `model` parameter maps to Cursor's model options (e.g., \"fast\")\r\n</cursor_skill_adapter>\r\n\r\n<objective>\r\nRun an audit, classify findings as auto-fixable vs manual-only, then autonomously fix\r\nauto-fixable issues with test verification and atomic commits.\r\n\r\nFlags:\r\n- `--max N` \u2014 maximum findings to fix (default: 5)\r\n- `--severity high|medium|all` \u2014 minimum severity to process (default: medium)\r\n- `--dry-run` \u2014 classify findings without fixing (shows classification table)\r\n- `--source <audit>` \u2014 which audit to run (default: audit-uat)\r\n</objective>\r\n\r\n<execution_context>\r\n@/home/jlima/Projetos/TaxonomySystem/.cursor/get-shit-done/workflows/audit-fix.md\r\n</execution_context>\r\n\r\n<process>\r\nExecute end-to-end.\r\n</process>\r\n",
+    "content_hash": "f06dc83a36afdf054da3b6c95ab8750c3ee339b911021db6f0ed98812c195bd6",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1789,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,963 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.sh:6:6:data_receive",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://misp.example.com/events/restSearch\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.sh:11:11:data_receive",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/events/restSearch\" \\"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.sh:16:16:data_receive",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.sh::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\""
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_2.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_2.sh:6:6:data_receive",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_2.sh::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "-d '{\"type\":\"Host\",\"hostName\":\"evil.example.com\",\"rating\":5,\"confidence\":80}'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-reference__fence_2.sh::system_information_access::8"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_3.sh:2:2:data_receive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\""
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_3.sh:5:5:data_receive",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\""
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_3.sh:8:8:data_receive",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\""
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_3.sh:11:11:data_receive",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:7:7:data_receive",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/servers/getVersion.json\" \\"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:11:11:data_receive",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://misp.example.com/events/restSearch\" \\"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://misp.example.com/events/restSearch\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:16:16:data_receive",
+      "source_end_line": 16,
+      "source_start_line": 16
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/events/restSearch\" \\"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:21:21:data_receive",
+      "source_end_line": 21,
+      "source_start_line": 21
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://misp.example.com/feeds/index.json\" -H \"Authorization: YOUR_API_KEY\""
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:49:49:data_receive",
+      "source_end_line": 49,
+      "source_start_line": 49
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://api.threatconnect.com/v3/indicators\" \\"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:53:53:data_receive",
+      "source_end_line": 53,
+      "source_start_line": 53
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl -X POST \"https://api.threatconnect.com/v3/indicators\" \\"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:62:62:data_receive",
+      "source_end_line": 62,
+      "source_start_line": 62
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/taxii2/ -H \"Accept: application/taxii+json;version=2.1\""
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:65:65:data_receive",
+      "source_end_line": 65,
+      "source_start_line": 65
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/ -H \"Accept: application/taxii+json;version=2.1\""
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\"",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:68:68:data_receive",
+      "source_end_line": 68,
+      "source_start_line": 68
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl https://taxii.example.com/api1/collections/ -H \"Accept: application/taxii+json;version=2.1\""
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-reference.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-reference.md:71:71:data_receive",
+      "source_end_line": 71,
+      "source_start_line": 71
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-reference.md::data_receive::curl \"https://taxii.example.com/api1/collections/{id}/objects/\" \\"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.Request()",
+      "sink_callsite_id": "scripts/agent.py:102:105:urllib.request.Request()",
+      "source_end_line": 105,
+      "source_start_line": 102
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(url, headers={\n            \"Authorization\": api_key,\n            \"Accept\": \"application/json\",\n        })"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.urlopen()",
+      "sink_callsite_id": "scripts/agent.py:107:107:urllib.request.urlopen()",
+      "source_end_line": 107,
+      "source_start_line": 107
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.Request()",
+      "sink_callsite_id": "scripts/agent.py:127:135:urllib.request.Request()",
+      "source_end_line": 135,
+      "source_start_line": 127
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::connection_create::req = urllib.request.Request(\n        url,\n        data=query.encode(),\n        headers={\n            \"Authorization\": f\"Bearer {api_token}\",\n            \"Content-Type\": \"application/json\",\n        },\n        method=\"POST\",\n    )"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "urllib.request.urlopen()",
+      "sink_callsite_id": "scripts/agent.py:137:137:urllib.request.urlopen()",
+      "source_end_line": 137,
+      "source_start_line": 137
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::connection_create::with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "url = os.environ.get(\"MISP_URL\", sys.argv[2] if len(sys.argv) > 2 else \"\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::url": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::url",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 216,
+      "source_start_line": 216
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::url"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "key = os.environ.get(\"MISP_KEY\", sys.argv[3] if len(sys.argv) > 3 else \"\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::key": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::key",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 217,
+      "source_start_line": 217
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::key"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "url = os.environ.get(\"OPENCTI_URL\", sys.argv[2] if len(sys.argv) > 2 else \"\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::url": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::url",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 223,
+      "source_start_line": 223
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::url"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "token = os.environ.get(\"OPENCTI_TOKEN\", sys.argv[3] if len(sys.argv) > 3 else \"\")",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::token": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::token",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 224,
+      "source_start_line": 224
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::token"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "environment_access"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: jahia-review\r\ndescription: Full quality review of a Jahia JavaScript module \u2014 runs code review and live site review in parallel via subagents. Use after deploying to get a complete pass/fail signal before finalizing work.\r\nallowed-tools: Agent, Bash, Read\r\n---\r\n\r\n# Skill: jahia-review\r\n\r\nRuns both `/jahia-review-code` and `/jahia-review-site` in parallel via independent subagents, then consolidates their findings. Use this before writing `pages.json` or marking work complete.\r\n\r\n---\r\n\r\n## Step 1 \u2014 Collect live URLs\r\n\r\nRead `pages.json` to get the list of live page URLs:\r\n\r\n```bash\r\ncat pages.json\r\n```\r\n\r\n---\r\n\r\n## Step 2 \u2014 Spawn review subagents in parallel\r\n\r\nInvoke two subagents simultaneously:\r\n\r\n**Subagent A \u2014 code review:**\r\n> Invoke `/jahia-review-code` on this module. Scan all CND files, TypeScript views, and page templates. Report every issue found (critical, warning, suggestion) with file locations and fix guidance.\r\n\r\n**Subagent B \u2014 site review:**\r\n> Invoke `/jahia-review-site` against the URLs in `pages.json`. Run the review script and report every a11y and SEO violation found.\r\n\r\n---\r\n\r\n## Step 3 \u2014 Consolidate and report\r\n\r\nCombine findings from both subagents into a single report:\r\n\r\n```\r\n## Review Results\r\n\r\n### Code (jahia-review-code)\r\n[findings from subagent A]\r\n\r\n### Site (jahia-review-site)\r\n[findings from subagent B]\r\n\r\n### Verdict\r\n\u2705 PASS \u2014 no violations found.\r\n\u274c FAIL \u2014 N issue(s) must be fixed before finalizing.\r\n```\r\n\r\n---\r\n\r\n## Step 4 \u2014 Fix and iterate\r\n\r\nIf any violations were found:\r\n\r\n1. Fix every reported issue\r\n2. Redeploy: `yarn build && yarn jahia-deploy`\r\n3. Re-run `/jahia-review` until the verdict is \u2705 PASS\r\n\r\nOnly proceed (write `pages.json`, mark work complete) once the review passes.\r\n",
+    "content_hash": "9c7dc674e01e30002f53b7275e0846fee92800089e3c88f9b6a7a05a0c2fbe99",
+    "generated": false,
+    "is_text": true,
+    "line_count": 64,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1786,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "cat pages.json",
+    "content_hash": "eb210824710410ba151d69fcd4ddde629b42f068f55cc1ceb97ec6409530136f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 14,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 19,
+    "source_start_line": 17
+  }
+]

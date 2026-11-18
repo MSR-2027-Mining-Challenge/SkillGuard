@@ -1,0 +1,21 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_3.js"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_4.js"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=javascript\npath=.malskills_fences/SKILL__fence_5.js"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_8.sh"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_9.py"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_10.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_9.py::system_command_execution::5" [label="obj::operation::.malskills_fences/SKILL__fence_9.py::system_command_execution::5\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "value::a281684af7dbe4c08d39" [label="value::a281684af7dbe4c08d39\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0007" -> "sso_00000" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_9.py::system_command_execution::5" -> "value::a281684af7dbe4c08d39" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_9.py::system_command_execution::5" [label="has_operand"];
+}

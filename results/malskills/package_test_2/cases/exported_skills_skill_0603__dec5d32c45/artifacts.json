@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: evm-tx-info\r\ndescription: Use this skill when the user asks for \"transaction details\", \"show me tx\", \"what happened in this transaction\", \"look up transaction\", or mentions viewing transaction data on EVM chains (Ethereum, Polygon, Arbitrum, etc.). Requires a transaction hash and optional chain parameter.\r\nallowed-tools: Bash\r\n---\r\n\r\n# EVM Transaction Info Fetcher\r\n\r\nGets transaction details by hash from an EVM blockchain network.\r\n\r\n## Usage\r\n\r\nRun the script with transaction hash and optional chain:\r\n```bash\r\n${CLAUDE_PLUGIN_ROOT}/scripts/crypto-evm-tx-info.sh <tx_hash> [chain]\r\n```\r\n\r\n## Arguments\r\n\r\n- `tx_hash` (required): Transaction hash (0x + 64 hex characters)\r\n- `chain` (optional): Chain name - ethereum (default), polygon, arbitrum, optimism, base, bsc\r\n\r\n## Supported Chains\r\n\r\n| Chain | Aliases | Explorer |\r\n|-------|---------|----------|\r\n| ethereum | eth, mainnet | Etherscan |\r\n| polygon | matic | Polygonscan |\r\n| arbitrum | arb | Arbiscan |\r\n| optimism | op | Optimism Etherscan |\r\n| base | - | Basescan |\r\n| bsc | binance | BSCScan |\r\n\r\n## Requirements\r\n\r\n- `cast` (Foundry) must be installed\r\n- RPC URL is optional (uses PublicNode fallback)\r\n\r\n## Examples\r\n\r\n```bash\r\n# Get transaction on Ethereum\r\n${CLAUDE_PLUGIN_ROOT}/scripts/crypto-evm-tx-info.sh 0x1234...abcd\r\n\r\n# Get transaction on Polygon\r\n${CLAUDE_PLUGIN_ROOT}/scripts/crypto-evm-tx-info.sh 0x5678...efgh polygon\r\n```\r\n\r\n## Note\r\n\r\nFor Solana transaction info, use the `sol-tx-info` skill instead.\r\n",
+    "content_hash": "30edacf095ada93a0c3cd2f4a76cdd1ac61462cf26dbb88547c3089b327ca583",
+    "generated": false,
+    "is_text": true,
+    "line_count": 52,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1499,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "${CLAUDE_PLUGIN_ROOT}/scripts/crypto-evm-tx-info.sh <tx_hash> [chain]",
+    "content_hash": "d747b64d7c6325e1488593668a05a4a485d681df8846b32f095ccbb88138e465",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 69,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 16,
+    "source_start_line": 14
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# Get transaction on Ethereum\r\n${CLAUDE_PLUGIN_ROOT}/scripts/crypto-evm-tx-info.sh 0x1234...abcd\r\n\r\n# Get transaction on Polygon\r\n${CLAUDE_PLUGIN_ROOT}/scripts/crypto-evm-tx-info.sh 0x5678...efgh polygon",
+    "content_hash": "a922006a6b08b93e2fe6801759f37d61a4a4ab7d2e2d862cdbcbb4af36f1167b",
+    "generated": true,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 203,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 47,
+    "source_start_line": 41
+  }
+]

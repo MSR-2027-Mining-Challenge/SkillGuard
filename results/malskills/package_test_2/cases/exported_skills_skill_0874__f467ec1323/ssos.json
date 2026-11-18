@@ -1,0 +1,1739 @@
+[
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "let current = path.resolve(start);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::current": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::current",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 13,
+      "source_start_line": 13
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::current"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (fs.existsSync(path.join(current, 'project-manifest.json')) && fs.existsSync(path.join(current, 'AGENTS.md'))) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::15": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::15",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::15"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const parent = path.dirname(current);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::parent": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::parent",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::parent"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const scriptDir = path.dirname(fileURLToPath(import.meta.url));",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::scriptDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::scriptDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 25,
+      "source_start_line": 25
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::scriptDir"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const root = findRepoRoot(process.cwd()) ?? findRepoRoot(scriptDir);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::system_command_execution::26": "command"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::system_command_execution::26",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/taskctl.mjs:26:26:process.cwd()",
+      "source_end_line": 26,
+      "source_start_line": 26
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::system_command_execution::26"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const coord = path.join(root, 'coordination');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::coord": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::coord",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::coord"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const tasksDir = path.join(coord, 'tasks');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::tasksDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::tasksDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 30,
+      "source_start_line": 30
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::tasksDir"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const inboxDir = path.join(coord, 'inbox');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::inboxDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::inboxDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::inboxDir"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const reportsDir = path.join(coord, 'reports');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::reportsDir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::reportsDir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 32,
+      "source_start_line": 32
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::reportsDir"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const rolesPath = path.join(coord, 'roles.json');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::rolesPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::rolesPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 33,
+      "source_start_line": 33
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::rolesPath"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const threadsPath = path.join(coord, 'thread-registry.json');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::threadsPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::threadsPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 34,
+      "source_start_line": 34
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::threadsPath"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "for (const dir of [coord, tasksDir, inboxDir, reportsDir, path.join(coord, 'decisions'), path.join(coord, 'blockers')]) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::94": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::94",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 94,
+      "source_start_line": 94
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::94"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(dir, { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_create::95": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_create::95",
+      "path_class": "ordinary",
+      "source_end_line": 95,
+      "source_start_line": 95,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_create::95"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "function taskPath(id) { return path.join(tasksDir, `${id}.json`); }",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::100": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::100",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 100,
+      "source_start_line": 100
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::100"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "function readJson(file) { return JSON.parse(fs.readFileSync(file, 'utf8')); }",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_read::101": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_read::101",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 101,
+      "source_start_line": 101
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_read::101"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.dirname(file), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_create::103": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_create::103",
+      "path_class": "ordinary",
+      "source_end_line": 103,
+      "source_start_line": 103,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_create::103"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(path.dirname(file), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::103": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::103",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 103,
+      "source_start_line": 103
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::103"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const temp = `${file}.${process.pid}.${crypto.randomUUID()}.tmp`;",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::cipher_object_creation::104": "target"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::104",
+      "source_end_line": 104,
+      "source_start_line": 104,
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::cipher_object_creation::104"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "cipher_object_creation"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.writeFileSync(temp, `${JSON.stringify(value, null, 2)}\\n`, 'utf8');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_write::105": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_write::105",
+      "path_class": "ordinary",
+      "source_end_line": 105,
+      "source_start_line": 105,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_write::105"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.renameSync(temp, file);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_write::106": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_write::106",
+      "path_class": "ordinary",
+      "source_end_line": 106,
+      "source_start_line": 106,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_write::106"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(file)) fail(`Task not found: ${id}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::110": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::110",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 110,
+      "source_start_line": 110
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::110"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "return fs.readdirSync(tasksDir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(tasksDir, f));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_search::114": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_search::114",
+      "path_class": "ordinary",
+      "source_end_line": 114,
+      "source_start_line": 114
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_search::114"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "return fs.readdirSync(tasksDir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(tasksDir, f));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::114": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::114",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 114,
+      "source_start_line": 114
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::114"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(rolesPath)) return [];",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::118": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::118",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 118,
+      "source_start_line": 118
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::118"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(threadsPath)) return { schemaVersion: 1, threads: {} };",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::123": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::123",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 123,
+      "source_start_line": 123
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::123"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fd = fs.openSync(lock, 'wx');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::fd": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::fd",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 137,
+      "source_start_line": 137
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::fd"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (fd !== undefined) fs.closeSync(fd);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::143": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::143",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 143,
+      "source_start_line": 143
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::143"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.rmSync(lock, { force: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::144": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::144",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 144,
+      "source_start_line": 144
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::144"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "return `MSG-${Date.now().toString(36).toUpperCase()}-${crypto.randomBytes(3).toString('hex').toUpperCase()}`;",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::cipher_object_creation::159": "target"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::159",
+      "source_end_line": 159,
+      "source_start_line": 159,
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::cipher_object_creation::159"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "cipher_object_creation"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const dir = path.join(inboxDir, to);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::dir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 165,
+      "source_start_line": 165
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::dir"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "fs.mkdirSync(dir, { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_create::166": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_create::166",
+      "path_class": "ordinary",
+      "source_end_line": 166,
+      "source_start_line": 166,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_create::166"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "atomicWrite(path.join(dir, `${id}.json`), msg);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::168": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::168",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 168,
+      "source_start_line": 168
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::168"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "function reportAbsolute(id) { return path.join(root, reportRelative(id)); }",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::172": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::172",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 172,
+      "source_start_line": 172
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::172"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "console.log(`Coordination layout ready at ${path.relative(process.cwd(), coord) || coord}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::176": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::176",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 176,
+      "source_start_line": 176
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::176"
+    ],
+    "sso_id": "sso_00033",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "console.log(`Coordination layout ready at ${path.relative(process.cwd(), coord) || coord}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::system_command_execution::176": "command"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::system_command_execution::176",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/taskctl.mjs:176:176:process.cwd()",
+      "source_end_line": 176,
+      "source_start_line": 176
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00038"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::system_command_execution::176"
+    ],
+    "sso_id": "sso_00034",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "for (const key of required) if (!(key in t)) errors.push(`${path.basename(file)} missing ${key}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::190": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::190",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 190,
+      "source_start_line": 190
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00039"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::190"
+    ],
+    "sso_id": "sso_00035",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (path.basename(file, '.json') !== t.id) errors.push(`${t.id} filename mismatch`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::197": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::197",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 197,
+      "source_start_line": 197
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00040"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::197"
+    ],
+    "sso_id": "sso_00036",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (fs.existsSync(threadsPath)) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::211": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::211",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 211,
+      "source_start_line": 211
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00041"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::211"
+    ],
+    "sso_id": "sso_00037",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (fs.existsSync(inboxDir)) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::220": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::220",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 220,
+      "source_start_line": 220
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00042"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::220"
+    ],
+    "sso_id": "sso_00038",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "for (const roleDir of fs.readdirSync(inboxDir)) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_search::221": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_search::221",
+      "path_class": "ordinary",
+      "source_end_line": 221,
+      "source_start_line": 221
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00043"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_search::221"
+    ],
+    "sso_id": "sso_00039",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const dir = path.join(inboxDir, roleDir);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::dir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 222,
+      "source_start_line": 222
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00044"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::dir"
+    ],
+    "sso_id": "sso_00040",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.statSync(dir).isDirectory()) continue;",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::223": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::223",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 223,
+      "source_start_line": 223
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00045"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::223"
+    ],
+    "sso_id": "sso_00041",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_search::224": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_search::224",
+      "path_class": "ordinary",
+      "source_end_line": 224,
+      "source_start_line": 224
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00046"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_search::224"
+    ],
+    "sso_id": "sso_00042",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const m = readJson(path.join(dir, file));",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::m": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::m",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 226,
+      "source_start_line": 226
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00047"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::m"
+    ],
+    "sso_id": "sso_00043",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(2);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::system_command_execution::236": "command"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::system_command_execution::236",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/taskctl.mjs:236:236:process.exit()",
+      "source_end_line": 236,
+      "source_start_line": 236
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00048"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::system_command_execution::236"
+    ],
+    "sso_id": "sso_00044",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(path.join(root, report))) fail(`Missing work report: ${report}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::293": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::293",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 293,
+      "source_start_line": 293
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00049"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::293"
+    ],
+    "sso_id": "sso_00045",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const dir = path.join(inboxDir, role);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::dir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 386,
+      "source_start_line": 386
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00051"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::dir"
+    ],
+    "sso_id": "sso_00046",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(dir)) return [];",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::387": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::387",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 387,
+      "source_start_line": 387
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00052"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::387"
+    ],
+    "sso_id": "sso_00047",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "return fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(dir, f));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_search::388": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_search::388",
+      "path_class": "ordinary",
+      "source_end_line": 388,
+      "source_start_line": 388
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00053"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_search::388"
+    ],
+    "sso_id": "sso_00048",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "return fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(dir, f));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::388": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::388",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 388,
+      "source_start_line": 388
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00054"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::388"
+    ],
+    "sso_id": "sso_00049",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(inboxDir)) return result;",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::392": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::392",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 392,
+      "source_start_line": 392
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00055"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::392"
+    ],
+    "sso_id": "sso_00050",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "for (const role of fs.readdirSync(inboxDir).sort()) {",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_search::393": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_search::393",
+      "path_class": "ordinary",
+      "source_end_line": 393,
+      "source_start_line": 393
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00056"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_search::393"
+    ],
+    "sso_id": "sso_00051",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const dir = path.join(inboxDir, role); if (!fs.statSync(dir).isDirectory()) continue;",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::dir": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 394,
+      "source_start_line": 394
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00057"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::dir"
+    ],
+    "sso_id": "sso_00052",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (jsonOut) return console.log(JSON.stringify(rows.map(({ file, msg }) => ({ path: path.relative(root, file), ...msg })), null, 2));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::402": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::402",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 402,
+      "source_start_line": 402
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00059"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::402"
+    ],
+    "sso_id": "sso_00053",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "for (const { file, msg } of rows) console.log(`${msg.id}\\t${msg.kind}\\t${msg.from}\\t${msg.taskId ?? '-'}\\t${msg.subject}\\t${path.relative(root, file)}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::404": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::404",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 404,
+      "source_start_line": 404
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00060"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::404"
+    ],
+    "sso_id": "sso_00054",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "const file = path.join(inboxDir, role, `${id}.json`);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/taskctl.mjs::file": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/taskctl.mjs::file",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 408,
+      "source_start_line": 408
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00061"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/taskctl.mjs::file"
+    ],
+    "sso_id": "sso_00055",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (!fs.existsSync(file)) fail(`Message not found: ${id} in ${role}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::409": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::409",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 409,
+      "source_start_line": 409
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00062"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::409"
+    ],
+    "sso_id": "sso_00056",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "console.log(`  file: ${path.relative(root, file)}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::426": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::426",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 426,
+      "source_start_line": 426
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00063"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::426"
+    ],
+    "sso_id": "sso_00057",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "matched_text": "if (fs.existsSync(taskPath(id))) fail(`Task already exists: ${id}`);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::file_access::462": "path"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::file_access::462",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 462,
+      "source_start_line": 462
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00064"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::file_access::462"
+    ],
+    "sso_id": "sso_00058",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/taskctl.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "function fail(message) { console.error(`taskctl: ${message}`); process.exit(1); }",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/taskctl.mjs::system_command_execution::475": "command"
+      },
+      "operation_object": "obj::operation::scripts/taskctl.mjs::system_command_execution::475",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/taskctl.mjs:475:475:process.exit()",
+      "source_end_line": 475,
+      "source_start_line": 475
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00065"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/taskctl.mjs::system_command_execution::475"
+    ],
+    "sso_id": "sso_00059",
+    "subtype": "system_command_execution"
+  }
+]

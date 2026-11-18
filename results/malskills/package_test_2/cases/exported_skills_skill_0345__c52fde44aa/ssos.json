@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "\u2022 *: Shallow import (imports direct children).",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::4932": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::4932",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:4932:4933:dynamic_code_execution",
+      "source_end_line": 4933,
+      "source_start_line": 4932
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::4932"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "\u2022 **: Recursive import (imports everything deeply).",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::4934": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::4934",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:4934:4934:dynamic_code_execution",
+      "source_end_line": 4934,
+      "source_start_line": 4934
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::4934"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "dynamic_code_execution"
+  }
+]

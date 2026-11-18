@@ -1,0 +1,620 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "brew install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"<keyword>\" --stack react-native",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_10.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_10.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_11.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"AI search tool modern minimal\" --design-system -p \"AI Search\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_11.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"minimalism dark mode\" --domain style",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_12.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_12.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"search loading animation\" --domain ux",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_12.sh::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_12.sh::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_12.sh:5:5:system_command_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_12.sh::system_command_execution::5"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_13.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"list performance navigation\" --stack react-native",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_13.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_13.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"fintech crypto\" --design-system",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::system_command_execution::2": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::system_command_execution::2",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_14.sh:2:2:system_command_execution",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::system_command_execution::2"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_14.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"fintech crypto\" --design-system -f markdown",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_14.sh::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_14.sh::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_14.sh:5:5:system_command_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_14.sh::system_command_execution::5"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt update && sudo apt install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::process_control::1"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo apt update && sudo apt install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"<product_type> <industry> <keywords>\" --design-system [-p \"Project Name\"]",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_4.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"beauty spa wellness service\" --design-system -p \"Serenity Spa\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_5.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_6.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"<query>\" --design-system --persist -p \"Project Name\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_6.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"<query>\" --design-system --persist -p \"Project Name\" --page \"dashboard\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_7.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_9.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "powershell -ExecutionPolicy Bypass -File .codex/skills/ui-ux-pro-max/scripts/search.ps1 \"<keyword>\" --domain <domain> [-n <max_results>]",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_9.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_9.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "brew install python3",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::320": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::320",
+      "source_end_line": 320,
+      "source_start_line": 320,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::320"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/core.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, 'r', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/core.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/core.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 169,
+      "source_start_line": 169
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/core.py::encoding"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/design_system.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, 'r', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/design_system.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/design_system.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 48,
+      "source_start_line": 48
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/design_system.py::encoding"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/design_system.py"
+    ],
+    "attributes": {
+      "matched_text": "colorterm = os.environ.get('COLORTERM', '')",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/design_system.py::colorterm": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/design_system.py::colorterm",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 257,
+      "source_start_line": 257
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/design_system.py::colorterm"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/design_system.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(master_file, 'w', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/design_system.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/design_system.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 593,
+      "source_start_line": 593
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/design_system.py::encoding"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/design_system.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(page_file, 'w', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/design_system.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/design_system.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 601,
+      "source_start_line": 601
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/design_system.py::encoding"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  }
+]

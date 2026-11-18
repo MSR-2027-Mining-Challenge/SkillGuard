@@ -1,0 +1,24 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=references/email-template.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/hirescore-dom-notes.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=references/interview-questions.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=scripts/build_notion_interview_db.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=python\npath=scripts/parse_screen_dialog.py"];
+  "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)" [label="obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)\nkind=operand"];
+  "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:" [label="obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=connection_create"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=network_access\nsubtype=connection_create"];
+  "value::e306bc2eb7d1d839ddea" [label="value::e306bc2eb7d1d839ddea\nkind=value"];
+  "value::fb4d943fdd8d82268d9b" [label="value::fb4d943fdd8d82268d9b\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "art_0004" -> "sso_00001" [label="contains"];
+  "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)" -> "value::e306bc2eb7d1d839ddea" [label="value_flow"];
+  "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:" -> "value::fb4d943fdd8d82268d9b" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::req = urllib.request.Request(url, data=data, method=method)" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::scripts/build_notion_interview_db.py::connection_create::with urllib.request.urlopen(req) as resp:" [label="has_operand"];
+}

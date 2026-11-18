@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: analizar-whatsapp\r\ndescription: Analiza el chat de WhatsApp exportado en la carpeta Chat/ y genera un reporte visual HTML\r\n---\r\n\r\nUs\u00e1 AskUserQuestion para preguntar al usuario si quiere analizar todo el chat o un rango de fechas, con estas opciones:\r\n- \"Analizar todo el chat\"\r\n- \"Elegir rango de fechas\"\r\n\r\nSi elige \"Analizar todo el chat\", ejecut\u00e1 con la herramienta Bash:\r\n```\r\npython skills/whatsapp-analyzer/analyze_whatsapp.py\r\n```\r\n\r\nSi elige \"Elegir rango de fechas\", us\u00e1 AskUserQuestion para pedir la fecha de inicio (formato DD/MM/AAAA, ejemplo: 23/03/2025) y luego otra pregunta para la fecha de fin. Una vez que tengas ambas fechas, ejecut\u00e1 con la herramienta Bash (reemplazando FECHA_INICIO y FECHA_FIN por los valores reales):\r\n```\r\npython skills/whatsapp-analyzer/analyze_whatsapp.py --desde FECHA_INICIO --hasta FECHA_FIN\r\n```\r\n",
+    "content_hash": "0fc60ea447f58c0990c7d7bf5f410691d4d8fb463c4775bc8fa4b94c8af660d5",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "SKILL.md",
+    "size_bytes": 859,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,249 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "requests.get()",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.py:5:5:requests.get()",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::identities = requests.get(f\"{base}/v3/search/identities\", headers=headers).json()"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "requests.get()",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.py:6:6:requests.get()",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::profiles = requests.get(f\"{base}/v3/access-profiles\", headers=headers).json()"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_0.py"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "requests.get()",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_0.py:7:7:requests.get()",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_0.py::data_receive::campaigns = requests.get(f\"{base}/v3/campaigns\", headers=headers).json()"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(reviews_path) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::104": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::104",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 104,
+      "source_start_line": 104
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::104"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.campaigns) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::165": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::165",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 165,
+      "source_start_line": 165
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::165"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.sod) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::172": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::172",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 172,
+      "source_start_line": 172
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::172"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.accounts) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::179": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::179",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 179,
+      "source_start_line": 179
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::179"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.output, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::195": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::195",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 195,
+      "source_start_line": 195
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::195"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  }
+]

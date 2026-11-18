@@ -1,0 +1,331 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "resources/.malskills_fences/implementation-playbook__fence_0.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "npm_output = subprocess.run(\n                ['npm', 'outdated', '--json'],\n                capture_output=True,\n                text=True\n            )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/.malskills_fences/implementation-playbook__fence_0.py::system_command_execution::26": "command"
+      },
+      "operation_object": "obj::operation::resources/.malskills_fences/implementation-playbook__fence_0.py::system_command_execution::26",
+      "parameter_bindings": [],
+      "sink_callsite_id": "resources/.malskills_fences/implementation-playbook__fence_0.py:26:30:subprocess.run()",
+      "source_end_line": 30,
+      "source_start_line": 26
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/.malskills_fences/implementation-playbook__fence_0.py::system_command_execution::26"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "resources/.malskills_fences/implementation-playbook__fence_0.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "pip_output = subprocess.run(\n                ['pip', 'list', '--outdated', '--format=json'],\n                capture_output=True,\n                text=True\n            )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/.malskills_fences/implementation-playbook__fence_0.py::system_command_execution::48": "command"
+      },
+      "operation_object": "obj::operation::resources/.malskills_fences/implementation-playbook__fence_0.py::system_command_execution::48",
+      "parameter_bindings": [],
+      "sink_callsite_id": "resources/.malskills_fences/implementation-playbook__fence_0.py:48:52:subprocess.run()",
+      "source_end_line": 52,
+      "source_start_line": 48
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/.malskills_fences/implementation-playbook__fence_0.py::system_command_execution::48"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "resources/.malskills_fences/implementation-playbook__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp package.json package.json.backup",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_write::9": "path"
+      },
+      "operation_object": "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_write::9",
+      "path_class": "ordinary",
+      "source_end_line": 9,
+      "source_start_line": 9,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_write::9"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "resources/.malskills_fences/implementation-playbook__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp package-lock.json package-lock.json.backup",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_write::10": "path"
+      },
+      "operation_object": "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_write::10",
+      "path_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_write::10"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "resources/.malskills_fences/implementation-playbook__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "rm -rf node_modules",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_delete::32": "path"
+      },
+      "operation_object": "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_delete::32",
+      "path_class": "ordinary",
+      "source_end_line": 32,
+      "source_start_line": 32,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/.malskills_fences/implementation-playbook__fence_10.sh::file_delete::32"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "resources/.malskills_fences/implementation-playbook__fence_10.sh"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -f http://localhost:3000/health || exit 1",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::resources/.malskills_fences/implementation-playbook__fence_10.sh::data_receive::curl -f http://localhost:3000/health || exit 1": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::resources/.malskills_fences/implementation-playbook__fence_10.sh::data_receive::curl -f http://localhost:3000/health || exit 1",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "resources/.malskills_fences/implementation-playbook__fence_10.sh:49:49:data_receive",
+      "source_end_line": 49,
+      "source_start_line": 49
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::resources/.malskills_fences/implementation-playbook__fence_10.sh::data_receive::curl -f http://localhost:3000/health || exit 1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "resources/implementation-playbook.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install {package_name}@{target_version}",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/implementation-playbook.md::package_installation::236": "target"
+      },
+      "operation_object": "obj::operation::resources/implementation-playbook.md::package_installation::236",
+      "source_end_line": 236,
+      "source_start_line": 236,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/implementation-playbook.md::package_installation::236"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "resources/implementation-playbook.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/implementation-playbook.md::package_installation::282": "target"
+      },
+      "operation_object": "obj::operation::resources/implementation-playbook.md::package_installation::282",
+      "source_end_line": 282,
+      "source_start_line": 282,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/implementation-playbook.md::package_installation::282"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "resources/implementation-playbook.md"
+    ],
+    "attributes": {
+      "matched_text": "npm install {package_name}@{step['version']}",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/implementation-playbook.md::package_installation::343": "target"
+      },
+      "operation_object": "obj::operation::resources/implementation-playbook.md::package_installation::343",
+      "source_end_line": 343,
+      "source_start_line": 343,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/implementation-playbook.md::package_installation::343"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "resources/implementation-playbook.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const { runUpgradeTests } = require('./upgrade-test-framework');",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/implementation-playbook.md::dynamic_code_execution::387": "command"
+      },
+      "operation_object": "obj::operation::resources/implementation-playbook.md::dynamic_code_execution::387",
+      "parameter_bindings": [],
+      "sink_callsite_id": "resources/implementation-playbook.md:387:387:dynamic_code_execution",
+      "source_end_line": 387,
+      "source_start_line": 387
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/implementation-playbook.md::dynamic_code_execution::387"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "resources/implementation-playbook.md"
+    ],
+    "attributes": {
+      "dst_class": "local",
+      "endpoint": "curl -f http://localhost:3000/health || exit 1",
+      "endpoint_class": "local",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::resources/implementation-playbook.md::data_receive::curl -f http://localhost:3000/health || exit 1": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::resources/implementation-playbook.md::data_receive::curl -f http://localhost:3000/health || exit 1",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "resources/implementation-playbook.md:552:552:data_receive",
+      "source_end_line": 552,
+      "source_start_line": 552
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::resources/implementation-playbook.md::data_receive::curl -f http://localhost:3000/health || exit 1"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "data_receive"
+  }
+]

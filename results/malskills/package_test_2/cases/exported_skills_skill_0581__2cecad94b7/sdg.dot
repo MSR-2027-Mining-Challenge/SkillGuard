@@ -1,0 +1,17 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=SKILL_HE.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=references/legal-databases-guide.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=references/legislation-index.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=scripts/legal_term_lookup.py"];
+  "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392" [label="obj::operation::scripts/legal_term_lookup.py::credential_data_access::392\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::1da06edbd223cad35d8b" [label="value::1da06edbd223cad35d8b\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0004" -> "sso_00000" [label="contains"];
+  "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392" -> "value::1da06edbd223cad35d8b" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392" [label="has_operand"];
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: selenium-testing\r\ndescription: Browser automation with Selenium WebDriver for Python. (project)\r\n---\r\n\r\n# Selenium Testing\r\n\r\n## When to Use\r\n\r\n- Browser automation, visual testing\r\n- Mentions: \"selenium\", \"webdriver\", \"screenshot\"\r\n\r\n## Canonical Repo Rules\r\n\r\nFor Skriptoteket-specific login/env conventions, follow:\r\n\r\n- `.agent/rules/075-browser-automation.md`\r\n\r\n## Run\r\n\r\n```bash\r\npdm run python -m scripts.<module>\r\n```\r\n\r\n## Quick Pattern\r\n\r\n```python\r\nimport os\r\nfrom pathlib import Path\r\n\r\nfrom selenium import webdriver\r\nfrom selenium.webdriver.common.by import By\r\nfrom selenium.webdriver.support.ui import WebDriverWait\r\nfrom selenium.webdriver.support import expected_conditions as EC\r\n\r\n\r\ndef _read_dotenv(path: Path) -> dict[str, str]:\r\n    if not path.exists():\r\n        return {}\r\n\r\n    values: dict[str, str] = {}\r\n    for line in path.read_text(encoding=\"utf-8\").splitlines():\r\n        stripped = line.strip()\r\n        if not stripped or stripped.startswith(\"#\") or \"=\" not in stripped:\r\n            continue\r\n        key, value = stripped.split(\"=\", 1)\r\n        values[key.strip()] = value.strip()\r\n    return values\r\n\r\n\r\ndotenv = _read_dotenv(Path(os.environ.get(\"DOTENV_PATH\", \".env\")))\r\n\r\n\r\ndef _get_config_value(*, key: str, default: str | None = None) -> str | None:\r\n    return os.environ.get(key) or dotenv.get(key) or default\r\n\r\n\r\nbase_url = _get_config_value(key=\"BASE_URL\", default=\"http://127.0.0.1:8000\") or \"http://127.0.0.1:8000\"\r\nemail = _get_config_value(key=\"PLAYWRIGHT_EMAIL\") or _get_config_value(key=\"BOOTSTRAP_SUPERUSER_EMAIL\")\r\npassword = _get_config_value(key=\"PLAYWRIGHT_PASSWORD\") or _get_config_value(\r\n    key=\"BOOTSTRAP_SUPERUSER_PASSWORD\"\r\n)\r\n\r\nif not email or not password:\r\n    raise SystemExit(\r\n        \"Missing credentials. Either set PLAYWRIGHT_EMAIL/PLAYWRIGHT_PASSWORD (recommended for prod) \"\r\n        \"or BOOTSTRAP_SUPERUSER_EMAIL/BOOTSTRAP_SUPERUSER_PASSWORD (dev). \"\r\n        \"Provide them in DOTENV_PATH (default: .env) or export them in your shell.\"\r\n    )\r\n\r\noptions = webdriver.ChromeOptions()\r\noptions.add_argument(\"--headless=new\")\r\ndriver = webdriver.Chrome(options=options)\r\ndriver.set_window_size(1440, 900)\r\n\r\n# Login\r\ndriver.get(f\"{base_url}/login\")\r\ndriver.find_element(By.NAME, \"email\").send_keys(email)\r\ndriver.find_element(By.NAME, \"password\").send_keys(password)\r\ndriver.find_element(By.CSS_SELECTOR, \"button[type='submit']\").click()\r\nWebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, \"//*[contains(., 'Inloggad som')]\")))\r\n\r\n# Screenshot\r\nPath(\".artifacts\").mkdir(parents=True, exist_ok=True)\r\ndriver.get(f\"{base_url}/admin/tools\")\r\ndriver.save_screenshot(\".artifacts/selenium-admin-tools.png\")\r\ndriver.quit()\r\n```\r\n\r\n## HTMX Caveat\r\n\r\nUse explicit `WebDriverWait` with `EC.url_contains()` instead of implicit waits.\r\n\r\n## Context7\r\n\r\nUse `mcp__context7__get-library-docs` with `/seleniumhq/selenium` for API details.\r\n",
+    "content_hash": "1ca7b0f4c12cf5b43ab44b78f2289a3aa03ee0a6a08e47179183d792c259da3b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 97,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2933,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "pdm run python -m scripts.<module>",
+    "content_hash": "5fbbb8bbee884ecdc0b54d5007f7d1df51f236bc5578437e5bd06206cb733cf0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 34,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 23,
+    "source_start_line": 21
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "import os\r\nfrom pathlib import Path\r\n\r\nfrom selenium import webdriver\r\nfrom selenium.webdriver.common.by import By\r\nfrom selenium.webdriver.support.ui import WebDriverWait\r\nfrom selenium.webdriver.support import expected_conditions as EC\r\n\r\n\r\ndef _read_dotenv(path: Path) -> dict[str, str]:\r\n    if not path.exists():\r\n        return {}\r\n\r\n    values: dict[str, str] = {}\r\n    for line in path.read_text(encoding=\"utf-8\").splitlines():\r\n        stripped = line.strip()\r\n        if not stripped or stripped.startswith(\"#\") or \"=\" not in stripped:\r\n            continue\r\n        key, value = stripped.split(\"=\", 1)\r\n        values[key.strip()] = value.strip()\r\n    return values\r\n\r\n\r\ndotenv = _read_dotenv(Path(os.environ.get(\"DOTENV_PATH\", \".env\")))\r\n\r\n\r\ndef _get_config_value(*, key: str, default: str | None = None) -> str | None:\r\n    return os.environ.get(key) or dotenv.get(key) or default\r\n\r\n\r\nbase_url = _get_config_value(key=\"BASE_URL\", default=\"http://127.0.0.1:8000\") or \"http://127.0.0.1:8000\"\r\nemail = _get_config_value(key=\"PLAYWRIGHT_EMAIL\") or _get_config_value(key=\"BOOTSTRAP_SUPERUSER_EMAIL\")\r\npassword = _get_config_value(key=\"PLAYWRIGHT_PASSWORD\") or _get_config_value(\r\n    key=\"BOOTSTRAP_SUPERUSER_PASSWORD\"\r\n)\r\n\r\nif not email or not password:\r\n    raise SystemExit(\r\n        \"Missing credentials. Either set PLAYWRIGHT_EMAIL/PLAYWRIGHT_PASSWORD (recommended for prod) \"\r\n        \"or BOOTSTRAP_SUPERUSER_EMAIL/BOOTSTRAP_SUPERUSER_PASSWORD (dev). \"\r\n        \"Provide them in DOTENV_PATH (default: .env) or export them in your shell.\"\r\n    )\r\n\r\noptions = webdriver.ChromeOptions()\r\noptions.add_argument(\"--headless=new\")\r\ndriver = webdriver.Chrome(options=options)\r\ndriver.set_window_size(1440, 900)\r\n\r\n# Login\r\ndriver.get(f\"{base_url}/login\")\r\ndriver.find_element(By.NAME, \"email\").send_keys(email)\r\ndriver.find_element(By.NAME, \"password\").send_keys(password)\r\ndriver.find_element(By.CSS_SELECTOR, \"button[type='submit']\").click()\r\nWebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, \"//*[contains(., 'Inloggad som')]\")))\r\n\r\n# Screenshot\r\nPath(\".artifacts\").mkdir(parents=True, exist_ok=True)\r\ndriver.get(f\"{base_url}/admin/tools\")\r\ndriver.save_screenshot(\".artifacts/selenium-admin-tools.png\")\r\ndriver.quit()",
+    "content_hash": "b2fe34515f200396165cfb3f9a68cd8ea2d390cf92fe0a405b97dea9ae5da950",
+    "generated": true,
+    "is_text": true,
+    "line_count": 60,
+    "relative_path": ".malskills_fences/SKILL__fence_1.py",
+    "size_bytes": 2251,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 88,
+    "source_start_line": 27
+  }
+]

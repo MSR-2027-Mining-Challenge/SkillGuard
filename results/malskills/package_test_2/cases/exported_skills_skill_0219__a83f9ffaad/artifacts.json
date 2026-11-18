@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# \ud83d\uded2 SKILL: VEA API (VTEX GraphQL persisted query)\r\n\r\n---\r\n\r\n## \u00bfQu\u00e9 cubre esta skill?\r\n\r\nDocumenta la integraci\u00f3n del supermercado **VEA** usando su endpoint VTEX GraphQL de sugerencias de productos.\r\n\r\n---\r\n\r\n## 1) Endpoints y estrategia actual\r\n\r\n- **Base URL**: `https://www.vea.com.ar/_v/segment/graphql/v1`\r\n- **Operaci\u00f3n**: `productSuggestions`\r\n- **Tipo**: persisted query (hash fijo)\r\n\r\nImplementaci\u00f3n actual:\r\n\r\n- Adapter: `backend/src/adapters/vea/vea.adapter.ts`\r\n- Mapper: `backend/src/mappers/vea/vea-product.mapper.ts`\r\n- Test CLI: `backend/test/Vea-test/test-vea.ts`\r\n\r\n---\r\n\r\n## 2) URL que usa el backend\r\n\r\nSe construye con utilidad compartida:\r\n\r\n- `backend/src/common/utils/vtex-url-builder.util.ts`\r\n\r\nConfiguraci\u00f3n VEA en adapter:\r\n\r\n- `sha256Hash`: `3eca26a431d4646a8bbce2644b78d3ca734bf8b4ba46afe4269621b64b0fb67d`\r\n- `count`: `16`\r\n\r\nNotas:\r\n\r\n- El query text (`fullText`) se codifica en Base64 dentro de `extensions.variables`.\r\n- El endpoint responde con estructura VTEX est\u00e1ndar: `data.productSuggestions.products[]`.\r\n\r\n---\r\n\r\n## 3) Campos de respuesta usados\r\n\r\nPor producto:\r\n\r\n- `productName`\r\n- `brand`\r\n- `productReference` (internal code)\r\n- `items[0].ean` (barcode)\r\n- `items[0].sellers[0].commertialOffer.Price`\r\n- `items[0].sellers[0].commertialOffer.ListPrice`\r\n- `items[0].sellers[0].commertialOffer.AvailableQuantity`\r\n\r\n\u26a0\ufe0f VTEX mantiene el typo hist\u00f3rico `commertialOffer` (con doble `m`).\r\n\r\n---\r\n\r\n## 4) Mapeo de dominio\r\n\r\n### VeaStoreProduct\r\n\r\n- `internalCode <- productReference`\r\n- `name <- productName`\r\n- `brand <- brand`\r\n- `barcode <- items[0].ean`\r\n- `price/regularPrice/discountPrice <- resolveCommercialPricing(Price, ListPrice)`\r\n- `stock <- AvailableQuantity`\r\n- `source <- 'vea'`\r\n\r\n### Product agregado\r\n\r\nEl mapper `mapVeaStoreProductsToProducts` usa:\r\n\r\n- `toSupermarketStoreEntry`\r\n- `aggregateToProducts`\r\n\r\nEsto mantiene el mismo criterio de deduplicaci\u00f3n por barcode/fingerprint del resto de supermercados.\r\n\r\n---\r\n\r\n## 5) Integraci\u00f3n en orquestaci\u00f3n general\r\n\r\n`SupermarketProductsService` ya incluye VEA en:\r\n\r\n- `searchVeaProducts(query)`\r\n- `searchAllProductsPrioritizingCooperativaMatch(query)` (merge final)\r\n- `searchBySupermarket('vea', query)`\r\n\r\nTambi\u00e9n se registra en el test module:\r\n\r\n- `backend/src/common/search/test-module.util.ts`\r\n\r\n---\r\n\r\n## 6) Test r\u00e1pido manual\r\n\r\n```bash\r\ncd backend\r\nnpx ts-node test/Vea-test/test-vea.ts \"yerba\"\r\n```\r\n\r\nEsperado:\r\n\r\n- Tabla de productos VEA con `Codigo` (barcode)\r\n- Precios y marca poblados\r\n- Supermercado = `vea`\r\n\r\n---\r\n\r\n## 7) Riesgos / gotchas\r\n\r\n- Algunos productos pueden venir sin `ean` o sin `sellers`.\r\n- `ListPrice` puede ser inconsistente en algunos \u00edtems VTEX; se sanea con `resolveCommercialPricing`.\r\n- Cambios de hash persisted query podr\u00edan romper la integraci\u00f3n; validar hash si empieza a devolver vac\u00edo/error.\r\n",
+    "content_hash": "bc2a3832ea10bcf15b8ba56b3a1438a71a74181a1a9ef88f547cef917698b27d",
+    "generated": false,
+    "is_text": true,
+    "line_count": 116,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2878,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "cd backend\r\nnpx ts-node test/Vea-test/test-vea.ts \"yerba\"",
+    "content_hash": "9859c4009585336177796ba149b42ec56c402c25539b6f68f6c49f88eb8bc37a",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 57,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 101,
+    "source_start_line": 98
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: start-worktree\r\ndescription: >-\r\n  OPT-IN tool for working on two things at once. Creates an isolated git worktree\r\n  with its OWN dev env (its own Supabase + Next.js on unique ports) so a second\r\n  effort can run without colliding with whatever already holds the main checkout \u2014\r\n  most commonly building something while an erlich loop is already running, or\r\n  several agents/people working the same repo in parallel. Do NOT use this for\r\n  ordinary single-track work: just work in the main checkout on a feature branch\r\n  with `make dev`. Trigger when the user explicitly asks to \"work on this in\r\n  parallel\", \"spin up a worktree\", \"isolate this\", \"run two things at once\", or when\r\n  another effort (a loop, another agent) already occupies the main dev env. To\r\n  VERIFY existing work use verify-changes; to build just one thing, stay in the main\r\n  checkout.\r\n---\r\n\r\n# Start work in an isolated worktree (opt-in \u2014 for parallel work)\r\n\r\nReach for this **only when you need a second workspace running at the same time as\r\nthe first** \u2014 e.g. you want to keep building while an erlich loop is mid-run, or\r\nseveral agents/people are working the same repo at once. A worktree gets its own\r\nbranch **and** its own dev env (own Supabase + Next.js on unique ports), so the two\r\ntracks don't fight over ports, processes, or local data.\r\n\r\n> **Default path \u2014 no worktree.** For ordinary single-track work, don't use this\r\n> skill. Just work in the **main checkout** on a feature branch and run `make dev`:\r\n> one env, one set of ports, simpler and faster. Branch \u2192 build \u2192 verify in the\r\n> running app \u2192 PR. Only come here when a *second* concurrent track needs its own\r\n> space.\r\n\r\n> Announce at start: \"Using start-worktree \u2014 since you want a second track running\r\n> in parallel, I'll set it up in its own worktree on its own ports so it won't\r\n> collide with the main dev env.\"\r\n\r\n## Step 0 \u2014 read git state (it decides how to start)\r\n\r\nRun `git fetch origin`, `git status`, `git branch --show-current` first, then:\r\n\r\n| State | What it means | Do |\r\n|---|---|---|\r\n| **Clean tree on `main`** | fresh start | Pull (`git pull`), then create a worktree on a **new branch off `origin/main`**. |\r\n| **Uncommitted changes on `main`** | the changes probably belong on a feature branch | **Confirm with the user** (\"move these into the new worktree?\"). On yes, MOVE them (stash \u2192 create worktree \u2192 pop). |\r\n| **On a feature branch in the main checkout** | you're already mid-work here | That's fine \u2014 you can keep working right here in the main checkout. Only move this branch into its own worktree if you need the main checkout free for *another* track to run in parallel. |\r\n| **Already inside a worktree** | you're set | Just bring its env up \u2014 `make worktree-env-up` (skip the rest). |\r\n\r\n## Step 1 \u2014 name the branch\r\n\r\nAsk for the task in plain product terms. Branch convention: `feat/<short-slug>`\r\n(a short kebab-case description of the work).\r\n\r\n## Step 2 \u2014 create the worktree (and move local changes in, if any)\r\n\r\nCreate it with the `EnterWorktree` tool, or fall back to `git worktree add`.\r\nWorktrees live at `.claude/worktrees/<name>/`.\r\n\r\n```bash\r\n# from-scratch start (clean tree on main):\r\ngit worktree add -b feat/<slug> /abs/path/.claude/worktrees/<name> origin/main\r\n```\r\n\r\n**Moving uncommitted changes from main into the new worktree** (the confirmed\r\ncase) \u2014 stash includes untracked files, and the stash is repo-global so it pops\r\ncleanly in the new tree:\r\n\r\n```bash\r\n# in the main checkout, after the user confirms:\r\ngit stash push -u -m \"start-worktree: move to feat/<slug>\"\r\ngit worktree add -b feat/<slug> /abs/path/.claude/worktrees/<name> origin/main\r\ncd /abs/path/.claude/worktrees/<name>\r\ngit stash pop          # changes now live here, uncommitted\r\ngit status             # confirm: changes present here, main is clean\r\n```\r\n\r\nIf `git stash pop` conflicts (main was behind and your edits touch files that\r\nmoved upstream), resolve in the worktree \u2014 that's the rebase-onto-latest you'd\r\nhave hit anyway.\r\n\r\n## Step 3 \u2014 bring up the isolated env\r\n\r\nFrom inside the new worktree:\r\n\r\n```bash\r\nmake worktree-env-up      # deterministic unique ports; see worktree-dev\r\n```\r\n\r\nIt allocates a free port block, patches `supabase/config.toml` (`project_id` +\r\nports), seeds/overrides env, runs `supabase start` + migrations, and starts the\r\nNext.js app (web + `app/api/*` + `app/api/mcp`) on its shifted `:3000` port.\r\n`make worktree-env-status` shows the block; you'll get the URLs on success.\r\n\r\n> A freshly-started worktree DB has migrations applied but **no e2e seed**\r\n> (`profiles` is empty). If your work needs a logged-in user or specific rows,\r\n> seed them: hit `POST /api/auth/dev-session` (gated on `MOCK_CLIENTS`) to mint\r\n> the `dev@vibes.test` user, then run the e2e seed helpers in\r\n> `apps/next/e2e/` (`seed.ts`) or apply `supabase/seed.sql`.\r\n\r\n## Step 4 \u2014 you're ready to work\r\n\r\nConfirm the hand-off: working in worktree `<name>` on branch `feat/<slug>`, env\r\non its own ports; the main checkout is untouched and free to keep running the\r\nother track. Build here. When the work is done, verify it (`verify-changes` if you\r\nwant the isolated deep check), open the PR, and after merge run\r\n`make worktree-env-down` + remove the worktree to free the block.\r\n\r\n## start-worktree vs verify-changes\r\n\r\n- **start-worktree** (this) \u2014 *begin* a second, parallel piece of work in its own\r\n  isolated workspace (and move your local changes into it).\r\n- **verify-changes** \u2014 *review/verify* existing work. Its default is the dev env\r\n  you're already running; the isolated-worktree side-by-side is its opt-in deep\r\n  check.\r\n\r\n## Quick reference\r\n\r\n| Need | Go to |\r\n|---|---|\r\n| Create the worktree (native or git fallback) | `EnterWorktree` / `git worktree add` |\r\n| Bring the isolated env up/down/status | `make worktree-env-up` / `worktree-dev` |\r\n| Seed a logged-in dev user / test rows | `POST /api/auth/dev-session`, `apps/next/e2e/`, `e2e-testing` |\r\n| Verify the work once it's built | `verify-changes` |\r\n| Just building one thing? | Skip this \u2014 stay in the main checkout with `make dev` |\r\n",
+    "content_hash": "55a896c4838c2b43f5b46804bceec399ef0aba8e2b08603592ab040c66fdc135",
+    "generated": false,
+    "is_text": true,
+    "line_count": 122,
+    "relative_path": "SKILL.md",
+    "size_bytes": 6175,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "# from-scratch start (clean tree on main):\r\ngit worktree add -b feat/<slug> /abs/path/.claude/worktrees/<name> origin/main",
+    "content_hash": "f3a67719c4d443cd47b4c5b803724e5de747e981834efac3a9a1b7050967d675",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 122,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 59,
+    "source_start_line": 56
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# in the main checkout, after the user confirms:\r\ngit stash push -u -m \"start-worktree: move to feat/<slug>\"\r\ngit worktree add -b feat/<slug> /abs/path/.claude/worktrees/<name> origin/main\r\ncd /abs/path/.claude/worktrees/<name>\r\ngit stash pop          # changes now live here, uncommitted\r\ngit status             # confirm: changes present here, main is clean",
+    "content_hash": "6c4da653f9c712066aabee063a38c25d03afb2d0f818f9468806a8b368457bba",
+    "generated": true,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 359,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 72,
+    "source_start_line": 65
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "make worktree-env-up      # deterministic unique ports; see worktree-dev",
+    "content_hash": "ec938de7a114d405dd6927b80cbae5dd459b347c57b4976f8c42d2749040def0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 72,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 84,
+    "source_start_line": 82
+  }
+]

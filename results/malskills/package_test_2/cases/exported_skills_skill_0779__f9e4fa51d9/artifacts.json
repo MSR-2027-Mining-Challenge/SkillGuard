@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: docs-engineering\r\ndescription: Audit and update all project documentation to stay in sync with the current development status.\r\n---\r\n\r\nWhen performing documentation engineering, always follow these steps:\r\n\r\n1. **Survey recent changes** by running `git log --oneline -20` and skimming the diff of recent commits. This surfaces new features, removed dependencies, and behavioral changes that documentation may not yet reflect.\r\n\r\n2. **Audit** all documentation against the current codebase and development status. The review scope must include \u2014 without exception:\r\n   - `README.md` \u2014 features list, prerequisites, acknowledgements\r\n   - `CHANGELOG.md` \u2014 release notes and version history\r\n   - `CLAUDE.md` \u2014 stack, architecture, key gotchas, project conventions\r\n   - `doc/development.md`, `doc/user-guide.md` (landing page) and `doc/user-guide/*.md` (chapters), `doc/api.md`, `doc/troubleshooting.md`, `doc/TODOs.md`\r\n   - `samples/README.md` \u2014 sample scripts and their required features/phases\r\n   - Code comments for human developers\r\n\r\n3. **Revise and update** any documentation that is stale, incomplete, or inconsistent with the current code. Ensure new features, removed dependencies, behavioral changes, and architectural decisions are reflected accurately.\r\n\r\n4. **Remove completed items** from `doc/TODOs.md`. If a summary of completed work is warranted, add a brief note before removing the items.\r\n\r\n5. **Commit** documentation changes using the `commit-and-push` skill, grouped by topic. Do not mix unrelated documentation changes in a single commit.\r\n",
+    "content_hash": "14357385a10cf7705277e8abc13d50b14cdcf0700582b1775dad192b1045f8c0",
+    "generated": false,
+    "is_text": true,
+    "line_count": 23,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1586,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

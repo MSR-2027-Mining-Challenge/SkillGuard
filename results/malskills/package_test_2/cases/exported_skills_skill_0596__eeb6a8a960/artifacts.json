@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: glm-test-batch\r\ndescription: Batch unit-test generation on the GLM execution pool (W2 fan-out). Use for \"add tests for these N modules/files\".\r\n---\r\n# GLM Test Batch (execution pool)\r\n\r\n1. List target modules; verify scopes are disjoint; ensure the test runner works (`pytest --collect-only` or equivalent).\r\n2. Manifest: brief_template task_type `unit_test_generation`, goal \"write unit tests for ${scope} into the test dir, match existing test style\", acceptance \"<runner> ${scope_tests}\" per item; top-level verify_cmd runs the whole suite.\r\n3. `workflow '<manifest>'`, concurrency per key rpm (default 3).\r\n4. In-session: review the aggregate report; finish premium remainder yourself; run the full suite once more before declaring done.\r\n",
+    "content_hash": "d2cfb28e71bf7004993b008a639d40bee432b0d5a27c7baccb98c0861ea0db73",
+    "generated": false,
+    "is_text": true,
+    "line_count": 11,
+    "relative_path": "SKILL.md",
+    "size_bytes": 754,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

@@ -1,0 +1,234 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "chmod +x setup.sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_permission_modify::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_permission_modify::2",
+      "path_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::file_permission_modify::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_permission_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl restart algvex-backend algvex-frontend caddy",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::process_control::1",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::process_control::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl status algvex-backend",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::1",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl status algvex-frontend",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::2",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::2"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo systemctl status caddy",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::3": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::3",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 3,
+      "source_start_line": 3,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_4.sh::process_control::3"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo journalctl -u algvex-backend -f",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::2",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo journalctl -u algvex-frontend -f",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::5": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::5",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::5"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "sudo journalctl -u caddy -f",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::8": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::8",
+      "resource_class": "privilege_boundary",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_5.sh::process_control::8"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "process_control"
+  }
+]

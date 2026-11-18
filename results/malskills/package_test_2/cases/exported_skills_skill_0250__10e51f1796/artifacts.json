@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: storagemanagementclient\r\ndescription: \"StorageManagementClient API skill. Use when working with StorageManagementClient for subscriptions. Covers 3 endpoints.\"\r\nversion: 1.0.0\r\ngenerator: lapsh\r\n---\r\n\r\n# StorageManagementClient\r\nAPI version: 2018-03-01-preview\r\n\r\n## Auth\r\nOAuth2\r\n\r\n## Base URL\r\nhttps://management.azure.com\r\n\r\n## Setup\r\n1. Configure auth: OAuth2\r\n2. GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName} -- verify access\r\n\r\n## Endpoints\r\n\r\n3 endpoints across 1 groups. See references/api-spec.lap for full details.\r\n\r\n### subscriptions\r\n| Method | Path | Description |\r\n|--------|------|-------------|\r\n| GET | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName} | Gets the data policy rules associated with the specified storage account. |\r\n| PUT | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName} | Sets the data policy rules associated with the specified storage account. |\r\n| DELETE | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName} | Deletes the data policy rules associated with the specified storage account. |\r\n\r\n## Common Questions\r\n\r\nMatch user requests to endpoints in references/api-spec.lap. Key patterns:\r\n- \"Get managementPolicy details?\" -> GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}\r\n- \"Update a managementPolicy?\" -> PUT /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}\r\n- \"Delete a managementPolicy?\" -> DELETE /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}\r\n- \"How to authenticate?\" -> See Auth section\r\n\r\n## Response Tips\r\n- Check response schemas in references/api-spec.lap for field details\r\n- Create/update endpoints typically return the created/updated object\r\n\r\n## References\r\n- Full spec: See references/api-spec.lap for complete endpoint details, parameter tables, and response schemas\r\n\r\n> Generated from the official API spec by [LAP](https://lap.sh)\r\n",
+    "content_hash": "ad103a81e4a53cc093344d7fffceb17423fe751f4e5a9835e8bbcf8166949394",
+    "generated": false,
+    "is_text": true,
+    "line_count": 48,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2646,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

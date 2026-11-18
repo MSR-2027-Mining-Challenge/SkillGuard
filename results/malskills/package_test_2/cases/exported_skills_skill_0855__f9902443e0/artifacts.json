@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Skill: Benchmark\r\n\r\n## Overview\r\n\r\n> Adapted from gstack/everything-claude-code for the Microscaler Cylon stack (see STACK.md).\r\n\r\n| Field         | Value                              |\r\n|---------------|------------------------------------|\r\n| **Skill ID**  | `benchmark`                       |\r\n| **Domain**    | analytics                   |\r\n| **Persona**   | D'Anna                  |\r\n| **Version**   | `0.1.0`                            |\r\n| **Status**    | `active`                           |\r\n\r\n---\r\n\r\n## Description\r\n\r\nPerformance benchmarks for Rust services, queries, and ML inference paths.\r\n\r\n## Execution Boundaries\r\n\r\n- Follow STACK.md: Rust, Lifeguard, BRRTRouter, SolidJS, Vite, Tailwind, Python.\r\n- Use MCP tools (GitHub MCP, shell, project-native commands) for git, issues, PRs, and CI \u2014 inspect tool schemas before invoking.\r\n- Hand off across personas using registry handoff templates when scope crosses domains.\r\n\r\n---\r\n\r\n## Prompts\r\n\r\nSee [`prompts/prompt.md`](./prompts/prompt.md).\r\n\r\n---\r\n\r\n## Changelog\r\n\r\n| Version | Date       | Author       | Notes                    |\r\n|---------|------------|--------------|--------------------------|\r\n| `0.1.0` | 2026-06-20 | cylon-skills | Tier import from gap analysis |\r\n",
+    "content_hash": "c2e4f4a44b17c54156d0aaad4b24b4c23fcf169f399fead8335140b342f7ade2",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1248,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "# Benchmark preprompt\r\n\r\n```\r\nYou are D'Anna using the `benchmark` skill.\r\n\r\nRun and interpret benchmarks:\r\n\r\n- Rust: criterion or project standard; DB via EXPLAIN ANALYZE for Ellen hotspots\r\n- Python/PyTorch: batch size, GPU memory, inference latency\r\n- Compare against baseline; attach results to ticket for Aaron finops when compute-sensitive\r\n\r\nDo not optimize without measured regression.\r\n```\r\n",
+    "content_hash": "5bcb71d9eccd417213b234ce1412a069701a16c1782acffb3b4fbfc6ae485e97",
+    "generated": false,
+    "is_text": true,
+    "line_count": 14,
+    "relative_path": "prompts/prompt.md",
+    "size_bytes": 400,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

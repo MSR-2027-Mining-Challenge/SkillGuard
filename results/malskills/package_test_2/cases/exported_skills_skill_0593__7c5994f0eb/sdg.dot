@@ -1,0 +1,25 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=rules/01-choosing-and-modeling.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=rules/02-schema-migrations.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=rules/03-queries-and-indexes.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=rules/.malskills_fences/03-queries-and-indexes__fence_2.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=javascript\npath=rules/.malskills_fences/03-queries-and-indexes__fence_4.ts"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=markdown\npath=rules/04-transactions-concurrency.md"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=markdown\npath=rules/05-reliability-and-scale.md"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=markdown\npath=rules/06-security-and-compliance.md"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=markdown\npath=rules/07-vector-and-ai.md"];
+  "art_0010" [label="art_0010\nkind=artifact\ntype=markdown\npath=rules/08-surrealdb-multimodel.md"];
+  "art_0011" [label="art_0011\nkind=artifact\ntype=javascript\npath=rules/.malskills_fences/08-surrealdb-multimodel__fence_0.js"];
+  "art_0012" [label="art_0012\nkind=artifact\ntype=shell\npath=rules/.malskills_fences/08-surrealdb-multimodel__fence_2.sh"];
+  "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209" [label="obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "value::b9cae83872e33f7401e3" [label="value::b9cae83872e33f7401e3\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0010" -> "sso_00000" [label="contains"];
+  "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209" -> "value::b9cae83872e33f7401e3" [label="value_flow"];
+  "sso_00000" -> "obj::operation::rules/08-surrealdb-multimodel.md::dynamic_code_execution::209" [label="has_operand"];
+}

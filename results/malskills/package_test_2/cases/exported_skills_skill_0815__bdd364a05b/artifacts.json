@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# React State Management Pattern\r\n\r\n> Choose the right state management approach for your React application scale\r\n\r\n## When to Use\r\n\r\n- You are deciding how to manage state in a new React application\r\n- Local component state is no longer sufficient (multiple components need the same data)\r\n- Context re-render performance is becoming a problem\r\n- You need derived state, selectors, or middleware (Redux DevTools, undo/redo)\r\n\r\n## Instructions\r\n\r\n**Decision tree:**\r\n\r\n1. **Local state first:** Start with `useState` / `useReducer`. Do not reach for global state until you have a specific problem.\r\n2. **Shared low-frequency state:** Use React Context + `useContext` for data that rarely changes (theme, auth, locale).\r\n3. **Shared high-frequency state (small apps):** Use Zustand for minimal boilerplate, selector-based subscriptions, and devtools support.\r\n4. **Complex domain state (large apps):** Use Redux Toolkit for predictable state machines, time-travel debugging, and team consistency.\r\n5. **Server state:** Use React Query or SWR \u2014 not client state management \u2014 for data that comes from an API.\r\n\r\n```typescript\r\n// Zustand: minimal setup\r\nimport { create } from 'zustand';\r\ninterface BearStore {\r\n  count: number;\r\n  increment: () => void;\r\n}\r\nconst useBearStore = create<BearStore>((set) => ({\r\n  count: 0,\r\n  increment: () => set((s) => ({ count: s.count + 1 })),\r\n}));\r\n```\r\n\r\n## Details\r\n\r\n**State categories:**\r\n\r\n- **UI state:** Open/closed, selected tab, scroll position \u2014 local state or URL params\r\n- **Server state:** API data \u2014 React Query, SWR, RTK Query\r\n- **Global app state:** User session, theme, cart \u2014 Context or Zustand\r\n- **Complex domain state:** Multi-entity updates, undo/redo, optimistic updates \u2014 Redux Toolkit\r\n\r\n**Library comparison (2024):**\r\n| Library | Bundle | Boilerplate | DevTools | Selectors |\r\n|---------|--------|-------------|----------|-----------|\r\n| Context | 0KB | Low | No | No |\r\n| Zustand | ~1KB | Very low | Yes | Yes |\r\n| Jotai | ~3KB | Low | Yes | Atoms |\r\n| Redux Toolkit | ~12KB | Medium | Excellent | Yes |\r\n\r\n**React 19 note:** With the React compiler, many manual performance optimizations in Zustand/Redux become less necessary as React auto-memoizes.\r\n\r\n## Source\r\n\r\nhttps://patterns.dev/react/state-management\r\n\r\n## Process\r\n\r\n1. Read the instructions and examples in this document.\r\n2. Apply the patterns to your implementation, adapting to your specific context.\r\n3. Verify your implementation against the details and edge cases listed above.\r\n\r\n## Harness Integration\r\n\r\n- **Type:** knowledge \u2014 this skill is a reference document, not a procedural workflow.\r\n- **No tools or state** \u2014 consumed as context by other skills and agents.\r\n\r\n## Success Criteria\r\n\r\n- The patterns described in this document are applied correctly in the implementation.\r\n- Edge cases and anti-patterns listed in this document are avoided.\r\n",
+    "content_hash": "accd3e71a3e8c1d60641fe73a1b0d8ec618b5125318b7fcabc04617885dc1227",
+    "generated": false,
+    "is_text": true,
+    "line_count": 73,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2903,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "// Zustand: minimal setup\r\nimport { create } from 'zustand';\r\ninterface BearStore {\r\n  count: number;\r\n  increment: () => void;\r\n}\r\nconst useBearStore = create<BearStore>((set) => ({\r\n  count: 0,\r\n  increment: () => set((s) => ({ count: s.count + 1 })),\r\n}));",
+    "content_hash": "7dcb17666f28caf1e417176e095e1ce9afe77b28464bc81bb8faf148bd990943",
+    "generated": true,
+    "is_text": true,
+    "line_count": 10,
+    "relative_path": ".malskills_fences/SKILL__fence_0.ts",
+    "size_bytes": 259,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 33,
+    "source_start_line": 22
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "config",
+    "content": "name: react-state-management-pattern\r\nversion: '1.0.0'\r\ndescription: Choose the right state management approach for your React application scale\r\nstability: static\r\ncognitive_mode: advisory-guide\r\ntype: knowledge\r\ntier: 3\r\ntriggers:\r\n  - manual\r\nplatforms:\r\n  - claude-code\r\n  - gemini-cli\r\n  - cursor\r\n  - codex\r\ntools: []\r\npaths:\r\n  - '**/*.tsx'\r\n  - '**/*.jsx'\r\nrelated_skills:\r\n  - react-context-pattern\r\n  - react-provider-pattern\r\n  - react-hooks-pattern\r\nstack_signals:\r\n  - react\r\n  - typescript\r\n  - redux\r\n  - zustand\r\nkeywords:\r\n  - state-management\r\n  - zustand\r\n  - redux\r\n  - jotai\r\n  - useState\r\n  - global-state\r\nmetadata:\r\n  author: patterns.dev\r\n  upstream: 'PatternsDev/skills/react/state-management'\r\nstate:\r\n  persistent: false\r\n  files: []\r\ndepends_on: []\r\n",
+    "content_hash": "802b21fa7dc02ab750aa22030fdcb00e0ce506e3eb2255264151d69b59b01daf",
+    "generated": false,
+    "is_text": true,
+    "line_count": 42,
+    "relative_path": "skill.yaml",
+    "size_bytes": 779,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

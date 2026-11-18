@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: motherduck-build-dashboard\r\ndescription: Build a live MotherDuck dashboard as a Dive. Use when composing one shareable KPI, trend, and breakdown story over existing MotherDuck data, especially when the result should stay a saved workspace artifact rather than a full application.\r\nlicense: MIT\r\n---\r\n\r\n# Build an Analytics Dashboard\r\n\r\nUse this skill when the user wants a multi-section Dive-backed dashboard with a clear analytical story, not just a single chart.\r\n\r\nThis is a use-case skill. It orchestrates `motherduck-explore`, `motherduck-query`, and `motherduck-create-dive`; use `motherduck-duckdb-sql` as supporting reference when exact syntax matters.\r\n\r\n## Start Here: Is a MotherDuck Server Active?\r\n\r\nAlways determine this before designing the dashboard.\r\n\r\n- If a **remote MotherDuck MCP server** or **local MotherDuck server** is active, use it.\r\n- If the target database is unclear, ask which database or workspace the dashboard should run against.\r\n- Explore the live data model before choosing the dashboard structure:\r\n  - available tables and views\r\n  - business grain\r\n  - key metrics\r\n  - key dimensions\r\n  - date columns\r\n  - likely joins\r\n\r\nThe discovered data model should determine the dashboard story and sections.\r\n\r\nIf no server is active, ask for a table list or schema excerpt and make the assumptions visible.\r\n\r\n## Use This Skill When\r\n\r\n- The user wants KPIs plus trend and breakdown views in one artifact.\r\n- The result should be a saved, shareable Dive.\r\n- The work needs dashboard composition, not just chart mechanics.\r\n- The result is a workspace analytics surface, not a customer-facing product backend.\r\n\r\nFor lower-level Dive mechanics, use `motherduck-create-dive`.\r\n\r\n## Dashboard Defaults\r\n\r\n- One story per dashboard.\r\n- One KPI row.\r\n- One primary trend chart.\r\n- Zero or one supporting chart.\r\n- Zero or one detail table.\r\n- Heavy shaping in SQL, not React.\r\n\r\n## Workflow\r\n\r\n1. Confirm whether live MotherDuck discovery is available.\r\n2. Explore the real schema and metrics first.\r\n3. Pick the dashboard story.\r\n4. Write one query per section.\r\n5. Compose the dashboard in a Dive.\r\n6. Save only after preview iteration is approved.\r\n\r\nWhen this skill produces a native DuckDB (`md:`) connection, watermark it with `custom_user_agent=agent-skills/2.2.0(harness-<harness>;llm-<llm>)`. If metadata is missing, fall back to `harness-unknown` and `llm-unknown`.\r\n\r\n## Output\r\n\r\nThe output of this skill should be:\r\n\r\n- the dashboard story\r\n- the section list\r\n- the validated SQL for each section\r\n- the Dive implementation plan\r\n- the save/update path\r\n\r\nIf the caller explicitly asks for structured JSON, return raw JSON only with no Markdown fences or prose before/after it.\r\nThis is mainly for automated tests, regression checks, or downstream tooling that needs a stable machine-readable shape. Normal human-facing use of the skill can stay in prose unless JSON is explicitly requested.\r\n\r\nUse this exact top-level shape when JSON is requested:\r\n\r\n```json\r\n{\r\n  \"summary\": {},\r\n  \"assumptions\": [],\r\n  \"implementation_plan\": [],\r\n  \"validation_plan\": [],\r\n  \"risks\": []\r\n}\r\n```\r\n\r\n## References\r\n\r\n- `references/DASHBOARD_IMPLEMENTATION_GUIDE.md` -- preserved detailed workflow and layout guidance that used to live in this skill\r\n- `references/DASHBOARD_PATTERNS.md` -- example dashboard compositions and reusable sections\r\n\r\n## Runnable Artifact\r\n\r\n- `artifacts/dashboard_story_example.py` -- MotherDuck-backed Python example that produces KPI, trend, breakdown, and detail outputs for one dashboard story\r\n- `artifacts/dashboard_story_example.ts` -- TypeScript companion artifact with the same dashboard output contract\r\n\r\nRun it with:\r\n\r\n```bash\r\nuv run --with duckdb python skills/motherduck-build-dashboard/artifacts/dashboard_story_example.py\r\n```\r\n\r\nRun the same artifact against a temporary MotherDuck database:\r\n\r\n```bash\r\nMOTHERDUCK_ARTIFACT_USE_MOTHERDUCK=1 \\\r\nuv run --with duckdb python skills/motherduck-build-dashboard/artifacts/dashboard_story_example.py\r\n```\r\n\r\nValidate the TypeScript companion artifact:\r\n\r\n```bash\r\nuv run scripts/test_typescript_artifacts.py\r\n```\r\n\r\n## Related Skills\r\n\r\n- `motherduck-explore` -- inspect the actual database before deciding the dashboard sections\r\n- `motherduck-query` -- validate each dashboard query\r\n- `motherduck-create-dive` -- useSQLQuery, theming, preview/save, loading, and visual mechanics\r\n- `motherduck-duckdb-sql` -- resolve syntax and function questions\r\n",
+    "content_hash": "59908adf534ba43a203cc2a809570d483ffde77fc654254a251d40e69fbe2c00",
+    "generated": false,
+    "is_text": true,
+    "line_count": 120,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4482,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "uv run --with duckdb python skills/motherduck-build-dashboard/artifacts/dashboard_story_example.py",
+    "content_hash": "9f2780b92d9489644ed96d2b04a2dc96af91a44561605b330107a44e148a72cb",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_1.sh",
+    "size_bytes": 98,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 99,
+    "source_start_line": 97
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "MOTHERDUCK_ARTIFACT_USE_MOTHERDUCK=1 \\\r\nuv run --with duckdb python skills/motherduck-build-dashboard/artifacts/dashboard_story_example.py",
+    "content_hash": "a014418330ca887c06091cc27c928ff56190f1876b3d20981701d4860648363f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 2,
+    "relative_path": ".malskills_fences/SKILL__fence_2.sh",
+    "size_bytes": 138,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 106,
+    "source_start_line": 103
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "uv run scripts/test_typescript_artifacts.py",
+    "content_hash": "0f4c2a4d0c88a2b705ef51bb5a233df4db607d47cba6820b588baeb7d62336f0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 43,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 112,
+    "source_start_line": 110
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "16387 \u2248 25.4\u00b3. Cube of an inch/mm factor \u2192 a length unit mismatch (inches treated as mm) cubed in a volume. Fix: convert units at import (\u00d725.4 for in\u2192mm), log the factor, add a bbox sanity check. The algorithm was fine.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::dynamic_code_execution::60": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::dynamic_code_execution::60",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:60:60:dynamic_code_execution",
+      "source_end_line": 60,
+      "source_start_line": 60
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::dynamic_code_execution::60"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "dynamic_code_execution"
+  }
+]

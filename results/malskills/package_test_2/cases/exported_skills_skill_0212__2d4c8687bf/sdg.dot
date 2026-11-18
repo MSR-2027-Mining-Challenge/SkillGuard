@@ -1,0 +1,34 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=README.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_0.py"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_1.py"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_2.py"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_3.py"];
+  "art_0006" [label="art_0006\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_4.py"];
+  "art_0007" [label="art_0007\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_5.py"];
+  "art_0008" [label="art_0008\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_6.sh"];
+  "art_0009" [label="art_0009\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_8.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.py::environment_access::3" [label="obj::operation::.malskills_fences/SKILL__fence_0.py::environment_access::3\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::7" [label="obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::7\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::4" [label="obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::4\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=payload_execution\nsubtype=system_command_execution"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=file_operation\nsubtype=file_access"];
+  "value::31038485c89d1c84250a" [label="value::31038485c89d1c84250a\nkind=value"];
+  "value::6a988f231c1d794785e4" [label="value::6a988f231c1d794785e4\nkind=value"];
+  "value::e97d8ae571871909ba78" [label="value::e97d8ae571871909ba78\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "art_0007" -> "sso_00002" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.py::environment_access::3" -> "value::6a988f231c1d794785e4" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::7" -> "value::e97d8ae571871909ba78" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::4" -> "value::31038485c89d1c84250a" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_0.py::environment_access::3" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_0.py::system_command_execution::7" [label="has_operand"];
+  "sso_00002" -> "obj::operation::.malskills_fences/SKILL__fence_5.py::file_access::4" [label="has_operand"];
+}

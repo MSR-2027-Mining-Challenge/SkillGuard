@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: php-site-generator\r\ndescription: |\r\n  Generate multi-page PHP websites with dynamic base URL routing, modular includes, and modern CSS/JS asset management. Prevents 404 errors from hardcoded paths by computing the base URL from $_SERVER['SCRIPT_NAME'].\r\ntriggers:\r\n  - \"php site\"\r\n  - \"php website\"\r\n  - \"site php\"\r\n  - \"multi-page php\"\r\n  - \"site em php\"\r\n  - \"criar site php\"\r\n  - \"pagina php\"\r\n  - \"projeto php\"\r\n  - \"php project\"\r\n  - \"php static\"\r\nod:\r\n  mode: utility\r\n  category: project-management\r\n  priority: P1\r\n---\r\n\r\n# php-site-generator\r\n\r\n## Rules for creating PHP multi-page websites\r\n\r\n### 1. Project location\r\n\r\n1. All generated projects go into `Projects/<project-name>/` at the workspace root (`../Projects/` relative to `.github/`).\r\n2. Create `Projects/` if it does not exist.\r\n3. **Never** nest a project inside another project.\r\n4. Each project is a standalone directory with its own `index.php` router.\r\n\r\n### 2. Directory structure\r\n\r\n```\r\nProjects/<project-name>/\r\n\u251c\u2500\u2500 index.php              # Router \u2014 sets $baseUrl, includes header/page/footer\r\n\u251c\u2500\u2500 assets/\r\n\u2502   \u251c\u2500\u2500 css/\r\n\u2502   \u2502   \u2514\u2500\u2500 style.css      # All styles \u2014 animations, responsive, theme\r\n\u2502   \u2514\u2500\u2500 js/\r\n\u2502       \u2514\u2500\u2500 main.js        # Interactions \u2014 particles, scroll reveal, mobile menu\r\n\u251c\u2500\u2500 pages/\r\n\u2502   \u251c\u2500\u2500 home.php\r\n\u2502   \u251c\u2500\u2500 sobre.php           # (or about, services, contact \u2014 named per project)\r\n\u2502   \u2514\u2500\u2500 ...\r\n\u2514\u2500\u2500 partials/\r\n    \u251c\u2500\u2500 header.php          # <head>, nav, opening <main>\r\n    \u2514\u2500\u2500 footer.php          # closing </main>, footer, <script>\r\n```\r\n\r\n### 3. Dynamic base URL \u2014 prevent 404 on static assets\r\n\r\n**Critical:** Define `$baseUrl` in `index.php` and use it in **every** URL reference across all partials and pages:\r\n\r\n```php\r\n// index.php \u2014 first line after <?php\r\n$baseUrl = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\\\');\r\n```\r\n\r\nThis makes the site work from **any** server root:\r\n- Running `php -S localhost:8080` from a parent directory \u2192 `$baseUrl = '/project-name'`\r\n- Running `php -S localhost:8080` from inside the project directory \u2192 `$baseUrl = ''`\r\n\r\n**Every** URL must use `<?= $baseUrl ?>`:\r\n\r\n```html\r\n<!-- header.php \u2014 assets -->\r\n<link rel=\"stylesheet\" href=\"<?= $baseUrl ?>/assets/css/style.css\">\r\n<script src=\"<?= $baseUrl ?>/assets/js/main.js\"></script>\r\n\r\n<!-- Navigation links -->\r\n<a href=\"<?= $baseUrl ?>/\">Home</a>\r\n<a href=\"<?= $baseUrl ?>/?page=sobre\">Sobre</a>\r\n\r\n<!-- Form actions -->\r\n<form action=\"<?= $baseUrl ?>/?page=contato\" method=\"POST\">\r\n\r\n<!-- CTA and internal links in page content -->\r\n<a href=\"<?= $baseUrl ?>/?page=contato\" class=\"btn\">Fale Conosco</a>\r\n```\r\n\r\n**Never** hardcode a subdirectory prefix like `/project-name/`. Use `<?= $baseUrl ?>` everywhere.\r\n\r\n### 4. PHP router pattern\r\n\r\n```php\r\n<?php\r\n$baseUrl = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\\\');\r\n\r\n$page = $_GET['page'] ?? 'home';\r\n\r\n$allowed = ['home', 'about', 'services', 'contact'];\r\nif (!in_array($page, $allowed)) {\r\n  $page = 'home';\r\n}\r\n\r\n$currentPage = $page;\r\n\r\n$pageTitle = ucfirst($page) . ' - Site Name';\r\n\r\ninclude __DIR__ . '/partials/header.php';\r\n\r\n$pageFile = __DIR__ . '/pages/' . $page . '.php';\r\nif (file_exists($pageFile)) {\r\n  include $pageFile;\r\n} else {\r\n  include __DIR__ . '/pages/home.php';\r\n}\r\n\r\ninclude __DIR__ . '/partials/footer.php';\r\n```\r\n\r\n### 5. Active nav state\r\n\r\nPass `$currentPage` from the router and use it in `header.php`:\r\n\r\n```html\r\n<a href=\"<?= $baseUrl ?>/\" class=\"<?= $currentPage === 'home' ? 'active' : '' ?>\">Home</a>\r\n<a href=\"<?= $baseUrl ?>/?page=about\" class=\"<?= $currentPage === 'about' ? 'active' : '' ?>\">About</a>\r\n```\r\n\r\n### 6. JavaScript active nav\r\n\r\nIn `main.js`, use generic path detection without hardcoded subdirectory names:\r\n\r\n```js\r\nconst currentPath = window.location.pathname + window.location.search;\r\ndocument.querySelectorAll('.nav-links a').forEach(link => {\r\n  const href = link.getAttribute('href');\r\n  if (href && href !== '/' && currentPath.includes(href)) {\r\n    link.classList.add('active');\r\n  }\r\n});\r\n```\r\n\r\n### 7. CSS/JS bundle structure\r\n\r\n- Place **all** CSS in a single `style.css` file inside `assets/css/`.\r\n- Place **all** JS in a single `main.js` file inside `assets/js/`.\r\n- Use CSS custom properties (`:root`) for theme tokens (colors, fonts, spacing, transitions).\r\n- Use `@keyframes` for animations and an `IntersectionObserver`-based `.reveal` class for scroll-triggered effects.\r\n- Keep the JavaScript self-contained \u2014 no external dependencies.\r\n\r\n### 8. Serving the site\r\n\r\n```bash\r\n# From the workspace root (if project is a subdirectory of another project):\r\nphp -S localhost:8080\r\n\r\n# Or from the project root directly:\r\ncd Projects/<project-name>\r\nphp -S localhost:8080\r\n```\r\n\r\nThe `$baseUrl` approach ensures both methods work without 404 errors.\r\n\r\n### 9. Design guidelines\r\n\r\n- Use modern dark/custom themes (avoid Bootstrap defaults).\r\n- Include animated background elements (floating orbs, particle systems).\r\n- Implement scroll reveal animations.\r\n- Use gradient accents and glassmorphism for depth.\r\n- Make all pages responsive (mobile-first).\r\n",
+    "content_hash": "7f2c08dec6c945c8f3cc98db03afcfa4211c712c6c5359e2b5276c767c2c267f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 165,
+    "relative_path": "SKILL.md",
+    "size_bytes": 5192,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "const currentPath = window.location.pathname + window.location.search;\r\ndocument.querySelectorAll('.nav-links a').forEach(link => {\r\n  const href = link.getAttribute('href');\r\n  if (href && href !== '/' && currentPath.includes(href)) {\r\n    link.classList.add('active');\r\n  }\r\n});",
+    "content_hash": "d5e37d2ec578313a7f326a357ca29a6028249dee0613a1a0cd7e264ddf763b6f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 7,
+    "relative_path": ".malskills_fences/SKILL__fence_5.js",
+    "size_bytes": 280,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 135,
+    "source_start_line": 127
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "# From the workspace root (if project is a subdirectory of another project):\r\nphp -S localhost:8080\r\n\r\n# Or from the project root directly:\r\ncd Projects/<project-name>\r\nphp -S localhost:8080",
+    "content_hash": "dba9d599572a0fa1f8cf0fe480e0a1ccb67f4d7ef9433a94ed7b1ac6eb4b3588",
+    "generated": true,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".malskills_fences/SKILL__fence_6.sh",
+    "size_bytes": 190,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 154,
+    "source_start_line": 147
+  }
+]

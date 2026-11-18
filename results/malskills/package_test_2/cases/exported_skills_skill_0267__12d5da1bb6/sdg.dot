@@ -1,0 +1,30 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=config\npath=.clawhub/origin.json"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=QUALITY_CRITERIA.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=markdown\npath=RESEARCH_PROTOCOL.md"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=config\npath=_meta.json"];
+  "art_0005" [label="art_0005\nkind=artifact\ntype=python\npath=scripts/quality-score.py"];
+  "obj::operation::scripts/quality-score.py::credential_data_access::101" [label="obj::operation::scripts/quality-score.py::credential_data_access::101\nkind=operand"];
+  "obj::operation::scripts/quality-score.py::credential_data_access::113" [label="obj::operation::scripts/quality-score.py::credential_data_access::113\nkind=operand"];
+  "obj::symbolic_reference::scripts/quality-score.py::encoding" [label="obj::symbolic_reference::scripts/quality-score.py::encoding\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_access"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::771a3fc4c6eb90440c3e" [label="value::771a3fc4c6eb90440c3e\nkind=value"];
+  "value::85153e3b6a57f161217e" [label="value::85153e3b6a57f161217e\nkind=value"];
+  "value::dd2c3163947f9c056492" [label="value::dd2c3163947f9c056492\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0005" -> "sso_00000" [label="contains"];
+  "art_0005" -> "sso_00001" [label="contains"];
+  "art_0005" -> "sso_00002" [label="contains"];
+  "obj::operation::scripts/quality-score.py::credential_data_access::101" -> "value::dd2c3163947f9c056492" [label="value_flow"];
+  "obj::operation::scripts/quality-score.py::credential_data_access::113" -> "value::771a3fc4c6eb90440c3e" [label="value_flow"];
+  "obj::symbolic_reference::scripts/quality-score.py::encoding" -> "value::85153e3b6a57f161217e" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/quality-score.py::credential_data_access::101" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::scripts/quality-score.py::encoding" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/quality-score.py::credential_data_access::113" [label="has_operand"];
+}

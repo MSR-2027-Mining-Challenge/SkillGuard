@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "sub-skills/.malskills_fences/implementation-playbook__fence_0.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd.split(), capture_output=True, text=True)",
+      "object_identity_kind": "config_key",
+      "operand_roles": {
+        "obj::config_key::split": "command"
+      },
+      "operation_object": "obj::config_key::split",
+      "parameter_bindings": [],
+      "sink_callsite_id": "sub-skills/.malskills_fences/implementation-playbook__fence_0.py:23:23:subprocess.run()",
+      "source_end_line": 23,
+      "source_start_line": 23
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::config_key::split"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "sub-skills/.malskills_fences/implementation-playbook__fence_0.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd.split(), capture_output=True, text=True)",
+      "object_identity_kind": "config_key",
+      "operand_roles": {
+        "obj::config_key::split": "command"
+      },
+      "operation_object": "obj::config_key::split",
+      "parameter_bindings": [],
+      "sink_callsite_id": "sub-skills/.malskills_fences/implementation-playbook__fence_0.py:40:40:subprocess.run()",
+      "source_end_line": 40,
+      "source_start_line": 40
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::config_key::split"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  }
+]

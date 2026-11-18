@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: verify\r\ndescription: Verificar cambios de Turmalin en la Tab S6 Lite real v\u00eda adb \u2014 build, lanzamiento, tinta por stylus y captura de evidencia\r\n---\r\n\r\n# Verificar Turmalin en el dispositivo f\u00edsico\r\n\r\nTablet: Samsung Galaxy Tab S6 Lite, serial `R52R90JAE5V`, pantalla 1200\u00d72000.\r\nNo usar emulador (latencia de ink solo es real en el dispositivo).\r\n\r\n## Receta\r\n\r\n```bash\r\nadb devices                          # debe listar R52R90JAE5V como device\r\n./gradlew installDebug               # compila e instala\r\nadb shell input keyevent KEYCODE_WAKEUP && adb shell wm dismiss-keyguard\r\nadb shell am force-stop com.saider.turmalin\r\nadb shell monkey -p com.saider.turmalin -c android.intent.category.LAUNCHER 1\r\nadb exec-out screencap -p > shot.png # evidencia; leer la imagen para ver la UI\r\n```\r\n\r\n- La pantalla suele estar apagada: sin WAKEUP el screencap sale negro.\r\n- Tinta real por adb: `adb shell input stylus swipe x1 y1 x2 y2 ms` \u2014 pasa el\r\n  palm rejection (toolType stylus). `input tap` normal sirve para botones de\r\n  Compose (barra, chips, paginaci\u00f3n) pero NUNCA produce tinta en el canvas.\r\n- OCR con texto legible requiere S Pen a mano; los palotes de adb no lo dan.\r\n\r\n## Coordenadas \u00fatiles (retrato, densidad por defecto)\r\n\r\n- FAB \"+\" nueva nota en galer\u00eda: (1119, 1848)\r\n- Barra de la nota (dock TOP): Pluma (255,178), Goma trazo (408,178),\r\n  Goma parcial (600,178), Lazo (815,178), Deshacer \u21b6 (960,178), Rehacer \u21b7 (1021,178)\r\n- Volver (\u2190): (55,80) \u00b7 \"+ P\u00e1gina\": (1110,1880) \u00b7 P\u00e1gina anterior \u25c0: (860,1880)\r\n- Un trazo diagonal c\u00f3modo: `input stylus swipe 300 700 800 1200 400`\r\n\r\n## Flujos que vale la pena manejar\r\n\r\n- Trazo \u2192 cerrar nota: dispara guardado + OCR (\"Nota guardada\" + sugerencia de\r\n  t\u00edtulo en la esquina inferior).\r\n- Cambiar de p\u00e1gina guarda la actual; reabrir la nota restaura la \u00faltima p\u00e1gina.\r\n- Los screenshots se leen bien con la herramienta Read (PNG directo).\r\n",
+    "content_hash": "574a9b226a186b7141544ffc32f5f0f8f77af9d4ec0113991e4fc689e05d38c9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 42,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1939,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "adb devices                          # debe listar R52R90JAE5V como device\r\n./gradlew installDebug               # compila e instala\r\nadb shell input keyevent KEYCODE_WAKEUP && adb shell wm dismiss-keyguard\r\nadb shell am force-stop com.saider.turmalin\r\nadb shell monkey -p com.saider.turmalin -c android.intent.category.LAUNCHER 1\r\nadb exec-out screencap -p > shot.png # evidencia; leer la imagen para ver la UI",
+    "content_hash": "57566e57b75c22bdddf92b8a6bf3c3d4035878415483da541042c86245f51cda",
+    "generated": true,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 411,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 20,
+    "source_start_line": 13
+  }
+]

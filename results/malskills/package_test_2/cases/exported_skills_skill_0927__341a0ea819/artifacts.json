@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: developer-debug-add-logs\r\ndescription: Add strategic debug logs to trace execution flow or diagnose a bug.\r\nuser-invocable: false\r\nallowed-tools: Read, Edit, Glob, Grep, mcp__cp8__kms_list, mcp__cp8__kms_fetch\r\nknowledge_scope: engineering\r\n---\r\n\r\nAdd debug instrumentation logs following the {platform} standard architecture (loaded from the KMS) for format and prefix rules.\r\n\r\n## Steps\r\n\r\nFollow the `INSTRUMENTATION_BRIEF` provided by the caller:\r\n\r\n1. **Load pattern** (fetch-by-topic \u2014 see `kms-conventions.md \u00a7Retrieval Protocol`). Logging lives under a platform-specific topic (flutter \u2192 `utilities`/`logger`; android \u2192 `presentation`/`logging`):\r\n   - `kms_list(discipline=\"engineering\", artifact=\"standard-architecture\", platform={platform})` \u2014 scan the TOC for the logger/logging pattern slug.\r\n   - `kms_fetch(discipline=\"engineering\", artifact=\"standard-architecture\", topic=\"<logging topic>\", pattern=\"<logger slug from list>\", platform={platform})` \u2014 full content: log format and prefix.\r\n   - If the TOC has no logger pattern, STOP and report a KMS seed gap for `{platform}/engineering/standard-architecture` (logging) \u2014 do not guess.\r\n2. `Grep` each target method name to locate the exact line\r\n3. `Read` only the method body \u2014 not the full file\r\n4. Insert logs at entry, exit, branch points, and error handlers as specified in the brief\r\n\r\n## Rules\r\n\r\n- Log only at locations specified in the brief\r\n- Never modify logic\r\n- Never log passwords or tokens \u2014 log `.length` / `.count` instead\r\n- Never commit debug logs\r\n\r\n## Output\r\n\r\nList each file and line where a log was inserted.\r\n",
+    "content_hash": "ef502567743bb5ef278f51821eb27df54cb5d308c7646c52741a42c1ff879858",
+    "generated": false,
+    "is_text": true,
+    "line_count": 33,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1629,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

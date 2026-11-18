@@ -1,0 +1,2565 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "path": "agents/openai.yaml",
+      "type": "config"
+    },
+    {
+      "id": "art_0010",
+      "path": "assets/report-template.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0011",
+      "path": "assets/task-template.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0012",
+      "path": "references/codex-routing.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0013",
+      "path": "references/native-thread-routing.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0014",
+      "path": "references/.malskills_fences/native-thread-routing__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0015",
+      "path": "references/protocol.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0016",
+      "path": "references/quality-gates.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0017",
+      "path": "references/task-schema.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0018",
+      "path": "scripts/quiet-host-admission-self-test.ps1",
+      "type": "binary"
+    },
+    {
+      "id": "art_0019",
+      "path": "scripts/quiet-host-admission.ps1",
+      "type": "binary"
+    },
+    {
+      "id": "art_0020",
+      "path": "scripts/taskctl.mjs",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0020",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::current",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::current",
+      "target": "value::07351fc7d8914c6fde15",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::15",
+      "target": "value::620e8eeea5a04e172cf2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::parent",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::parent",
+      "target": "value::2f31685bcc3a47673273",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::scriptDir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::scriptDir",
+      "target": "value::507784cf3318f3c7c0c5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/taskctl.mjs::system_command_execution::26",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::system_command_execution::26",
+      "target": "value::18ab2abea3eba564e430",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::coord",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::coord",
+      "target": "value::6da0dca5c34a0ded09b8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00006",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::tasksDir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::tasksDir",
+      "target": "value::dcbfdc9c58797dcb3bb8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::inboxDir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::inboxDir",
+      "target": "value::6bff741516ff82d2f867",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::reportsDir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::reportsDir",
+      "target": "value::165fa6a8363d95192515",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::rolesPath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::rolesPath",
+      "target": "value::d2ae29a291c179f2bb50",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::threadsPath",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::threadsPath",
+      "target": "value::423c857052da2e20de84",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::94",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::94",
+      "target": "value::867c11b82e0a6d2ed2ab",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::operation::scripts/taskctl.mjs::file_create::95",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_create::95",
+      "target": "value::5c9f27303c57c81de2a8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::100",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::100",
+      "target": "value::87f50ed099691c21dbed",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00014",
+      "target": "obj::operation::scripts/taskctl.mjs::file_read::101",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_read::101",
+      "target": "value::b47b19925661f910e87a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00015",
+      "target": "obj::operation::scripts/taskctl.mjs::file_create::103",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_create::103",
+      "target": "value::21cd47662c0e2f849d59",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00016",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::103",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::103",
+      "target": "value::576e99cd32309d741456",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00017",
+      "target": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::104",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::104",
+      "target": "value::b7b689e73b66aa2fde93",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00018",
+      "target": "obj::operation::scripts/taskctl.mjs::file_write::105",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_write::105",
+      "target": "value::140464be60520a2e7d23",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00019",
+      "target": "obj::operation::scripts/taskctl.mjs::file_write::106",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_write::106",
+      "target": "value::2f931e0051ffeadf88cf",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00020",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::110",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::110",
+      "target": "value::ab39a558c50092358665",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00021",
+      "target": "obj::operation::scripts/taskctl.mjs::file_search::114",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_search::114",
+      "target": "value::91a9030b2a77575809a6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00022",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::114",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::114",
+      "target": "value::bd134a11be16c2291fac",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00023",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::118",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::118",
+      "target": "value::95fe8a97ff982e6f970f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00024",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::123",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::123",
+      "target": "value::62b23fe7c69027cd0b61",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00025",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::fd",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::fd",
+      "target": "value::4ada0ea75390d38bd34c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00026",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::143",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::143",
+      "target": "value::e7a4a3ea9ff12d5df3dc",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00027",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::144",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::144",
+      "target": "value::a1bfa7fc98d668156989",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00028",
+      "target": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::159",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::159",
+      "target": "value::4107d98893db32022ac5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00029",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00029",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "target": "value::748f0d40d232e44a326e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00030",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00030",
+      "target": "obj::operation::scripts/taskctl.mjs::file_create::166",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_create::166",
+      "target": "value::7a981a274d9f065f2159",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00031",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00031",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::168",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::168",
+      "target": "value::25f6870aa0782e8e8265",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00032",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00032",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::172",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::172",
+      "target": "value::c633733d4d2701ceba13",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00033",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00033",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::176",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::176",
+      "target": "value::7ee2ea5dc58e91bceedb",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00034",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00034",
+      "target": "obj::operation::scripts/taskctl.mjs::system_command_execution::176",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::system_command_execution::176",
+      "target": "value::c09447fa9d1d0ffde93a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00035",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00035",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::190",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::190",
+      "target": "value::beb38542cabfe08a4bfa",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00036",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00036",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::197",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::197",
+      "target": "value::40a84a1720077f39e611",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00037",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00037",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::211",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::211",
+      "target": "value::d7d092e20ef5f43268c9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00038",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00038",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::220",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::220",
+      "target": "value::29ff11564a914523609e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00039",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00039",
+      "target": "obj::operation::scripts/taskctl.mjs::file_search::221",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_search::221",
+      "target": "value::245083b79d488df3b117",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00040",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00040",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00041",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00041",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::223",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::223",
+      "target": "value::9408c8545c097b686474",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00042",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00042",
+      "target": "obj::operation::scripts/taskctl.mjs::file_search::224",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_search::224",
+      "target": "value::fcb2a48ca430bd9b9d3a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00043",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00043",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::m",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::m",
+      "target": "value::172b6cb57b0e85408e99",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00044",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00044",
+      "target": "obj::operation::scripts/taskctl.mjs::system_command_execution::236",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::system_command_execution::236",
+      "target": "value::c0b1da6e4841548a6c52",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00045",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00045",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::293",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::293",
+      "target": "value::1939bb48afc940f76193",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00046",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00046",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00047",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00047",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::387",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::387",
+      "target": "value::47f4d606f2d5bcb60706",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00048",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00048",
+      "target": "obj::operation::scripts/taskctl.mjs::file_search::388",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_search::388",
+      "target": "value::6a0aa701a7194e333002",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00049",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00049",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::388",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::388",
+      "target": "value::76e14e79c8aa9066b29b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00050",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00050",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::392",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::392",
+      "target": "value::2f33f518f84e2ac02353",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00051",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00051",
+      "target": "obj::operation::scripts/taskctl.mjs::file_search::393",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_search::393",
+      "target": "value::c25fdcd807ae2cb37591",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00052",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00052",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "type": "has_operand"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00053",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00053",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::402",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::402",
+      "target": "value::196e0df470d0cd43e249",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00054",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00054",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::404",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::404",
+      "target": "value::f9a77785272a186c68d0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00055",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00055",
+      "target": "obj::symbolic_reference::scripts/taskctl.mjs::file",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/taskctl.mjs::file",
+      "target": "value::3e0f02114ed7d002f4f3",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00056",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00056",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::409",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::409",
+      "target": "value::9414137e01db7a04f86e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00057",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00057",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::426",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::426",
+      "target": "value::6fae70a9662329d51e57",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00058",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00058",
+      "target": "obj::operation::scripts/taskctl.mjs::file_access::462",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::file_access::462",
+      "target": "value::d2229541b5328b158553",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0020",
+      "target": "sso_00059",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00059",
+      "target": "obj::operation::scripts/taskctl.mjs::system_command_execution::475",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/taskctl.mjs::system_command_execution::475",
+      "target": "value::79e1a8bbfafb8af7f940",
+      "type": "value_flow"
+    },
+    {
+      "source": "sso_00029",
+      "target": "sso_00040",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00029",
+      "target": "sso_00046",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00029",
+      "target": "sso_00052",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00040",
+      "target": "sso_00046",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00040",
+      "target": "sso_00052",
+      "type": "same_object"
+    },
+    {
+      "source": "sso_00046",
+      "target": "sso_00052",
+      "type": "same_object"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_5.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": "agents/openai.yaml",
+      "type": "config"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": "assets/report-template.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": "assets/task-template.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": "references/codex-routing.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0013",
+      "kind": "artifact",
+      "path": "references/native-thread-routing.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0014",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/native-thread-routing__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0015",
+      "kind": "artifact",
+      "path": "references/protocol.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0016",
+      "kind": "artifact",
+      "path": "references/quality-gates.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0017",
+      "kind": "artifact",
+      "path": "references/task-schema.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0018",
+      "kind": "artifact",
+      "path": "scripts/quiet-host-admission-self-test.ps1",
+      "type": "binary"
+    },
+    {
+      "id": "art_0019",
+      "kind": "artifact",
+      "path": "scripts/quiet-host-admission.ps1",
+      "type": "binary"
+    },
+    {
+      "id": "art_0020",
+      "kind": "artifact",
+      "path": "scripts/taskctl.mjs",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::current",
+      "identity_key": "scripts/taskctl.mjs::current",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::07351fc7d8914c6fde15",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::current",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::15",
+      "identity_key": "scripts/taskctl.mjs::file_access::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::620e8eeea5a04e172cf2",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::parent",
+      "identity_key": "scripts/taskctl.mjs::parent",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::2f31685bcc3a47673273",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::parent",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::scriptDir",
+      "identity_key": "scripts/taskctl.mjs::scriptDir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::507784cf3318f3c7c0c5",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::scriptDir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::system_command_execution::26",
+      "identity_key": "scripts/taskctl.mjs::system_command_execution::26",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::18ab2abea3eba564e430",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::system_command_execution::26",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::coord",
+      "identity_key": "scripts/taskctl.mjs::coord",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::6da0dca5c34a0ded09b8",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::coord",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::tasksDir",
+      "identity_key": "scripts/taskctl.mjs::tasksDir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::dcbfdc9c58797dcb3bb8",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::tasksDir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::inboxDir",
+      "identity_key": "scripts/taskctl.mjs::inboxDir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::6bff741516ff82d2f867",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::inboxDir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::reportsDir",
+      "identity_key": "scripts/taskctl.mjs::reportsDir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::165fa6a8363d95192515",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::reportsDir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::rolesPath",
+      "identity_key": "scripts/taskctl.mjs::rolesPath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::d2ae29a291c179f2bb50",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::rolesPath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::threadsPath",
+      "identity_key": "scripts/taskctl.mjs::threadsPath",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::423c857052da2e20de84",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::threadsPath",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::94",
+      "identity_key": "scripts/taskctl.mjs::file_access::94",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::867c11b82e0a6d2ed2ab",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::94",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_create::95",
+      "identity_key": "scripts/taskctl.mjs::file_create::95",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::5c9f27303c57c81de2a8",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_create::95",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::100",
+      "identity_key": "scripts/taskctl.mjs::file_access::100",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::87f50ed099691c21dbed",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::100",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_read::101",
+      "identity_key": "scripts/taskctl.mjs::file_read::101",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b47b19925661f910e87a",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_read::101",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_create::103",
+      "identity_key": "scripts/taskctl.mjs::file_create::103",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::21cd47662c0e2f849d59",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_create::103",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::103",
+      "identity_key": "scripts/taskctl.mjs::file_access::103",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::576e99cd32309d741456",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::103",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "cipher_object_creation",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::104",
+      "identity_key": "scripts/taskctl.mjs::cipher_object_creation::104",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::b7b689e73b66aa2fde93",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::cipher_object_creation::104",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_write::105",
+      "identity_key": "scripts/taskctl.mjs::file_write::105",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::140464be60520a2e7d23",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_write::105",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_write::106",
+      "identity_key": "scripts/taskctl.mjs::file_write::106",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2f931e0051ffeadf88cf",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_write::106",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::110",
+      "identity_key": "scripts/taskctl.mjs::file_access::110",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ab39a558c50092358665",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::110",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_search::114",
+      "identity_key": "scripts/taskctl.mjs::file_search::114",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::91a9030b2a77575809a6",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_search::114",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::114",
+      "identity_key": "scripts/taskctl.mjs::file_access::114",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::bd134a11be16c2291fac",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::114",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::118",
+      "identity_key": "scripts/taskctl.mjs::file_access::118",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::95fe8a97ff982e6f970f",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::118",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::123",
+      "identity_key": "scripts/taskctl.mjs::file_access::123",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::62b23fe7c69027cd0b61",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::123",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00029"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::fd",
+      "identity_key": "scripts/taskctl.mjs::fd",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::4ada0ea75390d38bd34c",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::fd",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00030"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::143",
+      "identity_key": "scripts/taskctl.mjs::file_access::143",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e7a4a3ea9ff12d5df3dc",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::143",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00031"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::144",
+      "identity_key": "scripts/taskctl.mjs::file_access::144",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a1bfa7fc98d668156989",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::144",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00032"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "cipher_object_creation",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::cipher_object_creation::159",
+      "identity_key": "scripts/taskctl.mjs::cipher_object_creation::159",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::4107d98893db32022ac5",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::cipher_object_creation::159",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00033"
+      ],
+      "id": "sso_00029",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::dir",
+      "identity_key": "scripts/taskctl.mjs::dir",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::748f0d40d232e44a326e",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::dir",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00034"
+      ],
+      "id": "sso_00030",
+      "kind": "sso",
+      "subtype": "file_create",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_create::166",
+      "identity_key": "scripts/taskctl.mjs::file_create::166",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::7a981a274d9f065f2159",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_create::166",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00035"
+      ],
+      "id": "sso_00031",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::168",
+      "identity_key": "scripts/taskctl.mjs::file_access::168",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::25f6870aa0782e8e8265",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::168",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00036"
+      ],
+      "id": "sso_00032",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::172",
+      "identity_key": "scripts/taskctl.mjs::file_access::172",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::c633733d4d2701ceba13",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::172",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00037"
+      ],
+      "id": "sso_00033",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::176",
+      "identity_key": "scripts/taskctl.mjs::file_access::176",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::7ee2ea5dc58e91bceedb",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::176",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00038"
+      ],
+      "id": "sso_00034",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::system_command_execution::176",
+      "identity_key": "scripts/taskctl.mjs::system_command_execution::176",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::c09447fa9d1d0ffde93a",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::system_command_execution::176",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00039"
+      ],
+      "id": "sso_00035",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::190",
+      "identity_key": "scripts/taskctl.mjs::file_access::190",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::beb38542cabfe08a4bfa",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::190",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00040"
+      ],
+      "id": "sso_00036",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::197",
+      "identity_key": "scripts/taskctl.mjs::file_access::197",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::40a84a1720077f39e611",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::197",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00041"
+      ],
+      "id": "sso_00037",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::211",
+      "identity_key": "scripts/taskctl.mjs::file_access::211",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::d7d092e20ef5f43268c9",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::211",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00042"
+      ],
+      "id": "sso_00038",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::220",
+      "identity_key": "scripts/taskctl.mjs::file_access::220",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::29ff11564a914523609e",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::220",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00043"
+      ],
+      "id": "sso_00039",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_search::221",
+      "identity_key": "scripts/taskctl.mjs::file_search::221",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::245083b79d488df3b117",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_search::221",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00044"
+      ],
+      "id": "sso_00040",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00045"
+      ],
+      "id": "sso_00041",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::223",
+      "identity_key": "scripts/taskctl.mjs::file_access::223",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::9408c8545c097b686474",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::223",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00046"
+      ],
+      "id": "sso_00042",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_search::224",
+      "identity_key": "scripts/taskctl.mjs::file_search::224",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::fcb2a48ca430bd9b9d3a",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_search::224",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00047"
+      ],
+      "id": "sso_00043",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::m",
+      "identity_key": "scripts/taskctl.mjs::m",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::172b6cb57b0e85408e99",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::m",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00048"
+      ],
+      "id": "sso_00044",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::system_command_execution::236",
+      "identity_key": "scripts/taskctl.mjs::system_command_execution::236",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::c0b1da6e4841548a6c52",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::system_command_execution::236",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00049"
+      ],
+      "id": "sso_00045",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::293",
+      "identity_key": "scripts/taskctl.mjs::file_access::293",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1939bb48afc940f76193",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::293",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00051"
+      ],
+      "id": "sso_00046",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00052"
+      ],
+      "id": "sso_00047",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::387",
+      "identity_key": "scripts/taskctl.mjs::file_access::387",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::47f4d606f2d5bcb60706",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::387",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00053"
+      ],
+      "id": "sso_00048",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_search::388",
+      "identity_key": "scripts/taskctl.mjs::file_search::388",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::6a0aa701a7194e333002",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_search::388",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00054"
+      ],
+      "id": "sso_00049",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::388",
+      "identity_key": "scripts/taskctl.mjs::file_access::388",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::76e14e79c8aa9066b29b",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::388",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00055"
+      ],
+      "id": "sso_00050",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::392",
+      "identity_key": "scripts/taskctl.mjs::file_access::392",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2f33f518f84e2ac02353",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::392",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00056"
+      ],
+      "id": "sso_00051",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_search::393",
+      "identity_key": "scripts/taskctl.mjs::file_search::393",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::c25fdcd807ae2cb37591",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_search::393",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00057"
+      ],
+      "id": "sso_00052",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00059"
+      ],
+      "id": "sso_00053",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::402",
+      "identity_key": "scripts/taskctl.mjs::file_access::402",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::196e0df470d0cd43e249",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::402",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00060"
+      ],
+      "id": "sso_00054",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::404",
+      "identity_key": "scripts/taskctl.mjs::file_access::404",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f9a77785272a186c68d0",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::404",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00061"
+      ],
+      "id": "sso_00055",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/taskctl.mjs::file",
+      "identity_key": "scripts/taskctl.mjs::file",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::3e0f02114ed7d002f4f3",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00062"
+      ],
+      "id": "sso_00056",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::409",
+      "identity_key": "scripts/taskctl.mjs::file_access::409",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::9414137e01db7a04f86e",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::409",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00063"
+      ],
+      "id": "sso_00057",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::426",
+      "identity_key": "scripts/taskctl.mjs::file_access::426",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::6fae70a9662329d51e57",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::426",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00064"
+      ],
+      "id": "sso_00058",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::file_access::462",
+      "identity_key": "scripts/taskctl.mjs::file_access::462",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::d2229541b5328b158553",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::file_access::462",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00065"
+      ],
+      "id": "sso_00059",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::scripts/taskctl.mjs::system_command_execution::475",
+      "identity_key": "scripts/taskctl.mjs::system_command_execution::475",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::79e1a8bbfafb8af7f940",
+      "kind": "value",
+      "value": "scripts/taskctl.mjs::system_command_execution::475",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

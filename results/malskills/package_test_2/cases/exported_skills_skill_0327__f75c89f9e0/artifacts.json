@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: team-kit-clarify\r\ndescription: \"Dispatch instructions for requirements clarification. Lead invokes this, then dispatches designer(phase: clarify) in a loop until requirements are clear.\"\r\n---\r\n\r\n# team-kit-clarify \u2014 Dispatch Designer for Clarification\r\n\r\nThis skill tells the lead HOW to orchestrate the clarify loop. The lead stays lean \u2014 designer agents do the heavy lifting.\r\n\r\n## When to Use\r\n\r\nProblem is vague/broad \u2014 lead cannot answer:\r\n- What packages/modules are affected?\r\n- What are the concrete deliverables?\r\n- What are the acceptance criteria?\r\n\r\n## Artifact\r\n\r\nDesigner writes/updates `${session_path}designer/clarify.md` each invocation. File accumulates Q&A pairs and a Resolved table.\r\n\r\n## Dispatch Loop\r\n\r\n```\r\nwhile requirements unclear:\r\n    dispatch designer(phase: \"clarify\", session_path)\r\n    designer reads existing clarify.md (if any), generates ONE question, updates clarify.md\r\n    present question to user\r\n    collect answer\r\n    next dispatch: designer reads updated clarify.md from disk\r\n    evaluate: are requirements clear now?\r\n```\r\n\r\n### Step 1: Dispatch Designer\r\n\r\n```javascript\r\nAgent({\r\n  subagent_type: \"claude-plugin-pnpm:team-designer\",\r\n  description: \"Clarify requirements - question {N}\",\r\n  prompt: `\r\nPhase: clarify\r\nSession path: \\`${session_path}\\`\r\n\r\nProblem: ${problem_description}\r\n\r\nRead existing \\`${session_path}designer/clarify.md\\` if it exists.\r\nUser's latest answer: \"${user_answer}\"\r\nUpdate clarify.md with new Q&A entry and update Resolved table.\r\nGenerate ONE focused question to clarify requirements.\r\n`\r\n})\r\n```\r\n\r\n### Step 2: Present Question\r\n\r\nDesigner returns a question AND writes to `designer/clarify.md`. Present question to user exactly as returned.\r\n\r\n### Step 3: Collect Answer\r\n\r\nWait for user response. Answer goes into next dispatch prompt \u2014 designer reads its own previous file plus the new answer.\r\n\r\n### Step 4: Evaluate\r\n\r\nAfter each answer, check if lead can now answer ALL:\r\n\r\n| Question | Status |\r\n|----------|--------|\r\n| What packages/modules? | check clarify.md Resolved table |\r\n| What deliverables? | check clarify.md Resolved table |\r\n| What acceptance criteria? | check clarify.md Resolved table |\r\n| Any constraints? | check clarify.md Resolved table |\r\n\r\n**If all resolved**: Exit loop, proceed to explore phase.\r\n**If any missing**: Loop back to Step 1.\r\n\r\n## Exit Condition\r\n\r\nWhen requirements are clear, summarize for user:\r\n\r\n```markdown\r\nRequirements clear (see \\`designer/clarify.md\\`):\r\n- **Packages**: [from Resolved table]\r\n- **Deliverables**: [from Resolved table]\r\n- **Acceptance criteria**: [from Resolved table]\r\n- **Constraints**: [from Resolved table]\r\n\r\nProceeding to approach exploration.\r\n```\r\n\r\nThen invoke `team-kit-explore`.\r\n\r\n## Anti-Patterns\r\n\r\n| Don't | Do |\r\n|-------|-----|\r\n| Lead asks questions directly | Dispatch designer to generate question |\r\n| Lead does codebase research | Designer does exploration in clarify phase |\r\n| Batch multiple dispatches | One dispatch, one question, one answer |\r\n| Skip to explore early | Verify ALL requirements clear first |\r\n| Keep state only in memory | Designer reads/writes `designer/clarify.md` each dispatch |\r\n| Pass inline context instead of session_path | Designer reads from disk |\r\n\r\n## Example Flow\r\n\r\n```\r\nLead: dispatch designer(clarify, session_path, problem: \"add caching to API\")\r\nDesigner: creates designer/clarify.md, returns question \"What problem for users?\"\r\nLead: presents question to user\r\nUser: \"API slow, need cached responses\"\r\n\r\nLead: dispatch designer(clarify, session_path, answer: \"API slow...\")\r\nDesigner: reads designer/clarify.md, appends Q&A, returns \"Which packages?\"\r\nLead: presents question\r\nUser: \"api-server + cache-utils\"\r\n\r\nLead: dispatch designer(clarify, session_path, answer: \"api-server + cache-utils\")\r\nDesigner: reads designer/clarify.md, updates Resolved, returns \"Success criteria?\"\r\nLead: presents question\r\nUser: \"cache hit >80%, latency <50ms\"\r\n\r\nLead: reads designer/clarify.md Resolved table \u2014 all clear!\r\nLead: \"Requirements clear. Proceeding to approach exploration.\"\r\nLead: invokes team-kit-explore\r\n```\r\n",
+    "content_hash": "14a1f36caf5cc1d7b389decdf9f33de616cb0bd49be9554b9885cc26042dcbfd",
+    "generated": false,
+    "is_text": true,
+    "line_count": 124,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4149,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "Agent({\r\n  subagent_type: \"claude-plugin-pnpm:team-designer\",\r\n  description: \"Clarify requirements - question {N}\",\r\n  prompt: `\r\nPhase: clarify\r\nSession path: \\`${session_path}\\`\r\n\r\nProblem: ${problem_description}\r\n\r\nRead existing \\`${session_path}designer/clarify.md\\` if it exists.\r\nUser's latest answer: \"${user_answer}\"\r\nUpdate clarify.md with new Q&A entry and update Resolved table.\r\nGenerate ONE focused question to clarify requirements.\r\n`\r\n})",
+    "content_hash": "cfce86b0888baacc9962729a5f2ef7e8b886ea990f81ba2e33fbb469d20fc1d0",
+    "generated": true,
+    "is_text": true,
+    "line_count": 15,
+    "relative_path": ".malskills_fences/SKILL__fence_1.js",
+    "size_bytes": 453,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 51,
+    "source_start_line": 35
+  }
+]

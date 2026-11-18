@@ -1,0 +1,842 @@
+[
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "README.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install pymupdf python-docx",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::README.md::package_installation::99": "target"
+      },
+      "operation_object": "obj::operation::README.md::package_installation::99",
+      "source_end_line": 99,
+      "source_start_line": 99,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::README.md::package_installation::99"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/aplicar_ajustes_v1.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aplicar_ajustes_v1.py::credential_data_access::29": "path"
+      },
+      "operation_object": "obj::operation::scripts/aplicar_ajustes_v1.py::credential_data_access::29",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aplicar_ajustes_v1.py::credential_data_access::29"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/aplicar_ajustes_v1.py"
+    ],
+    "attributes": {
+      "matched_text": "shutil.copy2(args.replica, args.saida)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aplicar_ajustes_v1.py::file_access::200": "path"
+      },
+      "operation_object": "obj::operation::scripts/aplicar_ajustes_v1.py::file_access::200",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 200,
+      "source_start_line": 200
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aplicar_ajustes_v1.py::file_access::200"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "scripts/aplicar_ajustes_v1.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aplicar_ajustes_v1.py::credential_data_access::289": "path"
+      },
+      "operation_object": "obj::operation::scripts/aplicar_ajustes_v1.py::credential_data_access::289",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 289,
+      "source_start_line": 289
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aplicar_ajustes_v1.py::credential_data_access::289"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/aplicar_layout_modelo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aplicar_layout_modelo.py::credential_data_access::46": "path"
+      },
+      "operation_object": "obj::operation::scripts/aplicar_layout_modelo.py::credential_data_access::46",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 46,
+      "source_start_line": 46
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aplicar_layout_modelo.py::credential_data_access::46"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/aplicar_layout_modelo.py"
+    ],
+    "attributes": {
+      "matched_text": "shutil.copy2(args.modelo, args.saida)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aplicar_layout_modelo.py::file_access::512": "path"
+      },
+      "operation_object": "obj::operation::scripts/aplicar_layout_modelo.py::file_access::512",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 512,
+      "source_start_line": 512
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aplicar_layout_modelo.py::file_access::512"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "scripts/aplicar_layout_modelo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/aplicar_layout_modelo.py::credential_data_access::548": "path"
+      },
+      "operation_object": "obj::operation::scripts/aplicar_layout_modelo.py::credential_data_access::548",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 548,
+      "source_start_line": 548
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/aplicar_layout_modelo.py::credential_data_access::548"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/check_ancora_contestacao.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_ancora_contestacao.py::credential_data_access::43": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_ancora_contestacao.py::credential_data_access::43",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 43,
+      "source_start_line": 43
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_ancora_contestacao.py::credential_data_access::43"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/check_ancora_contestacao.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_ancora_contestacao.py::credential_data_access::205": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_ancora_contestacao.py::credential_data_access::205",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 205,
+      "source_start_line": 205
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_ancora_contestacao.py::credential_data_access::205"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "scripts/check_bmg_pre_09_2023.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_bmg_pre_09_2023.py::credential_data_access::70": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_bmg_pre_09_2023.py::credential_data_access::70",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 70,
+      "source_start_line": 70
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_bmg_pre_09_2023.py::credential_data_access::70"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/check_cartao_gemeo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_cartao_gemeo.py::credential_data_access::64": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_cartao_gemeo.py::credential_data_access::64",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 64,
+      "source_start_line": 64
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_cartao_gemeo.py::credential_data_access::64"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0011"
+    ],
+    "artifact_paths": [
+      "scripts/check_ip_rfc1918.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_ip_rfc1918.py::credential_data_access::65": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_ip_rfc1918.py::credential_data_access::65",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 65,
+      "source_start_line": 65
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_ip_rfc1918.py::credential_data_access::65"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/check_refin_maquiador_bmg.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_refin_maquiador_bmg.py::credential_data_access::56": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_refin_maquiador_bmg.py::credential_data_access::56",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 56,
+      "source_start_line": 56
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_refin_maquiador_bmg.py::credential_data_access::56"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0013"
+    ],
+    "artifact_paths": [
+      "scripts/check_ted_conta_inss.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/check_ted_conta_inss.py::credential_data_access::79": "path"
+      },
+      "operation_object": "obj::operation::scripts/check_ted_conta_inss.py::credential_data_access::79",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 79,
+      "source_start_line": 79
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/check_ted_conta_inss.py::credential_data_access::79"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      "scripts/detect_2via_massiva.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/detect_2via_massiva.py::credential_data_access::78": "path"
+      },
+      "operation_object": "obj::operation::scripts/detect_2via_massiva.py::credential_data_access::78",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 78,
+      "source_start_line": 78
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/detect_2via_massiva.py::credential_data_access::78"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0015"
+    ],
+    "artifact_paths": [
+      "scripts/extract_facts.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract_facts.py::credential_data_access::547": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract_facts.py::credential_data_access::547",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 547,
+      "source_start_line": 547
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract_facts.py::credential_data_access::547"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/extract_processo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract_processo.py::credential_data_access::32": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract_processo.py::credential_data_access::32",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 32,
+      "source_start_line": 32
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract_processo.py::credential_data_access::32"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "scripts/extract_processo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/extract_processo.py::credential_data_access::132": "path"
+      },
+      "operation_object": "obj::operation::scripts/extract_processo.py::credential_data_access::132",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 132,
+      "source_start_line": 132
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/extract_processo.py::credential_data_access::132"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/fatiar_processo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/fatiar_processo.py::credential_data_access::29": "path"
+      },
+      "operation_object": "obj::operation::scripts/fatiar_processo.py::credential_data_access::29",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 29,
+      "source_start_line": 29
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/fatiar_processo.py::credential_data_access::29"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "scripts/fatiar_processo.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/fatiar_processo.py::credential_data_access::105": "path"
+      },
+      "operation_object": "obj::operation::scripts/fatiar_processo.py::credential_data_access::105",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 105,
+      "source_start_line": 105
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/fatiar_processo.py::credential_data_access::105"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      "scripts/forcar_cambria.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/forcar_cambria.py::credential_data_access::27": "path"
+      },
+      "operation_object": "obj::operation::scripts/forcar_cambria.py::credential_data_access::27",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 27,
+      "source_start_line": 27
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/forcar_cambria.py::credential_data_access::27"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      "scripts/forcar_cambria.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/forcar_cambria.py::credential_data_access::101": "path"
+      },
+      "operation_object": "obj::operation::scripts/forcar_cambria.py::credential_data_access::101",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 101,
+      "source_start_line": 101
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/forcar_cambria.py::credential_data_access::101"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      "scripts/gerar_docx.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gerar_docx.py::credential_data_access::31": "path"
+      },
+      "operation_object": "obj::operation::scripts/gerar_docx.py::credential_data_access::31",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gerar_docx.py::credential_data_access::31"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0019"
+    ],
+    "artifact_paths": [
+      "scripts/gerar_docx.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gerar_docx.py::credential_data_access::176": "path"
+      },
+      "operation_object": "obj::operation::scripts/gerar_docx.py::credential_data_access::176",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 176,
+      "source_start_line": 176
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gerar_docx.py::credential_data_access::176"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/gerar_relatorio_conferencia.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(2)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gerar_relatorio_conferencia.py::credential_data_access::28": "path"
+      },
+      "operation_object": "obj::operation::scripts/gerar_relatorio_conferencia.py::credential_data_access::28",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 28,
+      "source_start_line": 28
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gerar_relatorio_conferencia.py::credential_data_access::28"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "scripts/gerar_relatorio_conferencia.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gerar_relatorio_conferencia.py::credential_data_access::143": "path"
+      },
+      "operation_object": "obj::operation::scripts/gerar_relatorio_conferencia.py::credential_data_access::143",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 143,
+      "source_start_line": 143
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gerar_relatorio_conferencia.py::credential_data_access::143"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      "scripts/gerar_tabela_onerosidade.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gerar_tabela_onerosidade.py::credential_data_access::126": "path"
+      },
+      "operation_object": "obj::operation::scripts/gerar_tabela_onerosidade.py::credential_data_access::126",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 126,
+      "source_start_line": 126
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gerar_tabela_onerosidade.py::credential_data_access::126"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      "scripts/gerar_tabela_onerosidade.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/gerar_tabela_onerosidade.py::credential_data_access::131": "path"
+      },
+      "operation_object": "obj::operation::scripts/gerar_tabela_onerosidade.py::credential_data_access::131",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 131,
+      "source_start_line": 131
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/gerar_tabela_onerosidade.py::credential_data_access::131"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0025"
+    ],
+    "artifact_paths": [
+      "scripts/validate_against_facts.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(main())",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/validate_against_facts.py::credential_data_access::403": "path"
+      },
+      "operation_object": "obj::operation::scripts/validate_against_facts.py::credential_data_access::403",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 403,
+      "source_start_line": 403
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/validate_against_facts.py::credential_data_access::403"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "credential_data_access"
+  }
+]

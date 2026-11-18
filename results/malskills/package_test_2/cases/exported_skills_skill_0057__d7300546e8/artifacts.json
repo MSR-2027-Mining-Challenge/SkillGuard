@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: sql-optimization\r\ndescription: Use when debugging slow SQL queries, designing database indexes, or rewriting queries for better performance. For EXPLAIN analysis, index strategy, N+1 problem resolution, and query optimization patterns.\r\n---\r\n\r\n# SQL Optimization\r\n\r\nMaster SQL query performance through systematic analysis, strategic indexing, and proven optimization patterns.\r\n\r\n## Overview\r\n\r\nThis skill helps you diagnose and fix slow database queries:\r\n1. **Diagnose**: Identify bottlenecks with EXPLAIN analysis\r\n2. **Optimize**: Design effective indexes and rewrite inefficient queries\r\n3. **Validate**: Measure improvements and monitor performance\r\n\r\n## Core Methodology\r\n\r\n### Step 1: Analyze with EXPLAIN\r\nRun EXPLAIN ANALYZE to see execution plan and actual timings.\r\n\r\n### Step 2: Identify Bottlenecks\r\n- Seq Scan = Missing index\r\n- High rows removed = Non-selective filter\r\n- Nested Loop on large tables = Inefficient join\r\n\r\n### Step 3: Apply Patterns\r\n- Index Strategies: composite, partial, covering, expression\r\n- Query Rewrites: subquery\u2192JOIN, IN\u2192EXISTS, keyset pagination\r\n- N+1 Solutions: JOIN or batch queries",
+    "content_hash": "9b5e4adbcbfacef4da5d84a5dcc6c26e42c99ef6558407838d6b083cfe2b48ec",
+    "generated": false,
+    "is_text": true,
+    "line_count": 30,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1145,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

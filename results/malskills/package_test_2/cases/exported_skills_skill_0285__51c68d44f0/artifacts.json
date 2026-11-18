@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: apply-approved-formal-public-taxonomy\r\ndescription: Optional-analysis helper that applies an explicit approved mission-scoped taxonomy to public/formal DB signals and emits candidate labels for audit.\r\n---\r\n\r\n# Apply Approved Formal Public Taxonomy\r\n\r\n## Core Goal\r\n- Require an approved taxonomy file or record reference before labeling public/formal records.\r\n- Emit candidate labels with signal evidence refs and taxonomy approval metadata.\r\n- Avoid global default taxonomies or report-ready interpretations.\r\n\r\n## Read/Write Contract\r\n- Reads `run_dir/analytics/signal_plane.sqlite` and an approved taxonomy artifact.\r\n- Writes `run_dir/analytics/formal_public_taxonomy_labels_<round_id>.json`\r\n\r\n## Required Input\r\n- `run_dir`\r\n- `run_id`\r\n- `round_id`\r\n\r\n## Optional Input\r\n- `taxonomy_path`\r\n- `taxonomy_version`\r\n- `approval_ref`\r\n- `output_path`\r\n- `limit`\r\n\r\n## Agent Reasoning Guide\r\n- Treat output as approval-scoped advisory/audit material. Candidate taxonomy\r\n  labels do not become findings, issue truth, representation conclusions, or\r\n  report categories by themselves.\r\n- Empty or sparse labels can reflect the approved taxonomy scope, missing\r\n  normalized rows, filters, or parser limits. It is not proof that issues or\r\n  stances are absent.\r\n- A council agent must cite and interpret candidate labels through a finding,\r\n  evidence bundle, challenge, proposal, readiness opinion, or synthesis before\r\n  downstream use.\r\n\r\n## Scripts\r\n- `scripts/apply_approved_formal_public_taxonomy.py`\r\n",
+    "content_hash": "3a7074c207e137bfc6cf45bc54c19d0cc5c6238376f7d705e8ec4603c38a938f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 42,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1521,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "interface:\r\n  display_name: \"Apply Approved Formal Public Taxonomy\"\r\n  short_description: \"Optional-analysis approved taxonomy candidate labels\"\r\n  default_prompt: \"Use $apply-approved-formal-public-taxonomy only after approval and with an approved mission-scoped taxonomy reference. Emit candidate labels for audit, not report conclusions.\"\r\n",
+    "content_hash": "2360ac3f64bd88a053b1f6197ed7ba1d609e8f9b92c99eb3cc0f8be454926ad8",
+    "generated": false,
+    "is_text": true,
+    "line_count": 5,
+    "relative_path": "agents/openai.yaml",
+    "size_bytes": 343,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "python",
+    "content": "#!/usr/bin/env python3\r\n\"\"\"Run the Optional-analysis approved formal/public taxonomy helper.\"\"\"\r\n\r\nfrom __future__ import annotations\r\n\r\nimport argparse\r\nfrom pathlib import Path\r\nimport sys\r\n\r\nSKILL_NAME = \"apply-approved-formal-public-taxonomy\"\r\nWORKSPACE_ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / \"eco-concil-runtime\").exists() and (parent / \"skills\").exists())\r\nRUNTIME_SRC = WORKSPACE_ROOT / \"eco-concil-runtime\" / \"src\"\r\nif str(RUNTIME_SRC) not in sys.path:\r\n    sys.path.insert(0, str(RUNTIME_SRC))\r\n\r\nfrom eco_council_runtime.optional_analysis import pretty_json, run_apply_approved_formal_public_taxonomy  # noqa: E402\r\n\r\n\r\ndef main() -> int:\r\n    parser = argparse.ArgumentParser(description=\"Apply an approved formal/public taxonomy.\")\r\n    parser.add_argument(\"--run-dir\", required=True)\r\n    parser.add_argument(\"--run-id\", required=True)\r\n    parser.add_argument(\"--round-id\", required=True)\r\n    parser.add_argument(\"--taxonomy-path\", default=\"\")\r\n    parser.add_argument(\"--taxonomy-version\", default=\"\")\r\n    parser.add_argument(\"--approval-ref\", default=\"\")\r\n    parser.add_argument(\"--output-path\", default=\"\")\r\n    parser.add_argument(\"--limit\", type=int, default=500)\r\n    parser.add_argument(\"--pretty\", action=\"store_true\")\r\n    args = parser.parse_args()\r\n    payload = run_apply_approved_formal_public_taxonomy(\r\n        run_dir=args.run_dir,\r\n        run_id=args.run_id,\r\n        round_id=args.round_id,\r\n        taxonomy_path=args.taxonomy_path,\r\n        taxonomy_version=args.taxonomy_version,\r\n        approval_ref=args.approval_ref,\r\n        output_path=args.output_path,\r\n        limit=args.limit,\r\n    )\r\n    print(pretty_json(payload, args.pretty))\r\n    return 0\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    raise SystemExit(main())\r\n",
+    "content_hash": "84e6ba051ad324a69d6da283665ef60b0d47355c950b31f439c8c0d78ef0a743",
+    "generated": false,
+    "is_text": true,
+    "line_count": 47,
+    "relative_path": "scripts/apply_approved_formal_public_taxonomy.py",
+    "size_bytes": 1796,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

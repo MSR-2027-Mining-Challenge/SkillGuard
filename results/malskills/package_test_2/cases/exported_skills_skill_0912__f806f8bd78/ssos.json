@@ -1,0 +1,292 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "pnpm install",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::2": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::package_installation::2"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0000"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "pnpm install",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::30": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::30",
+      "source_end_line": 30,
+      "source_start_line": 30,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::30"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/cli.ts::system_command_execution::25": "command"
+      },
+      "operation_object": "obj::operation::src/cli.ts::system_command_execution::25",
+      "parameter_bindings": [],
+      "sink_callsite_id": "src/cli.ts:25:25:process.exit()",
+      "source_end_line": 25,
+      "source_start_line": 25
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::src/cli.ts::system_command_execution::25"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/cli.ts::system_command_execution::64": "command"
+      },
+      "operation_object": "obj::operation::src/cli.ts::system_command_execution::64",
+      "parameter_bindings": [],
+      "sink_callsite_id": "src/cli.ts:64:64:process.exit()",
+      "source_end_line": 64,
+      "source_start_line": 64
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::src/cli.ts::system_command_execution::64"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "matched_text": "const segRaw = await readFile(values['segments-file'], 'utf8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/cli.ts::segRaw": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/cli.ts::segRaw",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 94,
+      "source_start_line": 94
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/cli.ts::segRaw"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "matched_text": "const outPath = path.join(outDir, `${pad}-${seg.id}.mp3`);",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/cli.ts::outPath": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/cli.ts::outPath",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 108,
+      "source_start_line": 108
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/cli.ts::outPath"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "matched_text": "await writeFile(outPath, audio);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/cli.ts::file_write::110": "path"
+      },
+      "operation_object": "obj::operation::src/cli.ts::file_write::110",
+      "path_class": "ordinary",
+      "source_end_line": 110,
+      "source_start_line": 110,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::src/cli.ts::file_write::110"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "matched_text": "text = await readFile(values['text-file'], 'utf8');",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::src/cli.ts::text": "path"
+      },
+      "operation_object": "obj::symbolic_reference::src/cli.ts::text",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 128,
+      "source_start_line": 128
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::src/cli.ts::text"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "matched_text": "await mkdir(path.dirname(values.output), { recursive: true });",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/cli.ts::file_access::136": "path"
+      },
+      "operation_object": "obj::operation::src/cli.ts::file_access::136",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 136,
+      "source_start_line": 136
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::src/cli.ts::file_access::136"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "src/cli.ts"
+    ],
+    "attributes": {
+      "matched_text": "await writeFile(values.output, audio);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::src/cli.ts::file_write::137": "path"
+      },
+      "operation_object": "obj::operation::src/cli.ts::file_write::137",
+      "path_class": "ordinary",
+      "source_end_line": 137,
+      "source_start_line": 137,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::src/cli.ts::file_write::137"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_write"
+  }
+]

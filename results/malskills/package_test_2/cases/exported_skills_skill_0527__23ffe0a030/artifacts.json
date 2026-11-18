@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: commit\r\ndescription: \"Read this skill before making git commits\"\r\n---\r\n\r\nCreate a git commit for the current changes using a concise Conventional Commits-style subject.\r\n\r\n## Format\r\n\r\n`<type>(<scope>): <summary>`\r\n\r\n- `type` REQUIRED. Use `feat` for new features, `fix` for bug fixes. Other common types: `docs`, `refactor`, `chore`, `test`, `perf`.\r\n- `scope` OPTIONAL. Short noun in parentheses for the affected area (e.g., `api`, `parser`, `ui`).\r\n- `summary` REQUIRED. Short, imperative, <= 72 chars, no trailing period.\r\n\r\n## Notes\r\n\r\n- Body is OPTIONAL. If needed, add a blank line after the subject and write short paragraphs.\r\n- Do NOT include breaking-change markers or footers.\r\n- Do NOT add sign-offs (no `Signed-off-by`).\r\n- Do NOT amend, add new commits, unless explicitly instructed to amend.\r\n- Only commit; do NOT push.\r\n- If it is unclear whether a file should be included, ask the user which files to commit.\r\n- Treat any caller-provided arguments as additional commit guidance. Common patterns:\r\n  - Freeform instructions should influence scope, summary, and body.\r\n  - File paths or globs should limit which files to commit. If files are specified, only stage/commit those unless the user explicitly asks otherwise.\r\n  - If arguments combine files and instructions, honor both.\r\n\r\n## Steps\r\n\r\n1. Infer from the prompt if the user provided specific file paths/globs and/or additional instructions.\r\n2. Review `git status` and `git diff` to understand the current changes (limit to argument-specified files if provided).\r\n3. (Optional) Run `git log -n 50 --pretty=format:%s` to see commonly used scopes.\r\n4. If there are ambiguous extra files, ask the user for clarification before committing.\r\n5. Stage only the intended files (all changes if no files specified).\r\n6. Run `git commit -m \"<subject>\"` (and `-m \"<body>\"` if needed).\r\n\r\n",
+    "content_hash": "1ef9645b1bbc625ff325c165e260799874a917c94319b69c3c4607b22b5b3790",
+    "generated": false,
+    "is_text": true,
+    "line_count": 38,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1865,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

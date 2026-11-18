@@ -1,0 +1,60 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.py"
+    ],
+    "attributes": {
+      "matched_text": "dotenv = _read_dotenv(Path(os.environ.get(\"DOTENV_PATH\", \".env\")))",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.py"
+    ],
+    "attributes": {
+      "matched_text": "return os.environ.get(key) or dotenv.get(key) or default",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 28,
+      "source_start_line": 28
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "environment_access"
+  }
+]

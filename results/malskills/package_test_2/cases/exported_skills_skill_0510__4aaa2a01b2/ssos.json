@@ -1,0 +1,959 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "N=$(ls artifacts/reviews/review-synthesis-*.md 2>/dev/null | sed -E 's/.*-([0-9]+)\\.md/\\1/' | sort -n | tail -1)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::N": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::N",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::N"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0091"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/review-lens-framework__fence_0.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "source references/db.sh",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/review-lens-framework__fence_0.sh::system_command_execution::1": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/review-lens-framework__fence_0.sh::system_command_execution::1",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/review-lens-framework__fence_0.sh:1:1:system_command_execution",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/review-lens-framework__fence_0.sh::system_command_execution::1"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "references/lenses/dep-audit/.malskills_fences/audit-checks__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "npm install -g npm@latest",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_1.sh::package_installation::4": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_1.sh::package_installation::4",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_1.sh::package_installation::4"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0016"
+    ],
+    "artifact_paths": [
+      "references/lenses/dep-audit/.malskills_fences/audit-checks__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "gem install bundler-audit",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_17.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_17.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_17.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0017"
+    ],
+    "artifact_paths": [
+      "references/lenses/dep-audit/.malskills_fences/audit-checks__fence_18.sh"
+    ],
+    "attributes": {
+      "matched_text": "gem install license_finder 2>/dev/null",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_18.sh::package_installation::8": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_18.sh::package_installation::8",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_18.sh::package_installation::8"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "pipx install pip-audit 2>/dev/null || pip install --user pip-audit",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::2": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::2"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "pipx install pip-licenses 2>/dev/null || pip install --user pip-licenses",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::5": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::5",
+      "source_end_line": 5,
+      "source_start_line": 5,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::5"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh"
+    ],
+    "attributes": {
+      "matched_text": "pipx install safety 2>/dev/null || pip install --user safety",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::8": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::8",
+      "source_end_line": 8,
+      "source_start_line": 8,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/dep-audit/.malskills_fences/audit-checks__fence_6.sh::package_installation::8"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Docker/compose",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh::system_information_access::10": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh::system_information_access::10",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh::system_information_access::10"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0021"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn '\\${[A-Z_]\\+}\\|^\\s*[A-Z_]\\+=\\|environment:' docker-compose*.yml Dockerfile* .env*",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh::system_information_access::11": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh::system_information_access::11",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 11,
+      "source_start_line": 11
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_0.sh::system_information_access::11"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "# From docker-compose env_file references",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh::system_information_access::7": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh::system_information_access::7",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh::system_information_access::7"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0022"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn 'env_file' docker-compose*.yml",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh::system_information_access::8": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh::system_information_access::8",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_1.sh::system_information_access::8"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0023"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "find . -name 'config.*' -o -name '*.config.*' -o -name 'settings.*' -o -name '.env*' | grep -v node_modules | grep -v dist",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh::file_search::2": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh::file_search::2",
+      "path_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh::file_search::2"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0023"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn 'config\\.\\|settings\\.\\|getConfig\\|loadConfig' --include='*.ts' --include='*.js' --include='*.py' --include='*.rs' | head -50",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh::include": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh::include",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/integration/.malskills_fences/config-completeness__fence_2.sh::include"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0025"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat src-tauri/tauri.conf.json | jq '.bundle'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_4.sh::file_read::3": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_4.sh::file_read::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_4.sh::file_read::3"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0026"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat package.json | jq '.bin'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::2": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::2"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0026"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat package.json | jq '.main, .module, .exports, .files'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::6": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::6",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::6"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0026"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "cat package.json | jq '.scripts'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::10": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::10",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_5.sh::file_read::10"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0028"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -n 'COPY\\|ADD' Dockerfile*",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_information_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_information_access::2",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_information_access::2"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0028"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Find all files the app reads at runtime (config, migrations, assets, etc.)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_configuration_modify::4": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_configuration_modify::4",
+      "resource_class": "startup_configuration",
+      "source_end_line": 4,
+      "source_start_line": 4,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_configuration_modify::4"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0028"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -n 'FROM.*AS\\|COPY --from' Dockerfile*",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_information_access::8": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_information_access::8",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/config-completeness__fence_7.sh::system_information_access::8"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0038"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/teardown-patterns__fence_14.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Verify corresponding cleanup in shutdown/drop",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_14.sh::process_control::3": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_14.sh::process_control::3",
+      "source_end_line": 3,
+      "source_start_line": 3,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_14.sh::process_control::3"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0039"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/teardown-patterns__fence_16.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn '\\.abort()\\|CancellationToken\\|shutdown' --include='*.rs'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_16.sh::process_control::2": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_16.sh::process_control::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_16.sh::process_control::2"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0040"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py"
+    ],
+    "attributes": {
+      "matched_text": "with open('file') as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py::file_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py::file_access::2",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py::file_access::2"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0040"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py"
+    ],
+    "attributes": {
+      "matched_text": "f = open('file')",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py::f": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py::f",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00029"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/integration/.malskills_fences/teardown-patterns__fence_17.py::f"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0044"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Find shutdown handlers",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh::process_control::1": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh::process_control::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00030"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh::process_control::1"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0044"
+    ],
+    "artifact_paths": [
+      "references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh"
+    ],
+    "attributes": {
+      "matched_text": "grep -rn 'SIGTERM\\|SIGINT\\|process\\.on.*exit\\|shutdown\\|graceful' --include='*.ts' --include='*.js' --include='*.rs' --include='*.py'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh::process_control::2": "target"
+      },
+      "operation_object": "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh::process_control::2",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00031"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/integration/.malskills_fences/teardown-patterns__fence_24.sh::process_control::2"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0071"
+    ],
+    "artifact_paths": [
+      "references/lenses/perf/.malskills_fences/perf-patterns__fence_17.py"
+    ],
+    "attributes": {
+      "matched_text": "data = open('config.json').read()  # Blocks the event loop",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_17.py::data": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_17.py::data",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00032"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_17.py::data"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0072"
+    ],
+    "artifact_paths": [
+      "references/lenses/perf/.malskills_fences/perf-patterns__fence_18.js"
+    ],
+    "attributes": {
+      "matched_text": "const data = fs.readFileSync('config.json')  // Blocks event loop",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_18.js::data": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_18.js::data",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00033"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_18.js::data"
+    ],
+    "sso_id": "sso_00028",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0063"
+    ],
+    "artifact_paths": [
+      "references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const data = fs.readFileSync('large-file.csv', 'utf8')",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js::data": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js::data",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00034"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js::data"
+    ],
+    "sso_id": "sso_00029",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0063"
+    ],
+    "artifact_paths": [
+      "references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js"
+    ],
+    "attributes": {
+      "matched_text": "const rl = readline.createInterface({ input: fs.createReadStream('large-file.csv') })",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js::file_create::6": "path"
+      },
+      "operation_object": "obj::operation::references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js::file_create::6",
+      "path_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00035"
+    ],
+    "operand_ids": [
+      "obj::operation::references/lenses/perf/.malskills_fences/perf-patterns__fence_8.js::file_create::6"
+    ],
+    "sso_id": "sso_00030",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0064"
+    ],
+    "artifact_paths": [
+      "references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "response = requests.get('https://large-file.example.com/data')",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py::data_receive::response = requests.get('https://large-file.example.com/data')": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py::data_receive::response = requests.get('https://large-file.example.com/data')",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "requests.get()",
+      "sink_callsite_id": "references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py:2:2:requests.get()",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00036"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py::data_receive::response = requests.get('https://large-file.example.com/data')"
+    ],
+    "sso_id": "sso_00031",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0064"
+    ],
+    "artifact_paths": [
+      "references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "response = requests.get('https://large-file.example.com/data', stream=True)",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py::data_receive::response = requests.get('https://large-file.example.com/data', stream=True)": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py::data_receive::response = requests.get('https://large-file.example.com/data', stream=True)",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "requests.get()",
+      "sink_callsite_id": "references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py:6:6:requests.get()",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00037"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/lenses/perf/.malskills_fences/perf-patterns__fence_9.py::data_receive::response = requests.get('https://large-file.example.com/data', stream=True)"
+    ],
+    "sso_id": "sso_00032",
+    "subtype": "data_receive"
+  }
+]

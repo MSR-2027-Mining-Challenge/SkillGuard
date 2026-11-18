@@ -1,0 +1,30 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_7.js"
+    ],
+    "attributes": {
+      "matched_text": "const requestId = req.headers['x-request-id'] ?? crypto.randomUUID();",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_7.js::cipher_object_creation::20": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_7.js::cipher_object_creation::20",
+      "source_end_line": 20,
+      "source_start_line": 20,
+      "sso_category": "cryptography"
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_7.js::cipher_object_creation::20"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "cipher_object_creation"
+  }
+]

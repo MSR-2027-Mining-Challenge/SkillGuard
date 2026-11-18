@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: fx-explore\r\ndescription: Discover available effects, actions, and placeholders in a Sandestin project. Use when asking what effects exist, searching for functionality, or needing example invocations. Keywords: effects, actions, dispatch, describe, grep, sample.\r\n---\r\n\r\n# Sandestin Effect Explorer\r\n\r\nDiscover and understand available effects, actions, and placeholders.\r\n\r\n**Important:** All discoverability functions operate on the **dispatch function**, not registries. You must first create a dispatch via `(s/create-dispatch [registries...])` before using these functions.\r\n\r\n## About Sandestin\r\n\r\nSandestin is a Clojure effect dispatch library with schema-driven discoverability. Effects are dispatched as vectors like `[:myapp/save-user {:name \"Alice\"}]`.\r\n\r\n**GitHub:** https://github.com/brianium/sandestin\r\n\r\n### Check if Installed\r\n\r\nLook for the dependency in `deps.edn`:\r\n\r\n```clojure\r\nio.github.brianium/sandestin {:git/tag \"v0.3.0\" :git/sha \"2be6acc\"}\r\n```\r\n\r\n### Install if Missing\r\n\r\nAdd to `deps.edn` under `:deps`:\r\n\r\n```clojure\r\n{:deps\r\n {io.github.brianium/sandestin {:git/tag \"v0.3.0\" :git/sha \"2be6acc\"}}}\r\n```\r\n\r\n## Workflow\r\n\r\n### 1. Find the Dispatch\r\n\r\nSearch for `create-dispatch` to locate the project's dispatch namespace.\r\n\r\n### 2. Explore via REPL\r\n\r\n```clojure\r\n(require '[ascolais.sandestin :as s])\r\n(require '[<dispatch-ns> :refer [dispatch]])\r\n\r\n;; List everything\r\n(s/describe dispatch)\r\n\r\n;; Filter by type\r\n(s/describe dispatch :effects)\r\n(s/describe dispatch :actions)\r\n(s/describe dispatch :placeholders)\r\n\r\n;; Search by keyword\r\n(s/grep dispatch \"user\")\r\n(s/grep dispatch #\"save|create\")\r\n\r\n;; Get details on specific item\r\n(s/describe dispatch :some.ns/effect-name)\r\n\r\n;; Generate sample invocation\r\n(s/sample dispatch :some.ns/effect-name)\r\n\r\n;; See system requirements\r\n(s/system-schema dispatch)\r\n```\r\n\r\n## Output Format\r\n\r\nSummarize findings:\r\n\r\n```\r\n### Effects\r\n\r\n**:myapp.db/query** - Execute a SQL query\r\n  Requires: [:datasource]\r\n  Example: [:myapp.db/query \"SELECT * FROM users\" 42]\r\n\r\n### Actions\r\n\r\n**:myapp.user/create** - Create user and send welcome email\r\n  Expands to: db insert + email send\r\n```\r\n\r\n## Key Functions\r\n\r\n| Function | Purpose |\r\n|----------|---------|\r\n| `(s/describe dispatch)` | List all items |\r\n| `(s/describe dispatch :key)` | Details for specific item |\r\n| `(s/grep dispatch \"pattern\")` | Search by string/regex |\r\n| `(s/sample dispatch :key)` | Generate sample data |\r\n| `(s/system-schema dispatch)` | System requirements |\r\n",
+    "content_hash": "144a9aa32f01d952b1659f9872707108a836366d00f93674c3a8c05c816e560f",
+    "generated": false,
+    "is_text": true,
+    "line_count": 95,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2519,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

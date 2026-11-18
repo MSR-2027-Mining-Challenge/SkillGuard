@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: architecte\r\ndescription: Launches the Architect. Specs, ADRs, locked decisions. Never writes code. Runs after BA framing, before prompt-engineer.\r\nwhen_to_use: |\r\n  Technical architecture design. Stack selection. ADRs to formalize. Architecture rework (addendum).\r\n  Technical framing before a build session.\r\nallowed-tools: Task\r\nargument-hint: \"<your design request>\"\r\n---\r\n\r\nUse the Task tool to invoke the `architecte` subagent with:\r\n\r\n- `subagent_type`: \"architecte\"\r\n- `description`: \"Architect design\"\r\n- `prompt`: $ARGUMENTS\r\n\r\nThe Architect sub-agent will bootstrap its own context (SOUL, USER, MEMORY, doctrine/04-agents, rules, eval, memory-sync-report) then run its workflow (bootstrap \u2192 brainstorming if new \u2192 pattern research \u2192 architecture proposal \u2192 cross-validation \u2192 specs deliverable \u2192 capitalization).\r\n\r\nIt NEVER writes code, it produces specs. Come back with its synthesis.\r\n",
+    "content_hash": "d06431edbce1f15f22e12720850ddc565abfda4c9763f8c4acf91460804fd597",
+    "generated": false,
+    "is_text": true,
+    "line_count": 20,
+    "relative_path": "SKILL.md",
+    "size_bytes": 921,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

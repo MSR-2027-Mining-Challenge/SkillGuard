@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: python-standards\r\ndescription: Authoritative guide for Python coding standards, strict type hinting, and modern 3.11+ syntax. triggers when writing, refactoring, or reviewing Python code.\r\n---\r\n\r\n# GOAL\r\nProduce production-grade, secure, and type-safe Python code that strictly adheres to PEP 8 and modern conventions (Python 3.11+).\r\n\r\n# INSTRUCTIONS\r\n1.  **Type Hinting:** - MANDATORY for all function signatures and class attributes.\r\n    - Use modern syntax: `str | None` instead of `Optional[str]`, `list[int]` instead of `List[int]`.\r\n    - Use `typing.Self` for methods returning the instance.\r\n2.  **Path Handling:**\r\n    - NEVER use `os.path.join`. ALWAYS use `pathlib.Path`.\r\n3.  **Structure:**\r\n    - Use `pydantic.BaseModel` or `@dataclass` for data structures; avoid raw dictionaries.\r\n    - Use `if __name__ == \"__main__\":` blocks for script execution.\r\n4.  **Error Handling:**\r\n    - Fail fast. Validate inputs immediately.\r\n    - Create custom exception classes for domain-specific errors.\r\n\r\n# CONSTRAINTS\r\n- Do not use `pass` placeholders; write full implementation.\r\n- Do not use `print()` for logging; use the `logging` module or `structlog`.\r\n- Do not use global variables.\r\n\r\n# EXAMPLES\r\n<example>\r\nInput: \"Write a function to read a text file.\"\r\nOutput:\r\n```python\r\nfrom pathlib import Path\r\n\r\ndef read_file_content(file_path: Path) -> str:\r\n    \"\"\"Reads text from a path safely.\"\"\"\r\n    if not file_path.exists():\r\n        raise FileNotFoundError(f\"File not found: {file_path}\")\r\n    \r\n    with file_path.open(\"r\", encoding=\"utf-8\") as f:\r\n        return f.read()",
+    "content_hash": "a1afab01ca9eae12c0639248182ed5ddafc3435fc466648ac832bc65c38ae722",
+    "generated": false,
+    "is_text": true,
+    "line_count": 40,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1598,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

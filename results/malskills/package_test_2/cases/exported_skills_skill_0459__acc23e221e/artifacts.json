@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "# Agent4Mat MolScribe skill\r\n\r\nUse this skill when user requests image/PDF structure-to-SMILES extraction.\r\n\r\n## Current scope\r\n- MolScribe is not yet connected as a first-class adapter in current tool registry.\r\n- Nearest compatible insertion points:\r\n  - upstream preprocessing before `generate_candidates`\r\n  - custom `generate_candidates` adapter command via `OLED_AGENT_GENERATE_CMD` or catalog adapter.\r\n\r\n## Suggested integration pattern (contract-safe)\r\n1. Build a dedicated adapter script (example: `scripts/adapters/generate_candidates_molscribe_adapter.py`).\r\n2. Accept standard `generate_candidates` JSON payload.\r\n3. Convert source images/figures to SMILES candidates with MolScribe.\r\n4. Write normalized candidate CSV with at least:\r\n   - `candidate_id`\r\n   - `smiles`\r\n5. Return JSON with `status`, `adapter`, `output_csv`, `rows`.\r\n\r\n## Validation path\r\n- Validate adapter output contract first:\r\n  - `python3 scripts/adapters/validate_adapter_contract.py --tool generate_candidates --cmd \"<your molscribe cmd>\" --workspace-root . --json`\r\n- Then run `agent-run-json` using an adapter-enabled model catalog.\r\n\r\n## Rules\r\n- Keep MolScribe extraction isolated inside adapter boundary.\r\n- Never change downstream `score_candidates` input schema.\r\n- If OCR/parse fails, return structured adapter failure JSON instead of partial CSV.\r\n",
+    "content_hash": "9da22170953cd8e3638502bbe53fa1880346c8d539512730c8f6e0f0084e411a",
+    "generated": false,
+    "is_text": true,
+    "line_count": 29,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1346,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

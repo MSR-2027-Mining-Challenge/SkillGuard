@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: bm-remember\r\ndescription: Quickly save a small fact, reminder, or user preference into Basic Memory from Codex without turning it into a full decision or checkpoint.\r\n---\r\n\r\n# Remember\r\n\r\nUse this for lightweight capture: \"remember that\", \"save this\", \"note this\", or\r\na small fact that should survive the current thread.\r\n\r\n## Steps\r\n\r\n1. Read `.codex/basic-memory.json` if present:\r\n   - `primaryProject`, default omitted\r\n   - `rememberFolder`, default `codex-remember`\r\n\r\n2. Identify the exact text to save. If the user supplied text, preserve their\r\n   wording. If the user said \"remember that\" and the referent is unclear, ask one\r\n   short question.\r\n\r\n3. Write with `write_note`:\r\n   - `title`: first line trimmed to 80 characters, or a short descriptive title\r\n   - `directory`: `rememberFolder`\r\n   - `content`: the text to remember\r\n   - `tags`: `[\"codex\", \"manual-capture\"]`\r\n   - route to `primaryProject` if configured\r\n\r\n4. Confirm in one line with the permalink.\r\n\r\nDo not use this for decisions with alternatives or for work handoffs. Use\r\n`bm-decide` or `bm-checkpoint` for those.\r\n",
+    "content_hash": "bbdcc3eb60376399e4f59ba17623d09c6289c010d3b4aac0cfc9aef2e1ed5ef6",
+    "generated": false,
+    "is_text": true,
+    "line_count": 32,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1111,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"id\": \"basicmachines-co-basic-memory-bm-remember\",\r\n  \"name\": \"bm-remember\",\r\n  \"description\": \"Quickly save a small fact, reminder, or user preference into Basic Memory from Codex without turning it into a full decision or checkpoint.\",\r\n  \"category\": \"\u6d4b\u8bd5\u8c03\u8bd5\",\r\n  \"compatible_tools\": [\r\n    \"claude\",\r\n    \"codex\",\r\n    \"gemini\"\r\n  ],\r\n  \"version\": \"\",\r\n  \"author\": \"basicmachines-co\",\r\n  \"install_path\": \".claude/skills/bm-remember/SKILL.md\",\r\n  \"source\": {\r\n    \"repo\": \"basicmachines-co/basic-memory\",\r\n    \"url\": \"https://github.com/basicmachines-co/basic-memory/blob/main/plugins/codex/skills/bm-remember/SKILL.md\",\r\n    \"path\": \"plugins/codex/skills/bm-remember/SKILL.md\",\r\n    \"branch\": \"main\",\r\n    \"discovered_at\": \"2026-07-17T09:30:14.233Z\",\r\n    \"stars\": 3449,\r\n    \"language\": \"Python\",\r\n    \"pushed_at\": \"2026-07-17T03:09:12Z\",\r\n    \"license\": \"AGPL-3.0\"\r\n  },\r\n  \"summary_zh\": \"\u7528\u4e8e\u5728 Codex \u91cc\u628a\u96f6\u788e\u7684\u4e8b\u5b9e\u3001\u63d0\u9192\u6216\u7528\u6237\u504f\u597d\u5feb\u901f\u5b58\u8fdb Basic Memory\uff0c\u7701\u53bb\u8d70\u5b8c\u6574\u51b3\u7b56\u6216\u68c0\u67e5\u70b9\u6d41\u7a0b\u7684\u9ebb\u70e6\uff0c\u9002\u5408\u968f\u624b\u8bb0\u4e00\u7b14\u7684\u573a\u666f\u3002\"\r\n}",
+    "content_hash": "a12704c7246aff75ee8175efca61e157f08aa7ba4ce7b4c4970d2b94f1bd9172",
+    "generated": false,
+    "is_text": true,
+    "line_count": 26,
+    "relative_path": "skill.json",
+    "size_bytes": 1082,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

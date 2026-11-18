@@ -1,0 +1,337 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": "scripts/README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "scripts/.malskills_fences/README__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": "scripts/.malskills_fences/README__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": "scripts/.malskills_fences/README__fence_3.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/.malskills_fences/README__fence_1.sh::file_write::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/.malskills_fences/README__fence_1.sh::file_write::1",
+      "target": "value::d80d04c114a16ca9d46d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::scripts/.malskills_fences/README__fence_1.sh::file_permission_modify::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/.malskills_fences/README__fence_1.sh::file_permission_modify::2",
+      "target": "value::2d4e3385d15ac1090597",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::scripts/.malskills_fences/README__fence_2.sh::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/.malskills_fences/README__fence_2.sh::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "target": "value::0aa5c53098563cabd587",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::scripts/.malskills_fences/README__fence_2.sh::file_write::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/.malskills_fences/README__fence_2.sh::file_write::2",
+      "target": "value::b99ff85efaca31726f9f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::scripts/.malskills_fences/README__fence_2.sh::file_permission_modify::4",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/.malskills_fences/README__fence_2.sh::file_permission_modify::4",
+      "target": "value::950950aec678f9883858",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::scripts/README.md::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::scripts/README.md::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "target": "value::4989b5d7d53cff3cb4ca",
+      "type": "value_flow"
+    },
+    {
+      "artifact_path": "scripts/README.md",
+      "flow_kind": "shell_pipeline",
+      "source": "sso_00002",
+      "source_line": 27,
+      "target": "sso_00003",
+      "type": "value_flow"
+    },
+    {
+      "artifact_path": "scripts/README.md",
+      "flow_kind": "shell_pipeline",
+      "source": "sso_00005",
+      "source_line": 27,
+      "target": "sso_00003",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "scripts/README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "scripts/.malskills_fences/README__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "scripts/.malskills_fences/README__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "scripts/.malskills_fences/README__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/.malskills_fences/README__fence_1.sh::file_write::1",
+      "identity_key": "scripts/.malskills_fences/README__fence_1.sh::file_write::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::d80d04c114a16ca9d46d",
+      "kind": "value",
+      "value": "scripts/.malskills_fences/README__fence_1.sh::file_write::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_permission_modify",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/.malskills_fences/README__fence_1.sh::file_permission_modify::2",
+      "identity_key": "scripts/.malskills_fences/README__fence_1.sh::file_permission_modify::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::2d4e3385d15ac1090597",
+      "kind": "value",
+      "value": "scripts/.malskills_fences/README__fence_1.sh::file_permission_modify::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/.malskills_fences/README__fence_2.sh::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "identity_key": "scripts/.malskills_fences/README__fence_2.sh::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::0aa5c53098563cabd587",
+      "kind": "value",
+      "value": "scripts/.malskills_fences/README__fence_2.sh::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/.malskills_fences/README__fence_2.sh::file_write::2",
+      "identity_key": "scripts/.malskills_fences/README__fence_2.sh::file_write::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b99ff85efaca31726f9f",
+      "kind": "value",
+      "value": "scripts/.malskills_fences/README__fence_2.sh::file_write::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_permission_modify",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::scripts/.malskills_fences/README__fence_2.sh::file_permission_modify::4",
+      "identity_key": "scripts/.malskills_fences/README__fence_2.sh::file_permission_modify::4",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::950950aec678f9883858",
+      "kind": "value",
+      "value": "scripts/.malskills_fences/README__fence_2.sh::file_permission_modify::4",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::scripts/README.md::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "identity_key": "scripts/README.md::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::4989b5d7d53cff3cb4ca",
+      "kind": "value",
+      "value": "scripts/README.md::data_receive::curl -L https://github.com/casey/just/releases/download/VERSION/just-VERSION-aarch64-apple-darwin.tar.gz | tar xz",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

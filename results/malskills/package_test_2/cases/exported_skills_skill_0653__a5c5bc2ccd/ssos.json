@@ -1,0 +1,674 @@
+[
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "cp /mnt/evidence/Windows/Prefetch/*.pf /cases/case-2024-001/prefetch/",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::6",
+      "path_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_write::6"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -la /cases/case-2024-001/prefetch/ | wc -l",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::9": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::9",
+      "path_class": "ordinary",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::9"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -la /cases/case-2024-001/prefetch/ | head -30",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::10": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::10",
+      "path_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::10"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -la /cases/case-2024-001/prefetch/ | head -30",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::10": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::10",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_read::10"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_1.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "PECmd.exe -f \"C:\\cases\\prefetch\\POWERSHELL.EXE-A]B2C3D4.pf\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_command_execution::5": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_command_execution::5",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_1.sh:5:5:system_command_execution",
+      "source_end_line": 5,
+      "source_start_line": 5
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_1.sh::system_command_execution::5"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "pip install prefetch",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1",
+      "source_end_line": 1,
+      "source_start_line": 1,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_2.sh::package_installation::1"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls /cases/case-2024-001/prefetch/ | grep -iE \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::2": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::2",
+      "path_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::2"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "'(MIMIKATZ|PSEXEC|WMIC|COBALT|BEACON|PWDUMP|PROCDUMP|LAZAGNE|RUBEUS|BLOODHOUND|SHARPHOUND|CERTUTIL|BITSADMIN)'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_command_execution::3": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_command_execution::3",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:3:3:system_command_execution",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_command_execution::3"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "'(MIMIKATZ|PSEXEC|WMIC|COBALT|BEACON|PWDUMP|PROCDUMP|LAZAGNE|RUBEUS|BLOODHOUND|SHARPHOUND|CERTUTIL|BITSADMIN)'",
+      "endpoint_class": "unknown",
+      "network_role": "connect",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::'(MIMIKATZ|PSEXEC|WMIC|COBALT|BEACON|PWDUMP|PROCDUMP|LAZAGNE|RUBEUS|BLOODHOUND|SHARPHOUND|CERTUTIL|BITSADMIN)'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::'(MIMIKATZ|PSEXEC|WMIC|COBALT|BEACON|PWDUMP|PROCDUMP|LAZAGNE|RUBEUS|BLOODHOUND|SHARPHOUND|CERTUTIL|BITSADMIN)'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:3:3:connection_create",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::connection_create::'(MIMIKATZ|PSEXEC|WMIC|COBALT|BEACON|PWDUMP|PROCDUMP|LAZAGNE|RUBEUS|BLOODHOUND|SHARPHOUND|CERTUTIL|BITSADMIN)'"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "connection_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls /cases/case-2024-001/prefetch/ | grep -iE \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::6": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::6",
+      "path_class": "ordinary",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::6"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "'(POWERSHELL|CMD\\.EXE|WSCRIPT|CSCRIPT|MSHTA|REGSVR32|RUNDLL32|MSIEXEC)'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_command_execution::7": "command"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_command_execution::7",
+      "parameter_bindings": [],
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:7:7:system_command_execution",
+      "source_end_line": 7,
+      "source_start_line": 7
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_command_execution::7"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls /cases/case-2024-001/prefetch/ | grep -iE \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::10": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::10",
+      "path_class": "ordinary",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::10"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls /cases/case-2024-001/prefetch/ | grep -iE \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::14": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::14",
+      "path_class": "ordinary",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::14"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "'(RAR|7Z|ZIP|RCLONE|MEGA|DROPBOX|ONEDRIVE|GDRIVE|FTP|CURL|WGET)'",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_write::15": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_write::15",
+      "path_class": "ordinary",
+      "source_end_line": 15,
+      "source_start_line": 15,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_write::15"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "file_write"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "'(RAR|7Z|ZIP|RCLONE|MEGA|DROPBOX|ONEDRIVE|GDRIVE|FTP|CURL|WGET)'",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::'(RAR|7Z|ZIP|RCLONE|MEGA|DROPBOX|ONEDRIVE|GDRIVE|FTP|CURL|WGET)'": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::'(RAR|7Z|ZIP|RCLONE|MEGA|DROPBOX|ONEDRIVE|GDRIVE|FTP|CURL|WGET)'",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_3.sh:15:15:data_receive",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::'(RAR|7Z|ZIP|RCLONE|MEGA|DROPBOX|ONEDRIVE|GDRIVE|FTP|CURL|WGET)'"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -lt /cases/case-2024-001/prefetch/ | head -20",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::18": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::18",
+      "path_class": "ordinary",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_search::18"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "file_search"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "ls -lt /cases/case-2024-001/prefetch/ | head -20",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::18": "path"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::18",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 18,
+      "source_start_line": 18
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::file_read::18"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Prefetch existence = program was executed at least once",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_configuration_modify::21": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_configuration_modify::21",
+      "resource_class": "startup_configuration",
+      "source_end_line": 21,
+      "source_start_line": 21,
+      "sso_category": "system_configuration"
+    },
+    "category": "system_configuration",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_3.sh::system_configuration_modify::21"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "system_configuration_modify"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "pip install prefetch",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::81": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::81",
+      "source_end_line": 81,
+      "source_start_line": 81,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::81"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "Search Prefetch directory for the malware executable name, confirm execution via Prefetch existence, extract run count and last run time, identify referenced DLLs to understand malware behavior, correlate with registry autorun entries.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::decoding::272": "target"
+      },
+      "operation_class": "archive_extraction",
+      "operation_object": "obj::operation::SKILL.md::decoding::272",
+      "parameter_bindings": [],
+      "source_end_line": 272,
+      "source_start_line": 272
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::decoding::272"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "decoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_3.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(\"APP.EXE-HASH.pf\", \"rb\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-reference__fence_3.py::file_access::3": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-reference__fence_3.py::file_access::3",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-reference__fence_3.py::file_access::3"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, \"rb\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::14": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::14",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::14"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0012"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:170:170:subprocess.run()",
+      "source_end_line": 170,
+      "source_start_line": 170
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00028"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::cmd"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "system_command_execution"
+  }
+]

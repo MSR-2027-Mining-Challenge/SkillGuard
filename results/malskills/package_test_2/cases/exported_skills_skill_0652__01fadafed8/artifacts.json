@@ -1,0 +1,47 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: ddd-tactical-patterns\r\ndescription: Apply DDD tactical patterns in code using entities, value objects, aggregates, repositories, and domain events with explicit invariants.\r\nrisk: safe\r\nsource: self\r\ntags: [ddd, tactical, aggregates, value-objects, domain-events]\r\n---\r\n\r\n# DDD Tactical Patterns\r\n\r\n## Use this skill when\r\n\r\n- Translating domain rules into code structures.\r\n- Designing aggregate boundaries and invariants.\r\n- Refactoring an anemic model into behavior-rich domain objects.\r\n- Defining repository contracts and domain event boundaries.\r\n\r\n## Do not use this skill when\r\n\r\n- You are still defining strategic boundaries.\r\n- The task is only API documentation or UI layout.\r\n- Full DDD complexity is not justified.\r\n\r\n## Instructions\r\n\r\n1. Identify invariants first and design aggregates around them.\r\n2. Model immutable value objects for validated concepts.\r\n3. Keep domain behavior in domain objects, not controllers.\r\n4. Emit domain events for meaningful state transitions.\r\n5. Keep repositories at aggregate root boundaries.\r\n\r\nIf detailed checklists are needed, open `references/tactical-checklist.md`.\r\n\r\n## Example\r\n\r\n```typescript\r\nclass Order {\r\n  private status: \"draft\" | \"submitted\" = \"draft\";\r\n\r\n  submit(itemsCount: number): void {\r\n    if (itemsCount === 0) throw new Error(\"Order cannot be submitted empty\");\r\n    if (this.status !== \"draft\") throw new Error(\"Order already submitted\");\r\n    this.status = \"submitted\";\r\n  }\r\n}\r\n```\r\n\r\n## Limitations\r\n\r\n- This skill does not define deployment architecture.\r\n- It does not choose databases or transport protocols.\r\n- It should be paired with testing patterns for invariant coverage.\r\n",
+    "content_hash": "dd1f0b0a2a3f71c1d7b2a927e0d2cc073407f88eee0c61c2e9a090af3dc5f9e9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 53,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1673,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "javascript",
+    "content": "class Order {\r\n  private status: \"draft\" | \"submitted\" = \"draft\";\r\n\r\n  submit(itemsCount: number): void {\r\n    if (itemsCount === 0) throw new Error(\"Order cannot be submitted empty\");\r\n    if (this.status !== \"draft\") throw new Error(\"Order already submitted\");\r\n    this.status = \"submitted\";\r\n  }\r\n}",
+    "content_hash": "32b391c876f65253b9880fb2700189ee99f2cc3ce7bac9349bc43710eefd500f",
+    "generated": true,
+    "is_text": true,
+    "line_count": 9,
+    "relative_path": ".malskills_fences/SKILL__fence_0.ts",
+    "size_bytes": 302,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 46,
+    "source_start_line": 36
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "markdown",
+    "content": "# Tactical Pattern Checklist\r\n\r\n## Aggregate design\r\n\r\n- One aggregate root per transaction boundary\r\n- Invariants enforced inside aggregate methods\r\n- Avoid cross-aggregate synchronous consistency rules\r\n\r\n## Value objects\r\n\r\n- Immutable by default\r\n- Validation at construction\r\n- Equality by value, not identity\r\n\r\n## Repositories\r\n\r\n- Persist and load aggregate roots only\r\n- Expose domain-friendly query methods\r\n- Avoid leaking ORM entities into domain layer\r\n\r\n## Domain events\r\n\r\n- Past-tense event names (for example, `OrderSubmitted`)\r\n- Include minimal, stable event payloads\r\n- Version event schema before breaking changes\r\n",
+    "content_hash": "717e6128f0ca09a34230ade3712a3fe68ccd9d920aa260c7731508bdfe8ed836",
+    "generated": false,
+    "is_text": true,
+    "line_count": 26,
+    "relative_path": "references/tactical-checklist.md",
+    "size_bytes": 636,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

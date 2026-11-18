@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: docs-maintenance-after-work\r\ndescription: Run standardized post-implementation documentation maintenance and quality checks.\r\n---\r\n\r\n# Docs Maintenance After Work\r\n\r\nUse this skill after implementation to keep project docs synchronized with reality and prevent drift.\r\n\r\n## Trigger conditions\r\n\r\n- End of `/pwf-work` execution.\r\n- End of `/pwf-work-plan` phase execution.\r\n\r\n## Core flow\r\n\r\n1. Run `doc-shepherd` (always).\r\n2. Run `plan-sync` when work maps to an active plan/work-plan context.\r\n3. Conditionally run specialized doc writers:\r\n   - `backend-module-doc-writer`\r\n   - `frontend-feature-doc-writer`\r\n   - `lambda-doc-writer`\r\n4. Run `pattern-extractor` when a reusable pattern emerged.\r\n5. Apply documentation quality gate.\r\n\r\n## Agent paths\r\n\r\n- `doc-shepherd` -> `agents/docs/doc-shepherd.md`\r\n- `plan-sync` -> `agents/docs/plan-sync.md`\r\n- `backend-module-doc-writer` -> `agents/docs/backend-module-doc-writer.md`\r\n- `frontend-feature-doc-writer` -> `agents/docs/frontend-feature-doc-writer.md`\r\n- `lambda-doc-writer` -> `agents/docs/lambda-doc-writer.md`\r\n- `pattern-extractor` -> `agents/docs/pattern-extractor.md`\r\n\r\n## Inputs required for doc agents\r\n\r\n- `diff` \u2014 relevant git diff for implementation scope\r\n- `changed_files` \u2014 modified/created/deleted file list\r\n- `work_summary` \u2014 short implementation summary\r\n\r\n## Documentation quality gate\r\n\r\nBefore claiming completion:\r\n\r\n1. **Specificity** \u2014 real file/symbol references, no vague text.\r\n2. **State clarity** \u2014 clear implemented vs planned separation.\r\n3. **Operational usefulness** \u2014 invariants/gotchas/checklists are concrete.\r\n4. **Contract accuracy** \u2014 APIs/DTOs/entities/flows match current code.\r\n5. **Cross-doc consistency** \u2014 no contradictions with critical patterns.\r\n6. **Signal over noise** \u2014 concise and actionable content.\r\n\r\n## Constraints\r\n\r\n- Never skip docs maintenance on work/work-plan flows.\r\n- Do not delete protected docs trees.\r\n- If uncertain, mark assumptions explicitly and suggest follow-up.\r\n",
+    "content_hash": "65df8eb3601ee34176cc1df310e0fd38665f63107e059c8c822cd46c07a39d38",
+    "generated": false,
+    "is_text": true,
+    "line_count": 57,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2026,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

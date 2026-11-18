@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: performance-bottleneck-detection\r\ndescription: Performance bottleneck identification through code pattern analysis-based skill consuming source_code to produce performance_report\r\n---\r\n\r\n# Performance Bottleneck Detection\r\n\r\n## Guardrails\r\n- timeout: 180s\r\n- max_query_analysis_time: 60s\r\n- performance_threshold_ms: 100\r\n\r\n## Context\r\nConsumes: source_code\r\nProduces: performance_report\r\nMemory: short-term\r\n\r\n## Strategy\r\nApproach: Performance bottleneck identification through code pattern analysis\r\nTools: read_file, grep, search, bash\r\n\r\n### Steps\r\n1. Analyze database queries for N+1 problems\r\n2. Review memory usage patterns\r\n3. Check caching implementations\r\n4. Assess async/concurrent patterns\r\n5. Evaluate resource management\r\n6. Review load handling strategies\r\n\r\n## Security\r\n- Filesystem: read-only\r\n- Network: none\r\n",
+    "content_hash": "bf0a729de240943a575fed5a95b0d644a4815212d5d33e89dc748d124f72f3c4",
+    "generated": false,
+    "is_text": true,
+    "line_count": 33,
+    "relative_path": "SKILL.md",
+    "size_bytes": 841,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

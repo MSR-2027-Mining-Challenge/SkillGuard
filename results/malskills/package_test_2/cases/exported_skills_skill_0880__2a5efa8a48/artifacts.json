@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: nix-cleanup\r\ndescription: Run janitorial cleanup for this flake: flake check, statix/deadnix linting, and safe hygiene fixes.\r\n---\r\n\r\n# Nix Cleanup\r\n\r\n## What I do\r\n- Keep cleanup aligned with this repo's linting and workflow rules.\r\n- Run checks in a safe order and summarize findings before edits.\r\n- Apply small hygiene fixes (unused bindings, repeated keys, legacy syntax) when requested.\r\n\r\n## When to use me\r\nUse this skill when you want a janitorial pass before committing, or when Nix lint errors need cleanup.\r\n\r\n## Workflow\r\n1. Run `nix flake check --no-build` to validate the flake without builds.\r\n2. Run `nix run nixpkgs#statix -- check .` for linting.\r\n3. Run `nix run nixpkgs#deadnix -- .` for unused bindings.\r\n4. Summarize findings and ask before auto-fixing.\r\n5. If approved, apply `statix fix` and/or `deadnix -e`, then re-run checks.\r\n\r\n## Hygiene rules\r\n- Avoid repeated keys in attribute sets; nest under a single key.\r\n- Remove empty `let` blocks and unused arguments.\r\n- Prefer `lib.mkIf` over nested ifs.\r\n- Use `mkEnableOption` for boolean options.\r\n- Use `pkgs.stdenv.hostPlatform.system` instead of `system`.\r\n\r\n## Safety\r\n- Never run destructive commands.\r\n- Never touch dotfile-managed program configs (see dotfiles policy).\r\n- Ask before changes that alter secrets or host definitions.\r\n",
+    "content_hash": "45914c6197d4d31377f77331aed67526245f406687419cfcb36fe3963a589687",
+    "generated": false,
+    "is_text": true,
+    "line_count": 34,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1329,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "config",
+    "content": "{\r\n  \"name\": \"nix-cleanup\",\r\n  \"description\": \"Run janitorial cleanup for this flake: flake check, statix/deadnix linting, and safe hygiene fixes.\",\r\n  \"category\": \"productivity\",\r\n  \"repo\": \"majiayu000/claude-skill-registry\",\r\n  \"path\": \"skills/other/nix-cleanup/SKILL.md\",\r\n  \"stars\": 48,\r\n  \"source\": \"github.com/majiayu000/claude-skill-registry\",\r\n  \"downloaded_at\": \"2026-01-24T16:16:07.206962Z\",\r\n  \"dir_name\": \"nix-cleanup-majiayu000-claude-skill-registr\",\r\n  \"author\": \"majiayu000\",\r\n  \"source_url\": \"https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/nix-cleanup/SKILL.md\",\r\n  \"license\": \"MIT\",\r\n  \"copyright\": \"Copyright (c) 2024 majiayu000\",\r\n  \"permission_note\": \"Use according to upstream license terms and attribution requirements.\",\r\n  \"distribution\": \"compatible\",\r\n  \"license_class\": \"compatible\"\r\n}\r\n",
+    "content_hash": "17e3ccf5b7d0b138e470613967563ebbe0753d1bb9951ca1242fe5bceaeba470",
+    "generated": false,
+    "is_text": true,
+    "line_count": 19,
+    "relative_path": "metadata.json",
+    "size_bytes": 842,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

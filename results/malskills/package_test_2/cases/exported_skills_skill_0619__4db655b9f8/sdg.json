@@ -1,0 +1,193 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "_meta.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/api_reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "path": "references/.malskills_fences/api_reference__fence_0.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0000",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::README.md::data_receive::An apipick API key is required. Get 100 free credits at [apipick.com](https://www.apipick.com).",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::README.md::data_receive::An apipick API key is required. Get 100 free credits at [apipick.com](https://www.apipick.com).",
+      "target": "value::405e223bfbde7db124c6",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0004",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::references/.malskills_fences/api_reference__fence_0.sh::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/.malskills_fences/api_reference__fence_0.sh::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "target": "value::c4d918e5d56fce5a41ec",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0003",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::references/api_reference.md::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::references/api_reference.md::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "target": "value::2e60c6ff005d0b13583e",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "README.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "_meta.json",
+      "type": "config"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/api_reference.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/api_reference__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::README.md::data_receive::An apipick API key is required. Get 100 free credits at [apipick.com](https://www.apipick.com).",
+      "identity_key": "README.md::data_receive::An apipick API key is required. Get 100 free credits at [apipick.com](https://www.apipick.com).",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::405e223bfbde7db124c6",
+      "kind": "value",
+      "value": "README.md::data_receive::An apipick API key is required. Get 100 free credits at [apipick.com](https://www.apipick.com).",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/.malskills_fences/api_reference__fence_0.sh::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "identity_key": "references/.malskills_fences/api_reference__fence_0.sh::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::c4d918e5d56fce5a41ec",
+      "kind": "value",
+      "value": "references/.malskills_fences/api_reference__fence_0.sh::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::references/api_reference.md::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "identity_key": "references/api_reference.md::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::2e60c6ff005d0b13583e",
+      "kind": "value",
+      "value": "references/api_reference.md::data_receive::curl -X POST https://www.apipick.com/api/check-phone-telegram \\",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

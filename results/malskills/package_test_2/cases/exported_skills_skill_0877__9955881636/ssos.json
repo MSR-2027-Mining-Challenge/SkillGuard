@@ -1,0 +1,505 @@
+[
+  {
+    "artifact_ids": [
+      "art_0009"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "committedSha=$(git rev-parse HEAD)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_10.sh::committedSha": "path"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_10.sh::committedSha",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_10.sh::committedSha"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0014"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_16.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Pipeline MUST halt here \u2014 do NOT advance to commit/review/version/pr",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::.malskills_fences/SKILL__fence_16.sh::process_control::6": "target"
+      },
+      "operation_object": "obj::operation::.malskills_fences/SKILL__fence_16.sh::process_control::6",
+      "source_end_line": 6,
+      "source_start_line": 6,
+      "sso_category": "process_operation"
+    },
+    "category": "process_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::.malskills_fences/SKILL__fence_16.sh::process_control::6"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "process_control"
+  },
+  {
+    "artifact_ids": [
+      "art_0018"
+    ],
+    "artifact_paths": [
+      "resources/recovering-from-failures.md"
+    ],
+    "attributes": {
+      "matched_text": "5. **For phantom success in batch agents:** Extract the phantom-success tasks from the batch. Re-dispatch each individually (not as a batch) with the constraints above and model escalation. Tasks that genuinely succeeded in the batch remain final \u2014 do not re-run them.",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::resources/recovering-from-failures.md::decoding::160": "target"
+      },
+      "operation_class": "archive_extraction",
+      "operation_object": "obj::operation::resources/recovering-from-failures.md::decoding::160",
+      "parameter_bindings": [],
+      "source_end_line": 160,
+      "source_start_line": 160
+    },
+    "category": "cryptography",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::resources/recovering-from-failures.md::decoding::160"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "decoding"
+  },
+  {
+    "artifact_ids": [
+      "art_0026"
+    ],
+    "artifact_paths": [
+      "scripts/context_advisory.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/context_advisory.sh::dynamic_code_execution::8": "command"
+      },
+      "operation_object": "obj::operation::scripts/context_advisory.sh::dynamic_code_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/context_advisory.sh:8:8:dynamic_code_execution",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/context_advisory.sh::dynamic_code_execution::8"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0027"
+    ],
+    "artifact_paths": [
+      "scripts/openspec_tasks_wrapper.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/openspec_tasks_wrapper.sh::dynamic_code_execution::36": "command"
+      },
+      "operation_object": "obj::operation::scripts/openspec_tasks_wrapper.sh::dynamic_code_execution::36",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/openspec_tasks_wrapper.sh:36:36:dynamic_code_execution",
+      "source_end_line": 36,
+      "source_start_line": 36
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/openspec_tasks_wrapper.sh::dynamic_code_execution::36"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0028"
+    ],
+    "artifact_paths": [
+      "scripts/openspec_validate.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/openspec_validate.sh::dynamic_code_execution::6": "command"
+      },
+      "operation_object": "obj::operation::scripts/openspec_validate.sh::dynamic_code_execution::6",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/openspec_validate.sh:6:6:dynamic_code_execution",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/openspec_validate.sh::dynamic_code_execution::6"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0029"
+    ],
+    "artifact_paths": [
+      "scripts/openspec_wrapper.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/openspec_wrapper.sh::dynamic_code_execution::40": "command"
+      },
+      "operation_object": "obj::operation::scripts/openspec_wrapper.sh::dynamic_code_execution::40",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/openspec_wrapper.sh:40:40:dynamic_code_execution",
+      "source_end_line": 40,
+      "source_start_line": 40
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/openspec_wrapper.sh::dynamic_code_execution::40"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0030"
+    ],
+    "artifact_paths": [
+      "scripts/parse_wave.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "PARSE_RESULT=$(node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/parse_wave.sh::dynamic_code_execution::9": "command"
+      },
+      "operation_object": "obj::operation::scripts/parse_wave.sh::dynamic_code_execution::9",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/parse_wave.sh:9:9:dynamic_code_execution",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/parse_wave.sh::dynamic_code_execution::9"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0031"
+    ],
+    "artifact_paths": [
+      "scripts/plan_hash.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "node -e '",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/plan_hash.sh::dynamic_code_execution::14": "command"
+      },
+      "operation_object": "obj::operation::scripts/plan_hash.sh::dynamic_code_execution::14",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/plan_hash.sh:14:14:dynamic_code_execution",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/plan_hash.sh::dynamic_code_execution::14"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0032"
+    ],
+    "artifact_paths": [
+      "scripts/run_truncated.sh"
+    ],
+    "attributes": {
+      "matched_text": "# Wrapper to truncate verbose output for LLM context limits",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run_truncated.sh::file_delete::2": "path"
+      },
+      "operation_object": "obj::operation::scripts/run_truncated.sh::file_delete::2",
+      "path_class": "ordinary",
+      "source_end_line": 2,
+      "source_start_line": 2,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run_truncated.sh::file_delete::2"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_delete"
+  },
+  {
+    "artifact_ids": [
+      "art_0032"
+    ],
+    "artifact_paths": [
+      "scripts/run_truncated.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "OUTPUT=$(eval \"$COMMAND\" 2>&1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run_truncated.sh::system_command_execution::15": "command"
+      },
+      "operation_object": "obj::operation::scripts/run_truncated.sh::system_command_execution::15",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/run_truncated.sh:15:15:system_command_execution",
+      "source_end_line": 15,
+      "source_start_line": 15
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run_truncated.sh::system_command_execution::15"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0032"
+    ],
+    "artifact_paths": [
+      "scripts/run_truncated.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"$OUTPUT\" | head -n \"$MAX_HEAD\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run_truncated.sh::file_read::20": "path"
+      },
+      "operation_object": "obj::operation::scripts/run_truncated.sh::file_read::20",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 20,
+      "source_start_line": 20
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run_truncated.sh::file_read::20"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0032"
+    ],
+    "artifact_paths": [
+      "scripts/run_truncated.sh"
+    ],
+    "attributes": {
+      "matched_text": "echo \"$OUTPUT\" | tail -n \"$MAX_TAIL\"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/run_truncated.sh::file_read::24": "path"
+      },
+      "operation_object": "obj::operation::scripts/run_truncated.sh::file_read::24",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 24,
+      "source_start_line": 24
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/run_truncated.sh::file_read::24"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "file_read"
+  },
+  {
+    "artifact_ids": [
+      "art_0034"
+    ],
+    "artifact_paths": [
+      "scripts/workspace_setup.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "WORKSPACE_MODE=$(node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::33": "command"
+      },
+      "operation_object": "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::33",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/workspace_setup.sh:33:33:dynamic_code_execution",
+      "source_end_line": 33,
+      "source_start_line": 33
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::33"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0034"
+    ],
+    "artifact_paths": [
+      "scripts/workspace_setup.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "EXECUTE_BRANCH=$(LOGICAL_TYPE=\"$LOGICAL_TYPE\" DERIVED_SLUG=\"$DERIVED_SLUG\" node -e \"",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::46": "command"
+      },
+      "operation_object": "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::46",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/workspace_setup.sh:46:46:dynamic_code_execution",
+      "source_end_line": 46,
+      "source_start_line": 46
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::46"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0034"
+    ],
+    "artifact_paths": [
+      "scripts/workspace_setup.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "WORKTREE_PATH=$(echo \"$result\" | node -e \"try{process.stdout.write(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).path||'')}catch(_){}\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::73": "command"
+      },
+      "operation_object": "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::73",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/workspace_setup.sh:73:73:dynamic_code_execution",
+      "source_end_line": 73,
+      "source_start_line": 73
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::73"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0034"
+    ],
+    "artifact_paths": [
+      "scripts/workspace_setup.sh"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "EXECUTE_BRANCH=$(echo \"$result\" | node -e \"try{process.stdout.write(JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).branch||'')}catch(_){}\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::74": "command"
+      },
+      "operation_object": "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::74",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/workspace_setup.sh:74:74:dynamic_code_execution",
+      "source_end_line": 74,
+      "source_start_line": 74
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/workspace_setup.sh::dynamic_code_execution::74"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "dynamic_code_execution"
+  }
+]

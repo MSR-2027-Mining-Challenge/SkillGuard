@@ -1,0 +1,13 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "obj::operation::SKILL.md::package_installation::65" [label="obj::operation::SKILL.md::package_installation::65\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=software_installation\nsubtype=package_installation"];
+  "value::503133a644423746090b" [label="value::503133a644423746090b\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00000" [label="contains"];
+  "obj::operation::SKILL.md::package_installation::65" -> "value::503133a644423746090b" [label="value_flow"];
+  "sso_00000" -> "obj::operation::SKILL.md::package_installation::65" [label="has_operand"];
+}

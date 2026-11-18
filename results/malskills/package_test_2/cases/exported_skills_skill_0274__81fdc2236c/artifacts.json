@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: networkmanagementclient\r\ndescription: \"NetworkManagementClient API skill. Use when working with NetworkManagementClient for subscriptions. Covers 6 endpoints.\"\r\nversion: 1.0.0\r\ngenerator: lapsh\r\n---\r\n\r\n# NetworkManagementClient\r\nAPI version: 2019-11-01\r\n\r\n## Auth\r\nOAuth2\r\n\r\n## Base URL\r\nhttps://management.azure.com\r\n\r\n## Setup\r\n1. Configure auth: OAuth2\r\n2. GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups -- verify access\r\n\r\n## Endpoints\r\n\r\n6 endpoints across 1 groups. See references/api-spec.lap for full details.\r\n\r\n### subscriptions\r\n| Method | Path | Description |\r\n|--------|------|-------------|\r\n| GET | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName} | Gets the specified ipGroups. |\r\n| PUT | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName} | Creates or updates an ipGroups in a specified resource group. |\r\n| PATCH | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName} | Updates tags of an IpGroups resource. |\r\n| DELETE | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName} | Deletes the specified ipGroups. |\r\n| GET | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups | Gets all IpGroups in a resource group. |\r\n| GET | /subscriptions/{subscriptionId}/providers/Microsoft.Network/ipGroups | Gets all IpGroups in a subscription. |\r\n\r\n## Common Questions\r\n\r\nMatch user requests to endpoints in references/api-spec.lap. Key patterns:\r\n- \"Get ipGroup details?\" -> GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName}\r\n- \"Update a ipGroup?\" -> PUT /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName}\r\n- \"Partially update a ipGroup?\" -> PATCH /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName}\r\n- \"Delete a ipGroup?\" -> DELETE /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups/{ipGroupsName}\r\n- \"List all ipGroups?\" -> GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups\r\n- \"List all ipGroups?\" -> GET /subscriptions/{subscriptionId}/providers/Microsoft.Network/ipGroups\r\n- \"How to authenticate?\" -> See Auth section\r\n\r\n## Response Tips\r\n- Check response schemas in references/api-spec.lap for field details\r\n- Create/update endpoints typically return the created/updated object\r\n\r\n## References\r\n- Full spec: See references/api-spec.lap for complete endpoint details, parameter tables, and response schemas\r\n\r\n> Generated from the official API spec by [LAP](https://lap.sh)\r\n",
+    "content_hash": "cfa07ba74a14f6e66761f0e97465adca8c442ccf1f5e6ec6469d50c9e5744895",
+    "generated": false,
+    "is_text": true,
+    "line_count": 54,
+    "relative_path": "SKILL.md",
+    "size_bytes": 3001,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

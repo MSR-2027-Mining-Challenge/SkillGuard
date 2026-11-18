@@ -1,0 +1,150 @@
+[
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/key-pool__fence_2.py"
+    ],
+    "attributes": {
+      "matched_text": "os.environ.get(env_var, \"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/key-pool__fence_2.py::environment_access::111": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/key-pool__fence_2.py::environment_access::111",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 111,
+      "source_start_line": 111
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/key-pool__fence_2.py::environment_access::111"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/key-pool__fence_2.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "or getattr(settings, f\"{provider}_api_keys\", \"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::112": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::112",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/key-pool__fence_2.py:112:112:getattr()",
+      "source_end_line": 112,
+      "source_start_line": 112
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::112"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/key-pool__fence_2.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "or getattr(settings, f\"{provider}_api_key\", \"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::113": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::113",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/key-pool__fence_2.py:113:113:getattr()",
+      "source_end_line": 113,
+      "source_start_line": 113
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::113"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/key-pool__fence_2.py"
+    ],
+    "attributes": {
+      "matched_text": "override = os.environ.get(\n                    f\"AGENT_{agent_name.upper()}_{provider.upper()}_MODEL\"\n                )",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/key-pool__fence_2.py::override": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/key-pool__fence_2.py::override",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 126,
+      "source_start_line": 124
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/key-pool__fence_2.py::override"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/key-pool__fence_2.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "max_concurrent = getattr(settings, \"max_concurrent_per_key\", MAX_CONCURRENT_PER_KEY)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::154": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::154",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/key-pool__fence_2.py:154:154:getattr()",
+      "source_end_line": 154,
+      "source_start_line": 154
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/key-pool__fence_2.py::dynamic_code_execution::154"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  }
+]

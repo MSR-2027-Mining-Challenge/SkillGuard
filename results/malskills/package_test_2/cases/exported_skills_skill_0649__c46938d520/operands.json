@@ -1,0 +1,32 @@
+[
+  {
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1",
+    "identity_key": ".malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1",
+    "object_kind": "operation",
+    "operand_id": "obj::operation::.malskills_fences/SKILL__fence_5.sh::system_configuration_modify::1",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "target"
+  },
+  {
+    "display_value": ".malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+    "identity_key": ".malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_5.sh::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  },
+  {
+    "display_value": "SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+    "identity_key": "SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+    "object_kind": "symbolic_reference",
+    "operand_id": "obj::symbolic_reference::SKILL.md::data_receive::curl http://localhost:8000/metrics | grep -E \"vllm_(requests|tokens|cache)\"",
+    "resolution_methods": [
+      "syntax"
+    ],
+    "role": "endpoint"
+  }
+]

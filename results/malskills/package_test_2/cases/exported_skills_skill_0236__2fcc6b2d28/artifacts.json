@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: mkg-recall\r\ndescription: Read-only Meta Knowledge Graph memory lookup for Codex. Use to fetch and summarize relevant project-scoped and user-scoped Learning or Decision context from Neo4j before planning, reviewing, or orchestrating work.\r\n---\r\n\r\n# MKG Recall\r\n\r\nRetrieve relevant memory from the Meta Knowledge Graph and return only the\r\nuseful facts. This is the Codex skill equivalent of the Claude Code\r\n`mkg-recall` subagent.\r\n\r\n## Workflow\r\n\r\n1. Identify whether the request needs project-scoped facts, user-scoped facts, or\r\n   both.\r\n2. Use read-only MKG tools only. Prefer `project_get_context` for ranked recall;\r\n   use `neo4j_read_cypher` for custom read-only queries.\r\n3. Never write to the graph from this skill.\r\n4. Prefer `approved` learnings as policy. Treat `candidate` learnings as hints\r\n   and `Decision` nodes as context, not policy.\r\n5. When querying Neo4j through MCP, wrap temporal values with `toString(...)` so\r\n   date/datetime values do not serialize as `{}`.\r\n\r\n## Output\r\n\r\nReturn a short ranked list of relevant learnings and decisions, including status\r\nand confidence when available, followed by one or two sentences of synthesis. If\r\nnothing relevant exists, say so plainly.\r\n",
+    "content_hash": "ccdcc1b6d535e84fe57b2972d3cc3afa84e863479660664bdc7db723af796524",
+    "generated": false,
+    "is_text": true,
+    "line_count": 29,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1222,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

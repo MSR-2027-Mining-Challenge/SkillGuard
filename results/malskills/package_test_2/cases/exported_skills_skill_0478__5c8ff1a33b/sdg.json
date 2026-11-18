@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.ts",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "target": "value::27c174b74a330a45baad",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.ts",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "server_listen",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "identity_key": ".malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::27c174b74a330a45baad",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_2.sh"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::6a35ef51c3de93d640a1" [label="value::6a35ef51c3de93d640a1\nkind=value"];
+  "value::b140421ce6f87327dbf8" [label="value::b140421ce6f87327dbf8\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"" -> "value::6a35ef51c3de93d640a1" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\" -> "value::b140421ce6f87327dbf8" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -s \"$BASE/v1/mcp/server\" -H \"Authorization: Bearer $KEY\"" [label="has_operand"];
+  "sso_00001" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_2.sh::data_receive::curl -s -X DELETE \"$BASE/v1/mcp/server/<server_id>\" \\" [label="has_operand"];
+}

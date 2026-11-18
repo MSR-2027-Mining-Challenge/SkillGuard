@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: multica\r\ndescription: Managed-agent teamwork, issue assignment, progress tracking, reusable-skill compounding, and handoff workflow adapted from multica-ai/multica for OMK. Use when coordinating multiple agents, converting work into agent-ready tasks, tracking blockers, or turning repeated solutions into skills.\r\n---\r\n\r\n# multica\r\n\r\nSource basis: multica-ai/multica at commit 24a59098d65e52797df6a4f4e4de2a6299f10afc. This OMK skill is a compact adaptation, not a vendored copy of upstream prompts or code.\r\n\r\n## Use when\r\n\r\n- Work needs multiple lanes, agent handoffs, reviewer/QA passes, or issue-board style tracking.\r\n- A user asks to coordinate OMX/Kimi/Codex agents or compound reusable skills.\r\n- You need to turn a broad request into assignable, verifiable tasks.\r\n\r\n## OMK workflow\r\n\r\n1. Define the board: goal, stop condition, lanes, owners, write scopes, verification gates, and worker limit.\r\n2. Split only independent work. Keep blocking critical-path tasks local unless delegation was explicitly requested.\r\n3. For each lane, provide goal, scope, files, constraints, expected output, and proof required.\r\n4. Track lifecycle: queued, in progress, blocked, review, verified, done. Include blocker reason and next action.\r\n5. Merge results through a reviewer/integrator pass. Do not accept agent output without diff review and gates.\r\n6. When a repeated pattern proves useful, convert it into a compact OMK skill with source, trigger, workflow, output contract, and guardrails.\r\n\r\n## Output contract\r\n\r\nReturn:\r\n\r\n- lane/task board\r\n- agent or local owner per lane\r\n- status and blockers\r\n- integration decisions\r\n- reusable skill candidates\r\n- verification evidence\r\n\r\n## Guardrails\r\n\r\n- Respect configured worker limits and user permission for parallel agents.\r\n- Do not run install scripts, Docker, cloud setup, or daemon startup unless the user explicitly requests that operational change.\r\n- Do not let agent parallelism create overlapping write scopes.\r\n",
+    "content_hash": "eb6dc650712331078fc65276c946b4313f0523d6c7a76c6129d17e4c969f24a3",
+    "generated": false,
+    "is_text": true,
+    "line_count": 41,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1984,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

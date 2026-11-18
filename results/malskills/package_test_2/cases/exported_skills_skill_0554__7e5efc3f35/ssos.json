@@ -1,0 +1,822 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "references/custom-symbol-design.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "| Validate | `validate-template` (lint) \u2192 SF Symbols app File > Validate Templates or Xcode import (authoritative) |",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/custom-symbol-design.md::dynamic_code_execution::70": "command"
+      },
+      "operation_object": "obj::operation::references/custom-symbol-design.md::dynamic_code_execution::70",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/custom-symbol-design.md:70:70:dynamic_code_execution",
+      "source_end_line": 70,
+      "source_start_line": 70
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::references/custom-symbol-design.md::dynamic_code_execution::70"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(path, encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/sf_symbols.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/sf_symbols.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 77,
+      "source_start_line": 77
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/sf_symbols.py::encoding"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(\n                f\"error: SF Symbols metadata not found at {directory}\\n\"\n                \"Install the SF Symbols app (https://developer.apple.com/sf-symbols/)\\n\"\n                \"or point at it with --metadata-dir / SF_SYMBOLS_METADATA_DIR.\"\n            )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::90": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::90",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 94,
+      "source_start_line": 90
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::90"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(os.path.join(self.directory, fname), \"rb\") as fh:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::file_access::99": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::file_access::99",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 99,
+      "source_start_line": 99
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::file_access::99"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "directory = (getattr(args, \"metadata_dir\", None)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::159": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::159",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:159:159:getattr()",
+      "source_end_line": 159,
+      "source_start_line": 159
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::159"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "or os.environ.get(\"SF_SYMBOLS_METADATA_DIR\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::environment_access::160": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::environment_access::160",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 160,
+      "source_start_line": 160
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::environment_access::160"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(\n            \"error: this command renders symbols via macOS AppKit and needs PyObjC.\\n\"\n            \"Install it with:    python3 -m pip install pyobjc-framework-cocoa\\n\"\n            \"          (or):    uv pip install pyobjc-framework-cocoa\\n\"\n            \"Rendering requires macOS. The metadata commands (search/list/info/\\n\"\n            \"categories/custom/validate-template) run anywhere with no dependencies.\"\n        )",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::175": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::175",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 181,
+      "source_start_line": 175
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::175"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "names = meta.base_names() if getattr(args, \"base_only\", True) else sorted(meta.names)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::268": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::268",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:268:268:getattr()",
+      "source_end_line": 268,
+      "source_start_line": 268
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::268"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "if getattr(args, \"category\", None):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::269": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::269",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:269:269:getattr()",
+      "source_end_line": 269,
+      "source_start_line": 269
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::269"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "if getattr(args, \"contains\", None):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::272": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::272",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:272:272:getattr()",
+      "source_end_line": 272,
+      "source_start_line": 272
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::272"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "if getattr(args, \"starts_with\", None):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::274": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::274",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:274:274:getattr()",
+      "source_end_line": 274,
+      "source_start_line": 274
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::274"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "if getattr(args, \"search\", None):",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::276": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::276",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:276:276:getattr()",
+      "source_end_line": 276,
+      "source_start_line": 276
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::dynamic_code_execution::276"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(f\"error: unknown symbol '{name}' \u2014 try: sf_symbols.py search \\\"{args.name}\\\"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::307": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::307",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 307,
+      "source_start_line": 307
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::307"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(f\"error: {err}\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::914": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::914",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 914,
+      "source_start_line": 914
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::914"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(\"error: the artwork has zero width or height\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::920": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::920",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 920,
+      "source_start_line": 920
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::920"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(\"error: --import needs --out \u2014 the output filename becomes the \"\n                 \"symbol's display name in the app (e.g. --out my.bolt.svg)\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::943": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::943",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 944,
+      "source_start_line": 943
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::943"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/sf_symbols.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/sf_symbols.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 946,
+      "source_start_line": 946
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/sf_symbols.py::encoding"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::1065": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::1065",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1065,
+      "source_start_line": 1065
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::1065"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "result = subprocess.run([\"open\", \"-a\", \"SF Symbols\", path],\n                            capture_output=True, text=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::system_command_execution::1080": "command"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::system_command_execution::1080",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/sf_symbols.py:1080:1081:subprocess.run()",
+      "source_end_line": 1081,
+      "source_start_line": 1080
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::system_command_execution::1080"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(\"error: could not hand the file to the SF Symbols app \u2014 is it \"\n                 f\"installed?\\n{result.stderr.strip()}\\n\"\n                 \"Get it at https://developer.apple.com/sf-symbols/\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::1083": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::1083",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1085,
+      "source_start_line": 1083
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::1083"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(\"error: template failed structural validation \u2014 fix the issues \"\n                 \"above before importing (the app rejects or mangles bad templates)\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::1098": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::1098",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1099,
+      "source_start_line": 1098
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::1098"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(f\"error: macOS could not resolve symbol '{args.name}' \u2014 \"\n                 f\"check the name with: sf_symbols.py search \\\"{args.name}\\\"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::1111": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::1111",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1112,
+      "source_start_line": 1111
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::1111"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/sf_symbols.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/sf_symbols.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1114,
+      "source_start_line": 1114
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00022"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/sf_symbols.py::encoding"
+    ],
+    "sso_id": "sso_00022",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "os.makedirs(out_dir, exist_ok=True)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::file_create::1132": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::file_create::1132",
+      "path_class": "ordinary",
+      "source_end_line": 1132,
+      "source_start_line": 1132,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00023"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::file_create::1132"
+    ],
+    "sso_id": "sso_00023",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(out_path, \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/sf_symbols.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/sf_symbols.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1143,
+      "source_start_line": 1143
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00024"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/sf_symbols.py::encoding"
+    ],
+    "sso_id": "sso_00024",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/sf_symbols.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/sf_symbols.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1219,
+      "source_start_line": 1219
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00025"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/sf_symbols.py::encoding"
+    ],
+    "sso_id": "sso_00025",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(f\"error: macOS could not resolve symbol '{args.name}' \u2014 \"\n                     f\"check the name with: sf_symbols.py search \\\"{args.name}\\\"\")",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/sf_symbols.py::credential_data_access::1232": "path"
+      },
+      "operation_object": "obj::operation::scripts/sf_symbols.py::credential_data_access::1232",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1233,
+      "source_start_line": 1232
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00026"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/sf_symbols.py::credential_data_access::1232"
+    ],
+    "sso_id": "sso_00026",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0010"
+    ],
+    "artifact_paths": [
+      "scripts/sf_symbols.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.out, \"w\", encoding=\"utf-8\") as fh:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/sf_symbols.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/sf_symbols.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 1250,
+      "source_start_line": 1250
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00027"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/sf_symbols.py::encoding"
+    ],
+    "sso_id": "sso_00027",
+    "subtype": "file_access"
+  }
+]

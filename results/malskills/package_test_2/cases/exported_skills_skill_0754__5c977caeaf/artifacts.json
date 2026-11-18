@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: publish\r\ndescription: Draft email and tweet for a new blog post. Reads the latest post from campedersen.com, generates Kit.com broadcast copy and a tweet, ready to paste.\r\nallowed-tools: Read, Glob, Bash\r\n---\r\n\r\n# Publish\r\n\r\nDrafts promotional content for a new blog post.\r\n\r\n## Usage\r\n\r\n- `/publish` - Draft for most recent post\r\n- `/publish [slug]` - Draft for specific post\r\n\r\n## Workflow\r\n\r\n1. Find the post in `~/Developer/campedersen.com/src/posts/`\r\n2. Read it fully to understand the hook\r\n3. Generate email + tweet using voice from `/blog` skill\r\n4. Output both in copy-pasteable format\r\n\r\n## Email Format\r\n\r\n```\r\nSubject: [Post Title]\r\n\r\n[1-2 sentence hook - the problem or revelation]\r\n\r\n[Optional: 1 sentence context]\r\n\r\nRead it here: https://campedersen.com/[slug]\r\n\r\n- Cam\r\n```\r\n\r\n## Tweet Format\r\n\r\n```\r\n[hook that stands alone - lowercase, casual]\r\n\r\nhttps://campedersen.com/[slug]\r\n```\r\n\r\nMax 280 chars. No hashtags. No emojis.\r\n\r\n## Voice Quick Reference\r\n\r\nSee `/blog` for full guidelines. Key points:\r\n\r\n- Lead with the problem solved or a weird specific detail\r\n- Lowercase for tweets, casual punctuation\r\n- Short sentences, dashes over semicolons\r\n- One exclamation max\r\n- \"shipped\" not \"launched\", \"wrote\" not \"published\"\r\n- End email with \"- Cam\"\r\n\r\n**Never say:**\r\n- \"We're excited to announce...\"\r\n- \"Check out this amazing...\"\r\n- \"I'm thrilled to share...\"\r\n\r\n## Examples\r\n\r\n**Debugging post:**\r\n\r\nEmail:\r\n```\r\nSubject: Hung by a Thread\r\n\r\nMy robot froze at 2am. Same iteration every time - 1,615. Took 8 hours to find a 2-line fix.\r\n\r\nWrote about rayon deadlocks and why you should never call into a library while holding a mutex.\r\n\r\nRead it here: https://campedersen.com/rayon-mutex-deadlock\r\n\r\n- Cam\r\n```\r\n\r\nTweet:\r\n```\r\nmy robot froze at 2am. 8 hours of debugging. the fix was 2 lines.\r\n\r\nhttps://campedersen.com/rayon-mutex-deadlock\r\n```\r\n\r\n**Technical explainer:**\r\n\r\nEmail:\r\n```\r\nSubject: Cutting Up Curved Things\r\n\r\nYour GPU doesn't know what a cylinder is. It only knows triangles.\r\n\r\nWrote about how CAD geometry becomes something a graphics card can actually draw.\r\n\r\nRead it here: https://campedersen.com/tessellation\r\n\r\n- Cam\r\n```\r\n\r\nTweet:\r\n```\r\nyour GPU doesn't know what a cylinder is. it only knows triangles.\r\n\r\nwrote about tessellation - with a pizza you can eat.\r\n\r\nhttps://campedersen.com/tessellation\r\n```\r\n",
+    "content_hash": "45d0ce6c0b01341089f308d26a1a4c703bb11c07482fc3ce489cc50ca7ebeeb6",
+    "generated": false,
+    "is_text": true,
+    "line_count": 110,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2367,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

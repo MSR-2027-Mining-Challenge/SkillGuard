@@ -1,0 +1,354 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_12.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": "md_to_adf.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::2",
+      "target": "value::dedc3e5d66e982d87da5",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_read::3",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_read::3",
+      "target": "value::a44b1b4ed2c18fc56862",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00002",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_delete::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_delete::15",
+      "target": "value::4ae09ef5ce6409307c87",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::md_to_adf.py::credential_data_access::139",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::md_to_adf.py::credential_data_access::139",
+      "target": "value::c28eddd5055f89cea55d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00004",
+      "target": "obj::operation::md_to_adf.py::file_access::141",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::md_to_adf.py::file_access::141",
+      "target": "value::eeb9158ad9a09de8ab66",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0008",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::md_to_adf.py::file_access::147",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::md_to_adf.py::file_access::147",
+      "target": "value::d19c601905bfef073ebe",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_12.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": "md_to_adf.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::2",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_search::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::dedc3e5d66e982d87da5",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::file_search::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_read::3",
+      "identity_key": ".malskills_fences/SKILL__fence_12.sh::file_read::3",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a44b1b4ed2c18fc56862",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_12.sh::file_read::3",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_12.sh::file_delete::15",
+      "identity_key": ".malskills_fences/SKILL__fence_12.sh::file_delete::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::4ae09ef5ce6409307c87",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_12.sh::file_delete::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::md_to_adf.py::credential_data_access::139",
+      "identity_key": "md_to_adf.py::credential_data_access::139",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::c28eddd5055f89cea55d",
+      "kind": "value",
+      "value": "md_to_adf.py::credential_data_access::139",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::md_to_adf.py::file_access::141",
+      "identity_key": "md_to_adf.py::file_access::141",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::eeb9158ad9a09de8ab66",
+      "kind": "value",
+      "value": "md_to_adf.py::file_access::141",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_access",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::md_to_adf.py::file_access::147",
+      "identity_key": "md_to_adf.py::file_access::147",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::d19c601905bfef073ebe",
+      "kind": "value",
+      "value": "md_to_adf.py::file_access::147",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

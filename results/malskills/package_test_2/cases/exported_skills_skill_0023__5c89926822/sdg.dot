@@ -1,0 +1,16 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=markdown\npath=references/incremental-implementation.md"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/incremental-implementation__fence_6.ts"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=javascript\npath=references/.malskills_fences/incremental-implementation__fence_7.ts"];
+  "obj::operation::references/incremental-implementation.md::dynamic_code_execution::133" [label="obj::operation::references/incremental-implementation.md::dynamic_code_execution::133\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=payload_execution\nsubtype=dynamic_code_execution"];
+  "value::8c8319a1c3f1f88b8fae" [label="value::8c8319a1c3f1f88b8fae\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::operation::references/incremental-implementation.md::dynamic_code_execution::133" -> "value::8c8319a1c3f1f88b8fae" [label="value_flow"];
+  "sso_00000" -> "obj::operation::references/incremental-implementation.md::dynamic_code_execution::133" [label="has_operand"];
+}

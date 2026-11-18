@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: onesignal-setup\r\ndescription: Use this skill when the user wants to install, configure, authenticate, test, or troubleshoot the OneSignal Cursor plugin or OneSignal MCP server. Triggers on \"set up OneSignal in Cursor\", \"configure the OneSignal MCP\", \"how do I connect Cursor to OneSignal\", or any first-run plugin setup question.\r\n---\r\n\r\n# OneSignal Cursor Plugin Setup\r\n\r\n## Purpose\r\n\r\nHelp the user connect Cursor to OneSignal through the hosted OneSignal MCP server.\r\n\r\nThis plugin uses OAuth through the hosted OneSignal MCP server.\r\n\r\n## Required Setup\r\n\r\nThe user needs:\r\n\r\n- Cursor with plugin support.\r\n- A OneSignal account.\r\n\r\n## Authentication Guidance\r\n\r\nTell users to follow Cursor's OAuth prompt for the OneSignal MCP server. Never ask users to paste OAuth tokens, API keys, private keys, or credentials into chat, source files, rules, skills, commits, screenshots, or issue reports.\r\n\r\nIf Cursor was already open when the plugin was installed or updated, ask the user to reload Cursor with `Developer: Reload Window` or fully restart Cursor.\r\n\r\n## First Test\r\n\r\nUse a read-only or utility MCP tool first. Prefer:\r\n\r\n- `onesignal_health`\r\n- `onesignal_config`\r\n- `onesignal_reference_overview`\r\n\r\nDo not start with message sends, segment updates, template updates, Journey creation, exports, or subscription transfers.\r\n\r\n## Troubleshooting\r\n\r\nIf tools do not appear:\r\n\r\n1. Confirm the plugin is installed or symlinked into `~/.cursor/plugins/local/onesignal`.\r\n2. Confirm `.cursor-plugin/plugin.json` is at the plugin root.\r\n3. Confirm `mcp.json` has a top-level `mcpServers` object.\r\n4. Reload Cursor.\r\n5. Check Cursor's MCP logs from the Output panel.\r\n\r\nIf tools appear but calls fail:\r\n\r\n1. Confirm the user completed the OneSignal OAuth flow in Cursor.\r\n2. Confirm the account has access to OneSignal MCP.\r\n3. Check whether the server URL is `https://api.onesignal.com/mcp/oauth`.\r\n4. Retry with a read-only utility tool.\r\n\r\n## Safety Defaults\r\n\r\nFor any write or send operation:\r\n\r\n- Prefer test users and narrow test audiences.\r\n- Summarize audience, content, timing, and expected effect.\r\n- Require explicit user approval before running the tool.\r\n- Add an extra confirmation for large audiences, production sends, deletes, or irreversible operations.\r\n",
+    "content_hash": "d6ecd4887ab25e33771154849fde9e93b535df398b1357bb97245cf81fcbb40c",
+    "generated": false,
+    "is_text": true,
+    "line_count": 62,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2287,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

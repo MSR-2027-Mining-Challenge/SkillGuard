@@ -1,0 +1,148 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": "aggregate.mjs",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "path": "refute-architectural.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "path": "refute-infosec.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0006",
+      "path": "refute-methodology.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0007",
+      "path": "refute-qa.md",
+      "type": "markdown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0003",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::operation::aggregate.mjs::system_command_execution::218",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::aggregate.mjs::system_command_execution::218",
+      "target": "value::00f30acbe32eb7391823",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "aggregate.mjs",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "refute-architectural.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": "refute-infosec.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": "refute-methodology.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": "refute-qa.md",
+      "type": "markdown"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::aggregate.mjs::system_command_execution::218",
+      "identity_key": "aggregate.mjs::system_command_execution::218",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::00f30acbe32eb7391823",
+      "kind": "value",
+      "value": "aggregate.mjs::system_command_execution::218",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

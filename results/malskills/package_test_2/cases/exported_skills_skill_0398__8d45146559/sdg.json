@@ -1,0 +1,327 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00000",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "target": "value::0c2e03f08db5555724f0",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::category",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::category",
+      "target": "value::da0c475f6a763aa48cb8",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00002",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "target": "value::e9a99cbcd8f258f703be",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00003",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "target": "value::6998d9a339fc1cca9b6c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00004",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "target": "value::3370d6a44d3fc562474a",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00005",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "target": "value::228932cdd6692e378b91",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0000",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00006",
+      "target": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "target": "value::cf3c353f14bb80fc1da9",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::0c2e03f08db5555724f0",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.sh::category",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::category",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::da0c475f6a763aa48cb8",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::category",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::e9a99cbcd8f258f703be",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "identity_key": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::6998d9a339fc1cca9b6c",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_3.sh::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "identity_key": "SKILL.md::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::3370d6a44d3fc562474a",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -sS \"${FRETUM_API_BASE:-https://app.fretum.ai}/api/bundles?category=<CAT>&maxPrice=<MAX>&limit=<N>\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "identity_key": "SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::228932cdd6692e378b91",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?category=outreach&maxPrice=0.20&limit=5\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "data_receive",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "identity_key": "SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::cf3c353f14bb80fc1da9",
+      "kind": "value",
+      "value": "SKILL.md::data_receive::curl -sS \"https://app.fretum.ai/api/bundles?limit=20\"",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

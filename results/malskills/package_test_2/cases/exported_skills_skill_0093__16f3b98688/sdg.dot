@@ -1,0 +1,21 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=python\npath=.malskills_fences/SKILL__fence_1.py"];
+  "obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28" [label="obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28\nkind=operand"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv" [label="obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=sensitive_data_access\nsubtype=environment_access"];
+  "value::0e8752399daf42d22b92" [label="value::0e8752399daf42d22b92\nkind=value"];
+  "value::4aa466a5a596ec835fb0" [label="value::4aa466a5a596ec835fb0\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28" -> "value::4aa466a5a596ec835fb0" [label="value_flow"];
+  "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv" -> "value::0e8752399daf42d22b92" [label="value_flow"];
+  "sso_00000" -> "obj::symbolic_reference::.malskills_fences/SKILL__fence_1.py::dotenv" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_1.py::environment_access::28" [label="has_operand"];
+}

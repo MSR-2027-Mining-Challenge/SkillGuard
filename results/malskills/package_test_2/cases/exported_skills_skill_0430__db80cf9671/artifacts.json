@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: draft\r\ndescription: \"Create a new LinkedIn post or strategic comment. Uses brand voice, strategy, and patterns. +Comment draft mode.\"\r\nuser-invocable: true\r\nallowed-tools:\r\n  - Read\r\n  - Write\r\n  - Edit\r\n  - Agent\r\n  - Glob\r\n  - Grep\r\n---\r\n\r\n# /draft \u2014 Create Post or Comment\r\n\r\nCreates LinkedIn post drafts or strategic comments.\r\n\r\n**IMPORTANT: Delegate the work to the `content-writer` agent. Do NOTHING yourself \u2014 start the agent with the `Agent` tool and pass the topic + mode (Post or Comment).**\r\n\r\n## Usage\r\n\r\n```\r\n/draft <topic>              # Post about a topic\r\n/draft                      # Take next approved idea from pipeline\r\n/draft comment <urn>        # Comment draft for a post (absorbs /comment)\r\n```\r\n\r\n## Workflow\r\n\r\n### Post Draft\r\n\r\n1. **Determine topic:**\r\n   - Argument provided? \u2192 Use that topic\r\n   - No argument? \u2192 Oldest idea with status \"Approved\" from drafts/\r\n   - No approved idea? \u2192 Ask user or suggest `/ideas`\r\n\r\n2. **Start `content-writer` agent** with the topic\r\n\r\n3. **Present draft** \u2014 show the written post to the user\r\n\r\n4. **Feedback loop:**\r\n   - User can suggest changes\r\n   - Iteratively improve post\r\n   - When satisfied: Save to drafts/draft-{date}-{slug}.md\r\n\r\n### Comment Draft (/draft comment <urn>)\r\n\r\n1. **Load target post** (from data/feed-insights/ or via URN)\r\n2. **Start `content-writer` agent** in comment mode:\r\n   - Reference the post content (not generic)\r\n   - Bring in own expertise\r\n   - Max 300-500 characters\r\n   - Question at the end (encourages thread)\r\n3. **Show to user** \u2014 never post automatically\r\n\r\n## Rules\r\n\r\n- **Always show the draft** before saving\r\n- **User has the final word** \u2014 never finalize autonomously\r\n- **One draft per call** \u2014 not multiple at once\r\n- **NEVER post automatically** \u2014 user copies and posts manually\r\n",
+    "content_hash": "488975e218fb11e9513b93f4e9a6e7d5298d9872aaf8b02e690bf8dd844165b9",
+    "generated": false,
+    "is_text": true,
+    "line_count": 62,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1834,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

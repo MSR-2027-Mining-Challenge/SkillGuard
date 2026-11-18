@@ -1,0 +1,38 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_7.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::2" [label="obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::2\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5" [label="obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::2" [label="obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::2\nkind=operand"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::5" [label="obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::5\nkind=operand"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:8000/api/v1/schedule/block/10 | jq '.assignments | length'" [label="obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:8000/api/v1/schedule/block/10 | jq '.assignments | length'\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_search"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=file_operation\nsubtype=file_search"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "sso_00004" [label="sso_00004\nkind=sso\ntype=network_access\nsubtype=data_receive"];
+  "value::3d47e8754a67aa464f0a" [label="value::3d47e8754a67aa464f0a\nkind=value"];
+  "value::44cec8deee1165016459" [label="value::44cec8deee1165016459\nkind=value"];
+  "value::a882a25a59577acfc283" [label="value::a882a25a59577acfc283\nkind=value"];
+  "value::c0d75aadf74618613809" [label="value::c0d75aadf74618613809\nkind=value"];
+  "value::eab28a3e2c304b8fb65a" [label="value::eab28a3e2c304b8fb65a\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0000" -> "sso_00004" [label="contains"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "art_0001" -> "sso_00001" [label="contains"];
+  "art_0001" -> "sso_00002" [label="contains"];
+  "art_0001" -> "sso_00003" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::2" -> "value::eab28a3e2c304b8fb65a" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5" -> "value::c0d75aadf74618613809" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::2" -> "value::a882a25a59577acfc283" [label="value_flow"];
+  "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::5" -> "value::3d47e8754a67aa464f0a" [label="value_flow"];
+  "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:8000/api/v1/schedule/block/10 | jq '.assignments | length'" -> "value::44cec8deee1165016459" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::2" [label="has_operand"];
+  "sso_00001" -> "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::2" [label="has_operand"];
+  "sso_00002" -> "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_search::5" [label="has_operand"];
+  "sso_00003" -> "obj::operation::.malskills_fences/SKILL__fence_7.sh::file_read::5" [label="has_operand"];
+  "sso_00004" -> "obj::symbolic_reference::SKILL.md::data_receive::curl -s http://localhost:8000/api/v1/schedule/block/10 | jq '.assignments | length'" [label="has_operand"];
+}

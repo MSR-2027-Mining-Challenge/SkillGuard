@@ -1,0 +1,17 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_1.sh"];
+  "art_0003" [label="art_0003\nkind=artifact\ntype=python\npath=scripts/data_adapter_reference.py"];
+  "art_0004" [label="art_0004\nkind=artifact\ntype=python\npath=scripts/train_reference.py"];
+  "obj::operation::scripts/data_adapter_reference.py::credential_data_access::47" [label="obj::operation::scripts/data_adapter_reference.py::credential_data_access::47\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::7ec9c0b8c25358545ad2" [label="value::7ec9c0b8c25358545ad2\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0003" -> "sso_00000" [label="contains"];
+  "obj::operation::scripts/data_adapter_reference.py::credential_data_access::47" -> "value::7ec9c0b8c25358545ad2" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/data_adapter_reference.py::credential_data_access::47" [label="has_operand"];
+}

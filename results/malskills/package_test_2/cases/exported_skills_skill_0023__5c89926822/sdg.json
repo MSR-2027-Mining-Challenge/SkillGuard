@@ -1,0 +1,104 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "references/incremental-implementation.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "references/.malskills_fences/incremental-implementation__fence_6.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/.malskills_fences/incremental-implementation__fence_7.ts",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00000",
+      "target": "obj::operation::references/incremental-implementation.md::dynamic_code_execution::133",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::references/incremental-implementation.md::dynamic_code_execution::133",
+      "target": "value::8c8319a1c3f1f88b8fae",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "references/incremental-implementation.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/incremental-implementation__fence_6.ts",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/.malskills_fences/incremental-implementation__fence_7.ts",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "dynamic_code_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::references/incremental-implementation.md::dynamic_code_execution::133",
+      "identity_key": "references/incremental-implementation.md::dynamic_code_execution::133",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::8c8319a1c3f1f88b8fae",
+      "kind": "value",
+      "value": "references/incremental-implementation.md::dynamic_code_execution::133",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

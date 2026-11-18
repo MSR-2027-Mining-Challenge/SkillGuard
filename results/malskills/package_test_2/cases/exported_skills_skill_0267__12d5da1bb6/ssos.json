@@ -1,0 +1,89 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "scripts/quality-score.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/quality-score.py::credential_data_access::101": "path"
+      },
+      "operation_object": "obj::operation::scripts/quality-score.py::credential_data_access::101",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 101,
+      "source_start_line": 101
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/quality-score.py::credential_data_access::101"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "scripts/quality-score.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(input_file, 'r', encoding='utf-8') as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/quality-score.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/quality-score.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 106,
+      "source_start_line": 106
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/quality-score.py::encoding"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "scripts/quality-score.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/quality-score.py::credential_data_access::113": "path"
+      },
+      "operation_object": "obj::operation::scripts/quality-score.py::credential_data_access::113",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 113,
+      "source_start_line": 113
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/quality-score.py::credential_data_access::113"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_ids": [
+      "art_0003"
+    ],
+    "artifact_paths": [
+      "aggregate.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(main(process.argv));",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::aggregate.mjs::system_command_execution::218": "command"
+      },
+      "operation_object": "obj::operation::aggregate.mjs::system_command_execution::218",
+      "parameter_bindings": [],
+      "sink_callsite_id": "aggregate.mjs:218:218:process.exit()",
+      "source_end_line": 218,
+      "source_start_line": 218
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::aggregate.mjs::system_command_execution::218"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  }
+]

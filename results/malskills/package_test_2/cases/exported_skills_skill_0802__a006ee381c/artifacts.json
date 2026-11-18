@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: restful-api-gin\r\ndescription: Padr\u00f5es de roteamento HTTP e Handlers com o framework Gin\r\nframeworks:\r\n  - gin\r\n---\r\n\r\n# RESTful API with Gin\r\n\r\nSkill que dita como a camada HTTP deve ser configurada.\r\n\r\n## Formato do Handler\r\n\r\n1. **Uso de JSON:**\r\n   - Todos os inputs (POST/PUT) devem ser feitos em JSON, consumidos utilizando `c.ShouldBindJSON` e todos os outputs devem retornar JSON usando `c.JSON`.\r\n\r\n2. **Responses:**\r\n   - Respostas de sucesso normalmente usam o formato: `{ \"data\": ... }`.\r\n   - Respostas de erro normalmente usam o formato: `{ \"error\": \"message\" }`.\r\n\r\n3. **Status Code:**\r\n   - Retorne `http.StatusOK` ou `http.StatusCreated` (200/201) para sucesso.\r\n   - `http.StatusBadRequest` (400) para erros de *parsing* e valida\u00e7\u00e3o de `BindJSON/Validate()`.\r\n   - `http.StatusNotFound` (404) quando um artefato que deveria existir n\u00e3o for encontrado, e `http.StatusInternalServerError` (500) para falhas imprevistas.\r\n\r\n4. **Registro:**\r\n   - Handlers devem pertencer ao pacote de handlers, depender via interface dos `Usecases` e ser exportados para inje\u00e7\u00e3o de depend\u00eancia na fun\u00e7\u00e3o principal (`router.go`).\r\n",
+    "content_hash": "65649fb35adc7cf1fc6fcb7344c4e3d1b9c741dfa259ba0c3596c2b1a6a3981b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 28,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1148,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

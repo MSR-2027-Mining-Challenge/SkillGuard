@@ -1,0 +1,696 @@
+[
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-parameters__fence_17.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-parameters__fence_17.sh::data_receive::curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-parameters__fence_17.sh::data_receive::curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-parameters__fence_17.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-parameters__fence_17.sh::data_receive::curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0020"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-parameters__fence_17.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-parameters__fence_17.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-parameters__fence_17.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-parameters__fence_17.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0053"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_12.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "getattr(usage, \"completion_tokens_details\", None)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::3": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::3",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/reasoning-models__fence_12.py:3:3:getattr()",
+      "source_end_line": 3,
+      "source_start_line": 3
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::3"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0053"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_12.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "and getattr(usage.completion_tokens_details, \"reasoning_tokens\", 0)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::4": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::4",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/reasoning-models__fence_12.py:4:4:getattr()",
+      "source_end_line": 4,
+      "source_start_line": 4
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::4"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0053"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_12.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "getattr(usage, \"prompt_tokens_details\", None)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::8": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::8",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/reasoning-models__fence_12.py:8:8:getattr()",
+      "source_end_line": 8,
+      "source_start_line": 8
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::8"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0053"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_12.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "and getattr(usage.prompt_tokens_details, \"cached_tokens\", 0)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::9": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::9",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/reasoning-models__fence_12.py:9:9:getattr()",
+      "source_end_line": 9,
+      "source_start_line": 9
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::9"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0053"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_12.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": ") or getattr(usage, \"cached_tokens\", 0)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::10": "command"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::10",
+      "parameter_bindings": [],
+      "sink_callsite_id": "references/.malskills_fences/reasoning-models__fence_12.py:10:10:getattr()",
+      "source_end_line": 10,
+      "source_start_line": 10
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reasoning-models__fence_12.py::dynamic_code_execution::10"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "dynamic_code_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0043"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_2.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/reasoning-models__fence_2.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/reasoning-models__fence_2.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/reasoning-models__fence_2.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/reasoning-models__fence_2.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0043"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/reasoning-models__fence_2.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/reasoning-models__fence_2.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/reasoning-models__fence_2.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/reasoning-models__fence_2.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0067"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_10.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_10.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_10.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/structured-outputs__fence_10.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_10.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0067"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_10.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/structured-outputs__fence_10.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/structured-outputs__fence_10.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/structured-outputs__fence_10.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0060"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_3.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_3.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_3.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/structured-outputs__fence_3.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_3.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0060"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/structured-outputs__fence_3.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/structured-outputs__fence_3.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/structured-outputs__fence_3.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0061"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_4.py"
+    ],
+    "attributes": {
+      "matched_text": "api_key=os.environ.get(\"TOGETHER_API_KEY\"),",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_4.py::api_key": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_4.py::api_key",
+      "secret_class": "api_credential",
+      "sensitivity_class": "contextual",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_4.py::api_key"
+    ],
+    "sso_id": "sso_00013",
+    "subtype": "environment_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0064"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_7.sh"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_7.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_7.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/structured-outputs__fence_7.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00014"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/structured-outputs__fence_7.sh::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00014",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0064"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/structured-outputs__fence_7.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"Authorization: Bearer $TOGETHER_API_KEY\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/structured-outputs__fence_7.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/structured-outputs__fence_7.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00015"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/structured-outputs__fence_7.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00015",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0002"
+    ],
+    "artifact_paths": [
+      "references/api-parameters.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/api-parameters.md::data_receive::curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/api-parameters.md::data_receive::curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/api-parameters.md:441:441:data_receive",
+      "source_end_line": 441,
+      "source_start_line": 441
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00016"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/api-parameters.md::data_receive::curl -s -D - -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00016",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0040"
+    ],
+    "artifact_paths": [
+      "references/reasoning-models.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/reasoning-models.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/reasoning-models.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/reasoning-models.md:86:86:data_receive",
+      "source_end_line": 86,
+      "source_start_line": 86
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00017"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/reasoning-models.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00017",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0057"
+    ],
+    "artifact_paths": [
+      "references/structured-outputs.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/structured-outputs.md:130:130:data_receive",
+      "source_end_line": 130,
+      "source_start_line": 130
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00018"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00018",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0057"
+    ],
+    "artifact_paths": [
+      "references/structured-outputs.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/structured-outputs.md:242:242:data_receive",
+      "source_end_line": 242,
+      "source_start_line": 242
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00019"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00019",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0057"
+    ],
+    "artifact_paths": [
+      "references/structured-outputs.md"
+    ],
+    "attributes": {
+      "dst_class": "external",
+      "endpoint": "curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "endpoint_class": "external",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/structured-outputs.md:321:321:data_receive",
+      "source_end_line": 321,
+      "source_start_line": 321
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00020"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/structured-outputs.md::data_receive::curl -X POST \"https://api.together.xyz/v1/chat/completions\" \\"
+    ],
+    "sso_id": "sso_00020",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0076"
+    ],
+    "artifact_paths": [
+      "scripts/debug_headers.ts"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/debug_headers.ts::system_command_execution::63": "command"
+      },
+      "operation_object": "obj::operation::scripts/debug_headers.ts::system_command_execution::63",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/debug_headers.ts:63:63:process.exit()",
+      "source_end_line": 63,
+      "source_start_line": 63
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00021"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/debug_headers.ts::system_command_execution::63"
+    ],
+    "sso_id": "sso_00021",
+    "subtype": "system_command_execution"
+  }
+]

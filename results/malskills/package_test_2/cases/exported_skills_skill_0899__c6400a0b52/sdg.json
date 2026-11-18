@@ -1,0 +1,115 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_1.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_2.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_6.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_7.js",
+      "type": "javascript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0004",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "target",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_7.js::cipher_object_creation::20",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_7.js::cipher_object_creation::20",
+      "target": "value::26f76710fb15dc8bb415",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.py",
+      "type": "python"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.js",
+      "type": "javascript"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_7.js",
+      "type": "javascript"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "cipher_object_creation",
+      "type": "cryptography"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_7.js::cipher_object_creation::20",
+      "identity_key": ".malskills_fences/SKILL__fence_7.js::cipher_object_creation::20",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "target"
+    },
+    {
+      "id": "value::26f76710fb15dc8bb415",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_7.js::cipher_object_creation::20",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

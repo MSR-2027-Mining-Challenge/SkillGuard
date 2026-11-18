@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: security\r\ndescription: Generate Tekton Task that uses Trivy to scan generated container for vulnerabilities.\r\nmetadata:\r\n  version: \"0.1\"\r\n  author: \"Alex Soto\"\r\n  standard: \"agentskills.io\"\r\n---\r\n\r\n# Vulnerabilities Scan\r\n\r\nGenerate a Tekton task that uses Trivy to scan a container image and abort the pipeline in case of critical or high vulnerabilities.\r\n\r\n## Instructions for Bob\r\n\r\n### Step 1: Generate a Tekton Task using Trivy \r\n\r\nThe task should receive as parameter the container image name.\r\nThe task should only fail if the container image contains CRITICAL or HIGH vulnerabilities.\r\n\r\n1. Use the `aquasec/trivy:0.50.0` container to run the `trivy` command.\r\n2. The `exit-code` should be 1 when a vulnerability is found.\r\n\r\nThe following snippet shows an example:\r\n\r\n```yaml\r\napiVersion: tekton.dev/v1\r\nkind: Task\r\nmetadata:\r\n  name: trivy-scan\r\nspec:\r\n  params:\r\n    - name: image-name\r\n      type: string\r\n  steps:\r\n    - name: scan\r\n      image: aquasec/trivy:0.50.0\r\n      script: |\r\n        trivy image --severity CRITICAL,HIGH \\\r\n          --exit-code 1 \\\r\n          $(params.image-name):$(git rev-parse --short HEAD)\r\n\r\n```\r\n\r\n## Critical\r\n- Use only trivy tool for vulnerabilities",
+    "content_hash": "cebe99f69de7727a35c812a6fc6efe7fc6a19f142f85f4a9d16640a321061855",
+    "generated": false,
+    "is_text": true,
+    "line_count": 46,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1211,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

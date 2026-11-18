@@ -1,0 +1,14 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_4.sh"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::9" [label="obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::9\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=file_operation\nsubtype=file_read"];
+  "value::a2fb91c582f32ac8b173" [label="value::a2fb91c582f32ac8b173\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0001" -> "sso_00000" [label="contains"];
+  "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::9" -> "value::a2fb91c582f32ac8b173" [label="value_flow"];
+  "sso_00000" -> "obj::operation::.malskills_fences/SKILL__fence_4.sh::file_read::9" [label="has_operand"];
+}

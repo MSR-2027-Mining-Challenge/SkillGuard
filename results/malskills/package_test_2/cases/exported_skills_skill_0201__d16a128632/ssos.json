@@ -1,0 +1,292 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "nutrigx_advisor.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::nutrigx_advisor.py::credential_data_access::59": "path"
+      },
+      "operation_object": "obj::operation::nutrigx_advisor.py::credential_data_access::59",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 59,
+      "source_start_line": 59
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::nutrigx_advisor.py::credential_data_access::59"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "nutrigx_advisor.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(panel_path) as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::nutrigx_advisor.py::file_access::61": "path"
+      },
+      "operation_object": "obj::operation::nutrigx_advisor.py::file_access::61",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 61,
+      "source_start_line": 61
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::nutrigx_advisor.py::file_access::61"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "nutrigx_advisor.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::nutrigx_advisor.py::credential_data_access::67": "path"
+      },
+      "operation_object": "obj::operation::nutrigx_advisor.py::credential_data_access::67",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 67,
+      "source_start_line": 67
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::nutrigx_advisor.py::credential_data_access::67"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "nutrigx_advisor.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::nutrigx_advisor.py::credential_data_access::89": "path"
+      },
+      "operation_object": "obj::operation::nutrigx_advisor.py::credential_data_access::89",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 89,
+      "source_start_line": 89
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::nutrigx_advisor.py::credential_data_access::89"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "parse_input.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, encoding=\"utf-8\", errors=\"replace\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::parse_input.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::parse_input.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 14,
+      "source_start_line": 14
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::parse_input.py::encoding"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "parse_input.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, encoding=\"utf-8\", errors=\"replace\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::parse_input.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::parse_input.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 38,
+      "source_start_line": 38
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::parse_input.py::encoding"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "parse_input.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, encoding=\"utf-8\", errors=\"replace\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::parse_input.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::parse_input.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 55,
+      "source_start_line": 55
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::parse_input.py::encoding"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "parse_input.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, encoding=\"utf-8\", errors=\"replace\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::parse_input.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::parse_input.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 62,
+      "source_start_line": 62
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::parse_input.py::encoding"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "parse_input.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, encoding=\"utf-8\", errors=\"replace\") as f:",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::parse_input.py::encoding": "path"
+      },
+      "operation_object": "obj::symbolic_reference::parse_input.py::encoding",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 82,
+      "source_start_line": 82
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::parse_input.py::encoding"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "repro_bundle.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(filepath, \"rb\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::repro_bundle.py::file_access::31": "path"
+      },
+      "operation_object": "obj::operation::repro_bundle.py::file_access::31",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 31,
+      "source_start_line": 31
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::repro_bundle.py::file_access::31"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "file_access"
+  }
+]

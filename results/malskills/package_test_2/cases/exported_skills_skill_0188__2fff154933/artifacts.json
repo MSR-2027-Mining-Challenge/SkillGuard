@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: scaffold-offline-queue\r\ndescription: \"Use when: scaffolding IndexedDB-based offline draft storage and upload queue logic for report submissions.\"\r\nargument-hint: \"Describe the payload fields, retry policy, and when queued items should auto-sync.\"\r\n---\r\n\r\n# Scaffold Offline Queue\r\n\r\n<system_prompt>\r\nYou are executing scaffold-offline-queue for the LikasLens apps/frontend tier.\r\n</system_prompt>\r\n\r\n<rules>\r\n- Use IndexedDB for durable offline queue storage with explicit schema versioning.\r\n- Keep payload serializable (text, image reference/blob metadata, GPS fields, timestamps).\r\n- Retry uploads on reconnect with backoff and idempotency-safe request keys when possible.\r\n- Ensure images sent from queue still pass EXIF stripping requirements before transmission.\r\n- Provide clear success/failure state transitions to prevent duplicate submissions.\r\n</rules>\r\n\r\n<skill_execution>\r\n1. Define queue schema, statuses, and lifecycle (`pending`, `retrying`, `synced`, `failed`).\r\n2. Generate IndexedDB utility methods (`enqueue`, `listPending`, `markSynced`, `markFailed`).\r\n3. Add online-event sync worker with retry/backoff flow.\r\n4. Provide integration points for form submit and UI status rendering.\r\n</skill_execution>",
+    "content_hash": "1cf2efa01870ff993c2d0e085a3a8171bf931d9a68fd3c8891e66ce843f38c96",
+    "generated": false,
+    "is_text": true,
+    "line_count": 26,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1234,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

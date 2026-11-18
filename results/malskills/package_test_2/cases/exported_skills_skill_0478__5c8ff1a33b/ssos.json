@@ -1,0 +1,36 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      ".malskills_fences/SKILL__fence_0.ts"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "endpoint_class": "unknown",
+      "network_role": "listen",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "http.createServer()",
+      "sink_callsite_id": ".malskills_fences/SKILL__fence_0.ts:19:19:http.createServer()",
+      "source_end_line": 19,
+      "source_start_line": 19
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::.malskills_fences/SKILL__fence_0.ts::server_listen::http.createServer((req, res) => this.transport.handleRequest(req, res)).listen(0, '127.0.0.1');"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "server_listen"
+  }
+]

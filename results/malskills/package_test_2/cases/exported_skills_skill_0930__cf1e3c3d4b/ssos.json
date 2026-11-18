@@ -1,0 +1,391 @@
+[
+  {
+    "artifact_ids": [
+      "art_0005"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_3.sh"
+    ],
+    "attributes": {
+      "matched_text": "trufflehog docker --image=<img>      # Scan Docker image",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::image": "path"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::image",
+      "secret_class": "unknown",
+      "sensitivity_class": "contextual",
+      "source_end_line": 6,
+      "source_start_line": 6
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_3.sh::image"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_information_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_4.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -H \"Authorization: Bearer $TOKEN\" \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_4.sh::data_receive::curl -H \"Authorization: Bearer $TOKEN\" \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_4.sh::data_receive::curl -H \"Authorization: Bearer $TOKEN\" \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_4.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_4.sh::data_receive::curl -H \"Authorization: Bearer $TOKEN\" \\"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0006"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_4.sh"
+    ],
+    "attributes": {
+      "matched_text": "curl -H \"Authorization: Bearer $TOKEN\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-reference__fence_4.sh::credential_data_access::1": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-reference__fence_4.sh::credential_data_access::1",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-reference__fence_4.sh::credential_data_access::1"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_5.sh"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "curl -X PATCH \\",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_5.sh::data_receive::curl -X PATCH \\": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_5.sh::data_receive::curl -X PATCH \\",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "references/.malskills_fences/api-reference__fence_5.sh:1:1:data_receive",
+      "source_end_line": 1,
+      "source_start_line": 1
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::references/.malskills_fences/api-reference__fence_5.sh::data_receive::curl -X PATCH \\"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0007"
+    ],
+    "artifact_paths": [
+      "references/.malskills_fences/api-reference__fence_5.sh"
+    ],
+    "attributes": {
+      "matched_text": "-H \"Authorization: Bearer $TOKEN\" \\",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::references/.malskills_fences/api-reference__fence_5.sh::credential_data_access::2": "path"
+      },
+      "operation_object": "obj::operation::references/.malskills_fences/api-reference__fence_5.sh::credential_data_access::2",
+      "secret_class": "api_credential",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 2,
+      "source_start_line": 2
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::references/.malskills_fences/api-reference__fence_5.sh::credential_data_access::2"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "report_file = tempfile.NamedTemporaryFile(suffix=\".json\", delete=False)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_create::36": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_create::36",
+      "path_class": "ordinary",
+      "source_end_line": 36,
+      "source_start_line": 36,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00006"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_create::36"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "file_create"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "proc = subprocess.run(cmd, capture_output=True, text=True, timeout=300)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:47:47:subprocess.run()",
+      "source_end_line": 47,
+      "source_start_line": 47
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00007"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::cmd"
+    ],
+    "sso_id": "sso_00006",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(report_path, \"r\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::50": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::50",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 50,
+      "source_start_line": 50
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00008"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::50"
+    ],
+    "sso_id": "sso_00007",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "os.unlink(report_path)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::link_operation::69": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::link_operation::69",
+      "path_class": "ordinary",
+      "source_end_line": 69,
+      "source_start_line": 69,
+      "sso_category": "file_operation"
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00009"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::link_operation::69"
+    ],
+    "sso_id": "sso_00008",
+    "subtype": "link_operation"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "proc = subprocess.run(cmd, capture_output=True, text=True, timeout=300)",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::scripts/agent.py::cmd": "command"
+      },
+      "operation_object": "obj::symbolic_reference::scripts/agent.py::cmd",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/agent.py:80:80:subprocess.run()",
+      "source_end_line": 80,
+      "source_start_line": 80
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00010"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::scripts/agent.py::cmd"
+    ],
+    "sso_id": "sso_00009",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::credential_data_access::138": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::credential_data_access::138",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 138,
+      "source_start_line": 138
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00011"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::credential_data_access::138"
+    ],
+    "sso_id": "sso_00010",
+    "subtype": "credential_data_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "with open(args.output, \"w\") as f:",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::file_access::164": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::file_access::164",
+      "path_class": "ordinary",
+      "sensitivity_class": "ordinary",
+      "source_end_line": 164,
+      "source_start_line": 164
+    },
+    "category": "file_operation",
+    "finding_ids": [
+      "semgrep_00012"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::file_access::164"
+    ],
+    "sso_id": "sso_00011",
+    "subtype": "file_access"
+  },
+  {
+    "artifact_ids": [
+      "art_0008"
+    ],
+    "artifact_paths": [
+      "scripts/agent.py"
+    ],
+    "attributes": {
+      "matched_text": "sys.exit(1)",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/agent.py::credential_data_access::169": "path"
+      },
+      "operation_object": "obj::operation::scripts/agent.py::credential_data_access::169",
+      "secret_class": "unknown",
+      "sensitivity_class": "sensitive",
+      "source_end_line": 169,
+      "source_start_line": 169
+    },
+    "category": "sensitive_data_access",
+    "finding_ids": [
+      "semgrep_00013"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/agent.py::credential_data_access::169"
+    ],
+    "sso_id": "sso_00012",
+    "subtype": "credential_data_access"
+  }
+]

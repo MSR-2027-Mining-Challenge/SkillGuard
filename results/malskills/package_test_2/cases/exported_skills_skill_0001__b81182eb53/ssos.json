@@ -1,0 +1,178 @@
+[
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "| $50-150 | 8-16GB | 256GB+ | Docker host, 5-10 services | Used SFF PC (Dell Optiplex, Lenovo Tiny) |",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::95": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::95",
+      "source_end_line": 95,
+      "source_start_line": 95,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::95"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "dst_class": "unknown",
+      "endpoint": "",
+      "endpoint_class": "unknown",
+      "network_role": "receive",
+      "object_identity_kind": "symbolic_reference",
+      "operand_roles": {
+        "obj::symbolic_reference::SKILL.md::data_receive::": "endpoint"
+      },
+      "operation_object": "obj::symbolic_reference::SKILL.md::data_receive::",
+      "parameter_bindings": [],
+      "related_objects": [],
+      "sink_api": "",
+      "sink_callsite_id": "SKILL.md:96:96:data_receive",
+      "source_end_line": 96,
+      "source_start_line": 96
+    },
+    "category": "network_access",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::symbolic_reference::SKILL.md::data_receive::"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "data_receive"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::system_command_execution::96": "command"
+      },
+      "operation_object": "obj::operation::SKILL.md::system_command_execution::96",
+      "parameter_bindings": [],
+      "sink_callsite_id": "SKILL.md:96:96:system_command_execution",
+      "source_end_line": 96,
+      "source_start_line": 96
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::system_command_execution::96"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::external_component_installation::96": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::external_component_installation::96",
+      "source_end_line": 96,
+      "source_start_line": 96,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::external_component_installation::96"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "external_component_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::608": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::608",
+      "source_end_line": 608,
+      "source_start_line": 608,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00004"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::608"
+    ],
+    "sso_id": "sso_00004",
+    "subtype": "package_installation"
+  },
+  {
+    "artifact_ids": [
+      "art_0001"
+    ],
+    "artifact_paths": [
+      "SKILL.md"
+    ],
+    "attributes": {
+      "matched_text": "",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::SKILL.md::package_installation::612": "target"
+      },
+      "operation_object": "obj::operation::SKILL.md::package_installation::612",
+      "source_end_line": 612,
+      "source_start_line": 612,
+      "sso_category": "software_installation"
+    },
+    "category": "software_installation",
+    "finding_ids": [
+      "semgrep_00005"
+    ],
+    "operand_ids": [
+      "obj::operation::SKILL.md::package_installation::612"
+    ],
+    "sso_id": "sso_00005",
+    "subtype": "package_installation"
+  }
+]

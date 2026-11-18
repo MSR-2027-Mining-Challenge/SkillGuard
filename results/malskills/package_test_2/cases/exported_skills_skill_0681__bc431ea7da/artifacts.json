@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "manifest",
+    "content": "{\r\n  \"name\": \"lark-chat-recall\",\r\n  \"version\": \"1.2\",\r\n  \"description\": \"Recall and summarize Lark conversations \u2014 pull a chat's history over a time window through the real im/v1 history API, reconstruct discussions, and answer \\\"who said what\\\" with quoted evidence. Use for \\\"\u603b\u7ed3\u8fd9\u4e2a\u7fa4\u4eca\u5929\u804a\u4e86\u4ec0\u4e48 / \u4e0a\u5468\u8c01\u63d0\u8fc7X / \u627e\u4e00\u4e0b\u5173\u4e8eY\u7684\u8ba8\u8bba\\\". Requires the bot tenant scope im:message.group_msg; reports the exact missing scope verbatim when absent.\"\r\n}\r\n",
+    "content_hash": "fc81bb4d1900b6d0b0558ad0f5a376c6f5aaeea4748b889684f155989743f32b",
+    "generated": false,
+    "is_text": true,
+    "line_count": 6,
+    "relative_path": ".claude-plugin/plugin.json",
+    "size_bytes": 475,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "markdown",
+    "content": "# lark-chat-recall\r\n\r\n> Recall and summarize Lark conversations \u2014 pull a chat's history over a time window through the real im/v1 history API, reconstruct discussions, and answer \"who said what\" with quoted evidence. Use for \"\u603b\u7ed3\u8fd9\u4e2a\u7fa4\u4eca\u5929\u804a\u4e86\u4ec0\u4e48 / \u4e0a\u5468\u8c01\u63d0\u8fc7X / \u627e\u4e00\u4e0b\u5173\u4e8eY\u7684\u8ba8\u8bba\". Requires the bot tenant scope im:message.group_msg; reports the exact missing scope verbatim when absent.\r\n\r\n---\r\n\r\n**Mirrored from [Ornn](https://ornn.chrono-ai.fun/skills/lark-chat-recall) \u2014 read-only.**\r\n\r\nEdits here are NOT propagated back. Submit changes on Ornn.\r\n\r\n- Latest version: `1.2`\r\n- Last synced: `2026-07-17T08:00:10.571Z`\r\n\r\n## Install\r\n\r\n```bash\r\nnpx skills add ChronoAIProject/nyx-skills/lark-chat-recall\r\n```\r\n\r\n## Use\r\n\r\nSee `SKILL.md` in this folder for the full instructions an AI agent\r\nfollows when this skill is loaded.\r\n",
+    "content_hash": "6efd7b4125b8f0383a8c323bf49e38c949786b08888ad372d2ad35069e2beeb7",
+    "generated": false,
+    "is_text": true,
+    "line_count": 24,
+    "relative_path": "README.md",
+    "size_bytes": 860,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "npx skills add ChronoAIProject/nyx-skills/lark-chat-recall",
+    "content_hash": "51f43f861f239b7fb7f6e8f88c8f373d5b117207f394632f32c45d0e1ce1c196",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/README__fence_0.sh",
+    "size_bytes": 58,
+    "source_artifact_id": "art_0001",
+    "source_artifact_path": "README.md",
+    "source_end_line": 18,
+    "source_start_line": 16
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: lark-chat-recall\r\nversion: \"1.2\"\r\ndescription: Recall and summarize Lark conversations \u2014 pull a chat's history over a time window through the real im/v1 history API, reconstruct discussions, and answer \"who said what\" with quoted evidence. Use for \"\u603b\u7ed3\u8fd9\u4e2a\u7fa4\u4eca\u5929\u804a\u4e86\u4ec0\u4e48 / \u4e0a\u5468\u8c01\u63d0\u8fc7X / \u627e\u4e00\u4e0b\u5173\u4e8eY\u7684\u8ba8\u8bba\". Requires the bot tenant scope im:message.group_msg; reports the exact missing scope verbatim when absent.\r\nmetadata:\r\n  category: plain\r\n  tag:\r\n    - aevatar\r\n    - s-capability\r\n    - lark\r\n    - messages\r\n    - recall\r\n    - summary\r\n---\r\n\r\n# Lark Chat Recall\r\n\r\nUse this when someone wants to find, reconstruct, or summarize past Lark messages: a digest of a\r\nbusy group, a half-remembered decision, everything about a topic.\r\n\r\n**You (the agent) pull real history yourself.** Everything is read-only. Never invent quotes:\r\nevery claim in your answer must trace to a really-returned message. If history is unavailable,\r\nsay exactly why (quote the error) \u2014 do NOT fill the gap from your own conversation context and\r\npresent it as a search result; clearly label any context-only fallback as \"\u4ec5\u57fa\u4e8e\u5f53\u524d\u53ef\u89c1\u4e0a\u4e0b\u6587,\r\n\u975e\u5b8c\u6574\u5386\u53f2\".\r\n\r\n> **Companion skill.** Raw send / reply / react / read one message / chat lookup live in\r\n> `lark-im-ops`; this skill is the read-only recall + summarize specialization layered on the same\r\n> `im/v1` history pull. Use im-ops to act on a chat, this to reconstruct one.\r\n\r\n## How to run it\r\n\r\n1. **Frame the ask.** Scope = the CURRENT chat unless the user names another (then resolve its\r\n   chat_id via `lark_chats_lookup`). Convert \"\u4eca\u5929/\u4e0a\u5468/\u8fd9\u4e2a\u6708\" into a concrete time window\r\n   (Asia/Shanghai unless stated otherwise).\r\n\r\n2. **Pull history (primary, real endpoint).** NyxID-brokered call:\r\n   `nyxid_proxy` `{slug:\"api-lark-bot\", method:\"GET\",\r\n   path:\"/open-apis/im/v1/messages?container_id_type=chat&container_id={chat_id}&start_time={unix_s}&end_time={unix_s}&sort_type=ByCreateTimeAsc&page_size=50\"}`\r\n   \u2014 follow `page_token` until the window is covered (cap ~10 pages and say so if truncated).\r\n   This requires bot tenant scope `im:message.group_msg` (group chats). On `230027` quote the\r\n   `need scope: ...` text verbatim and tell the user to grant that scope to the bot app in the\r\n   Lark developer console \u2014 that is the fix, not \"token \u8fc7\u671f\".\r\n\r\n3. **Hydrate details when needed.** For specific messages (cards, rich posts), call\r\n   `lark_messages_batch_get` `{message_ids:[om_...]}` (\u226450, real endpoint) for full content.\r\n\r\n4. **Do NOT rely on `lark_messages_search`.** Known platform defect as of 2026-06-11: that tool\r\n   calls `im/v1/messages/search`, which does not exist in the Lark OpenAPI \u2014 the gateway returns a\r\n   misleading `99991663 Invalid access token`. If you try it and see that signature, it is NOT a\r\n   token problem; fall back to step 2 and mention the defect once. Keyword \"search\" = pull the\r\n   window via step 2, then filter/match locally yourself.\r\n\r\n5. **Answer in one of three shapes:**\r\n   - **Fact recall** \u2014 the answer plus evidence: sender, time, and the quoted message line.\r\n   - **Thread reconstruction** \u2014 chronological `[time] \u4eba\u540d: \u5185\u5bb9`, trimmed to the relevant exchange.\r\n   - **Digest** \u2014 group by topic, 3-6 bullets per topic, each bullet noting how many messages it\r\n     covers; close with visible action items / open questions. Only include events that appear in\r\n     the pulled messages \u2014 no inferred items.\r\n\r\n6. **Honesty.** History covers what the bot identity can see (bot must be IN the chat). If the\r\n   window returned nothing, say so with the exact filters used. Resolve sender ids to names via\r\n   chat member info when available; otherwise show the id, never guess a name.\r\n\r\n## Guardrails\r\n\r\n- Read-only: never send, react, or forward while in this skill; deliver in the current chat.\r\n- When recalling OTHER chats, summarize rather than bulk-quote, and name the source chat for every\r\n  quote.\r\n- Quote verbatim, attribute correctly, keep timestamps; never reorder events to fit a narrative.\r\n- Never ask the user for tokens \u2014 your NyxID-brokered tools handle all credentials.\r\n",
+    "content_hash": "277b23537184491ad664e4e3a12b04c78e5839c5084a402594f9a38c46f49d78",
+    "generated": false,
+    "is_text": true,
+    "line_count": 72,
+    "relative_path": "SKILL.md",
+    "size_bytes": 4184,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

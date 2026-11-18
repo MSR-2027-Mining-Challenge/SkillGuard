@@ -1,0 +1,1567 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "path": ".malskills_fences/SKILL__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0013",
+      "path": ".malskills_fences/SKILL__fence_15.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0014",
+      "path": ".malskills_fences/SKILL__fence_16.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0015",
+      "path": ".malskills_fences/SKILL__fence_17.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0016",
+      "path": ".malskills_fences/SKILL__fence_18.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0017",
+      "path": ".malskills_fences/SKILL__fence_19.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0018",
+      "path": ".malskills_fences/SKILL__fence_20.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0019",
+      "path": ".malskills_fences/SKILL__fence_23.sh",
+      "type": "shell"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0001",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::6",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::6",
+      "target": "value::ad1b53f64bb02d4e8c44",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00001",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00001",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::6",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::6",
+      "target": "value::755af292a0ff27e59b0e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00002",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00002",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+      "target": "value::1c3a870c7f6058902e9c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00003",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00003",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::40",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::40",
+      "target": "value::c3275748df3c0fe55524",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0001",
+      "target": "sso_00004",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00004",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::44",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::44",
+      "target": "value::90bb23187e77b6f887ba",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0002",
+      "target": "sso_00005",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00005",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_delete::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_delete::1",
+      "target": "value::e685ce3a2abf74f7b205",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00006",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00006",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::1",
+      "target": "value::b8847f2e26e1fcb05944",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00007",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00007",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_search::5",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_search::5",
+      "target": "value::407e29a8328e6d8ea462",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00008",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00008",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::5",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::5",
+      "target": "value::1185af9d499ed1d0678f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00009",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00009",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::7",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::7",
+      "target": "value::da3f4870f3410011268f",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00010",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00010",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_LAST",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_LAST",
+      "target": "value::04577da374adc3add215",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00011",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00011",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_RECENT_SKILLS",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_RECENT_SKILLS",
+      "target": "value::4a887c88849595eaa201",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0010",
+      "target": "sso_00012",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00012",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_LATEST_CP",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_LATEST_CP",
+      "target": "value::8ac6b863f31d63c51e1c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0014",
+      "target": "sso_00013",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00013",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_16.sh::file_delete::3",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_16.sh::file_delete::3",
+      "target": "value::b2fdc590d45e7841fd13",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0015",
+      "target": "sso_00014",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00014",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_command_execution::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_command_execution::1",
+      "target": "value::d3aec7e405f442ee490c",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0016",
+      "target": "sso_00015",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00015",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_18.sh::file_read::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_18.sh::file_read::2",
+      "target": "value::a2e1446dd33b0c8f1259",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00016",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00016",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::1",
+      "target": "value::2760f2473a43df60eded",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00017",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00017",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::2",
+      "target": "value::15e7f0a448b9e0bd6c3d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00018",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00018",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::7",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::7",
+      "target": "value::03f98918049d65018206",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0018",
+      "target": "sso_00019",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00019",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_20.sh::SUFFIX",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_20.sh::SUFFIX",
+      "target": "value::f636cc9f5b99c8fecfc2",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0019",
+      "target": "sso_00020",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00020",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::1",
+      "target": "value::c5a32bcc5e9946c99029",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0019",
+      "target": "sso_00021",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00021",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::2",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::2",
+      "target": "value::765e5bd51799c6839357",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0019",
+      "target": "sso_00022",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00022",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_23.sh::file_write::7",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_23.sh::file_write::7",
+      "target": "value::758ea942358de5560fa9",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0019",
+      "target": "sso_00023",
+      "type": "contains"
+    },
+    {
+      "role": "endpoint",
+      "source": "sso_00023",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_23.sh::data_send::# canonical order (stable across copies/rsync; mtime is not), and empty-result",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_23.sh::data_send::# canonical order (stable across copies/rsync; mtime is not), and empty-result",
+      "target": "value::2c27315fe738a92b06c3",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0019",
+      "target": "sso_00024",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00024",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_23.sh::file_search::9",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_23.sh::file_search::9",
+      "target": "value::f6cc6f028baed859f776",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0006",
+      "target": "sso_00025",
+      "type": "contains"
+    },
+    {
+      "role": "command",
+      "source": "sso_00025",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::1",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::1",
+      "target": "value::751870d1593ddc407a4b",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00026",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00026",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::13",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::13",
+      "target": "value::05a5ca60ae684a0a778e",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00027",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00027",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::47",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::47",
+      "target": "value::b83d0a3b5ac8f6c76837",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00028",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00028",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_GBRAIN_MCP_TYPE",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_GBRAIN_MCP_TYPE",
+      "target": "value::bb039ac48b4285468b73",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00029",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00029",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_NEW_URL",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_NEW_URL",
+      "target": "value::6878f66179df40d6bb91",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00030",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00030",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST",
+      "target": "value::c2ef1053a0d6f1b8781d",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00031",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00031",
+      "target": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::73",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::73",
+      "target": "value::3291139805e82d49eaff",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00032",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00032",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_GBRAIN_HOST",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_GBRAIN_HOST",
+      "target": "value::748b5d278408f458ea18",
+      "type": "value_flow"
+    },
+    {
+      "source": "art_0007",
+      "target": "sso_00033",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00033",
+      "target": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST_PUSH",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST_PUSH",
+      "target": "value::0b67cf50ee16b8f961c6",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_0.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_1.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_2.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_3.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0005",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_4.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0006",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_6.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0007",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_8.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0008",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_9.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0009",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_10.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0010",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_11.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0011",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_13.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0012",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_14.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0013",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_15.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0014",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_16.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0015",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_17.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0016",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_18.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0017",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_19.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0018",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_20.sh",
+      "type": "shell"
+    },
+    {
+      "id": "art_0019",
+      "kind": "artifact",
+      "path": ".malskills_fences/SKILL__fence_23.sh",
+      "type": "shell"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_search::6",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_search::6",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::ad1b53f64bb02d4e8c44",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::file_search::6",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00001"
+      ],
+      "id": "sso_00001",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::6",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_delete::6",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::755af292a0ff27e59b0e",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::file_delete::6",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00002"
+      ],
+      "id": "sso_00002",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::1c3a870c7f6058902e9c",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::15",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00003"
+      ],
+      "id": "sso_00003",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::file_delete::40",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::file_delete::40",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::c3275748df3c0fe55524",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::file_delete::40",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00004"
+      ],
+      "id": "sso_00004",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_0.sh::system_command_execution::44",
+      "identity_key": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::44",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::90bb23187e77b6f887ba",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_0.sh::system_command_execution::44",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00005"
+      ],
+      "id": "sso_00005",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_1.sh::file_delete::1",
+      "identity_key": ".malskills_fences/SKILL__fence_1.sh::file_delete::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::e685ce3a2abf74f7b205",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_1.sh::file_delete::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00006"
+      ],
+      "id": "sso_00006",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_11.sh::system_command_execution::1",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::system_command_execution::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::b8847f2e26e1fcb05944",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::system_command_execution::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00007"
+      ],
+      "id": "sso_00007",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_search::5",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::file_search::5",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::407e29a8328e6d8ea462",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::file_search::5",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00008"
+      ],
+      "id": "sso_00008",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::5",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::file_read::5",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1185af9d499ed1d0678f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::file_read::5",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00009"
+      ],
+      "id": "sso_00009",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_11.sh::file_read::7",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::file_read::7",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::da3f4870f3410011268f",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::file_read::7",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00010"
+      ],
+      "id": "sso_00010",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_LAST",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::_LAST",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::04577da374adc3add215",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::_LAST",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00011"
+      ],
+      "id": "sso_00011",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_RECENT_SKILLS",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::_RECENT_SKILLS",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::4a887c88849595eaa201",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::_RECENT_SKILLS",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00012"
+      ],
+      "id": "sso_00012",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_11.sh::_LATEST_CP",
+      "identity_key": ".malskills_fences/SKILL__fence_11.sh::_LATEST_CP",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::8ac6b863f31d63c51e1c",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_11.sh::_LATEST_CP",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00013"
+      ],
+      "id": "sso_00013",
+      "kind": "sso",
+      "subtype": "file_delete",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_16.sh::file_delete::3",
+      "identity_key": ".malskills_fences/SKILL__fence_16.sh::file_delete::3",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b2fdc590d45e7841fd13",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_16.sh::file_delete::3",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00014"
+      ],
+      "id": "sso_00014",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_17.sh::system_command_execution::1",
+      "identity_key": ".malskills_fences/SKILL__fence_17.sh::system_command_execution::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::d3aec7e405f442ee490c",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_17.sh::system_command_execution::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00015"
+      ],
+      "id": "sso_00015",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_18.sh::file_read::2",
+      "identity_key": ".malskills_fences/SKILL__fence_18.sh::file_read::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::a2e1446dd33b0c8f1259",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_18.sh::file_read::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00016"
+      ],
+      "id": "sso_00016",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::1",
+      "identity_key": ".malskills_fences/SKILL__fence_20.sh::system_command_execution::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::2760f2473a43df60eded",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_20.sh::system_command_execution::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00017"
+      ],
+      "id": "sso_00017",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::2",
+      "identity_key": ".malskills_fences/SKILL__fence_20.sh::system_command_execution::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::15e7f0a448b9e0bd6c3d",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_20.sh::system_command_execution::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00018"
+      ],
+      "id": "sso_00018",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_20.sh::system_command_execution::7",
+      "identity_key": ".malskills_fences/SKILL__fence_20.sh::system_command_execution::7",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::03f98918049d65018206",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_20.sh::system_command_execution::7",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00019"
+      ],
+      "id": "sso_00019",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_20.sh::SUFFIX",
+      "identity_key": ".malskills_fences/SKILL__fence_20.sh::SUFFIX",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::f636cc9f5b99c8fecfc2",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_20.sh::SUFFIX",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00020"
+      ],
+      "id": "sso_00020",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::1",
+      "identity_key": ".malskills_fences/SKILL__fence_23.sh::system_command_execution::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::c5a32bcc5e9946c99029",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_23.sh::system_command_execution::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00021"
+      ],
+      "id": "sso_00021",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_23.sh::system_command_execution::2",
+      "identity_key": ".malskills_fences/SKILL__fence_23.sh::system_command_execution::2",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::765e5bd51799c6839357",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_23.sh::system_command_execution::2",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00022"
+      ],
+      "id": "sso_00022",
+      "kind": "sso",
+      "subtype": "file_write",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_23.sh::file_write::7",
+      "identity_key": ".malskills_fences/SKILL__fence_23.sh::file_write::7",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::758ea942358de5560fa9",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_23.sh::file_write::7",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00023"
+      ],
+      "id": "sso_00023",
+      "kind": "sso",
+      "subtype": "data_send",
+      "type": "network_access"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_23.sh::data_send::# canonical order (stable across copies/rsync; mtime is not), and empty-result",
+      "identity_key": ".malskills_fences/SKILL__fence_23.sh::data_send::# canonical order (stable across copies/rsync; mtime is not), and empty-result",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "endpoint"
+    },
+    {
+      "id": "value::2c27315fe738a92b06c3",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_23.sh::data_send::# canonical order (stable across copies/rsync; mtime is not), and empty-result",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00024"
+      ],
+      "id": "sso_00024",
+      "kind": "sso",
+      "subtype": "file_search",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_23.sh::file_search::9",
+      "identity_key": ".malskills_fences/SKILL__fence_23.sh::file_search::9",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::f6cc6f028baed859f776",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_23.sh::file_search::9",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00025"
+      ],
+      "id": "sso_00025",
+      "kind": "sso",
+      "subtype": "system_command_execution",
+      "type": "payload_execution"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_6.sh::system_command_execution::1",
+      "identity_key": ".malskills_fences/SKILL__fence_6.sh::system_command_execution::1",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "command"
+    },
+    {
+      "id": "value::751870d1593ddc407a4b",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_6.sh::system_command_execution::1",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00026"
+      ],
+      "id": "sso_00026",
+      "kind": "sso",
+      "subtype": "system_information_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_8.sh::system_information_access::13",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::system_information_access::13",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::05a5ca60ae684a0a778e",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::system_information_access::13",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00027"
+      ],
+      "id": "sso_00027",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::47",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::file_read::47",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::b83d0a3b5ac8f6c76837",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::file_read::47",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00028"
+      ],
+      "id": "sso_00028",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_GBRAIN_MCP_TYPE",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::_GBRAIN_MCP_TYPE",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::bb039ac48b4285468b73",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::_GBRAIN_MCP_TYPE",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00029"
+      ],
+      "id": "sso_00029",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_NEW_URL",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::_BRAIN_NEW_URL",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::6878f66179df40d6bb91",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::_BRAIN_NEW_URL",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00030"
+      ],
+      "id": "sso_00030",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::c2ef1053a0d6f1b8781d",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00031"
+      ],
+      "id": "sso_00031",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::operation::.malskills_fences/SKILL__fence_8.sh::file_read::73",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::file_read::73",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::3291139805e82d49eaff",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::file_read::73",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00032"
+      ],
+      "id": "sso_00032",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_GBRAIN_HOST",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::_GBRAIN_HOST",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::748b5d278408f458ea18",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::_GBRAIN_HOST",
+      "value_kind": "symbolic"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00033"
+      ],
+      "id": "sso_00033",
+      "kind": "sso",
+      "subtype": "file_read",
+      "type": "file_operation"
+    },
+    {
+      "id": "obj::symbolic_reference::.malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST_PUSH",
+      "identity_key": ".malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST_PUSH",
+      "kind": "operand",
+      "object_kind": "symbolic_reference",
+      "role": "path"
+    },
+    {
+      "id": "value::0b67cf50ee16b8f961c6",
+      "kind": "value",
+      "value": ".malskills_fences/SKILL__fence_8.sh::_BRAIN_LAST_PUSH",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}

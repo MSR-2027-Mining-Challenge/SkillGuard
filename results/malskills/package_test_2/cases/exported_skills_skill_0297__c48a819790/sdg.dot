@@ -1,0 +1,33 @@
+digraph sdg {
+  rankdir=LR;
+  graph [label="MalSkills Skill Dependency Graph", labelloc=t];
+  node [shape=box, style="rounded"];
+  "art_0000" [label="art_0000\nkind=artifact\ntype=markdown\npath=SKILL.md"];
+  "art_0001" [label="art_0001\nkind=artifact\ntype=shell\npath=.malskills_fences/SKILL__fence_0.sh"];
+  "art_0002" [label="art_0002\nkind=artifact\ntype=python\npath=scripts/process_image.py"];
+  "obj::operation::scripts/process_image.py::credential_data_access::25" [label="obj::operation::scripts/process_image.py::credential_data_access::25\nkind=operand"];
+  "obj::operation::scripts/process_image.py::credential_data_access::285" [label="obj::operation::scripts/process_image.py::credential_data_access::285\nkind=operand"];
+  "obj::operation::scripts/process_image.py::credential_data_access::301" [label="obj::operation::scripts/process_image.py::credential_data_access::301\nkind=operand"];
+  "obj::operation::scripts/process_image.py::credential_data_access::312" [label="obj::operation::scripts/process_image.py::credential_data_access::312\nkind=operand"];
+  "sso_00000" [label="sso_00000\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "sso_00001" [label="sso_00001\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "sso_00002" [label="sso_00002\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "sso_00003" [label="sso_00003\nkind=sso\ntype=sensitive_data_access\nsubtype=credential_data_access"];
+  "value::0d86a3b0d221c71b1470" [label="value::0d86a3b0d221c71b1470\nkind=value"];
+  "value::1a50193f7fe376f98e90" [label="value::1a50193f7fe376f98e90\nkind=value"];
+  "value::35b9134613d17128c9ec" [label="value::35b9134613d17128c9ec\nkind=value"];
+  "value::6b6b1c81db44d5e48642" [label="value::6b6b1c81db44d5e48642\nkind=value"];
+  "verdict" [label="verdict\nkind=verdict\ntype=benign"];
+  "art_0002" -> "sso_00000" [label="contains"];
+  "art_0002" -> "sso_00001" [label="contains"];
+  "art_0002" -> "sso_00002" [label="contains"];
+  "art_0002" -> "sso_00003" [label="contains"];
+  "obj::operation::scripts/process_image.py::credential_data_access::25" -> "value::1a50193f7fe376f98e90" [label="value_flow"];
+  "obj::operation::scripts/process_image.py::credential_data_access::285" -> "value::35b9134613d17128c9ec" [label="value_flow"];
+  "obj::operation::scripts/process_image.py::credential_data_access::301" -> "value::6b6b1c81db44d5e48642" [label="value_flow"];
+  "obj::operation::scripts/process_image.py::credential_data_access::312" -> "value::0d86a3b0d221c71b1470" [label="value_flow"];
+  "sso_00000" -> "obj::operation::scripts/process_image.py::credential_data_access::25" [label="has_operand"];
+  "sso_00001" -> "obj::operation::scripts/process_image.py::credential_data_access::285" [label="has_operand"];
+  "sso_00002" -> "obj::operation::scripts/process_image.py::credential_data_access::301" [label="has_operand"];
+  "sso_00003" -> "obj::operation::scripts/process_image.py::credential_data_access::312" [label="has_operand"];
+}

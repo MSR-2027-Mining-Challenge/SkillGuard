@@ -1,0 +1,17 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: policy-enforcement-setup\r\ndescription: \"Set up deterministic policy enforcement for customization governance using local hooks and CI gates. Triggers: 'enforce rules', 'policy gate', 'block non-compliant PR', 'hooks setup', 'compliance automation'.\"\r\nargument-hint: \"Describe which policies to enforce and where (local hooks, CI, or both)\"\r\n---\r\n\r\n# Policy Enforcement Setup\r\n\r\nImplement deterministic checks so governance rules are enforced automatically.\r\n\r\n## Inputs\r\n\r\n- Policies to enforce (language, domain-sync, frontmatter validity, contract docs).\r\n- Enforcement scope (local dev, CI, protected branch).\r\n- Rollout mode (warn-only or blocking).\r\n\r\n## Workflow\r\n\r\n1. Define policy checks and trigger files.\r\n2. Map each check to execution point:\r\n\r\n- local hook,\r\n- CI pull-request job,\r\n- release gate.\r\n\r\n3. Implement failure messages with remediation steps.\r\n4. Roll out in stages:\r\n\r\n- observe,\r\n- warn,\r\n- block.\r\n\r\n## Baseline assets in this template\r\n\r\n- CI: `.github/workflows/customization-governance.yml`\r\n- Validation scripts: `scripts/governance/check-language-policy.sh`, `scripts/governance/validate-customizations.sh`, `scripts/governance/check-domain-sync.sh`\r\n- Local hook setup: `scripts/governance/install-hooks.sh`, `scripts/governance/install-hooks.ps1`, `.githooks/pre-commit`\r\n- Bypass policy and audit: `docs/governance/BYPASS_POLICY.md`, `docs/governance/GOVERNANCE_CHANGELOG.md`\r\n\r\n## Deliverable format\r\n\r\n```text\r\n## Enforcement Plan\r\n\r\nPolicies:\r\nExecution points:\r\nFailure behavior:\r\nRollout stages:\r\nOwner:\r\n```\r\n",
+    "content_hash": "4c1e8f2c7e43645a33c8de30d1822f992ab7fcdd6d3e46c150c6b84051520ef5",
+    "generated": false,
+    "is_text": true,
+    "line_count": 51,
+    "relative_path": "SKILL.md",
+    "size_bytes": 1563,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  }
+]

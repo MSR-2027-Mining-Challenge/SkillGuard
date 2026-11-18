@@ -1,0 +1,62 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "---\r\nname: evidence-binder\r\ndescription: Compile quoted evidence and page snapshots from standards-core output into a reviewer-ready binder. Exports to Markdown, PDF, or DOCX with page-level anchors, standard groupings, and professional formatting for EdReports-style curriculum reviews.\r\nallowed-tools: Read, Write, Grep, Glob, Bash\r\n---\r\n\r\n# Evidence-Binder\r\n\r\n## What this Skill does\r\nTransforms standards-core outputs (`coverage.json`, `evidence.jsonl`, `pages.jsonl`) into a polished, reviewer-ready document:\r\n- **Markdown binder** \u2014 hierarchical standards + evidence with page anchors and quoted spans.\r\n- **PDF export** \u2014 formatted, multi-page report with bookmarks and page numbers.\r\n- **DOCX export** \u2014 editable Word document for reviewer markup and collaboration.\r\n\r\nPerfect for EdReports-style curriculum reviews and evidence-based alignment audits.\r\n\r\n## How to run\r\n1. Receive inputs from standards-core skill (or user provides paths).\r\n2. Read `coverage.json`, `evidence.jsonl`, `pages.jsonl`.\r\n3. Template-render the evidence into Markdown.\r\n4. Convert Markdown \u2192 PDF via `pandoc` or `weasyprint` (optional).\r\n5. Convert Markdown \u2192 DOCX via `pandoc` (optional).\r\n6. Write outputs to `binder/` directory.\r\n\r\n## Inputs (ask user or read from CLI)\r\n- coverage_json: path to `outputs/coverage.json`\r\n- evidence_jsonl: path to `outputs/evidence.jsonl`\r\n- pages_jsonl: path to `outputs/pages.jsonl`\r\n- title: e.g., \"Grade 3 Math Textbook Alignment Review\"\r\n- subject: math|ela\r\n- format: markdown|pdf|docx|all\r\n- out_dir: binder/\r\n\r\n## Deterministic rendering\r\n- Use Jinja2 or Handlebars template for Markdown layout.\r\n- Organize by standard \u2192 pages \u2192 quotes.\r\n- Include page anchors (e.g., `math_grade3:12:45:92`) for traceability.\r\n- Bold or highlight uncovered standards.\r\n\r\n## Scripts to call\r\n- `scripts/render_binder.py --coverage outputs/coverage.json --evidence outputs/evidence.jsonl --pages outputs/pages.jsonl --format {markdown|pdf|docx|all} --out binder`\r\n\r\n## Output structure\r\n```\r\nbinder/\r\n\u251c\u2500\u2500 alignment_report.md\r\n\u251c\u2500\u2500 alignment_report.pdf\r\n\u251c\u2500\u2500 alignment_report.docx\r\n\u251c\u2500\u2500 index.html (optional, for web preview)\r\n\u2514\u2500\u2500 evidence_log.jsonl (audit trail)\r\n```\r\n\r\n## Markdown template structure (templates/binder_base.jinja2)\r\n```markdown\r\n# Curriculum Alignment Review\r\n## {{ title }}\r\n\r\n**Subject:** {{ subject }}\r\n**Grades:** {{ grades }}\r\n**Books:** {{ books | join(', ') }}\r\n**Review Date:** {{ date }}\r\n\r\n---\r\n\r\n## Executive Summary\r\n- **Total Standards:** {{ total_standards }}\r\n- **Covered:** {{ total_covered }} ({{ coverage_percent }}%)\r\n- **Uncovered:** {{ total_uncovered }}\r\n- **Off-Grade Content:** {{ off_grade_percent }}%\r\n\r\n---\r\n\r\n## Standards Coverage by Grade\r\n\r\n{% for grade_group in standards | groupby('grade') %}\r\n### Grade {{ grade_group.key }}\r\n\r\n{% for standard in grade_group.list %}\r\n#### {{ standard.id }} \u2014 {{ standard.description }}\r\n\r\n**Status:** {% if standard.taught %}\u2713 Taught{% else %}\u2717 Not Taught{% endif %} |\r\n**Practiced:** {% if standard.practiced %}\u2713{% else %}\u2717{% endif %} |\r\n**Assessed:** {% if standard.assessed %}\u2713{% else %}\u2717{% endif %}\r\n\r\n**Intensity:** {{ standard.intensity }}\r\n**Evidence:** {{ standard.evidence_found | ternary('Found', 'NOT FOUND') }}\r\n\r\n{% if standard.evidence_found %}\r\n**Key Pages:** {{ standard.top_pages | join(', ') }}\r\n\r\n**Top Evidence:**\r\n> {{ standard.top_hit.quote }}\r\n>\r\n> \u2014 *{{ standard.top_hit.book_id }}, Page {{ standard.top_hit.page }}* [`{{ standard.top_hit.anchor }}`]\r\n\r\n**Context:** {{ standard.top_hit.context }}\r\n\r\n{% if standard.redundancy_count > 1 %}\r\n**Note:** This standard appears {{ standard.redundancy_count }} times across the textbook.\r\n{% endif %}\r\n\r\n{% else %}\r\n\u26a0\ufe0f **NO EVIDENCE FOUND** \u2014 This standard may not be adequately covered in the textbook.\r\n{% endif %}\r\n\r\n---\r\n\r\n{% endfor %}\r\n{% endfor %}\r\n\r\n## Uncovered Standards\r\n\r\nThe following standards lack evidence in the provided materials:\r\n\r\n{% for standard in standards | selectattr('evidence_found', 'false') %}\r\n- **{{ standard.id }}** (Grade {{ standard.grade }})\r\n{% endfor %}\r\n\r\n---\r\n\r\n## Methodology Notes\r\n\r\nThis alignment review was conducted using automated standards-mapping software with manual verification of boundary cases. All evidence references include page anchors (`book_id:page:start:end`) for direct verification.\r\n\r\n**Standards Pack:** {{ standards_pack_version }}\r\n**Generated:** {{ generation_timestamp }}\r\n```\r\n\r\n## Example output snapshot (Markdown)\r\n\r\n```markdown\r\n# Curriculum Alignment Review\r\n## Grade 3 Math Textbook\r\n\r\n**Subject:** Math\r\n**Grades:** 3\r\n**Books:** math_grade3.pdf\r\n**Review Date:** 2025-10-17\r\n\r\n---\r\n\r\n## Executive Summary\r\n- **Total Standards:** 15\r\n- **Covered:** 12 (80%)\r\n- **Uncovered:** 3\r\n- **Off-Grade Content:** 2%\r\n\r\n---\r\n\r\n## Standards Coverage by Grade\r\n\r\n### Grade 3\r\n\r\n#### 3.NF.A.1 \u2014 Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal parts\r\n\r\n**Status:** \u2713 Taught | **Practiced:** \u2713 | **Assessed:** \u2717\r\n\r\n**Intensity:** High\r\n**Evidence:** Found\r\n\r\n**Key Pages:** 12, 15, 18\r\n\r\n**Top Evidence:**\r\n> A fraction is an equal part of a whole. When we divide a shape into equal parts, each part is one fraction of the whole.\r\n>\r\n> \u2014 *math_grade3, Page 12* [`math_grade3:12:45:92`]\r\n\r\n**Context:** Instruction section on Understanding Fractions\r\n\r\n**Note:** This standard appears 2 times across the textbook.\r\n\r\n---\r\n\r\n#### 3.NF.A.2 \u2014 Understand a fraction as a number on the number line; represent fractions on a number line diagram\r\n\r\n**Status:** \u2713 Taught | **Practiced:** \u2713 | **Assessed:** \u2717\r\n\r\n**Intensity:** Medium\r\n**Evidence:** Found\r\n\r\n**Key Pages:** 20\r\n\r\n**Top Evidence:**\r\n> On a number line, locate 1/2, 1/3, and 1/4 by marking equal intervals.\r\n>\r\n> \u2014 *math_grade3, Page 20* [`math_grade3:20:120:165`]\r\n\r\n**Context:** Practice worksheet\r\n\r\n---\r\n\r\n#### 3.OA.A.1 \u2014 Interpret products of whole numbers\r\n\r\n**Status:** \u2717 Taught | **Practiced:** \u2717 | **Assessed:** \u2717\r\n\r\n**Intensity:** None\r\n**Evidence:** NOT FOUND\r\n\r\n\u26a0\ufe0f **NO EVIDENCE FOUND** \u2014 This standard may not be adequately covered in the textbook.\r\n```\r\n\r\n## Export options\r\n\r\n### PDF (via pandoc + weasyprint)\r\n```bash\r\npandoc alignment_report.md -o alignment_report.pdf \\\r\n  --pdf-engine=weasyprint \\\r\n  -V colorlinks \\\r\n  --toc\r\n```\r\n\r\n### DOCX (via pandoc)\r\n```bash\r\npandoc alignment_report.md -o alignment_report.docx \\\r\n  --toc \\\r\n  --reference-doc templates/reference.docx\r\n```\r\n\r\n## Workflow example\r\n```bash\r\n# Generate Markdown binder from standards-core outputs\r\nscripts/render_binder.py \\\r\n  --coverage outputs/coverage.json \\\r\n  --evidence outputs/evidence.jsonl \\\r\n  --pages outputs/pages.jsonl \\\r\n  --title \"Grade 3 Math Alignment Review\" \\\r\n  --format all \\\r\n  --out binder\r\n\r\n# Review generated files\r\nls -lah binder/\r\ncat binder/alignment_report.md\r\n```\r\n\r\n## Error handling\r\n- If coverage.json is missing, halt with descriptive error.\r\n- If evidence.jsonl is empty, generate a binder noting \"No evidence compiled.\"\r\n- Gracefully handle missing optional fields (e.g., `redundancy_count`).\r\n- If pandoc is not available, offer Markdown-only mode and warn user.\r\n\r\n## Accessibility & reproducibility\r\n- Include generation timestamp and standards pack version in binder footer.\r\n- All quotes include full page anchors for verification by independent reviewers.\r\n- Binder is self-contained; can be shared as standalone PDF or DOCX.\r\n",
+    "content_hash": "9031b6d4cf09f672ad693e63f7325af1a273f44c0376f513d940029f84fd3ba5",
+    "generated": false,
+    "is_text": true,
+    "line_count": 245,
+    "relative_path": "SKILL.md",
+    "size_bytes": 7493,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "pandoc alignment_report.md -o alignment_report.pdf \\\r\n  --pdf-engine=weasyprint \\\r\n  -V colorlinks \\\r\n  --toc",
+    "content_hash": "d60def02c152ceae9185eafff293ae0d85ef602474b0adc7ed4c3e21a681ba4c",
+    "generated": true,
+    "is_text": true,
+    "line_count": 4,
+    "relative_path": ".malskills_fences/SKILL__fence_3.sh",
+    "size_bytes": 109,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 210,
+    "source_start_line": 205
+  },
+  {
+    "artifact_id": "art_0002",
+    "artifact_type": "shell",
+    "content": "pandoc alignment_report.md -o alignment_report.docx \\\r\n  --toc \\\r\n  --reference-doc templates/reference.docx",
+    "content_hash": "b73246e541d0a7ee2c5f79760f4923ee90bfabea3c930da367838cfb4e4cb890",
+    "generated": true,
+    "is_text": true,
+    "line_count": 3,
+    "relative_path": ".malskills_fences/SKILL__fence_4.sh",
+    "size_bytes": 108,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 217,
+    "source_start_line": 213
+  },
+  {
+    "artifact_id": "art_0003",
+    "artifact_type": "shell",
+    "content": "# Generate Markdown binder from standards-core outputs\r\nscripts/render_binder.py \\\r\n  --coverage outputs/coverage.json \\\r\n  --evidence outputs/evidence.jsonl \\\r\n  --pages outputs/pages.jsonl \\\r\n  --title \"Grade 3 Math Alignment Review\" \\\r\n  --format all \\\r\n  --out binder\r\n\r\n# Review generated files\r\nls -lah binder/\r\ncat binder/alignment_report.md",
+    "content_hash": "774a51633b5a1a190b69d43122c370b02ed038911a21a001354389bb2cb77fd9",
+    "generated": true,
+    "is_text": true,
+    "line_count": 12,
+    "relative_path": ".malskills_fences/SKILL__fence_5.sh",
+    "size_bytes": 348,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 233,
+    "source_start_line": 220
+  }
+]

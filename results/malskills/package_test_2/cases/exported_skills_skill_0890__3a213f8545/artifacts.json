@@ -1,0 +1,32 @@
+[
+  {
+    "artifact_id": "art_0000",
+    "artifact_type": "markdown",
+    "content": "name: arbx-c-c004-tx-decoding-selector-matching\r\ndescription: \"PhD/Master skill alineada al monorepo hefarica/arbitragex-v2 (MEV, Mempool & Bundle Submission). Se activa cuando: 4byte signature DB. Doctrina OMEGA Zero-Mocks \u00b7 Fail-Closed \u00b7 El Remoto Manda.\"\r\n---\r\n\r\n# C004 \u2014 Tx Decoding & Selector Matching\r\n\r\n> **Dominio:** MEV, Mempool & Bundle Submission\r\n> **Nivel:** PhD/Master\r\n> **Trigger:** 4byte signature DB\r\n> **Repos de referencia:** flashbots/{mev-boost,builder,mev-share,suave-geth} \u00b7 paradigmxyz/{mev-rs,artemis} \u00b7 jito-foundation/jito-relayer \u00b7 cowprotocol/services \u00b7 1inch/fusion-sdk\r\n> **Archivos del repo:** services/searcher-rs/strategies/* \u00b7 services/mempool-listener-rs/* \u00b7 services/executor-rs/bundle/*\r\n\r\n## Quick Start\r\n\r\n```bash\r\ncargo run --release -p searcher-rs -- --rpc-url $RPC_URL_MAINNET\r\n```\r\n\r\n## Core Workflow\r\n\r\n1. Cargar contexto del repo `hefarica/arbitragex-v2` (rama actual, \u00faltimo PR, estado de CI).\r\n2. Identificar el subsistema impactado dentro de los archivos del repo listados arriba.\r\n3. Aplicar la doctrina del nivel **PhD/Master** sin desviaciones.\r\n4. Validar contra: `lint \u2192 typecheck \u2192 build \u2192 tests \u2192 audit \u2192 E2E \u2192 deploy`.\r\n5. Reportar evidencia en formato Markdown forense (logs, traces, m\u00e9tricas, hash de commit).\r\n\r\n## Doctrina del Nivel\r\n\r\n- Zero mocks, zero hardcode, zero `.unwrap()` en hot-path.\r\n- Toda funci\u00f3n pura testeada con property tests.\r\n- Spec antes que c\u00f3digo (RFC interno).\r\n\r\n## Reglas de Ejecuci\u00f3n\r\n\r\n| Condici\u00f3n | Acci\u00f3n |\r\n|-----------|--------|\r\n| CI rojo en `main` | ABORT \u2014 fix-forward, nunca skip |\r\n| Drift schema producer\u2194consumer | ABORT \u2014 restaurar isomorfismo Zod/struct |\r\n| Cobertura E2E < contrato iter 18 | ABORT \u2014 a\u00f1adir testid + assertion DEGRADED/UP/DOWN |\r\n| Secret en plaintext fuera de Vault/age | ABORT \u2014 rotar y reportar |\r\n| Profit neto \u2264 gas + flashloan_fee | ABORT (skill C/E) |\r\n| Slippage > banda RiskGate | RESIZE o ABORT (skill C/E) |\r\n\r\n## Activation Triggers (regex parciales)\r\n\r\n- `4byte signature DB`\r\n- `tx decoding & selector matching`\r\n- `arbitragex-v2 c`\r\n\r\n## Output Esperado\r\n\r\n- Diff at\u00f3mico (rustfmt aparte de sem\u00e1ntica).\r\n- Evidencia: `gh pr checks <N>`, `cargo nextest`, traces OTel, screenshots Playwright.\r\n- ADR si la decisi\u00f3n cambia contrato (`docs/adr/NNNN-*.md`).\r\n\r\n\r\n---",
+    "content_hash": "33cde0b260944b65e18b287dbc9395e1650460047035bbdd94086f446d47fb54",
+    "generated": false,
+    "is_text": true,
+    "line_count": 57,
+    "relative_path": "SKILL.md",
+    "size_bytes": 2342,
+    "source_artifact_id": null,
+    "source_artifact_path": null,
+    "source_end_line": null,
+    "source_start_line": null
+  },
+  {
+    "artifact_id": "art_0001",
+    "artifact_type": "shell",
+    "content": "cargo run --release -p searcher-rs -- --rpc-url $RPC_URL_MAINNET",
+    "content_hash": "5b9019a3a5a175a172273f9d5a4354c670fb05f7d88f964f97397cf7eb55cd29",
+    "generated": true,
+    "is_text": true,
+    "line_count": 1,
+    "relative_path": ".malskills_fences/SKILL__fence_0.sh",
+    "size_bytes": 64,
+    "source_artifact_id": "art_0000",
+    "source_artifact_path": "SKILL.md",
+    "source_end_line": 17,
+    "source_start_line": 15
+  }
+]

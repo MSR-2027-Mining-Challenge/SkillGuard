@@ -1,0 +1,122 @@
+[
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/render.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(1);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/render.mjs::system_command_execution::45": "command"
+      },
+      "operation_object": "obj::operation::scripts/render.mjs::system_command_execution::45",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/render.mjs:45:45:process.exit()",
+      "source_end_line": 45,
+      "source_start_line": 45
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00000"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/render.mjs::system_command_execution::45"
+    ],
+    "sso_id": "sso_00000",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/render.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "process.exit(0);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/render.mjs::system_command_execution::50": "command"
+      },
+      "operation_object": "obj::operation::scripts/render.mjs::system_command_execution::50",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/render.mjs:50:50:process.exit()",
+      "source_end_line": 50,
+      "source_start_line": 50
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00001"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/render.mjs::system_command_execution::50"
+    ],
+    "sso_id": "sso_00001",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/render.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const inPath = resolve(process.cwd(), a.in);",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/render.mjs::system_command_execution::56": "command"
+      },
+      "operation_object": "obj::operation::scripts/render.mjs::system_command_execution::56",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/render.mjs:56:56:process.cwd()",
+      "source_end_line": 56,
+      "source_start_line": 56
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00002"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/render.mjs::system_command_execution::56"
+    ],
+    "sso_id": "sso_00002",
+    "subtype": "system_command_execution"
+  },
+  {
+    "artifact_ids": [
+      "art_0004"
+    ],
+    "artifact_paths": [
+      "scripts/render.mjs"
+    ],
+    "attributes": {
+      "command_class": "high_risk",
+      "matched_text": "const out = resolve(process.cwd(), a.out || basename(inPath, extname(inPath)) + \".png\");",
+      "object_identity_kind": "operation",
+      "operand_roles": {
+        "obj::operation::scripts/render.mjs::system_command_execution::76": "command"
+      },
+      "operation_object": "obj::operation::scripts/render.mjs::system_command_execution::76",
+      "parameter_bindings": [],
+      "sink_callsite_id": "scripts/render.mjs:76:76:process.cwd()",
+      "source_end_line": 76,
+      "source_start_line": 76
+    },
+    "category": "payload_execution",
+    "finding_ids": [
+      "semgrep_00003"
+    ],
+    "operand_ids": [
+      "obj::operation::scripts/render.mjs::system_command_execution::76"
+    ],
+    "sso_id": "sso_00003",
+    "subtype": "system_command_execution"
+  }
+]

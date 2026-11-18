@@ -1,0 +1,115 @@
+{
+  "artifacts": [
+    {
+      "id": "art_0000",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "path": "SKILL_HE.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "path": "references/legal-databases-guide.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "path": "references/legislation-index.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "path": "scripts/legal_term_lookup.py",
+      "type": "python"
+    }
+  ],
+  "edges": [
+    {
+      "source": "art_0004",
+      "target": "sso_00000",
+      "type": "contains"
+    },
+    {
+      "role": "path",
+      "source": "sso_00000",
+      "target": "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392",
+      "type": "has_operand"
+    },
+    {
+      "flow_kind": "binding",
+      "source": "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392",
+      "target": "value::1da06edbd223cad35d8b",
+      "type": "value_flow"
+    }
+  ],
+  "focus": {
+    "artifact_ids": [],
+    "finding_ids": [],
+    "logical_object_ids": [],
+    "pattern_ids": [],
+    "sso_ids": [],
+    "verdict_node_id": "verdict"
+  },
+  "nodes": [
+    {
+      "id": "art_0000",
+      "kind": "artifact",
+      "path": "SKILL.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0001",
+      "kind": "artifact",
+      "path": "SKILL_HE.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0002",
+      "kind": "artifact",
+      "path": "references/legal-databases-guide.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0003",
+      "kind": "artifact",
+      "path": "references/legislation-index.md",
+      "type": "markdown"
+    },
+    {
+      "id": "art_0004",
+      "kind": "artifact",
+      "path": "scripts/legal_term_lookup.py",
+      "type": "python"
+    },
+    {
+      "finding_ids": [
+        "semgrep_00000"
+      ],
+      "id": "sso_00000",
+      "kind": "sso",
+      "subtype": "credential_data_access",
+      "type": "sensitive_data_access"
+    },
+    {
+      "id": "obj::operation::scripts/legal_term_lookup.py::credential_data_access::392",
+      "identity_key": "scripts/legal_term_lookup.py::credential_data_access::392",
+      "kind": "operand",
+      "object_kind": "operation",
+      "role": "path"
+    },
+    {
+      "id": "value::1da06edbd223cad35d8b",
+      "kind": "value",
+      "value": "scripts/legal_term_lookup.py::credential_data_access::392",
+      "value_kind": "symbolic"
+    },
+    {
+      "id": "verdict",
+      "kind": "verdict",
+      "type": "benign"
+    }
+  ]
+}
