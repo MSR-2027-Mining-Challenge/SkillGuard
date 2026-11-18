@@ -1,0 +1,194 @@
+{
+  "runs": [
+    "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1",
+    "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2",
+    "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3",
+    "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-16_004059_sample1000-seed2030-batch4"
+  ],
+  "skills": 1000,
+  "skills_per_stratum": {
+    "skill_md_only": 300,
+    "scripts": 400,
+    "supporting_no_scripts": 300
+  },
+  "generated_at": "2026-11-16T01:24:23.781468-08:00",
+  "analysis_sha256": "d77109543335ff7521f5296d79382b935885f819bea48660880c31cf62de5a30",
+  "scans": {
+    "total": 4000,
+    "statuses": {
+      "COMPLETE": 3712,
+      "CONTRACT_ONLY": 12,
+      "PARTIAL": 272,
+      "FAILED_SCANNER_ERROR": 4
+    },
+    "by_configuration": {
+      "SKILL.md only | default": {
+        "COMPLETE": 931,
+        "PARTIAL": 68,
+        "FAILED_SCANNER_ERROR": 1
+      },
+      "SKILL.md only | behavioral": {
+        "COMPLETE": 931,
+        "PARTIAL": 68,
+        "FAILED_SCANNER_ERROR": 1
+      },
+      "Full folder | default": {
+        "COMPLETE": 931,
+        "PARTIAL": 68,
+        "FAILED_SCANNER_ERROR": 1
+      },
+      "Full folder | behavioral": {
+        "COMPLETE": 919,
+        "CONTRACT_ONLY": 12,
+        "PARTIAL": 68,
+        "FAILED_SCANNER_ERROR": 1
+      }
+    },
+    "wall_seconds_mean": 2.865,
+    "wall_hours_total": 3.18,
+    "primary_analysis_set_skills": 919,
+    "primary_analysis_set_by_stratum": {
+      "skill_md_only": 279,
+      "supporting_no_scripts": 284,
+      "scripts": 356
+    },
+    "excluded_from_primary": {
+      "skills": 81,
+      "by_stratum": {
+        "scripts": 44,
+        "supporting_no_scripts": 16,
+        "skill_md_only": 21
+      },
+      "frontmatter_partial_skills": 68,
+      "contract_only_skills": 12
+    }
+  },
+  "coverage": {
+    "folder_coverage_by_stratum": {
+      "scripts": {
+        "complete": 288,
+        "truncated_listing": 23,
+        "files_without_text": 89
+      },
+      "supporting_no_scripts": {
+        "complete": 264,
+        "files_without_text": 36
+      },
+      "skill_md_only": {
+        "complete": 300
+      }
+    },
+    "known_missing_files_total": 2848,
+    "truncated_listing_skills_missing_unknown": 23,
+    "skillguard_file_tiers": {
+      "scripts|code": 1762,
+      "scripts|not_analyzed": 890,
+      "scripts|text_heuristic": 983,
+      "skill_md_only|code": 102,
+      "skill_md_only|text_heuristic": 198,
+      "supporting_no_scripts|code": 295,
+      "supporting_no_scripts|not_analyzed": 164,
+      "supporting_no_scripts|text_heuristic": 886
+    },
+    "skillguard_not_analyzed_formats_top": {
+      ".json": 291,
+      ".mjs": 124,
+      ".yaml": 112,
+      ".txt": 89,
+      ".ts": 77,
+      ".js": 71,
+      "(none)": 67,
+      ".html": 60,
+      ".csv": 39,
+      ".go": 26,
+      ".css": 21,
+      ".jsx": 18,
+      ".toml": 16,
+      ".yml": 12,
+      ".j2": 11
+    },
+    "cisco_scan_coverage_rules": {
+      "SKILL_LOAD_FALLBACK_USED": 272
+    },
+    "previously_examined_skills": 44
+  },
+  "skill_only_vs_full": {
+    "by_stratum": {
+      "scripts": {
+        "full folder only": 163,
+        "neither": 170,
+        "both": 23
+      },
+      "supporting_no_scripts": {
+        "neither": 257,
+        "both": 10,
+        "full folder only": 17
+      },
+      "skill_md_only": {
+        "neither": 275,
+        "both": 4
+      }
+    },
+    "skills_with_findings_only_visible_in_full_folder": 180,
+    "full_folder_findings_outside_SKILL_md": 969,
+    "skills_where_SKILL_md_findings_differ_between_scopes": 69
+  },
+  "default_vs_behavioral_full_folder": {
+    "skills": 919,
+    "skills_flagged_default": 194,
+    "skills_flagged_behavioral": 217,
+    "skills_flagged_only_with_behavioral": 23,
+    "findings_only_in_behavioral": 123
+  },
+  "cisco_distinct_security_findings_full_folder": 1172,
+  "skillguard": {
+    "behaviors": 244,
+    "skills_with_behavior": 149,
+    "weighted_pct_any": 10.99,
+    "weighted_ci95_any": [
+      8.87,
+      13.11
+    ],
+    "by_capability": {
+      "nested_agent_invocation": 82,
+      "agent_config_modification": 103,
+      "approval_bypass_instruction": 37,
+      "scheduler_invocation": 11,
+      "agent_credential_access": 6,
+      "suspicious_agent_instruction": 2,
+      "agent_env_marker_removal": 3
+    },
+    "evidence_levels": {
+      "instruction_only": 183,
+      "documented_example": 34,
+      "code": 27
+    },
+    "review_priority": {
+      "medium": 186,
+      "low": 40,
+      "high": 18
+    },
+    "behaviors_with_cisco_security_within_3_lines": 4
+  },
+  "skill_level_cooccurrence_full_folder": {
+    "skillguard_and_cisco": 55,
+    "skillguard_only": 81,
+    "cisco_only": 162,
+    "neither": 621,
+    "skills": 919,
+    "note": "Primary analysis set. Co-occurrence of a capability inventory and a security scanner's alerts; not agreement, recall or precision."
+  },
+  "cisco_categories_in_skills_with_skillguard_behaviors": {
+    "Command execution / dangerous shell operations": 38,
+    "Excessive permissions / privilege escalation": 20,
+    "External network communication / data exfiltration": 19,
+    "Other (obfuscation)": 5,
+    "Supply-chain / dependency risks": 4,
+    "Credential / secret access or exposure": 4,
+    "File-system access or modification": 3,
+    "Prompt injection / instruction manipulation": 2,
+    "Other (resource_abuse)": 2,
+    "Other (policy_violation)": 1,
+    "Other (malware)": 1
+  }
+}

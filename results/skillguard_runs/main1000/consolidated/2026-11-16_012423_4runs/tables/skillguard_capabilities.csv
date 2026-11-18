@@ -1,0 +1,11 @@
+measure,n_skills,skills_flagged,scripts_k,scripts_n,scripts_pct,scripts_ci95,supporting_no_scripts_k,supporting_no_scripts_n,supporting_no_scripts_pct,supporting_no_scripts_ci95,skill_md_only_k,skill_md_only_n,skill_md_only_pct,skill_md_only_ci95,weighted_pct,weighted_ci95,behaviors,evidence_levels,review_priority,with_cisco_security_within_3_lines
+nested_agent_invocation,1000,72,37,400,9.25,"[6.79, 12.49]",22,300,7.33,"[4.89, 10.85]",13,300,4.33,"[2.55, 7.27]",5.64,"[4.03, 7.26]",82,"{""instruction_only"": 64, ""code"": 12, ""documented_example"": 6}","{""medium"": 75, ""low"": 6, ""high"": 1}",1
+agent_config_modification,1000,72,46,400,11.5,"[8.73, 15.0]",19,300,6.33,"[4.09, 9.68]",7,300,2.33,"[1.13, 4.74]",4.41,"[3.13, 5.68]",103,"{""instruction_only"": 71, ""documented_example"": 23, ""code"": 9}","{""medium"": 72, ""low"": 31}",0
+approval_bypass_instruction,1000,37,20,400,5.0,"[3.26, 7.6]",13,300,4.33,"[2.55, 7.27]",4,300,1.33,"[0.52, 3.38]",2.49,"[1.5, 3.48]",37,"{""instruction_only"": 37}","{""medium"": 31, ""high"": 6}",1
+scheduler_invocation,1000,10,5,400,1.25,"[0.54, 2.89]",3,300,1.0,"[0.34, 2.9]",2,300,0.67,"[0.18, 2.4]",0.82,"[0.18, 1.46]",11,"{""documented_example"": 3, ""instruction_only"": 6, ""code"": 2}","{""low"": 3, ""medium"": 8}",1
+agent_credential_access,1000,6,2,400,0.5,"[0.14, 1.8]",4,300,1.33,"[0.52, 3.38]",0,300,0.0,"[0.0, 1.26]",0.37,"[0.08, 0.67]",6,"{""documented_example"": 2, ""code"": 1, ""instruction_only"": 3}","{""high"": 6}",0
+suspicious_agent_instruction,1000,2,1,400,0.25,"[0.04, 1.4]",1,300,0.33,"[0.06, 1.86]",0,300,0.0,"[0.0, 1.26]",0.11,"[0.0, 0.26]",2,"{""instruction_only"": 2}","{""high"": 2}",1
+agent_env_marker_removal,1000,3,3,400,0.75,"[0.26, 2.18]",0,300,0.0,"[0.0, 1.26]",0,300,0.0,"[0.0, 1.26]",0.09,"[0.0, 0.18]",3,"{""code"": 3}","{""high"": 3}",0
+any SkillGuard behavior,1000,149,77,400,19.25,"[15.69, 23.4]",50,300,16.67,"[12.88, 21.3]",22,300,7.33,"[4.89, 10.85]",10.99,"[8.87, 13.11]",,,,
+any code/generated-code SkillGuard behavior,1000,18,18,400,4.5,"[2.87, 7.0]",0,300,0.0,"[0.0, 1.26]",0,300,0.0,"[0.0, 1.26]",0.56,"[0.35, 0.77]",,,,
+any high-priority SkillGuard behavior,1000,17,8,400,2.0,"[1.02, 3.9]",9,300,3.0,"[1.59, 5.6]",0,300,0.0,"[0.0, 1.26]",0.95,"[0.5, 1.4]",,,,

@@ -1,0 +1,248 @@
+{
+  "frame": "results/samples/agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10/sampling_frame.csv",
+  "frame_rows": 13000,
+  "excluded_from_strata": {
+    "excluded: folder listing not captured": 10,
+    "excluded: listing truncated, script presence unknown": 1670,
+    "excluded: program source but no executable script": 22
+  },
+  "previously_used_samples": [
+    "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027/sample/sample_manifest.csv",
+    "results/skillguard_runs/heldout/2026-11-13_fresh100-seed2029/sample_manifest.csv",
+    "results/skillguard_runs/heldout/2026-11-13_heldout-seed2028/sample_manifest.csv"
+  ],
+  "previously_used_file_shas": 220,
+  "population_per_stratum": {
+    "scripts": {
+      "N": 1404,
+      "complete": 997,
+      "available": 1295,
+      "available_complete": 891,
+      "previously_used": 109
+    },
+    "supporting_no_scripts": {
+      "N": 2634,
+      "complete": 2399,
+      "available": 2568,
+      "available_complete": 2333,
+      "previously_used": 66
+    },
+    "skill_md_only": {
+      "N": 7260,
+      "complete": 7260,
+      "available": 7215,
+      "available_complete": 7215,
+      "previously_used": 45
+    }
+  },
+  "folder_size": {
+    "scripts": {
+      "mean_supporting_bytes": 517719,
+      "median_supporting_bytes": 23303,
+      "mean_files_listed": 16.21
+    },
+    "supporting_no_scripts": {
+      "mean_supporting_bytes": 157842,
+      "median_supporting_bytes": 5882,
+      "mean_files_listed": 5.27
+    },
+    "skill_md_only": {
+      "mean_supporting_bytes": 0,
+      "median_supporting_bytes": 0,
+      "mean_files_listed": 0
+    }
+  },
+  "extension_mix": {
+    "scripts": {
+      "supporting_files": 20994,
+      "share_in_skillguard_code_or_text_formats": 0.542,
+      "top_extensions": {
+        ".md": 6379,
+        ".py": 4008,
+        ".json": 1315,
+        ".js": 942,
+        ".ts": 909,
+        ".sh": 861,
+        ".png": 613,
+        "(none)": 493,
+        ".mjs": 409,
+        ".mdx": 409,
+        ".tsx": 342,
+        ".html": 319
+      }
+    },
+    "supporting_no_scripts": {
+      "supporting_files": 13545,
+      "share_in_skillguard_code_or_text_formats": 0.781,
+      "top_extensions": {
+        ".md": 10572,
+        ".json": 817,
+        ".mdx": 582,
+        ".yaml": 422,
+        ".png": 204,
+        "(none)": 131,
+        ".ttf": 110,
+        ".html": 106,
+        ".txt": 95,
+        ".prose": 64,
+        ".svg": 58,
+        ".sql": 45
+      }
+    },
+    "skill_md_only": {
+      "supporting_files": 0,
+      "share_in_skillguard_code_or_text_formats": null,
+      "top_extensions": {}
+    }
+  },
+  "cisco_timing": {
+    "nov3_mean_wall_seconds_by_stratum_config": {
+      "scripts | Full folder | behavioral": 5.74,
+      "scripts | Full folder | default": 5.64,
+      "scripts | SKILL.md only | behavioral": 5.52,
+      "scripts | SKILL.md only | default": 5.69,
+      "skill_md_only | Full folder | behavioral": 5.27,
+      "skill_md_only | Full folder | default": 5.27,
+      "skill_md_only | SKILL.md only | behavioral": 5.33,
+      "skill_md_only | SKILL.md only | default": 5.28,
+      "supporting_no_scripts | Full folder | behavioral": 5.42,
+      "supporting_no_scripts | Full folder | default": 5.38,
+      "supporting_no_scripts | SKILL.md only | behavioral": 5.42,
+      "supporting_no_scripts | SKILL.md only | default": 5.37
+    },
+    "nov3_mean_wall_seconds_all": 5.43,
+    "fresh100_full_folder_mean_wall_seconds": 4.88,
+    "fresh100_full_folder_max_wall_seconds": 5.58,
+    "planning_seconds_per_scan": 5.08,
+    "report_json_mean_bytes": 4820
+  },
+  "skillguard_v3_seconds_per_skill": {
+    "mean": 0.0166,
+    "max": 0.101
+  },
+  "plans": {
+    "A_recommended_disproportionate": {
+      "allocation": {
+        "scripts": 400,
+        "supporting_no_scripts": 300,
+        "skill_md_only": 300
+      },
+      "design_weights": {
+        "scripts": 3.51,
+        "supporting_no_scripts": 8.78,
+        "skill_md_only": 24.2
+      },
+      "sampling_fraction_of_available": {
+        "scripts": 0.309,
+        "supporting_no_scripts": 0.117,
+        "skill_md_only": 0.042
+      },
+      "expected_incomplete_folders": {
+        "scripts": 125,
+        "supporting_no_scripts": 27,
+        "skill_md_only": 0
+      },
+      "scans": {
+        "skill_md_only_configs": 2000,
+        "full_folder_configs_complete_only (notebook default)": 1696,
+        "full_folder_configs_incl_incomplete (ALLOW_INCOMPLETE_FOLDERS=True)": 2000,
+        "total_default": 3696,
+        "total_incl_incomplete": 4000
+      },
+      "est_hours_sequential_default": 5.22,
+      "est_hours_sequential_incl_incomplete": 5.64,
+      "moe95_per_stratum_p05": {
+        "scripts": 0.0181,
+        "supporting_no_scripts": 0.0232,
+        "skill_md_only": 0.0241
+      },
+      "moe95_per_stratum_p50": {
+        "scripts": 0.0415,
+        "supporting_no_scripts": 0.0533,
+        "skill_md_only": 0.0554
+      }
+    },
+    "B_proportional": {
+      "allocation": {
+        "scripts": 124,
+        "supporting_no_scripts": 233,
+        "skill_md_only": 643
+      },
+      "design_weights": {
+        "scripts": 11.32,
+        "supporting_no_scripts": 11.3,
+        "skill_md_only": 11.29
+      },
+      "sampling_fraction_of_available": {
+        "scripts": 0.096,
+        "supporting_no_scripts": 0.091,
+        "skill_md_only": 0.089
+      },
+      "expected_incomplete_folders": {
+        "scripts": 39,
+        "supporting_no_scripts": 21,
+        "skill_md_only": 0
+      },
+      "scans": {
+        "skill_md_only_configs": 2000,
+        "full_folder_configs_complete_only (notebook default)": 1880,
+        "full_folder_configs_incl_incomplete (ALLOW_INCOMPLETE_FOLDERS=True)": 2000,
+        "total_default": 3880,
+        "total_incl_incomplete": 4000
+      },
+      "est_hours_sequential_default": 5.47,
+      "est_hours_sequential_incl_incomplete": 5.64,
+      "moe95_per_stratum_p05": {
+        "scripts": 0.0366,
+        "supporting_no_scripts": 0.0267,
+        "skill_md_only": 0.0161
+      },
+      "moe95_per_stratum_p50": {
+        "scripts": 0.0841,
+        "supporting_no_scripts": 0.0613,
+        "skill_md_only": 0.0369
+      }
+    },
+    "C_equal": {
+      "allocation": {
+        "scripts": 334,
+        "supporting_no_scripts": 333,
+        "skill_md_only": 333
+      },
+      "design_weights": {
+        "scripts": 4.2,
+        "supporting_no_scripts": 7.91,
+        "skill_md_only": 21.8
+      },
+      "sampling_fraction_of_available": {
+        "scripts": 0.258,
+        "supporting_no_scripts": 0.13,
+        "skill_md_only": 0.046
+      },
+      "expected_incomplete_folders": {
+        "scripts": 104,
+        "supporting_no_scripts": 30,
+        "skill_md_only": 0
+      },
+      "scans": {
+        "skill_md_only_configs": 2000,
+        "full_folder_configs_complete_only (notebook default)": 1732,
+        "full_folder_configs_incl_incomplete (ALLOW_INCOMPLETE_FOLDERS=True)": 2000,
+        "total_default": 3732,
+        "total_incl_incomplete": 4000
+      },
+      "est_hours_sequential_default": 5.27,
+      "est_hours_sequential_incl_incomplete": 5.64,
+      "moe95_per_stratum_p05": {
+        "scripts": 0.0204,
+        "supporting_no_scripts": 0.0219,
+        "skill_md_only": 0.0229
+      },
+      "moe95_per_stratum_p50": {
+        "scripts": 0.0468,
+        "supporting_no_scripts": 0.0502,
+        "skill_md_only": 0.0525
+      }
+    }
+  }
+}

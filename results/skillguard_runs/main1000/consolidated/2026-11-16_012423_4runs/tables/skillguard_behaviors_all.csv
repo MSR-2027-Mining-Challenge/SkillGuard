@@ -1,0 +1,245 @@
+skill_id,behavior_id,capability,evidence_level,review_priority,risk_signals,locations,cisco_security_near,folder_complete
+CreateCLI-c22ef1e65364,B1,agent_config_modification,instruction_only,medium,[],"[""Workflows/CreateCli.md:614"", ""Workflows/CreateCli.md:641""]",[],True
+add-parallel-0d91b64678cf,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:131"", ""SKILL.md:133""]",[],True
+add-parallel-0d91b64678cf,B2,scheduler_invocation,documented_example,low,[],"[""SKILL.md:236"", ""SKILL.md:243"", ""SKILL.md:290""]",[],True
+architecture-map-7f107a53514f,B1,agent_config_modification,instruction_only,low,[],"[""README.md:27""]",[],True
+architecture-map-7f107a53514f,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:185""]",[],True
+case_00858-720e1261b991,B1,suspicious_agent_instruction,instruction_only,high,"[""suspicious_instruction""]","[""memory.md:3"", ""scripts/_resume_init.py:2""]","[""PIPELINE_TAINT_FLOW@memory.md:1""]",True
+case_02618-9ebcb62a0b3d,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:238""]",[],False
+cheat-score-4b5bad5d7f34,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:58"", ""SKILL.md:67""]",[],True
+claude-agent-sdk-dev-018a346a8bf4,B1,approval_bypass_instruction,instruction_only,high,"[""permission_flag""]","[""SKILL.md:57"", ""SKILL.md:103"", ""references/concepts.md:78"", ""references/concepts.md:80"", ""references/pitfalls.md:7"", ""references/pitfalls.md:9"", ""references/pitfalls.md:13"", ""references/pitfalls.md:25"", ""references/pitfalls.md:133""]",[],True
+claude-agent-sdk-dev-018a346a8bf4,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:72""]",[],True
+claude-agent-sdk-dev-018a346a8bf4,B3,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:131""]",[],True
+computer-use-42c8019ccc1b,B1,approval_bypass_instruction,instruction_only,medium,[],"[""README.md:29""]",[],True
+convex-quickstart-3e8b66a09db3,B1,scheduler_invocation,instruction_only,medium,[],"[""SKILL.md:430""]",[],False
+create-command-6f511ddd1e5b,B1,agent_config_modification,documented_example,low,[],"[""SKILL.md:40""]",[],True
+create-command-6f511ddd1e5b,B2,agent_config_modification,documented_example,low,[],"[""SKILL.md:60""]",[],True
+flyio-cli-cc5d7769e1c9,B1,approval_bypass_instruction,instruction_only,medium,[],"[""references/safety.md:3""]",[],False
+frontend-design-pro-a08a2d2025c2,B1,nested_agent_invocation,code,medium,[],"[""test-frontend-skill.sh:181""]",[],True
+git-issue-73acb3191e2c,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:120"", ""SKILL.md:289""]",[],True
+gstack-context-save-1ab80008e4b8,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:111""]",[],False
+gstack-context-save-1ab80008e4b8,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:213"", ""SKILL.md:216"", ""SKILL.md:239"", ""SKILL.md:258""]",[],False
+gstack-context-save-1ab80008e4b8,B3,agent_credential_access,documented_example,high,"[""credential_access""]","[""SKILL.md:387"", ""SKILL.md:388"", ""SKILL.md:422""]",[],False
+hermes-agent-d0efd2f03d8a,B1,approval_bypass_instruction,instruction_only,high,"[""permission_flag""]","[""SKILL.md:70""]",[],True
+hermes-agent-d0efd2f03d8a,B2,scheduler_invocation,instruction_only,medium,[],"[""SKILL.md:523""]",[],True
+impeccable-3c2b9e8aa34d,B1,approval_bypass_instruction,instruction_only,medium,[],"[""reference/codex.md:49"", ""reference/document.md:424"", ""reference/live.md:87"", ""reference/shape.md:9"", ""reference/shape.md:78"", ""reference/shape.md:80"", ""reference/shape.md:121""]",[],False
+impeccable-3c2b9e8aa34d,B2,nested_agent_invocation,instruction_only,medium,[],"[""reference/codex.md:82"", ""reference/codex.md:85"", ""reference/critique.md:30""]",[],False
+impeccable-3c2b9e8aa34d,B3,agent_config_modification,instruction_only,medium,[],"[""reference/hooks.md:11"", ""reference/hooks.md:85""]",[],False
+impeccable-3c2b9e8aa34d,B4,agent_config_modification,instruction_only,medium,[],"[""reference/init.md:172""]",[],False
+launchd-cron-installer-04a39183afa5,B1,scheduler_invocation,code,medium,"[""persistence_in_code""]","[""scripts/install.sh:92"", ""scripts/install.sh:103"", ""scripts/install.sh:104"", ""scripts/install.sh:113"", ""scripts/list.sh:17"", ""scripts/uninstall.sh:22"", ""scripts/uninstall.sh:23"", ""SKILL.md:14"", ""SKILL.md:60"", ""SKILL.md:61"", ""SKILL.md:79"", ""SKILL.md:80""]",[],True
+launchd-cron-installer-04a39183afa5,B2,scheduler_invocation,instruction_only,medium,[],"[""README.md:3"", ""SKILL.md:3""]","[""ACTIVE_OS_PERSISTENCE_DIRECTIVE@SKILL.md:3""]",True
+migrate-header-73343b5f466c,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:566"", ""SKILL.md:831""]",[],False
+minimap-92360e59ce0c,B1,agent_config_modification,instruction_only,low,[],"[""README.md:71""]",[],False
+motion-graphics-88a76993cbea,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:99"", ""SKILL.md:121"", ""SKILL.md:125"", ""SKILL.md:140""]",[],True
+namecheap-dns-d169c12ba1f4,B1,agent_config_modification,documented_example,low,[],"[""README.md:39""]",[],False
+openai-docs-41c7dab71c4a,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:46""]",[],False
+pdca-4a9451711e3e,B1,nested_agent_invocation,instruction_only,medium,[],"[""phases/analyze.md:6"", ""phases/analyze.md:76"", ""phases/design.md:42"", ""phases/design.md:66"", ""phases/design.md:93"", ""phases/design.md:122"", ""phases/design.md:149"", ""phases/design.md:186"", ""phases/design.md:212"", ""phases/design.md:268"", ""phases/design.md:286"", ""phases/design.md:313"", ""phases/design.md:342"", ""phases/design.md:367"", ""phases/do.md:51"", ""phases/do.md:166"", ""phases/do.md:179"", ""phases/do.md:196"", ""phases/do.md:230"", ""phases/do.md:231"", ""phases/do.md:236"", ""phases/do.md:247"", ""phases/do.md:250"", ""phases/do.md:253"", ""phases/do.md:256"", ""phases/iterate.md:29"", ""phases/plan.md:32"", ""phases/plan.md:61"", ""phases/plan.md:102"", ""phases/plan.md:132"", ""phases/research.md:25"", ""phases/research.md:61""]",[],True
+pr-retro-6ff29e12e7b5,B1,agent_config_modification,documented_example,low,[],"[""SKILL.md:76"", ""SKILL.md:78"", ""SKILL.md:124"", ""SKILL.md:134"", ""references/gap-report-format.md:60"", ""references/gap-report-format.md:66"", ""references/gap-report-format.md:81"", ""references/gap-report-format.md:106""]",[],True
+research-standard-4ef886b7a0b2,B1,agent_config_modification,instruction_only,medium,[],"[""TAXONOMY/domains.md:82""]",[],True
+sadd-multi-agent-patterns-78096baea58e,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:58"", ""SKILL.md:177""]",[],True
+skill-40dd1a89d231,B1,approval_bypass_instruction,instruction_only,medium,[],"["".claude/commands/capture.md:31""]",[],False
+skill-40dd1a89d231,B2,agent_config_modification,documented_example,low,[],"[""README.md:43"", ""README.md:44"", ""README.md:45"", ""README.md:46"", ""README.md:201"", ""README.md:202""]",[],False
+skill-40dd1a89d231,B3,nested_agent_invocation,documented_example,low,[],"[""README.md:67""]",[],False
+skill-6d9cb9bf4c2a,B1,agent_config_modification,documented_example,low,[],"[""README.md:71""]",[],True
+skill-9f63610a38b5,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:156"", ""SKILL.md:164""]",[],False
+skill-9f63610a38b5,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:386""]",[],False
+skill-c99707dc9b09,B1,nested_agent_invocation,code,medium,[],"[""scripts/install.sh:43"", ""README.md:104"", ""README.md:145"", ""references/mcp-setup.md:14"", ""references/mcp-setup.md:20"", ""references/tool-map.md:14""]",[],False
+skill-c99707dc9b09,B2,agent_config_modification,documented_example,low,[],"[""README.md:60"", ""README.md:70""]",[],False
+skill-c99707dc9b09,B3,agent_config_modification,documented_example,low,[],"[""references/mcp-setup.md:52""]",[],False
+skill-cafee059d358,B1,agent_config_modification,instruction_only,low,[],"[""README.md:66""]",[],False
+skill-cafee059d358,B2,nested_agent_invocation,documented_example,low,[],"[""README.md:235""]",[],False
+skill-creator-04290a68feda,B1,agent_env_marker_removal,code,high,"[""env_marker_removal""]","[""scripts/improve_description.py:33"", ""scripts/run_eval.py:83""]",[],True
+skill-creator-04290a68feda,B2,nested_agent_invocation,code,medium,[],"[""scripts/improve_description.py:35"", ""scripts/run_eval.py:85"", ""SKILL.md:466"", ""SKILL.md:488""]",[],True
+skill-creator-04290a68feda,B3,agent_config_modification,code,medium,[],"[""scripts/run_eval.py:57"", ""scripts/run_eval.py:68"", ""scripts/run_eval.py:181""]",[],True
+skill-creator-04290a68feda,B4,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:205"", ""SKILL.md:259"", ""SKILL.md:495""]",[],True
+subagent-driven-development-1ba6eb530784,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:8"", ""SKILL.md:186"", ""code-quality-reviewer-prompt.md:3"", ""implementer-prompt.md:3"", ""spec-reviewer-prompt.md:3""]",[],True
+t1k-doctor-289969765765,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:62"", ""references/checks.md:502""]",[],False
+t1k-doctor-289969765765,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:72""]",[],False
+t1k-doctor-289969765765,B3,agent_config_modification,instruction_only,medium,[],"[""references/checks.md:44""]",[],False
+t1k-doctor-289969765765,B4,agent_config_modification,instruction_only,medium,[],"[""references/checks.md:277"", ""references/fix-mode.md:30""]",[],False
+t1k-doctor-289969765765,B5,nested_agent_invocation,instruction_only,medium,[],"[""references/checks.md:419"", ""references/mcp-requirements.md:86""]",[],False
+tmux-velonone-8641377b5e2e,B1,approval_bypass_instruction,instruction_only,high,"[""permission_flag""]","[""SKILL.md:101""]",[],True
+algorithmic-art-b0e208a29fa7,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:32""]",[],True
+audit-evidence-export-b8bf7d4ec17f,B1,nested_agent_invocation,instruction_only,medium,[],"[""references/performance.md:7"", ""references/performance.md:29"", ""references/performance.md:91""]",[],True
+azure-devops-e1dd2b66e4d3,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:409""]",[],False
+botlearn-selfoptimize-f9b81f1634b9,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:172"", ""SKILL.md:182"", ""references/openclaw-integration.md:82"", ""references/openclaw-integration.md:184""]",[],False
+botlearn-selfoptimize-f9b81f1634b9,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:210"", ""SKILL.md:379"", ""SKILL.md:387"", ""SKILL.md:397"", ""SKILL.md:413"", ""SKILL.md:574"", ""references/examples.md:65""]",[],False
+botlearn-selfoptimize-f9b81f1634b9,B3,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:496""]",[],False
+botlearn-selfoptimize-f9b81f1634b9,B4,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:601"", ""references/hooks-setup.md:15""]",[],False
+botlearn-selfoptimize-f9b81f1634b9,B5,agent_config_modification,instruction_only,medium,[],"[""references/hooks-setup.md:48""]",[],False
+botlearn-selfoptimize-f9b81f1634b9,B6,agent_config_modification,instruction_only,medium,[],"[""references/hooks-setup.md:92""]",[],False
+bundle-builder-8fa0fcf5819c,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:37""]",[],True
+closedrings-track-time-ebf567823455,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:32"", ""SKILL.md:95""]",[],True
+code-verification-b66aa5d5b78a,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:60""]",[],True
+codex-ready-3238ef6c49b8,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:37""]",[],False
+codex-ready-3238ef6c49b8,B2,agent_config_modification,instruction_only,medium,[],"[""references/agents-md-spec.md:20"", ""references/dual-tool-structure.md:23"", ""templates/AGENTS.preamble.template.md:2""]",[],False
+codex-ready-3238ef6c49b8,B3,agent_config_modification,instruction_only,medium,[],"[""references/gotchas.md:7""]",[],False
+codex-ready-3238ef6c49b8,B4,nested_agent_invocation,instruction_only,medium,[],"[""references/parity-method.md:14"", ""templates/AGENTS.preamble.template.md:25""]",[],False
+configure-ecc-0e3cecdd413e,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:22""]",[],True
+configure-ecc-0e3cecdd413e,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:282""]",[],True
+create-strategy-b4befb6b4150,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:135"", ""references/error-recovery.md:3""]",[],True
+creating-skills-skill-eec8dd217a9f,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:27""]",[],True
+creating-skills-skill-eec8dd217a9f,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:260"", ""SKILL.md:265""]",[],True
+financial-report-extraction-2fa30cbdc754,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:58""]",[],True
+hoorayhr-86e81273405c,B1,approval_bypass_instruction,instruction_only,medium,[],"[""MANUAL.md:65"", ""SKILL.md:77""]",[],True
+iikit-08-taskstoissues-61cce4592036,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:62""]",[],False
+kimiqb-499d992a0a80,B1,nested_agent_invocation,instruction_only,medium,[],"[""references/subagent-playbook.md:59""]",[],False
+knowledge-base-9f96f028eb8a,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:331""]",[],True
+mobile-bottom-navbar-efde1777e076,B1,agent_config_modification,documented_example,low,[],"[""PACKAGING-SUMMARY.md:140"", ""PACKAGING-SUMMARY.md:194""]",[],False
+mobile-bottom-navbar-efde1777e076,B2,agent_config_modification,documented_example,low,[],"[""PACKAGING-SUMMARY.md:191""]",[],False
+moltr-dd9530c5329a,B1,nested_agent_invocation,code,medium,[],"[""scripts/moltr.sh:133""]",[],False
+moltr-dd9530c5329a,B2,scheduler_invocation,documented_example,low,[],"[""INSTALL.md:58"", ""INSTALL.md:103"", ""SKILL.md:134"", ""SKILL.md:136""]",[],False
+multi-agent-10e916c36e49,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:4"", ""SKILL.md:15"", ""SKILL.md:66"", ""SKILL.md:68"", ""SKILL.md:83"", ""SKILL.md:119"", ""SKILL.md:127"", ""SKILL.md:187"", ""SKILL.md:188"", ""SKILL.md:301"", ""SKILL.md:304""]",[],True
+optimize-landing-page-708ffcdf21c4,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:69""]",[],False
+plan-ceo-review-ebb56500c6eb,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:780"", ""SKILL.md:807""]",[],False
+plan-ceo-review-ebb56500c6eb,B2,nested_agent_invocation,documented_example,low,[],"[""SKILL.md:1168""]",[],False
+plugin-authoring-guide-b10208feff7b,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:104""]",[],True
+plugin-authoring-guide-b10208feff7b,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:285"", ""SKILL.md:393""]",[],True
+plugin-authoring-guide-b10208feff7b,B3,nested_agent_invocation,documented_example,low,[],"[""SKILL.md:351"", ""SKILL.md:354"", ""SKILL.md:357"", ""SKILL.md:360"", ""SKILL.md:361"", ""SKILL.md:362"", ""SKILL.md:363"", ""SKILL.md:364"", ""SKILL.md:396""]",[],True
+project-management-df67924e1f4d,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:60"", ""project-management/SKILL.md:60"", ""project-management/references/documentation-triggers.md:54"", ""references/documentation-triggers.md:54""]",[],True
+prose-b549b02de44f,B1,nested_agent_invocation,instruction_only,medium,[],"[""compiler.md:87"", ""compiler.md:698"", ""compiler.md:756"", ""compiler.md:2618"", ""examples/README.md:79"", ""examples/README.md:165"", ""guidance/antipatterns.md:120"", ""guidance/system-prompt.md:28"", ""guidance/system-prompt.md:47"", ""help.md:9"", ""help.md:76"", ""prose.md:19"", ""prose.md:72"", ""prose.md:90"", ""prose.md:108"", ""prose.md:138"", ""prose.md:225"", ""prose.md:507"", ""prose.md:519"", ""prose.md:540"", ""prose.md:1191"", ""state/filesystem.md:376"", ""state/postgres.md:878"", ""state/sqlite.md:574""]",[],False
+ralph-cc2f35b273f0,B1,nested_agent_invocation,code,high,"[""trust_flags""]","[""templates/loop.sh:56"", ""SKILL.md:239"", ""SKILL.md:346""]","[""BEHAVIOR_BASH_TAINT_FLOW@SKILL.md:346"", ""BEHAVIOR_BASH_TAINT_FLOW@SKILL.md:347""]",True
+ralph-cc2f35b273f0,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:16"", ""SKILL.md:34"", ""SKILL.md:128"", ""SKILL.md:413"", ""templates/PROMPT_build.md:15""]",[],True
+ralph-cc2f35b273f0,B3,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:173""]",[],True
+ralph-cc2f35b273f0,B4,approval_bypass_instruction,instruction_only,high,"[""permission_flag""]","[""SKILL.md:278""]",[],True
+resource-scout-6404a98a9113,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:121""]",[],True
+review-branch-95e91c997080,B1,agent_config_modification,instruction_only,medium,[],"[""CHECKLISTS.md:103""]",[],True
+review-branch-95e91c997080,B2,agent_config_modification,instruction_only,medium,[],"[""DESIGN-LOG.md:27"", ""SKILL.md:42"", ""SKILL.md:234"", ""SKILL.md:257"", ""SKILL.md:271""]",[],True
+review-branch-95e91c997080,B3,agent_config_modification,instruction_only,low,[],"[""README.md:18"", ""README.md:26"", ""README.md:53""]",[],True
+review-branch-95e91c997080,B4,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:247""]",[],True
+session-handoff__MIXED_B4-2229332e6d6b,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:41""]",[],False
+simulate-6349b1fbfa06,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:3"", ""SKILL.md:64"", ""references/round-prompts.md:3""]",[],True
+skill-66b8904a37a6,B1,nested_agent_invocation,documented_example,low,[],"[""MCP-README.md:25"", ""QUICKSTART.md:56"", ""SKILL.md:130""]",[],False
+skill-b2de300ef389,B1,agent_config_modification,code,medium,[],"[""install.sh:4"", ""install.sh:5""]",[],False
+skill-b2de300ef389,B2,agent_config_modification,documented_example,low,[],"[""README.md:28"", ""README.md:29""]",[],False
+skill-creator-9abe605b3efd,B1,agent_config_modification,code,medium,[],"[""scripts/run_eval.py:57"", ""scripts/run_eval.py:68"", ""scripts/run_eval.py:181""]",[],True
+skill-creator-9abe605b3efd,B2,agent_env_marker_removal,code,high,"[""env_marker_removal""]","[""scripts/run_eval.py:83""]",[],True
+skill-creator-9abe605b3efd,B3,nested_agent_invocation,code,medium,[],"[""scripts/run_eval.py:85"", ""SKILL.md:432"", ""SKILL.md:454""]",[],True
+skill-creator-9abe605b3efd,B4,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:171"", ""SKILL.md:225"", ""SKILL.md:461""]",[],True
+skill-creator-abaf911aecfe,B1,agent_env_marker_removal,code,high,"[""env_marker_removal""]","[""scripts/improve_description.py:33"", ""scripts/run_eval.py:83""]",[],True
+skill-creator-abaf911aecfe,B2,nested_agent_invocation,code,medium,[],"[""scripts/improve_description.py:35"", ""scripts/run_eval.py:85"", ""SKILL.md:432"", ""SKILL.md:454""]",[],True
+skill-creator-abaf911aecfe,B3,agent_config_modification,code,medium,[],"[""scripts/run_eval.py:57"", ""scripts/run_eval.py:68"", ""scripts/run_eval.py:181""]",[],True
+skill-creator-abaf911aecfe,B4,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:171"", ""SKILL.md:225"", ""SKILL.md:461""]",[],True
+skill-d079d2317018,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:105""]",[],False
+skill-d079d2317018,B2,agent_config_modification,instruction_only,medium,[],"[""docs/EQUIP-DESIGN.md:32"", ""docs/EQUIP-DESIGN.md:277"", ""docs/EQUIP-DESIGN.md:429""]",[],False
+skill-d486faeae9b3,B1,agent_config_modification,documented_example,low,[],"[""README.md:13"", ""README.md:21"", ""README.md:28""]",[],False
+telephony-2d2d75c142f7,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:20"", ""SKILL.md:244""]",[],True
+testo-migrate-from-phpunit-9f8c3e13f83a,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:124"", ""references/migrate-with-agents.md:70"", ""references/migrate-with-rector.md:101""]",[],False
+upstash-qstash-92c7d1c31bea,B1,scheduler_invocation,instruction_only,medium,[],"[""SKILL.md:15"", ""SKILL.md:39""]",[],True
+youtube-content-7162d1c45997,B1,scheduler_invocation,instruction_only,medium,[],"[""SKILL.md:128"", ""SKILL.md:357"", ""SKILL.md:395"", ""SKILL.md:251"", ""SKILL.md:355"", ""references/web-extract-alternative.md:82"", ""references/web-extract-alternative.md:85""]",[],True
+youtube-content-7162d1c45997,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:380""]",[],True
+youtube-content-7162d1c45997,B3,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:395""]",[],True
+Pair-Programming-12a5247f1959,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:415""]",[],False
+adk-skill-4aa83b5bc710,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:182"", ""references/design-patterns.md:248""]",[],True
+agent-creator-e311f97db954,B1,agent_config_modification,code,medium,[],"[""scripts/init-agent.sh:75"", ""scripts/init-agent.sh:100""]",[],True
+agent-creator-e311f97db954,B2,agent_config_modification,documented_example,low,[],"[""README.md:66"", ""assets/README.md:48"", ""scripts/README.md:94""]",[],True
+aiib-sector-scan-f9fb70a199ec,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:57"", ""SKILL.md:60""]",[],True
+ask-k2-7997455b8a31,B1,nested_agent_invocation,code,medium,[],"[""ask-k2.sh:16""]",[],True
+claw-mux-7074b5119807,B1,agent_config_modification,instruction_only,medium,[],"[""references/notifications.md:84""]",[],True
+commit-howarewoo-481f53245540,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:24""]",[],True
+config-packager-aa10c9502af8,B1,agent_credential_access,code,high,"[""credential_access""]","[""scripts/package.sh:52""]",[],True
+config-packager-aa10c9502af8,B2,agent_config_modification,instruction_only,medium,[],"[""references/cross-platform.md:63"", ""references/distribution-repo.md:29""]",[],True
+connector-creator-643d16f9fd5c,B1,agent_config_modification,instruction_only,medium,[],"[""references/db-connector-pointer.md:36""]",[],False
+connector-creator-643d16f9fd5c,B2,approval_bypass_instruction,instruction_only,medium,[],"[""references/research-patterns.md:39""]",[],False
+connector-creator-643d16f9fd5c,B3,agent_config_modification,instruction_only,medium,[],"[""references/verification.md:57""]",[],False
+design-797152308cc9,B1,nested_agent_invocation,instruction_only,medium,[],"[""references/social-photos-design.md:34""]",[],True
+devex-review-97d80c4f0016,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:130""]",[],False
+devex-review-97d80c4f0016,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:232"", ""SKILL.md:235"", ""SKILL.md:259"", ""SKILL.md:278""]",[],False
+devex-review-97d80c4f0016,B3,agent_credential_access,documented_example,high,"[""credential_access""]","[""SKILL.md:446"", ""SKILL.md:447"", ""SKILL.md:481""]",[],False
+docs-76a293507595,B1,nested_agent_invocation,instruction_only,medium,[],"[""superpowers/plans/2026-04-29-library-app-store-redesign.md:1950""]",[],False
+email-d45fbc666cc3,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:14""]",[],True
+ensure-agents-md-8613e2d22862,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:5"", ""SKILL.md:23"", ""SKILL.md:98"", ""SKILL.md:100"", ""SKILL.md:111"", ""references/module-catalog.md:32""]",[],False
+fireworks-tech-graph-8ea538cdc8c6,B1,nested_agent_invocation,code,medium,[],"[""scripts/generate-diagram.sh:27""]",[],False
+fireworks-tech-graph-8ea538cdc8c6,B2,nested_agent_invocation,instruction_only,medium,[],"[""README.md:281""]",[],False
+gsd-health-adeddb5d07cf,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:25"", ""SKILL.md:26""]",[],True
+gskills-forge-fd4615931120,B1,agent_config_modification,instruction_only,low,[],"[""README.md:17""]",[],False
+hatch-pet-b3f3a6f18215,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:10"", ""SKILL.md:58""]",[],True
+hifi-math-tts-bebf863dcf05,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:41""]",[],True
+hifi-math-tts-bebf863dcf05,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:250"", ""SKILL.md:259"", ""SKILL.md:270"", ""assets/master-dispatch-prompt-template.md:5""]",[],True
+impeccable-171b6b1b3be1,B1,approval_bypass_instruction,instruction_only,medium,[],"[""reference/craft.md:64"", ""reference/document.md:422"", ""reference/live.md:70"", ""reference/shape.md:9"", ""reference/shape.md:77""]",[],False
+impeccable-171b6b1b3be1,B2,nested_agent_invocation,instruction_only,medium,[],"[""reference/critique.md:7"", ""reference/critique.md:9""]",[],False
+jupyter-notebook-6c6268437f89,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:35""]",[],False
+leak-publish-d1cf33803199,B1,scheduler_invocation,code,medium,"[""persistence_in_code""]","[""scripts/publish.sh:257"", ""scripts/smoke_persistent_runner.sh:121"", ""scripts/smoke_persistent_runner.sh:153"", ""scripts/smoke_persistent_runner.sh:191""]",[],False
+luokai-skill-scanner-ad0bdd7c0562,B1,agent_config_modification,documented_example,low,[],"[""SKILL.md:94"", ""references/dangerous-code-patterns.md:115"", ""references/prompt-injection-patterns.md:132""]",[],True
+luokai-skill-scanner-ad0bdd7c0562,B2,agent_config_modification,documented_example,low,[],"[""references/dangerous-code-patterns.md:111""]",[],True
+luokai-skill-scanner-ad0bdd7c0562,B3,agent_config_modification,documented_example,low,[],"[""references/dangerous-code-patterns.md:112""]",[],True
+luokai-skill-scanner-ad0bdd7c0562,B4,agent_config_modification,documented_example,low,[],"[""references/dangerous-code-patterns.md:119""]",[],True
+luokai-skill-scanner-ad0bdd7c0562,B5,nested_agent_invocation,instruction_only,medium,[],"[""references/permission-analysis.md:13"", ""references/permission-analysis.md:36"", ""references/permission-analysis.md:76""]",[],True
+okx-growth-competition-f09b41c26c25,B1,suspicious_agent_instruction,instruction_only,high,"[""suspicious_instruction""]","[""SKILL.md:25""]",[],True
+openclaw-config-7264f9903e3e,B1,agent_credential_access,instruction_only,high,"[""credential_access""]","[""references/authentication.md:92""]",[],False
+openclaw-config-7264f9903e3e,B2,scheduler_invocation,documented_example,low,[],"[""references/index.md:225"", ""references/remote-gateway-readme.md:119"", ""references/remote-gateway-readme.md:144"", ""references/remote-gateway-readme.md:150"", ""references/remote-gateway.md:218"", ""references/remote-gateway.md:237"", ""references/remote-gateway.md:243"", ""references/remote.md:239"", ""references/remote.md:260"", ""references/remote.md:266""]",[],False
+openclaw-config-7264f9903e3e,B3,nested_agent_invocation,instruction_only,medium,[],"[""references/oauth.md:75"", ""references/oauth.md:90""]",[],False
+openclaw-config-7264f9903e3e,B4,nested_agent_invocation,instruction_only,medium,[],"[""references/security.md:1129"", ""references/security/index.md:1127""]",[],False
+plan-db4c30529bb5,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:158""]",[],True
+plan-quality-verifier-7bb6bf6782df,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:146"", ""SKILL.md:147""]",[],False
+run-evals-509654117ae0,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:124""]",[],True
+self-maintaining-claude-md-1ecfc8867e74,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:12"", ""SKILL.md:30"", ""SKILL.md:34"", ""SKILL.md:83"", ""SKILL.md:89"", ""SKILL.md:114"", ""SKILL.md:126"", ""SKILL.md:131""]",[],True
+session-discovery-5706e15f507a,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:91"", ""SKILL.md:96""]",[],True
+skill-7c7a37c4e355,B1,agent_config_modification,documented_example,low,[],"[""README.md:92"", ""README.md:238""]",[],True
+skill-7c7a37c4e355,B2,agent_config_modification,documented_example,low,[],"[""workflows/full-audit.md:911"", ""workflows/full-audit.md:919"", ""workflows/incremental-audit.md:268"", ""workflows/incremental-audit.md:273""]",[],True
+skill-a3d01d9b46ea,B1,agent_config_modification,instruction_only,low,[],"[""README.md:49""]",[],True
+skill-factory-c6aeb159ff54,B1,agent_config_modification,code,medium,[],"[""skill_factory.py:225"", ""SKILL.md:204""]",[],True
+skill-factory-c6aeb159ff54,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:159"", ""SKILL.md:210""]",[],True
+social-carousel-4a4be4cde6f0,B1,agent_config_modification,documented_example,low,[],"[""README.md:133""]",[],False
+speckit-updater-64a52bd33b35,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:109""]",[],False
+stagent-4df6f74054b0,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:75"", ""SKILL.md:196"", ""workflow/executing.md:9"", ""workflow/qa-ing.md:9"", ""workflow/reviewing.md:9""]",[],True
+stagent-4df6f74054b0,B2,approval_bypass_instruction,instruction_only,high,"[""permission_flag""]","[""SKILL.md:198"", ""workflow/deploy.md:154""]","[""BEHAVIOR_BASH_TAINT_FLOW@SKILL.md:200""]",True
+websites-to-worlds-b2c9db6596f0,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:65""]",[],True
+websites-to-worlds-b2c9db6596f0,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:88""]",[],True
+websites-to-worlds-b2c9db6596f0,B3,approval_bypass_instruction,instruction_only,medium,[],"[""references/interaction-state-machine.md:27""]",[],True
+writing-skills-d2ab59c9e608,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:62""]",[],False
+writing-skills-d2ab59c9e608,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:240"", ""SKILL.md:252"", ""SKILL.md:257""]",[],False
+SELF-REVIEW-7e78a776752b,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:16"", ""SKILL.md:22"", ""SKILL.md:24"", ""SUPERVISOR.md:22""]",[],True
+SELF-REVIEW-7e78a776752b,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:174""]",[],True
+SELF-REVIEW-7e78a776752b,B3,approval_bypass_instruction,instruction_only,high,"[""permission_flag""]","[""SKILL.md:291"", ""SUPERVISOR.md:65""]",[],True
+SakSit-google-workspace-b9b08ef14e34,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:164""]",[],True
+SakSit-google-workspace-b9b08ef14e34,B2,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:313""]",[],True
+aaron-he-zhu-aaron-marketing-skills-e9882b61b819,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:82""]",[],True
+agent-roles-core-bb3ae592d1dd,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:8""]",[],True
+branch-b0c2175bd23a,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:13""]",[],True
+claude-code-skill-02f78b84e936,B1,agent_config_modification,documented_example,low,[],"[""README.md:14"", ""README.md:15""]",[],True
+claude-code-skill-02f78b84e936,B2,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:127""]",[],True
+clean-gone-branches-0cd8dd7bd63a,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:83""]",[],True
+commit-b06e3c91b10a,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:12""]",[],True
+concept-mapping-4c89a7653f4e,B1,agent_config_modification,documented_example,low,[],"[""SKILL.md:33""]",[],True
+concept-mapping-4c89a7653f4e,B2,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:52""]",[],True
+dag-task-runner-499236702ceb,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:132""]",[],False
+daily-news-report-9f3e00cf81c8,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:73"", ""SKILL.md:219"", ""SKILL.md:259""]",[],True
+engram-qwexs-87b6c8c8a6a3,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:492""]",[],True
+gsd-ultraplan-phase-12c671140423,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:36""]",[],True
+hara-orchestrator-abbda6c88b68,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:25"", ""SKILL.md:58"", ""references/architecture.md:38""]",[],True
+hermes-ralph-loop-e16f80685e11,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:32""]",[],True
+huawei-cloud-network-query-951263ac2beb,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:95""]",[],False
+novel-setup-793883144cf9,B1,nested_agent_invocation,instruction_only,medium,[],"[""references/templates/agents/character-designer.md:155"", ""references/templates/agents/consistency-checker.md:127"", ""references/templates/agents/narrative-writer.md:169"", ""references/templates/agents/story-explorer.md:319"", ""references/templates/agents/story-researcher.md:281""]",[],False
+oat-project-quick-start-3ef82cf7877e,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:90""]",[],False
+oracle-pipeline-da5622d056cb,B1,nested_agent_invocation,code,medium,[],"[""scripts/03-run-story.sh:56"", ""scripts/03-run-story.sh:77"", ""scripts/03-run-story.sh:156"", ""scripts/03-run-story.sh:170"", ""REFERENCE.md:244"", ""REFERENCE.md:250"", ""SKILL.md:348""]",[],False
+oracle-pipeline-da5622d056cb,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:234"", ""SKILL.md:310"", ""SKILL.md:318""]",[],False
+oracle-pipeline-da5622d056cb,B3,scheduler_invocation,instruction_only,medium,[],"[""resources/carespace-context.md:542""]",[],False
+persona-9f6e9bebcfe5,B1,nested_agent_invocation,documented_example,low,[],"[""README.md:266""]",[],False
+planner-runner-ff9b503d2b19,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:3"", ""references/dispatch-protocol.md:101""]",[],True
+planning-workflow-3266740eafb5,B1,agent_config_modification,instruction_only,medium,[],"[""templates/design-concept.md:20""]",[],True
+planning-workflow-3266740eafb5,B2,agent_config_modification,instruction_only,medium,[],"[""templates/outline.md:18""]",[],True
+planning-workflow-3266740eafb5,B3,agent_config_modification,instruction_only,medium,[],"[""templates/plan.md:18""]",[],True
+research-first-a1168cbb6248,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:16""]",[],True
+research-first-a1168cbb6248,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:87""]",[],True
+resend-cli-05c2aeb82fa6,B1,approval_bypass_instruction,instruction_only,medium,[],"[""references/api-keys.md:33"", ""references/broadcasts.md:82"", ""references/contact-properties.md:54"", ""references/contacts.md:54"", ""references/domains.md:77"", ""references/segments.md:37"", ""references/templates.md:69"", ""references/topics.md:50"", ""references/webhooks.md:59""]",[],True
+scaffold-44538becd330,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:40"", ""SKILL.md:299"", ""SKILL.md:310"", ""SKILL.md:350"", ""SKILL.md:366"", ""SKILL.md:542"", ""templates/expo/CHANGELOG.md:18"", ""templates/expo/root/CLAUDE.md:91"", ""templates/node-fastify-react/CHANGELOG.md:12"", ""templates/node-fastify-react/root/CLAUDE.md:103""]",[],True
+scaffold-44538becd330,B2,approval_bypass_instruction,instruction_only,medium,[],"[""templates/expo/technology/lib/onesignal/CLAUDE.md:48""]",[],True
+senior-architect-8a4bd9aa1d3b,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:24""]",[],False
+skill-4a1916bc2475,B1,agent_config_modification,documented_example,low,[],"[""README.md:138""]",[],False
+skill-4a1916bc2475,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:16"", ""SKILL.md:103"", ""SKILL.md:229""]",[],False
+skill-80c68d3f4952,B1,agent_config_modification,instruction_only,low,[],"[""README.md:63""]",[],False
+skill-bc6a07336d05,B1,agent_config_modification,code,medium,[],"[""hooks/ragcode-mark-search.py:24"", ""hooks/ragcode-mark-search.py:26"", ""hooks/ragcode-search-gate.py:90"", ""hooks/ragcode-search-gate.py:93""]",[],False
+skill-bc6a07336d05,B2,agent_config_modification,code,medium,[],"[""install-hook.sh:38"", ""install-hook.sh:39""]",[],False
+skill-bc6a07336d05,B3,agent_config_modification,code,medium,[],"[""install.sh:24"", ""install.sh:26"", ""install.sh:32"", ""install.sh:32"", ""SKILL.md:191""]",[],False
+skill-bc6a07336d05,B4,nested_agent_invocation,code,medium,[],"[""install.sh:47"", ""install.sh:48"", ""README.md:143""]",[],False
+skill-bc6a07336d05,B5,agent_config_modification,instruction_only,low,[],"[""README.md:153"", ""README.md:160""]",[],False
+sync-ai-preferences-bbb105878a43,B1,agent_config_modification,instruction_only,medium,[],"[""SKILL.md:15""]",[],True
+synthetic-userstudies-034f12c4fdb5,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:84""]",[],True
+team-audio-b4ca0ff38bb1,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:34"", ""SKILL.md:35"", ""SKILL.md:36"", ""SKILL.md:37"", ""SKILL.md:118""]",[],True
+translation-skill-a6e365bea591,B1,nested_agent_invocation,code,medium,[],"[""scripts/orchestrator.py:125""]",[],False
+translation-skill-a6e365bea591,B2,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:8""]",[],False
+tx-graph-utils-ceb04df46a29,B1,agent_credential_access,instruction_only,high,"[""credential_access""]","[""references/commands.md:350""]",[],True
+ui-review-22548fb6f11d,B1,nested_agent_invocation,instruction_only,medium,[],"[""SKILL.md:104""]",[],False
+upload-to-stitch-c5f9b024010a,B1,agent_credential_access,instruction_only,high,"[""credential_access""]","[""SKILL.md:38""]",[],True
+v0-5-910e1d192f66,B1,approval_bypass_instruction,instruction_only,medium,[],"[""SKILL.md:321""]",[],True
