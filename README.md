@@ -3,6 +3,10 @@
 Team repository for our MSR 2027 Mining Challenge project on the **cybersecurity of agent skills**, using the
 GitSkills dataset.
 
+> **New here? Read [START_HERE.md](START_HERE.md)**: it lists every completed experiment, the main results and
+> figures, the code, and what is kept local. The main result is the
+> [1,000-skill Cisco + SkillGuard report](results/skillguard_runs/main1000/REPORT_main1000.md).
+
 ## Project overview
 
 **Agent skills** are small packages that teach an AI coding agent (such as Claude Code, Cursor or Codex) how to do a
@@ -34,7 +38,7 @@ risk. We want to understand:
 | [00 · GitSkills exploration](notebooks/00_gitskills_exploration.ipynb) | A hands-on playground for browsing the dataset: database overview, viewing skills, keyword search, supporting files, custom SQL. | Interactive exploration only (no saved results). |
 | [01 · Cisco scanner experiments](notebooks/01_cisco_scanner_dataset_ready.ipynb) | Exports skills from the database and scans each one with Cisco in four configurations (SKILL.md only vs full folder, static vs static + behavioral). | A run folder with every raw report, a per-scan status, finding tables, comparisons, figures and a results summary. |
 | [02 · Cisco pilot comparison](notebooks/02_cisco_pilot_comparison.ipynb) | Combines several finished runs (our three pilots) into one comparison. It does not scan anything. | Combined tables, charts and a written comparison report. |
-| [03 · Stratified sampling](notebooks/03_stratified_sample.ipynb) | Draws a reproducible random sample (fixed seed 2027), stratified by what each skill folder contains: scripts, other supporting files, or `SKILL.md` alone. | A sample manifest that notebook 01 can scan ([results/samples/](results/samples/)). |
+| [03 · Stratified sampling](notebooks/03_stratified_sample.ipynb) | Draws a reproducible random sample (fixed seed: 2027 for the 30-skill sample, 2030 for the 1,000-skill sample), stratified by what each skill folder contains: scripts, other supporting files, or `SKILL.md` alone. | A sample manifest that notebook 01 can scan ([results/samples/](results/samples/)). |
 | [04 · Manual security review](notebooks/04_manual_review_worksheet.ipynb) | Turns the security alerts of one run into a review worksheet that shows the exact code or instructions behind each alert. | A worksheet with blank reviewer columns and suggested interpretations ([results/manual_review/](results/manual_review/)). |
 | [05 · Automated research reports](notebooks/05_build_reports.ipynb) | Builds readable reports and offline dashboards for every saved run. It only reads the runs. | [results/reports/](results/reports/) (see below). |
 | [06 · Cisco LLM and Meta-Analyzer](notebooks/06_cisco_llm_meta_experiment.ipynb) | Re-runs a finished scan with Cisco's LLM Analyzer and Meta-Analyzer on every skill, reusing the original baseline. It is resumable and budget-guarded. | A new run folder, LLM/Meta comparison tables, a cost estimate, and a report. |
@@ -49,8 +53,18 @@ risk. We want to understand:
 | 30-skill LLM / Meta-Analyzer experiment with a local Qwen3:4B model | done: 171 new scans, no API cost |
 | Automated reports and dashboards for all runs | done |
 | Security gap analysis of the 30 skills | done (provisional) |
+| SkillGuard agent-capability prototype, V1 → V3.1, with held-out evaluations (seeds 2028, 2029) | done: V3.1 frozen, 55 controlled tests; evaluation labels provisional |
+| 1,000-skill experiment (seed 2030): 4,000 Cisco scans + SkillGuard V3.1 | done: [report](results/skillguard_runs/main1000/REPORT_main1000.md) |
 
-High-level observations so far (details and evidence are in the linked documents):
+**1,000-skill experiment** (details in the [report](results/skillguard_runs/main1000/REPORT_main1000.md)):
+
+- Cisco flags an estimated 9.6% of skills when the whole folder is scanned but only 1.7% from `SKILL.md` alone.
+  83% of flagged skills are flagged only because of their bundled files.
+- SkillGuard finds at least one agent-specific capability in an estimated 11.0% of skills, mostly in Markdown
+  instructions. The two tools rarely flag the same location.
+- 81 of 1,000 skills have no complete Cisco result, mostly because Cisco rejects their `SKILL.md` frontmatter.
+
+High-level observations from the 30-skill experiments (details and evidence are in the linked documents):
 
 - **Few alerts, mostly explainable.** Cisco's security alerts came from 4 of the 30 skills. On review, most look like
   intended functionality or scanner artifacts, for example misreading a scoped `allowed-tools` entry.
@@ -88,10 +102,10 @@ Other folders under `results/`:
 | [`manual_review/`](results/manual_review/) | manual-review worksheets with provisional labels | yes |
 | [`samples/`](results/samples/) | sample manifests and sampling reports from notebook 03 | yes |
 | [`reports/`](results/reports/) | generated reports and dashboards (redacted, safe to share) | yes |
-| `figures/`, `tables/` | placeholders for exported paper figures and tables (currently empty; each run keeps its own figures and tables) | yes |
+| [`skillguard_runs/`](results/skillguard_runs/README.md) | SkillGuard evaluations, frozen versions, and the **1,000-skill experiment** (`main1000/`) | yes, derived tables and reports; raw skill exports, raw per-skill JSON and executed-notebook copies stay local |
 
-Someone who clones the repository gets the reports, samples, worksheets and gap-analysis tables, **but not the raw
-scans**. To re-create those, run notebooks 01 and 06 (they need the database and, for 06, an LLM).
+Someone who clones the repository gets the reports, samples, worksheets, gap-analysis tables and SkillGuard results,
+**but not the raw scans**. To re-create those, run notebooks 01 and 06 (they need the database and, for 06, an LLM).
 
 ## Getting started
 
@@ -201,11 +215,13 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 | [`notebooks/`](notebooks/) | the seven research notebooks (00-06) |
 | [`src/gitskills_reports/`](src/gitskills_reports/) | report and dashboard generator (notebook 05) |
 | [`src/gitskills_cisco_llm/`](src/gitskills_cisco_llm/) | LLM/Meta experiment runner and analysis (notebook 06), and the gap-analysis pattern search |
+| [`src/skillguard_capabilities.py`](src/skillguard_capabilities.py) | SkillGuard V3.1 (frozen), the agent-capability analyzer |
 | [`docs/`](docs/) | methodology and findings documents |
 | [`configs/ollama/`](configs/ollama/) | local model definition for notebook 06 |
-| [`tests/`](tests/) | validation tests for the reporting and experiment code |
+| [`tests/`](tests/) | validation tests for the reporting, experiment and SkillGuard code |
 | `data/` | where the GitSkills database goes (not committed) |
-| [`results/`](results/) | samples, worksheets, reports and analysis tables (see above) |
+| [`results/`](results/) | samples, worksheets, reports, analysis tables and SkillGuard runs (see above) |
+| [`START_HERE.md`](START_HERE.md) | map of all experiments and results |
 
 ## Research documentation
 
@@ -214,7 +230,10 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 - [Security gap analysis of the 30-skill sample](docs/cisco_security_gap_analysis.md): what Cisco detected, what it
   may have missed, why some alerts are misleading, candidate tool improvements, and threats to validity.
 - [Sampling report](results/samples/agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10/sampling_report.md):
-  how the 30-skill sample was drawn.
+  how the 30-skill sample was drawn ([1,000-skill sample report](results/samples/agent_skills_sample_seed2030_scripts400_supporting_no_scripts300_skill_md_only300/sampling_report.md)).
+- [SkillGuard evaluations](results/skillguard_runs/README.md): V1 on the 30-skill sample, V2 and V3 held-out evaluations
+  (provisional AI labels).
+- [1,000-skill Cisco + SkillGuard report](results/skillguard_runs/main1000/REPORT_main1000.md): the main result so far.
 
 ## Current direction
 
@@ -226,4 +245,6 @@ These are **proposed research directions**, not completed work:
   `SKILL.md`, a reference document or an executable script.
 - **Context-aware judgments:** telling suspicious behavior apart from legitimate functionality, with evidence tied to
   exact lines.
-- **Larger reproducible experiments:** scaling the same pipeline from 30 to 100, 300 and eventually 1,000+ skills.
+- **Larger reproducible experiments:** done for 1,000 skills (see the report). The full 3.8-million-skill dataset
+  has not been used.
+- **SkillGuard coverage:** JavaScript/TypeScript, JSON and YAML are not analyzed yet.
