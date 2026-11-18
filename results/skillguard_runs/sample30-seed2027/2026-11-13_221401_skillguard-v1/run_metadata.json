@@ -1,0 +1,46 @@
+{
+  "run_id": "2026-11-13_221401_skillguard-v1",
+  "started_at": "2026-11-13T22:14:01.668989-08:00",
+  "finished_at": "2026-11-13T22:14:01.807992-08:00",
+  "baseline_run": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-03_173516_sample30-seed2027",
+  "skills_scanned": 30,
+  "skillguard": {
+    "source": "src/skillguard_capabilities.py",
+    "sha256": "a9e04f89e70e227513ca6ec1a73ce65214da99ff20c0dc73393273926f8d3203",
+    "tests_sha256": "9ffa4d53624a86c0bf817fc0780d8b0d667965f1a410e55cf5ee7cc93c020f76",
+    "uncommitted_changes": true
+  },
+  "git_head": "383590f841d73d7784ebeb7a379ea7fb7dd2c51d",
+  "python": "3.14.10",
+  "runner_sha256": "c9df9b14aeeea760f4e14da55a42afc59d4475e947d19c19c134f162e52cad87",
+  "line_window": 3,
+  "totals": {
+    "findings": 21,
+    "skills_with_findings": 2,
+    "findings_by_capability": {
+      "scheduler_invocation": 2,
+      "nested_agent_invocation": 12,
+      "agent_config_modification": 5,
+      "agent_env_marker_removal": 2
+    },
+    "findings_by_carrier": {
+      "executable_script": 15,
+      "markdown_shell_example": 6
+    },
+    "findings_by_cisco_relation": {
+      "cisco_flagged_file_elsewhere": 2,
+      "cisco_silent_on_file": 19
+    },
+    "files_present": 102,
+    "coverage_limitations": 234,
+    "limitations_by_status": {
+      "markdown_without_supported_code": 36,
+      "parse_error": 8,
+      "unsupported_format": 4,
+      "missing_from_snapshot": 179,
+      "data_file_not_analyzed": 7
+    },
+    "skills_with_missing_files": 3
+  },
+  "executed_skill_code": false
+}

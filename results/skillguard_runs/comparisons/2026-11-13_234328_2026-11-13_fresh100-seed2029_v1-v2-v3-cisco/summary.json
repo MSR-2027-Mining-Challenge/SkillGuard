@@ -1,0 +1,127 @@
+{
+  "run": "2026-11-13_234328_2026-11-13_fresh100-seed2029_v1-v2-v3-cisco",
+  "input": "results/skillguard_runs/heldout/2026-11-13_fresh100-seed2029",
+  "started_at": "2026-11-13T23:43:28.425045-08:00",
+  "python": "3.14.10",
+  "versions": {
+    "v1": {
+      "path": "results/skillguard_runs/versions/skillguard_capabilities_v1_a9e04f89.py",
+      "sha256": "a9e04f89e70e227513ca6ec1a73ce65214da99ff20c0dc73393273926f8d3203"
+    },
+    "v2": {
+      "path": "results/skillguard_runs/versions/skillguard_capabilities_v2_0dea35a9.py",
+      "sha256": "0dea35a95bfa391cb476d543efe101629484f5557f46a1d7c5d92cdab175a8de"
+    },
+    "v3": {
+      "path": "results/skillguard_runs/versions/skillguard_capabilities_v3_9b625405.py",
+      "sha256": "9b625405a9b5f8425ba2c2d0b31cdf429a181b31cdc4e48eda71220053e997ab"
+    }
+  },
+  "runner_sha256": "67a2a5e4abb4c36f9aa8e4b9b6760d72124b8105516a38255f0b01a193562104",
+  "skills": 100,
+  "files": 533,
+  "behaviors": {
+    "v1": 6,
+    "v2": 20,
+    "v3": 15
+  },
+  "findings": {
+    "v1": 13,
+    "v2": 41,
+    "v3": 29
+  },
+  "skills_with_behaviors": {
+    "v1": 4,
+    "v2": 10,
+    "v3": 8
+  },
+  "v3_behaviors_by_capability": {
+    "approval_bypass_instruction": 2,
+    "nested_agent_invocation": 7,
+    "agent_config_modification": 5,
+    "agent_env_marker_removal": 1
+  },
+  "v3_behaviors_by_evidence": {
+    "instruction_only": 8,
+    "code": 4,
+    "documented_example": 3
+  },
+  "v3_behaviors_by_priority": {
+    "high": 4,
+    "medium": 7,
+    "low": 4
+  },
+  "v3_behaviors_also_in_v2": 15,
+  "v3_behaviors_with_cisco_security_near": 0,
+  "cisco": {
+    "security_findings_rows": 194,
+    "security_items_unique": 108,
+    "skills_with_security_findings": 33,
+    "rules": {
+      "DATA_EXFIL_NETWORK_REQUESTS": 24,
+      "TOOL_ABUSE_UNDECLARED_NETWORK": 16,
+      "DATA_EXFIL_JS_FS_ACCESS": 16,
+      "COMMAND_INJECTION_JS_CHILD_PROCESS": 16,
+      "UNDECLARED_NETWORK_DESTINATION": 14,
+      "DATA_EXFIL_JS_NETWORK": 12,
+      "YARA_autonomy_abuse_generic": 12,
+      "BEHAVIOR_BASH_TAINT_FLOW": 10,
+      "FILE_MAGIC_MISMATCH": 8,
+      "SUPPLY_CHAIN_UNPINNED_DEPENDENCY": 8,
+      "MDBLOCK_PYTHON_SUBPROCESS": 6,
+      "COMMAND_INJECTION_SHELL_TRUE": 6,
+      "COMPOUND_FETCH_EXECUTE": 6,
+      "COMPOUND_FIND_EXEC": 4,
+      "CORRELATED_SENSITIVE_NETWORK_FLOW": 4,
+      "YARA_sql_injection_generic": 4,
+      "FIND_EXEC_PATTERN": 2,
+      "ALLOWED_TOOLS_NETWORK_USAGE": 2,
+      "BEHAVIOR_CROSSFILE_ENV_VAR_EXFILTRATION": 2,
+      "BEHAVIOR_ENV_VAR_EXFILTRATION": 2,
+      "HIDDEN_DATA_FILE": 2,
+      "COMMAND_INJECTION_JS_FUNCTION_CONSTRUCTOR": 2,
+      "COMMAND_INJECTION_OS_SYSTEM": 2,
+      "CORRELATED_NETWORK_EXECUTION_FLOW": 2,
+      "YARA_code_execution_generic": 2
+    },
+    "all_reports_ok": true
+  },
+  "coverage_files": {
+    "code_analyzed": 254,
+    "text_heuristic_only": 179,
+    "not_analyzed": 100,
+    "parse_error_blocks": 2
+  },
+  "runtime": {
+    "v1": {
+      "total_s": 0.47,
+      "mean_s": 0.0047,
+      "median_s": 0.0012,
+      "max_s": 0.039
+    },
+    "v2": {
+      "total_s": 1.12,
+      "mean_s": 0.0112,
+      "median_s": 0.0054,
+      "max_s": 0.081
+    },
+    "v3": {
+      "total_s": 1.66,
+      "mean_s": 0.0166,
+      "median_s": 0.0083,
+      "max_s": 0.101
+    },
+    "cisco_full_default_plus_behavioral": {
+      "total_s": 975.9,
+      "mean_s": 9.759,
+      "median_s": 9.66,
+      "max_s": 11.01
+    }
+  },
+  "human_review": {
+    "blind_items": 123,
+    "recall_audit_skills": 20,
+    "labels_present": false
+  },
+  "executed_skill_code": false
+}

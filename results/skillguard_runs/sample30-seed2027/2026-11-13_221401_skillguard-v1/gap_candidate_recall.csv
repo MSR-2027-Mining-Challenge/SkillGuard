@@ -1,0 +1,12 @@
+candidate,skill_id,file,lines,capability,note,detected,skillguard_lines
+G01,set-reminder-7652ed9105a8,scripts/set_reminder.py,128-133,scheduler_invocation,crontab -l / crontab - in the bundled script,True,"[130, 133]"
+G01,set-reminder-7652ed9105a8,scripts/set_reminder.py,47-51,scheduler_invocation,crontab calls inside the generated-script template string,False,[]
+G05,skill-creator-484c59f65787,scripts/run_eval.py,126-158,agent_config_modification,create/write temp SKILL.md in agent skill dirs,True,"[144, 157]"
+G05,skill-creator-484c59f65787,scripts/run_eval.py,205-218,agent_config_modification,cleanup of the temp skill,True,"[209, 212, 218]"
+G06,skill-creator-484c59f65787,scripts/run_eval.py,170-191,nested_agent_invocation,agent -p --trust / claude -p / opencode run,True,[188]
+G06,skill-creator-484c59f65787,scripts/run_loop.py,175-198,nested_agent_invocation,agent -p / claude -p / opencode run,True,[192]
+G07,skill-creator-484c59f65787,scripts/run_eval.py,182-186,agent_env_marker_removal,drop CLAUDECODE/OPENCODE/... to allow nesting,True,[182]
+G07,skill-creator-484c59f65787,scripts/run_loop.py,186-190,agent_env_marker_removal,drop CLAUDECODE/OPENCODE/... to allow nesting,True,[186]
+G11,youtube-content-7162d1c45997,SKILL.md,128-128,scheduler_invocation,"agent cronjob(action='create', ...) in prose / inline code",False,[]
+G11,youtube-content-7162d1c45997,SKILL.md,357-357,scheduler_invocation,agent cron pattern in prose,False,[]
+G11,youtube-content-7162d1c45997,SKILL.md,395-395,scheduler_invocation,"cronjob(no_agent=true, script=...) in prose",False,[]

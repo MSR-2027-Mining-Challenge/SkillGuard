@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-11-13T22:22:09.699605-08:00",
+  "seed": 2028,
+  "database": "data/sample/agent_skills_sample.db",
+  "database_sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+  "frame_rows": 11235,
+  "excluded": {
+    "dev_sample": 30,
+    "incomplete_text": 565,
+    "unsafe_path": 0
+  },
+  "eligible_per_stratum": {
+    "scripts": 942,
+    "supporting_no_scripts": 2448,
+    "skill_md_only": 7250
+  },
+  "enriched_pool_size": 1627,
+  "enrich_regex": "(?i)\\b(claude|cursor|codex|opencode|gemini|crontab|cronjob|subagents?|AGENTS\\.md|CLAUDE\\.md|dangerously|--trust|launchctl|schtasks)\\b",
+  "h1_allocation": {
+    "scripts": 40,
+    "supporting_no_scripts": 10,
+    "skill_md_only": 10
+  },
+  "h2_size": 30,
+  "n_selected": {
+    "H1_random": 60,
+    "H2_enriched": 30
+  },
+  "note": "H2 is keyword-enriched (biased); use only for precision.",
+  "builder_sha256": "34d96bc83f8c7e559a604936bf065d1f9ed21fff9e34500fa43b8fd3aa72fb13"
+}

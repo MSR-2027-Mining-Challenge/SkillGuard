@@ -1,0 +1,89 @@
+{
+  "run": "2026-11-13_223735_2026-11-13_heldout-seed2028_v1-v2-cisco",
+  "mode": "heldout",
+  "input": "results/skillguard_runs/heldout/2026-11-13_heldout-seed2028",
+  "started_at": "2026-11-13T22:37:35.398874-08:00",
+  "python": "3.14.10",
+  "v1": {
+    "path": "results/skillguard_runs/versions/skillguard_capabilities_v1_a9e04f89.py",
+    "sha256": "a9e04f89e70e227513ca6ec1a73ce65214da99ff20c0dc73393273926f8d3203"
+  },
+  "v2": {
+    "path": "src/skillguard_capabilities.py",
+    "sha256": "0dea35a95bfa391cb476d543efe101629484f5557f46a1d7c5d92cdab175a8de"
+  },
+  "runner_sha256": "54bf0f97488f410b86b79e524851eb8a92f7a6c902a5daa797e1b2118936c482",
+  "cisco_window": 3,
+  "by_set": {
+    "H1_random": {
+      "skills": 60,
+      "files": 381,
+      "v1": {
+        "findings": 10,
+        "behaviors": 5,
+        "skills_with_behaviors": 4,
+        "parse_errors": 5,
+        "files_not_analyzed": 194
+      },
+      "v2": {
+        "findings": 27,
+        "behaviors": 15,
+        "behaviors_by_evidence": {
+          "code": 2,
+          "instruction_only": 10,
+          "documented_example": 3
+        },
+        "behaviors_by_capability": {
+          "nested_agent_invocation": 6,
+          "agent_config_modification": 6,
+          "approval_bypass_instruction": 3
+        },
+        "skills_with_behaviors": 11,
+        "skills_with_code_behaviors": 2,
+        "parse_errors": 5,
+        "files_not_analyzed": 47,
+        "files_instruction_layer_only": 147
+      },
+      "v2_behaviors_also_found_by_v1": 5,
+      "v2_behaviors_with_cisco_security_near": 0,
+      "cisco_security_findings": 141,
+      "skills_with_cisco_security_findings": 16,
+      "cisco_scanned_skills": 60
+    },
+    "H2_enriched": {
+      "skills": 30,
+      "files": 199,
+      "v1": {
+        "findings": 2,
+        "behaviors": 1,
+        "skills_with_behaviors": 1,
+        "parse_errors": 2,
+        "files_not_analyzed": 151
+      },
+      "v2": {
+        "findings": 36,
+        "behaviors": 7,
+        "behaviors_by_evidence": {
+          "instruction_only": 6,
+          "documented_example": 1
+        },
+        "behaviors_by_capability": {
+          "nested_agent_invocation": 3,
+          "agent_config_modification": 2,
+          "scheduler_invocation": 2
+        },
+        "skills_with_behaviors": 6,
+        "skills_with_code_behaviors": 0,
+        "parse_errors": 0,
+        "files_not_analyzed": 31,
+        "files_instruction_layer_only": 120
+      },
+      "v2_behaviors_also_found_by_v1": 1,
+      "v2_behaviors_with_cisco_security_near": 1,
+      "cisco_security_findings": 58,
+      "skills_with_cisco_security_findings": 6,
+      "cisco_scanned_skills": 30
+    }
+  },
+  "executed_skill_code": false
+}

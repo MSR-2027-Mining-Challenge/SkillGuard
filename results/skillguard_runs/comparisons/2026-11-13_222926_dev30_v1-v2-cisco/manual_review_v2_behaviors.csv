@@ -1,0 +1,17 @@
+skill_id,behavior_id,capability,evidence_level,label,agent_directed,gap_id,note,reviewer
+bounty-hunting-c7d411d69db8,B1,approval_bypass_instruction,instruction_only,true_positive,yes,G14,"'Fix issues proactively without asking' (solo mode); gap analysis judged legitimate",Claude (AI assistant) - pending human confirmation
+moonshot-teams-runner-b816482cad2c,B1,nested_agent_invocation,instruction_only,true_positive,yes,M4,"Agent Teams / forked team-leader-agent; SKILL.md and SKILL.ko.md translations both included (19 lines, one behavior)",Claude (AI assistant) - pending human confirmation
+review-pr-1346c06d3855,B1,approval_bypass_instruction,instruction_only,true_positive,yes,G13,"auto-post review comments; 'do not ask the user how to post'",Claude (AI assistant) - pending human confirmation
+set-reminder-7652ed9105a8,B1,scheduler_invocation,generated_code,true_positive,yes,G01 (47-51),"crontab self-removal inside the generated script template",Claude (AI assistant) - pending human confirmation
+set-reminder-7652ed9105a8,B2,scheduler_invocation,code,true_positive,yes,G01 (128-133),"crontab install in bundled script",Claude (AI assistant) - pending human confirmation
+ship-9eb65676582d,B1,agent_config_modification,instruction_only,true_positive,yes,new,"'Update ... AGENTS.md' when affected: project agent-instruction maintenance; benign",Claude (AI assistant) - pending human confirmation
+skill-creator-484c59f65787,B1,agent_config_modification,code,true_positive,yes,G05,"5 call sites, 3 feasible targets after branch-aware folding",Claude (AI assistant) - pending human confirmation
+skill-creator-484c59f65787,B2,agent_env_marker_removal,code,true_positive,yes,G07,"run_eval + run_loop",Claude (AI assistant) - pending human confirmation
+skill-creator-484c59f65787,B3,nested_agent_invocation,code,true_positive,yes,G06,"2 call sites; 8 SKILL.md doc lines attached",Claude (AI assistant) - pending human confirmation
+skill-creator-484c59f65787,B4,nested_agent_invocation,documented_example,true_positive,yes,new,"spawn with/without-skill and grader subagents via Task tool",Claude (AI assistant) - pending human confirmation
+spdd-123721de2fa1,B1,agent_config_modification,instruction_only,true_positive,yes,M3,"rule block for AGENTS.md (content block + recommendation)",Claude (AI assistant) - pending human confirmation
+spdd-123721de2fa1,B2,agent_config_modification,instruction_only,true_positive,yes,M3,"prompt into ~/.codex/prompts/spdd.md",Claude (AI assistant) - pending human confirmation
+spdd-123721de2fa1,B3,nested_agent_invocation,instruction_only,true_positive,yes,new,"suggests scripted 'codex exec' runs per step",Claude (AI assistant) - pending human confirmation
+youtube-content-7162d1c45997,B1,scheduler_invocation,instruction_only,true_positive,yes,G11,"agent cronjob(...) creation; line 355 describes cron context rather than instructing (imprecise doc line)",Claude (AI assistant) - pending human confirmation
+youtube-content-7162d1c45997,B2,nested_agent_invocation,instruction_only,ambiguous,partly,new,"describes subagent delegation (delegate_task) pitfalls rather than instructing it",Claude (AI assistant) - pending human confirmation
+youtube-content-7162d1c45997,B3,agent_config_modification,instruction_only,true_positive,yes,G11,"cron scripts must be placed in ~/.hermes/scripts/",Claude (AI assistant) - pending human confirmation

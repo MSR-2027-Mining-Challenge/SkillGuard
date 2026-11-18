@@ -1,0 +1,6 @@
+skill_id,file,lines,family,description,why_missed,labeler
+full-nfr-011354825861,SKILL.md,"53, 55, 58",nested_agent_invocation,"dispatch one fresh subagent per issue (Chinese: 派 … fresh subagent; Task prompt template)","spawn verbs are English-only","Claude (AI) - PROVISIONAL"
+gstack-team-00a4301c3a4d,SKILL.md,"47, 203, 239",nested_agent_invocation,"communicate { spawn: { agent_name: ""verifier"" } } tool call; Russian 'поднять sub-agent'","tool-call object syntax and non-English verbs not covered","Claude (AI) - PROVISIONAL"
+design-reviewer-005175496fc1,references/ab-comparative-loop.md,25,nested_agent_invocation,"runs reviews via the appropriate sub-agent(s) (weak)","no spawn verb","Claude (AI) - PROVISIONAL"
+wk-retro-018a00449166,README.md,24,agent_config_modification,"'Add to $HOME/.claude/memory/' inside a mermaid diagram (found by V2, lost by V3)","mermaid fences are now treated as data and skipped","Claude (AI) - PROVISIONAL"
+caveman-compress-00ce4543b2fb,scripts/compress.py,(write path),agent_config_modification,"rewrites a CLAUDE.md file given at runtime (README describes it)","target path is a runtime argument; not statically resolvable","Claude (AI) - PROVISIONAL"
