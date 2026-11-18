@@ -1,0 +1,93 @@
+# Skill `doc-smith-build-a663c15e98ae`
+[Back to START_HERE](../../01_IMPORTANT_RESULTS/START_HERE.md)
+|  | value |
+|---|---|
+| Repository | AIGNE-io/doc-smith-skills |
+| SKILL.md path | skills/doc-smith-build/SKILL.md |
+| Sample stratum | scripts |
+| Folder complete in GitSkills | True |
+| Coverage | complete: every planned configuration produced a COMPLETE scan |
+## Scans
+| configuration | status | findings_count | max_severity | status_detail |
+|---|---|---|---|---|
+| SKILL.md only \| default | COMPLETE | 1 | INFO | exit code 0 |
+| SKILL.md only \| behavioral | COMPLETE | 1 | INFO | exit code 0 |
+| Full folder \| default | COMPLETE | 5 | LOW | exit code 0 |
+| Full folder \| behavioral | COMPLETE | 5 | LOW | exit code 0 |
+## Security alerts
+Each block is one alert row (one configuration). Snippets are Cisco's evidence text, redacted where it looks like a secret; they are untrusted skill content, shown as plain text.
+### LOW · UNDECLARED_NETWORK_DESTINATION · scripts/build.mjs:671
+|  | value |
+|---|---|
+| Validation | Scanner alert, awaiting human review |
+| Review ID | 7952681579 |
+| Provisional label |  |
+| Final (human) label |  |
+| Configurations | Full folder \| default; Full folder \| behavioral |
+| Scan outcomes | complete |
+| Cisco category | unauthorized_tool_use |
+| Analyzer | static |
+| Evidence check | unavailable |
+| Title | Script contacts a destination the documentation never mentions |
+Evidence snippet:
+
+```text
+
+```
+### LOW · UNDECLARED_NETWORK_DESTINATION · scripts/build.mjs:672
+|  | value |
+|---|---|
+| Validation | Scanner alert, awaiting human review |
+| Review ID | 50480a9d17 |
+| Provisional label |  |
+| Final (human) label |  |
+| Configurations | Full folder \| default; Full folder \| behavioral |
+| Scan outcomes | complete |
+| Cisco category | unauthorized_tool_use |
+| Analyzer | static |
+| Evidence check | unavailable |
+| Title | Script contacts a destination the documentation never mentions |
+Evidence snippet:
+
+```text
+
+```
+### LOW · UNDECLARED_NETWORK_DESTINATION · scripts/build.mjs:676
+|  | value |
+|---|---|
+| Validation | Scanner alert, awaiting human review |
+| Review ID | eb111f862f |
+| Provisional label |  |
+| Final (human) label |  |
+| Configurations | Full folder \| default; Full folder \| behavioral |
+| Scan outcomes | complete |
+| Cisco category | unauthorized_tool_use |
+| Analyzer | static |
+| Evidence check | unavailable |
+| Title | Script contacts a destination the documentation never mentions |
+Evidence snippet:
+
+```text
+
+```
+### LOW · UNDECLARED_NETWORK_DESTINATION · scripts/build.mjs:713
+|  | value |
+|---|---|
+| Validation | Scanner alert, awaiting human review |
+| Review ID | f616a68326 |
+| Provisional label |  |
+| Final (human) label |  |
+| Configurations | Full folder \| default; Full folder \| behavioral |
+| Scan outcomes | complete |
+| Cisco category | unauthorized_tool_use |
+| Analyzer | static |
+| Evidence check | unavailable |
+| Title | Script contacts a destination the documentation never mentions |
+Evidence snippet:
+
+```text
+
+```
+## Other notes
+
+4 metadata-quality / scan-coverage rows: MANIFEST_MISSING_LICENSE (4).

@@ -1,0 +1,727 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-16T07:15:55+00:00",
+  "kind": "run",
+  "report_id": "2026-11-15_220827_sample1000-seed2030-batch1",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "sample1000-seed2030-batch1",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 250,
+    "skills_exported": 250,
+    "export_errors": 0,
+    "skills_scanned": 250,
+    "skills_by_coverage": {
+      "complete": 232,
+      "complete_except_excluded": 0,
+      "partially_complete": 3,
+      "no_complete_scan": 15,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 1000,
+    "scans_executed": 1000,
+    "scans_by_outcome": {
+      "complete": 937,
+      "contract_only": 3,
+      "partial": 60,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 1824,
+    "finding_rows_by_kind": {
+      "security": 920,
+      "metadata_quality": 844,
+      "scan_coverage": 60
+    },
+    "skills_with_any_finding": 224,
+    "skills_with_security_alert_primary": 62,
+    "skills_with_security_alert_any": 66,
+    "security_rows_primary": 815,
+    "security_rows_any": 920,
+    "security_locations_primary": 425,
+    "security_locations_any": 457,
+    "security_rows_by_severity_primary": {
+      "CRITICAL": 133,
+      "HIGH": 76,
+      "MEDIUM": 179,
+      "LOW": 427
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 457,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 12,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/run_metadata.json",
+      "sha256": "cd875b5920c05aed9ea1beaa1c2c858ff358826dd0122bcde293dc440493c92e"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/scan_summary.csv",
+      "sha256": "253ecf1d1967b5855da0c03774ce06a191722d6e815fb0f37547707a85e440ca"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/individual_findings.csv",
+      "sha256": "2d1612dda5326e28d3636d297b4c33df82d4a96b7425a3a89cc65acc09c81139"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/context_comparison.csv",
+      "sha256": "965d8f57e1fb33c1feafbd306fad92e09815cf5a96d33237b119cdbe538061ae"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/analyzer_comparison.csv",
+      "sha256": "f6936d4a10bd7cef0f94dfa57356785d05b2194512d0cbf063d3f1bb8fe82e14"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/manual_review_template.csv",
+      "sha256": "162683903ff5fdc1409aeb0d2b50727c7f4eebefd433b1d2b628e430e0bec29e"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/results_summary.md",
+      "sha256": "c226d4cd61f5711b98c6eaee63bdf98651eb87ed318f55cf105bd43c892f7d6d"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c0951c28c117ad37afdd0b166305af798a991066cf91e007015acc728362e27d",
+      "bytes": 499
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6c7699d8063da071da2ecba74ff974fa1355de68c5f9129ebde57e70150c2cec",
+      "bytes": 36421
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2e094aea17f9c4458382c2a491c771d4e080edfad51ab7274c74a63de84d21a5",
+      "bytes": 337
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9b51b8991143b8e88ad030172c995d58278def1f0c272ae4ed8aa13e60fec068",
+      "bytes": 1720
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/results_summary.md",
+      "sha256": "15da2a5a50451f796119b86c80162f8e8e87be9a54bfb497de69db74f63d2238",
+      "bytes": 31115
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "94b95f61a5d3aeef10a3c45373cf0d728743eda927753de84e1f20054a847d02",
+      "bytes": 43536
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b5dfb488c03887211ce6a4976fc4d13b5c53a4aef9b27b892f343bce24451d91",
+      "bytes": 8980
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "071b044e57e46c0605da157c7a2f47ec12158469fd3abd5a28e041d2aaf90e63",
+      "bytes": 588
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/individual_findings.csv",
+      "sha256": "1e85a7aa545cea3ae29dadcf59bf0beb7cba6eabf6d9309d2c6179afc3a939b8",
+      "bytes": 1349107
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fcf6f4f79cc36340f8b0d53ce02fb69acb1812bf157038e712692f936d74b958",
+      "bytes": 905468
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/context_comparison.csv",
+      "sha256": "8d116681075bd112841ae4a6e9dcc209c1dddb865e1aea109deb38ddc0a6e93d",
+      "bytes": 1189604
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/analyzer_comparison.csv",
+      "sha256": "9c563c2e105b840a15df59ae43ca75f118985a1f3714b39a6964910b90ac267d",
+      "bytes": 636471
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/figures/configuration_comparisons.png",
+      "sha256": "f7b14e8c06c8be7ec143c271ffe2d37d5f9e5e09b5ff35715f22b1dbc980d1ba",
+      "bytes": 45574
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/figures/findings_by_category.png",
+      "sha256": "7fc79c245c9ea9590174940f43134b54b3aefd9c04d37f124fa79e0db1971dff",
+      "bytes": 84528
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/figures/severity_by_configuration.png",
+      "sha256": "209452680e40c00a333ae1d7129bbf935e751dfdf0467e714a76ac38a3e64ffa",
+      "bytes": 45953
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ai-amazon-inventory-management-b9aaaa4f23c5.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "042368e23e17f92d18bb5c1ebcb11763e15aa895a85e964423c8db63ed5bb342",
+      "bytes": 4379
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/artifact-designer-3d49aace94d2.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7fb1c47431382e51fca1fd03cfcbb546a7fddd68fc7ef90da3df51295cc9fda6",
+      "bytes": 3915
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/bugexe-recon-deep-recon-bb-54e7c45a353c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2ac5a4e59da6886c7fae34a8244953090d82ef3434d466f453f4f3fbc7a1ce08",
+      "bytes": 2756
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/build-optimizer-18cc2f2f975b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "bd5a77ee99864f7105f029cd08d777a4344ac3e968b12873ba812371d74fefca",
+      "bytes": 6526
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/case_02618-9ebcb62a0b3d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "bdb1f6d53a405a95d1c7d194d686ea83f8017351b9cee4e66aeacd1a78a03e98",
+      "bytes": 4268
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/data-store-7495a41da383.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "712794f0547549589e38bcf12b9d81c2d4cc3673ba7aaeffb98c1c9fb833232b",
+      "bytes": 6907
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/impeccable-3c2b9e8aa34d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2f7102cbbc7cdd6c5fb798fae6589c52ce5d4de4aa1a81ee9576ea28112000f1",
+      "bytes": 84518
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/mermaid-studio-d9030faf4ffd.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ef553b13e8a58fe89bf6553ffaf36e6dbe54f3a1a2104c44061d3d87795a0ee5",
+      "bytes": 6701
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/migrate-header-73343b5f466c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fbf2d646b3e623048ba72a75626fa9c447c2398d41be6bae886921de5c77500a",
+      "bytes": 7481
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/motion-graphics-88a76993cbea.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8f016c7466d2f854f890977ac1872482719abbee7327cfe88e357842dd1875de",
+      "bytes": 5586
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/multiplayer-d8856ce70af1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "799d05db0c87fefbfae8be9e74867e612d6be9e41ad89d5f9e7315ca11851595",
+      "bytes": 4191
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/performing-brand-monitoring-for-imp-56bdaa80d443.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "136f5aebeb68f64c769e4916acf2533e92b69817c3b0eefe1938b97c2d32faa1",
+      "bytes": 4349
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/play-audio-abdb9853c39c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "891f2ff89ea6e65493993ef1f341c60fa24d9cabe002e4cae101837ddaf4d985",
+      "bytes": 2096
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/pr-review-d32033bd5783.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6e7fb62d2990054b3682ec3169a7461216f3796e5f099f765f43e71579e84ed9",
+      "bytes": 11921
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/prompt_to_production-48e1d61795e7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "af1e6c298c3e35cef6b5e045dea68e32f1472d53965cf2b12b86c37fee27b88a",
+      "bytes": 9271
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-01e8f31dd5aa.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "e7ceb428f697a0d49104e5dca90fe89bbc3eb3f65f17d8295c517413d00b6d1f",
+      "bytes": 9047
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-64b11169493d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "97ed670bde36b9c6d6ab76f9574ca650c1813bc87bff16926223068624f27cca",
+      "bytes": 16154
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-cafee059d358.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7444bab2d1fdfae5b0de3b25b1b86e9f5430e7097f2d3a3e8bbd6158c3283167",
+      "bytes": 2153
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-creator-04290a68feda.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f6e635478d3cc378cfda86ebcb3daf5d9ed93fd84080944a23d2211387ee519d",
+      "bytes": 2670
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/upgrade-1b15d3bb3914.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ab70ba3ca5794a56a8c92c35c84a85b8f0d8023404901ba1d027aa5a24a19e54",
+      "bytes": 10059
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/video-editor-d2b8fc3e8591.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b2abe515e2c7fab4f0dd2c57f598b13e9c29127c64ac37c993d0ceb5ca7b72c2",
+      "bytes": 7180
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ygopro-cdb48eb1b170.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "93823069c365161115d0daf7f6dab9bc809d18e19503d79fa1205b9da9a88e31",
+      "bytes": 3102
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/case_00858-720e1261b991.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4118807a9596562dd2329469d7c8b24756575d95b1f873b18fa0f6af69812d76",
+      "bytes": 4135
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/dql-87139dddcdbb.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "869ef1b3f61a3d3e7bdcd1a7729d7002d3ed315566c3ee2356c5de969e3b84a6",
+      "bytes": 2309
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/github-copilot-pr-comments-d9446ad758d3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d85492e825ff10633f6d9160564b0bf53f1d0a35a0246f9ee64f45952a2a6b9a",
+      "bytes": 2181
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/github-ops-f19c1ac6501b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "82deaeabc4726cef1c702035f0ba194ca271b88eb5e10f0804500e4c63fdd52a",
+      "bytes": 2009
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/hermes-agent-d0efd2f03d8a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "03faa8cfe7be7b0c1d5fc8fcae65248a6b087236c7af17a8dcfc0619a6680980",
+      "bytes": 3333
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/launchd-cron-installer-04a39183afa5.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6e0c7967e6aecd50ae81076b66822d8763f3732122091bf3e1a74fb41ea5fcc5",
+      "bytes": 3129
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/opus-video-13ec794b5de7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c8e7bab082f46ee16f57c893f23841f7fa68b4189562df5e9dc9d997d9caa84c",
+      "bytes": 12691
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/performing-kubernetes-penetration-t-0e7d90397422.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b7eed18fd18f223342668b988a546cae539cb2cbcc5674d9405a154fe90636f3",
+      "bytes": 2226
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/recovering-from-ransomware-attack-40a804f686b3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c7ff00569be1117913aff0893498f879f1919a23726eade72c84d2bb23858816",
+      "bytes": 2111
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-c99707dc9b09.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "56a88231a1c72699881f853a6dce51df2f9658b2782094e52f2a6f275d637394",
+      "bytes": 1541
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/spec-84fb653e95d5.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "06a63516dc18437894253d8b8c404ed1fe7881d10b802e0cf1c7275c5c76bb93",
+      "bytes": 2039
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/tensorslab-image-6e172e3c1529.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c8ce50dece994fad0594b2f2955d2dfc992246caadff2356c54ecabf4823af39",
+      "bytes": 2610
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/xiaohongshu-16f6bbe89601.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "91d89409b27892531497dc6f29b74d7dcc59125e9b1ada325662bc03fd95b9c9",
+      "bytes": 3486
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/bad-skill-dbc4a62c8a77.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c135d9467d33626ad9fb3dce9db4969197c51708825063cef7a8c2d3bf05940b",
+      "bytes": 1647
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/code-auditor-354d513e475c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7d9c0a7627db1187b4a762ae05aea52e503c35b4677181f4603ddca237145296",
+      "bytes": 1521
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/compose_and_launch_job-c266a616aad1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "128c99a181fdbd4a89a01cb55aac9b66b29f8e94f789f80bee9e2d6256da4731",
+      "bytes": 1542
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/feishu-card-v2-19d2d62ffa8f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "79d9f548f03c322faa943f5e844f9f20f8152d0997760487feb18e46adb20073",
+      "bytes": 3222
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/filesystem-context-f39b26941edf.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4729199eeb32116aafc748aa851e924146069298e6fb161a7b8ce658e9296168",
+      "bytes": 1559
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/gstack-context-save-1ab80008e4b8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "82cc16e4e8dd4c4a10eea43e6bbea4702af1ea8b4e7556ec441d81707ede2a14",
+      "bytes": 1665
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/hackernews-6c8825979272.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c6fe8500718fbb7b6460050bddcce5ffebacf96c7424ba48dc1500554c2ea919",
+      "bytes": 2023
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ios-release-pipeline-48b2472211a7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "36f614cffcbb15065df5cca958956135770a90e1c90b529fe9190e8a73845bbc",
+      "bytes": 2070
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/linkfox-aigc-imagegen-cloth-b85c5beeb621.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "30e6d45cff84277d8c3567fb00a8a58a343737715ba510859a05669047e89c58",
+      "bytes": 4145
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/openai-docs-41c7dab71c4a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "65f1edacf00296aa60a2ce344cf2e90b4577fc9544a35cfdef0dda84dd59e3d6",
+      "bytes": 2769
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/personal-heatmap-fee49f04034a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6ef84b9688a72d8eb2916bd55217c8876c4dff577a2be9d20112d9b47ebd1514",
+      "bytes": 2073
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/pocketbase-a97d7dd75162.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4ab725aa0e3253f69f5e5e2d3be8f6d4fe1848549d91f4451466611d46eefc94",
+      "bytes": 1536
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/project-review-skill-a8af7de416c4.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "aaf43c47d12e7a317c7e433e8838e6f39bc1a0b76ddf9e04e2e70d00cdfd9434",
+      "bytes": 1542
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-43c055a9006a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6b188abb336c3e32c3147dca09a1fd30df4a2f012e777b89c33c9edb89d6e883",
+      "bytes": 2678
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-52257c4fc2ee.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2e5f36f4ca06f97aae92a666750132beeae32dd515852f8e0c430f56e3c3332f",
+      "bytes": 5127
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-614733a4993b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ebef21e8bc654f7100115ee83f20077bf6bb3d802937d74f024d32a2444be832",
+      "bytes": 2066
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/vault-organizer-a4eea17fa1ac.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cddd68083393e9b4f72319625b1182a7a0fe379fcea979c7bf85e32f4c15d5ea",
+      "bytes": 1594
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/vllm-compare-reqs-b58e203bc21d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "90a47f4900e05d6e3e8f6e0d7a4c4842ff1a01d902800bc017e775de592c758c",
+      "bytes": 2503
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/claude-agent-sdk-dev-018a346a8bf4.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "be495d3944a7c478ff2636085076fe941e223247b85a8010410719294c288829",
+      "bytes": 2593
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/deno-41542b2ee044.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "974bdc6e1df49a4b798ce8462f054b62453c1402f6833a038eb201b03e4261f8",
+      "bytes": 1461
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/frontend-design-pro-a08a2d2025c2.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c81b8e91d868315afcd15258200d789f2a0dc488dd4042b14dd0cc73dff2d9eb",
+      "bytes": 1584
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/fsl-multi-region-architecture-37a3133b9baa.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "470de4dbe6378151ca5cdf5f83cadd05712dbc481c54f5f35973da4031abb3f5",
+      "bytes": 1639
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/governance-autoresearch-d2d08db986b2.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f4661af2eeb77c2ad83ab3830b7e48ea1c6919e6c64beb99f6335b3d5efe9f5a",
+      "bytes": 2132
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/gsd-resume-work-91951df20902.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "0654d4071461a596b586481e22b0eaf99d123476f22f6fbebe03f3faf91adaaa",
+      "bytes": 1543
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/minimap-92360e59ce0c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fed2ef1626daeb66cc2d723428feb63bde7bf744a413ebc2297a09c2b0aadf36",
+      "bytes": 6647
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/pr-retro-6ff29e12e7b5.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f436de8cda9a5d5a69856b6e1c14827ed8a7a60ac8b625d1181b4da4dcb8bf14",
+      "bytes": 1526
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/prompt-forge-3c4e461a37f0.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f2c9ac018f9c261b6930c5d9ca41b61cd97f55ac0e3b09fe849d496ac7543944",
+      "bytes": 1514
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-e35647a286d5.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4e12db5e57a908ec7bd61ed464b50e38f051917238c22e187fbcdef3687cc594",
+      "bytes": 1813
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/taxonomy-7c7d8d0b722f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8efaf9e82e4be5d21ebd7cb16cb1c6b22bef3ca0053d30952ed767d240239725",
+      "bytes": 1522
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/text-to-speech-e49fbc899fc8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8edb86d783d353a202ba6c8b80b5341581ac27b80c23c28d8fb3212843622d06",
+      "bytes": 1554
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/visualization-0607d5d8253a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1ad0f987046a0f651c0450a1b04f5aaa7f289972c4c401c96582ab1ca3ef3099",
+      "bytes": 1492
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c171dc5513a233a3918749886cce6455b155e620f4ee46294da12609f846842c",
+      "bytes": 606992
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/scan_summary.csv",
+      "sha256": "37c15d4714c8895efb694c33a2d930711d8bcccbaac8eeca8935e8cc3f5ef6ce",
+      "bytes": 722460
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_220827_sample1000-seed2030-batch1/run_metadata.json",
+      "sha256": "cd875b5920c05aed9ea1beaa1c2c858ff358826dd0122bcde293dc440493c92e",
+      "bytes": 160998
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ecd75ef01d301417bb2172cf5d35a13918daebcce6d69614b6fc8d0e939f7753",
+      "bytes": 1061
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d21b416b205ce59b93af1c2cc2ce924fa5ed1cb9c1ebd7036719139e5d29ce44",
+      "bytes": 774
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "442fd96f8b4fdffa353960a74a103446bf6a03c71b2ef403e00952164b9de6ab",
+      "bytes": 17730
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "33e14fdd326e18a44c12c11926e1d313044847e05795ab6de3641ab35eb45432",
+      "bytes": 2171110
+    }
+  ]
+}

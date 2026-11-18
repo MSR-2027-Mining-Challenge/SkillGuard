@@ -1,0 +1,692 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-16T07:58:32+00:00",
+  "kind": "run",
+  "report_id": "2026-11-15_231707_sample1000-seed2030-batch2",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "sample1000-seed2030-batch2",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 250,
+    "skills_exported": 250,
+    "export_errors": 0,
+    "skills_scanned": 250,
+    "skills_by_coverage": {
+      "complete": 222,
+      "complete_except_excluded": 0,
+      "partially_complete": 4,
+      "no_complete_scan": 24,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 1000,
+    "scans_executed": 1000,
+    "scans_by_outcome": {
+      "complete": 900,
+      "contract_only": 4,
+      "partial": 96,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 1691,
+    "finding_rows_by_kind": {
+      "metadata_quality": 844,
+      "security": 751,
+      "scan_coverage": 96
+    },
+    "skills_with_any_finding": 233,
+    "skills_with_security_alert_primary": 53,
+    "skills_with_security_alert_any": 61,
+    "security_rows_primary": 647,
+    "security_rows_any": 751,
+    "security_locations_primary": 336,
+    "security_locations_any": 378,
+    "security_rows_by_severity_primary": {
+      "CRITICAL": 70,
+      "HIGH": 42,
+      "MEDIUM": 187,
+      "LOW": 348
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 378,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 12,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/run_metadata.json",
+      "sha256": "fd1cdd86d235e7ecdbfabea596354c43b619dda82cd1bc690725daa8fa0b451b"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/scan_summary.csv",
+      "sha256": "0bafc19b8ef7a25c577a2807eafc70547ecc4e17c6abbf4f777f0c4605764f0c"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/individual_findings.csv",
+      "sha256": "22de398b06b39cdab459f294cf58e1c71847586cdf3d6103568780db4b61e4cd"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/context_comparison.csv",
+      "sha256": "07ede5a66eae1f4bc5bd458a75c2d09df55525e0ca731fb4884ce46d17d0191e"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/analyzer_comparison.csv",
+      "sha256": "d5a5d3593b23e05a0af1a9aeb17de89268cec32612cdbdf2e146f276f5bec875"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/manual_review_template.csv",
+      "sha256": "ab42e04d289021474f41de60b2910705fff85e91fb60db822ad24c814a46a17d"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/results_summary.md",
+      "sha256": "dce6cbc55d99f2e579b550872a543711b8604351659a71ef9751e64a77d4774b"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "843b2478f758958132cd30e63120be595a65d3c1656b23ed9393200428f36e49",
+      "bytes": 499
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "58f5def0100272fb87757bd4645516f82862831ca018dedde7882aa3c356a7b5",
+      "bytes": 209417
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "93ee7a9d6e22038770973d609afc8661f59cf293dfc96f9a795238346f50a2f6",
+      "bytes": 334
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "37b6f38e62033afda81d477c2cf841f70cc343bbe9a8cc8e17f9f2aabcce35fb",
+      "bytes": 1905
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/results_summary.md",
+      "sha256": "5f69789c60e0f0290fc5580e61c3070d6414471e0e05649478a2e7cc2c7b2369",
+      "bytes": 30615
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "97066cb42c2ea2b0d4ef7f2b12c5a83e8ab907b6fe63e4582f5622db939c9cec",
+      "bytes": 44505
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "e1957d1a44b7b598125cf7f54e2e9b0b7fb26a51d2f69c5a1b4a876d44c06746",
+      "bytes": 7969
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "26499f210eac18b2c8ad046fd901f98bdb08a0bd061208b925ec2fc9c2772894",
+      "bytes": 587
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/individual_findings.csv",
+      "sha256": "e7f20cd756504be2ce7701c7e1db01fd9129dbf2ab4d5ad46f30435cf08281f8",
+      "bytes": 3243537
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2985ac291ef94167091eec54cfe4a5547e9dfaa80d794a3d1062c254b88c5118",
+      "bytes": 961206
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/context_comparison.csv",
+      "sha256": "78bd08ed0a3a1576c11354f254414a9b50884ab763ccc458f02b444b191231c0",
+      "bytes": 2208987
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/analyzer_comparison.csv",
+      "sha256": "607c77106fb00f5f66cf509b69aeda4d34cd6fc83e5fc5967e9f14984180a539",
+      "bytes": 1215119
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/figures/configuration_comparisons.png",
+      "sha256": "3a5c529ddd1d506fb3502312b25ca0b7fae0e855b47afc53dfd32c8958cca3ce",
+      "bytes": 44399
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/figures/findings_by_category.png",
+      "sha256": "e08f54c6b89ab8cc0f520c43d013245410d95319f30b35cac75ff28719f48493",
+      "bytes": 77808
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/figures/severity_by_configuration.png",
+      "sha256": "87d367d5a15fd5fad38fc875d97cae6db4e3376f4afe4a49efe439d469d6a6cc",
+      "bytes": 47396
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/aliyun-happyhorse-videoedit-fe12dae26c39.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "dff914afe832db760652c4af34d880effe7900600c33692397c1c2e35f0c38b4",
+      "bytes": 6577
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/building-soc-metrics-and-kpi-tracki-a74f1f4e419c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "16c2ef2773239e2ce75dfc204d7f05ef9ad6448089943d67a8efb3c4508385e8",
+      "bytes": 5475
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/camoufox-deploy-18b42d5f19d8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f15fe137627d1812ce011731b81c654b043bb93b37cba0ba1044c2f8f3fbf6c4",
+      "bytes": 6532
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/case_00471-a3e675150ad3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1e18bb35fa313ddaba22116efa2270f9a6c8ecbd6db359c46201ed6ca68b59fe",
+      "bytes": 3684
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/design-5a351d312380.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "99b4259233e7b1f2495fdf17c043336961987599edd0752a9aceb5189c3ed0ba",
+      "bytes": 4913
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/e2e-test-writing-d3e2e70da80c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "179955594d57ec2ca9e429121ed4fb6233b1bffb81da28530f7a6af8d0113693",
+      "bytes": 6740
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/financial-report-extraction-2fa30cbdc754.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "39a8bcd427cbb5a761c8cf645181098df895808c23f17efc68a4655a1233ec6a",
+      "bytes": 2124
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/iikit-08-taskstoissues-61cce4592036.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2e70eceeb8a647e20f0a861e9feb43babc920a6a3c8d7ae0ae042c7fb060a8d1",
+      "bytes": 23853
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/kimiqb-499d992a0a80.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "be5ff5212333ead02e9ee08f5be24f69e618188585628f852b401c32b8158b85",
+      "bytes": 2122
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/mean-reversion-66d706784017.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c44b46818eb836dbdf8afabd0e1ff188ad196683942712679cef77a6385e7018",
+      "bytes": 4385
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/mobile-platform-guardian-3e3ce17e3392.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7885c4a05a41a96edddd58e7e39c746c4d6f8030c240097a23aebabbdad3d725",
+      "bytes": 2111
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/plannotator-visual-explainer-b8aff2d05b35.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1b757994b818c2cfc7e2eafaf7507bada95fb48b91077be080923ea65a6c5c75",
+      "bytes": 1648
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/process-vault-tasks-ba0f5a3d8805.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "14cfab7c2ed7bbec35349a8db3618757bd09dbe81b5aee1dc960ae759d57cb2b",
+      "bytes": 2216
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/scientific-schematics-188019975fa3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "11d082e8e9717eb8f9a7149e5e0839939fbc91040d0598ab79815c01ec37cfce",
+      "bytes": 4908
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/session-handoff__MIXED_B4-2229332e6d6b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "26317a7bb5c49275502789a23d93a30eaf437d8223ac6c9941d7c4dc554d5759",
+      "bytes": 4305
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-57a1659b8128.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "e835d15e91a166cddc6bd71f32622221a06f19771ced1dbaaf1912770dfd307a",
+      "bytes": 2899
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-66b8904a37a6.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2e617bee4f6661d6ed2b57d86bedc21977e00e1942a6f91830dd5b43c5e9570c",
+      "bytes": 34046
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-creator-9abe605b3efd.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b05b241614832ed27d92bcc9b22684b6843a7532da34a105ed1626a0ec38bfd7",
+      "bytes": 2658
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-creator-abaf911aecfe.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "55b571be7376150ab56b01691de6b731366a0502a0da43da7c75cc911705d0c7",
+      "bytes": 2674
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-d079d2317018.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ed11d7eb36d90ac3ab17f571995a6e0e7a2f863d99b23164a0a38be5daf2c7a0",
+      "bytes": 15825
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/05-remote-download-execute-93beb740007e.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ec23a72a9202c7e7287ef2df3fab850e7cfa7095073808781d55f386eff8038b",
+      "bytes": 1919
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/case_04351-0542676d2d29.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ce0a0ea846c968e8014511009a5126a5aa3f3f1bd47ffcff2794570cdaa8e4d1",
+      "bytes": 2163
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/polymarket-weather-trader-50c328a8fcbf.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6c9a3e1071816ce014a64db4dc57111f25bb79ded57c211151b5e30e1e424f4d",
+      "bytes": 3580
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/prose-b549b02de44f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "15afb28c1b9e54ea1856e72011941cfc10ff5301a76676987781986298f2d3ff",
+      "bytes": 2118
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-b2de300ef389.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d6cff457481491c89dd05b664089a62bf5c10cbbaae6a639c9939e1c2976c9c1",
+      "bytes": 1995
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/youtube-content-7162d1c45997.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "991016431a98741298ee77a2a651972f4b84237d5e0f66cccd00013402a9a04e",
+      "bytes": 2690
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/add-reference-0c8dd608b80f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "575f3cf21d906a43bb898652840af1efbd435a879094374c3f73f5e27e45ff1c",
+      "bytes": 3830
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/auto-memory-f16b6134d1b3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cb5f14bc9615b8b1f931eae925facc696fbf948df48923946b5658e1510db379",
+      "bytes": 5511
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/botlearn-selfoptimize-f9b81f1634b9.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "121a39d7afb68d8a159e69059a34574e355d34d7c710304091f9a5bb31b2e9ba",
+      "bytes": 2831
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/captcha-bypass-42dc507d14c7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6f8b95987ea9c547088b540cbda719d9fef1f36ec1b51f32c24059e36e53c9cd",
+      "bytes": 3301
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/elevenlabs-tts-655be34fd5eb.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2481d6da3f397fd9083d9178b932f122020f51c20f7ea7916e09d3adbe5cf215",
+      "bytes": 2070
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/extracting-iocs-from-malware-sample-714aef39c0bb.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d458c5d236a32b81c30f3848c731cf3f075b5b6c88861fb332eca52fba8d1a07",
+      "bytes": 2004
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/frontend-monorepo-init-6b1fdc822ebe.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1e7a12ca1545fd02addce0d4ce60c9c5b1cc923fff691a68221ba5fcce8de736",
+      "bytes": 14896
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/generate-image-0e67cc4e9f85.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4293ff39f60b3fedde7786ea5ebfdbe2cd2133bbaf79d9fec94f8b7b6cc26033",
+      "bytes": 1567
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/generate-image-85e2fed5771c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6e0f853b446791c8ff9098131bbb8a7d75cd61b616c47872d740230a932f4088",
+      "bytes": 3640
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/get-metrics-2a0880b28e6d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "03ac8e992d71d41adb9381d5f357551cef62afe97a60868b53921e9d4624c4b8",
+      "bytes": 1578
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/implementing-github-advanced-securi-d00592beb243.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f494e16732c67ece44349f797db0e98fbdfbd5fad4058fbcf8e3eee639a3b16b",
+      "bytes": 2719
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/listenhub-7b57a00218af.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5f835b5756696b31e376585e0d9b487038f526d580acdf7e2085906516fed45f",
+      "bytes": 7732
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/moltr-dd9530c5329a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "e23c0031da515b7d66291adb27dace487f9494e38a076a7afffe25e5824abd9d",
+      "bytes": 2109
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/msft-azure-upgrade-36c89dc052ee.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cf08986f18093d0a4660fa5a2fea55adaa246d1ff067fa860ef06a16c9588baf",
+      "bytes": 2083
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/notion-bill-b5608eb0294b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "012974f7cddaddf097aa6291eba78dc931a27434c8fd5c263101c39eb5fbc489",
+      "bytes": 8482
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/people-94842a27a212.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "efa5fbffdb667d93a994a6dfd59d23ee3092568f58e7a0a9febe2966635d572b",
+      "bytes": 3072
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/pin_upstream_images-713488b8e9a0.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "02e7253b5761645a6a6676a094db1173bd14c06d9c848d3ba6bea9cab9ddfc79",
+      "bytes": 4483
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/plan-ceo-review-ebb56500c6eb.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4404ade39496378f410fc0232e21fbc753b8ea28c8d8bf10e1335a2de9d3d5ef",
+      "bytes": 1669
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/post-bridge-e00c2dccb897.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fdd734a9b004ff2c66d100a73d0c120aae1626a532ef5831f50ccf19e30d65ea",
+      "bytes": 4446
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ralph-cc2f35b273f0.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6e529783b9f17b04c05088a263c7422064569cfd7cff21da88560d9b4498cfa5",
+      "bytes": 3451
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/slurm-monitoring-accounting-starter-01ed21229420.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4c63a6a93ff4700762dd722525ec10aa7557a42b8ea5d8bdf1d6c07b83c790c4",
+      "bytes": 1911
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/smyx-aggressive-behavior-detection-09d9df7605ce.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "404d370921eb49d63b0720be92e3c5a814a0f343e4669074170807e51b76805e",
+      "bytes": 3857
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/social-publisher-e348b66f0637.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b3f41a3016ae94ad6b9e9daa456d50b8e0de5e0941701c98311b3d27989a6d7f",
+      "bytes": 10591
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/telephony-2d2d75c142f7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "65858c3f3a09e9aef69684e61de7c1c84b736d6d9eac384c1846136230769a1a",
+      "bytes": 3738
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/vestaboard-safari-screenshots-2eb56d416f0e.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "eb415fe3c549fb0ac49dccf051ac86ecccb91f407a1b7be24810437ee017ac76",
+      "bytes": 2693
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/_templates-38ac49925b1c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cc50429131fdb59dd3813d4fa2d8382d91f9ff07175bbf6ff4cc31e6149bf895",
+      "bytes": 1850
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/academic-formatting-workflow-b2c174e98f5b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "05d38a45ea827dba91d942b095f1e2ce9d414801e1861ce4989c23c0f5a2a9ad",
+      "bytes": 1591
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/detecting-golden-ticket-forgery-0b384ff76feb.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "0502ff184aa9e2b374ff0657f102ef614291ca29ca5cde88f76d95f310d3ce8c",
+      "bytes": 1584
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/excalidraw-diagram-c05bce28883e.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d8b53bd3ed23fcf441040e297f7ebd382bc37cec771ec79f2992f54198d945eb",
+      "bytes": 1587
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/fluora-balance-6444fac82599.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "34209738ec4bf1a4e876b635d80b11c6db83dee68c191ae9592c9fc65b3ecc44",
+      "bytes": 2078
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/k8s-57966a882370.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "64fbf6c9972907bd4804dfd6c61c5f7fc7425b62e0b869cf3f7fed66cbe2d41f",
+      "bytes": 1503
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/matlab-09b3734e6a20.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "202f406ca66b06df1eed1a78ecaaed3874b0e4505757fbd7d3161332580a03c7",
+      "bytes": 1454
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/opensea-swaps-1de502b10011.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2edb1c566cfe3ad6e6e8a640d97671feaa86faddce32d628110d10de1802e558",
+      "bytes": 1537
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/query-limit-up-stocks-7b18fd901d8c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ec6b2e0e51d1a6a3c53a99d5ea81f363ead3d7d51ddf5a897c28ac8457347603",
+      "bytes": 1587
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ui-styling-8dc652d3565a.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "21a52c4b88fb549eca98e7e16e3f33863b06f901485eb5f0fca290b9ea9be365",
+      "bytes": 4067
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d7b3772c0941191a8ca520c7e78bf05311fdf3bf3500f46d69ff1e345d3f0247",
+      "bytes": 616814
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/scan_summary.csv",
+      "sha256": "cf3dc5ce08936da76ea9e7e6659c2aedc995265ab8ea665b152c7542901d2660",
+      "bytes": 738215
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_231707_sample1000-seed2030-batch2/run_metadata.json",
+      "sha256": "470f42116f63f87aa1ac7a6758b8af8b79ccfa8d1c86ae02ae1a353d2fd570fe",
+      "bytes": 162604
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7f8e2cb2eaf7222d30957aca4bae93f02c24ca3069eb1a4ad7ca52ec0dc9cc89",
+      "bytes": 1061
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "42954be9093b2aeb56a9d65565ff50312626e67943dc7f0f3ed3678fb7b3251c",
+      "bytes": 774
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b4448603e7883a9f766c5a3a7296a6bc264be9104e698e4627bd0b4661dde2c6",
+      "bytes": 17296
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "ac6535f37add01197e6ea7ee99c2f97f164ab5333b113725a28f3054a428b4d6",
+      "bytes": 1990869
+    }
+  ]
+}

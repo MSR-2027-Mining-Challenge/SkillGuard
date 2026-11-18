@@ -1,0 +1,268 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-16T05:51:06+00:00",
+  "kind": "run",
+  "report_id": "2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis",
+  "run_mode": "reanalyze",
+  "db_tag": "agent_skills_sample",
+  "experiment": "pilot12-seed2030-run3-crashtest-reanalysis",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis",
+  "source_run": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214620_pilot12-seed2030-run3-crashtest",
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 12,
+    "skills_exported": 12,
+    "export_errors": 0,
+    "skills_scanned": 4,
+    "skills_by_coverage": {
+      "complete": 3,
+      "complete_except_excluded": 1,
+      "partially_complete": 0,
+      "no_complete_scan": 0,
+      "not_scanned": 8
+    },
+    "configurations": 4,
+    "scans_planned": 48,
+    "scans_executed": 15,
+    "scans_by_outcome": {
+      "complete": 15,
+      "contract_only": 0,
+      "partial": 0,
+      "failed": 0,
+      "excluded_incomplete_folder": 3,
+      "missing": 30
+    },
+    "finding_rows": 13,
+    "finding_rows_by_kind": {
+      "metadata_quality": 11,
+      "security": 2
+    },
+    "skills_with_any_finding": 3,
+    "skills_with_security_alert_primary": 1,
+    "skills_with_security_alert_any": 1,
+    "security_rows_primary": 2,
+    "security_rows_any": 2,
+    "security_locations_primary": 1,
+    "security_locations_any": 1,
+    "security_rows_by_severity_primary": {
+      "LOW": 2
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 1,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 0,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/run_metadata.json",
+      "sha256": "b4ad2c01aa5dee544c36e6ff8c815e08814133707c4a2bbc7473810d3708d12d"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/scan_summary.csv",
+      "sha256": "016e15374acb3135ee7457424b20baa11cf585e42e20bf4756fe5bf3d43b888a"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/individual_findings.csv",
+      "sha256": "803e4c7b391f49e67f2c8422929958e9da1a1a1a5976b7f80c1edb1a2dd5bd21"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/context_comparison.csv",
+      "sha256": "720a486e783a0b988387b2d32233050c4abef709db1709a65520f302a430c5cc"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/analyzer_comparison.csv",
+      "sha256": "27275d0962656d15eed297c018144715ca7c47143849a6208d4b5b1249f11be0"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/manual_review_template.csv",
+      "sha256": "78903e648e4afdb4d677a02ee0e9a6e700b0edc12ba7d872ac3e27b8f96f76fb"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/results_summary.md",
+      "sha256": "d228dff8eefeca5ed586659f7ed526397a153c82ee29796674c42e1628f9ad13"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f447133d6e29200d2564b937207cf43bb17d8c0dbeac0b9847ab8bd1579af8f2",
+      "bytes": 470
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "268cea538e89fb95bee44575c76291124d35bdc76ca931e55df310f8f4a47aa1",
+      "bytes": 820
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2a6ab52606c6c770b61f79de96adcb034389a65e83165245b6bb2005183b15db",
+      "bytes": 310
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cf04ae7fa411b6d474a5c99fedc6291bd6d0878eb897340653ed6351982b553f",
+      "bytes": 259
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/results_summary.md",
+      "sha256": "4a208b3e4c18800092150383c49e2965d9a11b8abdfa5e5d626fc05b4ee93a33",
+      "bytes": 19436
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "716fd9b02515d39be09a7fbe10119fbba0263028ab6e30bc0b9e6164e156978b",
+      "bytes": 2530
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d348757b92c0b3e8e87c43bc99c138cfa6fbcff5561383ecbb08938a51f9ea64",
+      "bytes": 554
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cc12d213d75acc6a0c51c855e1f013de2b13912bfd4908978bca2b4872e0f67d",
+      "bytes": 113
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/individual_findings.csv",
+      "sha256": "169ed504dba9dca910103aaba9af5ec4a13ca610e44436986d84834789b5eec3",
+      "bytes": 16399
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5830b84a03860f4c672bbdd7579b9d616decd05197260d70c10403f2cbb9019f",
+      "bytes": 11483
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/context_comparison.csv",
+      "sha256": "720a486e783a0b988387b2d32233050c4abef709db1709a65520f302a430c5cc",
+      "bytes": 5741
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/analyzer_comparison.csv",
+      "sha256": "27275d0962656d15eed297c018144715ca7c47143849a6208d4b5b1249f11be0",
+      "bytes": 3258
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/figures/configuration_comparisons.png",
+      "sha256": "e2778a5123ec5644ead5d9b567acbd8c4912075c9ed69deb4229d4ffea042861",
+      "bytes": 35162
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/figures/findings_by_category.png",
+      "sha256": "b5978adc929ad3fe4c1afe9cc60b141d997fb8178180702de50c5ee651ddc87a",
+      "bytes": 28750
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/figures/severity_by_configuration.png",
+      "sha256": "96c525106df936a6d0e0cfed24f217e6b4895b495cc605a7b5dcbbc4d0fadea0",
+      "bytes": 28444
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/taxonomy-7c7d8d0b722f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8efaf9e82e4be5d21ebd7cb16cb1c6b22bef3ca0053d30952ed767d240239725",
+      "bytes": 1522
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7f5c638f4ffd3b8ccf103a623c59c3e8530e1e39744a081ae2ad69aba8446772",
+      "bytes": 19175
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/scan_summary.csv",
+      "sha256": "f9ea17b87d4f898942f38a61f6fdcdcece4b218299a1e504fbdab93401b2c560",
+      "bytes": 27823
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_215105_pilot12-seed2030-run3-crashtest-reanalysis/run_metadata.json",
+      "sha256": "b4ad2c01aa5dee544c36e6ff8c815e08814133707c4a2bbc7473810d3708d12d",
+      "bytes": 13048
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f5baa799e4a1ae834c4d77669c26654d97b319f21145aaaca8464d1e5ed88475",
+      "bytes": 1071
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "17120d828e0cf8391cef6c3e35bb023a4803c3e6ff6eae84a0e93f7842eff2c9",
+      "bytes": 772
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "a7f31cb10fcbe07f007ff7c845668fdc186aabf7d17f2f233bd98c3cf5c979ac",
+      "bytes": 9055
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "687303f2e141da935400e4767a9694d6deeea6e4686a9d05795f17fb722d9d81",
+      "bytes": 67422
+    }
+  ]
+}

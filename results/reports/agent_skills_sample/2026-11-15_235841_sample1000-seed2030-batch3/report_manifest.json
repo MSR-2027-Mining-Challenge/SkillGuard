@@ -1,0 +1,657 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-16T08:39:52+00:00",
+  "kind": "run",
+  "report_id": "2026-11-15_235841_sample1000-seed2030-batch3",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "sample1000-seed2030-batch3",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 250,
+    "skills_exported": 250,
+    "export_errors": 0,
+    "skills_scanned": 250,
+    "skills_by_coverage": {
+      "complete": 233,
+      "complete_except_excluded": 0,
+      "partially_complete": 0,
+      "no_complete_scan": 17,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 1000,
+    "scans_executed": 1000,
+    "scans_by_outcome": {
+      "complete": 932,
+      "contract_only": 0,
+      "partial": 64,
+      "failed": 4,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 1476,
+    "finding_rows_by_kind": {
+      "metadata_quality": 884,
+      "security": 528,
+      "scan_coverage": 64
+    },
+    "skills_with_any_finding": 228,
+    "skills_with_security_alert_primary": 55,
+    "skills_with_security_alert_any": 56,
+    "security_rows_primary": 522,
+    "security_rows_any": 528,
+    "security_locations_primary": 268,
+    "security_locations_any": 271,
+    "security_rows_by_severity_primary": {
+      "CRITICAL": 62,
+      "HIGH": 110,
+      "MEDIUM": 194,
+      "LOW": 156
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 271,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 6,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/run_metadata.json",
+      "sha256": "d00cba381cd7ba4edaec42575c5c7520adda8285063f5c15063ca44047e2b5c9"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/scan_summary.csv",
+      "sha256": "076db91725780805106df1fce076c9dd489c56bacf84ac7f88a6677e1d4c64d2"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/individual_findings.csv",
+      "sha256": "e0c52ca4de2005db9762d25deeb76d860e0b59bbec65389428d0870658a3e3de"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/context_comparison.csv",
+      "sha256": "f63f0377d36c8934cc2bf13f37e4da2bd599e64af21eba168dc1b340470b788d"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/analyzer_comparison.csv",
+      "sha256": "0af3e7b32f4f282bdf3e61b47bbac4739041b1dd299b4f37fc0f137fba924c46"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/manual_review_template.csv",
+      "sha256": "944e0dbb20bffb91bcf78dc7704f432de1659bb05e70dde75875e2ac2bf69057"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/results_summary.md",
+      "sha256": "9591a17b2a1f228da895439951102a3cb01815c44b74281e56b1a8c478271c6a"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5018083c3a7656f55e29768e243b9f37c4f8c787792ab4a1dbf04bf5b76239b1",
+      "bytes": 499
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "01a3c83ad7de650c130dd43e50492714e10059e2d394d18deaefe73ea9280c99",
+      "bytes": 150594
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fc8784ee2fec75462ef45f97e899c483f40b285e7a44139db3c7fd0bf0cc2007",
+      "bytes": 336
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "a7761a628c0fe3d276104658f8815e23e7773df084aeee859c3c92ac09f4f90a",
+      "bytes": 997
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/results_summary.md",
+      "sha256": "b28d8fe7c18c45239c9150681cfcc1d9e40d1b461b72b6d4406b9483d1853888",
+      "bytes": 28393
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1ee78188031e72d73c893b6d0151816b9d49376d677e2f02b922a4be2c3db6ef",
+      "bytes": 43391
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "55edb99d03a90b6d6a376310626de2fb5347fa0d248a729d29b4f00cd51e16e3",
+      "bytes": 7944
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b039987c05d47104d9a83475ff56cd5c6058aff66651b3136a2d3be792272fd7",
+      "bytes": 589
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/individual_findings.csv",
+      "sha256": "630747a282a31694f367b4b80404697372722bee3d1222198119d79aaac7f183",
+      "bytes": 2538834
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4b3311f5bdff4f89ed932cf9078ad7431b2bc16d3ab3d282a49cf4352bc125c3",
+      "bytes": 955438
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/context_comparison.csv",
+      "sha256": "56a1f61579c642b268bf2cd8cf1d665ae5a96b063e54907b053ee0a34a58fe2a",
+      "bytes": 1479207
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/analyzer_comparison.csv",
+      "sha256": "b36a43b862cf49f96a50d645d41ff223d2b8f1a213c6cf342ccb1e1eae9cfc11",
+      "bytes": 893613
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/figures/configuration_comparisons.png",
+      "sha256": "13b436e8e836437e4eb6138abe695cff8a2ef8843f6bd4e7b9bc6d3a105e5bd6",
+      "bytes": 43058
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/figures/findings_by_category.png",
+      "sha256": "299d84d1024bc92f7b55568f17941bc93e61a5ad51cf53dee407528120a5f3d9",
+      "bytes": 83294
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/figures/severity_by_configuration.png",
+      "sha256": "86e4ef65b7e749ec2709bb3d022532cf7b17a9dca3a8ed0778f651d8657a8a7b",
+      "bytes": 45727
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/building-soc-metrics-and-kpi-tracki-8f60b7d84e71.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "62e23559e91b664984f1ffc242fccc6b252d6ede197794cb3a737f620be6f83c",
+      "bytes": 5474
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/case_05176-12031acc7fcf.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d6650c52bcf37d6b0e32c23afd7773839d0208b4ff221f17a13bf5547402e42f",
+      "bytes": 3255
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/esm-7858be0425da.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3ef2675880e2031e7f40927cca39be2dcff60da9087b8a1bde092a0f95f5a398",
+      "bytes": 8250
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ibgnn-11620a6515f3.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7691c23aa5cf97f83f88976372cd8f046cfd9a183fa1869026dbab753bbc96eb",
+      "bytes": 2055
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/impeccable-171b6b1b3be1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8b386d816d8e7b5da394f8a5b1820811c35c03faf7428734bfdc8f65a12e78f8",
+      "bytes": 23654
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/production-bench-e4c15b86d306.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7921ce2da3d7a5153e401fe4cb80605c0dcbc71d0dc8b06f567335bb391972aa",
+      "bytes": 1652
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/recovering-deleted-files-with-photo-fd700668cdbe.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "33c95e8d9195fb19ef4239a818d54bcdd095d17c4a91d2c124c2f9670adc5a49",
+      "bytes": 5757
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/run-studioflow-92af3fe89a62.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "a0f31ce0e497151b9cd03be4063999a66174c3d9633d161c3b27c314b77b1de7",
+      "bytes": 5473
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/writing-skills-d2ab59c9e608.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "26dda5b4597fc4ac86d41365ed2539d3ce0aa54a7c94a011c97251ef3452b74d",
+      "bytes": 4969
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/Pair-Programming-12a5247f1959.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "15b1c44e2ca581dd4cf3d529a4a38f3dfce89c0d24094cc09775a9d79481859e",
+      "bytes": 2637
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/adk-skill-4aa83b5bc710.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "3e92936aed26b300fe0166d4e24e725e98310deca18183eb6457d3f95ea96812",
+      "bytes": 2001
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ai-podcast-creation-a4dfdebaa616.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "caa04831ff179e6d891986aced8d9d8b7d8d13dd0274a88aaa27720156c59097",
+      "bytes": 2192
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/case_02690-f202ef11d488.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "38bdbc69d641338a2f8dd73e3731fb3a04a0c77c3f3a17fac29c08c1f813fccb",
+      "bytes": 4870
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/code-style-fb1ded202fee.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "20b5090a3898f2a7e9214f49a2af072bcadc85586a7f2ad59dda381691dff9d7",
+      "bytes": 1559
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/confluence-api-59c83e633cb1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "19e16910fbac9a171d722e8424699f961efc6d42225cd2ae3931ec25826d0b7a",
+      "bytes": 2058
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/contacts-a4a292fb9734.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8af21500575f26ba7583338b9c3ba52ef074a4e9b2070fb2bc6b916c2a8e60ac",
+      "bytes": 1504
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/ctf-reverse-72b8c1549125.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "61652d05c8318baa95103900c94136acc5a3d2842993bd925917dae47a99cbfe",
+      "bytes": 3602
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/filesystem-watcher-0de5fc2c6cfa.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c5211dfe73a03c55f6ad60e4cc5893536b9fa0ea8732557bf14253cb41d3b716",
+      "bytes": 1561
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/luokai-skill-scanner-ad0bdd7c0562.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "735783ffac8e6c8fe0534eece361476081c1c50bd4e2d89d630e3eea72a18bc1",
+      "bytes": 16237
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/mitm-inspect-b85789e6a341.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "52671159b5614e6f534d1dff5c81ec5cc094311d044c5601558fda55d90e2989",
+      "bytes": 1526
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/operate-8d9c970463e7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7d04d597e6342ec0a81d63d6d9aa4c1d97bd74321c0d562dcdae6683a67ef6e4",
+      "bytes": 1659
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/performing-threat-emulation-with-at-695fcc1acf92.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8c368a32546913d7b5993c680967f231a1d9ec8c6cbb85646965e5489fbc39c2",
+      "bytes": 2178
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/social-carousel-4a4be4cde6f0.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "0ef1bf3170ec004937b826130886a4b785f5f36f68a20a2c3dff6d58a03ea4bb",
+      "bytes": 3639
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/typescript-expert-90edfe8b9ca7.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "94872fb31f17ac9979993f61b7deb15e15516d6d96ddc3b49096a07c5e465af7",
+      "bytes": 1611
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/analyzing-ransomware-leak-site-inte-f5c3eaad95ce.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4106f7d2d432f0a5fd58dfbd2909a2cf3f0b995388b089f5c6bbaa61c87932c6",
+      "bytes": 2705
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/config-packager-aa10c9502af8.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5ae58d3086fd388d0653d0dd9095d6add80fdad21b194306f24c7c0da6304b95",
+      "bytes": 1549
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/devex-review-97d80c4f0016.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1a4a191f60279888ea5d19dc6969faa6c7da301fcff15c02de82fa5d7b8fb219",
+      "bytes": 3826
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/fabric-security-governance-0b53c9503275.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "124c55df5ca20186e7399f89940cec667038d6a33db76f0efbc416ee8008a6db",
+      "bytes": 2141
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/faffter-dark-spec-review-677303cabf58.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "a942089588b2c0ec6c1afba03f9dda128716bbae1d03c58d63ca8662d985ea2a",
+      "bytes": 1608
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/fireworks-tech-graph-8ea538cdc8c6.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "954e29cac734e76235f8b740b77b6473064500ebf4a4bb61dc7fd45422247af4",
+      "bytes": 4016
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/hatch-pet-b3f3a6f18215.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "a592e43728992123b72c67ab965e21a1a25549bdd187e0f2fd9b49d410a4c570",
+      "bytes": 4439
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/k8s-hpa-cost-tuning-94bfc9f65d18.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6f5283f61e1752f6101315f4de4851dab7ae8bbfdc5fd67e67df7fb012bce04b",
+      "bytes": 3324
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/leak-publish-d1cf33803199.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "22e360cdc9e6b8b64a765b42569f71e140739a52e002b4eb1df555f5143ad4de",
+      "bytes": 2063
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/monarch-cli-3290c0cf7eb9.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2580162b498d3ba7b7bad63feae6106a812bcb61fbaa7879f85a054a491203f5",
+      "bytes": 3536
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/multistore-10db40291bca.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "cbe4472188faad0dc063eeff7c95ea2b00e410cd9ff2bb8b41ebe6bcf6fd8bb6",
+      "bytes": 8561
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/openclaw-skill-e7c09fd5ca99.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c2e191274f493066b4757b7f82945ae2a0876a9bcfdb06eeef61b4780f68da42",
+      "bytes": 10005
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/productboard-expert-869f240c2ada.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d3e2fb2756015a60873b0c5729da4d50c3939b7a4577c906366e5bdd89254474",
+      "bytes": 1593
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/remember-ac7448c80335.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "6c81420837b38a83739478d1315e631d6e556c7fe1e88fab05ad75f3d1a201ac",
+      "bytes": 1591
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/scrape-zyte-api-stats-7318ab265d5f.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "dc3faf503d2dda38e014694544e0797814daa4fa54503939df4ac76c2dd7280b",
+      "bytes": 4615
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-5b7d9c666e2d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f440451d987c6ac3b8eed401d38de03395c7a1828ac3a148c348ce99648a0516",
+      "bytes": 5591
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/skill-7c7a37c4e355.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "863b5b9f2c6f800eb73e6fa62f7d6737c293c585c8232fca321c3c7e46d5b64e",
+      "bytes": 1530
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/stagent-4df6f74054b0.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1c569628d42874a123c00b1e0c7a4d0d08770dbd177365bb2cc5ccde21594fac",
+      "bytes": 3791
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/youtube-transcript-bbd02d7b52f4.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "8c90c391982b7e695193befd92a0632b4b1bf06f863dd8c1e55b019f93e913d9",
+      "bytes": 2672
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/backend-73f9eb41361b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9dd5caae1d6eae5ba96d7aef8bc7e976dbe6bcf5734684fcbe25843a38a8b0e7",
+      "bytes": 2924
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/backend-f79082cdb7b0.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "26509ad9e880c9473cf9974d1b6ccb7a7064088392c23f5fbb2e636780a5820d",
+      "bytes": 3936
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/claw-mux-7074b5119807.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "878bd04670b596089c662cfb54850d0a44eb8e3d927ecc7526d3c7440286826f",
+      "bytes": 1537
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/connector-creator-643d16f9fd5c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "0c24ec836636fea7f1733bc359698f5a27d7642045661163a4c7248f733bd84c",
+      "bytes": 3979
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/convert-excel-to-md-96be283cd88c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "11d08ce087dfeec2687b4b8b88cb885b3668afcdaeddd7ad1c3903712080b348",
+      "bytes": 2071
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/darwinian-evolver-f390ed95958e.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "654539aa85eb08f8be0c21c0e3e2a01f656163988596b6648597623d0c204f72",
+      "bytes": 1540
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/deep-research-5e0b771c8104.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "7eecbe831a347db4f1a965db014a4a3693bcfafde6b158236a04eb6e03f359d4",
+      "bytes": 1535
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/git-commit-bd1e6ed5ba4d.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "228575878c84524e254a1f421a48d455f00b6366dfe24cb7d9c578ebedc26c20",
+      "bytes": 1537
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/gsc-739888d14f70.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "c187020a980858374c310c02a0f32b5c889706689ea97e82fa900902ed9366da",
+      "bytes": 2056
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/hifi-math-tts-bebf863dcf05.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "1a4ff33d26338ea841c0335f276f13237d1fb9ba1b0443b81621fa28f8b38527",
+      "bytes": 2049
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/journal-matchmaker-80bacd347693.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b30778da10c63f24f59717dd5cb54307f448cf39dd9699ba7b71d2e232fdfc12",
+      "bytes": 1558
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/markitdown-2c22bc04081c.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fe19682a6744c350560f098a32e880e8eed205c0a7c848158487b77a163e4e96",
+      "bytes": 2088
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/vc-audit-context-49810889a54b.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "56b0ff98a5ad88c01be6c1db531c66ef9e4058dac4d047bdb14b7e9d7106c800",
+      "bytes": 3977
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b706c8bec5bfe082a1c9acc7e8a3d0e258ab4e23e71e12fd4b433c1e680dac7d",
+      "bytes": 613023
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/scan_summary.csv",
+      "sha256": "8cd7c0a0c7d56975507fe2dad8c7de09368f231caecfdbf47abbc97df6385ef2",
+      "bytes": 725341
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_235841_sample1000-seed2030-batch3/run_metadata.json",
+      "sha256": "e81eece66ec2645395f90745e23d7829d06fe2431e0a939d40f0cb2f3d9cc5e3",
+      "bytes": 161954
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "2438707acddba578eaec754e426429401ec17139fc6fb6f7a5067714046c0022",
+      "bytes": 1059
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "b2b9cdc2755c89390d8b387e9ad990065a25db234102cc50e4f2d47cc5f3d045",
+      "bytes": 774
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "13cd994aa5a2d1708ae0530c896d042658fe20d8adf43a5b7b97ff88bf0870eb",
+      "bytes": 17146
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4a7e62c8024a72696727090ab039f10524dbff07a7fc08f5454bb993390de50d",
+      "bytes": 1689344
+    }
+  ]
+}

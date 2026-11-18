@@ -1,0 +1,46 @@
+rule_id,finding_kind,cisco_category,research_category,analyzers,max_severity,rows_primary,rows_all_readable_scans,skills_primary,skills_all,distinct_locations_primary,configurations
+YARA_jailbreak_generic,security,prompt_injection,Prompt injection / instruction manipulation,static,HIGH,108,108,1,1,28,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+DATA_EXFIL_NETWORK_REQUESTS,security,data_exfiltration,External network communication / data exfiltration,static,MEDIUM,103,140,19,21,61,Full folder | default; Full folder | behavioral
+SUPPLY_CHAIN_UNPINNED_DEPENDENCY,security,supply_chain_attack,Supply-chain / dependency risks,static,LOW,83,96,9,10,31,Full folder | default; Full folder | behavioral; SKILL.md only | default; SKILL.md only | behavioral
+UNDECLARED_NETWORK_DESTINATION,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,LOW,75,120,17,18,50,Full folder | default; Full folder | behavioral
+TOOL_ABUSE_UNDECLARED_NETWORK,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,MEDIUM,39,44,22,22,22,Full folder | default; Full folder | behavioral
+YARA_autonomy_abuse_generic,security,autonomy_abuse,Excessive permissions / privilege escalation,static,MEDIUM,24,24,1,1,6,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+FILE_MAGIC_MISMATCH,security,obfuscation,Other (obfuscation),static,MEDIUM,14,20,6,7,7,Full folder | default; Full folder | behavioral
+PIPELINE_TAINT_FLOW,security,data_exfiltration,Command execution / dangerous shell operations,pipeline,LOW,14,14,2,2,4,Full folder | default; Full folder | behavioral; SKILL.md only | default; SKILL.md only | behavioral
+YARA_sql_injection_generic,security,command_injection,Command execution / dangerous shell operations,static,CRITICAL,14,14,2,2,6,Full folder | default; Full folder | behavioral; SKILL.md only | default; SKILL.md only | behavioral
+ALLOWED_TOOLS_WRITE_VIOLATION,security,policy_violation,Other (policy_violation),static,MEDIUM,12,12,6,6,6,Full folder | default; Full folder | behavioral
+DATA_EXFIL_JS_FS_ACCESS,security,data_exfiltration,External network communication / data exfiltration,static,LOW,12,12,2,2,6,Full folder | default; Full folder | behavioral
+BEHAVIOR_BASH_TAINT_FLOW,security,data_exfiltration,Command execution / dangerous shell operations,behavioral,MEDIUM,10,10,5,5,9,SKILL.md only | behavioral; Full folder | behavioral
+MDBLOCK_PYTHON_HTTP_POST,security,data_exfiltration,External network communication / data exfiltration,behavioral,MEDIUM,10,11,3,4,6,Full folder | behavioral; SKILL.md only | behavioral
+CORRELATED_NETWORK_EXECUTION_FLOW,security,command_injection,Command execution / dangerous shell operations,correlation,HIGH,7,8,3,3,3,Full folder | default; Full folder | behavioral; SKILL.md only | default; SKILL.md only | behavioral
+ALLOWED_TOOLS_NETWORK_USAGE,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,MEDIUM,6,6,3,3,3,Full folder | default; Full folder | behavioral
+COMMAND_INJECTION_JS_CHILD_PROCESS,security,command_injection,Command execution / dangerous shell operations,static,CRITICAL,6,6,2,2,3,Full folder | default; Full folder | behavioral
+CORRELATED_SENSITIVE_NETWORK_FLOW,security,data_exfiltration,External network communication / data exfiltration,correlation,HIGH,6,8,4,4,4,Full folder | default; Full folder | behavioral
+HIDDEN_DATA_FILE,security,obfuscation,Other (obfuscation),static,LOW,6,6,3,3,3,Full folder | default; Full folder | behavioral
+SOCIAL_ENG_MISLEADING_DESC,security,social_engineering,Prompt injection / instruction manipulation,static,MEDIUM,5,6,3,3,3,Full folder | default; Full folder | behavioral
+ACTIVE_DYNAMIC_EXECUTION,security,command_injection,Command execution / dangerous shell operations,static,HIGH,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+ACTIVE_REMOTE_ACQUIRE_EXECUTE,security,command_injection,Command execution / dangerous shell operations,static,HIGH,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+ALLOWED_TOOLS_GLOB_VIOLATION,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,LOW,4,4,2,2,2,Full folder | default; Full folder | behavioral
+ALLOWED_TOOLS_GREP_VIOLATION,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,LOW,4,4,2,2,2,Full folder | default; Full folder | behavioral
+COMMAND_INJECTION_OS_SYSTEM,security,command_injection,Command execution / dangerous shell operations,static,CRITICAL,4,6,2,3,2,Full folder | default; Full folder | behavioral
+DATA_EXFIL_ENV_VARS,security,data_exfiltration,Credential / secret access or exposure,static,MEDIUM,4,6,1,2,2,Full folder | default; Full folder | behavioral
+MDBLOCK_PYTHON_SUBPROCESS,security,command_injection,Command execution / dangerous shell operations,behavioral,MEDIUM,4,4,1,1,3,SKILL.md only | behavioral; Full folder | behavioral
+PATH_TRAVERSAL_OPEN,security,command_injection,File-system access or modification,static,CRITICAL,4,4,2,2,2,Full folder | default; Full folder | behavioral
+YARA_SUSP_Multi_Cryptomining_ConfigExec_Sep26,security,resource_abuse,Other (resource_abuse),static,HIGH,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+ALLOWED_TOOLS_BASH_VIOLATION,security,unauthorized_tool_use,Excessive permissions / privilege escalation,static,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+COMMAND_INJECTION_SHELL_TRUE,security,command_injection,Command execution / dangerous shell operations,static,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+CORRELATED_NETWORK_FILE_WRITE_FLOW,security,malware,Other (malware),correlation,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+DATA_EXFIL_JS_NETWORK,security,data_exfiltration,External network communication / data exfiltration,static,MEDIUM,2,2,1,1,1,Full folder | default; Full folder | behavioral
+DATA_EXFIL_SENSITIVE_FILE_GLOB,security,data_exfiltration,Credential / secret access or exposure,static,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+RESOURCE_ABUSE_INFINITE_LOOP,security,resource_abuse,Other (resource_abuse),static,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+TOOL_ABUSE_UNTRUSTED_PACKAGE_SOURCE,security,unauthorized_tool_use,Supply-chain / dependency risks,static,HIGH,2,2,1,1,1,Full folder | default; Full folder | behavioral
+LAZY_LOAD_DEEP_NESTING,security,obfuscation,Other (obfuscation),static,MEDIUM,1,2,1,1,1,Full folder | default; Full folder | behavioral
+BEHAVIOR_CROSSFILE_ENV_VAR_EXFILTRATION,security,data_exfiltration,External network communication / data exfiltration,behavioral,CRITICAL,0,6,0,6,0,Full folder | behavioral
+BEHAVIOR_CROSSFILE_EXFILTRATION_CHAIN,security,data_exfiltration,External network communication / data exfiltration,behavioral,CRITICAL,0,3,0,3,0,Full folder | behavioral
+BEHAVIOR_ENV_VAR_EXFILTRATION,security,data_exfiltration,External network communication / data exfiltration,behavioral,CRITICAL,0,7,0,5,0,Full folder | behavioral
+MDBLOCK_PYTHON_EVAL_EXEC,security,command_injection,Command execution / dangerous shell operations,behavioral,HIGH,0,1,0,1,0,Full folder | behavioral
+MANIFEST_MISSING_LICENSE,metadata_quality,policy_violation,Other (policy_violation),static,INFO,784,788,197,197,197,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+MANIFEST_INVALID_NAME,metadata_quality,policy_violation,Other (policy_violation),static,INFO,36,36,9,9,9,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+MANIFEST_DESCRIPTION_TOO_LONG,metadata_quality,policy_violation,Other (policy_violation),static,LOW,15,16,4,4,4,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+SOCIAL_ENG_VAGUE_DESCRIPTION,metadata_quality,social_engineering,Prompt injection / instruction manipulation,static,LOW,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+SKILL_LOAD_FALLBACK_USED,scan_coverage,policy_violation,Other (policy_violation),skill_loader,INFO,0,52,0,13,0,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral

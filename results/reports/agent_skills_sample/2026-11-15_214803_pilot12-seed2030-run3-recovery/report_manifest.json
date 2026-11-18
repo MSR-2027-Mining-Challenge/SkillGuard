@@ -1,0 +1,268 @@
+{
+  "generator": "gitskills_reports",
+  "generator_version": "1.0",
+  "generated_at": "2026-11-16T05:51:00+00:00",
+  "kind": "run",
+  "report_id": "2026-11-15_214803_pilot12-seed2030-run3-recovery",
+  "run_mode": "scan",
+  "db_tag": "agent_skills_sample",
+  "experiment": "pilot12-seed2030-run3-recovery",
+  "source_folder": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery",
+  "source_run": null,
+  "review_folder": null,
+  "review_match": null,
+  "counts": {
+    "skills_selected": 9,
+    "skills_exported": 9,
+    "export_errors": 0,
+    "skills_scanned": 9,
+    "skills_by_coverage": {
+      "complete": 9,
+      "complete_except_excluded": 0,
+      "partially_complete": 0,
+      "no_complete_scan": 0,
+      "not_scanned": 0
+    },
+    "configurations": 4,
+    "scans_planned": 36,
+    "scans_executed": 36,
+    "scans_by_outcome": {
+      "complete": 36,
+      "contract_only": 0,
+      "partial": 0,
+      "failed": 0,
+      "excluded_incomplete_folder": 0,
+      "missing": 0
+    },
+    "finding_rows": 40,
+    "finding_rows_by_kind": {
+      "metadata_quality": 32,
+      "security": 8
+    },
+    "skills_with_any_finding": 7,
+    "skills_with_security_alert_primary": 1,
+    "skills_with_security_alert_any": 1,
+    "security_rows_primary": 8,
+    "security_rows_any": 8,
+    "security_locations_primary": 4,
+    "security_locations_any": 4,
+    "security_rows_by_severity_primary": {
+      "MEDIUM": 8
+    }
+  },
+  "validation": {
+    "locations_by_tier": {
+      "human_validated": 0,
+      "provisional": 0,
+      "awaiting_review": 4,
+      "not_in_review": 0
+    },
+    "review_items": 0,
+    "review_items_by_tier": {},
+    "provisional_labels": {},
+    "final_labels": {}
+  },
+  "redactions_applied": 0,
+  "safety_audit": "passed: no secret patterns or absolute local paths in any text output",
+  "rebuild": "python -m gitskills_reports --run results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery",
+  "inputs": {
+    "run_metadata.json": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/run_metadata.json",
+      "sha256": "441c915a1ed7180d183d4fbbf1c4e9de2e72cfd953faddc6729ad7bd33e87212"
+    },
+    "scan_summary.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/scan_summary.csv",
+      "sha256": "9ada8485747554f0aafd1cd1821154482f4c7f454b81d279a08f684122949084"
+    },
+    "individual_findings.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/individual_findings.csv",
+      "sha256": "b7b9b7b3ab43c3107f3232e465493c2c1e3404435e7b672af03c1104c8400755"
+    },
+    "context_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/context_comparison.csv",
+      "sha256": "95276c39d6939925ab1b88cb3e65c11bdd0a0e00a5303ca487e8c189fc2c3542"
+    },
+    "analyzer_comparison.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/analyzer_comparison.csv",
+      "sha256": "17721dbc0140e72f120e09dca3ad60ee6734b884e1698ded8949b5824c2a76ac"
+    },
+    "manual_review_template.csv": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/manual_review_template.csv",
+      "sha256": "647d44ef8e61124084d6db30bc2818b8fff7890529aa4a7e0c1400616a80731d"
+    },
+    "results_summary.md": {
+      "path": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/results_summary.md",
+      "sha256": "fd03e286522a79ef4934332d21b5b99a3485f7277c7a360b02f348d2a2eaea82"
+    }
+  },
+  "outputs": [
+    {
+      "path": "01_IMPORTANT_RESULTS/coverage_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "865b027d293bb0c03b32fa539b8c3e9c290f5827a3979bc1d5f8121b802b2935",
+      "bytes": 470
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/key_security_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "937244eaa261fcaca40d1d62637821920f04896ec3dbe3bb1bdf57ff1ac27a52",
+      "bytes": 2902
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/severity_by_configuration.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "99612887d99085ae5a7242e27ae941e164d723dfadfe2664a19e10c511982000",
+      "bytes": 310
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/comparison_summary.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "47267a7080708bb85660aa467151f641dc1c86ea2fa9547692dfd85fa0c0ba42",
+      "bytes": 258
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/results_summary.md",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/results_summary.md",
+      "sha256": "c163e993e74b6fec355aa06f0bb959d1256968a147d5d54e985473ebca11089d",
+      "bytes": 19163
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "06677b0b0a7b96462d305bf848f6379e8bd70b3238c5102037c89d1da1f2b5a0",
+      "bytes": 1928
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/rule_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "e6fe447ec6f1e28f7f4879780939b81daed272794d276fb0b81f39f143aa3a10",
+      "bytes": 806
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_breakdown.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "f11c32031eefaa742a9ebf8f24ffc10dd33d7d21a1e6085e67ca54fc65ead2ce",
+      "bytes": 126
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/configurations.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "9df9d3b2abb3854e28108b5e9116d66b4feeda14147f1e16844f9af87b7c0afc",
+      "bytes": 677
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/individual_findings_annotated.csv",
+      "kind": "redacted copy + review columns",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/individual_findings.csv",
+      "sha256": "b9afcbe41f75886c89275a43929db16ec2b32a72b4fde585a4c62e87da8bc84b",
+      "bytes": 54680
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/metadata_and_coverage_findings.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "77cd7528b15f4d23ddf8746ed332df5e6685e92a8d51ca5489937404d5eaf38f",
+      "bytes": 36138
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/context_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/context_comparison.csv",
+      "sha256": "95276c39d6939925ab1b88cb3e65c11bdd0a0e00a5303ca487e8c189fc2c3542",
+      "bytes": 10185
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/analyzer_comparison.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/analyzer_comparison.csv",
+      "sha256": "17721dbc0140e72f120e09dca3ad60ee6734b884e1698ded8949b5824c2a76ac",
+      "bytes": 19514
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/configuration_comparisons.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/figures/configuration_comparisons.png",
+      "sha256": "3fed84eab3d834521e30dd6c38fa440be8667d96ce851d0208661fe31bdd39de",
+      "bytes": 36296
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/findings_by_category.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/figures/findings_by_category.png",
+      "sha256": "4969f5dd2c5d0fa9c13316555951c203c9d6aa71ad8299185cc7781047d95f43",
+      "bytes": 30246
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/figures/severity_by_configuration.png",
+      "kind": "copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/figures/severity_by_configuration.png",
+      "sha256": "c19dd7005d01b3b15e2c6824e6b46dd1697b70b3ddabae30c5069388533b7c48",
+      "bytes": 29858
+    },
+    {
+      "path": "02_DETAILED_ANALYSIS/skills/implementing-canary-tokens-for-netw-07811ef04df1.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "5c47873093bc20723898267e74b593ef8ec897c5d747f88c33ade94fe85865a2",
+      "bytes": 3406
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/raw_report_index.csv",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "67cbac2ed6fdf5c5951888f4880af62f63eec7ec063a3a92819612791d5c7d39",
+      "bytes": 22472
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/scan_summary.csv",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/scan_summary.csv",
+      "sha256": "712429c684339b5086847ef509f5443637e285effc85a864057e3ab0be8e0294",
+      "bytes": 26774
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/run_metadata.json",
+      "kind": "redacted copy",
+      "derived_from": "results/cisco_dataset_runs/agent_skills_sample/runs/2026-11-15_214803_pilot12-seed2030-run3-recovery/run_metadata.json",
+      "sha256": "441c915a1ed7180d183d4fbbf1c4e9de2e72cfd953faddc6729ad7bd33e87212",
+      "bytes": 9564
+    },
+    {
+      "path": "03_RAW_SCANNER_OUTPUT/README.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "fb7b2ce097a0b867d08d27dfffecf1bdd043be2206c89f84f9b73da2b7aba872",
+      "bytes": 1059
+    },
+    {
+      "path": "04_HUMAN_VALIDATION/validation_status.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "4eb9abe3387dc0890180cb02739e202094209b1c3fb203190733a1c7eb9772f5",
+      "bytes": 772
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/START_HERE.md",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "493133ada573ffe89656178d37a852c1c11651e3e02b3720f0b602bcf64dc7ea",
+      "bytes": 8881
+    },
+    {
+      "path": "01_IMPORTANT_RESULTS/dashboard.html",
+      "kind": "generated",
+      "derived_from": null,
+      "sha256": "d6c8a61d0f0d4448efa7ff9d13a8606614dd1a8e33be3fa632fcd0dabdd8a8c9",
+      "bytes": 88845
+    }
+  ]
+}
