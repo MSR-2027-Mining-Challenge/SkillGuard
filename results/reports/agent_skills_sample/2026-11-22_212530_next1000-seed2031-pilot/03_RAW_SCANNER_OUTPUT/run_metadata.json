@@ -1,0 +1,362 @@
+{
+  "run_id": "2026-11-22_212530_next1000-seed2031-pilot",
+  "run_mode": "scan",
+  "stage": "complete",
+  "run_started_at": "2026-11-23T05:25:30+00:00",
+  "written_at": "2026-11-23T05:29:23+00:00",
+  "source_run": null,
+  "database": {
+    "path": "data/sample/agent_skills_sample.db",
+    "tag": "agent_skills_sample",
+    "sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "available": true
+  },
+  "scanner": {
+    "installed_version": "skill-scanner 2.3.1",
+    "versions_that_produced_reports": [
+      "skill-scanner 2.3.1"
+    ],
+    "policy_setting": "balanced",
+    "common_args": [
+      "--format",
+      "json",
+      "--policy",
+      "balanced"
+    ],
+    "policy_fingerprints_seen": [
+      "3f48e661bfbc54597f97bbf3dcf2c1cbae2f596ddc79c0b44784efea326b3d1d"
+    ],
+    "configurations": [
+      {
+        "configuration": "SKILL.md only | default",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "default",
+        "report_file": "skill_only_default.json",
+        "extra_args": [],
+        "required_analyzers": [
+          "static_analyzer"
+        ]
+      },
+      {
+        "configuration": "SKILL.md only | behavioral",
+        "scope": "SKILL.md only",
+        "analyzer_mode": "behavioral",
+        "report_file": "skill_only_behavioral.json",
+        "extra_args": [
+          "--use-behavioral"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ]
+      },
+      {
+        "configuration": "Full folder | default",
+        "scope": "Full folder",
+        "analyzer_mode": "default",
+        "report_file": "full_folder_default.json",
+        "extra_args": [],
+        "required_analyzers": [
+          "static_analyzer"
+        ]
+      },
+      {
+        "configuration": "Full folder | behavioral",
+        "scope": "Full folder",
+        "analyzer_mode": "behavioral",
+        "report_file": "full_folder_behavioral.json",
+        "extra_args": [
+          "--use-behavioral"
+        ],
+        "required_analyzers": [
+          "static_analyzer",
+          "behavioral_analyzer"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "SELECTION_MODE": "manifest",
+    "PILOT": "canary-tokens",
+    "EXACT_REPO": "AceDataCloud/Skills",
+    "EXACT_PATH": "skills/x/SKILL.md",
+    "SEARCH_KEYWORD": "API_KEY",
+    "MAX_SKILLS": 3,
+    "LENIENT": false,
+    "ALLOW_INCOMPLETE_FOLDERS": true,
+    "SCAN_TIMEOUT_SECONDS": 300,
+    "ENABLE_OSV": false,
+    "ENABLE_LLM_CONFIGS": false
+  },
+  "environment": {
+    "python": "3.14.10",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "sample": {
+    "manifest": "results/skillguard_runs/next1000/manifests/pilot12_manifest.csv",
+    "manifest_sha256": "e1b5dbcc430183a18e52cc9f1a96676b9d4eb208ba76daa2428ce67ab0fd90a1",
+    "sample_id": "agent_skills_sample_seed2031_scripts400_supporting_no_scripts300_skill_md_only300",
+    "skills": 12,
+    "database_sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "strata": {
+      "scripts": 4,
+      "supporting_no_scripts": 4,
+      "skill_md_only": 4
+    }
+  },
+  "selection": [
+    {
+      "repo": "Exploring-To-See/Sprint-Society",
+      "skill_path": ".claude/skills/ascii-to-infographic/SKILL.md"
+    },
+    {
+      "repo": "AbdelazizMoustafa10m/agent-skills",
+      "skill_path": "global/skills/codex-counsel/SKILL.md"
+    },
+    {
+      "repo": "a-ghorbani/pocketpal-dev-team",
+      "skill_path": "skills/review-l10n/SKILL.md"
+    },
+    {
+      "repo": "NVIDIA/DeepStream",
+      "skill_path": "skills/deepstream-profile-pipeline/SKILL.md"
+    },
+    {
+      "repo": "ragnar-pwninskjold/tech-snacks",
+      "skill_path": "plugins/tech-snacks/skills/prd-to-ux/SKILL.md"
+    },
+    {
+      "repo": "aibot88/sec_skill_store",
+      "skill_path": "skills/claudskills/ascii-motd-profile-banner/SKILL.md"
+    },
+    {
+      "repo": "monkerek/vibe-hub",
+      "skill_path": ".vibe/skills/skill-author/SKILL.md"
+    },
+    {
+      "repo": "HBConline/orangepi4pro-skill",
+      "skill_path": "SKILL.md"
+    },
+    {
+      "repo": "Underwater-AI/uwater_app",
+      "skill_path": ".agents/skills/cross-platform-compatibility/SKILL.md"
+    },
+    {
+      "repo": "TomWebwalker/skills",
+      "skill_path": "skills/qa-local/SKILL.md"
+    },
+    {
+      "repo": "HolobiomicsLab/asb-skill-collections",
+      "skill_path": "collections/metabolomics/v1/skills/peak-table-row-count-validation/SKILL.md"
+    },
+    {
+      "repo": "psd401/psd-claude-plugins",
+      "skill_path": "plugins/psd-productivity/skills/slides-to-site/SKILL.md"
+    }
+  ],
+  "skills": [
+    {
+      "skill_id": "ascii-to-infographic-20a0a3fb5b15",
+      "repo": "Exploring-To-See/Sprint-Society",
+      "skill_path": ".claude/skills/ascii-to-infographic/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 3,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "codex-counsel-7caabcfebd82",
+      "repo": "AbdelazizMoustafa10m/agent-skills",
+      "skill_path": "global/skills/codex-counsel/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 5,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "review-l10n-22be0b42ed0e",
+      "repo": "a-ghorbani/pocketpal-dev-team",
+      "skill_path": "skills/review-l10n/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 0,
+      "supporting_files_exported": 10,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "deepstream-profile-pipeline-74b92facf0e5",
+      "repo": "NVIDIA/DeepStream",
+      "skill_path": "skills/deepstream-profile-pipeline/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 1,
+      "has_references": 1,
+      "supporting_files_exported": 14,
+      "files_missing": 1,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "scripts"
+    },
+    {
+      "skill_id": "prd-to-ux-9d070cab6320",
+      "repo": "ragnar-pwninskjold/tech-snacks",
+      "skill_path": "plugins/tech-snacks/skills/prd-to-ux/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 13,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "ascii-motd-profile-banner-11592c159d71",
+      "repo": "aibot88/sec_skill_store",
+      "skill_path": "skills/claudskills/ascii-motd-profile-banner/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 1,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "skill-author-d38487c1ec18",
+      "repo": "monkerek/vibe-hub",
+      "skill_path": ".vibe/skills/skill-author/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 0,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 3,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "skill-8cbbd6f03f56",
+      "repo": "HBConline/orangepi4pro-skill",
+      "skill_path": "SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 1,
+      "supporting_files_exported": 3,
+      "files_missing": 16,
+      "listing_complete": true,
+      "folder_complete": false,
+      "sample_stratum": "supporting_no_scripts"
+    },
+    {
+      "skill_id": "cross-platform-compatibility-7f7130e82a24",
+      "repo": "Underwater-AI/uwater_app",
+      "skill_path": ".agents/skills/cross-platform-compatibility/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "qa-local-5069fa79080b",
+      "repo": "TomWebwalker/skills",
+      "skill_path": "skills/qa-local/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "peak-table-row-count-validation-560112be35ae",
+      "repo": "HolobiomicsLab/asb-skill-collections",
+      "skill_path": "collections/metabolomics/v1/skills/peak-table-row-count-validation/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    },
+    {
+      "skill_id": "slides-to-site-336ddf37f13f",
+      "repo": "psd401/psd-claude-plugins",
+      "skill_path": "plugins/psd-productivity/skills/slides-to-site/SKILL.md",
+      "origin": "exported from database",
+      "integrity": "ok: written in this run",
+      "frontmatter_valid": 1,
+      "has_scripts": 0,
+      "has_references": 0,
+      "supporting_files_exported": 0,
+      "files_missing": 0,
+      "listing_complete": true,
+      "folder_complete": true,
+      "sample_stratum": "skill_md_only"
+    }
+  ],
+  "export_errors": [],
+  "run_outcome_counts": {
+    "complete": 48
+  },
+  "configuration_counts": {
+    "planned": 48,
+    "executed": 48,
+    "excluded_incomplete_folder": 0,
+    "missing": 0,
+    "not_run_export_error": 0,
+    "executed_outcomes": {
+      "complete": 48,
+      "contract_only": 0,
+      "partial": 0,
+      "failed": 0
+    }
+  },
+  "run_status_counts": {
+    "COMPLETE": 48
+  },
+  "finding_rows": 54
+}

@@ -1,0 +1,50 @@
+{
+  "drawn_by": "results/skillguard_runs/next1000/draw_sample.py",
+  "notebook": {
+    "source_notebook": "notebooks/03_stratified_sample.ipynb",
+    "source_sha256": "d37b765e73b975fde34ad9f88437bc8cf021122cbd72c3609276c03490aa4089",
+    "seed": 2031,
+    "stratum_sizes": {
+      "scripts": 400,
+      "supporting_no_scripts": 300,
+      "skill_md_only": 300
+    },
+    "exclusion_patch": "\n_EXCLUDED = {r['file_sha'] for r in __import__('csv').DictReader(open(ROOT / 'results/skillguard_runs/next1000/exclusions/excluded_file_shas.csv', encoding='utf-8'))}  # draw_sample.py\n_eligible = ~frame['stratum'].astype(str).str.startswith('excluded')\nframe.loc[_eligible & frame['file_sha'].isin(_EXCLUDED), 'stratum'] = 'excluded: previously used in SkillGuard experiments'  # draw_sample.py\n",
+    "exclusions_sha256": "50164c60735524e79215b9f5dcc9d8d34354362f1c3249437ad74c014fe2eed9"
+  },
+  "exclusion_label": "excluded: previously used in SkillGuard experiments",
+  "exclusions_summary": {
+    "database_sha256": "683888c923a51952fb66f83f21351ed5bf1127ddddf380e517592ae27c367658",
+    "rio_ref": "origin/rio",
+    "rio_commit": "063211253728687bc75103ad629e1470b955d3d2",
+    "excluded_file_shas": 2174,
+    "malskills": {
+      "malskills_package_test_1": {
+        "entries": 100,
+        "matched": 100,
+        "unresolved": 0
+      },
+      "malskills_package_test_2": {
+        "entries": 1000,
+        "matched": 998,
+        "unresolved": 2
+      }
+    },
+    "unresolved_entries": 2,
+    "by_source": {
+      "2026-11-13_fresh100-seed2029": 100,
+      "2026-11-13_heldout-seed2028": 90,
+      "agent_skills_sample_seed2027_scripts10_supporting_no_scripts10_skill_md_only10": 30,
+      "agent_skills_sample_seed2030_scripts400_supporting_no_scripts300_skill_md_only300": 1000,
+      "malskills_package_test_1": 100,
+      "malskills_package_test_2": 998,
+      "notebook01_keyword batch API_KEY #1": 1,
+      "notebook01_keyword batch API_KEY #3": 1,
+      "notebook01_pilot canary-tokens": 1,
+      "notebook01_pilot loa-credentials": 1,
+      "notebook01_pilot x": 1
+    },
+    "note": "Unresolved MalSkills entries cannot be excluded without skill_mapping.csv; at most this many skills of the new sample could overlap the MalSkills samples."
+  },
+  "frame_change": "Representatives previously used in SkillGuard/Cisco/MalSkills experiments were removed from the eligible frame before drawing; population_N and design weights refer to the reduced frame. Two MalSkills entries could not be mapped to a DB identity and therefore could not be excluded (exclusions/unresolved.csv)."
+}

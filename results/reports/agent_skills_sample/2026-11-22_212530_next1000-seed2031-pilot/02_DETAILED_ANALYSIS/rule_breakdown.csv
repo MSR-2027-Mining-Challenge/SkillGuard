@@ -1,0 +1,7 @@
+rule_id,finding_kind,cisco_category,research_category,analyzers,max_severity,rows_primary,rows_all_readable_scans,skills_primary,skills_all,distinct_locations_primary,configurations
+ACTIVE_DYNAMIC_EXECUTION,security,command_injection,Command execution / dangerous shell operations,static,HIGH,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+FILE_MAGIC_MISMATCH,security,obfuscation,Other (obfuscation),static,LOW,4,4,1,1,2,Full folder | default; Full folder | behavioral
+MDBLOCK_PYTHON_SUBPROCESS,security,command_injection,Command execution / dangerous shell operations,behavioral,MEDIUM,4,4,1,1,2,SKILL.md only | behavioral; Full folder | behavioral
+YARA_command_injection_generic,security,command_injection,Command execution / dangerous shell operations,static,CRITICAL,4,4,1,1,1,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
+DATA_EXFIL_JS_NETWORK,security,data_exfiltration,External network communication / data exfiltration,static,MEDIUM,2,2,1,1,1,Full folder | default; Full folder | behavioral
+MANIFEST_MISSING_LICENSE,metadata_quality,policy_violation,Other (policy_violation),static,INFO,36,36,9,9,9,SKILL.md only | default; SKILL.md only | behavioral; Full folder | default; Full folder | behavioral
