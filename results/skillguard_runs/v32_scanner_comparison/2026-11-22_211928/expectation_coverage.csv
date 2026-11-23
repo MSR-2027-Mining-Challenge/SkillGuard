@@ -1,0 +1,55 @@
+case,group,capability,file,line,cisco_core_behavioral,cisco_core_atr_behavioral
+a01_subagent_delegation,classification,in_host_delegation,SKILL.md,7,[],"[""ATR_2026_00061""]"
+a02_task_tool_call,classification,in_host_delegation,scripts/plan.py,2,[],[]
+a03_external_cli_from_script,classification,external_agent_launch,scripts/run.py,4,[],[]
+a04_cli_with_bypass_flag,classification,external_agent_launch,scripts/go.sh,2,[],[]
+a05_agent_specific_force_flag,classification,external_agent_launch,scripts/a.sh,1,[],[]
+a05_agent_specific_force_flag,classification,external_agent_launch,scripts/a.sh,2,[],[]
+a08_env_marker_python,classification,agent_env_marker_removal,scripts/nest.py,2,[],[]
+a08_env_marker_python,classification,external_agent_launch,scripts/nest.py,3,[],[]
+a11_installation_doc_is_low_priority,classification,agent_config_modification,README.md,,[],[]
+a12_scheduler_list_vs_modify,classification,scheduler_invocation,scripts/list.sh,,[],[]
+a12_scheduler_list_vs_modify,classification,scheduler_invocation,scripts/add.sh,,[],[]
+b01_settings_bypass_hook_endpoint,config,auto_approval_setting,.claude/settings.json,4,[],[]
+b01_settings_bypass_hook_endpoint,config,remote_fetch_execute,.claude/settings.json,,[],[]
+b06_vscode_autoapprove_task,config,auto_approval_setting,.vscode/settings.json,3,[],[]
+b06_vscode_autoapprove_task,config,agent_hook_command,.vscode/tasks.json,,[],[]
+b07_package_json_hooks,config,install_time_hook,tool/package.json,,[],[]
+b07_package_json_hooks,config,remote_fetch_execute,tool/package.json,,[],[]
+b08_registry_redirect_and_token,config,registry_redirect,.npmrc,,[],[]
+b08_registry_redirect_and_token,config,embedded_secret,.npmrc,,[],[]
+b09_markdown_settings_snippet,config,auto_approval_setting,SKILL.md,8,[],[]
+b12_endpoint_local_placeholder_official,config,agent_endpoint_override,a/settings.json,,[],[]
+b13_frontmatter_preapproval,config,tool_preapproval,SKILL.md,4,[],[]
+b13_frontmatter_preapproval,config,auto_approval_setting,SKILL.md,5,[],[]
+c01_instruction_runs_config_writer,cross_file,agent_config_modification,scripts/setup.py,5,[],[]
+c06_script_installs_bundled_hooks,cross_file,agent_config_modification,install.py,3,[],[]
+c07_fetch_exec_with_cron,cross_file,remote_fetch_execute,setup.sh,1,"[""CORRELATED_NETWORK_EXECUTION_FLOW""]","[""CORRELATED_NETWORK_EXECUTION_FLOW""]"
+d01_js_spawn_agent_bypass,js_ts,external_agent_launch,tool.mjs,3,"[""COMMAND_INJECTION_JS_CHILD_PROCESS""]","[""COMMAND_INJECTION_JS_CHILD_PROCESS""]"
+d02_ts_config_write,js_ts,agent_config_modification,src/setup.ts,5,"[""DATA_EXFIL_JS_FS_ACCESS""]","[""DATA_EXFIL_JS_FS_ACCESS""]"
+d03_js_exec_shell_strings,js_ts,scheduler_invocation,run.cjs,2,"[""COMMAND_INJECTION_JS_CHILD_PROCESS""]","[""COMMAND_INJECTION_JS_CHILD_PROCESS""]"
+d03_js_exec_shell_strings,js_ts,external_agent_launch,run.cjs,4,"[""COMMAND_INJECTION_JS_CHILD_PROCESS""]","[""COMMAND_INJECTION_JS_CHILD_PROCESS""]"
+d04_js_env_manipulation,js_ts,agent_env_marker_removal,env.js,1,"[""UNDECLARED_NETWORK_DESTINATION""]","[""UNDECLARED_NETWORK_DESTINATION""]"
+d04_js_env_manipulation,js_ts,agent_endpoint_override,env.js,2,"[""UNDECLARED_NETWORK_DESTINATION""]","[""UNDECLARED_NETWORK_DESTINATION""]"
+d05_js_credential_exfil,js_ts,developer_credential_access,x.js,3,"[""CORRELATED_SENSITIVE_NETWORK_FLOW"", ""DATA_EXFIL_JS_FS_ACCESS"", ""YARA_tool_chaining_abuse_generic""]","[""CORRELATED_SENSITIVE_NETWORK_FLOW"", ""DATA_EXFIL_JS_FS_ACCESS"", ""YARA_tool_chaining_abuse_generic""]"
+d05_js_credential_exfil,js_ts,network_send,x.js,4,"[""CORRELATED_SENSITIVE_NETWORK_FLOW"", ""DATA_EXFIL_JS_FS_ACCESS"", ""YARA_tool_chaining_abuse_generic""]","[""CORRELATED_SENSITIVE_NETWORK_FLOW"", ""DATA_EXFIL_JS_FS_ACCESS"", ""YARA_tool_chaining_abuse_generic""]"
+d06_js_benign_lookalikes,js_ts,network_fetch,app.js,,"[""DATA_EXFIL_JS_FS_ACCESS"", ""DATA_EXFIL_JS_NETWORK""]","[""DATA_EXFIL_JS_FS_ACCESS"", ""DATA_EXFIL_JS_NETWORK""]"
+d07_js_syntax_error_recovery,js_ts,external_agent_launch,broken.js,2,"[""COMMAND_INJECTION_JS_CHILD_PROCESS""]","[""COMMAND_INJECTION_JS_CHILD_PROCESS""]"
+d08_markdown_js_fence,js_ts,external_agent_launch,SKILL.md,6,[],"[""ATR_2026_00010"", ""ATR_2026_00061"", ""ATR_2026_00099"", ""ATR_2026_00110""]"
+d09_zx_tagged_template,js_ts,external_agent_launch,run.mjs,3,[],[]
+e01_fetch_exec_script_vs_readme,execution,remote_fetch_execute,scripts/boot.sh,,"[""CORRELATED_NETWORK_EXECUTION_FLOW""]","[""CORRELATED_NETWORK_EXECUTION_FLOW""]"
+e01_fetch_exec_script_vs_readme,execution,remote_fetch_execute,README.md,,"[""PIPELINE_TAINT_FLOW""]","[""PIPELINE_TAINT_FLOW""]"
+e02_os_persistence,execution,os_persistence_write,p.sh,1,[],[]
+e02_os_persistence,execution,os_persistence_write,agent.py,2,[],[]
+e03_python_exec_of_download,execution,remote_fetch_execute,u.py,3,"[""COMMAND_INJECTION_EVAL"", ""CORRELATED_NETWORK_EXECUTION_FLOW"", ""DATA_EXFIL_NETWORK_REQUESTS"", ""YARA_code_execution_generic""]","[""COMMAND_INJECTION_EVAL"", ""CORRELATED_NETWORK_EXECUTION_FLOW"", ""DATA_EXFIL_NETWORK_REQUESTS"", ""YARA_code_execution_generic""]"
+f01_hidden_comment_future_session,instruction,suspicious_agent_instruction,SKILL.md,,"[""PROMPT_INJECTION_CONCEALMENT"", ""YARA_prompt_injection_generic""]","[""ATR_2026_00030"", ""ATR_2026_00128"", ""ATR_2026_00428"", ""ATR_2026_01775"", ""PROMPT_INJECTION_CONCEALMENT"", ""YARA_prompt_injection_generic""]"
+f02_unicode_tag_characters,instruction,suspicious_agent_instruction,SKILL.md,,"[""ASCII_SMUGGLING_TAG_BLOCK"", ""YARA_prompt_injection_unicode_steganography""]","[""ASCII_SMUGGLING_TAG_BLOCK"", ""ATR_2026_00063"", ""ATR_2026_00258"", ""YARA_prompt_injection_unicode_steganography""]"
+g01_agent_credentials,credentials,agent_credential_access,c.py,2,[],[]
+g02_environment_harvest,credentials,environment_harvesting,h.py,2,"[""DATA_EXFIL_ENV_DUMP"", ""DATA_EXFIL_HTTP_POST""]","[""DATA_EXFIL_ENV_DUMP"", ""DATA_EXFIL_HTTP_POST""]"
+h03_crlf_and_bom,coverage,external_agent_launch,run.py,2,[],[]
+h04_generated_script,coverage,external_agent_launch,gen.py,,"[""FILE_MAGIC_MISMATCH""]","[""FILE_MAGIC_MISMATCH""]"
+h05_powershell,coverage,agent_env_marker_removal,run.ps1,1,[],[]
+h05_powershell,coverage,external_agent_launch,run.ps1,2,[],[]
+a13_systemctl_service_vs_persistence,classification,scheduler_invocation,svc.sh,3,"[""TOOL_ABUSE_SYSTEM_MODIFICATION""]","[""TOOL_ABUSE_SYSTEM_MODIFICATION""]"
+i04_rc_env_export_is_low,regression_fp,os_persistence_write,README.md,,[],[]
+i04_rc_env_export_is_low,regression_fp,os_persistence_write,inst.sh,,[],[]

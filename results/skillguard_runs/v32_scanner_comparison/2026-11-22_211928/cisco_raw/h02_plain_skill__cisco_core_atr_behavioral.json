@@ -1,0 +1,151 @@
+{
+ "skill_name": "demo",
+ "skill_path": "<fixture>",
+ "is_safe": true,
+ "max_severity": "LOW",
+ "findings_count": 2,
+ "findings": [
+  {
+   "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+   "rule_id": "MANIFEST_MISSING_LICENSE",
+   "category": "policy_violation",
+   "severity": "INFO",
+   "title": "Skill does not specify a license",
+   "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+   "file_path": "SKILL.md",
+   "line_number": null,
+   "snippet": null,
+   "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+   "analyzer": "static",
+   "metadata": {
+    "aitech": null,
+    "aitech_name": null,
+    "aisubtech": null,
+    "aisubtech_name": null,
+    "aitech_mappings": [],
+    "aisubtech_mappings": [],
+    "framework_mappings": [],
+    "taxonomy_status": "not_applicable",
+    "taxonomy_source": "rule"
+   }
+  },
+  {
+   "id": "ATR_2026_00099_0923fec5b7",
+   "rule_id": "ATR_2026_00099",
+   "category": "autonomy_abuse",
+   "severity": "LOW",
+   "title": "Detects when an AI agent invokes high-risk tools (financial, destructive, communication, or permission-altering) without evidence of human confirmation in the current interaction turn. This is a defense-in-depth rule that complements specific attack detection -- even if no injection is detected, cer",
+   "description": "Pattern detected: Format",
+   "file_path": "SKILL.md",
+   "line_number": 5,
+   "snippet": "# Format dates",
+   "remediation": "",
+   "analyzer": "static",
+   "metadata": {
+    "matched_pattern": "(?i)(delete|remove|drop|truncate|purge|wipe|destroy|erase|reset|uninstall|revoke|terminate|kill|shutdown|format|\u5220\u9664|\u522a\u9664|\u6e05\u7a7a|\u9500\u6bc1|\u92b7\u6bc0|\u79fb\u9664|\u5378\u8f7d|\u5378\u8f09|\u524a\u9664|\uc0ad\uc81c|\uc81c\uac70)",
+    "matched_text": "Format",
+    "signature_pattern_index": 1,
+    "signature_match_start": 2,
+    "signature_match_end": 8,
+    "signature_pattern_sha256": "d9baf99cbb3a73c9e3fc379a3ba8620fc2c4e6f38693fb3bd120cf3cd1cff066",
+    "scanner_category": "RESOURCE ABUSE",
+    "signature_context": "active_instruction",
+    "signature_polarity": "active",
+    "source_category": "autonomy_abuse",
+    "category_normalization": "native",
+    "semantic_facts": {
+     "evidence_kind": "signature_pattern",
+     "context_kind": "active_instruction",
+     "signals": [
+      {
+       "rule_id": "ATR_2026_00099",
+       "kind": "signature_polarity",
+       "file_path": "SKILL.md",
+       "value_class": "active"
+      }
+     ]
+    },
+    "aitech": "AITech-2.1",
+    "aitech_name": "Excessive Agency",
+    "aisubtech": "AISubtech-2.1.1",
+    "aisubtech_name": "Execution Approval Bypass",
+    "aitech_mappings": [
+     "OWASP: LLM03:2026: Excessive Agency",
+     "OWASP: ASI10: Rogue Agents",
+     "MITRE ATLAS: N/A",
+     "NIST AML: N/A"
+    ],
+    "aisubtech_mappings": [
+     "OWASP: LLM03:2026: Excessive Agency",
+     "OWASP: ASI09: Human-Agent Trust Exploitation",
+     "OWASP: ASI10: Rogue Agents",
+     "MITRE ATLAS: N/A",
+     "NIST AML: N/A"
+    ],
+    "framework_mappings": [
+     "OWASP: LLM03:2026: Excessive Agency",
+     "OWASP: ASI09: Human-Agent Trust Exploitation",
+     "OWASP: ASI10: Rogue Agents",
+     "MITRE ATLAS: N/A",
+     "NIST AML: N/A"
+    ],
+    "taxonomy_status": "mapped",
+    "taxonomy_source": "pack_default"
+   }
+  }
+ ],
+ "scan_duration_seconds": 0.15596389770507812,
+ "duration_ms": 155,
+ "analyzers_used": [
+  "static_analyzer",
+  "bytecode",
+  "pipeline",
+  "correlation",
+  "behavioral_analyzer"
+ ],
+ "timestamp": "2026-11-23T05:29:21.235385+00:00",
+ "scan_metadata": {
+  "policy_name": "default",
+  "policy_version": "1.0",
+  "policy_preset_base": "balanced",
+  "policy_fingerprint_sha256": "3f48e661bfbc54597f97bbf3dcf2c1cbae2f596ddc79c0b44784efea326b3d1d",
+  "cel": {
+   "mode": "shadow",
+   "runtime": "cel-go",
+   "runtime_version": "v0.32.0;helper=2.3.1",
+   "fact_schema": "v1",
+   "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+   "evaluated": 0,
+   "retained": 2,
+   "would_suppress": 0,
+   "suppressed": 0,
+   "fallbacks": 0,
+   "projection_incomplete": 0,
+   "elapsed_ms": 0.0,
+   "projection_ms": 0.0,
+   "evaluation_ms": 0.0,
+   "errors": [],
+   "per_rule": {},
+   "suppressed_candidates": []
+  },
+  "rule_contract": {
+   "status": "passed",
+   "schema_version": 2,
+   "checked": 1,
+   "invalid_findings": 0,
+   "errors": []
+  },
+  "taxonomy": {
+   "source": "builtin",
+   "version": "2.0.0",
+   "name": "Cisco AI Security and Safety Taxonomy",
+   "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+   "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+   "findings": {
+    "mapped": 1,
+    "not_applicable": 1,
+    "unmapped": 0
+   }
+  }
+ }
+}

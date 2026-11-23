@@ -1,0 +1,134 @@
+{
+  "scanner_version": "skill-scanner 2.3.1",
+  "policy": "balanced",
+  "configs": {
+    "cisco_core_behavioral": [
+      "--use-behavioral"
+    ],
+    "cisco_core_atr_behavioral": [
+      "--use-behavioral",
+      "--rule-packs",
+      "atr"
+    ]
+  },
+  "cases": 65,
+  "expected_findings_with_location": 54,
+  "located_by": {
+    "cisco_core_behavioral": 19,
+    "cisco_core_atr_behavioral": 21
+  },
+  "per_config": {
+    "cisco_core_behavioral": {
+      "cases_with_security_finding": 20,
+      "security_findings": 39,
+      "scan_errors": 0
+    },
+    "cisco_core_atr_behavioral": {
+      "cases_with_security_finding": 32,
+      "security_findings": 72,
+      "scan_errors": 0
+    }
+  },
+  "by_capability": {
+    "in_host_delegation": {
+      "expected": 2,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 1
+    },
+    "external_agent_launch": {
+      "expected": 13,
+      "cisco_core_behavioral": 4,
+      "cisco_core_atr_behavioral": 5
+    },
+    "agent_env_marker_removal": {
+      "expected": 3,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    },
+    "agent_config_modification": {
+      "expected": 4,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    },
+    "scheduler_invocation": {
+      "expected": 4,
+      "cisco_core_behavioral": 2,
+      "cisco_core_atr_behavioral": 2
+    },
+    "auto_approval_setting": {
+      "expected": 4,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "remote_fetch_execute": {
+      "expected": 6,
+      "cisco_core_behavioral": 4,
+      "cisco_core_atr_behavioral": 4
+    },
+    "agent_hook_command": {
+      "expected": 1,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "install_time_hook": {
+      "expected": 1,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "registry_redirect": {
+      "expected": 1,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "embedded_secret": {
+      "expected": 1,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "agent_endpoint_override": {
+      "expected": 2,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    },
+    "tool_preapproval": {
+      "expected": 1,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "developer_credential_access": {
+      "expected": 1,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    },
+    "network_send": {
+      "expected": 1,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    },
+    "network_fetch": {
+      "expected": 1,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    },
+    "os_persistence_write": {
+      "expected": 4,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "suspicious_agent_instruction": {
+      "expected": 2,
+      "cisco_core_behavioral": 2,
+      "cisco_core_atr_behavioral": 2
+    },
+    "agent_credential_access": {
+      "expected": 1,
+      "cisco_core_behavioral": 0,
+      "cisco_core_atr_behavioral": 0
+    },
+    "environment_harvesting": {
+      "expected": 1,
+      "cisco_core_behavioral": 1,
+      "cisco_core_atr_behavioral": 1
+    }
+  }
+}

