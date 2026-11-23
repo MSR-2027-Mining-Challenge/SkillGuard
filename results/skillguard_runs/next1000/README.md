@@ -1,6 +1,6 @@
 # Next 1,000-skill experiment (seed 2031): Cisco vs MalSkills vs SkillGuard
 
-**Status:** prepared and piloted; **the full 1,000-skill scans have not been launched.** See "Pilot" below for the verified infrastructure.
+**Status:** complete (2026-11-23). All 1,000 skills scanned by Cisco core (4 configurations), Cisco + ATR, MalSkills (static) and SkillGuard V3.1/V3.2. Three-way results: [REPORT_next1000.md](REPORT_next1000.md); analysis in `analysis/2026-11-23_040133/`. A MalSkills skill-file selection issue found in batch 1 was fixed and batch 1 re-run (report section 2).
 
 ## Design
 
@@ -18,7 +18,21 @@
 | Matching | Join key `skill_id` + repo-relative file + line (±3 lines for location agreement). Cisco absolute paths are made relative; MalSkills virtual fence paths are mapped back |
 | Batches | 4 stratified batches of 250 (main1000 round-robin design); 12-skill pilot drawn from open skills only |
 
-## How to run (after approval)
+## MalSkills setup (verified 2026-11-22)
+
+| Item | Value |
+|---|---|
+| Source | `https://github.com/security-pride/MalSkills` at commit `46d60f09cef0` (latest public commit, 2026-08-21), cloned to `~/MalSkills` outside this repository, without the 21 baseline submodules |
+| Environment | `~/MalSkills/.venv`, Python 3.13, `pip install -e '.[analysis]'` → semgrep 1.186.0 |
+| Profile | `scan-corpus --profile static --retain all --keep-content-duplicates --disable-yasa` (no LLM; YASA not built). This matches Rio's run: YASA was enabled there but unavailable, so it did not run, and the static profile used no LLM |
+| macOS workaround | MalSkills maps Semgrep results back to files with `Path(result).resolve().relative_to(tempdir)`. On macOS the temp folder is a symlink (`/var` → `/private/var`), so this fails, and the fallback's `.lstrip("./")` turns `.malskills_fences/x.sh` into `malskills_fences/x.sh`. **Every finding in extracted Markdown fences is silently dropped.** The runner sets `TMPDIR` to a symlink-free directory, so resolution works as on Linux. MalSkills' code is unchanged |
+| Validation (`validate_malskills.py`, `malskills_validation/`) | Rio's run reproduced on 40 re-exported skills. **After the workaround: 40/40 identical** verdicts, patterns, SSO counts, artifact counts and content hashes. Before the workaround: 18/40 (the earlier folder is kept as evidence of the bug). MalSkills' own labeled smoke set: 9/10 verdicts equal the label (10 samples, not an accuracy estimate) |
+| Skill-file selection | MalSkills scans only the directory of the SKILL.md it selects (by name, then newest mtime). The runner pins mtimes so the top-level SKILL.md is always selected; import fails on a nested selection or identity mismatch |
+| Pilot | 12/12 ok, all SKILL.md identities match the exported bytes, corpus unchanged (checksums), a repeat run gave 12/12 identical results |
+
+To run MalSkills on another machine: clone the same commit, run `python3 -m venv .venv && .venv/bin/pip install -e '.[analysis]'`, copy the prepared corpus with its `SHA256SUMS`, then run `malskills_runner.py run … --malskills-bin <path>` there. On Linux the TMPDIR workaround is harmless.
+
+## How to run
 
 ```bash
 caffeinate -i .venv/bin/python -I results/skillguard_runs/next1000/run_next1000.py pilot --repeat

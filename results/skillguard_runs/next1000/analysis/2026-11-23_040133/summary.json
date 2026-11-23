@@ -1,0 +1,207 @@
+{
+  "runs": [
+    "2026-11-22_223501_next1000-seed2031-batch1",
+    "2026-11-23_000733_next1000-seed2031-batch2",
+    "2026-11-23_013501_next1000-seed2031-batch3",
+    "2026-11-23_024754_next1000-seed2031-batch4"
+  ],
+  "execution": {
+    "skills_in_runs": 1000,
+    "manifest_skills": 1000,
+    "cisco_core_scans": {
+      "COMPLETE": 3753,
+      "PARTIAL": 236,
+      "CONTRACT_ONLY": 11
+    },
+    "cisco_core_all4_complete": 930,
+    "cisco_atr_scans": {
+      "COMPLETE": 941,
+      "PARTIAL": 59
+    },
+    "malskills_scans": {
+      "ok": 1000
+    },
+    "skillguard_scanned": 1000,
+    "export_byte_mismatch_skills": 0,
+    "folders_with_missing_files": 122,
+    "folders_with_truncated_listing": 27,
+    "missing_runner_outputs": []
+  },
+  "overlap": {
+    "skills_usable_by_all_three": 930,
+    "cisco_core_x_malskills_sso_x_sg32_reviewable": {
+      "cisco=0 malskills_sso=0 sg32=0": 407,
+      "cisco=0 malskills_sso=0 sg32=1": 53,
+      "cisco=0 malskills_sso=1 sg32=0": 209,
+      "cisco=0 malskills_sso=1 sg32=1": 63,
+      "cisco=1 malskills_sso=0 sg32=0": 12,
+      "cisco=1 malskills_sso=0 sg32=1": 3,
+      "cisco=1 malskills_sso=1 sg32=0": 129,
+      "cisco=1 malskills_sso=1 sg32=1": 54
+    },
+    "cisco_core_x_malskills_malicious_x_sg32_high": {
+      "cisco=0 malskills_malicious=0 sg32_high=0": 729,
+      "cisco=0 malskills_malicious=0 sg32_high=1": 3,
+      "cisco=1 malskills_malicious=0 sg32_high=0": 189,
+      "cisco=1 malskills_malicious=0 sg32_high=1": 5,
+      "cisco=1 malskills_malicious=1 sg32_high=0": 4
+    }
+  },
+  "location_agreement": {
+    "cisco_core_locations": 713,
+    "cisco_core_locations_with_malskills_near": 312,
+    "sg32_reviewable_behaviors": 246,
+    "cisco_core_near": 5,
+    "cisco_atr_near": 97,
+    "malskills_near": 32
+  },
+  "sg32_reviewable_behaviors_by_capability": {
+    "agent_config_modification": 90,
+    "tool_preapproval": 53,
+    "approval_bypass_instruction": 36,
+    "external_agent_launch": 31,
+    "scheduler_invocation": 17,
+    "mcp_server_definition": 15,
+    "remote_fetch_execute": 7,
+    "agent_hook_command": 4,
+    "os_persistence_write": 4,
+    "agent_credential_access": 3,
+    "developer_credential_access": 3,
+    "agent_endpoint_override": 2,
+    "embedded_secret": 2,
+    "unpinned_package_execution": 2,
+    "agent_env_marker_removal": 1,
+    "install_time_hook": 1
+  },
+  "sg_v31_behaviors": 229,
+  "sg_v32_chains_by_rule": {
+    "bypass_with_external_agent": 30,
+    "instruction_runs_sensitive_script": 12,
+    "preapproved_shell_runs_sensitive_script": 4,
+    "nesting_guard_removed_for_agent_launch": 3,
+    "scheduled_agent_run": 1
+  },
+  "malskills_verdicts": {
+    "benign": 995,
+    "malicious": 5
+  },
+  "atr_findings_total": 39352,
+  "atr_top_rules": {
+    "ATR_2026_00099": 21384,
+    "ATR_2026_00061": 6770,
+    "ATR_2026_00066": 2391,
+    "ATR_2026_00063": 1098,
+    "ATR_2026_02010": 1009,
+    "ATR_2026_00012": 962,
+    "ATR_2026_00086": 695,
+    "ATR_2026_00064": 546,
+    "ATR_2026_00010": 531,
+    "ATR_2026_00062": 420
+  },
+  "core_full_behavioral_findings": 1127,
+  "lockbox_skills_in_runs": 250,
+  "lockbox_incomplete_scan_skills_by_stratum": {
+    "skill_md_only": 7,
+    "scripts": 14,
+    "supporting_no_scripts": 3
+  },
+  "prevalence_all_usable": {
+    "cisco_core_full_behavioral": {
+      "n": 930,
+      "flagged": 198,
+      "weighted_pct": 8.07,
+      "ci95": [
+        6.48,
+        9.67
+      ]
+    },
+    "cisco_core_skillmd_default": {
+      "n": 930,
+      "flagged": 19,
+      "weighted_pct": 1.95,
+      "ci95": [
+        0.79,
+        3.11
+      ]
+    },
+    "cisco_atr_any": {
+      "n": 941,
+      "flagged": 904,
+      "weighted_pct": 94.35,
+      "ci95": [
+        92.35,
+        96.34
+      ]
+    },
+    "cisco_atr_rules_any": {
+      "n": 941,
+      "flagged": 899,
+      "weighted_pct": 93.73,
+      "ci95": [
+        91.64,
+        95.82
+      ]
+    },
+    "malskills_malicious": {
+      "n": 1000,
+      "flagged": 5,
+      "weighted_pct": 0.37,
+      "ci95": [
+        0.0,
+        0.83
+      ]
+    },
+    "malskills_any_sso": {
+      "n": 1000,
+      "flagged": 491,
+      "weighted_pct": 30.65,
+      "ci95": [
+        27.25,
+        34.04
+      ]
+    },
+    "skillguard_v31_any": {
+      "n": 1000,
+      "flagged": 157,
+      "weighted_pct": 12.6,
+      "ci95": [
+        10.12,
+        15.08
+      ]
+    },
+    "skillguard_v32_reviewable": {
+      "n": 1000,
+      "flagged": 185,
+      "weighted_pct": 15.45,
+      "ci95": [
+        12.71,
+        18.2
+      ]
+    },
+    "skillguard_v32_high": {
+      "n": 1000,
+      "flagged": 9,
+      "weighted_pct": 0.26,
+      "ci95": [
+        0.1,
+        0.42
+      ]
+    },
+    "skillguard_v32_agent_specific": {
+      "n": 1000,
+      "flagged": 140,
+      "weighted_pct": 10.21,
+      "ci95": [
+        8.02,
+        12.4
+      ]
+    }
+  },
+  "location_agreement_scope": "open skills only (lockbox item-level locations are not compared during development)",
+  "v31_any_x_v32_reviewable": {
+    "v31=0 v32=0": 785,
+    "v31=0 v32=1": 58,
+    "v31=1 v32=0": 30,
+    "v31=1 v32=1": 127
+  }
+}

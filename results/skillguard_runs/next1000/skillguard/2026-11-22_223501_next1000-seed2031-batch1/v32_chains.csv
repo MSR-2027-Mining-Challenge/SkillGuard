@@ -1,0 +1,4 @@
+skill_id,chain_id,rule,severity,confidence,scope,review_priority,evidence
+design-html-6211584b4ba9,C1,bypass_with_external_agent,high,medium,same_file,high,"[""SKILL.md:128 external_agent_launch"", ""SKILL.md:22 tool_preapproval""]"
+dev-53766eb63ba6,C1,instruction_runs_sensitive_script,medium,high,linked_files,medium,"[""scripts/boot.sh:123 agent_config_modification"", ""scripts/boot.sh:169 agent_config_modification"", ""scripts/boot.sh:183 agent_config_modification"", ""scripts/boot.sh:201 agent_config_modification"", ""scripts/boot.sh:230 agent_config_modification"", ""scripts/boot.sh:234 agent_config_modification"", ""scripts/boot.sh:240 agent_config_modification"", ""scripts/boot.sh:244 agent_config_modification""]"
+dev-53766eb63ba6,C2,instruction_runs_sensitive_script,medium,high,linked_files,medium,"[""scripts/stop.sh:83 agent_config_modification""]"
