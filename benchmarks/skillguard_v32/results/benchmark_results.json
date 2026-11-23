@@ -1,0 +1,3378 @@
+{
+  "summary": {
+    "cases": 65,
+    "checks": 141,
+    "v32_checks_passed": 141,
+    "v32_cases_fully_passed": 65,
+    "v31_checks_passed": 34,
+    "v31_checks_expressible": 47,
+    "v31_checks_not_expressible": 94,
+    "v31_cases_fully_passed": 15
+  },
+  "by_group": {
+    "classification": {
+      "cases": 13,
+      "v32_pass": 13,
+      "v31_pass": 9,
+      "v31_expressible_ok": 23,
+      "v31_expressible": 25
+    },
+    "config": {
+      "cases": 13,
+      "v32_pass": 13,
+      "v31_pass": 0,
+      "v31_expressible_ok": 0,
+      "v31_expressible": 0
+    },
+    "cross_file": {
+      "cases": 11,
+      "v32_pass": 11,
+      "v31_pass": 0,
+      "v31_expressible_ok": 2,
+      "v31_expressible": 2
+    },
+    "js_ts": {
+      "cases": 9,
+      "v32_pass": 9,
+      "v31_pass": 0,
+      "v31_expressible_ok": 2,
+      "v31_expressible": 10
+    },
+    "execution": {
+      "cases": 3,
+      "v32_pass": 3,
+      "v31_pass": 0,
+      "v31_expressible_ok": 0,
+      "v31_expressible": 0
+    },
+    "instruction": {
+      "cases": 3,
+      "v32_pass": 3,
+      "v31_pass": 2,
+      "v31_expressible_ok": 2,
+      "v31_expressible": 3
+    },
+    "credentials": {
+      "cases": 3,
+      "v32_pass": 3,
+      "v31_pass": 1,
+      "v31_expressible_ok": 1,
+      "v31_expressible": 1
+    },
+    "coverage": {
+      "cases": 5,
+      "v32_pass": 5,
+      "v31_pass": 3,
+      "v31_expressible_ok": 4,
+      "v31_expressible": 5
+    },
+    "regression_fp": {
+      "cases": 5,
+      "v32_pass": 5,
+      "v31_pass": 0,
+      "v31_expressible_ok": 0,
+      "v31_expressible": 1
+    }
+  },
+  "cases": [
+    {
+      "id": "a01_subagent_delegation",
+      "group": "classification",
+      "kind": "negative",
+      "description": "Prose asking the agent to use host sub-agents is a host feature, not an external agent launch.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "in_host_delegation",
+            "file": "SKILL.md",
+            "line": 7,
+            "severity": "info",
+            "priority": "none"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "in_host_delegation",
+            "file": "SKILL.md",
+            "line": 7,
+            "severity": "info",
+            "priority": "none"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a02_task_tool_call",
+      "group": "classification",
+      "kind": "negative",
+      "description": "A Task(subagent_type=...) call in code is in-host delegation.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "in_host_delegation",
+            "file": "scripts/plan.py",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "in_host_delegation",
+            "file": "scripts/plan.py",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a03_external_cli_from_script",
+      "group": "classification",
+      "kind": "positive",
+      "description": "A script launches the claude CLI; SKILL.md runs that script.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/run.py",
+            "line": 4,
+            "severity": "medium",
+            "context": "direct",
+            "confidence": "high",
+            "risk": [
+              "invoked_by_instruction"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "link",
+          "spec": {
+            "target": "scripts/run.py",
+            "relation": "executes"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/run.py",
+            "line": 4,
+            "severity": "medium",
+            "context": "direct",
+            "confidence": "high",
+            "risk": [
+              "invoked_by_instruction"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "links",
+          "spec": {
+            "target": "scripts/run.py",
+            "relation": "executes"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "a04_cli_with_bypass_flag",
+      "group": "classification",
+      "kind": "positive",
+      "description": "Shell script runs claude with --dangerously-skip-permissions.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/go.sh",
+            "line": 2,
+            "severity": "high",
+            "priority": "high",
+            "risk": [
+              "bypass_flags"
+            ],
+            "detail": {
+              "trust_flags": [
+                "--dangerously-skip-permissions"
+              ]
+            }
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/go.sh",
+            "line": 2,
+            "severity": "high",
+            "priority": "high",
+            "risk": [
+              "bypass_flags"
+            ],
+            "detail": {
+              "trust_flags": [
+                "--dangerously-skip-permissions"
+              ]
+            }
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a05_agent_specific_force_flag",
+      "group": "classification",
+      "kind": "edge",
+      "description": "--force is a bypass for cursor-agent but not for other agent programs.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/a.sh",
+            "line": 1,
+            "detail": {
+              "trust_flags": [
+                "--force"
+              ]
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/a.sh",
+            "line": 2,
+            "detail": {
+              "trust_flags": []
+            },
+            "severity": "medium"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/a.sh",
+            "line": 1,
+            "detail": {
+              "trust_flags": [
+                "--force"
+              ]
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/a.sh",
+            "line": 2,
+            "detail": {
+              "trust_flags": []
+            },
+            "severity": "medium"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a06_value_dependent_flags",
+      "group": "classification",
+      "kind": "edge",
+      "description": "--permission-mode only bypasses with bypassPermissions; --sandbox danger-full-access bypasses.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "line": 1,
+            "detail": {
+              "trust_flags": []
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "line": 2,
+            "detail": {
+              "trust_flags": [
+                "--permission-mode bypassPermissions"
+              ]
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "line": 3,
+            "detail": {
+              "trust_flags": [
+                "--sandbox danger-full-access"
+              ]
+            }
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "line": 1,
+            "detail": {
+              "trust_flags": []
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "line": 2,
+            "detail": {
+              "trust_flags": [
+                "--permission-mode bypassPermissions"
+              ]
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "line": 3,
+            "detail": {
+              "trust_flags": [
+                "--sandbox danger-full-access"
+              ]
+            }
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a07_existence_check_only",
+      "group": "classification",
+      "kind": "negative",
+      "description": "`command -v claude` only checks that the CLI exists.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a08_env_marker_python",
+      "group": "classification",
+      "kind": "positive",
+      "description": "Filtered os.environ copy drops CLAUDECODE and the child claude runs with it.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_env_marker_removal",
+            "file": "scripts/nest.py",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/nest.py",
+            "line": 3,
+            "risk": [
+              "env_marker_removal"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "nesting_guard_removed_for_agent_launch",
+            "scope": "same_file"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_env_marker_removal",
+            "file": "scripts/nest.py",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "scripts/nest.py",
+            "line": 3,
+            "risk": [
+              "env_marker_removal"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "nesting_guard_removed_for_agent_launch",
+            "scope": "same_file"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "a09_no_confirmation_outward_action",
+      "group": "classification",
+      "kind": "positive",
+      "description": "A no-confirmation instruction about pushing is an outward action; negated and conditional phrasings are not.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 5,
+            "subcategory": "T2.3",
+            "risk": [
+              "outward_action"
+            ],
+            "confidence": "low"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 6
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 7
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 5,
+            "subcategory": "T2.3",
+            "risk": [
+              "outward_action"
+            ],
+            "confidence": "low"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 6
+          },
+          "ok": false
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 7
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a10_bypass_flag_mention_vs_use",
+      "group": "classification",
+      "kind": "edge",
+      "description": "Documenting an opt-out of a bypass flag is not an instruction to use it.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 6,
+            "risk": [
+              "bypass_flags"
+            ],
+            "severity": "high"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 5
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 6,
+            "risk": [
+              "bypass_flags"
+            ],
+            "severity": "high"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "approval_bypass_instruction",
+            "line": 5
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a11_installation_doc_is_low_priority",
+      "group": "classification",
+      "kind": "negative",
+      "description": "README installation steps that copy the skill into ~/.claude/skills are user-run setup.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "README.md",
+            "priority": "low"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "README.md",
+            "priority": "low"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a12_scheduler_list_vs_modify",
+      "group": "classification",
+      "kind": "edge",
+      "description": "Listing cron jobs is low severity; rewriting the crontab is a modification.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "scripts/list.sh",
+            "severity": "low",
+            "detail": {
+              "operation": "list"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "scripts/add.sh",
+            "detail": {
+              "operation": "modify"
+            },
+            "severity": "medium"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "scripts/list.sh",
+            "severity": "low",
+            "detail": {
+              "operation": "list"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "scripts/add.sh",
+            "detail": {
+              "operation": "modify"
+            },
+            "severity": "medium"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "b01_settings_bypass_hook_endpoint",
+      "group": "config",
+      "kind": "positive",
+      "description": "Bundled Claude settings with bypass mode, a fetch-and-execute SessionStart hook and a raw-IP endpoint.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": ".claude/settings.json",
+            "line": 4,
+            "context": "bundled_config",
+            "confidence": "high"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "line": 3,
+            "risk": [
+              "unscoped_shell"
+            ],
+            "severity": "medium"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_hook_command",
+            "line": 7,
+            "severity": "high",
+            "risk": [
+              "fetch_execute_in_command"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": ".claude/settings.json"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "line": 11,
+            "severity": "high",
+            "risk": [
+              "non_official_endpoint"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "fetch_execute_with_persistence"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            ".claude/settings.json": "analyzed"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": ".claude/settings.json",
+            "line": 4,
+            "context": "bundled_config",
+            "confidence": "high"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "line": 3,
+            "risk": [
+              "unscoped_shell"
+            ],
+            "severity": "medium"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_hook_command",
+            "line": 7,
+            "severity": "high",
+            "risk": [
+              "fetch_execute_in_command"
+            ]
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": ".claude/settings.json"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "line": 11,
+            "severity": "high",
+            "risk": [
+              "non_official_endpoint"
+            ]
+          },
+          "ok": null
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "fetch_execute_with_persistence"
+          },
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            ".claude/settings.json",
+            "analyzed"
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b02_benign_settings",
+      "group": "config",
+      "kind": "negative",
+      "description": "Scoped permissions and a local formatter hook: no bypass, no endpoint, low priority.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "severity": "info",
+            "priority": "none"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_hook_command",
+            "severity": "medium",
+            "priority": "low"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "auto_approval_setting"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_endpoint_override"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "remote_fetch_execute"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "severity": "info",
+            "priority": "none"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_hook_command",
+            "severity": "medium",
+            "priority": "low"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "auto_approval_setting"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_endpoint_override"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "remote_fetch_execute"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b03_mcp_pinned_vs_unpinned",
+      "group": "config",
+      "kind": "edge",
+      "description": "MCP servers: a pinned package is fine, an unpinned npx package is flagged as supply-chain.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "detail": {
+              "server": "pinned"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "detail": {
+              "server": "loose"
+            },
+            "risk": [
+              "unpinned"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "unpinned_package_execution",
+            "detail": {
+              "package": "acme-mcp-server"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "unpinned_package_execution",
+            "detail": {
+              "package": "@acme/mcp-server@1.2.3"
+            }
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "detail": {
+              "server": "pinned"
+            }
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "detail": {
+              "server": "loose"
+            },
+            "risk": [
+              "unpinned"
+            ]
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "unpinned_package_execution",
+            "detail": {
+              "package": "acme-mcp-server"
+            }
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "unpinned_package_execution",
+            "detail": {
+              "package": "@acme/mcp-server@1.2.3"
+            }
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b04_mcp_remote_http",
+      "group": "config",
+      "kind": "positive",
+      "description": "Remote MCP server over plain HTTP to a raw IP.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "risk": [
+              "insecure_transport"
+            ],
+            "severity": "medium"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "risk": [
+              "insecure_transport"
+            ],
+            "severity": "medium"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b05_codex_config",
+      "group": "config",
+      "kind": "positive",
+      "description": "Codex config.toml with approval_policy=never, full-access sandbox and an unpinned uvx MCP server.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "line": 1,
+            "detail": {
+              "setting": "approval_policy"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "line": 2,
+            "detail": {
+              "setting": "sandbox_mode"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "detail": {
+              "server": "search"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "unpinned_package_execution"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "line": 1,
+            "detail": {
+              "setting": "approval_policy"
+            }
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "line": 2,
+            "detail": {
+              "setting": "sandbox_mode"
+            }
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "mcp_server_definition",
+            "detail": {
+              "server": "search"
+            }
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "unpinned_package_execution"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b06_vscode_autoapprove_task",
+      "group": "config",
+      "kind": "positive",
+      "description": "VS Code chat auto-approval and a task that runs on folder open.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": ".vscode/settings.json",
+            "line": 3
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_hook_command",
+            "file": ".vscode/tasks.json",
+            "detail": {
+              "hook_kind": "folder_open_task"
+            }
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": ".vscode/settings.json",
+            "line": 3
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_hook_command",
+            "file": ".vscode/tasks.json",
+            "detail": {
+              "hook_kind": "folder_open_task"
+            }
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b07_package_json_hooks",
+      "group": "config",
+      "kind": "edge",
+      "description": "postinstall that downloads and runs code vs a benign prepare hook.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "install_time_hook",
+            "file": "tool/package.json",
+            "severity": "high"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "tool/package.json"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "install_time_hook",
+            "file": "lib/package.json"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "install_time_hook",
+            "file": "tool/package.json",
+            "severity": "high"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "tool/package.json"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "install_time_hook",
+            "file": "lib/package.json"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b08_registry_redirect_and_token",
+      "group": "config",
+      "kind": "positive",
+      "description": ".npmrc pointing to a non-default registry with a literal token (redacted in output).",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "registry_redirect",
+            "file": ".npmrc"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "embedded_secret",
+            "file": ".npmrc"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "registry_redirect",
+            "file": "ok/.npmrc"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "registry_redirect",
+            "file": ".npmrc"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "embedded_secret",
+            "file": ".npmrc"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "registry_redirect",
+            "file": "ok/.npmrc"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b09_markdown_settings_snippet",
+      "group": "config",
+      "kind": "positive",
+      "description": "SKILL.md shows a settings.json snippet with bypass mode: a documented example, lower priority than active config.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": "SKILL.md",
+            "line": 8,
+            "context": "documented_example",
+            "confidence": "medium"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": "SKILL.md",
+            "line": 8,
+            "context": "documented_example",
+            "confidence": "medium"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b10_malformed_configs",
+      "group": "config",
+      "kind": "edge",
+      "description": "Malformed JSON/YAML/TOML and a YAML alias bomb are reported as parse errors without crashing.",
+      "error": null,
+      "v32": [
+        {
+          "type": "coverage",
+          "spec": {
+            "broken.json": "parse_error"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "bad.yaml": "parse_error"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "bomb.yaml": "parse_error"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "bad.toml": "parse_error"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "empty.json": "parse_error"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "coverage",
+          "spec": [
+            "broken.json",
+            "parse_error"
+          ],
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "bad.yaml",
+            "parse_error"
+          ],
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "bomb.yaml",
+            "parse_error"
+          ],
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "bad.toml",
+            "parse_error"
+          ],
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "empty.json",
+            "parse_error"
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b11_benign_data_files",
+      "group": "config",
+      "kind": "negative",
+      "description": "Ordinary JSON/YAML data and tool configs produce no findings.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "auto_approval_setting"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_hook_command"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "mcp_server_definition"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "embedded_secret"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "registry_redirect"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "data/countries.json": "parsed_no_agent_config"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "tsconfig.json": "parsed_no_agent_config"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "auto_approval_setting"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_hook_command"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "mcp_server_definition"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "embedded_secret"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "registry_redirect"
+          },
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "data/countries.json",
+            "parsed_no_agent_config"
+          ],
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "tsconfig.json",
+            "parsed_no_agent_config"
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b12_endpoint_local_placeholder_official",
+      "group": "config",
+      "kind": "negative",
+      "description": "Local proxies are low severity; placeholders and official hosts are not reported.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "a/settings.json",
+            "severity": "low"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "b/settings.json"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "c/settings.json"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "a/settings.json",
+            "severity": "low"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "b/settings.json"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "c/settings.json"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "b13_frontmatter_preapproval",
+      "group": "config",
+      "kind": "positive",
+      "description": "Frontmatter pre-approves unscoped Bash and sets permissionMode bypassPermissions.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "file": "SKILL.md",
+            "line": 4,
+            "risk": [
+              "unscoped_shell"
+            ],
+            "severity": "medium"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": "SKILL.md",
+            "line": 5
+          },
+          "ok": true
+        },
+        {
+          "type": "declared",
+          "spec": {
+            "broad_shell": true
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "file": "SKILL.md",
+            "line": 4,
+            "risk": [
+              "unscoped_shell"
+            ],
+            "severity": "medium"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "auto_approval_setting",
+            "file": "SKILL.md",
+            "line": 5
+          },
+          "ok": null
+        },
+        {
+          "type": "declared",
+          "spec": [
+            "broad_shell",
+            true
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c01_instruction_runs_config_writer",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "SKILL.md runs setup.py, which writes ~/.claude/settings.json.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "scripts/setup.py",
+            "line": 5,
+            "subcategory": "T3.1",
+            "severity": "high",
+            "risk": [
+              "invoked_by_instruction"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "instruction_runs_sensitive_script"
+          },
+          "ok": true
+        },
+        {
+          "type": "link",
+          "spec": {
+            "from_file": "SKILL.md",
+            "target": "scripts/setup.py",
+            "relation": "executes"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "scripts/setup.py",
+            "line": 5,
+            "subcategory": "T3.1",
+            "severity": "high",
+            "risk": [
+              "invoked_by_instruction"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "instruction_runs_sensitive_script"
+          },
+          "ok": null
+        },
+        {
+          "type": "links",
+          "spec": {
+            "from_file": "SKILL.md",
+            "target": "scripts/setup.py",
+            "relation": "executes"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c02_placeholder_paths_resolve",
+      "group": "cross_file",
+      "kind": "edge",
+      "description": "Paths written with ${CLAUDE_SKILL_DIR} or ~/.claude/skills/<name>/ resolve to bundled files.",
+      "error": null,
+      "v32": [
+        {
+          "type": "link",
+          "spec": {
+            "target": "scripts/install.sh",
+            "relation": "executes"
+          },
+          "ok": true
+        },
+        {
+          "type": "link",
+          "spec": {
+            "target": "tool.js",
+            "relation": "executes"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "links",
+          "spec": {
+            "target": "scripts/install.sh",
+            "relation": "executes"
+          },
+          "ok": null
+        },
+        {
+          "type": "links",
+          "spec": {
+            "target": "tool.js",
+            "relation": "executes"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c03_reference_only",
+      "group": "cross_file",
+      "kind": "negative",
+      "description": "A Markdown link to a helper is a reference, not an execution; no chain.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid_chain",
+          "spec": "instruction_runs_sensitive_script",
+          "ok": true
+        },
+        {
+          "type": "link",
+          "spec": {
+            "target": "scripts/helper.py",
+            "relation": "references"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid_chains",
+          "spec": "instruction_runs_sensitive_script",
+          "ok": null
+        },
+        {
+          "type": "links",
+          "spec": {
+            "target": "scripts/helper.py",
+            "relation": "references"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c04_credential_and_send_same_file",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "One script reads AWS credentials and posts data.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "developer_credential_access",
+            "line": 4
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "network_send",
+            "line": 5,
+            "priority": "none"
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_file"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "developer_credential_access",
+            "line": 4
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "network_send",
+            "line": 5,
+            "priority": "none"
+          },
+          "ok": null
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_file"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c05_credential_and_send_unrelated",
+      "group": "cross_file",
+      "kind": "edge",
+      "description": "Credential read and network send in unrelated files: chain only at skill scope with low confidence.",
+      "error": null,
+      "v32": [
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_skill",
+            "confidence": "low"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_skill",
+            "confidence": "low"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c06_script_installs_bundled_hooks",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "install.py copies a bundled settings file containing a hook into ~/.claude/settings.json.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "install.py",
+            "line": 3,
+            "detail": {
+              "sources": [
+                "hooks/settings.json"
+              ]
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "script_installs_agent_config"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "install.py",
+            "line": 3,
+            "detail": {
+              "sources": [
+                "hooks/settings.json"
+              ]
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "script_installs_agent_config"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c07_fetch_exec_with_cron",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "Script downloads and runs a payload and installs a cron job.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "setup.sh",
+            "line": 1,
+            "severity": "high"
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "fetch_execute_with_persistence",
+            "scope": "same_file"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "setup.sh",
+            "line": 1,
+            "severity": "high"
+          },
+          "ok": null
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "fetch_execute_with_persistence",
+            "scope": "same_file"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c08_bypass_instruction_with_launch",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "SKILL.md says to use bypass mode and runs a script that launches claude without flags.",
+      "error": null,
+      "v32": [
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "bypass_with_external_agent",
+            "scope": "linked_files"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "bypass_with_external_agent",
+            "scope": "linked_files"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c09_allowed_tools_scope",
+      "group": "cross_file",
+      "kind": "edge",
+      "description": "allowed-tools with scoped Bash entries (commas inside parentheses) vs an instructed command outside the scope.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "severity": "info"
+          },
+          "ok": true
+        },
+        {
+          "type": "declared",
+          "spec": {
+            "broad_shell": false
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "tool_preapproval",
+            "severity": "info"
+          },
+          "ok": null
+        },
+        {
+          "type": "declared",
+          "spec": [
+            "broad_shell",
+            false
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c10_preapproved_shell_runs_sensitive_script",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "Unscoped Bash pre-approval plus an instruction that runs a script launching an agent with bypass flags.",
+      "error": null,
+      "v32": [
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "instruction_runs_sensitive_script"
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "preapproved_shell_runs_sensitive_script"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "instruction_runs_sensitive_script"
+          },
+          "ok": null
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "preapproved_shell_runs_sensitive_script"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "c11_scheduled_agent",
+      "group": "cross_file",
+      "kind": "positive",
+      "description": "A script installs a crontab and launches an agent program.",
+      "error": null,
+      "v32": [
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "scheduled_agent_run",
+            "scope": "same_file"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "scheduled_agent_run",
+            "scope": "same_file"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "d01_js_spawn_agent_bypass",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "ESM spawn of claude with a bypass flag held in a const array.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "tool.mjs",
+            "line": 3,
+            "severity": "high",
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "tool.mjs": "analyzed"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "tool.mjs",
+            "line": 3,
+            "severity": "high",
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": false
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "tool.mjs",
+            "analyzed"
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "d02_ts_config_write",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "TypeScript writes ~/.claude/settings.json via path.join(os.homedir(), ...).",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "src/setup.ts",
+            "line": 5,
+            "subcategory": "T3.1",
+            "detail": {
+              "targets": [
+                "~/.claude/settings.json"
+              ]
+            }
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_config_modification",
+            "file": "src/setup.ts",
+            "line": 5,
+            "subcategory": "T3.1",
+            "detail": {
+              "targets": [
+                "~/.claude/settings.json"
+              ]
+            }
+          },
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "d03_js_exec_shell_strings",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "CommonJS execSync of a crontab listing and exec of codex with --full-auto in a template literal.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "run.cjs",
+            "line": 2,
+            "detail": {
+              "operation": "list"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.cjs",
+            "line": 4,
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "run.cjs",
+            "line": 2,
+            "detail": {
+              "operation": "list"
+            }
+          },
+          "ok": false
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.cjs",
+            "line": 4,
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "d04_js_env_manipulation",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "Deleting CLAUDECODE and redirecting OPENAI_BASE_URL to a raw IP.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_env_marker_removal",
+            "file": "env.js",
+            "line": 1
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "env.js",
+            "line": 2,
+            "severity": "high"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_env_marker_removal",
+            "file": "env.js",
+            "line": 1
+          },
+          "ok": false
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "file": "env.js",
+            "line": 2,
+            "severity": "high"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "d05_js_credential_exfil",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "Reads an SSH private key and POSTs it.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "developer_credential_access",
+            "file": "x.js",
+            "line": 3
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "network_send",
+            "file": "x.js",
+            "line": 4
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_file"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "developer_credential_access",
+            "file": "x.js",
+            "line": 3
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "network_send",
+            "file": "x.js",
+            "line": 4
+          },
+          "ok": null
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_file"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "d06_js_benign_lookalikes",
+      "group": "js_ts",
+      "kind": "negative",
+      "description": "Strings mentioning claude, a local function named spawn, project-local writes and a GET request.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "network_fetch",
+            "file": "app.js",
+            "priority": "none"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_config_modification"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "network_fetch",
+            "file": "app.js",
+            "priority": "none"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "external_agent_launch"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_config_modification"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "d07_js_syntax_error_recovery",
+      "group": "js_ts",
+      "kind": "edge",
+      "description": "A JS file with a syntax error is still parsed with error recovery and marked in coverage.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "broken.js",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "broken.js": "analyzed_with_parse_errors"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "broken.js",
+            "line": 2
+          },
+          "ok": false
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "broken.js",
+            "analyzed_with_parse_errors"
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "d08_markdown_js_fence",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "A JavaScript fence in SKILL.md that runs an agent with --yolo is a documented example.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "SKILL.md",
+            "line": 6,
+            "context": "documented_example",
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "SKILL.md",
+            "line": 6,
+            "context": "documented_example",
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "d09_zx_tagged_template",
+      "group": "js_ts",
+      "kind": "positive",
+      "description": "zx $`...` template runs an agent with a bypass flag.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.mjs",
+            "line": 3,
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.mjs",
+            "line": 3,
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "e01_fetch_exec_script_vs_readme",
+      "group": "execution",
+      "kind": "edge",
+      "description": "curl|bash in a script is high priority; the same line in README installation steps is low.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "scripts/boot.sh",
+            "priority": "high"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "README.md",
+            "priority": "low",
+            "context": "documented_example"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "scripts/boot.sh",
+            "priority": "high"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "README.md",
+            "priority": "low",
+            "context": "documented_example"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "e02_os_persistence",
+      "group": "execution",
+      "kind": "positive",
+      "description": "Appending to ~/.bashrc and writing a LaunchAgent plist.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "p.sh",
+            "line": 1
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "agent.py",
+            "line": 2
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "p.sh",
+            "line": 1
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "agent.py",
+            "line": 2
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "e03_python_exec_of_download",
+      "group": "execution",
+      "kind": "positive",
+      "description": "exec() of text downloaded with requests.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "u.py",
+            "line": 3
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "remote_fetch_execute",
+            "file": "u.py",
+            "line": 3
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "f01_hidden_comment_future_session",
+      "group": "instruction",
+      "kind": "positive",
+      "description": "An HTML comment with a deferred, concealed instruction.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "suspicious_agent_instruction",
+            "layer": "risk_indicator",
+            "file": "SKILL.md"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "suspicious_agent_instruction",
+            "layer": "risk_indicator",
+            "file": "SKILL.md"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "f02_unicode_tag_characters",
+      "group": "instruction",
+      "kind": "positive",
+      "description": "Invisible Unicode tag characters next to a concealment instruction.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "suspicious_agent_instruction",
+            "file": "SKILL.md"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "suspicious_agent_instruction",
+            "file": "SKILL.md"
+          },
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "f03_benign_silently",
+      "group": "instruction",
+      "kind": "negative",
+      "description": "Descriptive 'may silently fail' is not concealment.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "suspicious_agent_instruction"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "suspicious_agent_instruction"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "g01_agent_credentials",
+      "group": "credentials",
+      "kind": "positive",
+      "description": "Reading the Claude credential file.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_credential_access",
+            "file": "c.py",
+            "line": 2,
+            "severity": "high"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_credential_access",
+            "file": "c.py",
+            "line": 2,
+            "severity": "high"
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "g02_environment_harvest",
+      "group": "credentials",
+      "kind": "positive",
+      "description": "Serializing os.environ and posting it.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "environment_harvesting",
+            "file": "h.py",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "chain",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_file"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "environment_harvesting",
+            "file": "h.py",
+            "line": 2
+          },
+          "ok": null
+        },
+        {
+          "type": "chains",
+          "spec": {
+            "rule": "credential_access_with_network_send",
+            "scope": "same_file"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "g03_ssh_benign_operations",
+      "group": "credentials",
+      "kind": "negative",
+      "description": "Generating a key or printing a public key is not credential access.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "developer_credential_access"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "developer_credential_access"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "h01_unsupported_and_data",
+      "group": "coverage",
+      "kind": "edge",
+      "description": "Binary-looking and plain data files are reported, not silently skipped.",
+      "error": null,
+      "v32": [
+        {
+          "type": "coverage",
+          "spec": {
+            "notes.txt": "data_file_not_analyzed"
+          },
+          "ok": true
+        },
+        {
+          "type": "coverage",
+          "spec": {
+            "logo.svg": "unsupported_format"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "coverage",
+          "spec": [
+            "notes.txt",
+            "data_file_not_analyzed"
+          ],
+          "ok": null
+        },
+        {
+          "type": "coverage",
+          "spec": [
+            "logo.svg",
+            "unsupported_format"
+          ],
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "h02_plain_skill",
+      "group": "coverage",
+      "kind": "negative",
+      "description": "A SKILL.md with ordinary instructions produces no primary findings.",
+      "error": null,
+      "v32": [
+        {
+          "type": "max_primary",
+          "spec": 0,
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "max_primary",
+          "spec": 0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "h03_crlf_and_bom",
+      "group": "coverage",
+      "kind": "edge",
+      "description": "CRLF line endings and a UTF-8 BOM do not break parsing or line numbers.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.py",
+            "line": 2
+          },
+          "ok": true
+        },
+        {
+          "type": "link",
+          "spec": {
+            "target": "run.py",
+            "relation": "executes"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.py",
+            "line": 2
+          },
+          "ok": false
+        },
+        {
+          "type": "links",
+          "spec": {
+            "target": "run.py",
+            "relation": "executes"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "h04_generated_script",
+      "group": "coverage",
+      "kind": "positive",
+      "description": "A Python string template that writes a shell script launching an agent with --yolo.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "gen.py",
+            "context": "generated",
+            "risk": [
+              "generated_code",
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "gen.py",
+            "context": "generated",
+            "risk": [
+              "generated_code",
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "h05_powershell",
+      "group": "coverage",
+      "kind": "positive",
+      "description": "PowerShell clears CLAUDECODE and launches claude with a bypass flag.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_env_marker_removal",
+            "file": "run.ps1",
+            "line": 1
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.ps1",
+            "line": 2,
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_env_marker_removal",
+            "file": "run.ps1",
+            "line": 1
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "external_agent_launch",
+            "file": "run.ps1",
+            "line": 2,
+            "risk": [
+              "bypass_flags"
+            ]
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "a13_systemctl_service_vs_persistence",
+      "group": "classification",
+      "kind": "negative",
+      "description": "systemctl start/restart/status manage services; only enable/link installs persistence.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "svc.sh",
+            "line": 3,
+            "detail": {
+              "operation": "modify"
+            }
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "line": 1
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "line": 2
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "file": "svc.sh",
+            "line": 3,
+            "detail": {
+              "operation": "modify"
+            }
+          },
+          "ok": false
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "line": 1
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "scheduler_invocation",
+            "line": 2
+          },
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "i01_printed_install_hint",
+      "group": "regression_fp",
+      "kind": "negative",
+      "description": "An echo that prints an installation hint does not execute it; a pipe into `python3 -c` parses data.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "remote_fetch_execute"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "remote_fetch_execute"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "i02_fetch_exec_mentioned_without_url",
+      "group": "regression_fp",
+      "kind": "negative",
+      "description": "A table cell saying the skill contains no curl|bash is not an instruction.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "remote_fetch_execute"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "remote_fetch_execute"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "i03_credential_lookalikes",
+      "group": "regression_fp",
+      "kind": "negative",
+      "description": "Writing .npmrc, testing that ~/.claude.json exists, ssh-copy-id, a default-path prompt and a regex are not credential reads.",
+      "error": null,
+      "v32": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "developer_credential_access"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_credential_access"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "developer_credential_access"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "agent_credential_access"
+          },
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "i04_rc_env_export_is_low",
+      "group": "regression_fp",
+      "kind": "edge",
+      "description": "Appending an `export KEY=` line to ~/.bashrc is persistence of configuration (low), not of code.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "README.md",
+            "severity": "low"
+          },
+          "ok": true
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "inst.sh",
+            "severity": "high"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "README.md",
+            "severity": "low"
+          },
+          "ok": null
+        },
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "os_persistence_write",
+            "file": "inst.sh",
+            "severity": "high"
+          },
+          "ok": null
+        }
+      ]
+    },
+    {
+      "id": "i05_proxy_and_truncated_tokens",
+      "group": "regression_fp",
+      "kind": "negative",
+      "description": "HTTP proxies are low/info, and truncated or sample tokens in docs are not secrets.",
+      "error": null,
+      "v32": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "severity": "low"
+          },
+          "ok": true
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "embedded_secret"
+          },
+          "ok": true
+        }
+      ],
+      "v31": [
+        {
+          "type": "expect",
+          "spec": {
+            "cap": "agent_endpoint_override",
+            "severity": "low"
+          },
+          "ok": null
+        },
+        {
+          "type": "forbid",
+          "spec": {
+            "cap": "embedded_secret"
+          },
+          "ok": null
+        }
+      ]
+    }
+  ]
+}
