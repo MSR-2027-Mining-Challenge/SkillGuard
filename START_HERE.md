@@ -40,6 +40,17 @@ A stratified random sample of 1,000 skills (seed 2030; 400 with scripts / 300 wi
 | Nov 15 | SkillGuard V3.1 frozen; 1,000-skill plan and pilot | [PROPOSAL](results/skillguard_runs/plans/PROPOSAL_1000_skill_experiment.md) (written before launch), [PILOT_REPORT.md](results/skillguard_runs/main1000/PILOT_REPORT.md) | `results/skillguard_runs/plans/`, `main1000/manifests/` |
 | Nov 15–16 | **1,000-skill Cisco + SkillGuard experiment** | [REPORT_main1000.md](results/skillguard_runs/main1000/REPORT_main1000.md) | see above |
 
+## SkillGuard V3.2 (Nov 22, 2026; branch `skillguard-v3.2`)
+
+| What | Where |
+|---|---|
+| Overview, taxonomy, detections, limitations | [docs/skillguard_v3.2.md](docs/skillguard_v3.2.md) |
+| Output schema 5.0 | [docs/skillguard_v3.2_schema.md](docs/skillguard_v3.2_schema.md) |
+| Code (frozen V3.1 untouched) | [`src/skillguard/`](src/skillguard/) — `PYTHONPATH=src .venv/bin/python -m skillguard <folder> [--json]` |
+| Controlled benchmark (65 synthetic cases) | [benchmarks/skillguard_v32/](benchmarks/skillguard_v32/) |
+| V3.1 vs V3.2 report | [results/skillguard_runs/v32_regression/REPORT_v32.md](results/skillguard_runs/v32_regression/REPORT_v32.md) |
+| Next 1,000-skill experiment (prepared, pilot only) | [results/skillguard_runs/next1000/README.md](results/skillguard_runs/next1000/README.md) |
+
 ## Code
 
 | What | Where |

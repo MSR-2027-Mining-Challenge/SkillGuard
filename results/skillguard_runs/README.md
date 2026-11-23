@@ -4,6 +4,9 @@ This folder holds every SkillGuard experiment (development, held-out evaluations
 
 | Folder | What it is | Open first |
 |---|---|---|
+| [`v32_regression/`](v32_regression/) | **SkillGuard V3.2** vs frozen V3.1 on 1,216 previously exported skills (location parity, new carriers, priorities) | [`v32_regression/REPORT_v32.md`](v32_regression/REPORT_v32.md) |
+| [`v32_scanner_comparison/`](v32_scanner_comparison/) | Cisco core vs core+ATR on the V3.2 benchmark; V3.2 vs existing MalSkills results on overlapping skills | `*/REPORT.md`, `malskills_overlap_*/summary.json` |
+| [`next1000/`](next1000/) | **Prepared** next 1,000-skill experiment (seed 2031, exclusions, lockbox, Cisco+ATR / MalSkills / SkillGuard runners); pilot only | [`next1000/README.md`](next1000/README.md) |
 | [`main1000/`](#main1000) | **1,000-skill experiment** (seed 2030), Nov 15–16 | [`main1000/REPORT_main1000.md`](main1000/REPORT_main1000.md) |
 | [`comparisons/`](comparisons/) | SkillGuard V2 and V3 evaluations against Cisco: dev30, held-out seed 2028, fresh-100 seed 2029 | [`REPORT_v3_2026-11-13.md`](comparisons/REPORT_v3_2026-11-13.md), [`REPORT_v2_2026-11-13.md`](comparisons/REPORT_v2_2026-11-13.md) |
 | [`sample30-seed2027/`](sample30-seed2027/) | SkillGuard V1 on the Nov-3 30-skill Cisco sample | [`…skillguard-v1/REPORT.md`](sample30-seed2027/2026-11-13_221401_skillguard-v1/REPORT.md) |
