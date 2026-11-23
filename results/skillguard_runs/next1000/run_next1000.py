@@ -100,6 +100,7 @@ def main():
         out = CORPORA / f"{run_dir.name}__malskills_output"
         step("malskills_run", [PY, "-I", str(HERE / "malskills_runner.py"), "run", str(corpus), str(out),
                                "--malskills-bin", os.environ["MALSKILLS_BIN"]], target)
+        step("malskills_verify_corpus", [PY, "-I", str(HERE / "malskills_runner.py"), "verify", str(corpus)], target)
         step("malskills_import", [PY, "-I", str(HERE / "malskills_runner.py"), "import", str(out), str(run_dir)], target)
     else:
         log(event="malskills_pending", target=target, corpus=str(corpus.relative_to(REPO)),

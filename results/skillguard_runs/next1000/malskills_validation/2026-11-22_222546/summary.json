@@ -1,0 +1,40 @@
+{
+  "tool": {
+    "malskills_bin": "~/MalSkills/.venv/bin/malskills",
+    "malskills_commit": "46d60f09cef00fd3a9c01272be63dbd273ab4444",
+    "semgrep_version": "1.186.0",
+    "rules_digest": "92524839294125e0e70bddf7d9f084974dcd8afc4781488f4c0c02945f31c994",
+    "semgrep_rules_digest": "31ab88959fe9c07afce53320b68f3dffdc17397c897f00699495e12c8441556f",
+    "yasa": "disabled (vendor/yasa not built; Rio's run had YASA enabled but unavailable, i.e. not run)",
+    "llm": "none (static profile)",
+    "tmpdir_workaround": "TMPDIR set to a symlink-free directory (macOS path-resolution bug in semgrep result mapping)"
+  },
+  "flags": [
+    "--profile",
+    "static",
+    "--retain",
+    "all",
+    "--keep-content-duplicates",
+    "--disable-yasa",
+    "--max-artifacts",
+    "600",
+    "--max-total-text-bytes",
+    "2000000",
+    "--quiet",
+    "--color",
+    "never"
+  ],
+  "groundtruth_smoke": {
+    "samples": 10,
+    "verdict_equals_label": 9
+  },
+  "rio_equivalence": {
+    "chosen": 40,
+    "exported": 40,
+    "content_hash_match": 40,
+    "identical_verdict_patterns_ssocount": 40,
+    "verdict_match": 40,
+    "artifact_count_match": 40,
+    "rio_malicious_reproduced": 4
+  }
+}

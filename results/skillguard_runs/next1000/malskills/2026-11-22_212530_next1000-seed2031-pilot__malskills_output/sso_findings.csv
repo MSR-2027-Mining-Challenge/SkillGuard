@@ -1,0 +1,560 @@
+skill_id,finding_id,category,rule_id,file,line,artifact_path,matched_text
+ascii-to-infographic-20a0a3fb5b15,semgrep_00000,software_installation,package_manager,SKILL.md,176,.malskills_fences/SKILL__fence_2.sh,pip install playwright
+ascii-to-infographic-20a0a3fb5b15,semgrep_00001,software_installation,package_manager,SKILL.md,179,.malskills_fences/SKILL__fence_2.sh,npm install -g @mermaid-js/mermaid-cli   # Mermaid
+ascii-to-infographic-20a0a3fb5b15,semgrep_00002,software_installation,package_manager,SKILL.md,180,.malskills_fences/SKILL__fence_2.sh,pip install diagrams                      # needs Graphviz on PATH
+ascii-to-infographic-20a0a3fb5b15,semgrep_00003,software_installation,package_manager_command,SKILL.md,176,SKILL.md,pip install playwright
+ascii-to-infographic-20a0a3fb5b15,semgrep_00004,software_installation,package_manager_command,SKILL.md,179,SKILL.md,npm install -g @mermaid-js/mermaid-cli   # Mermaid
+ascii-to-infographic-20a0a3fb5b15,semgrep_00005,software_installation,package_manager_command,SKILL.md,180,SKILL.md,pip install diagrams                      # needs Graphviz on PATH
+ascii-to-infographic-20a0a3fb5b15,semgrep_00006,sensitive_data_access,no-sys-exit,render_infographic.py,29,render_infographic.py,sys.exit(2)
+ascii-to-infographic-20a0a3fb5b15,semgrep_00007,sensitive_data_access,no-sys-exit,render_infographic.py,34,render_infographic.py,sys.exit(1)
+codex-counsel-7caabcfebd82,semgrep_00000,file_operation,content_read_and_parse,scripts/codex_consult.sh,44,scripts/codex_consult.sh,"[ -n ""$PROMPT_FILE"" ] && PROMPT=""$(cat ""$PROMPT_FILE"")"""
+codex-counsel-7caabcfebd82,semgrep_00001,file_operation,content_read_and_parse,scripts/codex_consult.sh,46,scripts/codex_consult.sh,"[ -n ""$CONTEXT_FILE"" ] && CONTEXT=""$(cat ""$CONTEXT_FILE"")"""
+codex-counsel-7caabcfebd82,semgrep_00002,system_configuration,scheduled_persistence,scripts/codex_consult.sh,57,scripts/codex_consult.sh,# pointed at the same project). Both forms support -o.
+codex-counsel-7caabcfebd82,semgrep_00003,file_operation,deletion_or_overwrite,scripts/codex_consult.sh,72,scripts/codex_consult.sh,"[ -n ""$OUT_FILE"" ] && rm -f ""$OUT_FILE""; exit $code; }"
+codex-counsel-7caabcfebd82,semgrep_00004,file_operation,content_read_and_parse,scripts/codex_consult.sh,74,scripts/codex_consult.sh,"# Session id from the thread.started event (jq if available, else grep)."
+codex-counsel-7caabcfebd82,semgrep_00005,file_operation,content_read_and_parse,scripts/codex_consult.sh,76,scripts/codex_consult.sh,if command -v jq >/dev/null 2>&1; then
+codex-counsel-7caabcfebd82,semgrep_00006,file_operation,content_read_and_parse,scripts/codex_consult.sh,77,scripts/codex_consult.sh,"SESSION=""$(printf '%s\n' ""$STDOUT"" | jq -r 'select(.type==""thread.started"") | (.thread_id // .thread.id) // empty' 2>/dev/null | head -n1)"""
+codex-counsel-7caabcfebd82,semgrep_00008,file_operation,content_read_and_parse,scripts/codex_consult.sh,79,scripts/codex_consult.sh,"SESSION=""$(printf '%s\n' ""$STDOUT"" | grep -o '""thread_id"":""[^""]*""' | head -n1 | sed 's/.*:""//;s/""//')"""
+codex-counsel-7caabcfebd82,semgrep_00009,file_operation,content_read_and_parse,scripts/codex_consult.sh,85,scripts/codex_consult.sh,"MESSAGE=""$(cat ""$OUT_FILE"")"""
+codex-counsel-7caabcfebd82,semgrep_00010,file_operation,content_read_and_parse,scripts/codex_consult.sh,86,scripts/codex_consult.sh,elif command -v jq >/dev/null 2>&1; then
+codex-counsel-7caabcfebd82,semgrep_00011,file_operation,content_read_and_parse,scripts/codex_consult.sh,87,scripts/codex_consult.sh,"MESSAGE=""$(printf '%s\n' ""$STDOUT"" | jq -r 'select(.type==""item.completed"") | select(.item.type==""agent_message"") | .item.text' 2>/dev/null | tail -n1)"""
+codex-counsel-7caabcfebd82,semgrep_00013,file_operation,deletion_or_overwrite,scripts/codex_consult.sh,93,scripts/codex_consult.sh,"[ -n ""$OUT_FILE"" ] && rm -f ""$OUT_FILE"""
+cross-platform-compatibility-7f7130e82a24,semgrep_00000,file_operation,no-path-join,SKILL.md,39,.malskills_fences/SKILL__fence_0.ts,"const configPath = path.join(os.homedir(), ""config"", ""app.json"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00004,file_operation,no-path-join,SKILL.md,40,.malskills_fences/SKILL__fence_0.ts,"const dataPath = path.join(process.cwd(), ""data"", ""users.txt"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00006,payload_execution,no-process-cwd,SKILL.md,40,.malskills_fences/SKILL__fence_0.ts,"const dataPath = path.join(process.cwd(), ""data"", ""users.txt"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00008,file_operation,no-path-resolve,SKILL.md,43,.malskills_fences/SKILL__fence_0.ts,"const absolutePath = path.resolve(""./config/settings.json"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00010,file_operation,no-path-dirname,SKILL.md,46,.malskills_fences/SKILL__fence_0.ts,"const dirname = path.dirname(""/path/to/file.txt""); // '/path/to'"
+cross-platform-compatibility-7f7130e82a24,semgrep_00012,file_operation,no-path-basename,SKILL.md,47,.malskills_fences/SKILL__fence_0.ts,"const basename = path.basename(""/path/to/file.txt""); // 'file.txt'"
+cross-platform-compatibility-7f7130e82a24,semgrep_00014,file_operation,no-path-extname,SKILL.md,48,.malskills_fences/SKILL__fence_0.ts,"const extname = path.extname(""/path/to/file.txt""); // '.txt'"
+cross-platform-compatibility-7f7130e82a24,semgrep_00016,file_operation,no-path-normalize,SKILL.md,51,.malskills_fences/SKILL__fence_0.ts,"const normalized = path.normalize(""/path/to/../file.txt""); // '/path/file.txt'"
+cross-platform-compatibility-7f7130e82a24,semgrep_00018,file_operation,no-path-join,SKILL.md,569,.malskills_fences/SKILL__fence_13.ts,"const configPath = path.join(os.homedir(), ""config.json"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00022,file_operation,no-fs-readFileSync,SKILL.md,610,.malskills_fences/SKILL__fence_14.ts,const buffer = fs.readFileSync(filepath);
+cross-platform-compatibility-7f7130e82a24,semgrep_00024,file_operation,no-fs-writeFileSync,SKILL.md,630,.malskills_fences/SKILL__fence_14.ts,"fs.writeFileSync(filepath, content, ""utf8"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00026,file_operation,no-fs-writeFileSync,SKILL.md,633,.malskills_fences/SKILL__fence_14.ts,"fs.writeFileSync(filepath, buffer);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00028,file_operation,no-fs-readFileSync,SKILL.md,639,.malskills_fences/SKILL__fence_14.ts,const buffer = fs.readFileSync(filepath);
+cross-platform-compatibility-7f7130e82a24,semgrep_00030,payload_execution,no-child_process-exec,SKILL.md,729,.malskills_fences/SKILL__fence_16.ts,"await exec(`start """" ""${path}""`);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00035,file_operation,no-path-join,SKILL.md,732,.malskills_fences/SKILL__fence_16.ts,"return path.join(process.env.APPDATA!, ""myapp"", ""config.json"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00037,payload_execution,no-child_process-exec,SKILL.md,738,.malskills_fences/SKILL__fence_16.ts,"await exec(`xdg-open ""${path}""`);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00042,file_operation,no-path-join,SKILL.md,741,.malskills_fences/SKILL__fence_16.ts,"return path.join(os.homedir(), "".config"", ""myapp"", ""config.json"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00046,file_operation,no-os-homedir,SKILL.md,149,.malskills_fences/SKILL__fence_3.ts,return os.homedir();
+cross-platform-compatibility-7f7130e82a24,semgrep_00048,file_operation,no-os-tmpdir,SKILL.md,153,.malskills_fences/SKILL__fence_3.ts,return os.tmpdir();
+cross-platform-compatibility-7f7130e82a24,semgrep_00050,sensitive_data_access,no-platform-machine,SKILL.md,211,.malskills_fences/SKILL__fence_4.py,"return platform.machine()  # 'x86_64', 'arm64', etc."
+cross-platform-compatibility-7f7130e82a24,semgrep_00051,sensitive_data_access,no-platform-version,SKILL.md,215,.malskills_fences/SKILL__fence_4.py,return platform.version()
+cross-platform-compatibility-7f7130e82a24,semgrep_00052,file_operation,no-fs-readFileSync,SKILL.md,259,.malskills_fences/SKILL__fence_5.ts,"const fileContent = fs.readFileSync(""file.txt"", ""utf8"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00054,file_operation,no-fs-writeFileSync,SKILL.md,268,.malskills_fences/SKILL__fence_5.ts,"fs.writeFileSync(""output.txt"", normalized);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00056,file_operation,no-fs-chmodSync,SKILL.md,383,.malskills_fences/SKILL__fence_8.ts,"fs.chmodSync(filepath, 0o755);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00058,file_operation,no-path-extname,SKILL.md,391,.malskills_fences/SKILL__fence_8.ts,const ext = path.extname(filepath).toLowerCase();
+cross-platform-compatibility-7f7130e82a24,semgrep_00060,file_operation,no-fs-accessSync,SKILL.md,396,.malskills_fences/SKILL__fence_8.ts,"fs.accessSync(filepath, fs.constants.X_OK);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00062,file_operation,no-fs-writeFileSync,SKILL.md,409,.malskills_fences/SKILL__fence_8.ts,"fs.writeFileSync(filepath, content, { mode });"
+cross-platform-compatibility-7f7130e82a24,semgrep_00064,payload_execution,no-child_process-spawn,SKILL.md,425,.malskills_fences/SKILL__fence_9.ts,"spawn(""taskkill"", [""/pid"", pid.toString(), ""/f"", ""/t""]);"
+cross-platform-compatibility-7f7130e82a24,semgrep_00066,payload_execution,no-process-kill,SKILL.md,427,.malskills_fences/SKILL__fence_9.ts,"process.kill(pid, signal || ""SIGTERM"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00068,payload_execution,no-child_process-spawn,SKILL.md,435,.malskills_fences/SKILL__fence_9.ts,"return spawn(""cmd"", [""/c"", command, ...args], {
+        stdio: ""inherit"",
+        shell: true,
+      });"
+cross-platform-compatibility-7f7130e82a24,semgrep_00070,payload_execution,no-child_process-spawn,SKILL.md,441,.malskills_fences/SKILL__fence_9.ts,"return spawn(command, args, {
+      stdio: ""inherit"",
+      shell: true,
+    });"
+cross-platform-compatibility-7f7130e82a24,semgrep_00072,payload_execution,dynamic_module_load_command,SKILL.md,90,SKILL.md,"import (
+    ""os""
+    ""path/filepath""
+)"
+cross-platform-compatibility-7f7130e82a24,semgrep_00073,payload_execution,dynamic_module_load_command,SKILL.md,489,SKILL.md,"return await import(""./windows/module"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00074,payload_execution,dynamic_module_load_command,SKILL.md,491,SKILL.md,"return await import(""./macos/module"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00075,payload_execution,dynamic_module_load_command,SKILL.md,493,SKILL.md,"return await import(""./linux/module"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00076,payload_execution,dynamic_module_load_command,SKILL.md,502,SKILL.md,"const fsevents = require(""fsevents"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00077,payload_execution,dynamic_module_load_command,SKILL.md,510,SKILL.md,"return require(""chokidar"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00078,payload_execution,dynamic_module_load_command,SKILL.md,758,SKILL.md,"return import(""./platforms/windows"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00079,payload_execution,dynamic_module_load_command,SKILL.md,760,SKILL.md,"return import(""./platforms/macos"");"
+cross-platform-compatibility-7f7130e82a24,semgrep_00080,payload_execution,dynamic_module_load_command,SKILL.md,762,SKILL.md,"return import(""./platforms/linux"");"
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00000,file_operation,content_read_and_parse,SKILL.md,247,.malskills_fences/SKILL__fence_3.sh,nsys stats --report cuda_gpu_kern_sum --format csv ${OUT}.nsys-rep | head -20
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00001,file_operation,content_read_and_parse,SKILL.md,250,.malskills_fences/SKILL__fence_3.sh,nsys stats --report nvtx_sum --format csv ${OUT}.nsys-rep | head -20
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00002,file_operation,content_read_and_parse,references/nsys-cli-recipes.md,72,references/.malskills_fences/nsys-cli-recipes__fence_3.sh,"awk -F, 'NR>1 {print $0}' /tmp/nvtx.csv | sort -t, -k5 -nr | head -10"
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00003,file_operation,content_read_and_parse,references/nsys-cli-recipes.md,91,references/.malskills_fences/nsys-cli-recipes__fence_4.sh,nsys stats --report cuda_gpu_kern_sum --format csv ${OUT}.nsys-rep | head -15
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00004,file_operation,content_read_and_parse,references/nsys-cli-recipes.md,128,references/.malskills_fences/nsys-cli-recipes__fence_7.sh,nsys stats --report osrt_sum --format csv ${OUT}.nsys-rep | head -15
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00005,file_operation,content_read_and_parse,references/nsys-cli-recipes.md,144,references/.malskills_fences/nsys-cli-recipes__fence_8.sh,sqlite3 ${OUT}.sqlite <<'SQL'
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00006,file_operation,content_read_and_parse,references/nvtx-coverage.md,18,references/.malskills_fences/nvtx-coverage__fence_0.sh,"| tail -n +6 | awk -F, '$2+0 > 0 {print $NF}' \"
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00007,payload_execution,no-subprocess-run,scripts/capacity_report.py,145,scripts/capacity_report.py,"out = subprocess.run(
+        [
+            ""nvidia-smi"",
+            ""-i"", str(gpu_id),
+            ""--query-gpu=name,compute_cap,memory.total,memory.free,""
+  "
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00008,file_operation,no-open,scripts/capacity_report.py,182,scripts/capacity_report.py,with open(path) as f:
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00009,file_operation,no-open,scripts/capacity_report.py,221,scripts/capacity_report.py,with open(path) as f:
+deepstream-profile-pipeline-74b92facf0e5,semgrep_00010,sensitive_data_access,no-sys-exit,scripts/capacity_report.py,548,scripts/capacity_report.py,sys.exit(main())
+slides-to-site-336ddf37f13f,semgrep_00000,network_access,remote_data_receive,SKILL.md,104,.malskills_fences/SKILL__fence_4.sh,"curl -sL -o /Users/hagelk/non-ic-code/psd401.ai/public/images/thumbnails/{slug}.png ""CONTENT_URL"""
+review-l10n-22be0b42ed0e,semgrep_00000,file_operation,content_read_and_parse,SKILL.md,121,.malskills_fences/SKILL__fence_1.sh,"mkdir -p ""${SCRATCH}/head"" ""${SCRATCH}/base"""
+review-l10n-22be0b42ed0e,semgrep_00001,file_operation,content_read_and_parse,SKILL.md,124,.malskills_fences/SKILL__fence_1.sh,HEAD_OID=$(gh pr view ${PR_NUMBER} --repo a-ghorbani/pocketpal-ai --json headRefOid --jq .headRefOid)
+review-l10n-22be0b42ed0e,semgrep_00002,file_operation,content_read_and_parse,SKILL.md,125,.malskills_fences/SKILL__fence_1.sh,BASE_OID=$(gh pr view ${PR_NUMBER} --repo a-ghorbani/pocketpal-ai --json baseRefOid --jq .baseRefOid)
+review-l10n-22be0b42ed0e,semgrep_00003,file_operation,content_read_and_parse,SKILL.md,129,.malskills_fences/SKILL__fence_1.sh,--jq '.files[].path' \
+review-l10n-22be0b42ed0e,semgrep_00004,system_configuration,scheduled_persistence,SKILL.md,133,.malskills_fences/SKILL__fence_1.sh,"# Always pull en.json + every locale that exists at HEAD (for coverage), plus base copies of changed ones (for diff)."
+review-l10n-22be0b42ed0e,semgrep_00005,file_operation,content_read_and_parse,SKILL.md,133,.malskills_fences/SKILL__fence_1.sh,"# Always pull en.json + every locale that exists at HEAD (for coverage), plus base copies of changed ones (for diff)."
+review-l10n-22be0b42ed0e,semgrep_00006,file_operation,content_read_and_parse,SKILL.md,142,.malskills_fences/SKILL__fence_2.sh,"node skills/review-l10n/scripts/coverage.mjs ""${SCRATCH}/head"" > ""${SCRATCH}/coverage.txt"""
+review-l10n-22be0b42ed0e,semgrep_00007,file_operation,content_read_and_parse,SKILL.md,143,.malskills_fences/SKILL__fence_2.sh,"node skills/review-l10n/scripts/find-placeholder-issues.mjs ""${SCRATCH}/head"" > ""${SCRATCH}/placeholders.txt"""
+review-l10n-22be0b42ed0e,semgrep_00008,file_operation,content_read_and_parse,SKILL.md,149,.malskills_fences/SKILL__fence_2.sh,"( cd ""${SCRATCH}/head"""
+review-l10n-22be0b42ed0e,semgrep_00009,file_operation,bulk_copy_and_archive,SKILL.md,150,.malskills_fences/SKILL__fence_2.sh,cp -r . ../runner-src && mkdir -p ../runner/scripts && cp ../../../repos/pocketpal-ai/scripts/validate-l10n.js ../runner/scripts/
+review-l10n-22be0b42ed0e,semgrep_00011,file_operation,content_read_and_parse,SKILL.md,170,.malskills_fences/SKILL__fence_3.sh,"node skills/review-l10n/scripts/diff-entries.mjs ""${SCRATCH}/head"" ""${SCRATCH}/base"" ""${SCRATCH}/diff-report.txt"""
+review-l10n-22be0b42ed0e,semgrep_00012,payload_execution,script_host_execution,scripts/apply-decision.sh,37,scripts/apply-decision.sh,"VERDICT=$(node -e ""process.stdout.write(require('${DEC}').mechanical_verdict)"")"
+review-l10n-22be0b42ed0e,semgrep_00013,payload_execution,script_host_execution,scripts/apply-decision.sh,38,scripts/apply-decision.sh,"PR=$(node -e ""process.stdout.write(String(require('${DEC}').pr ?? ''))"")"
+review-l10n-22be0b42ed0e,semgrep_00014,payload_execution,script_host_execution,scripts/apply-decision.sh,57,scripts/apply-decision.sh,node -e '
+review-l10n-22be0b42ed0e,semgrep_00015,payload_execution,no-process-exit,scripts/apply-plan.mjs,79,scripts/apply-plan.mjs,process.exit(2);
+review-l10n-22be0b42ed0e,semgrep_00016,payload_execution,no-process-exit,scripts/apply-plan.mjs,86,scripts/apply-plan.mjs,process.exit(3);
+review-l10n-22be0b42ed0e,semgrep_00017,payload_execution,no-process-exit,scripts/apply-plan.mjs,196,scripts/apply-plan.mjs,process.exit(tally.fail > 0 ? 1 : 0);
+review-l10n-22be0b42ed0e,semgrep_00018,file_operation,content_read_and_parse,scripts/auto-review.sh,17,scripts/auto-review.sh,"# Discover the open Weblate auto-merge PR: author=weblate, head=weblate-translations."
+review-l10n-22be0b42ed0e,semgrep_00019,file_operation,content_read_and_parse,scripts/auto-review.sh,20,scripts/auto-review.sh,"--jq '[.[] | select(.headRefName==""weblate-translations"")][0].number // empty')"
+review-l10n-22be0b42ed0e,semgrep_00020,file_operation,deletion_or_overwrite,scripts/auto-review.sh,29,scripts/auto-review.sh,"rm -rf ""${SCRATCH}"""
+review-l10n-22be0b42ed0e,semgrep_00022,file_operation,content_read_and_parse,scripts/auto-review.sh,30,scripts/auto-review.sh,"mkdir -p ""${SCRATCH}/head"" ""${SCRATCH}/base"""
+review-l10n-22be0b42ed0e,semgrep_00023,sensitive_data_access,security_environment_discovery,scripts/auto-review.sh,34,scripts/auto-review.sh,# PR metadata (used by decide.mjs for scope + mergeability).
+review-l10n-22be0b42ed0e,semgrep_00024,system_configuration,scheduled_persistence,scripts/auto-review.sh,39,scripts/auto-review.sh,# Fetch locale JSONs at head + base.
+review-l10n-22be0b42ed0e,semgrep_00025,file_operation,content_read_and_parse,scripts/auto-review.sh,39,scripts/auto-review.sh,# Fetch locale JSONs at head + base.
+review-l10n-22be0b42ed0e,semgrep_00026,file_operation,content_read_and_parse,scripts/auto-review.sh,43,scripts/auto-review.sh,"node ""${HERE}/coverage.mjs"" ""${SCRATCH}/head"" > ""${SCRATCH}/coverage.txt"" || true"
+review-l10n-22be0b42ed0e,semgrep_00027,file_operation,content_read_and_parse,scripts/auto-review.sh,44,scripts/auto-review.sh,"node ""${HERE}/find-placeholder-issues.mjs"" ""${SCRATCH}/head"" > ""${SCRATCH}/placeholders.txt"" || true"
+review-l10n-22be0b42ed0e,semgrep_00028,file_operation,content_read_and_parse,scripts/auto-review.sh,47,scripts/auto-review.sh,"node ""${HERE}/diff-entries.mjs"" ""${SCRATCH}/head"" ""${SCRATCH}/base"" ""${SCRATCH}/diff-report.txt"" || true"
+review-l10n-22be0b42ed0e,semgrep_00029,file_operation,content_read_and_parse,scripts/auto-review.sh,56,scripts/auto-review.sh,"gh pr view ""${PR}"" --repo ""${REPO}"" --json files --jq '.files[].path' | sed 's/^/   /'"
+review-l10n-22be0b42ed0e,semgrep_00030,payload_execution,no-process-exit,scripts/build-fill-plan.mjs,29,scripts/build-fill-plan.mjs,process.exit(2);
+review-l10n-22be0b42ed0e,semgrep_00031,payload_execution,no-process-exit,scripts/coverage.mjs,10,scripts/coverage.mjs,process.exit(2);
+review-l10n-22be0b42ed0e,semgrep_00032,payload_execution,no-process-exit,scripts/decide.mjs,43,scripts/decide.mjs,process.exit(2);
+review-l10n-22be0b42ed0e,semgrep_00033,payload_execution,no-process-exit,scripts/decide.mjs,195,scripts/decide.mjs,process.exit(mechanicalHold ? 1 : 0);
+review-l10n-22be0b42ed0e,semgrep_00034,payload_execution,no-process-exit,scripts/diff-entries.mjs,12,scripts/diff-entries.mjs,process.exit(2);
+review-l10n-22be0b42ed0e,semgrep_00035,file_operation,content_read_and_parse,scripts/fetch-pr.sh,2,scripts/fetch-pr.sh,# Fetch all locale JSONs from a Weblate-style PR into ${SCRATCH}/head and ${SCRATCH}/base.
+review-l10n-22be0b42ed0e,semgrep_00036,file_operation,content_read_and_parse,scripts/fetch-pr.sh,10,scripts/fetch-pr.sh,"mkdir -p ""${SCRATCH}/head"" ""${SCRATCH}/base"""
+review-l10n-22be0b42ed0e,semgrep_00037,file_operation,content_read_and_parse,scripts/fetch-pr.sh,12,scripts/fetch-pr.sh,"HEAD_OID=$(gh pr view ""${PR}"" --repo ""${REPO}"" --json headRefOid --jq .headRefOid)"
+review-l10n-22be0b42ed0e,semgrep_00038,file_operation,content_read_and_parse,scripts/fetch-pr.sh,13,scripts/fetch-pr.sh,"BASE_OID=$(gh pr view ""${PR}"" --repo ""${REPO}"" --json baseRefOid --jq .baseRefOid)"
+review-l10n-22be0b42ed0e,semgrep_00039,system_configuration,scheduled_persistence,scripts/fetch-pr.sh,15,scripts/fetch-pr.sh,# Discover all locale files at HEAD (so we can compute coverage for languages not changed in this PR too).
+review-l10n-22be0b42ed0e,semgrep_00040,file_operation,content_read_and_parse,scripts/fetch-pr.sh,15,scripts/fetch-pr.sh,# Discover all locale files at HEAD (so we can compute coverage for languages not changed in this PR too).
+review-l10n-22be0b42ed0e,semgrep_00041,file_operation,content_read_and_parse,scripts/fetch-pr.sh,16,scripts/fetch-pr.sh,"mapfile -t HEAD_FILES < <(gh api ""repos/${REPO}/contents/src/locales?ref=${HEAD_OID}"" --jq '.[] | select(.name | endswith("".json"")) | .name')"
+review-l10n-22be0b42ed0e,semgrep_00042,file_operation,content_read_and_parse,scripts/fetch-pr.sh,18,scripts/fetch-pr.sh,# Changed files only — used as the candidate list for `base/` (skip download if base is identical to head).
+review-l10n-22be0b42ed0e,semgrep_00043,file_operation,content_read_and_parse,scripts/fetch-pr.sh,19,scripts/fetch-pr.sh,"mapfile -t CHANGED < <(gh pr view ""${PR}"" --repo ""${REPO}"" --json files --jq '.files[].path' | grep '^src/locales/.*\.json$' | sed 's|^src/locales/||' || true)"
+review-l10n-22be0b42ed0e,semgrep_00044,file_operation,content_read_and_parse,scripts/fetch-pr.sh,21,scripts/fetch-pr.sh,"echo ""PR=${PR} repo=${REPO} head=${HEAD_OID:0:10} base=${BASE_OID:0:10}"""
+review-l10n-22be0b42ed0e,semgrep_00045,file_operation,content_read_and_parse,scripts/fetch-pr.sh,22,scripts/fetch-pr.sh,"echo ""head locales: ${#HEAD_FILES[@]} | changed: ${#CHANGED[@]}"""
+review-l10n-22be0b42ed0e,semgrep_00046,file_operation,content_read_and_parse,scripts/fetch-pr.sh,25,scripts/fetch-pr.sh,"gh api ""repos/${REPO}/contents/src/locales/${f}?ref=${HEAD_OID}"" --jq '.content' \"
+review-l10n-22be0b42ed0e,semgrep_00047,cryptography,decode,scripts/fetch-pr.sh,26,scripts/fetch-pr.sh,"| base64 -d > ""${SCRATCH}/head/${f}"""
+review-l10n-22be0b42ed0e,semgrep_00048,file_operation,content_read_and_parse,scripts/fetch-pr.sh,26,scripts/fetch-pr.sh,"| base64 -d > ""${SCRATCH}/head/${f}"""
+review-l10n-22be0b42ed0e,semgrep_00049,file_operation,content_read_and_parse,scripts/fetch-pr.sh,31,scripts/fetch-pr.sh,"if gh api ""repos/${REPO}/contents/src/locales/${f}?ref=${BASE_OID}"" --jq '.content' 2>/dev/null \"
+review-l10n-22be0b42ed0e,semgrep_00050,cryptography,decode,scripts/fetch-pr.sh,32,scripts/fetch-pr.sh,"| base64 -d > ""${SCRATCH}/base/${f}.tmp""; then"
+review-l10n-22be0b42ed0e,semgrep_00051,file_operation,deletion_or_overwrite,scripts/fetch-pr.sh,35,scripts/fetch-pr.sh,"rm -f ""${SCRATCH}/base/${f}.tmp"""
+review-l10n-22be0b42ed0e,semgrep_00052,file_operation,content_read_and_parse,scripts/fetch-pr.sh,40,scripts/fetch-pr.sh,"echo ""head files written to ${SCRATCH}/head"""
+review-l10n-22be0b42ed0e,semgrep_00054,payload_execution,no-process-exit,scripts/find-missing.mjs,13,scripts/find-missing.mjs,process.exit(2);
+review-l10n-22be0b42ed0e,semgrep_00055,payload_execution,no-process-exit,scripts/find-placeholder-issues.mjs,9,scripts/find-placeholder-issues.mjs,if (!dir) { console.error('usage: find-placeholder-issues.mjs <dir>'); process.exit(2); }
+review-l10n-22be0b42ed0e,semgrep_00056,payload_execution,no-process-exit,scripts/find-placeholder-issues.mjs,46,scripts/find-placeholder-issues.mjs,process.exit(total > 0 ? 1 : 0);
+skill-8cbbd6f03f56,semgrep_00000,file_operation,bulk_copy_and_archive,README.md,25,.malskills_fences/README__fence_0.sh,mkdir -p ~/.agents/skills/orangepi4pro && cp -r orangepi4pro-skill/* ~/.agents/skills/orangepi4pro/
+skill-8cbbd6f03f56,semgrep_00001,process_operation,identity_switch,README.md,52,.malskills_fences/README__fence_1.sh,sudo modprobe vin_v4l2          # 加载 MIPI 摄像头驱动
+skill-8cbbd6f03f56,semgrep_00002,file_operation,file_enumeration_and_location,README.md,53,.malskills_fences/README__fence_1.sh,ls /dev/video*                   # 确认 /dev/video8 出现
+skill-8cbbd6f03f56,semgrep_00003,process_operation,identity_switch,README.md,54,.malskills_fences/README__fence_1.sh,sudo apt install -y python3-opencv libopencv-dev python3-pybind11
+skill-8cbbd6f03f56,semgrep_00004,software_installation,package_manager_command,README.md,54,.malskills_fences/README__fence_1.sh,sudo apt install -y python3-opencv libopencv-dev python3-pybind11
+skill-8cbbd6f03f56,semgrep_00006,file_operation,bulk_copy_and_archive,README.md,577,.malskills_fences/README__fence_11.sh,cp -r orangepi4pro-skill/ ~/.agents/skills/
+skill-8cbbd6f03f56,semgrep_00007,software_installation,package_manager,README.md,146,.malskills_fences/README__fence_6.sh,pip3 install paho-mqtt
+skill-8cbbd6f03f56,semgrep_00009,process_operation,identity_switch,README.md,226,.malskills_fences/README__fence_9.sh,sudo cp ai-guard.service /etc/systemd/system/
+skill-8cbbd6f03f56,semgrep_00010,file_operation,bulk_copy_and_archive,README.md,226,.malskills_fences/README__fence_9.sh,sudo cp ai-guard.service /etc/systemd/system/
+skill-8cbbd6f03f56,semgrep_00011,process_operation,identity_switch,README.md,227,.malskills_fences/README__fence_9.sh,sudo systemctl daemon-reload
+skill-8cbbd6f03f56,semgrep_00012,process_operation,identity_switch,README.md,228,.malskills_fences/README__fence_9.sh,sudo systemctl enable ai-guard     # 开机自启
+skill-8cbbd6f03f56,semgrep_00013,system_configuration,service_or_daemon_persistence,README.md,228,.malskills_fences/README__fence_9.sh,sudo systemctl enable ai-guard     # 开机自启
+skill-8cbbd6f03f56,semgrep_00014,process_operation,identity_switch,README.md,229,.malskills_fences/README__fence_9.sh,sudo systemctl start ai-guard       # 立即启动
+skill-8cbbd6f03f56,semgrep_00015,process_operation,identity_switch,README.md,230,.malskills_fences/README__fence_9.sh,sudo systemctl status ai-guard      # 验证运行状态
+skill-8cbbd6f03f56,semgrep_00016,network_access,remote_data_receive,SKILL.md,63,.malskills_fences/SKILL__fence_1.sh,curl -fsSL https://nodejs.org/dist/v20.x/node-v20.x-linux-arm64.tar.xz | sudo tar -xJ -C /usr/local --strip-components=1
+skill-8cbbd6f03f56,semgrep_00017,file_operation,bulk_copy_and_archive,SKILL.md,63,.malskills_fences/SKILL__fence_1.sh,curl -fsSL https://nodejs.org/dist/v20.x/node-v20.x-linux-arm64.tar.xz | sudo tar -xJ -C /usr/local --strip-components=1
+skill-8cbbd6f03f56,semgrep_00018,process_operation,identity_switch,SKILL.md,63,.malskills_fences/SKILL__fence_1.sh,curl -fsSL https://nodejs.org/dist/v20.x/node-v20.x-linux-arm64.tar.xz | sudo tar -xJ -C /usr/local --strip-components=1
+skill-8cbbd6f03f56,semgrep_00020,software_installation,package_manager,SKILL.md,64,.malskills_fences/SKILL__fence_1.sh,npm install -g @anthropic-ai/claude-code
+skill-8cbbd6f03f56,semgrep_00021,file_operation,bulk_copy_and_archive,SKILL.md,70,.malskills_fences/SKILL__fence_1.sh,cp -r orangepi4pro-skill/* ~/.agents/skills/orangepi4pro/
+skill-8cbbd6f03f56,semgrep_00022,process_operation,identity_switch,SKILL.md,483,.malskills_fences/SKILL__fence_10.sh,orangepi@orangepi:~$ sudo auto_login_cli.sh root
+skill-8cbbd6f03f56,semgrep_00023,process_operation,identity_switch,SKILL.md,486,.malskills_fences/SKILL__fence_10.sh,orangepi@orangepi:~$ sudo auto_login_cli.sh -d
+skill-8cbbd6f03f56,semgrep_00024,process_operation,identity_switch,SKILL.md,489,.malskills_fences/SKILL__fence_10.sh,orangepi@orangepi:~$ sudo auto_login_cli.sh orangepi
+skill-8cbbd6f03f56,semgrep_00025,process_operation,identity_switch,SKILL.md,1743,.malskills_fences/SKILL__fence_100.sh,sudo apt-get update && sudo apt-get install -y git
+skill-8cbbd6f03f56,semgrep_00027,software_installation,package_manager,SKILL.md,1743,.malskills_fences/SKILL__fence_100.sh,sudo apt-get update && sudo apt-get install -y git
+skill-8cbbd6f03f56,semgrep_00028,process_operation,identity_switch,SKILL.md,1789,.malskills_fences/SKILL__fence_103.sh,sudo ./build.sh GITEE_SERVER=yes
+skill-8cbbd6f03f56,semgrep_00029,network_access,remote_file_transfer,SKILL.md,1809,.malskills_fences/SKILL__fence_104.sh,scp linux-u-boot-current-orangepi4pro_x.x.x_arm64.deb root@192.168.1.xxx:/root
+skill-8cbbd6f03f56,semgrep_00030,process_operation,identity_switch,SKILL.md,1812,.malskills_fences/SKILL__fence_104.sh,sudo dpkg -i linux-u-boot-current-orangepi4pro_x.x.x_arm64.deb
+skill-8cbbd6f03f56,semgrep_00031,process_operation,identity_switch,SKILL.md,1813,.malskills_fences/SKILL__fence_104.sh,sudo nand-sata-install
+skill-8cbbd6f03f56,semgrep_00032,process_operation,identity_switch,SKILL.md,1821,.malskills_fences/SKILL__fence_105.sh,sudo ./build.sh
+skill-8cbbd6f03f56,semgrep_00033,network_access,remote_file_transfer,SKILL.md,1849,.malskills_fences/SKILL__fence_106.sh,scp linux-image-current-sun60iw2_x.x.x_arm64.deb root@192.168.1.xxx:/root
+skill-8cbbd6f03f56,semgrep_00034,process_operation,identity_switch,SKILL.md,1851,.malskills_fences/SKILL__fence_106.sh,sudo dpkg -i linux-image-current-sun60iw2_x.x.x_arm64.deb
+skill-8cbbd6f03f56,semgrep_00035,process_operation,identity_switch,SKILL.md,1852,.malskills_fences/SKILL__fence_106.sh,sudo reboot
+skill-8cbbd6f03f56,semgrep_00037,process_operation,identity_switch,SKILL.md,1858,.malskills_fences/SKILL__fence_107.sh,sudo ./build.sh
+skill-8cbbd6f03f56,semgrep_00038,process_operation,identity_switch,SKILL.md,1880,.malskills_fences/SKILL__fence_109.sh,sudo ./build.sh
+skill-8cbbd6f03f56,semgrep_00039,process_operation,identity_switch,SKILL.md,500,.malskills_fences/SKILL__fence_11.sh,orangepi@orangepi:~$ sudo desktop_login.sh root
+skill-8cbbd6f03f56,semgrep_00040,process_operation,identity_switch,SKILL.md,504,.malskills_fences/SKILL__fence_11.sh,orangepi@orangepi:~$ sudo desktop_login.sh orangepi
+skill-8cbbd6f03f56,semgrep_00041,process_operation,identity_switch,SKILL.md,1948,.malskills_fences/SKILL__fence_110.sh,sudo apt-get update && sudo apt-get install -y adb
+skill-8cbbd6f03f56,semgrep_00043,software_installation,package_manager,SKILL.md,1948,.malskills_fences/SKILL__fence_110.sh,sudo apt-get update && sudo apt-get install -y adb
+skill-8cbbd6f03f56,semgrep_00044,process_operation,identity_switch,SKILL.md,2090,.malskills_fences/SKILL__fence_114.sh,sudo apt-get update
+skill-8cbbd6f03f56,semgrep_00045,process_operation,identity_switch,SKILL.md,2091,.malskills_fences/SKILL__fence_114.sh,sudo apt-get install -y git gnupg flex bison gperf build-essential \
+skill-8cbbd6f03f56,semgrep_00046,software_installation,package_manager,SKILL.md,2091,.malskills_fences/SKILL__fence_114.sh,sudo apt-get install -y git gnupg flex bison gperf build-essential \
+skill-8cbbd6f03f56,semgrep_00047,file_operation,bulk_copy_and_archive,SKILL.md,2092,.malskills_fences/SKILL__fence_114.sh,zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
+skill-8cbbd6f03f56,semgrep_00048,network_access,remote_data_receive,SKILL.md,2092,.malskills_fences/SKILL__fence_114.sh,zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
+skill-8cbbd6f03f56,semgrep_00049,payload_execution,shell_interpreter_execution,SKILL.md,2114,.malskills_fences/SKILL__fence_116.sh,source build/envsetup.sh
+skill-8cbbd6f03f56,semgrep_00050,process_operation,identity_switch,SKILL.md,2268,.malskills_fences/SKILL__fence_119.sh,sudo apt install -y python3-pip python3-pil
+skill-8cbbd6f03f56,semgrep_00051,software_installation,package_manager,SKILL.md,2268,.malskills_fences/SKILL__fence_119.sh,sudo apt install -y python3-pip python3-pil
+skill-8cbbd6f03f56,semgrep_00052,software_installation,package_manager,SKILL.md,2269,.malskills_fences/SKILL__fence_119.sh,pip3 install Adafruit-BBIO  # 或通过 pip 安装 luma.oled
+skill-8cbbd6f03f56,semgrep_00053,software_installation,package_manager,SKILL.md,2270,.malskills_fences/SKILL__fence_119.sh,pip3 install luma.oled
+skill-8cbbd6f03f56,semgrep_00054,payload_execution,no-subprocess-run,SKILL.md,2287,.malskills_fences/SKILL__fence_120.py,"result = subprocess.run(['hostname', '-I'], capture_output=True, text=True)"
+skill-8cbbd6f03f56,semgrep_00055,file_operation,no-open,SKILL.md,2293,.malskills_fences/SKILL__fence_120.py,"with open('/sys/class/thermal/thermal_zone0/temp', 'r') as f:"
+skill-8cbbd6f03f56,semgrep_00056,process_operation,identity_switch,SKILL.md,2311,.malskills_fences/SKILL__fence_121.sh,sudo apt install -y python3-opencv libopencv-dev
+skill-8cbbd6f03f56,semgrep_00057,software_installation,package_manager,SKILL.md,2311,.malskills_fences/SKILL__fence_121.sh,sudo apt install -y python3-opencv libopencv-dev
+skill-8cbbd6f03f56,semgrep_00058,payload_execution,no-subprocess-run,SKILL.md,2339,.malskills_fences/SKILL__fence_122.py,"result = subprocess.run(cmd, cwd=os.path.expanduser(""~/ai-sdk/examples/yolov5/build""),
+                           capture_output=True, text=True)"
+skill-8cbbd6f03f56,semgrep_00059,file_operation,no-open,SKILL.md,2412,.malskills_fences/SKILL__fence_123.py,with open('/sys/class/thermal/thermal_zone0/temp') as f:
+skill-8cbbd6f03f56,semgrep_00060,network_access,no-socket-gethostbyname,SKILL.md,2415,.malskills_fences/SKILL__fence_123.py,ip = socket.gethostbyname(socket.gethostname())
+skill-8cbbd6f03f56,semgrep_00061,network_access,no-socket-gethostname,SKILL.md,2415,.malskills_fences/SKILL__fence_123.py,ip = socket.gethostbyname(socket.gethostname())
+skill-8cbbd6f03f56,semgrep_00062,process_operation,identity_switch,SKILL.md,2498,.malskills_fences/SKILL__fence_125.sh,sudo apt install -y docker.io docker-compose-v2
+skill-8cbbd6f03f56,semgrep_00063,software_installation,package_manager,SKILL.md,2498,.malskills_fences/SKILL__fence_125.sh,sudo apt install -y docker.io docker-compose-v2
+skill-8cbbd6f03f56,semgrep_00064,sensitive_data_access,security_environment_discovery,SKILL.md,2498,.malskills_fences/SKILL__fence_125.sh,sudo apt install -y docker.io docker-compose-v2
+skill-8cbbd6f03f56,semgrep_00066,process_operation,identity_switch,SKILL.md,2499,.malskills_fences/SKILL__fence_125.sh,sudo usermod -aG docker $USER
+skill-8cbbd6f03f56,semgrep_00067,file_operation,group_or_acl_modification,SKILL.md,2499,.malskills_fences/SKILL__fence_125.sh,sudo usermod -aG docker $USER
+skill-8cbbd6f03f56,semgrep_00068,sensitive_data_access,security_environment_discovery,SKILL.md,2499,.malskills_fences/SKILL__fence_125.sh,sudo usermod -aG docker $USER
+skill-8cbbd6f03f56,semgrep_00069,sensitive_data_access,security_environment_discovery,SKILL.md,2503,.malskills_fences/SKILL__fence_125.sh,docker compose up -d
+skill-8cbbd6f03f56,semgrep_00070,process_operation,identity_switch,SKILL.md,2537,.malskills_fences/SKILL__fence_127.sh,sudo systemctl daemon-reload
+skill-8cbbd6f03f56,semgrep_00071,process_operation,identity_switch,SKILL.md,2538,.malskills_fences/SKILL__fence_127.sh,sudo systemctl enable my-gpio-app
+skill-8cbbd6f03f56,semgrep_00072,system_configuration,service_or_daemon_persistence,SKILL.md,2538,.malskills_fences/SKILL__fence_127.sh,sudo systemctl enable my-gpio-app
+skill-8cbbd6f03f56,semgrep_00073,process_operation,identity_switch,SKILL.md,2539,.malskills_fences/SKILL__fence_127.sh,sudo systemctl start my-gpio-app
+skill-8cbbd6f03f56,semgrep_00074,process_operation,identity_switch,SKILL.md,2540,.malskills_fences/SKILL__fence_127.sh,sudo systemctl status my-gpio-app
+skill-8cbbd6f03f56,semgrep_00075,process_operation,identity_switch,SKILL.md,538,.malskills_fences/SKILL__fence_13.sh,test@test:~$ sudo -i
+skill-8cbbd6f03f56,semgrep_00076,file_operation,content_read_and_parse,SKILL.md,2652,.malskills_fences/SKILL__fence_133.sh,cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+skill-8cbbd6f03f56,semgrep_00077,file_operation,content_read_and_parse,SKILL.md,2656,.malskills_fences/SKILL__fence_133.sh,cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+skill-8cbbd6f03f56,semgrep_00078,process_operation,identity_switch,SKILL.md,2659,.malskills_fences/SKILL__fence_133.sh,echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+skill-8cbbd6f03f56,semgrep_00079,process_operation,identity_switch,SKILL.md,2662,.malskills_fences/SKILL__fence_133.sh,echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+skill-8cbbd6f03f56,semgrep_00080,process_operation,identity_switch,SKILL.md,2675,.malskills_fences/SKILL__fence_134.sh,sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
+skill-8cbbd6f03f56,semgrep_00082,process_operation,identity_switch,SKILL.md,2678,.malskills_fences/SKILL__fence_134.sh,sudo swapoff -a
+skill-8cbbd6f03f56,semgrep_00083,process_operation,identity_switch,SKILL.md,2679,.malskills_fences/SKILL__fence_134.sh,sudo systemctl disable dphys-swapfile  # Debian
+skill-8cbbd6f03f56,semgrep_00084,process_operation,identity_switch,SKILL.md,2684,.malskills_fences/SKILL__fence_134.sh,sudo dd if=/dev/zero of=/mnt/nvme/swapfile bs=1M count=2048
+skill-8cbbd6f03f56,semgrep_00085,file_operation,data_destruction,SKILL.md,2684,.malskills_fences/SKILL__fence_134.sh,sudo dd if=/dev/zero of=/mnt/nvme/swapfile bs=1M count=2048
+skill-8cbbd6f03f56,semgrep_00086,process_operation,identity_switch,SKILL.md,2685,.malskills_fences/SKILL__fence_134.sh,sudo chmod 600 /mnt/nvme/swapfile
+skill-8cbbd6f03f56,semgrep_00087,file_operation,permission_modify,SKILL.md,2685,.malskills_fences/SKILL__fence_134.sh,sudo chmod 600 /mnt/nvme/swapfile
+skill-8cbbd6f03f56,semgrep_00088,process_operation,identity_switch,SKILL.md,2686,.malskills_fences/SKILL__fence_134.sh,sudo mkswap /mnt/nvme/swapfile
+skill-8cbbd6f03f56,semgrep_00089,process_operation,identity_switch,SKILL.md,2687,.malskills_fences/SKILL__fence_134.sh,sudo swapon /mnt/nvme/swapfile
+skill-8cbbd6f03f56,semgrep_00090,process_operation,identity_switch,SKILL.md,2694,.malskills_fences/SKILL__fence_135.sh,sudo hdparm -Tt /dev/mmcblk1  # TF 卡
+skill-8cbbd6f03f56,semgrep_00091,process_operation,identity_switch,SKILL.md,2695,.malskills_fences/SKILL__fence_135.sh,sudo hdparm -Tt /dev/mmcblk0  # eMMC
+skill-8cbbd6f03f56,semgrep_00092,file_operation,content_read_and_parse,SKILL.md,2698,.malskills_fences/SKILL__fence_135.sh,cat /sys/block/mmcblk1/queue/scheduler
+skill-8cbbd6f03f56,semgrep_00093,process_operation,identity_switch,SKILL.md,2702,.malskills_fences/SKILL__fence_135.sh,echo noop | sudo tee /sys/block/mmcblk1/queue/scheduler
+skill-8cbbd6f03f56,semgrep_00094,file_operation,content_read_and_parse,SKILL.md,2713,.malskills_fences/SKILL__fence_136.sh,"echo ""$(cat $z/type): $(( $(cat $z/temp) / 1000 ))°C"""
+skill-8cbbd6f03f56,semgrep_00096,file_operation,content_read_and_parse,SKILL.md,2717,.malskills_fences/SKILL__fence_136.sh,cat /sys/devices/virtual/thermal/thermal_zone0/trip_point_*_temp
+skill-8cbbd6f03f56,semgrep_00097,process_operation,identity_switch,SKILL.md,2730,.malskills_fences/SKILL__fence_137.sh,sudo ethtool -G eth0 rx 1024 tx 1024
+skill-8cbbd6f03f56,semgrep_00098,sensitive_data_access,system_info,SKILL.md,2736,.malskills_fences/SKILL__fence_137.sh,# TCP 调优（编辑 /etc/sysctl.conf）
+skill-8cbbd6f03f56,semgrep_00099,process_operation,identity_switch,SKILL.md,2741,.malskills_fences/SKILL__fence_137.sh,sudo sysctl -p
+skill-8cbbd6f03f56,semgrep_00100,sensitive_data_access,system_info,SKILL.md,2741,.malskills_fences/SKILL__fence_137.sh,sudo sysctl -p
+skill-8cbbd6f03f56,semgrep_00101,file_operation,content_read_and_parse,SKILL.md,2748,.malskills_fences/SKILL__fence_138.sh,cat /sys/class/thermal/thermal_zone5/temp
+skill-8cbbd6f03f56,semgrep_00102,file_operation,content_read_and_parse,SKILL.md,2749,.malskills_fences/SKILL__fence_138.sh,cat /sys/class/thermal/cooling_device*/type
+skill-8cbbd6f03f56,semgrep_00103,process_operation,identity_switch,SKILL.md,2752,.malskills_fences/SKILL__fence_138.sh,echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+skill-8cbbd6f03f56,semgrep_00104,process_operation,identity_switch,SKILL.md,2755,.malskills_fences/SKILL__fence_138.sh,sudo systemctl stop bluetooth
+skill-8cbbd6f03f56,semgrep_00105,process_operation,identity_switch,SKILL.md,2756,.malskills_fences/SKILL__fence_138.sh,sudo systemctl stop ModemManager
+skill-8cbbd6f03f56,semgrep_00106,process_operation,identity_switch,SKILL.md,2769,.malskills_fences/SKILL__fence_139.sh,sudo systemctl disable bluetooth    # 不用蓝牙
+skill-8cbbd6f03f56,semgrep_00107,process_operation,identity_switch,SKILL.md,2770,.malskills_fences/SKILL__fence_139.sh,sudo systemctl disable ModemManager # 不用 4G 模块
+skill-8cbbd6f03f56,semgrep_00108,process_operation,identity_switch,SKILL.md,2771,.malskills_fences/SKILL__fence_139.sh,sudo systemctl disable NetworkManager-wait-online.service  # 不等待网络
+skill-8cbbd6f03f56,semgrep_00109,file_operation,deletion_or_overwrite,SKILL.md,548,.malskills_fences/SKILL__fence_14.sh,root@orangepi:~# rm /root/.no_rootfs_resize
+skill-8cbbd6f03f56,semgrep_00110,system_configuration,service_or_daemon_persistence,SKILL.md,549,.malskills_fences/SKILL__fence_14.sh,root@orangepi:~# systemctl enable orangepi-resize-filesystem.service
+skill-8cbbd6f03f56,semgrep_00111,process_operation,identity_switch,SKILL.md,550,.malskills_fences/SKILL__fence_14.sh,root@orangepi:~# sudo reboot
+skill-8cbbd6f03f56,semgrep_00113,process_operation,identity_switch,SKILL.md,2783,.malskills_fences/SKILL__fence_140.sh,sudo passwd root
+skill-8cbbd6f03f56,semgrep_00114,process_operation,identity_switch,SKILL.md,2786,.malskills_fences/SKILL__fence_140.sh,sudo apt update && sudo apt upgrade -y
+skill-8cbbd6f03f56,semgrep_00116,network_access,remote_login,SKILL.md,2788,.malskills_fences/SKILL__fence_140.sh,# 安装 fail2ban（防暴力破解 SSH）
+skill-8cbbd6f03f56,semgrep_00118,process_operation,identity_switch,SKILL.md,2789,.malskills_fences/SKILL__fence_140.sh,sudo apt install -y fail2ban
+skill-8cbbd6f03f56,semgrep_00119,software_installation,package_manager,SKILL.md,2789,.malskills_fences/SKILL__fence_140.sh,sudo apt install -y fail2ban
+skill-8cbbd6f03f56,semgrep_00120,process_operation,identity_switch,SKILL.md,2790,.malskills_fences/SKILL__fence_140.sh,sudo systemctl enable fail2ban
+skill-8cbbd6f03f56,semgrep_00121,system_configuration,service_or_daemon_persistence,SKILL.md,2790,.malskills_fences/SKILL__fence_140.sh,sudo systemctl enable fail2ban
+skill-8cbbd6f03f56,semgrep_00122,network_access,remote_login,SKILL.md,2791,.malskills_fences/SKILL__fence_140.sh,# 默认配置即可保护 SSH
+skill-8cbbd6f03f56,semgrep_00124,network_access,remote_login,SKILL.md,2797,.malskills_fences/SKILL__fence_141.sh,# 编辑 /etc/ssh/sshd_config
+skill-8cbbd6f03f56,semgrep_00126,process_operation,identity_switch,SKILL.md,2798,.malskills_fences/SKILL__fence_141.sh,sudo vim /etc/ssh/sshd_config
+skill-8cbbd6f03f56,semgrep_00127,network_access,remote_login,SKILL.md,2798,.malskills_fences/SKILL__fence_141.sh,sudo vim /etc/ssh/sshd_config
+skill-8cbbd6f03f56,semgrep_00129,network_access,remote_login,SKILL.md,2801,.malskills_fences/SKILL__fence_141.sh,# PermitRootLogin no              # 禁用 root SSH 登录
+skill-8cbbd6f03f56,semgrep_00131,payload_execution,remote_command_execution,SKILL.md,2801,.malskills_fences/SKILL__fence_141.sh,"# PermitRootLogin no              # 禁用 root SSH 登录
+# PasswordAuthentication no       # 禁用密码登录（用密钥）"
+skill-8cbbd6f03f56,semgrep_00132,process_operation,identity_switch,SKILL.md,2808,.malskills_fences/SKILL__fence_141.sh,sudo systemctl restart sshd
+skill-8cbbd6f03f56,semgrep_00133,network_access,remote_login,SKILL.md,2815,.malskills_fences/SKILL__fence_142.sh,"ssh-keygen -t ed25519 -C ""orangepi4pro"""
+skill-8cbbd6f03f56,semgrep_00135,network_access,remote_login,SKILL.md,2818,.malskills_fences/SKILL__fence_142.sh,ssh-copy-id -i ~/.ssh/id_ed25519.pub orangepi@<开发板IP>
+skill-8cbbd6f03f56,semgrep_00137,sensitive_data_access,private_key_or_api_key_access,SKILL.md,2818,.malskills_fences/SKILL__fence_142.sh,ssh-copy-id -i ~/.ssh/id_ed25519.pub orangepi@<开发板IP>
+skill-8cbbd6f03f56,semgrep_00141,process_operation,identity_switch,SKILL.md,2821,.malskills_fences/SKILL__fence_142.sh,sudo sed -i 's/^PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+skill-8cbbd6f03f56,semgrep_00142,file_operation,file_write_or_timestamp_modify,SKILL.md,2821,.malskills_fences/SKILL__fence_142.sh,sudo sed -i 's/^PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+skill-8cbbd6f03f56,semgrep_00143,network_access,remote_login,SKILL.md,2821,.malskills_fences/SKILL__fence_142.sh,sudo sed -i 's/^PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+skill-8cbbd6f03f56,semgrep_00145,process_operation,identity_switch,SKILL.md,2822,.malskills_fences/SKILL__fence_142.sh,sudo systemctl restart sshd
+skill-8cbbd6f03f56,semgrep_00146,process_operation,identity_switch,SKILL.md,2829,.malskills_fences/SKILL__fence_143.sh,sudo apt install -y ufw
+skill-8cbbd6f03f56,semgrep_00147,software_installation,package_manager,SKILL.md,2829,.malskills_fences/SKILL__fence_143.sh,sudo apt install -y ufw
+skill-8cbbd6f03f56,semgrep_00148,process_operation,identity_switch,SKILL.md,2832,.malskills_fences/SKILL__fence_143.sh,sudo ufw default deny incoming
+skill-8cbbd6f03f56,semgrep_00149,process_operation,identity_switch,SKILL.md,2833,.malskills_fences/SKILL__fence_143.sh,sudo ufw default allow outgoing
+skill-8cbbd6f03f56,semgrep_00150,process_operation,identity_switch,SKILL.md,2836,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 22        # SSH（如果改了端口则改这里）
+skill-8cbbd6f03f56,semgrep_00151,network_access,remote_login,SKILL.md,2836,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 22        # SSH（如果改了端口则改这里）
+skill-8cbbd6f03f56,semgrep_00153,process_operation,identity_switch,SKILL.md,2837,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 80        # HTTP
+skill-8cbbd6f03f56,semgrep_00154,process_operation,identity_switch,SKILL.md,2838,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 443       # HTTPS
+skill-8cbbd6f03f56,semgrep_00155,process_operation,identity_switch,SKILL.md,2839,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 1883      # MQTT
+skill-8cbbd6f03f56,semgrep_00156,process_operation,identity_switch,SKILL.md,2840,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 8123      # Home Assistant
+skill-8cbbd6f03f56,semgrep_00157,process_operation,identity_switch,SKILL.md,2841,.malskills_fences/SKILL__fence_143.sh,sudo ufw allow 8080      # 自定义 Web 服务
+skill-8cbbd6f03f56,semgrep_00158,process_operation,identity_switch,SKILL.md,2844,.malskills_fences/SKILL__fence_143.sh,sudo ufw enable
+skill-8cbbd6f03f56,semgrep_00159,process_operation,identity_switch,SKILL.md,2845,.malskills_fences/SKILL__fence_143.sh,sudo ufw status verbose
+skill-8cbbd6f03f56,semgrep_00160,process_operation,identity_switch,SKILL.md,2853,.malskills_fences/SKILL__fence_144.sh,"echo ""tmpfs /tmp tmpfs defaults,noatime,nosuid,size=512M 0 0"" | sudo tee -a /etc/fstab"
+skill-8cbbd6f03f56,semgrep_00161,process_operation,identity_switch,SKILL.md,2854,.malskills_fences/SKILL__fence_144.sh,"echo ""tmpfs /var/log tmpfs defaults,noatime,nosuid,size=256M 0 0"" | sudo tee -a /etc/fstab"
+skill-8cbbd6f03f56,semgrep_00162,process_operation,identity_switch,SKILL.md,2857,.malskills_fences/SKILL__fence_144.sh,sudo apt install -y logrotate
+skill-8cbbd6f03f56,semgrep_00163,software_installation,package_manager,SKILL.md,2857,.malskills_fences/SKILL__fence_144.sh,sudo apt install -y logrotate
+skill-8cbbd6f03f56,semgrep_00164,sensitive_data_access,system_info,SKILL.md,2864,.malskills_fences/SKILL__fence_145.sh,# 编辑 /etc/sysctl.d/99-security.conf
+skill-8cbbd6f03f56,semgrep_00165,process_operation,identity_switch,SKILL.md,2865,.malskills_fences/SKILL__fence_145.sh,sudo tee /etc/sysctl.d/99-security.conf << 'EOF'
+skill-8cbbd6f03f56,semgrep_00166,sensitive_data_access,system_info,SKILL.md,2865,.malskills_fences/SKILL__fence_145.sh,sudo tee /etc/sysctl.d/99-security.conf << 'EOF'
+skill-8cbbd6f03f56,semgrep_00167,process_operation,identity_switch,SKILL.md,2877,.malskills_fences/SKILL__fence_145.sh,sudo sysctl -p /etc/sysctl.d/99-security.conf
+skill-8cbbd6f03f56,semgrep_00168,sensitive_data_access,system_info,SKILL.md,2877,.malskills_fences/SKILL__fence_145.sh,sudo sysctl -p /etc/sysctl.d/99-security.conf
+skill-8cbbd6f03f56,semgrep_00170,process_operation,identity_switch,SKILL.md,3057,.malskills_fences/SKILL__fence_146.sh,sudo orangepi-config  # System → Hardware → 选中 w1-gpio → Save → Reboot
+skill-8cbbd6f03f56,semgrep_00172,file_operation,content_read_and_parse,SKILL.md,3150,.malskills_fences/SKILL__fence_149.sh,cat > CMakeLists.txt << 'EOF'
+skill-8cbbd6f03f56,semgrep_00173,file_operation,content_read_and_parse,SKILL.md,3160,.malskills_fences/SKILL__fence_149.sh,cat > main.c << 'EOF'
+skill-8cbbd6f03f56,semgrep_00174,process_operation,identity_switch,SKILL.md,3192,.malskills_fences/SKILL__fence_149.sh,sudo ./app
+skill-8cbbd6f03f56,semgrep_00175,process_operation,identity_switch,SKILL.md,559,.malskills_fences/SKILL__fence_15.sh,test@test:~$ sudo apt install -y gparted
+skill-8cbbd6f03f56,semgrep_00176,software_installation,package_manager,SKILL.md,559,.malskills_fences/SKILL__fence_15.sh,test@test:~$ sudo apt install -y gparted
+skill-8cbbd6f03f56,semgrep_00177,process_operation,identity_switch,SKILL.md,560,.malskills_fences/SKILL__fence_15.sh,test@test:~$ sudo gparted
+skill-8cbbd6f03f56,semgrep_00178,network_access,no-socket-gethostname,SKILL.md,3211,.malskills_fences/SKILL__fence_150.py,"CLIENT_ID = f""opi4pro_{socket.gethostname()}"""
+skill-8cbbd6f03f56,semgrep_00179,file_operation,content_read_and_parse,SKILL.md,3317,.malskills_fences/SKILL__fence_155.sh,cat > aarch64-toolchain.cmake << 'EOF'
+skill-8cbbd6f03f56,semgrep_00180,network_access,remote_login,SKILL.md,3346,.malskills_fences/SKILL__fence_156.sh,"ssh $OPI_USER@$OPI_IP ""sudo systemctl stop my-app"""
+skill-8cbbd6f03f56,semgrep_00182,payload_execution,remote_command_execution,SKILL.md,3346,.malskills_fences/SKILL__fence_156.sh,"ssh $OPI_USER@$OPI_IP ""sudo systemctl stop my-app"""
+skill-8cbbd6f03f56,semgrep_00183,process_operation,identity_switch,SKILL.md,3346,.malskills_fences/SKILL__fence_156.sh,"ssh $OPI_USER@$OPI_IP ""sudo systemctl stop my-app"""
+skill-8cbbd6f03f56,semgrep_00184,network_access,remote_file_transfer,SKILL.md,3349,.malskills_fences/SKILL__fence_156.sh,scp my-app $OPI_USER@$OPI_IP:$OPI_PATH/
+skill-8cbbd6f03f56,semgrep_00185,network_access,remote_login,SKILL.md,3352,.malskills_fences/SKILL__fence_156.sh,"ssh $OPI_USER@$OPI_IP ""sudo systemctl start my-app && sudo systemctl status my-app"""
+skill-8cbbd6f03f56,semgrep_00187,payload_execution,remote_command_execution,SKILL.md,3352,.malskills_fences/SKILL__fence_156.sh,"ssh $OPI_USER@$OPI_IP ""sudo systemctl start my-app && sudo systemctl status my-app"""
+skill-8cbbd6f03f56,semgrep_00188,process_operation,identity_switch,SKILL.md,3352,.malskills_fences/SKILL__fence_156.sh,"ssh $OPI_USER@$OPI_IP ""sudo systemctl start my-app && sudo systemctl status my-app"""
+skill-8cbbd6f03f56,semgrep_00190,network_access,remote_login,SKILL.md,3361,.malskills_fences/SKILL__fence_157.sh,ssh-keygen -t ed25519 -f ~/.ssh/opi4pro-deploy
+skill-8cbbd6f03f56,semgrep_00192,sensitive_data_access,private_key_or_api_key_access,SKILL.md,3361,.malskills_fences/SKILL__fence_157.sh,ssh-keygen -t ed25519 -f ~/.ssh/opi4pro-deploy
+skill-8cbbd6f03f56,semgrep_00195,network_access,remote_login,SKILL.md,3362,.malskills_fences/SKILL__fence_157.sh,ssh-copy-id -i ~/.ssh/opi4pro-deploy.pub orangepi@192.168.1.110
+skill-8cbbd6f03f56,semgrep_00197,sensitive_data_access,private_key_or_api_key_access,SKILL.md,3362,.malskills_fences/SKILL__fence_157.sh,ssh-copy-id -i ~/.ssh/opi4pro-deploy.pub orangepi@192.168.1.110
+skill-8cbbd6f03f56,semgrep_00200,network_access,remote_login,SKILL.md,3364,.malskills_fences/SKILL__fence_157.sh,# 配置 SSH alias
+skill-8cbbd6f03f56,semgrep_00202,payload_execution,remote_command_execution,SKILL.md,3364,.malskills_fences/SKILL__fence_157.sh,"# 配置 SSH alias
+cat >> ~/.ssh/config << 'EOF'"
+skill-8cbbd6f03f56,semgrep_00203,file_operation,content_read_and_parse,SKILL.md,3365,.malskills_fences/SKILL__fence_157.sh,cat >> ~/.ssh/config << 'EOF'
+skill-8cbbd6f03f56,semgrep_00204,sensitive_data_access,private_key_or_api_key_access,SKILL.md,3365,.malskills_fences/SKILL__fence_157.sh,cat >> ~/.ssh/config << 'EOF'
+skill-8cbbd6f03f56,semgrep_00205,network_access,remote_login,SKILL.md,3365,.malskills_fences/SKILL__fence_157.sh,cat >> ~/.ssh/config << 'EOF'
+skill-8cbbd6f03f56,semgrep_00207,sensitive_data_access,system_info,SKILL.md,3367,.malskills_fences/SKILL__fence_157.sh,HostName 192.168.1.110
+skill-8cbbd6f03f56,semgrep_00208,sensitive_data_access,private_key_or_api_key_access,SKILL.md,3369,.malskills_fences/SKILL__fence_157.sh,IdentityFile ~/.ssh/opi4pro-deploy
+skill-8cbbd6f03f56,semgrep_00209,network_access,remote_login,SKILL.md,3369,.malskills_fences/SKILL__fence_157.sh,IdentityFile ~/.ssh/opi4pro-deploy
+skill-8cbbd6f03f56,semgrep_00211,network_access,remote_file_transfer,SKILL.md,3374,.malskills_fences/SKILL__fence_157.sh,# scp file opi4pro:~/  或  ssh opi4pro
+skill-8cbbd6f03f56,semgrep_00212,network_access,remote_login,SKILL.md,3374,.malskills_fences/SKILL__fence_157.sh,# scp file opi4pro:~/  或  ssh opi4pro
+skill-8cbbd6f03f56,semgrep_00214,file_operation,bulk_copy_and_archive,SKILL.md,3381,.malskills_fences/SKILL__fence_158.sh,rsync -avz --exclude '.git' --exclude '__pycache__' \
+skill-8cbbd6f03f56,semgrep_00215,network_access,remote_file_transfer,SKILL.md,3381,.malskills_fences/SKILL__fence_158.sh,rsync -avz --exclude '.git' --exclude '__pycache__' \
+skill-8cbbd6f03f56,semgrep_00216,process_operation,identity_switch,SKILL.md,3385,.malskills_fences/SKILL__fence_158.sh,# 需要 inotify-tools：sudo apt install inotify-tools
+skill-8cbbd6f03f56,semgrep_00217,software_installation,package_manager,SKILL.md,3385,.malskills_fences/SKILL__fence_158.sh,# 需要 inotify-tools：sudo apt install inotify-tools
+skill-8cbbd6f03f56,semgrep_00218,file_operation,bulk_copy_and_archive,SKILL.md,3387,.malskills_fences/SKILL__fence_158.sh,rsync -avz --exclude '.git' ~/my-project/ opi4pro:~/my-project/
+skill-8cbbd6f03f56,semgrep_00219,network_access,remote_file_transfer,SKILL.md,3387,.malskills_fences/SKILL__fence_158.sh,rsync -avz --exclude '.git' ~/my-project/ opi4pro:~/my-project/
+skill-8cbbd6f03f56,semgrep_00220,network_access,remote_login,SKILL.md,3395,.malskills_fences/SKILL__fence_159.sh,# 在 VS Code 中安装 Remote-SSH 插件
+skill-8cbbd6f03f56,semgrep_00222,payload_execution,remote_command_execution,SKILL.md,3395,.malskills_fences/SKILL__fence_159.sh,"# 在 VS Code 中安装 Remote-SSH 插件
+# .ssh/config 配置好 opi4pro host 后"
+skill-8cbbd6f03f56,semgrep_00223,sensitive_data_access,private_key_or_api_key_access,SKILL.md,3396,.malskills_fences/SKILL__fence_159.sh,# .ssh/config 配置好 opi4pro host 后
+skill-8cbbd6f03f56,semgrep_00224,network_access,remote_login,SKILL.md,3396,.malskills_fences/SKILL__fence_159.sh,# .ssh/config 配置好 opi4pro host 后
+skill-8cbbd6f03f56,semgrep_00226,network_access,remote_login,SKILL.md,3397,.malskills_fences/SKILL__fence_159.sh,# Ctrl+Shift+P → Remote-SSH: Connect to Host → opi4pro
+skill-8cbbd6f03f56,semgrep_00228,network_access,network_discovery,SKILL.md,578,.malskills_fences/SKILL__fence_16.sh,orangepi@orangepi:~$ ip a eth0
+skill-8cbbd6f03f56,semgrep_00229,process_operation,identity_switch,SKILL.md,3406,.malskills_fences/SKILL__fence_160.sh,sudo apt install -y gdbserver
+skill-8cbbd6f03f56,semgrep_00230,software_installation,package_manager,SKILL.md,3406,.malskills_fences/SKILL__fence_160.sh,sudo apt install -y gdbserver
+skill-8cbbd6f03f56,semgrep_00231,process_operation,identity_switch,SKILL.md,594,.malskills_fences/SKILL__fence_17.sh,orangepi@orangepi:~$ sudo nmcli dev wifi connect wifi_name password wifi_passwd
+skill-8cbbd6f03f56,semgrep_00232,network_access,network_discovery,SKILL.md,597,.malskills_fences/SKILL__fence_17.sh,orangepi@orangepi:~$ ip a wlan0
+skill-8cbbd6f03f56,semgrep_00233,process_operation,identity_switch,SKILL.md,605,.malskills_fences/SKILL__fence_18.sh,orangepi@orangepi:~$ sudo nmtui
+skill-8cbbd6f03f56,semgrep_00234,process_operation,identity_switch,SKILL.md,620,.malskills_fences/SKILL__fence_19.sh,sudo create_ap -m nat wlan0 eth0 orangepi orangepi --no-virt
+skill-8cbbd6f03f56,semgrep_00235,process_operation,identity_switch,SKILL.md,623,.malskills_fences/SKILL__fence_19.sh,sudo create_ap -m nat wlan0 eth0 orangepi orangepi -g 192.168.2.1 --no-virt
+skill-8cbbd6f03f56,semgrep_00236,process_operation,identity_switch,SKILL.md,626,.malskills_fences/SKILL__fence_19.sh,sudo create_ap -m nat wlan0 eth0 orangepi orangepi --freq-band 5 --no-virt
+skill-8cbbd6f03f56,semgrep_00237,process_operation,identity_switch,SKILL.md,629,.malskills_fences/SKILL__fence_19.sh,sudo create_ap -m nat wlan0 eth0 orangepi orangepi --hidden --no-virt
+skill-8cbbd6f03f56,semgrep_00238,file_operation,bulk_copy_and_archive,SKILL.md,212,.malskills_fences/SKILL__fence_2.sh,test@test:~$ 7z x Orangepi4pro_1.0.0_ubuntu_jammy_desktop_linux5.15.147.7z
+skill-8cbbd6f03f56,semgrep_00240,file_operation,bulk_copy_and_archive,SKILL.md,214,.malskills_fences/SKILL__fence_2.sh,# .7z .sha .img
+skill-8cbbd6f03f56,semgrep_00241,process_operation,identity_switch,SKILL.md,634,.malskills_fences/SKILL__fence_20.sh,sudo create_ap -m bridge wlan0 eth0 orangepi orangepi --no-virt
+skill-8cbbd6f03f56,semgrep_00242,process_operation,identity_switch,SKILL.md,635,.malskills_fences/SKILL__fence_20.sh,sudo create_ap -m bridge wlan0 eth0 orangepi orangepi --freq-band 5 --no-virt
+skill-8cbbd6f03f56,semgrep_00243,process_operation,identity_switch,SKILL.md,636,.malskills_fences/SKILL__fence_20.sh,sudo create_ap -m bridge wlan0 eth0 orangepi orangepi --hidden --no-virt
+skill-8cbbd6f03f56,semgrep_00244,process_operation,identity_switch,SKILL.md,645,.malskills_fences/SKILL__fence_21.sh,orangepi@orangepi:~$ sudo nmtui
+skill-8cbbd6f03f56,semgrep_00245,process_operation,identity_switch,SKILL.md,656,.malskills_fences/SKILL__fence_22.sh,"sudo nmcli con mod ""Wired connection 1"" \"
+skill-8cbbd6f03f56,semgrep_00246,process_operation,identity_switch,SKILL.md,663,.malskills_fences/SKILL__fence_22.sh,sudo reboot
+skill-8cbbd6f03f56,semgrep_00248,process_operation,identity_switch,SKILL.md,682,.malskills_fences/SKILL__fence_25.sh,sudo cp orangepi_first_run.txt.template orangepi_first_run.txt
+skill-8cbbd6f03f56,semgrep_00249,file_operation,bulk_copy_and_archive,SKILL.md,682,.malskills_fences/SKILL__fence_25.sh,sudo cp orangepi_first_run.txt.template orangepi_first_run.txt
+skill-8cbbd6f03f56,semgrep_00250,process_operation,identity_switch,SKILL.md,686,.malskills_fences/SKILL__fence_26.sh,sudo vim orangepi_first_run.txt
+skill-8cbbd6f03f56,semgrep_00251,network_access,remote_login,SKILL.md,736,.malskills_fences/SKILL__fence_30.sh,test@test:~$ ssh orangepi@192.168.1.xxx
+skill-8cbbd6f03f56,semgrep_00253,payload_execution,remote_command_execution,SKILL.md,736,.malskills_fences/SKILL__fence_30.sh,"test@test:~$ ssh orangepi@192.168.1.xxx
+# 密码：orangepi（不显示）"
+skill-8cbbd6f03f56,semgrep_00254,process_operation,identity_switch,SKILL.md,754,.malskills_fences/SKILL__fence_32.sh,sudo /etc/adb_conf.sh
+skill-8cbbd6f03f56,semgrep_00255,process_operation,identity_switch,SKILL.md,760,.malskills_fences/SKILL__fence_33.sh,sudo apt-get update && sudo apt-get install -y adb
+skill-8cbbd6f03f56,semgrep_00257,software_installation,package_manager,SKILL.md,760,.malskills_fences/SKILL__fence_33.sh,sudo apt-get update && sudo apt-get install -y adb
+skill-8cbbd6f03f56,semgrep_00258,process_operation,availability_disruption,SKILL.md,765,.malskills_fences/SKILL__fence_33.sh,adb reboot         # 重启开发板
+skill-8cbbd6f03f56,semgrep_00259,process_operation,identity_switch,SKILL.md,794,.malskills_fences/SKILL__fence_34.sh,sudo apt update && sudo apt install -y bluez
+skill-8cbbd6f03f56,semgrep_00261,software_installation,package_manager,SKILL.md,794,.malskills_fences/SKILL__fence_34.sh,sudo apt update && sudo apt install -y bluez
+skill-8cbbd6f03f56,semgrep_00262,process_operation,identity_switch,SKILL.md,800,.malskills_fences/SKILL__fence_34.sh,sudo bluetoothctl
+skill-8cbbd6f03f56,semgrep_00263,process_operation,identity_switch,SKILL.md,811,.malskills_fences/SKILL__fence_34.sh,sudo apt update && sudo apt -y install pulseaudio-module-bluetooth
+skill-8cbbd6f03f56,semgrep_00265,process_operation,identity_switch,SKILL.md,814,.malskills_fences/SKILL__fence_34.sh,sudo bluetoothctl
+skill-8cbbd6f03f56,semgrep_00266,file_operation,content_read_and_parse,SKILL.md,828,.malskills_fences/SKILL__fence_35.sh,"cat /proc/partitions | grep ""sd*"""
+skill-8cbbd6f03f56,semgrep_00267,process_operation,identity_switch,SKILL.md,831,.malskills_fences/SKILL__fence_35.sh,sudo mount /dev/sda1 /mnt/
+skill-8cbbd6f03f56,semgrep_00268,file_operation,file_enumeration_and_location,SKILL.md,832,.malskills_fences/SKILL__fence_35.sh,ls /mnt/
+skill-8cbbd6f03f56,semgrep_00269,file_operation,content_read_and_parse,SKILL.md,846,.malskills_fences/SKILL__fence_36.sh,dmesg | tail
+skill-8cbbd6f03f56,semgrep_00270,process_operation,identity_switch,SKILL.md,848,.malskills_fences/SKILL__fence_36.sh,sudo ifconfig
+skill-8cbbd6f03f56,semgrep_00271,network_access,network_discovery,SKILL.md,848,.malskills_fences/SKILL__fence_36.sh,sudo ifconfig
+skill-8cbbd6f03f56,semgrep_00272,file_operation,file_enumeration_and_location,SKILL.md,857,.malskills_fences/SKILL__fence_37.sh,lsmod
+skill-8cbbd6f03f56,semgrep_00273,process_operation,identity_switch,SKILL.md,860,.malskills_fences/SKILL__fence_37.sh,sudo apt update && sudo apt install -y v4l-utils
+skill-8cbbd6f03f56,semgrep_00275,software_installation,package_manager,SKILL.md,860,.malskills_fences/SKILL__fence_37.sh,sudo apt update && sudo apt install -y v4l-utils
+skill-8cbbd6f03f56,semgrep_00276,process_operation,identity_switch,SKILL.md,866,.malskills_fences/SKILL__fence_38.sh,sudo apt-get install -y fswebcam
+skill-8cbbd6f03f56,semgrep_00277,software_installation,package_manager,SKILL.md,866,.malskills_fences/SKILL__fence_38.sh,sudo apt-get install -y fswebcam
+skill-8cbbd6f03f56,semgrep_00278,process_operation,identity_switch,SKILL.md,867,.malskills_fences/SKILL__fence_38.sh,sudo fswebcam -d /dev/video0 --no-banner -r 1280x720 -S 5 ./image.jpg
+skill-8cbbd6f03f56,semgrep_00279,network_access,remote_file_transfer,SKILL.md,869,.malskills_fences/SKILL__fence_38.sh,scp image.jpg test@192.168.1.55:/home/test
+skill-8cbbd6f03f56,semgrep_00280,process_operation,identity_switch,SKILL.md,879,.malskills_fences/SKILL__fence_39.sh,sudo apt-get install -y cmake libjpeg8-dev
+skill-8cbbd6f03f56,semgrep_00281,software_installation,package_manager,SKILL.md,879,.malskills_fences/SKILL__fence_39.sh,sudo apt-get install -y cmake libjpeg8-dev
+skill-8cbbd6f03f56,semgrep_00282,process_operation,identity_switch,SKILL.md,881,.malskills_fences/SKILL__fence_39.sh,sudo apt-get install -y cmake libjpeg62-turbo-dev
+skill-8cbbd6f03f56,semgrep_00283,software_installation,package_manager,SKILL.md,881,.malskills_fences/SKILL__fence_39.sh,sudo apt-get install -y cmake libjpeg62-turbo-dev
+skill-8cbbd6f03f56,semgrep_00284,process_operation,identity_switch,SKILL.md,886,.malskills_fences/SKILL__fence_39.sh,sudo make install
+skill-8cbbd6f03f56,semgrep_00285,process_operation,identity_switch,SKILL.md,890,.malskills_fences/SKILL__fence_39.sh,"sudo ./mjpg_streamer -i ""./input_uvc.so -d /dev/video0 -u -f 30"" -o ""./output_http.so -w ./www"""
+skill-8cbbd6f03f56,semgrep_00286,process_operation,identity_switch,SKILL.md,933,.malskills_fences/SKILL__fence_45.sh,sudo i2cset -y -f 7 0x10 0x23 0x10
+skill-8cbbd6f03f56,semgrep_00287,file_operation,content_read_and_parse,SKILL.md,951,.malskills_fences/SKILL__fence_46.sh,cat /sys/class/thermal/thermal_zone0/type   # cpul_thermal_zone
+skill-8cbbd6f03f56,semgrep_00288,file_operation,content_read_and_parse,SKILL.md,952,.malskills_fences/SKILL__fence_46.sh,cat /sys/class/thermal/thermal_zone0/temp   # 如 54925 = 54.925°C
+skill-8cbbd6f03f56,semgrep_00289,process_operation,identity_switch,SKILL.md,973,.malskills_fences/SKILL__fence_48.sh,sudo apt update && sudo apt install -y git
+skill-8cbbd6f03f56,semgrep_00291,software_installation,package_manager,SKILL.md,973,.malskills_fences/SKILL__fence_48.sh,sudo apt update && sudo apt install -y git
+skill-8cbbd6f03f56,semgrep_00292,process_operation,identity_switch,SKILL.md,976,.malskills_fences/SKILL__fence_48.sh,sudo ./build clean
+skill-8cbbd6f03f56,semgrep_00293,process_operation,identity_switch,SKILL.md,977,.malskills_fences/SKILL__fence_48.sh,sudo ./build
+skill-8cbbd6f03f56,semgrep_00294,process_operation,identity_switch,SKILL.md,309,.malskills_fences/SKILL__fence_5.sh,test@test:~$ sudo apt update
+skill-8cbbd6f03f56,semgrep_00295,process_operation,identity_switch,SKILL.md,310,.malskills_fences/SKILL__fence_5.sh,test@test:~$ sudo apt install -y putty
+skill-8cbbd6f03f56,semgrep_00296,software_installation,package_manager,SKILL.md,310,.malskills_fences/SKILL__fence_5.sh,test@test:~$ sudo apt install -y putty
+skill-8cbbd6f03f56,semgrep_00297,process_operation,identity_switch,SKILL.md,312,.malskills_fences/SKILL__fence_5.sh,# 3. 以 sudo 运行 putty
+skill-8cbbd6f03f56,semgrep_00298,process_operation,identity_switch,SKILL.md,313,.malskills_fences/SKILL__fence_5.sh,test@test:~$ sudo putty
+skill-8cbbd6f03f56,semgrep_00299,file_operation,file_enumeration_and_location,SKILL.md,1032,.malskills_fences/SKILL__fence_51.sh,ls /dev/spidev*
+skill-8cbbd6f03f56,semgrep_00300,process_operation,identity_switch,SKILL.md,1036,.malskills_fences/SKILL__fence_51.sh,sudo spidev_test -v -D /dev/spidev3.0
+skill-8cbbd6f03f56,semgrep_00301,process_operation,identity_switch,SKILL.md,1039,.malskills_fences/SKILL__fence_51.sh,sudo spidev_test -v -D /dev/spidev3.0
+skill-8cbbd6f03f56,semgrep_00302,file_operation,file_enumeration_and_location,SKILL.md,1059,.malskills_fences/SKILL__fence_52.sh,ls /dev/i2c-*
+skill-8cbbd6f03f56,semgrep_00303,process_operation,identity_switch,SKILL.md,1062,.malskills_fences/SKILL__fence_52.sh,sudo apt-get update && sudo apt-get install -y i2c-tools
+skill-8cbbd6f03f56,semgrep_00305,software_installation,package_manager,SKILL.md,1062,.malskills_fences/SKILL__fence_52.sh,sudo apt-get update && sudo apt-get install -y i2c-tools
+skill-8cbbd6f03f56,semgrep_00306,process_operation,identity_switch,SKILL.md,1065,.malskills_fences/SKILL__fence_52.sh,sudo i2cdetect -y -r 0   # i2c0
+skill-8cbbd6f03f56,semgrep_00307,process_operation,identity_switch,SKILL.md,1066,.malskills_fences/SKILL__fence_52.sh,sudo i2cdetect -y -r 1   # i2c1
+skill-8cbbd6f03f56,semgrep_00308,process_operation,identity_switch,SKILL.md,1067,.malskills_fences/SKILL__fence_52.sh,sudo i2cdetect -y -r 2   # i2c2
+skill-8cbbd6f03f56,semgrep_00309,process_operation,identity_switch,SKILL.md,1068,.malskills_fences/SKILL__fence_52.sh,sudo i2cdetect -y -r 3   # i2c3
+skill-8cbbd6f03f56,semgrep_00310,file_operation,file_enumeration_and_location,SKILL.md,1084,.malskills_fences/SKILL__fence_53.sh,ls /dev/ttyS*
+skill-8cbbd6f03f56,semgrep_00311,process_operation,identity_switch,SKILL.md,1148,.malskills_fences/SKILL__fence_57.sh,sudo apt-get update && sudo apt-get -y install git swig python3-dev python3-setuptools
+skill-8cbbd6f03f56,semgrep_00313,process_operation,identity_switch,SKILL.md,1159,.malskills_fences/SKILL__fence_57.sh,sudo python3 setup.py install
+skill-8cbbd6f03f56,semgrep_00314,payload_execution,script_host_execution,SKILL.md,1162,.malskills_fences/SKILL__fence_57.sh,"python3 -c ""import wiringpi; help(wiringpi)"""
+skill-8cbbd6f03f56,semgrep_00315,payload_execution,script_host_execution,SKILL.md,1169,.malskills_fences/SKILL__fence_58.sh,"python3 -c ""import wiringpi; from wiringpi import GPIO; wiringpi.wiringPiSetup(); wiringpi.pinMode(2, GPIO.OUTPUT);"""
+skill-8cbbd6f03f56,semgrep_00316,payload_execution,script_host_execution,SKILL.md,1172,.malskills_fences/SKILL__fence_58.sh,"python3 -c ""import wiringpi; from wiringpi import GPIO; wiringpi.wiringPiSetup(); wiringpi.digitalWrite(2, GPIO.LOW)"""
+skill-8cbbd6f03f56,semgrep_00317,payload_execution,script_host_execution,SKILL.md,1175,.malskills_fences/SKILL__fence_58.sh,"python3 -c ""import wiringpi; from wiringpi import GPIO; wiringpi.wiringPiSetup(); wiringpi.digitalWrite(2, GPIO.HIGH)"""
+skill-8cbbd6f03f56,semgrep_00318,process_operation,identity_switch,SKILL.md,367,.malskills_fences/SKILL__fence_6.sh,sudo dpkg -i nomachine_8.5.3_1_arm64.deb
+skill-8cbbd6f03f56,semgrep_00319,process_operation,identity_switch,SKILL.md,1211,.malskills_fences/SKILL__fence_62.sh,sudo apt-get install -y i2c-tools
+skill-8cbbd6f03f56,semgrep_00320,software_installation,package_manager,SKILL.md,1211,.malskills_fences/SKILL__fence_62.sh,sudo apt-get install -y i2c-tools
+skill-8cbbd6f03f56,semgrep_00321,process_operation,identity_switch,SKILL.md,1212,.malskills_fences/SKILL__fence_62.sh,sudo i2cdetect -y -r 0  # i2c0
+skill-8cbbd6f03f56,semgrep_00322,process_operation,identity_switch,SKILL.md,1213,.malskills_fences/SKILL__fence_62.sh,sudo i2cdetect -y -r 1  # i2c1
+skill-8cbbd6f03f56,semgrep_00323,process_operation,identity_switch,SKILL.md,1214,.malskills_fences/SKILL__fence_62.sh,sudo i2cdetect -y -r 2  # i2c2
+skill-8cbbd6f03f56,semgrep_00324,process_operation,identity_switch,SKILL.md,1215,.malskills_fences/SKILL__fence_62.sh,sudo i2cdetect -y -r 3  # i2c3
+skill-8cbbd6f03f56,semgrep_00325,file_operation,file_enumeration_and_location,SKILL.md,1227,.malskills_fences/SKILL__fence_63.sh,ls /dev/ttyS*
+skill-8cbbd6f03f56,semgrep_00326,process_operation,identity_switch,SKILL.md,1237,.malskills_fences/SKILL__fence_64.sh,sudo watchdog_test 10
+skill-8cbbd6f03f56,semgrep_00327,file_operation,content_read_and_parse,SKILL.md,1246,.malskills_fences/SKILL__fence_65.sh,root@orangepi:~# cat /sys/class/sunxi_info/sys_info | grep sunxi_serial
+skill-8cbbd6f03f56,semgrep_00328,process_operation,identity_switch,SKILL.md,1257,.malskills_fences/SKILL__fence_66.sh,sudo apt-get update
+skill-8cbbd6f03f56,semgrep_00329,process_operation,identity_switch,SKILL.md,1258,.malskills_fences/SKILL__fence_66.sh,sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
+skill-8cbbd6f03f56,semgrep_00330,software_installation,package_manager,SKILL.md,1258,.malskills_fences/SKILL__fence_66.sh,sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
+skill-8cbbd6f03f56,semgrep_00331,network_access,remote_data_receive,SKILL.md,1259,.malskills_fences/SKILL__fence_66.sh,libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev
+skill-8cbbd6f03f56,semgrep_00332,network_access,remote_data_receive,SKILL.md,1262,.malskills_fences/SKILL__fence_66.sh,wget https://www.python.org/ftp/python/3.9.10/Python-3.9.10.tgz
+skill-8cbbd6f03f56,semgrep_00333,file_operation,bulk_copy_and_archive,SKILL.md,1263,.malskills_fences/SKILL__fence_66.sh,tar xvf Python-3.9.10.tgz
+skill-8cbbd6f03f56,semgrep_00334,process_operation,identity_switch,SKILL.md,1267,.malskills_fences/SKILL__fence_66.sh,sudo make altinstall
+skill-8cbbd6f03f56,semgrep_00335,software_installation,package_manager,SKILL.md,1273,.malskills_fences/SKILL__fence_66.sh,/usr/local/bin/python3.9 -m pip install --upgrade pip
+skill-8cbbd6f03f56,semgrep_00336,process_operation,identity_switch,SKILL.md,1280,.malskills_fences/SKILL__fence_67.sh,sudo apt-get update && sudo apt-get install -y python3-pip
+skill-8cbbd6f03f56,semgrep_00338,software_installation,package_manager,SKILL.md,1280,.malskills_fences/SKILL__fence_67.sh,sudo apt-get update && sudo apt-get install -y python3-pip
+skill-8cbbd6f03f56,semgrep_00339,file_operation,content_read_and_parse,SKILL.md,1284,.malskills_fences/SKILL__fence_67.sh,cat <<EOF > ~/.pip/pip.conf
+skill-8cbbd6f03f56,semgrep_00340,software_installation,package_manager,SKILL.md,1292,.malskills_fences/SKILL__fence_67.sh,pip3 install <包名> -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+skill-8cbbd6f03f56,semgrep_00341,sensitive_data_access,security_environment_discovery,SKILL.md,1300,.malskills_fences/SKILL__fence_68.sh,# 启用 Docker
+skill-8cbbd6f03f56,semgrep_00342,sensitive_data_access,security_environment_discovery,SKILL.md,1301,.malskills_fences/SKILL__fence_68.sh,enable_docker.sh
+skill-8cbbd6f03f56,semgrep_00343,sensitive_data_access,security_environment_discovery,SKILL.md,1304,.malskills_fences/SKILL__fence_68.sh,docker run hello-world
+skill-8cbbd6f03f56,semgrep_00344,process_operation,identity_switch,SKILL.md,1307,.malskills_fences/SKILL__fence_68.sh,sudo usermod -aG docker $USER
+skill-8cbbd6f03f56,semgrep_00345,file_operation,group_or_acl_modification,SKILL.md,1307,.malskills_fences/SKILL__fence_68.sh,sudo usermod -aG docker $USER
+skill-8cbbd6f03f56,semgrep_00346,sensitive_data_access,security_environment_discovery,SKILL.md,1307,.malskills_fences/SKILL__fence_68.sh,sudo usermod -aG docker $USER
+skill-8cbbd6f03f56,semgrep_00347,process_operation,identity_switch,SKILL.md,1316,.malskills_fences/SKILL__fence_69.sh,sudo apt-get update
+skill-8cbbd6f03f56,semgrep_00348,process_operation,identity_switch,SKILL.md,1317,.malskills_fences/SKILL__fence_69.sh,sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev \
+skill-8cbbd6f03f56,semgrep_00349,software_installation,package_manager,SKILL.md,1317,.malskills_fences/SKILL__fence_69.sh,sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev \
+skill-8cbbd6f03f56,semgrep_00350,process_operation,identity_switch,SKILL.md,1322,.malskills_fences/SKILL__fence_69.sh,sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev \
+skill-8cbbd6f03f56,semgrep_00351,software_installation,package_manager,SKILL.md,1322,.malskills_fences/SKILL__fence_69.sh,sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev \
+skill-8cbbd6f03f56,semgrep_00352,process_operation,identity_switch,SKILL.md,1327,.malskills_fences/SKILL__fence_69.sh,sudo mkdir /srv/homeassistant
+skill-8cbbd6f03f56,semgrep_00353,process_operation,identity_switch,SKILL.md,1328,.malskills_fences/SKILL__fence_69.sh,sudo chown orangepi:orangepi /srv/homeassistant
+skill-8cbbd6f03f56,semgrep_00354,file_operation,permission_modify,SKILL.md,1328,.malskills_fences/SKILL__fence_69.sh,sudo chown orangepi:orangepi /srv/homeassistant
+skill-8cbbd6f03f56,semgrep_00355,payload_execution,shell_interpreter_execution,SKILL.md,1331,.malskills_fences/SKILL__fence_69.sh,source bin/activate
+skill-8cbbd6f03f56,semgrep_00356,software_installation,package_manager,SKILL.md,1334,.malskills_fences/SKILL__fence_69.sh,python3 -m pip install wheel
+skill-8cbbd6f03f56,semgrep_00357,software_installation,package_manager,SKILL.md,1335,.malskills_fences/SKILL__fence_69.sh,pip3 install homeassistant
+skill-8cbbd6f03f56,semgrep_00358,file_operation,bulk_copy_and_archive,SKILL.md,380,.malskills_fences/SKILL__fence_7.sh,tar xzf wiringOP.tar.gz && cd wiringOP && sudo ./build clean && sudo ./build
+skill-8cbbd6f03f56,semgrep_00360,process_operation,identity_switch,SKILL.md,380,.malskills_fences/SKILL__fence_7.sh,tar xzf wiringOP.tar.gz && cd wiringOP && sudo ./build clean && sudo ./build
+skill-8cbbd6f03f56,semgrep_00362,file_operation,bulk_copy_and_archive,SKILL.md,383,.malskills_fences/SKILL__fence_7.sh,tar xzf wiringOP-Python.tar.gz && cd wiringOP-Python && python3 generate-bindings.py > bindings.i && sudo python3 setup.py install
+skill-8cbbd6f03f56,semgrep_00364,process_operation,identity_switch,SKILL.md,383,.malskills_fences/SKILL__fence_7.sh,tar xzf wiringOP-Python.tar.gz && cd wiringOP-Python && python3 generate-bindings.py > bindings.i && sudo python3 setup.py install
+skill-8cbbd6f03f56,semgrep_00365,process_operation,identity_switch,SKILL.md,1345,.malskills_fences/SKILL__fence_70.sh,sudo apt-get update && sudo apt-get install -y libopencv-dev python3-opencv
+skill-8cbbd6f03f56,semgrep_00367,software_installation,package_manager,SKILL.md,1345,.malskills_fences/SKILL__fence_70.sh,sudo apt-get update && sudo apt-get install -y libopencv-dev python3-opencv
+skill-8cbbd6f03f56,semgrep_00368,payload_execution,script_host_execution,SKILL.md,1348,.malskills_fences/SKILL__fence_70.sh,"python3 -c ""import cv2; print(cv2.__version__)""   # 4.5.4"
+skill-8cbbd6f03f56,semgrep_00369,payload_execution,script_host_execution,SKILL.md,1351,.malskills_fences/SKILL__fence_70.sh,"python3 -c ""import cv2; print(cv2.__version__)""   # 4.6.0"
+skill-8cbbd6f03f56,semgrep_00370,process_operation,identity_switch,SKILL.md,1358,.malskills_fences/SKILL__fence_71.sh,"sudo sed -i 's/nosuid/&,size=2G/' /etc/fstab"
+skill-8cbbd6f03f56,semgrep_00371,file_operation,file_write_or_timestamp_modify,SKILL.md,1358,.malskills_fences/SKILL__fence_71.sh,"sudo sed -i 's/nosuid/&,size=2G/' /etc/fstab"
+skill-8cbbd6f03f56,semgrep_00372,process_operation,identity_switch,SKILL.md,1359,.malskills_fences/SKILL__fence_71.sh,sudo reboot
+skill-8cbbd6f03f56,semgrep_00374,process_operation,identity_switch,SKILL.md,1363,.malskills_fences/SKILL__fence_71.sh,sudo install_bt_panel.sh
+skill-8cbbd6f03f56,semgrep_00375,payload_execution,shell_interpreter_execution,SKILL.md,1396,.malskills_fences/SKILL__fence_73.sh,source /opt/ros/humble/setup.bash
+skill-8cbbd6f03f56,semgrep_00376,file_operation,file_enumeration_and_location,SKILL.md,1404,.malskills_fences/SKILL__fence_74.sh,ls /opt/linux-headers*
+skill-8cbbd6f03f56,semgrep_00377,process_operation,identity_switch,SKILL.md,1408,.malskills_fences/SKILL__fence_74.sh,sudo dpkg -i /opt/linux-headers*.deb
+skill-8cbbd6f03f56,semgrep_00378,process_operation,identity_switch,SKILL.md,1412,.malskills_fences/SKILL__fence_74.sh,sudo make
+skill-8cbbd6f03f56,semgrep_00379,process_operation,identity_switch,SKILL.md,1413,.malskills_fences/SKILL__fence_74.sh,sudo insmod hello.ko
+skill-8cbbd6f03f56,semgrep_00380,process_operation,identity_switch,SKILL.md,1415,.malskills_fences/SKILL__fence_74.sh,sudo rmmod hello
+skill-8cbbd6f03f56,semgrep_00381,process_operation,identity_switch,SKILL.md,1424,.malskills_fences/SKILL__fence_75.sh,sudo apt install python3-pip python3-opencv libopencv-dev
+skill-8cbbd6f03f56,semgrep_00382,software_installation,package_manager,SKILL.md,1424,.malskills_fences/SKILL__fence_75.sh,sudo apt install python3-pip python3-opencv libopencv-dev
+skill-8cbbd6f03f56,semgrep_00383,process_operation,identity_switch,SKILL.md,1425,.malskills_fences/SKILL__fence_75.sh,sudo apt install python3-pybind11 python3-dev
+skill-8cbbd6f03f56,semgrep_00384,software_installation,package_manager,SKILL.md,1425,.malskills_fences/SKILL__fence_75.sh,sudo apt install python3-pybind11 python3-dev
+skill-8cbbd6f03f56,semgrep_00385,process_operation,identity_switch,SKILL.md,1428,.malskills_fences/SKILL__fence_75.sh,sudo modprobe vin_v4l2
+skill-8cbbd6f03f56,semgrep_00386,file_operation,file_enumeration_and_location,SKILL.md,1431,.malskills_fences/SKILL__fence_75.sh,ls /dev/video*
+skill-8cbbd6f03f56,semgrep_00387,file_operation,file_enumeration_and_location,SKILL.md,1435,.malskills_fences/SKILL__fence_75.sh,ls
+skill-8cbbd6f03f56,semgrep_00388,process_operation,identity_switch,SKILL.md,1472,.malskills_fences/SKILL__fence_78.sh,sudo vim /boot/orangepiEnv.txt
+skill-8cbbd6f03f56,semgrep_00389,network_access,remote_file_transfer,SKILL.md,1501,.malskills_fences/SKILL__fence_80.sh,scp file_path orangepi@192.168.xx.xx:/home/orangepi/
+skill-8cbbd6f03f56,semgrep_00390,network_access,remote_file_transfer,SKILL.md,1503,.malskills_fences/SKILL__fence_80.sh,scp -r dir_path orangepi@192.168.xx.xx:/home/orangepi/
+skill-8cbbd6f03f56,semgrep_00391,process_operation,identity_switch,SKILL.md,1508,.malskills_fences/SKILL__fence_81.sh,sudo apt install -y filezilla
+skill-8cbbd6f03f56,semgrep_00392,software_installation,package_manager,SKILL.md,1508,.malskills_fences/SKILL__fence_81.sh,sudo apt install -y filezilla
+skill-8cbbd6f03f56,semgrep_00393,network_access,remote_file_transfer,SKILL.md,1510,.malskills_fences/SKILL__fence_81.sh,# 主机：开发板IP，用户名：orangepi/root，密码：orangepi，端口：22（SFTP）
+skill-8cbbd6f03f56,semgrep_00394,sensitive_data_access,security_environment_discovery,SKILL.md,1543,.malskills_fences/SKILL__fence_84.sh,# 在 Ubuntu PC 上安装 Docker
+skill-8cbbd6f03f56,semgrep_00395,process_operation,identity_switch,SKILL.md,1544,.malskills_fences/SKILL__fence_84.sh,sudo apt update && sudo apt install -y docker.io
+skill-8cbbd6f03f56,semgrep_00397,software_installation,package_manager,SKILL.md,1544,.malskills_fences/SKILL__fence_84.sh,sudo apt update && sudo apt install -y docker.io
+skill-8cbbd6f03f56,semgrep_00398,sensitive_data_access,security_environment_discovery,SKILL.md,1544,.malskills_fences/SKILL__fence_84.sh,sudo apt update && sudo apt install -y docker.io
+skill-8cbbd6f03f56,semgrep_00399,sensitive_data_access,security_environment_discovery,SKILL.md,1546,.malskills_fences/SKILL__fence_84.sh,# 下载 NPU Docker 镜像（从全志云盘 docker_images_v2.0.x.zip）
+skill-8cbbd6f03f56,semgrep_00401,file_operation,bulk_copy_and_archive,SKILL.md,1546,.malskills_fences/SKILL__fence_84.sh,# 下载 NPU Docker 镜像（从全志云盘 docker_images_v2.0.x.zip）
+skill-8cbbd6f03f56,semgrep_00402,sensitive_data_access,security_environment_discovery,SKILL.md,1547,.malskills_fences/SKILL__fence_84.sh,unzip docker_images_v2.0.x.zip
+skill-8cbbd6f03f56,semgrep_00403,file_operation,bulk_copy_and_archive,SKILL.md,1547,.malskills_fences/SKILL__fence_84.sh,unzip docker_images_v2.0.x.zip
+skill-8cbbd6f03f56,semgrep_00404,sensitive_data_access,security_environment_discovery,SKILL.md,1548,.malskills_fences/SKILL__fence_84.sh,cd docker_images_v2.0.x
+skill-8cbbd6f03f56,semgrep_00405,file_operation,bulk_copy_and_archive,SKILL.md,1549,.malskills_fences/SKILL__fence_84.sh,unzip ubuntu-npu_v2.0.10.tar.zip
+skill-8cbbd6f03f56,semgrep_00407,process_operation,identity_switch,SKILL.md,1550,.malskills_fences/SKILL__fence_84.sh,sudo docker load -i ubuntu-npu_v2.0.10.tar
+skill-8cbbd6f03f56,semgrep_00408,sensitive_data_access,security_environment_discovery,SKILL.md,1550,.malskills_fences/SKILL__fence_84.sh,sudo docker load -i ubuntu-npu_v2.0.10.tar
+skill-8cbbd6f03f56,semgrep_00409,file_operation,bulk_copy_and_archive,SKILL.md,1550,.malskills_fences/SKILL__fence_84.sh,sudo docker load -i ubuntu-npu_v2.0.10.tar
+skill-8cbbd6f03f56,semgrep_00410,sensitive_data_access,security_environment_discovery,SKILL.md,1553,.malskills_fences/SKILL__fence_84.sh,mkdir docker_data
+skill-8cbbd6f03f56,semgrep_00411,file_operation,bulk_copy_and_archive,SKILL.md,1554,.malskills_fences/SKILL__fence_84.sh,tar -xvf ai-sdk.tar.gz -C docker_data
+skill-8cbbd6f03f56,semgrep_00413,sensitive_data_access,security_environment_discovery,SKILL.md,1554,.malskills_fences/SKILL__fence_84.sh,tar -xvf ai-sdk.tar.gz -C docker_data
+skill-8cbbd6f03f56,semgrep_00414,sensitive_data_access,security_environment_discovery,SKILL.md,1555,.malskills_fences/SKILL__fence_84.sh,cd docker_data
+skill-8cbbd6f03f56,semgrep_00415,process_operation,identity_switch,SKILL.md,1556,.malskills_fences/SKILL__fence_84.sh,sudo docker run --ipc=host -itd -v ${PWD}:/workspace --name allwinner_v2.0.10 ubuntu-npu:v2.0.10 /bin/bash
+skill-8cbbd6f03f56,semgrep_00416,sensitive_data_access,security_environment_discovery,SKILL.md,1556,.malskills_fences/SKILL__fence_84.sh,sudo docker run --ipc=host -itd -v ${PWD}:/workspace --name allwinner_v2.0.10 ubuntu-npu:v2.0.10 /bin/bash
+skill-8cbbd6f03f56,semgrep_00417,process_operation,identity_switch,SKILL.md,1557,.malskills_fences/SKILL__fence_84.sh,sudo docker exec -it allwinner_v2.0.10 /bin/bash
+skill-8cbbd6f03f56,semgrep_00418,sensitive_data_access,security_environment_discovery,SKILL.md,1557,.malskills_fences/SKILL__fence_84.sh,sudo docker exec -it allwinner_v2.0.10 /bin/bash
+skill-8cbbd6f03f56,semgrep_00419,network_access,cluster_or_cloud_node_control,SKILL.md,1557,.malskills_fences/SKILL__fence_84.sh,sudo docker exec -it allwinner_v2.0.10 /bin/bash
+skill-8cbbd6f03f56,semgrep_00420,payload_execution,shell_interpreter_execution,SKILL.md,1563,.malskills_fences/SKILL__fence_85.sh,source env.sh v3
+skill-8cbbd6f03f56,semgrep_00421,file_operation,bulk_copy_and_archive,SKILL.md,1564,.malskills_fences/SKILL__fence_85.sh,cp ../scripts/* .
+skill-8cbbd6f03f56,semgrep_00422,process_operation,identity_switch,SKILL.md,1579,.malskills_fences/SKILL__fence_86.sh,sudo apt update && sudo apt install libopencv-dev cmake
+skill-8cbbd6f03f56,semgrep_00424,software_installation,package_manager,SKILL.md,1579,.malskills_fences/SKILL__fence_86.sh,sudo apt update && sudo apt install libopencv-dev cmake
+skill-8cbbd6f03f56,semgrep_00425,file_operation,bulk_copy_and_archive,SKILL.md,1582,.malskills_fences/SKILL__fence_86.sh,tar -xvf ai-sdk.tar.gz
+skill-8cbbd6f03f56,semgrep_00427,process_operation,identity_switch,SKILL.md,1647,.malskills_fences/SKILL__fence_94.sh,sudo service lightdm stop
+skill-8cbbd6f03f56,semgrep_00428,process_operation,identity_switch,SKILL.md,1648,.malskills_fences/SKILL__fence_94.sh,sudo rmmod pvrsrvkm
+skill-8cbbd6f03f56,semgrep_00429,process_operation,identity_switch,SKILL.md,1667,.malskills_fences/SKILL__fence_95.sh,sudo service lightdm stop
+skill-8cbbd6f03f56,semgrep_00430,process_operation,identity_switch,SKILL.md,1668,.malskills_fences/SKILL__fence_95.sh,sudo rmmod pvrsrvkm
+skill-8cbbd6f03f56,semgrep_00431,process_operation,identity_switch,SKILL.md,1676,.malskills_fences/SKILL__fence_96.sh,sudo parted --script /dev/nvme0n1 mklabel gpt mkpart primary ext4 65536s 100%
+skill-8cbbd6f03f56,semgrep_00432,process_operation,identity_switch,SKILL.md,1690,.malskills_fences/SKILL__fence_97.sh,sudo service lightdm stop && sudo rmmod pvrsrvkm
+skill-8cbbd6f03f56,semgrep_00434,process_operation,identity_switch,SKILL.md,1693,.malskills_fences/SKILL__fence_97.sh,sudo opi-bkimg
+skill-8cbbd6f03f56,semgrep_00435,file_operation,file_enumeration_and_location,SKILL.md,1696,.malskills_fences/SKILL__fence_97.sh,ls /mnt/   # backup.img
+skill-8cbbd6f03f56,semgrep_00436,process_operation,identity_switch,SKILL.md,1705,.malskills_fences/SKILL__fence_98.sh,sudo poweroff
+skill-8cbbd6f03f56,semgrep_00438,process_operation,identity_switch,SKILL.md,1711,.malskills_fences/SKILL__fence_98.sh,sudo reboot
+skill-8cbbd6f03f56,semgrep_00440,software_installation,package_manager_command,README.md,54,README.md,sudo apt install -y python3-opencv libopencv-dev python3-pybind11
+skill-8cbbd6f03f56,semgrep_00441,software_installation,package_manager_command,README.md,146,README.md,pip3 install paho-mqtt
+skill-8cbbd6f03f56,semgrep_00442,network_access,fetch_command,SKILL.md,63,SKILL.md,curl -fsSL https://nodejs.org/dist/v20.x/node-v20.x-linux-arm64.tar.xz | sudo tar -xJ -C /usr/local --strip-components=1
+skill-8cbbd6f03f56,semgrep_00443,software_installation,package_manager_command,SKILL.md,64,SKILL.md,npm install -g @anthropic-ai/claude-code
+skill-8cbbd6f03f56,semgrep_00444,network_access,connection_command,SKILL.md,731,SKILL.md,SSH 默认开启，允许 root 登录。
+skill-8cbbd6f03f56,semgrep_00445,software_installation,package_manager_command,SKILL.md,866,SKILL.md,sudo apt-get install -y fswebcam
+skill-8cbbd6f03f56,semgrep_00446,software_installation,package_manager_command,SKILL.md,879,SKILL.md,sudo apt-get install -y cmake libjpeg8-dev
+skill-8cbbd6f03f56,semgrep_00447,software_installation,package_manager_command,SKILL.md,881,SKILL.md,sudo apt-get install -y cmake libjpeg62-turbo-dev
+skill-8cbbd6f03f56,semgrep_00448,payload_execution,inline_interpreter_flags,SKILL.md,1162,SKILL.md,"python3 -c ""import wiringpi; help(wiringpi)"""
+skill-8cbbd6f03f56,semgrep_00449,payload_execution,inline_interpreter_flags,SKILL.md,1169,SKILL.md,"python3 -c ""import wiringpi; from wiringpi import GPIO; wiringpi.wiringPiSetup(); wiringpi.pinMode(2, GPIO.OUTPUT);"""
+skill-8cbbd6f03f56,semgrep_00450,payload_execution,inline_interpreter_flags,SKILL.md,1172,SKILL.md,"python3 -c ""import wiringpi; from wiringpi import GPIO; wiringpi.wiringPiSetup(); wiringpi.digitalWrite(2, GPIO.LOW)"""
+skill-8cbbd6f03f56,semgrep_00451,payload_execution,inline_interpreter_flags,SKILL.md,1175,SKILL.md,"python3 -c ""import wiringpi; from wiringpi import GPIO; wiringpi.wiringPiSetup(); wiringpi.digitalWrite(2, GPIO.HIGH)"""
+skill-8cbbd6f03f56,semgrep_00452,software_installation,package_manager_command,SKILL.md,1211,SKILL.md,sudo apt-get install -y i2c-tools
+skill-8cbbd6f03f56,semgrep_00453,software_installation,package_manager_command,SKILL.md,1258,SKILL.md,sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
+skill-8cbbd6f03f56,semgrep_00454,network_access,fetch_command,SKILL.md,1262,SKILL.md,wget https://www.python.org/ftp/python/3.9.10/Python-3.9.10.tgz
+skill-8cbbd6f03f56,semgrep_00455,software_installation,package_manager_command,SKILL.md,1292,SKILL.md,pip3 install <包名> -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+skill-8cbbd6f03f56,semgrep_00456,software_installation,package_manager_command,SKILL.md,1317,SKILL.md,sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev \
+skill-8cbbd6f03f56,semgrep_00457,software_installation,package_manager_command,SKILL.md,1322,SKILL.md,sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev \
+skill-8cbbd6f03f56,semgrep_00458,software_installation,package_manager_command,SKILL.md,1335,SKILL.md,pip3 install homeassistant
+skill-8cbbd6f03f56,semgrep_00459,payload_execution,inline_interpreter_flags,SKILL.md,1348,SKILL.md,"python3 -c ""import cv2; print(cv2.__version__)""   # 4.5.4"
+skill-8cbbd6f03f56,semgrep_00460,payload_execution,inline_interpreter_flags,SKILL.md,1351,SKILL.md,"python3 -c ""import cv2; print(cv2.__version__)""   # 4.6.0"
+skill-8cbbd6f03f56,semgrep_00461,software_installation,package_manager_command,SKILL.md,1424,SKILL.md,sudo apt install python3-pip python3-opencv libopencv-dev
+skill-8cbbd6f03f56,semgrep_00462,software_installation,package_manager_command,SKILL.md,1425,SKILL.md,sudo apt install python3-pybind11 python3-dev
+skill-8cbbd6f03f56,semgrep_00463,software_installation,package_manager_command,SKILL.md,1508,SKILL.md,sudo apt install -y filezilla
+skill-8cbbd6f03f56,semgrep_00464,software_installation,package_manager_command,SKILL.md,2091,SKILL.md,sudo apt-get install -y git gnupg flex bison gperf build-essential \
+skill-8cbbd6f03f56,semgrep_00465,software_installation,package_manager_command,SKILL.md,2268,SKILL.md,sudo apt install -y python3-pip python3-pil
+skill-8cbbd6f03f56,semgrep_00466,software_installation,package_manager_command,SKILL.md,2269,SKILL.md,pip3 install Adafruit-BBIO  # 或通过 pip 安装 luma.oled
+skill-8cbbd6f03f56,semgrep_00467,software_installation,package_manager_command,SKILL.md,2270,SKILL.md,pip3 install luma.oled
+skill-8cbbd6f03f56,semgrep_00468,software_installation,package_manager_command,SKILL.md,2311,SKILL.md,sudo apt install -y python3-opencv libopencv-dev
+skill-8cbbd6f03f56,semgrep_00469,software_installation,package_manager_command,SKILL.md,2498,SKILL.md,sudo apt install -y docker.io docker-compose-v2
+skill-8cbbd6f03f56,semgrep_00470,software_installation,package_manager_command,SKILL.md,2789,SKILL.md,sudo apt install -y fail2ban
+skill-8cbbd6f03f56,semgrep_00471,network_access,connection_command,SKILL.md,2815,SKILL.md,"ssh-keygen -t ed25519 -C ""orangepi4pro"""
+skill-8cbbd6f03f56,semgrep_00472,network_access,connection_command,SKILL.md,2818,SKILL.md,ssh-copy-id -i ~/.ssh/id_ed25519.pub orangepi@<开发板IP>
+skill-8cbbd6f03f56,semgrep_00473,software_installation,package_manager_command,SKILL.md,2829,SKILL.md,sudo apt install -y ufw
+skill-8cbbd6f03f56,semgrep_00474,software_installation,package_manager_command,SKILL.md,2857,SKILL.md,sudo apt install -y logrotate
+skill-8cbbd6f03f56,semgrep_00475,network_access,connection_command,SKILL.md,3346,SKILL.md,"ssh $OPI_USER@$OPI_IP ""sudo systemctl stop my-app"""
+skill-8cbbd6f03f56,semgrep_00476,network_access,connection_command,SKILL.md,3352,SKILL.md,"ssh $OPI_USER@$OPI_IP ""sudo systemctl start my-app && sudo systemctl status my-app"""
+skill-8cbbd6f03f56,semgrep_00477,network_access,connection_command,SKILL.md,3361,SKILL.md,ssh-keygen -t ed25519 -f ~/.ssh/opi4pro-deploy
+skill-8cbbd6f03f56,semgrep_00478,network_access,connection_command,SKILL.md,3362,SKILL.md,ssh-copy-id -i ~/.ssh/opi4pro-deploy.pub orangepi@192.168.1.110
+skill-8cbbd6f03f56,semgrep_00479,software_installation,package_manager_command,SKILL.md,3406,SKILL.md,sudo apt install -y gdbserver

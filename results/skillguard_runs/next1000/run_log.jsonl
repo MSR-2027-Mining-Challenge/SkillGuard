@@ -12,3 +12,7 @@
 {"event": "cisco_atr_determinism", "target": "pilot", "identical": {"findings.csv": true, "scans.csv": true}, "at": "2026-11-22T21:32:24-08:00"}
 {"event": "target_done", "target": "pilot", "run_dir": "2026-11-22_212530_next1000-seed2031-pilot", "minutes": 7.0, "at": "2026-11-22T21:32:24-08:00"}
 {"event": "cisco_atr_rerun", "target": "pilot", "reason": "summary counted ATR rules with prefix ATR- but IDs are ATR_2026_*; findings identical, only atr_rule column/summary corrected", "at": "2026-11-22T21:36:00-08:00"}
+{"event": "malskills_installed", "malskills_commit": "46d60f09cef00fd3a9c01272be63dbd273ab4444", "semgrep": "1.186.0", "location": "~/MalSkills (outside the repository)", "at": "2026-11-22T22:20:00-08:00"}
+{"event": "malskills_macos_bug_workaround", "detail": "semgrep result mapping drops findings in .malskills_fences on macOS (/var -> /private/var symlink + lstrip('./')); runner sets TMPDIR to a symlink-free directory", "at": "2026-11-22T22:25:00-08:00"}
+{"event": "malskills_validation", "rio_equivalence": "40/40 identical verdict/patterns/sso_count/artifact_count/content hash after workaround (18/40 before)", "groundtruth_smoke": "9/10 verdict == label", "at": "2026-11-22T22:30:00-08:00"}
+{"event": "malskills_pilot", "target": "pilot", "scans": 12, "statuses": {"ok": 12}, "identity_mismatches": 0, "sso_findings": 540, "corpus_unchanged": true, "repeat_identical": "12/12", "at": "2026-11-22T22:35:00-08:00"}

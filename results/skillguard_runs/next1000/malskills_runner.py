@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -60,23 +61,53 @@ def prepare(run_dir, corpus_root):
     print(json.dumps({"skills": len(rows), "files": len(sums), "corpus": str(dest_root)}))
 
 
+MALSKILLS_FLAGS = ["--profile", "static", "--retain", "all", "--keep-content-duplicates", "--disable-yasa",
+                   "--max-artifacts", "600", "--max-total-text-bytes", "2000000", "--quiet", "--color", "never"]
+
+
+def malskills_env(bin_path):
+    """MalSkills finds semgrep via PATH: put its own venv first (as in Rio's setup); no LLM credentials."""
+    env = {k: v for k, v in os.environ.items() if not k.startswith(("MALSKILLS_LLM", "OPENAI_"))}
+    env["PATH"] = str(Path(bin_path).parent) + os.pathsep + env.get("PATH", "")
+    # macOS workaround (no change to MalSkills): its semgrep extractor maps results back with
+    # Path(result).resolve().relative_to(tempdir); with the default TMPDIR (/var/... -> /private/var/...)
+    # that fails, and the fallback's .lstrip("./") turns ".malskills_fences/x.sh" into
+    # "malskills_fences/x.sh", silently dropping every finding in extracted Markdown fences.
+    # A temp root without symlinks makes resolve() == root, as on Linux (Rio's WSL run).
+    tmp = Path(os.path.realpath(Path(bin_path).parents[2] / ".tmp-skillguard"))
+    tmp.mkdir(exist_ok=True)
+    env["TMPDIR"] = str(tmp)
+    return env
+
+
+def tool_metadata(bin_path):
+    bin_path = Path(bin_path).resolve()
+    repo = bin_path.parents[2]
+    env = malskills_env(bin_path)
+    return {"malskills_bin": str(bin_path).replace(str(Path.home()), "~"),
+            "malskills_commit": subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True,
+                                               text=True).stdout.strip() or "unknown",
+            "semgrep_version": subprocess.run(["semgrep", "--version"], capture_output=True, text=True,
+                                              env=env).stdout.strip() or "unknown",
+            "rules_digest": _dir_digest(repo / "malskills" / "rules") if (repo / "malskills" / "rules").is_dir() else "unknown",
+            "semgrep_rules_digest": _dir_digest(repo / "semgrep_rules") if (repo / "semgrep_rules").is_dir() else "unknown",
+            "yasa": "disabled (vendor/yasa not built; Rio's run had YASA enabled but unavailable, i.e. not run)",
+            "llm": "none (static profile)",
+            "tmpdir_workaround": "TMPDIR set to a symlink-free directory (macOS path-resolution bug in semgrep result mapping)"}
+
+
 def run(corpus_root, output_dir, malskills_bin, workers):
     corpus = Path(corpus_root).resolve()
     n = len([p for p in (corpus / SOURCE).iterdir() if p.is_dir()])
     bin_path = Path(malskills_bin).resolve()
-    repo = bin_path.parents[2] if len(bin_path.parents) > 2 else bin_path.parent
-    meta = {"malskills_bin": str(bin_path),
-            "malskills_commit": subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True,
-                                               text=True).stdout.strip() or "unknown",
-            "semgrep_version": subprocess.run([str(bin_path.parent / "semgrep"), "--version"], capture_output=True,
-                                              text=True).stdout.strip() or "unknown",
-            "rules_digest": _dir_digest(repo / "malskills" / "rules") if (repo / "malskills" / "rules").is_dir() else "unknown",
-            "skills": n, "args": ["scan-corpus", "--corpus-root", str(corpus), "--output", str(output_dir),
-                                  "--sample-size", str(n), "--profile", "static", "--source", SOURCE,
-                                  "--seed", "1337", "--workers", str(workers), "--retain", "all"]}
+    meta = dict(tool_metadata(bin_path), skills=n,
+                args=["scan-corpus", "--corpus-root", str(corpus), "--output", str(Path(output_dir).resolve()),
+                      "--sample-size", str(n), "--source", SOURCE, "--seed", "1337", "--workers", str(workers),
+                      *MALSKILLS_FLAGS])
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     (Path(output_dir) / "skillguard_run_metadata.json").write_text(json.dumps(meta, indent=2) + "\n")
-    proc = subprocess.run([str(bin_path), *meta["args"]], text=True)
+    proc = subprocess.run([str(bin_path), *meta["args"]], text=True, env=malskills_env(bin_path),
+                          cwd=str(bin_path.parents[2]))
     sys.exit(proc.returncode)
 
 
@@ -86,6 +117,22 @@ def _dir_digest(path):
         if p.is_file():
             h.update(p.relative_to(path).as_posix().encode() + b"\0" + hashlib.sha256(p.read_bytes()).digest())
     return h.hexdigest()
+
+
+def verify_corpus(corpus_root):
+    """Re-check every file of a prepared corpus against its SHA256SUMS (MalSkills must not modify inputs)."""
+    root = Path(corpus_root)
+    bad, n = [], 0
+    for line in (root / "SHA256SUMS").read_text().splitlines():
+        digest, rel = line.split("  ", 1)
+        n += 1
+        if hashlib.sha256((root / rel).read_bytes()).hexdigest() != digest:
+            bad.append(rel)
+    extra = [p.relative_to(root).as_posix() for p in (root / SOURCE).rglob("*") if p.is_file()]
+    extra = sorted(set(extra) - {l.split("  ", 1)[1] for l in (root / "SHA256SUMS").read_text().splitlines()})
+    print(json.dumps({"files_checked": n, "modified": bad[:20], "new_files": extra[:20]}))
+    if bad or extra:
+        raise SystemExit("corpus changed during the MalSkills run")
 
 
 def map_line(finding, artifacts):
@@ -159,11 +206,14 @@ def main():
     r = sub.add_parser("run"); r.add_argument("corpus_root"); r.add_argument("output_dir")
     r.add_argument("--malskills-bin", required=True); r.add_argument("--workers", type=int, default=4)
     i = sub.add_parser("import"); i.add_argument("output_dir"); i.add_argument("run_dir", nargs="?")
+    v = sub.add_parser("verify"); v.add_argument("corpus_root")
     args = parser.parse_args()
     if args.cmd == "prepare":
         prepare(args.run_dir, args.corpus_root)
     elif args.cmd == "run":
         run(args.corpus_root, args.output_dir, args.malskills_bin, args.workers)
+    elif args.cmd == "verify":
+        verify_corpus(args.corpus_root)
     else:
         import_results(args.output_dir, args.run_dir)
 
