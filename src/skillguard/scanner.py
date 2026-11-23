@@ -64,6 +64,8 @@ def _confidence(raw, ctx):
     if resolved == "config_structure":
         return "high" if ctx in {"bundled_config", "skill_metadata"} else "medium"
     if carrier in {"markdown_instruction", "disguised_text"}:
+        if raw["capability"] == "suspicious_agent_instruction":
+            return "medium"  # block-level detector that requires >= 2 independent signals incl. a core one
         return "medium" if d.get("mechanism") == "inline_code" else "low"
     if ctx == "documented_example":
         return "medium"
