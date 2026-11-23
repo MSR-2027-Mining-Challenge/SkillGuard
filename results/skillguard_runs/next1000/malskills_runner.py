@@ -53,12 +53,40 @@ def prepare(run_dir, corpus_root):
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(p, target)  # byte copy
                 sums.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {SOURCE}/{skill_id}/{p.relative_to(folder).as_posix()}")
+        pin_mtimes(dest)
         same = folder_digest(folder) == folder_digest(dest)
         rows.append({"skill_id": skill_id, "digest_match": same})
         if not same:
             raise SystemExit(f"copy mismatch for {skill_id}")
     (Path(corpus_root) / "SHA256SUMS").write_text("\n".join(sums) + "\n")
     print(json.dumps({"skills": len(rows), "files": len(sums), "corpus": str(dest_root)}))
+
+
+PINNED_MTIME_NS = 1_700_000_000 * 10**9
+
+
+def pin_mtimes(skill_root):
+    """MalSkills picks the skill file among all SKILL.md files in a folder by (exact name, newest mtime, ...)
+    and scans only that file's parent directory. Folders that contain nested SKILL.md files could otherwise
+    be scanned from a subfolder depending on copy order. Every file gets one fixed mtime and the top-level
+    SKILL.md one second more, so MalSkills deterministically selects it and scans the whole folder.
+    Only timestamps change; file bytes (and SHA256SUMS) are untouched."""
+    for f in Path(skill_root).rglob("*"):
+        if f.is_file() and not f.is_symlink():
+            os.utime(f, ns=(PINNED_MTIME_NS, PINNED_MTIME_NS))
+    top = Path(skill_root) / "SKILL.md"
+    if top.is_file():
+        os.utime(top, ns=(PINNED_MTIME_NS + 10**9, PINNED_MTIME_NS + 10**9))
+
+
+def repin(corpus_root):
+    root = Path(corpus_root).resolve() / SOURCE
+    n = 0
+    for d in sorted(root.iterdir()):
+        if d.is_dir():
+            pin_mtimes(d)
+            n += 1
+    print(json.dumps({"repinned_skills": n}))
 
 
 MALSKILLS_FLAGS = ["--profile", "static", "--retain", "all", "--keep-content-duplicates", "--disable-yasa",
@@ -93,11 +121,13 @@ def tool_metadata(bin_path):
             "semgrep_rules_digest": _dir_digest(repo / "semgrep_rules") if (repo / "semgrep_rules").is_dir() else "unknown",
             "yasa": "disabled (vendor/yasa not built; Rio's run had YASA enabled but unavailable, i.e. not run)",
             "llm": "none (static profile)",
-            "tmpdir_workaround": "TMPDIR set to a symlink-free directory (macOS path-resolution bug in semgrep result mapping)"}
+            "tmpdir_workaround": "TMPDIR set to a symlink-free directory (macOS path-resolution bug in semgrep result mapping)",
+            "skill_file_selection": "file mtimes pinned so MalSkills selects the top-level SKILL.md and scans the whole folder"}
 
 
 def run(corpus_root, output_dir, malskills_bin, workers):
     corpus = Path(corpus_root).resolve()
+    repin(corpus)  # mtimes may be lost when a corpus is copied to another machine
     n = len([p for p in (corpus / SOURCE).iterdir() if p.is_dir()])
     bin_path = Path(malskills_bin).resolve()
     meta = dict(tool_metadata(bin_path), skills=n,
@@ -167,6 +197,7 @@ def import_results(output_dir, run_dir, max_artifacts=600):
         scans.append({"skill_id": sid, "status": status, "verdict": rec.get("verdict"), "patterns": rec.get("patterns", []),
                       "sso_count": rec.get("sso_count"), "artifact_count": rec.get("artifact_count"),
                       "semgrep_status": rec.get("semgrep_status"), "identity_match": identity,
+                      "skill_file_top_level": rec.get("skill_file") == f"{SOURCE}/{sid}/SKILL.md" if rec.get("skill_file") else None,
                       "runtime_sec": rec.get("runtime_sec")})
         case = output / rec["retained_output"] if rec.get("retained_output") else None
         if case is None or not case.is_dir():
@@ -193,9 +224,12 @@ def import_results(output_dir, run_dir, max_artifacts=600):
                                                                      ("pattern_verdicts", verdicts))}
     summary = {"output": str(output.name), "scans": len(scans), "statuses": dict(Counter(s["status"] for s in scans)),
                "identity_mismatches": sum(s.get("identity_match") is False for s in scans),
+               "nested_skill_file_scans": sum(s.get("skill_file_top_level") is False for s in scans),
                "verdicts": dict(Counter(s.get("verdict") for s in scans)), "rows_open_sealed": counts}
     (dest / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary))
+    if summary["identity_mismatches"] or summary["nested_skill_file_scans"]:
+        sys.exit("MalSkills did not scan some skills from their top-level SKILL.md; see scans.csv")
     return summary
 
 
@@ -207,11 +241,14 @@ def main():
     r.add_argument("--malskills-bin", required=True); r.add_argument("--workers", type=int, default=4)
     i = sub.add_parser("import"); i.add_argument("output_dir"); i.add_argument("run_dir", nargs="?")
     v = sub.add_parser("verify"); v.add_argument("corpus_root")
+    rp = sub.add_parser("repin"); rp.add_argument("corpus_root")
     args = parser.parse_args()
     if args.cmd == "prepare":
         prepare(args.run_dir, args.corpus_root)
     elif args.cmd == "run":
         run(args.corpus_root, args.output_dir, args.malskills_bin, args.workers)
+    elif args.cmd == "repin":
+        repin(args.corpus_root)
     elif args.cmd == "verify":
         verify_corpus(args.corpus_root)
     else:
