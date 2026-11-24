@@ -1,0 +1,13 @@
+skill_id,kind,name,severity,confidence,evidence
+design-html-6211584b4ba9,chain,bypass_with_external_agent,high,medium,"[""SKILL.md:128 external_agent_launch"", ""SKILL.md:22 tool_preapproval""]"
+oci-functions-deploy-dbd5ca07ab7d,behavior,developer_credential_access,high,high,"[""scripts/common.sh:355""]"
+plan-multi-agent-review-6d575df5e00f,behavior,external_agent_launch,high,high,"[""scripts/run_reviewer.sh:288""]"
+plan-multi-agent-review-6d575df5e00f,chain,bypass_with_external_agent,high,high,"[""scripts/detect_reviewers.sh:17 external_agent_launch"", ""SKILL.md:4 tool_preapproval""]"
+plan-multi-agent-review-6d575df5e00f,chain,bypass_with_external_agent,high,high,"[""scripts/run_reviewer.sh:254 external_agent_launch"", ""SKILL.md:4 tool_preapproval""]"
+plan-multi-agent-review-6d575df5e00f,chain,bypass_with_external_agent,high,high,"[""scripts/run_reviewer.sh:260 external_agent_launch"", ""SKILL.md:4 tool_preapproval""]"
+plan-multi-agent-review-6d575df5e00f,chain,bypass_with_external_agent,high,high,"[""scripts/run_reviewer.sh:279 external_agent_launch"", ""SKILL.md:4 tool_preapproval""]"
+plan-multi-agent-review-6d575df5e00f,chain,preapproved_shell_runs_sensitive_script,high,high,"[""scripts/detect_reviewers.sh:17 external_agent_launch""]"
+plan-multi-agent-review-6d575df5e00f,chain,preapproved_shell_runs_sensitive_script,high,high,"[""scripts/run_reviewer.sh:254 external_agent_launch"", ""scripts/run_reviewer.sh:260 external_agent_launch"", ""scripts/run_reviewer.sh:279 external_agent_launch"", ""scripts/run_reviewer.sh:288 external_agent_launch""]"
+request-council-review-ca446197cf16,behavior,external_agent_launch,high,medium,"[""SKILL.md:89"", ""references/delegating-to-agents.md:256""]"
+skill-855d19709c57,behavior,external_agent_launch,high,high,"[""scripts/capture-loop.sh:32""]"
+skill-855d19709c57,chain,scheduled_agent_run,high,high,"[""scripts/install.sh:41 scheduler_invocation"", ""scripts/capture-loop.sh:32 external_agent_launch""]"
