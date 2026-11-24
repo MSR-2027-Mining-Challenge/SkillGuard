@@ -123,5 +123,5 @@ To re-create the raw data, download the database and re-run notebook 01 with the
   - **Human validation:** a protocol-based review of alerts, then an evaluation of a frozen version on the lockbox.
   - **Instruction detectors:** precision problems with negation and with "mentions vs writes" of agent config.
   - **Chain reporting:** chains need per-skill deduplication.
-  - **Lockbox exposure:** lockbox outputs remain in Git history (commit `4d10ef5`). Removing them needs a history rewrite, which is the team's decision.
+  - **Lockbox exposure:** item-level lockbox outputs were publicly accessible for about 18 hours on 2026-11-23. They were removed from the branch history the same day (rewrite of `skillguard-v3.2`). The lockbox was exposed, so never claim it was not; see `LOCKBOX_POLICY.md`. Teammates who fetched the branch before the rewrite should reset to `origin/skillguard-v3.2`.
 - **Paper:** MSR 2027 Mining Challenge (abstract due 18 Dec 2026, paper 23 Dec 2026).

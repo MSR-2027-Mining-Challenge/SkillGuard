@@ -100,7 +100,7 @@ Main changes since V3.1:
 2. **Fix the instruction detectors:** negation ("never … without asking"), and telling *reads or mentions* of config files apart from *writes*.
 3. **Deduplicate chain reporting:** one skill currently produces 16 chains.
 4. **Optionally, run MalSkills and Cisco with their LLM stages,** to see whether the overlap pattern holds.
-5. **Decide what to do about the lockbox exposure.** Lockbox outputs were briefly public on the branch. They are removed now but still in Git history; removing them fully would need a history rewrite and force-push, which is the team's decision.
+5. **Account for the lockbox exposure.** Item-level lockbox outputs were publicly accessible for about 18 hours on 2026-11-23. We removed them from the branch and rewrote the branch history the same day, but copies or GitHub's cache may persist. Nobody on the team opened them. Still, we should not claim the lockbox was never accessible, and any lockbox evaluation must say so.
 
 ---
 

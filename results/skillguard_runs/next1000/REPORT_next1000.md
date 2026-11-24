@@ -93,7 +93,7 @@ The sample was drawn by notebook 03's own code (via `draw_sample.py`, seed 2031)
 - **Sealed outputs:** item-level outputs for these skills are written to `sealed/` folders. They are not used in any analysis here.
 - **Item-level discussion:** every example in this report and in the analysis comes from the 750 open skills.
 
-The lockbox outputs were accidentally published on 2026-11-23 and then removed from the branch; [LOCKBOX_POLICY.md](LOCKBOX_POLICY.md) records what happened and what history still contains.
+The item-level lockbox outputs were accidentally published on 2026-11-23 and were publicly accessible for about 18 hours. They were then removed from the branch and, by a history rewrite, from its history. Copies made in that window, and GitHub's cache of the old commit, may persist. [LOCKBOX_POLICY.md](LOCKBOX_POLICY.md) records the details.
 
 ### 3.5 Limitations of the sample
 
@@ -303,7 +303,7 @@ Analysis section E explains this with examples.
 - **Tool configurations are partial.** MalSkills ran without its LLM stage and without YASA, and Cisco without LLM, meta or OSV analyzers. The full profiles may behave differently.
 - **Inputs are incomplete.** 122 folders lack some files, and 70 skills have incomplete Cisco scans. The latter are concentrated in skills with malformed frontmatter, so they are not missing at random.
 - **The category mapping is approximate.** Cisco and MalSkills categories were mapped to SkillGuard's taxonomy by rule, not by reviewing individual findings.
-- **The lockbox outputs were publicly exposed** for part of a day (section 3.4). A future evaluation on the lockbox should state this.
+- **The lockbox outputs were publicly exposed** for about 18 hours (section 3.4). No team member opened them, but the lockbox can no longer be described as never accessible, and a future evaluation on it must state the exposure.
 - **The frame is a database snapshot** with mostly low-star repositories. Rates may differ for popular, curated skill collections.
 
 ## 10. Conclusion

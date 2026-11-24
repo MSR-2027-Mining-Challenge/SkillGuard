@@ -31,10 +31,23 @@
 - **Tracking:** all `sealed/` contents except `SHA256SUMS` were removed from tracking and are ignored (`.gitignore`). The files remain on the machine that ran the experiment.
 - **Verification:** the three-way analysis re-ran byte-identically after the change.
 
-**What cannot be repaired without rewriting Git history.**
-- Commit `4d10ef5` is still in the branch history on GitHub. Anyone can read these files there, as can any clone or fork made since.
-- Removing them would need a history rewrite plus a force-push of `skillguard-v3.2`. Even then, existing clones, forks and caches would keep them.
-- This decision belongs to the repository owner and has not been taken.
+**History rewrite (2026-11-23, approved by the repository owner).**
+- **Scope:** only `skillguard-v3.2` was rewritten. No other branch, tag, pull request or fork contained the exposed commit, and every commit on the branch is by the same author. `main` and all other branches are untouched.
+- **What changed:**
+  - Commit `4d10ef5` was replaced by `d0674b3`: the same commit without its 44 `sealed/*.csv` files, and with the 9 `scans.csv` tables in their lockbox-free form.
+  - The four later commits were re-created on top of it with byte-identical trees: `5220a7d`→`9bbd073`, `c8ad70f`→`fad484c`, `e55038c`→`aa9cf01`, `27b6655`→`cc8f0f4`. The branch tip's content is unchanged.
+  - The push used `--force-with-lease` against the old tip `27b6655`.
+- **Verification:** 39 exposed file versions with data were reachable from the old tip, and 0 are reachable from the new one. No rewritten commit contains lockbox skill IDs in a tool-output file. The tests pass, and the analysis tables and figures regenerate byte-identically.
+- **Backup:** a local tag `backup/skillguard-v3.2-pre-rewrite-2026-11-23` (never pushed) and a verified Git bundle outside the repository keep the old history. They contain the exposed files and must stay private.
+
+**What the rewrite cannot undo.** The outputs were publicly accessible:
+- from about 04:00 to 20:45 (Pacific) on 2026-11-23 at the branch tip;
+- until about 22:00 in the branch history.
+
+After the rewrite:
+- **GitHub by SHA:** GitHub still serves the old commit by its SHA (checked after the push), until GitHub garbage-collects unreachable objects. Purging them sooner requires a request to GitHub Support.
+- **Copies:** any clone or fetch of `skillguard-v3.2` made during the window still holds the old commits. Anyone who fetched the branch must reset to the new history (`git fetch && git reset --hard origin/skillguard-v3.2`) instead of merging, or the old commits come back.
+- **Wording:** we therefore **must not claim the lockbox outputs were never accessible**. The correct statement is: *item-level lockbox outputs were publicly accessible for about 18 hours on 2026-11-23; no team member opened them; they were then removed from the branch history.*
 
 **Lockbox identities are public by design.** `manifests/lockbox_skill_ids.csv`, the batch manifests, the sample manifest and the export manifests (input file hashes, missing-file counts) were always meant to be public. They describe inputs, not tool outputs.
 
