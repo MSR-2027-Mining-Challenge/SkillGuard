@@ -219,7 +219,7 @@ def import_results(output_dir, run_dir, max_artifacts=600):
     dest = HERE / "malskills" / output.name
     dest.mkdir(parents=True, exist_ok=True)
     reset_sealed(dest)
-    write_csv(dest / "scans.csv", scans)
+    write_split(dest, "scans", scans)  # lockbox rows (verdicts) go to sealed/
     counts = {name: write_split(dest, name, rows) for name, rows in (("sso_findings", findings),
                                                                      ("pattern_verdicts", verdicts))}
     summary = {"output": str(output.name), "scans": len(scans), "statuses": dict(Counter(s["status"] for s in scans)),
@@ -229,7 +229,7 @@ def import_results(output_dir, run_dir, max_artifacts=600):
     (dest / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary))
     if summary["identity_mismatches"] or summary["nested_skill_file_scans"]:
-        sys.exit("MalSkills did not scan some skills from their top-level SKILL.md; see scans.csv")
+        sys.exit("MalSkills did not scan some skills from their top-level SKILL.md; see scans.csv and sealed/scans.csv")
     return summary
 
 

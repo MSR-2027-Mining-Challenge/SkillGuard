@@ -17,3 +17,29 @@
 6. **If a lockbox result is opened early,** record it in this file (date, who, why), and treat the affected skills as development data in later evaluations.
 
 **Status (2026-11-22):** no lockbox output has been produced or opened yet. SkillGuard V3.2 was developed using only previously used samples and synthetic fixtures.
+
+## Exposure record (2026-11-23)
+
+**What happened.** The repository is public. Commit `4d10ef5`, pushed to `origin/skillguard-v3.2` on 2026-11-23, tracked the `sealed/` folders of the full run.
+- **Sealed files:** 44 item-level files for lockbox skills (SkillGuard behaviors/chains/coverage, Cisco + ATR findings, MalSkills SSO findings and pattern verdicts, analysis rows).
+- **Open `scans.csv` tables** (Cisco + ATR and MalSkills): these also contained the lockbox rows, i.e. per-skill scan statuses and MalSkills verdicts, patterns and SSO counts.
+- **Earlier commits:** `6cda695` and `688c23e` tracked only empty, header-only sealed files from the open-only pilot.
+
+**What was fixed on 2026-11-23:**
+- **Open tables:** `seal_scan_tables.py` moved the lockbox rows of the existing `scans.csv` tables into `sealed/`. Rows are moved unchanged; open + sealed equals the original.
+- **Runners:** both runners now split `scans.csv` this way.
+- **Tracking:** all `sealed/` contents except `SHA256SUMS` were removed from tracking and are ignored (`.gitignore`). The files remain on the machine that ran the experiment.
+- **Verification:** the three-way analysis re-ran byte-identically after the change.
+
+**What cannot be repaired without rewriting Git history.**
+- Commit `4d10ef5` is still in the branch history on GitHub. Anyone can read these files there, as can any clone or fork made since.
+- Removing them would need a history rewrite plus a force-push of `skillguard-v3.2`. Even then, existing clones, forks and caches would keep them.
+- This decision belongs to the repository owner and has not been taken.
+
+**Lockbox identities are public by design.** `manifests/lockbox_skill_ids.csv`, the batch manifests, the sample manifest and the export manifests (input file hashes, missing-file counts) were always meant to be public. They describe inputs, not tool outputs.
+
+**Consequences for evaluation:**
+- No team member or analysis has opened item-level lockbox findings. During the run, masked execution statuses of incomplete lockbox scans (no skill IDs, no findings) were printed once in the console.
+- Because the outputs were publicly readable, a post-freeze evaluation should state this exposure.
+- It should also confirm that the evaluated SkillGuard version was not tuned using these files. V3.2 was frozen (source sha256 `c15e43c3…`) before the run.
+

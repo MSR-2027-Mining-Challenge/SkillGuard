@@ -121,7 +121,7 @@ def main():
             if r.get("finding_kind") == "security":
                 core_find[r["skill_id"]].append(r)
         a = HERE / "cisco_atr" / run.name
-        for r in read(a / "scans.csv"):
+        for r in both(a, "scans"):
             atr_status[r["skill_id"]] = r["status"]
         for r in both(a, "findings"):
             if r["severity"] != "INFO":
@@ -142,7 +142,7 @@ def main():
         if not ms_dirs:
             missing_inputs.append(f"malskills:{run.name}")
         for d in ms_dirs:
-            for r in read(d / "scans.csv"):
+            for r in both(d, "scans"):
                 ms_status[r["skill_id"]] = r["status"]
                 ms_verdict[r["skill_id"]] = r.get("verdict")
             for r in both(d, "sso_findings"):

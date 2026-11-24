@@ -62,7 +62,7 @@ def main():
                              "rule_id": f.get("rule_id"), "category": f.get("category"), "severity": f.get("severity"),
                              "analyzer": f.get("analyzer"), "file_path": path, "line": f.get("line_number"),
                              "atr_rule": str(f.get("rule_id", "")).upper().startswith("ATR")})
-    write_csv(out / "scans.csv", scans)
+    write_split(out, "scans", scans)  # lockbox rows (statuses) go to sealed/ as well
     n_open, n_lock = write_split(out, "findings", findings)
     summary = {"run": run.name, "scanner": version, "args": ARGS, "scans": len(scans),
                "statuses": dict(Counter(s["status"] for s in scans)), "findings_open": n_open,

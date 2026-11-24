@@ -264,3 +264,7 @@ results/skillguard_runs/next1000/cisco_atr/*/raw/
 results/skillguard_runs/next1000/provenance/
 # notebook-01 report folders of the seed-2031 batches contain item-level results for lockbox skills
 results/reports/agent_skills_sample/*next1000-seed2031-batch*/
+# Lockbox (LOCKBOX_POLICY.md): item-level outputs of the 250 lockbox skills stay local.
+# Only the checksum files are tracked, so later tampering or early edits remain detectable.
+results/skillguard_runs/next1000/**/sealed/*
+!results/skillguard_runs/next1000/**/sealed/SHA256SUMS
