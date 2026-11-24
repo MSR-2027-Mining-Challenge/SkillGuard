@@ -330,7 +330,8 @@ def main():
                "lockbox_incomplete_scan_skills_by_stratum": summary_execution_lockbox_incomplete,
                "prevalence_all_usable": {r["measure"]: {"n": r["n"], "flagged": r["skills_flagged"], "weighted_pct": r["weighted_pct"],
                                                        "ci95": r["weighted_ci95"]} for r in rates if r["subset"] == "all usable"}}
-    summary["location_agreement_scope"] = "open skills only (lockbox item-level locations are not compared during development)"
+    summary["location_agreement_scope"] = ("counts are aggregates over the skills usable by all three tools (open and lockbox); "
+                                           "item-level rows (sg32_location_agreement_open.csv) cover open skills only")
     summary["v31_any_x_v32_reviewable"] = {f"v31={a} v32={b}": n for (a, b), n in sorted(Counter(
         (ind[s]["skillguard_v31_any"], ind[s]["skillguard_v32_reviewable"]) for s in skills).items())}
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
