@@ -8,7 +8,32 @@ Agent skills (`SKILL.md` plus bundled scripts and documents) tell AI coding agen
 
 > Scanner alerts are not confirmed vulnerabilities, and a SkillGuard capability is not a vulnerability. No result in this repository has been human-validated. Labels marked *provisional* are AI-assisted.
 
-## Main result: the 1,000-skill experiment (Nov 15–16, 2026)
+## Latest: three-scanner experiment on 1,000 new skills (Nov 22–23, 2026; branch `skillguard-v3.2`)
+
+Cisco skill-scanner, MalSkills and SkillGuard (frozen V3.1 and the new V3.2) scanned the **same** 1,000 skills. The sample was a new seed-2031 sample of 400 / 300 / 300 skills that excludes every skill used before. 250 of the skills form an evaluation lockbox.
+
+| What | Where |
+|---|---|
+| **Mentor/meeting briefing: read this first** | [`results/skillguard_runs/next1000/MENTOR_BRIEF.md`](results/skillguard_runs/next1000/MENTOR_BRIEF.md) |
+| Research report (design, execution, results, limitations) | [`REPORT_next1000.md`](results/skillguard_runs/next1000/REPORT_next1000.md) |
+| Findings analysis (worked examples per tool, SkillGuard-only skills, V3.1 vs V3.2) | [`ANALYSIS_next1000.md`](results/skillguard_runs/next1000/ANALYSIS_next1000.md) |
+| Figures | [`next1000/figures/`](results/skillguard_runs/next1000/figures/) |
+| Guide to all data, tables and scripts | [`next1000/README.md`](results/skillguard_runs/next1000/README.md) |
+| Lockbox rules and the 2026-11-23 exposure record | [`next1000/LOCKBOX_POLICY.md`](results/skillguard_runs/next1000/LOCKBOX_POLICY.md) |
+
+**Headline numbers** (weighted share of skills, 95% CI):
+
+| Tool | Measure | Weighted share |
+|---|---|---|
+| Cisco | flags the full folder (198 of 930 comparable skills) | **8.1%** (6.5–9.7) |
+| MalSkills | any security-sensitive operation | **30.7%** |
+| MalSkills | "malicious" verdict, 5 skills, all installer-style `curl … \| sh` lines in the open cases | **0.37%** |
+| SkillGuard V3.2 | any reviewable agent-control behavior | **15.5%** (12.7–18.2) |
+| SkillGuard V3.2 | high priority | **0.26%** |
+
+Cisco and MalSkills overlap heavily, while SkillGuard reports a different class of behavior: pre-approval, bypass instructions, external agent launches and agent configuration. No result is human-validated.
+
+## Previous main result: the 1,000-skill experiment (Nov 15–16, 2026)
 
 A stratified random sample of 1,000 skills (seed 2030; 400 with scripts / 300 with supporting files only / 300 `SKILL.md` only). Cisco was run in 4 configurations (4,000 scans), and frozen SkillGuard V3.1 analyzed the same folders.
 
@@ -39,6 +64,8 @@ A stratified random sample of 1,000 skills (seed 2030; 400 with scripts / 300 wi
 | Nov 13–14 | SkillGuard V3: fresh 100-skill held-out set (seed 2029; provisional AI labels) | [REPORT_v3_2026-11-13.md](results/skillguard_runs/comparisons/REPORT_v3_2026-11-13.md) | `results/skillguard_runs/comparisons/2026-11-13_234328_…` |
 | Nov 15 | SkillGuard V3.1 frozen; 1,000-skill plan and pilot | [PROPOSAL](results/skillguard_runs/plans/PROPOSAL_1000_skill_experiment.md) (written before launch), [PILOT_REPORT.md](results/skillguard_runs/main1000/PILOT_REPORT.md) | `results/skillguard_runs/plans/`, `main1000/manifests/` |
 | Nov 15–16 | **1,000-skill Cisco + SkillGuard experiment** | [REPORT_main1000.md](results/skillguard_runs/main1000/REPORT_main1000.md) | see above |
+| Nov 22 | SkillGuard V3.2 development evaluation (benchmark, regression vs V3.1) | [REPORT_v32.md](results/skillguard_runs/v32_regression/REPORT_v32.md) | `results/skillguard_runs/v32_regression/`, `benchmarks/skillguard_v32/` |
+| Nov 22–23 | **Three-scanner experiment on 1,000 new skills** (Cisco, MalSkills, SkillGuard V3.1/V3.2; seed 2031) | [REPORT_next1000.md](results/skillguard_runs/next1000/REPORT_next1000.md), [ANALYSIS_next1000.md](results/skillguard_runs/next1000/ANALYSIS_next1000.md) | `results/skillguard_runs/next1000/` |
 
 ## SkillGuard V3.2 (Nov 22, 2026; branch `skillguard-v3.2`)
 
@@ -49,13 +76,14 @@ A stratified random sample of 1,000 skills (seed 2030; 400 with scripts / 300 wi
 | Code (frozen V3.1 untouched) | [`src/skillguard/`](src/skillguard/) — `PYTHONPATH=src .venv/bin/python -m skillguard <folder> [--json]` |
 | Controlled benchmark (65 synthetic cases) | [benchmarks/skillguard_v32/](benchmarks/skillguard_v32/) |
 | V3.1 vs V3.2 report | [results/skillguard_runs/v32_regression/REPORT_v32.md](results/skillguard_runs/v32_regression/REPORT_v32.md) |
-| Next 1,000-skill experiment (prepared, pilot only) | [results/skillguard_runs/next1000/README.md](results/skillguard_runs/next1000/README.md) |
+| Three-scanner experiment on 1,000 new skills (completed) | [results/skillguard_runs/next1000/README.md](results/skillguard_runs/next1000/README.md) |
 
 ## Code
 
 | What | Where |
 |---|---|
-| **SkillGuard (current = frozen V3.1, sha256 `eebc59e7…`)** | [`src/skillguard_capabilities.py`](src/skillguard_capabilities.py) |
+| **SkillGuard V3.2** (current development version, package sha256 `c15e43c3…`) | [`src/skillguard/`](src/skillguard/) |
+| SkillGuard V3.1 (frozen baseline, sha256 `eebc59e7…`) | [`src/skillguard_capabilities.py`](src/skillguard_capabilities.py) |
 | SkillGuard tests (55 controlled cases) | [`tests/test_skillguard_capabilities.py`](tests/test_skillguard_capabilities.py) |
 | Frozen copies of every SkillGuard version (V1, V2, V3, V3.1) with their tests | [`results/skillguard_runs/versions/`](results/skillguard_runs/versions/) |
 | Research notebooks 00–06 (exploration, Cisco scans, sampling, review, reports, LLM/Meta) | [`notebooks/`](notebooks/) (described in the [README](README.md#research-workflow-notebooks)) |
@@ -71,7 +99,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests
 
 ## Important vs generated files
 
-- **Read these:** this file, the [README](README.md), the four reports linked above (`REPORT_main1000.md`, `REPORT_v3`, `REPORT_v2`, the V1 `REPORT.md`), the two documents in [`docs/`](docs/), and [`results/reports/README.md`](results/reports/README.md).
+- **Read these:** this file, the [README](README.md), the next1000 documents (`MENTOR_BRIEF.md`, `REPORT_next1000.md`, `ANALYSIS_next1000.md`), `REPORT_v32.md`, the earlier reports linked above (`REPORT_main1000.md`, `REPORT_v3`, `REPORT_v2`, the V1 `REPORT.md`), the documents in [`docs/`](docs/), and [`results/reports/README.md`](results/reports/README.md).
 - **Generated, kept for traceability:** everything under `results/reports/agent_skills_sample/` (one folder per Cisco run, written by notebooks 01 and 05), `consolidated/…/tables/`, per-run SkillGuard tables (`main1000/skillguard/<run>/`), manifests, and `main_run_log.jsonl`. Do not edit these by hand; regenerate them with the scripts.
 - **Superseded but kept:** older reanalyses in the reports index (marked "superseded") and SkillGuard V1–V3, which are frozen in `versions/` for comparison only.
 
@@ -90,9 +118,10 @@ To re-create the raw data, download the database and re-run notebook 01 with the
 
 ## Current status and next steps
 
-- **Done:** the 1,000-skill experiment, its consolidated analysis, and this repository cleanup.
-- **Open threads** (from `REPORT_main1000.md`; not started):
-  - SkillGuard has no JavaScript/TypeScript, JSON or YAML analysis, although Cisco finds much of its signal in JS.
-  - Script folders whose files are missing from the snapshot show far more SkillGuard behaviors (36/89 vs 34/288). The pattern is unexplained.
-  - SkillGuard's correctness evidence is still only its controlled tests and provisional AI labels.
+- **Done:** the main1000 experiment; SkillGuard V3.2, which adds JS/TS, JSON/YAML/TOML config parsing and cross-file chains; and the three-scanner experiment on 1,000 new skills.
+- **Open threads** (see `REPORT_next1000.md` §10 and `MENTOR_BRIEF.md` §9):
+  - **Human validation:** a protocol-based review of alerts, then an evaluation of a frozen version on the lockbox.
+  - **Instruction detectors:** precision problems with negation and with "mentions vs writes" of agent config.
+  - **Chain reporting:** chains need per-skill deduplication.
+  - **Lockbox exposure:** lockbox outputs remain in Git history (commit `4d10ef5`). Removing them needs a history rewrite, which is the team's decision.
 - **Paper:** MSR 2027 Mining Challenge (abstract due 18 Dec 2026, paper 23 Dec 2026).
